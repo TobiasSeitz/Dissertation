@@ -1,0 +1,7 @@
+#! /bin/bash
+
+cd /Users/Tobi/Dissertation
+git fetch origin
+git fetch drive
+git pull origin 
+git pull drive master
