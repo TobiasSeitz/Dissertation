@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper,twoside]{book}
+%\documentclass{sigchi}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc} % writing of äöüß possible, instead of "a"o"u"s
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx} % font times-roman for math. Formulas, bullets, etc.
+\usepackage{fancyhdr} % chapternames at top of page
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{sectsty}
+\usepackage[ngerman,english]{babel}\selectlanguage{english}
+\usepackage{makeidx} % allows for an index
+\usepackage{subfigure} % enable subfigures
+\usepackage[nottoc,notindex]{tocbibind} % include bib in toc
+\usepackage[subfigure]{tocloft}
+\usepackage{ifthen} % allow sophisticated control structures
+\usepackage{substr} % allows substring detection
+
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{colortbl}
+
+\usepackage[hang,splitrule]{footmisc} % avoid hanging footnotes
+\usepackage{titlesec}
+\usepackage{geometry}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+\usepackage{subscript}
+\usepackage{rotating}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+%\usepackage[shortlabels]{enumitem}
+\usepackage{marvosym}
+\usepackage{amsmath}
+\usepackage{amsfonts}   
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{csquotes}
+\usepackage{url}
+\newcommand{\mycomment}[1]{\textit{\textcolor{Blue}{[#1]}}}
+\newcommand{\fixme}[1]{\textit{\textcolor{Red}{[#1]}}}
+%\usepackage{todonotes}
+
+%Blindtext
+%\usepackage{blindtext}
+
+%TIKZ
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.12}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows, decorations.pathmorphing, decorations.markings, backgrounds, positioning, fit, petri}
+
+%CITE
+%\usepackage{cite} %EURO
+%\usepackage[gen]{eurosym}
+
+%WRAPFIG
+%\usepackage{wrapfig}
+
+%COLORS
+\label{Color Definition}
+\usepackage{xcolor}
+%\definecolor{platinum}{HTML}{E5E4E2}
+%\colorlet{diagrambg}{platinum}
+
+%MDFRAME
+%\usepackage{mdframed}
+
+%CSVSIMPLE
+%\usepackage{csvsimple}
+
+%SYMBOLS
+%\usepackage{pifont}
+%\usepackage{enumitem}
+
+%MORE CITATION STYLES
+%\usepackage[round,sort,comma]{natbib}
+
+\makeindex
+
+\geometry{a4paper,twoside,inner=97pt,outer=110pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=2pt,bindingoffset=8mm} % for some weird reason oddsidemargin is originally -108pt
+
+
+\raggedbottom % test vertical justification switch off
+
+\newcommand{\clearemptydoublepage}{%
+  \ifthenelse{\boolean{@twoside}}{\newpage{\pagestyle{empty}\cleardoublepage}}%
+  {\clearpage}}
+
+
+\begin{document}
+
+\frontmatter
+\title{Reducing Burden on Users During Password Selection}
+\author{Tobias Seitz}
+\maketitle
+
+%________________________________________
+
+{%
+\pagestyle{empty}%
+%\setlength{\textwidth}{188mm}
+%\setlength{\oddsidemargin}{-1in}
+%\setlength{\evensidemargin}{-1in}
+%\setlength{\topmargin}{-1.5in}
+%\setlength{\unitlength}{1mm}
+\addtolength{\oddsidemargin}{11mm}
+\addtolength{\evensidemargin}{11mm}
+\addtolength{\topmargin}{11mm}
+
+
+\newgeometry{inner=30pt,outer=30pt,top=30pt}
+
+
+\setlength{\parindent}{0pt} % Have spaces between paragraphs
+\setlength{\parskip}{7pt plus 2pt minus 1pt}
+  
+%\input{tex/00_abstract} % load abstract
+
+%\cleardoublepage
+
+%________________________________________
+\makeatletter
+	\setlength{\cftbeforepartskip}{7ex}
+	\setlength{\cftbeforechapskip}{5.5ex}
+	\setlength{\cftbeforesecskip}{0.75ex}
+	\setlength{\cftbeforesubsecskip}{0.1ex}
+	\setlength{\cftbeforetoctitleskip}{-5mm}
+	\setlength{\cftbeforeloftitleskip}{-5mm}
+	\setlength{\cftbeforelottitleskip}{-5mm}
+	\renewcommand{\cfttoctitlefont}{
+	  \LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftloftitlefont}{
+	  \LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftlottitlefont}{
+	  \LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftpartfont}{
+	  \fontsize{14}{18}\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftchapfont}{
+	  \fontsize{13}{17}\usefont{OT1}{ptm}{b}{n}\selectfont
+	}	% Done with the TOC layout
+	
+  \setcounter{tocdepth}{2}
+  % LATEX
+  %\pdfbookmark[1]{Table of Contents}{table}
+  \markboth{Table of Contents}{Table of Contents}
+  % ENDLATEX
+  \settocname{Table of Contents\\}
+  \tableofcontents
+%	\cleardoublepage	
+%	\listoffigures	
+%	\cleardoublepage
+%	\listoftables
+\makeatother
+%____________________________________________________________
+
+\mainmatter
+
+% ################################################### MAIN PART
+
+\part{AUTHENTICATION ON THE WEB}
+
+\input{tex/01_introduction/01_introduction}
+
+\input{tex/passwords/passwords}
+\input{tex/passwords/selection}
+\input{tex/passwords/coping-strategies}
+\input{tex/passwords/downfall-of-passwords}
+
+
+
+
+\part{PERSUASION IN USABLE SECURITY}
+\input{tex/persuasion_usec/persuasion_usec}
+
+
+\part{QUANTIFYING THE PROBLEM}
+\input{tex/basis_auth_tasks/auth_tasks}
+\input{tex/basis_roskilde_study/roskilde_study}
+
+
+\part{THE PASSWORD SELECTION SUPPORT TOOLKIT}
+\input{tex/synth_psst/psst-intro}
+\input{tex/synth_psst/policy-fulfillment}
+\input{tex/synth_psst/coping-strategies}
+
+\part{CONCLUSIONS}
+\input{tex/meta/mturk}
+
+% ################################################### MAIN PART
+
+%____________________________________________________________
+\cleardoublepage
+
+%____________________________________________________________
+
+\backmatter
+
+%____________________________________________________________
+
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+
+\bibliographystyle{SIGCHI-Reference-Format}
+%\bibliographystyle{acm-sigchi-modern}
+\bibliography{bibliography}
+
+
+\cleardoublepage
+\phantomsection
+%\addcontentsline{toc}{chapter}{Index}
+%\printindex
+
+
+\end{document}
