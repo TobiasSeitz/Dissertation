@@ -12,6 +12,11 @@ Then you get:
 
 2. `dpull` <br /> Fetches all repos, pulls from origin and master branch from other repos. 
 
+3. `dsyncdb` <br /> Uses `rsync` to copy the source files to DropBox. 
+
+## Dependencies
+1. `onchange` to watch files -- `npm install -g onchange`
+Then you can `onchange '/Users/Tobi/Dissertation/**/*.tex' -- dsyncdb`
 
 ## Structure
 `/raw` contains the raw content, without styling. 
