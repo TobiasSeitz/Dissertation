@@ -6,7 +6,6 @@
 \section{Motivation}
 personalized systems
 
-
 everybody saves data online, sensitive and intimate documents that should be protected.
 if you don't store data online yourself, you can be sure that there is some other party
 that stores data about you, e.g. doctors, insurance agencies, airlines, whatever. 
@@ -17,18 +16,31 @@ all of what the service has to offer. in the top 100 websites in germany 83 offe
 most of the time users are asked to create a password to access their account, make changes to their personal data or generally use a service. 
 
 
-
+it is a topic that is important for everyone. 
 
 \subsection{Authentication Costs Time}
-if you log into a service every day and it takes 5 seconds to type in your username and password ()
+if you log into 3 services every day and it takes 5 seconds to type in your user name and password (\ar) you use up XX hours per year just to overcome this barriers. This is bad and we should reduce this effort. 
 
 
 \subsection{Weak Passwords Cost Money}
+if accounts get compromised too easily, the personal data can be exploited 
+
+identity theft and consecutive social engineering more often than stealing money from banks.
+
+
 
 \section{Research Objectives}
+
 \subsection{Problem Statement}
+investigating user interfaces that no one ``enjoys'', yet everybody needs to use them. 
+
+most researchers agree that it is an unsolved problem and there have been attempts to formally show that it is unsolved 
+
 \subsection{Better Understanding of Password Usability}
+how do we make passwords more usable for mainstream users (not experts). what du users already know, what do they do and how can we design for that. 
+
 \subsection{Making Users' Lives a Little Easier}
+supporting them carefully without drastic interventions or mitigations. small steps to slowly adapt behavior over time. 
 
 \section{Agenda: Claims to Support in this Thesis}
 
@@ -37,16 +49,26 @@ if you log into a service every day and it takes 5 seconds to type in your usern
 
 \item[Password Composition Policies] As many web sites require or allow some kind of registration, their operators implement different password composition policies. We show that the criteria are manifold and largely inconsistent. Consequently, users approach enrollment with their preferred password, and are forced to apply heuristics to modify the password, depending on the policy in use. 
 
-\item[Password Value] We present a framework to assess the value a user associates with a specific password. The users might not realize that they re-use the password for accounts with different values. Knowledge about a password's value is important to design persuasive strategies to protect it, e.g. by discouraging its usage on low value accounts. (See PSST).
+\item[Password Value] We present a framework to assess the value a user associates with a specific password. The users might not realize that they re-use the password for accounts with different values. Knowledge about a password's value is important to design persuasive strategies to protect it, e.g. by discouraging its usage on low value accounts. (See PST).
 \end{description}
 
 
 \section{Main Contributions}
 \subsection{Insights into the Psychology of Passwords}
-\subsection{Designing Around Password Reuse}
-\subsection{When and Why to Apply Nudges}
-\subsection{Holistic Password Support}
+- personality and password selection are moderately associated
+- it is difficult to measure the effects, but we show how to get there.
 
+\subsection{Designing Around Password Reuse}
+- we audited the top 83 websites that offer public authentication in germany and found that their password policies (at the time) did not prevent password reuse
+- we investigated users mental models of password managers and found that they are for the largest part a black box and are not trusted.
+
+\subsection{When and Why to Apply Nudges}
+- if users face a password nudge every time the effects can wear off 
+- we should apply nudges if we think the account is important. important accounts contain large datasets of personal or financial information which make them valuable targets for attackers.
+
+\subsection{Holistic Password Support}
+- we propose a framework that guides service providers in making users dealings with passwords easier (the password support toolkit)
+- we designed and evaluated a password manager that follows the design principles and recommendations of the password support toolkit. 
 
 \section{Thesis Overview}
 \textit{Chapter 1:}
