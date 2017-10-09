@@ -1,0 +1,5 @@
+#! /bin/bash
+
+### watch all .tex files and sync to dropbox.
+
+onchange '/Users/Tobi/Dissertation/**/*.tex' -- dsyncdb &
