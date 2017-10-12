@@ -8,37 +8,77 @@ Flor\^{e}ncio and Herley probably conducted the largest study to date on passwor
 
 @@TODO cite Wash paper @SOUPS 2016.
 
+\cite{Bailey2014StatisticsReuse,Bojinov2010KamouflagePWM,Bonneau2015SecretsLies,Brown2004GeneratingPWs,Chiasson2009InterferencesGraphical,Conklin2004PWAuthenticationSystemPerspective,CSID2012PasswordHabits,Das2014TangledWeb,Dourish2004UserStrategiesEveryday,Florencio2014PasswordPortfoliosFiniteUser,Forget2015CYOA}
+\cite{Gaw2005ReuseRecycle,Gaw2006PasswordManagement,Habib2017Blacklists,Haque2014Hierarchy,Hayashi2011DiaryStudyPWs,Huha2015UserReplaceablePasswords,Ives2004DominoEffectReuse,Katsini2017StrategiesGraphicalPasswords,Keith2009PassphraseDesign,Komanduri2011OfPasswordsAndPeople,Kothari2017PasswordLogbooks,Kuo2006HumanSelectionMnemonic,Li2017,Loutfi2015PasswordsOtherSideOfTheFence,Lyastani2016PWMangling,Notoatmodjo2007,Peisert2013PriciplesAuthentication,Riley2006WhatUsersKnowWhatTheyDo}
+\cite{Shay2014ReligiousAunt,Shay2010EncounteringPasswordRequirements,Singh2007PasswordSharing,Stobert2014a,Stobert2015,Stobert2014PWMThatDoesntRemember,Stobert2014PasswordLifeCycle,Stobert2015ExpertPassword}
+\cite{Ur2015PWCreationLab,Bruggen2013ModifiyngUnlockingBehavior,Veras2012VisualizingSemanticsPasswords,Wang2015ChinesePWs,Wash2016UnderstandingPasswordChoices,Yang2016MnemonicSentenceBased,ZhangKennedy2016RevisitingPasswordRules}
 
 \section{Methodology: Running Password Studies}
 
-general overview over 
+general overview a la. how to run a good password study 
 
-	\subsection{Ecological Validity}
-	there are different approaches to study passwords
-	
-	\begin{itemize}
-		\item Analyzing leaked data
-		\item Lab study
-		\item Field study with an interactive prototype, often in conjunction with a survey / Diary 
-		\item Mechanical Turk / CrowdSourced
-	\end{itemize}
+\cite{Krol2016ExperimentDesign,Peer2017,Consolvo2003,Ross2010,Sotirakopoulos2011,Oppenheimer2009InstructionalManipulationChecks,Harbach2016HardLockLife,Barbera2013,Carreras2013,Chamberlain2012ResearchInTheWild,Henze2013EmpiricalResearchUbiquitous,Kuhn1993,VonZezschwitz2013SurvivalShortest,Hassenzahl2003,Mazurek2013Measuring,Egelman2015a,Rosoff2014,Savage2012}
+
+\begin{itemize}
+	\item Analyzing leaked data
+	\item Lab study \cite{Sotirakopoulos2011}
+	\item Field study with an interactive prototype, often in conjunction with a survey / Diary 
+	\item Mechanical Turk / CrowdSourced
+\end{itemize}
 
 
 \todo{Add a table with advantages and disadvantages of different study methods.}
 
+
+	\subsection{Ecological Validity}
+ as we have seen before, the approaches differ especially in the way ecological validity is achieved.
+ 
+ explain why ecological validity is super important in this context.
+	
+
+	\subsection{Ethics}
+	look into "Critical" folder on mendeley
+
 	\subsection{Mechanical Turk Studies}
+	
+	propagated and most commonly used at CMU e.g. \cite{Mazurek2013Measuring} \cite{Shay2014CanLongPasswordsBeSecureAndUsable} \cite{Shay2016DesigningPasswordPolicies}
+	\cite{Ur2016PerceptionsPassword} \cite{Melicher2016UsabilityMobileTextPasswords} \cite{Ur2017DataDrivenPWMeter}
+	problem: in europe it's not immediately possible, but there are alternatives. 
+	
+	
 	
 \section{How Users Traditionally Cope with Passwords}
 	\subsection{Password Reuse}
+	too many accounts problem. 
+	
+	finite effort, and the payoff is invisible (comparison to smoking: I won't be affected, and in many cases that's true. But if you are affected you regret your behavior. )
+	
+	reuse is the most convenient way but probably the most severe threat to one's online identity and finances. This is a hard problem. 
+	
+	it's not just the passwords, it's also the user name 
+	
+	consequences: phishing attacks are problematic
+	
+	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser}. 
+	
+	
+	\subsubsection{Reuse Strategies}
+	address the role of policies (see \cite{Seitz2017PoliciesReuse}).
+	
+	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
+	
+
+	
+	
 	\subsection{Selecting Weak Passwords}
 	
 	\subsection{Tools (Writing Down)}
 		\subsubsection{Problem: Accessibility for Local Attackers}
 Word documents post-its (use a screen shot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .
 
-	\subsection{Problem: Password Re-Use}
+	\subsection{Password Re-Use}
 		\subsubsection{Policy Fulfillment}
-		\subsubsection{Re-Use Approaches}
+
 
 \section{Helping Users}
 	\subsection{Advice and Guidelines}
@@ -55,4 +95,10 @@ Word documents post-its (use a screen shot of french newspaper that was featured
 	
 	To facilitate coping with passwords and possibly minimize reuse, dedicated tools have been investigated and proposed. Besides industry-driven password managers, HCI research has proposed a number of alternatives. For instance, Stobert and Biddle also propose a password manager that is designed to boost trust as it does not directly store passwords, but rather offers a image cues to recall passwords \cite{Stobert2014Versipass}. 
 	
-	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing. 
+	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing.
+	
+	
+\section{Critical Voices}
+Address Herley's, Florencio's, Sasse's work here. 
+
+e.g. Counterfactuals, Bullying, Finite Effort 

@@ -3,7 +3,8 @@
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc} % writing of äöüß possible, instead of "a"o"u"s
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc} % for a UTF8 editor only
+\usepackage{graphicx}
 \usepackage{mathptmx} % font times-roman for math. Formulas, bullets, etc.
 \usepackage{fancyhdr} % chapternames at top of page
 \usepackage{longtable}
@@ -16,9 +17,10 @@
 \usepackage[subfigure]{tocloft}
 \usepackage{ifthen} % allow sophisticated control structures
 \usepackage{substr} % allows substring detection
-
+\usepackage{multirow}
 \usepackage{array}
 \usepackage{colortbl}
+\newcommand{\citep}[1]{\cite{#1}}
 
 \usepackage[top=2cm, bottom=1.25in, left=2cm, right=2cm]{geometry}
 \usepackage{url}
@@ -113,7 +115,7 @@
 
 \bibliographystyle{SIGCHI-Reference-Format}
 %\bibliographystyle{acm-sigchi-modern}
-\bibliography{bibliography}
+\bibliography{library}
 
 
 \cleardoublepage
