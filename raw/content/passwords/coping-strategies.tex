@@ -1,4 +1,4 @@
-\chapter[The Human Side: Selecting and Coping]{The Human Side: Selection and Coping}\label{chap:selection_coping_strategies}
+\chapter[Passwords -- A User Perspective]{Passwords -- A User Perspective}\label{chap:selection_coping_strategies}
 
 
 Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
@@ -50,7 +50,7 @@ general overview a la. how to run a good password study
 
 
 	
-\section{How Users Traditionally Cope with Passwords}
+\section{User Behavior Regarding Passwords}
 \label{sec:rw:how-users-cope}
 
 \todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
@@ -60,14 +60,21 @@ general overview a la. how to run a good password study
 
 	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
 	
-	
 
 		\subsubsection{Why do Users Select Weak Passwords?}
 	
+	- policies allow it (\cite{Seitz2017PoliciesReuse})
+	- wrong mental model or misinterpretation of security advice (\cite{Ur2015PWCreationLab, Ur2016PerceptionsPassword, Seitz2017PASDJO})
+	- because they don't care
+	- ... they underestimate the threat
+	- ... they are right to judge the account as low value (who would hack me?) \cite{LastPass2016PersonalitiesGetUsHacked}
+	
+	
 	qualitative studies \cite{Ur2015PWCreationLab, Stobert2014PasswordLifeCycle} 
 	quantitative studies \cite{Ur2016PerceptionsPassword, Seitz2017PASDJO}
-
-
+	
+	\subsubsection{What's the Problem with Weak Passwords?}
+	usually, people tend to use stronger PWs for important accounts
 
 	
 
@@ -81,16 +88,21 @@ general overview a la. how to run a good password study
 	
 	it's not just the passwords, it's also the user name 
 	
+	
+	\textbf{What's the problem?}
 	consequences: phishing attacks are problematic
 	
 	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser}. 
+	
+	
 	
 	
 	\subsubsection{Reuse Strategies}
 	address the role of policies (see \cite{Seitz2017PoliciesReuse}).
 	
 	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
-
+	
+	\cite{Stobert2015ExpertPassword}
 	
 	
 	\subsection{Tools (Writing Down)}
@@ -98,30 +110,70 @@ general overview a la. how to run a good password study
 Word documents post-its (use a screen shot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .
 
 	\subsection{Password Re-Use}
+	
+	
+	
 		\subsection{Categorization}
 		compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
 		\subsubsection{Policy Fulfillment}
 
 \section{The Role of Mobile Devices}
 touch some small aspects, especially Melicher's Paper \cite{Melicher2016UsabilityMobileTextPasswords} and \cite{VonZezschwitz2014HoneyIShrunkTheKeys}
+\cite{Haque2014PsychometricsStrongPassword} 
 
 talk about the rise of graphical and biometric authentication. 
-
 
 
 set the stage for the emoji passwords later. 
 
 
-\section{Influencing Password Selection and Coping}
+\section{Countermeasures}
+
 
 	\subsection{Password Composition Policies}
 	
-
+	Range of Policies as shown by Shay \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
+	definitely mention: 28.0\% of passwords in comp8 fulfilled the symbol requirement only by placing ``!'' at the end and using no other symbols. 
+	
+	\cite{ZhangKennedy2016RevisitingPasswordRules}
+	
+	
+	\cite{Inglesant2010TrueCostOfUnusablePolicies} 
+	
+	\cite{Florencio2014AdministratorsGuide} 
+	
+	\cite{Ur2015PWCreationLab}
+	
+	\cite{Shay2010EncounteringPasswordRequirements}
+	
+	\cite{Shay2016DesigningPasswordPolicies}
+	
+	\cite{Weir2010MetricsPolicies}
+	
+	\cite{Wang2015EmperorsPolicies}
+	
+	
+	\cite{Florencio2010WhereDoPoliciesComeFrom}
+	
+	\cite{Horsch2016PasswordPolicyMarkup}
+	
+	\cite{Chiasson2015QuantifyingExpiration}
+	\cite{Blocki2013OptimizingPasswordPolicies}
+	\cite{Komanduri2011OfPasswordsAndPeople}
+	
+	
+	
 
 	\subsection{Advice and Guidelines}
 	
 	education in password matters only has so much effect. 
+	\cite{Forget2007HelpingUsers} says that even instructions don't work
 	
+	There's some work that argues that users want to create stronger passwords at least for some accounts, but they had
+	misinterpreted security advice. 
+	this is also reflected in \cite{Ur2016PerceptionsPassword}
+	
+		
 	
 	\subsection{Offering Memorization Techniques}
 	
@@ -134,8 +186,6 @@ set the stage for the emoji passwords later.
 	
 	
 	
-	
-	
 	\subsection{Real-Time Feedback}
 	
 	
@@ -143,6 +193,7 @@ set the stage for the emoji passwords later.
 	black lists \cite{Habib2017Blacklists} 
 	
 	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
+	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
 	
 	be careful not to talk too much about persuasion in this chapter. 	
 	
@@ -160,7 +211,7 @@ set the stage for the emoji passwords later.
 	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing.
 	
 	
-\section{The Passionate Discourse About Passwords}
+\section{The Passionate Discourse About Passwords}\label{sec:rw:passionate_discourse}
 talk about how critical and passionate this topic has been debated in the literature
 
 --> surprisingly, a lot of position papers (sometimes pure argumentation, sometimes with mathematical/logical reasoning) 
