@@ -1,9 +1,8 @@
-\chapter[Passwords -- A User Perspective]{Passwords -- A User Perspective}\label{chap:selection_coping_strategies}
+\chapter[Passwords -- A User Perspective]{Passwords -- A User Perspective}\label{chap:rw:user_perspective}
 
 
-Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
 
-\cite{Florencio2007LargeScaleStudyPasswordHabits}. The established protected password lists (PPL) to avoid intruding into people's privacy. They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). It was not possible to trace the incoming data back to a specific user, which might have resulted in over counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification, the key logging module of the toolbar would record a password reuse event (PRE) every time the user entered the word -- also in regular text searches, for example. Another limitation could be that they used entropy as a proxy for password strength. However, as discussed in the previous chapter, we have seen that this metric is more robust for system-generated passwords and that strength estimation has evolved over the past ten years. 
+
 
 
 @@TODO cite Wash paper @SOUPS 2016.
@@ -22,9 +21,17 @@ general overview a la. how to run a good password study
 \begin{itemize}
 	\item Analyzing leaked data
 	\item Lab study \cite{Sotirakopoulos2011}
+	\item Field study only with Logging \cite{Florencio2007LargeScaleStudyPasswordHabits}
 	\item Field study with an interactive prototype, often in conjunction with a survey / Diary 
-	\item Mechanical Turk / CrowdSourced
+	\item Mechanical Turk / CrowdSourced 
 \end{itemize}
+
+all but the first allow controlled selection of passwords
+
+Example: 
+Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
+
+\cite{Florencio2007LargeScaleStudyPasswordHabits}. The established protected password lists (PPL) to avoid intruding into people's privacy. They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). It was not possible to trace the incoming data back to a specific user, which might have resulted in over counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification, the key logging module of the toolbar would record a password reuse event (PRE) every time the user entered the word -- also in regular text searches, for example. Another limitation could be that they used entropy as a proxy for password strength. However, as discussed in the previous chapter, we have seen that this metric is more robust for system-generated passwords and that strength estimation has evolved over the past ten years. 
 
 
 \todo{Add a table with advantages and disadvantages of different study methods.}
@@ -34,10 +41,19 @@ general overview a la. how to run a good password study
  as we have seen before, the approaches differ especially in the way ecological validity is achieved.
  
  explain why ecological validity is super important in this context.
+ 
+ most important papers: \cite{Fahl2013EcologicalValidityPasswordStudy, Krol2016ExperimentDesign}
 	
 
 	\subsection{Ethics}
 	look into ``Critical'' folder on mendeley
+	
+	issues:
+	\begin{itemize}
+		\item collecting plain text passwords - people sometimes
+		\item finding efficient ways to attack passwords - this might also help attackers. 
+		\item sometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
+	\end{itemize}
 	
 
 	\subsection{Mechanical Turk Studies}
@@ -54,6 +70,8 @@ general overview a la. how to run a good password study
 \label{sec:rw:how-users-cope}
 
 \todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
+
+\cite{Adams1999UsersEnemy} is the mother of all HCI \& USEC papers. 
 
 
 	\subsection{Selecting Weak Passwords}
@@ -92,7 +110,7 @@ general overview a la. how to run a good password study
 	\textbf{What's the problem?}
 	consequences: phishing attacks are problematic
 	
-	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser}. 
+	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser, ZhangKennedy2016RevisitingPasswordRules}. 
 	
 	
 	
@@ -117,6 +135,9 @@ Word documents post-its (use a screen shot of french newspaper that was featured
 		compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
 		\subsubsection{Policy Fulfillment}
 
+	\subsection{Fallback Methods}
+	Click on ``forgot'' password basically every time - to avoid this, some services mainly rely on one time passwords, because users are going to forget theirs anyway. 
+
 \section{The Role of Mobile Devices}
 touch some small aspects, especially Melicher's Paper \cite{Melicher2016UsabilityMobileTextPasswords} and \cite{VonZezschwitz2014HoneyIShrunkTheKeys}
 \cite{Haque2014PsychometricsStrongPassword} 
@@ -132,6 +153,11 @@ set the stage for the emoji passwords later.
 
 	\subsection{Password Composition Policies}
 	
+	%Lingo: Adhere to a policy
+	
+	LUDS as a key term \cite{Wheeler2016zxcvbn}
+	
+		
 	Range of Policies as shown by Shay \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
 	definitely mention: 28.0\% of passwords in comp8 fulfilled the symbol requirement only by placing ``!'' at the end and using no other symbols. 
 	
@@ -173,20 +199,31 @@ set the stage for the emoji passwords later.
 	misinterpreted security advice. 
 	this is also reflected in \cite{Ur2016PerceptionsPassword}
 	
+	Great overview and critical discussion: \cite{ZhangKennedy2016RevisitingPasswordRules}
+	
+	
+	
 		
 	
 	\subsection{Offering Memorization Techniques}
+	
 	
 	\cite{Bonneau2014ReliableStorage56Bits}
 	\cite{Forget2007HelpingUsers}
 	
 	Passphrases
-	\cite{Bonneau2012LinguisticProperties}
+	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords.
+	Disadvantages: more typos (can be relieved by displaying the password in plain text \cite{Melicher2016UsabilityMobileTextPasswords})
+	
+	\cite{Bonneau2012LinguisticProperties}: passphrases already deployed in PGP 
+	
 	\cite{Shay2012CorrectHorseBatteryStaple}
 	
 	
 	
 	\subsection{Real-Time Feedback}
+	
+	History: zxcvbn paper has some intel on early work on proactive password checks (in the 80s) \cite{Wheeler2016zxcvbn}. specifically (from 1995) \cite{Bishop1995ProactivePasswordChecking}
 	
 	
 	pro-active checks -- dictionary checks Shay argues in favor of dictionary checks \cite{Shay2014CanLongPasswordsBeSecureAndUsable} 
