@@ -78,6 +78,8 @@ Flor\^{e}ncio and Herley probably conducted the largest study to date on passwor
 also \cite{Morris1979PasswordSecurity} from 1979
 
 
+``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}).
+
 	\subsection{Selecting Weak Passwords}
 
 	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
@@ -110,6 +112,7 @@ also \cite{Morris1979PasswordSecurity} from 1979
 	
 	it's not just the passwords, it's also the user name 
 	
+	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices}.
 	
 	\textbf{What's the problem?}
 	consequences: phishing attacks are problematic
@@ -224,15 +227,22 @@ set the stage for the emoji passwords later.
 	
 	Passphrases
 	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords.
-	Disadvantages: more typos (can be relieved by displaying the password in plain text \cite{Melicher2016UsabilityMobileTextPasswords})
+	Disadvantages: more typos (can be relieved by displaying the password in plain text  \cite{Melicher2016UsabilityMobileTextPasswords}), user choice often predictable
 	
-	\cite{Bonneau2012LinguisticProperties}: passphrases already deployed in PGP 
+	\cite{Bonneau2012LinguisticProperties}: passphrases already deployed in PGP, Caine and Abel password leak \cite{Carnavalet2014AnalyzingPWStrengthMeters} 
+	
+
 	
 	\cite{Shay2012CorrectHorseBatteryStaple}
 	
 	
 	
-	\subsection{Real-Time Feedback}
+	\subsection{Password Meters and Real-Time Feedback}
+	
+	\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
+	
+%	Shay \etal say that real-time feedback is not part of the password meter \cite{Shay2015SpoonfulOfSugar}
+	
 	
 	History: zxcvbn paper has some intel on early work on proactive password checks (in the 80s) \cite{Wheeler2016zxcvbn}. specifically (from 1995) \cite{Bishop1995ProactivePasswordChecking}
 	
@@ -243,7 +253,7 @@ set the stage for the emoji passwords later.
 	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
 	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
 	
-	be careful not to talk too much about persuasion in this chapter. 	
+	be careful not to talk too much about persuasion in this chapter. 
 	
 	\subsection{Password Managers}
 	
