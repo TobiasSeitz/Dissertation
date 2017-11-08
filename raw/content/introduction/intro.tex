@@ -3,24 +3,32 @@
 \chapter[Introduction]{Introduction}\label{chap:intro}
 
 \section{Motivation}
-\todo{how many people are online at this point?}
+%% MANY PEOPLE USE THE INTERNET
+Around 3.5 Billion people are using the Internet by mid-2017, i.e. about half of the world population\footnote{\url{http://www.internetworldstats.com/stats.htm}, \access{08.11.2017}}, and more than half of the households are connected to the Internet\footnote{ITU, ``Households with Internet access at home'' \url{https://de.statista.com/statistik/daten/studie/187116/umfrage/anteil-der-haushalte-mit-internetzugang/}, \access{08.11.2017}}.
 
-everybody saves data online, sensitive and intimate documents that should be protected.
-if you don't store data online yourself, you can be sure that there is some other party
-that stores data about you, e.g. doctors, insurance agencies, airlines, whatever. 
+%% SERVICES ARE CENTRAL TO THE INTERNET
+%% MANIPULATING DATA NEEDS AUTHENTICATION
+A central aspect of using the Internet is accessing the services it provides: From reading news to sharing pictures on social networks, sending emails, and doing online banking. Most of these services store data about individual users. This does not necessarily require that users interact with the data themselves. Third parties like insurance agencies, airlines, governments use the Internet to run their affairs sometimes without direct user involvement. In any case, access to sensitive data needs to be protected or else vicious attackers can exploit it. 
 
-for most consumer oriented services, providers usually ask people to sign up to use
-all of what the service has to offer. in the top 100 websites in germany 83 offer public sign ups and xx have an offline activation workflow but still offer a kind of account (e.g. banks, phone network carriers, pay tv providers, insurance companies). 
+%However, if users can access and manipulate their private data, this usually comes along with an authentication mechanism. 
+%% CONSUMER CENTRIC SERVICES ALL USE PASSWORDS
+Most consumer-oriented services ask their users to register with them to access the full spectrum of the services, because in many cases access to resources is a privilege. Determining if someone can use a resource, e.g. watching a movie, requires authentication before they are authorized. User-registration is the prerequisite before any such authentication can take place, and it is a widely adopted paradigm in the online world today. For instance, from the 100 most-visited web sites in Germany, 83 offer online registration \cite{Seitz2017PoliciesReuse}, and the remaining 17 offer offline registration (e.g. banks or insurance companies, which may be required by law to perform ID checks). All of these services rely on password-based authentication. It is possible to use many of these sites without an account. Watching videos on YouTube is perfectly possible without logging in, but the full feature set is only available after the user authenticates. Thus, it is a natural to assume that users have multiple accounts. 
 
-most of the time users are asked to create a password to access their account, make changes to their personal data or generally use a service. 
+%% THE PERVASIVENESS OF PASSWORDS MEANS PERVASIVE PROBLEMS FOR ALL OF US
+Moreover, the fact that so many websites rely on password-based authentication means that probably every single Internet user has interacted or will interact with a log-in form that prompts them for a username and password. It is a critical interaction as common as an Internet search. It requires careful interaction design to achieve both high usability and high security, which inherently generates tensions: Bad usability can lead to lower security and vice versa, but it a perfectly secure system is often unusable. 
 
-it is a topic that is important for everyone. 
+%% HIGH LEVEL SUMMARY OF THE PROBLEM SPACE
+
+
+%% HIGH LEVEL SUMMARY OF TH DESIGN SPACE
+There is only so much one can do about the design and implementation of password authentication. 
 
 in an ideal world, security teams succeed to prevent breaches. Then attacks can only focus on users. 
+Fixing the User vs Fixing the System. Fixing the system: \cite{Schmidt2013Pitfalls}
 
-Fixing the User vs Fixing the System. 
+%% THE DEATH PASSWORDS IS NOT AROUND THE CORNER
+Password based authentication has been proclaimed to become obsolete. Some said this will happen ``over time'' (Bill Gates, 2004\footnote{\url{http://news.cnet.com/2100-1029-5164733.html}}), ``by the end of the year 2016'' \footnote{\url{https://www.theguardian.com/technology/2016/may/24/google-passwords-androidB}}. Not a month goes by without a new online article announcing that users will not need passwords anymore in the near future. In fact, the ``death of passwords'' has been declared imminent for decades \cite{Herley2012PersistenceOfPasswords, Bonneau2012ReplacePasswords}. It is perhaps not preposterous to ask whether this is really going to happen in the near future or far future. 
 
-Fixing the system: \cite{Schmidt2013Pitfalls}
 
 \subsection{Authentication Costs Time}
 if you log into 3 services every day and it takes 5 seconds to type in your user name and password (\ar) you use up XX hours per year just to overcome this barriers. This is bad and we should reduce this effort. 
@@ -33,14 +41,18 @@ identity theft and consecutive social engineering more often than stealing money
 
 \todo{look at reports and compile some statistics} e.g. \cite{CSID2012PasswordHabits} 
 
+not immediately visible but important: in an enterprise environment, if employees forget passwords they often turn to the helpdesk. Handling this superfluous business costs money. 
+
 Breachlevelindex.com \footnote{\url{http://breachlevelindex.com/}}
 
-\section{Research Objectives}
+Cybercrime is real and getting worse \cite{BKA2016Bundeslagebild}.
+
+\section{Research Objectives}\label{sec:intro:researchobjectives}
 
 \subsection{Problem Statement}
-investigating user interfaces that no one ``enjoys'', yet everybody needs to use them. 
+investigating user interfaces that no one ``enjoys'', yet everybody needs to use them. Stobert even goes as far as to say ``Everyone hates passwords'' \cite{Stobert2014Agony}.
 
-most security and HCI researchers agree that authentication is an unsolved problem and there have been attempts to formally show that it is unsolved 
+most security and HCI researchers agree that authentication is an unsolved problem and there have been attempts to formally show that it is unsolved \cite{Bonneau2012ReplacePasswords, Bonneau2015ImperfectAuthentication, Herley2012PersistenceOfPasswords}. 
 
 \subsection{Better Understanding of Password Usability}
 how do we make passwords more usable for mainstream users (not experts). what du users already know, what do they do and how can we design for that. 
@@ -48,18 +60,17 @@ how do we make passwords more usable for mainstream users (not experts). what du
 \subsection{Making Users' Lives a Little Easier}
 supporting them carefully without drastic interventions or mitigations. small steps to slowly adapt behavior over time. 
 
-\section{Agenda: Claims to Support in this Thesis}
 
-\begin{description}
-\item[Perception of Password Strength] Over the past decade, users received many hints and advice to construct strong passwords. Their understanding of a secure password has changed and is sometimes wrong. We show that this is the case in section @TODO REF SEC
+\subsection{Non-Objectives}\label{sec:intro:non_objectives}
 
-\item[Password Composition Policies] As many web sites require or allow some kind of registration, their operators implement different password composition policies. We show that the criteria are manifold and largely inconsistent. Consequently, users approach enrollment with their preferred password, and are forced to apply heuristics to modify the password, depending on the policy in use. 
-
-\item[Password Value] We present a framework to assess the value a user associates with a specific password. The users might not realize that they re-use the password for accounts with different values. Knowledge about a password's value is important to design persuasive strategies to protect it, e.g. by discouraging its usage on low value accounts. (See PST).
-\end{description}
+\begin{itemize}
+	\item 
+	\item While we present a framework to make users' dealings with passwords easier and secure for them, this thesis does not provide a definite one-size-fits-all solution to select and manage passwords. 
+\end{itemize}
 
 
-\section{Main Research Contributions and Insights}
+\section{Main Research Contributions and Insights}\label{sec:intro:contributions}
+
 \subsection{Insights into the Psychology of Passwords}
 - personality and password selection are moderately associated
 - it is difficult to measure the effects, but we show how to get there.
@@ -76,6 +87,15 @@ supporting them carefully without drastic interventions or mitigations. small st
 - we propose a framework that guides service providers in making users dealings with passwords easier (the password support toolkit)
 - we designed and evaluated a password manager that follows the design principles and recommendations of the password support toolkit. 
 
+%\begin{description}
+%	\item[Perception of Password Strength] Over the past decade, users received many hints and advice to construct strong passwords. Their understanding of a secure password has changed and is sometimes wrong. We show that this is the case in section @TODO REF SEC
+%	
+%	\item[Password Composition Policies] As many web sites require or allow some kind of registration, their operators implement different password composition policies. We show that the criteria are manifold and largely inconsistent. Consequently, users approach enrollment with their preferred password, and are forced to apply heuristics to modify the password, depending on the policy in use. 
+%	
+%	\item[Password Value] We present a framework to assess the value a user associates with a specific password. The users might not realize that they re-use the password for accounts with different values. Knowledge about a password's value is important to design persuasive strategies to protect it, e.g. by discouraging its usage on low value accounts. (See PST).
+%\end{description}
+
+
 \section{Thesis Overview}
 \textbf{Part I: Background and Related Work}
 \textit{Chapter 2:}
@@ -91,6 +111,12 @@ Keeping the human in the loop, Usability Challenges, how users cope with passwor
 
 \textit{Chapter 7:}
 
+
+\section{Remarks}
+\begin{itemize}
+\item Throughout this dissertation pronouns are used in the plural even when speaking about an individual, e.g. ``the user'' is referred to as ``they'' instead of ``he'' or ``she'', to avoid discrimination of any demographic group. 
+\item As is common in HCI literature, the author also utilizes ``We'' instead of ``I'' to acknowledge the work of any collaborators. In later more opinionated parts, the explicit usage of ``I'' intends to communicate the subjective nature of thoughts and interpretations.
+\end{itemize}
 
 
 
