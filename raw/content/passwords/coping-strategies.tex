@@ -24,6 +24,8 @@ general overview a la. how to run a good password study
 	\item Field study only with Logging \cite{Florencio2007LargeScaleStudyPasswordHabits}
 	\item Field study with an interactive prototype, often in conjunction with a survey / Diary 
 	\item Mechanical Turk / CrowdSourced 
+	\item diary study, e.g. \cite{Hayashi2011DiaryStudyPWs}
+	\item Triangulation (survey, log analysis) \cite{Wash2016UnderstandingPasswordChoices}
 \end{itemize}
 
 all but the first allow controlled selection of passwords
@@ -38,7 +40,13 @@ Flor\^{e}ncio and Herley probably conducted the largest study to date on passwor
 
 
 	\subsection{Ecological Validity}
+	
+	
+	
  as we have seen before, the approaches differ especially in the way ecological validity is achieved.
+ 
+ 
+ ``Ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system.'' \cite{Komanduri2011OfPasswordsAndPeople}
  
  explain why ecological validity is super important in this context.
  
@@ -62,8 +70,8 @@ Flor\^{e}ncio and Herley probably conducted the largest study to date on passwor
 	\cite{Shay2015UsablePoliciesMTurk}
 	\cite{Ur2016PerceptionsPassword} \cite{Melicher2016UsabilityMobileTextPasswords} \cite{Ur2017DataDrivenPWMeter}
 	problem: in europe it's not immediately possible, but there are alternatives. 
-
-
+	
+	\cite{Huha2015UserReplaceablePasswords}
 
 	
 \section{User Behavior Regarding Passwords}
@@ -112,7 +120,12 @@ also \cite{Morris1979PasswordSecurity} from 1979
 	
 	it's not just the passwords, it's also the user name 
 	
-	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices}.
+	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices} -- but there are contradictory results on this matter. -- Stobert and Biddle argue in the other direction \cite{Stobert2014PasswordLifeCycle}. 
+	
+	reuse statistic overview of different papers: \cite{Wash2016UnderstandingPasswordChoices} in the discussion section. 
+	
+	term that you read ever so often: users have a ``go-to password'' that they try first
+	and then often the policy can make them change another one. But! If the go-to password is strong and has certain characteristics (as is demonstrated in chapter \ref{chap:policies-reuse}), reusing this is possible and its threats perhaps underestimated. 
 	
 	\textbf{What's the problem?}
 	consequences: phishing attacks are problematic
@@ -166,6 +179,8 @@ set the stage for the emoji passwords later.
 	%Lingo: Adhere to a policy
 	
 	
+	Weir \etal categorize policies into ``explicit'' and ``implicit'' policies \cite{Weir2010MetricsPolicies}, where explicit policies have predefined rules about the password structure (e.g. LUDS policy). Implicit policies are based on the estimated strength and are somewhat more volatile and intransparent to the users. Example: blacklist only becomes visible once the user tries to pick a password that's contained in the list. There are also ``external'' policies where the user's password is automatically changed by the system to add some randomness
+	
 	
 	LUDS as a key term \cite{Wheeler2016zxcvbn}
 	
@@ -197,6 +212,8 @@ set the stage for the emoji passwords later.
 	
 	\cite{Chiasson2015QuantifyingExpiration}
 	\cite{Blocki2013OptimizingPasswordPolicies}
+	
+	Early comparison of the effects of policies on \textit{human} password selection by Komanduri \etal
 	\cite{Komanduri2011OfPasswordsAndPeople}
 	
 	
@@ -222,16 +239,17 @@ set the stage for the emoji passwords later.
 	\subsection{Offering Memorization Techniques}
 	
 	
+	early approaches: random but pronounceable passwords. (good overview in \cite{Kuo2006HumanSelectionMnemonic})
+	
 	\cite{Bonneau2014ReliableStorage56Bits}
 	\cite{Forget2007HelpingUsers}
 	
-	Passphrases
-	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords.
+	Passphrases (\todo{maybe even merge this with subsection on advice})
+	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords, better to enter on virtual keyboards, e.g. TVs (although we don't have any data for that, but that's okay because passwords play a minor role (but still exist there)).
+	
 	Disadvantages: more typos (can be relieved by displaying the password in plain text  \cite{Melicher2016UsabilityMobileTextPasswords}), user choice often predictable
 	
 	\cite{Bonneau2012LinguisticProperties}: passphrases already deployed in PGP, Caine and Abel password leak \cite{Carnavalet2014AnalyzingPWStrengthMeters} 
-	
-
 	
 	\cite{Shay2012CorrectHorseBatteryStaple}
 	
