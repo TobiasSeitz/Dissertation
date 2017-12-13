@@ -32,6 +32,8 @@
 
 \makeindex
 
+\usepackage{titlesec} % lets us format the chapters etc.
+
 \include{texpreamble} % load additional stuff
 \setcounter{tocdepth}{1}
 \begin{document}
@@ -40,13 +42,14 @@
 %\maketitle
 \tableofcontents
 
+
 \mainmatter
 
 % ################################################### MAIN PART
 
 \input{content/introduction/intro}
 \part{AUTHENTICATION ON THE WEB}
-
+\label{part:related_work}
 
 %\input{content/introduction/contribution}
 %\input{content/introduction/overview}
@@ -71,7 +74,7 @@
 % motivate that it's still important to do this, because we don't already
 % know everything from related work. 
 \input{content/problem_space/pasdjo} %published
-%\input{content/problem_space/auth_tasks} % can o 
+%\input{content/problem_space/auth_tasks} % can go 
 \input{content/problem_space/mm_pwm} %published
 \input{content/problem_space/policies_reuse} %published
 %\input{content/problem_space/roskilde_study}

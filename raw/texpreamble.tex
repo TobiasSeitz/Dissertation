@@ -12,8 +12,6 @@
 \mysubtitle\\}
 \date{\today}
 
-
-
 %Stats
 
 \newcommand{\statslt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$<$~#3}
@@ -40,3 +38,49 @@
 \newcommand{\todo}[1]{\textcolor{pinkaccent}{\textbf{@@@TODO} {#1}}\ }
 \newcommand{\ar}{\textcolor{pinkaccent}{\textbf{@@@TODO Add Reference}}\ }
 \newcommand{\vspc}{\vspace*{2cm}}
+
+\usepackage[light]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+
+\titleformat{\chapter} % command
+[display] % shape
+{\roboto\bfseries\fontsize{40}{48}\selectfont} % format, %fontsize(size, baselineskip = 1.2 x size)
+{
+	\thechapter
+} % label
+{0.5ex} % separation between label and title body and it must be a length and not be empty.
+{} % before code
+[] % after-code
+
+\titleformat{\section} % command
+[block] % shape
+{\roboto\bfseries\LARGE} % format, %fontsize(size, baselineskip = 1.2 x size)
+{
+	\thesection
+} % label
+{0.5ex} % separation between label and title body and it must be a length and not be empty.
+{} % before code
+[] % after-code
+
+\titleformat{\subsection} % command
+[block] % shape
+{\roboto\bfseries\large} % format, %fontsize(size, baselineskip = 1.2 x size)
+{
+	\thesubsection
+} % label
+{0.5ex} % separation between label and title body and it must be a length and not be empty.
+{} % before code
+[] % after-code
+
+\titleformat{\subsubsection} % command
+[block] % shape
+{\roboto\bfseries\normalsize} % format, %fontsize(size, baselineskip = 1.2 x size)
+{
+	\thesubsubsection
+} % label
+{0.5ex} % separation between label and title body and it must be a length and not be empty.
+{} % before code
+[] % after-code
+
+\titlespacing*{\section}{-5pt}{1cm}{0.75cm}
+\titlespacing*{\subsection}{-4pt}{0.75cm}{0.5ex}
+\titlespacing*{\subsubsection}{-4pt}{0.75cm}{0.5ex}
