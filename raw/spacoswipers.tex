@@ -20,7 +20,8 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{colortbl}
-\newcommand{\citep}[1]{\cite{#1}}
+\usepackage{glossaries}
+\newcommand{\citep}[1]{\cite{#1}} %convenience for texmaker, but texstudio doesn't have this problem. 
 
 \usepackage[top=2cm, bottom=1.25in, left=2cm, right=2cm]{geometry}
 \usepackage{url}
@@ -31,6 +32,8 @@
 %\colorlet{diagrambg}{platinum}
 
 \makeindex
+
+\makeglossaries
 
 \usepackage{titlesec} % lets us format the chapters etc.
 
@@ -95,7 +98,6 @@
 \part{THE PASSWORD SUPPORT TOOLKIT}
 \input{content/synth_pst/pst-intro}
 \input{content/synth_pst/pwrm}
-\input{content/synth_pst/ideas}
 %\input{content/synth_pst/policy-fulfillment}
 %\input{content/synth_pst/coping-strategies}
 
@@ -115,9 +117,10 @@
 
 %____________________________________________________________
 
+\printglossaries
+
 % REFERENCES FORMAT
 % References must be the same font size as other body text.
-
 \bibliographystyle{SIGCHI-Reference-Format}
 %\bibliographystyle{acm-sigchi-modern}
 \bibliography{library}
