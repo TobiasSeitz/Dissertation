@@ -7,3 +7,5 @@ Things I did to write the thesis
 - If you enter a DOI in Mendeley and click the small magnifying glass, it will try to retrieve all the information it can get automatically. 
 - finding untagged papers: a -tag:Methodology -tag:"Coping Strategies" -tag:Qualitative -tag:Quantitative -tag:"Password Selection Support" -tag:Alternatives -tag:Persuasion -tag:Psychology -tag:Personality -tag:Foundational -tag:Observation -tag:Technical -tag:Phishing -tag:Warnings -tag:SSO -tag:"Password Manager" -tag:Mobile -tag:"Graphical Authentication" -tag:Memorability -tag:"Password Meter" -tag:Thesis -tag:Report -tag:HCI -tag:Critical -tag:Emoji -tag:Statistics -tag:"Mental Models" -tag:Policies
 - "missing \endcsname inserted" could mean there's an Umlaut in one of your Citation Keys (\cite{Baß2017})
+- Use TexStudio instead of Texmaker. It's the shizzle.
+- In TexStudio, hitting the "Esc" key closes the PDF viewer by default. This was driving me nuts, and I removed the keyboard shortcut in "View" -> "Close Something" (set to "\<none\>")

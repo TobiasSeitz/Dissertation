@@ -77,24 +77,27 @@ Many people argue that way, e.g. \cite{Herley2012PersistenceOfPasswords}
 
 \begin{itemize}
 	\item While we present a framework to make users' dealings with passwords easier and secure for them, this thesis does not provide a definite one-size-fits-all solution to select and manage passwords. As Yang \etal put it: ``If a strategy is widely used, then attackers may develop strategy-specific methods which can efficiently guess the passwords.'' -- this increases the problem space 
+	\item The thesis talks about password strength and security aspects. However, we do not aim to advance password security from a technical perspective, e.g. by proposing new encryption algorithms. The focus lies on understanding and supporting humans. 
 \end{itemize}
 
 
 \section{Main Research Contributions and Insights}\label{sec:intro:contributions}
 
 \subsection{Insights into the Psychology of Passwords}
+- user perceptions of password strength (Chapter \ref{chap:pasdjo})
 - personality and password selection are moderately associated
-- it is difficult to measure the effects, but we show how to get there.
+- it is difficult to measure the effects, but we show how to get there. (Chapter \ref{chap:pws_and_personality})
 
-\subsection{Designing With Password Reuse In Mind}
-- we audited the top 83 websites that offer public authentication in germany and found that their password policies (at the time) did not prevent password reuse
-- we investigated users mental models of password managers and found that they are for the largest part a black box and are not trusted.
+\subsection{Designing With Password Coping Strategies In Mind}
+- we audited the top 83 websites that offer public authentication in germany and found that their password policies (at the time) did not prevent password reuse. Chapter \ref{chap:policies_reuse}
+- we investigated users mental models of password managers and found that they are for the largest part a black box and are not trusted. \ref{chap:mental_models_mm}
+- empower users to create stronger passwords: with emojis. 
 
-\subsection{When and Why to Apply Nudges}
-- if users face a password nudge every time the effects can wear off 
-- we should apply nudges if we think the account is important. important accounts contain large datasets of personal or financial information which make them valuable targets for attackers.
+%\subsection{When and Why to Apply Nudges}
+% - if users face a password nudge every time the effects can wear off 
+% - we should apply nudges if we think the account is important. important accounts contain large datasets of personal or financial information which make them valuable targets for attackers.
 
-\subsection{Holistic Password Support}
+\subsection{A Framework for Holistic Password Support}
 - we propose a framework that guides service providers in making users dealings with passwords easier (the password support toolkit)
 - we designed and evaluated a password manager that follows the design principles and recommendations of the password support toolkit. 
 

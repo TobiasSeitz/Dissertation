@@ -27,11 +27,16 @@ The PSST lets the user know, that their strategy is legitimate. It acknowledges 
 
 The PSST addresses password strategies, by learning them through both active involvement and observation. 
 
+
 \subsection{Learning Account Values}
 The PSST adjusts nudges and persuasion to the users' perceived value of a password. 
 
 \subsubsection{Measuring Password Value}
 Users often fail to assess the value of passwords correctly as we have seen in (@TODO REF SEC). 
+
+\subsection{Respect Context Factors beyond Account Value}
+Groß \etal argued that cognitive depletion has a notable impact on the strength of passwords \cite{Gross2016EffectCognitiveEffort}. They proposed including a remark like ``Only set a new password when you feel fresh and awake'' in password advice. This kind of remark fits best in a password reset task. 
+
 
 \section{Composition Policy Fulfillment}
 
@@ -52,3 +57,7 @@ our results so far showed mixed results about successful nudges.
 
 
 
+Conclusions: Most mitigations seem to fit better into the scenario when the user resets their password. This has a couple of advantages:
+\begin{itemize}
+	\item The system already knows the user. This can be either a webservice provider or a password manager. So, it can tailor the experience and take a wide range of context factors into account. 
+\end{itemize}
