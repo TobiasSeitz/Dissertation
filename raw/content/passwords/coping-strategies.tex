@@ -1,32 +1,326 @@
-\chapter[The Human Side: Selecting and Coping]{The Human Side: Selection and Coping}\label{chap:selection_coping_strategies}
+\chapter[Passwords -- A User Perspective]{Passwords -- \\
+	A User Perspective}\label{chap:rw:user_perspective}
+%lingo: arduous
+
+``but his thoughts were so full of the great riches he should possess, that he could not think of the word to make it open, but instead of `Sesame,' said, `Open, Barley!' and was much amazed to find that the door remained fast shut. He named several sorts of grain, but still the door would not open, and the more he endeavoured to remember the word `Simsim,' the more his memory was confounded, and he had as much forgotten it as if he had never heard it mentioned.'' (Kasim's predicament in \textit{Ali Baba and the Forty Thieves}) \todo{this could be the opening of the chapter / fancychapter}
+
+Morris and Thompson were already concerned with user behavior regarding passwords in 1979 \cite{Morris1979PasswordSecurity}. They identified that users choose predictable passwords and that this can be leveraged for attacks. So, they suggested enforcing a certain minimum password length (six characters). At the time, the users were mostly professionals that received training to operate computers and could thus also have been trained to pick less predictable passwords \cite{Maguire2012YouOnlyLiveTwice}. But as computers were introduced to a larger audience, more people were exposed to password authentication. Naturally, this also induced a growing number of attacks, and it is increasingly difficult for users to defend themselves against them (see. Section \ref{sec:rw:attack_vectors}). Nowadays, password policies are in place that require not only a minimum of eight characters, but also mandate mixed-case letters, digits and special symbols to start with. The HCI community noticed the users' struggle in the 1990s and that we can -- and should -- design authentication systems with usability in mind. Perhaps, one of the breaking points where a new school of thought turned up in the literature was a paper by Adams and Sasse in 1999 \cite{Adams1999UsersEnemy}. The central and novel theme in there was a shift from \textit{fixing} the user to \textit{acknowledging} user behavior and designing for it. The paper managed to see over 1500 citations as of writing this.
+
+This chapter looks at the literature that mostly came after this seminal work. It discusses the users' problems, solutions, feelings, and opinions about using passwords. An essential goal is to give the reader an empathetic perspective and provide background information to understand why it seems hard to come up with viable solutions to make users' lives less frustrating. To get there, we first take a brief look at conducting user research with passwords. Hereafter we disseminate typical coping strategies and solutions. The chapter concludes with a comment on the discourse that has been going on between the very different schools of thought about passwords. 
+
+%Each person who gets in contact with the Internet will at some point create a password.
+
+% Everyone develops their own strategy how to do this and how to cope with passwords, probably already in early teenage years \cite{VonZezschwitz2013SurvivalShortest}. These strategies however are not unique and show macroscopic commonalities, which became evident after the first large-scale password leaks. 
+
+%Important: Under coping strategy, we also understand the selection process, because choosing a weak password over a strong one is also one way to \textit{cope} with the large number of passwords and the memorability burden. (make sure to mention this in the general introduction already.)
 
 
+
+%@@TODO cite Wash paper @SOUPS 2016.
+
+\cite{Bailey2014StatisticsReuse,Bojinov2010KamouflagePWM,Bonneau2015SecretsLies,Brown2004GeneratingPWs,Chiasson2009InterferencesGraphical,Conklin2004PWAuthenticationSystemPerspective,CSID2012PasswordHabits,Das2014TangledWeb,Dourish2004UserStrategiesEveryday,Florencio2014PasswordPortfoliosFiniteUser,Forget2015CYOA}
+\cite{Gaw2005ReuseRecycle,Gaw2006PasswordManagement,Habib2017Blacklists,Haque2014Hierarchy,Hayashi2011DiaryStudyPWs,Huha2015UserReplaceablePasswords,Ives2004DominoEffectReuse,Katsini2017StrategiesGraphicalPasswords,Keith2009PassphraseDesign,Komanduri2011OfPasswordsAndPeople,Kothari2017PasswordLogbooks,Kuo2006HumanSelectionMnemonic,Li2017,Loutfi2015PasswordsOtherSideOfTheFence,Lyastani2016PWMangling,Notoatmodjo2007,Peisert2013PriciplesAuthentication,Riley2006WhatUsersKnowWhatTheyDo}
+\cite{Shay2014ReligiousAunt,Shay2010EncounteringPasswordRequirements,Singh2007PasswordSharing,Stobert2014a,Stobert2015,Stobert2014PWMThatDoesntRemember,Stobert2014PasswordLifeCycle,Stobert2015ExpertPassword}
+\cite{Ur2015PWCreationLab,Bruggen2013ModifiyngUnlockingBehavior,Veras2012VisualizingSemanticsPasswords,Wang2015ChinesePWs,Wash2016UnderstandingPasswordChoices,Yang2016MnemonicSentenceBased,ZhangKennedy2016RevisitingPasswordRules}
+
+
+
+
+\section{Methodology: Running Password Studies}
+
+general overview a la. how to run a good password study 
+
+\cite{Krol2016ExperimentDesign,Peer2017,Consolvo2003,Ross2010,Sotirakopoulos2011,Oppenheimer2009InstructionalManipulationChecks,Harbach2016HardLockLife,Barbera2013,Carreras2013,Chamberlain2012ResearchInTheWild,Henze2013EmpiricalResearchUbiquitous,Kuhn1993,VonZezschwitz2013SurvivalShortest,Hassenzahl2003,Mazurek2013Measuring,Egelman2015a,Rosoff2014,Savage2012}
+
+\begin{itemize}
+	\item Analyzing leaked data
+	\item Lab study \cite{Sotirakopoulos2011}
+	\item Field study only with Logging \cite{Florencio2007LargeScaleStudyPasswordHabits}
+	\item Field study with an interactive prototype, often in conjunction with a survey / Diary 
+	\item Mechanical Turk / CrowdSourced 
+	\item diary study, e.g. \cite{Hayashi2011DiaryStudyPWs}
+	\item Triangulation (survey, log analysis) \cite{Wash2016UnderstandingPasswordChoices}
+\end{itemize}
+
+all but the first allow controlled selection of passwords
+
+Example: 
 Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
 
 \cite{Florencio2007LargeScaleStudyPasswordHabits}. The established protected password lists (PPL) to avoid intruding into people's privacy. They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). It was not possible to trace the incoming data back to a specific user, which might have resulted in over counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification, the key logging module of the toolbar would record a password reuse event (PRE) every time the user entered the word -- also in regular text searches, for example. Another limitation could be that they used entropy as a proxy for password strength. However, as discussed in the previous chapter, we have seen that this metric is more robust for system-generated passwords and that strength estimation has evolved over the past ten years. 
 
 
-@@TODO cite Wash paper @SOUPS 2016.
+\todo{Add a table with advantages and disadvantages of different study methods.}
 
 
-\section{Methodology: Running Password Studies}
 	\subsection{Ecological Validity}
-	\subsection{Mechanical Turk Studies}
-		
-\section{How Users Select Passwords}
-	\subsection{Problem: Weak Passwords}
 	
-\section{How Users Traditionally Cope with Passwords}
-	\subsection{Tools}
-		\subsubsection{Problem: Accessibility}
-Word documents post-its (use a screenshot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .
+	
+	
+ as we have seen before, the approaches differ especially in the way ecological validity is achieved.
+ 
+ 
+ ``Ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system.'' \cite{Komanduri2011OfPasswordsAndPeople}
+ 
+ explain why ecological validity is super important in this context.
+ 
+ most important papers: \cite{Fahl2013EcologicalValidityPasswordStudy, Krol2016ExperimentDesign}
+	
 
-	\subsection{Problem: Password Re-Use}
+	\subsection{Ethics}
+	look into ``Critical'' folder on mendeley
+	
+	issues:
+	\begin{itemize}
+		\item collecting plain text passwords - people sometimes
+		\item finding efficient ways to attack passwords - this might also help attackers. 
+		\item sometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
+	\end{itemize}
+	
+
+	\subsection{Mechanical Turk Studies}
+	
+	propagated and most commonly used at CMU e.g. \cite{Mazurek2013Measuring} \cite{Shay2014CanLongPasswordsBeSecureAndUsable} \cite{Shay2016DesigningPasswordPolicies}
+	\cite{Shay2015UsablePoliciesMTurk}
+	\cite{Ur2016PerceptionsPassword} \cite{Melicher2016UsabilityMobileTextPasswords} \cite{Ur2017DataDrivenPWMeter}
+	problem: in europe it's not immediately possible, but there are alternatives. 
+	
+	\cite{Huha2015UserReplaceablePasswords}
+
+	
+\section{User Behavior Regarding Passwords}\label{sec:rw:how-users-cope}
+
+
+\todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
+
+
+
+\cite{Adams1999UsersEnemy} is considered the mother of all HCI \& USEC papers. -- but there were many others before that.
+
+``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' from \cite{Feldmeier1990UnixPasswordSecurity},
+
+also 
+
+
+``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}).
+
+	\subsection{Selecting Weak Passwords}
+
+	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
+	
+	\cite{Jakobsson2013BenefitsUnderstandingPWs}
+
+		\subsubsection{Why do Users Select Weak Passwords?}
+	
+	- policies allow it (\cite{Seitz2017PoliciesReuse})
+	- wrong mental model or misinterpretation of security advice (\cite{Ur2015PWCreationLab, Ur2016PerceptionsPassword, Seitz2017PASDJO})
+	- because they don't care
+	- ... they underestimate the threat
+	- ... they are right to judge the account as low value (who would hack me?) \cite{LastPass2016PersonalitiesGetUsHacked}
+	
+	
+	qualitative studies \cite{Ur2015PWCreationLab, Stobert2014PasswordLifeCycle} 
+	quantitative studies \cite{Ur2016PerceptionsPassword, Seitz2017PASDJO}
+	
+	\subsubsection{What's the Problem with Weak Passwords?}
+	usually, people tend to use stronger PWs for important accounts
+
+	
+
+
+	\subsection{Password Reuse}
+	too many accounts problem. 
+	
+	finite effort, and the payoff is invisible (comparison to smoking: I won't be affected, and in many cases that's true. But if you are affected you regret your behavior. )
+	
+	reuse is the most convenient way but probably the most severe threat to one's online identity and finances. This is a hard problem. 
+	
+	it's not just the passwords, it's also the user name 
+	
+	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices} -- but there are contradictory results on this matter. -- Stobert and Biddle argue in the other direction \cite{Stobert2014PasswordLifeCycle}. 
+	
+	reuse statistic overview of different papers: \cite{Wash2016UnderstandingPasswordChoices} in the discussion section. 
+	
+	term that you read ever so often: users have a ``go-to password'' that they try first
+	and then often the policy can make them change another one. But! If the go-to password is strong and has certain characteristics (as is demonstrated in chapter \ref{chap:policies-reuse}), reusing this is possible and its threats perhaps underestimated. 
+	
+	\textbf{What's the problem?}
+	consequences: phishing attacks are problematic
+	
+	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser, ZhangKennedy2016RevisitingPasswordRules}. 
+	
+	
+	
+	
+	\subsubsection{Reuse Strategies}
+	address the role of policies (see \cite{Seitz2017PoliciesReuse}).
+	
+	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
+	
+	\cite{Stobert2015ExpertPassword}
+	
+	
+	\subsection{Tools (Writing Down)}
+	\cite{Herley2012PersistenceOfPasswords} is in favor of writing down IF the location is secure enough.
+	
+		\subsubsection{Problem: Accessibility for Local Attackers}
+Word documents post-its (use a screen shot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .
+
+	\subsection{Password Re-Use}
+	
+	
+	
+		\subsection{Categorization}
+		compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
 		\subsubsection{Policy Fulfillment}
-		\subsubsection{Re-Use Approaches}
 
-\section{Helping Users}
+	\subsection{Fallback Methods}
+	Click on ``forgot'' password basically every time - to avoid this, some services mainly rely on one time passwords, because users are going to forget theirs anyway. 
+
+\section{The Role of Mobile Devices}
+touch some small aspects, especially Melicher's Paper \cite{Melicher2016UsabilityMobileTextPasswords} and \cite{VonZezschwitz2014HoneyIShrunkTheKeys}
+\cite{Haque2014PsychometricsStrongPassword} 
+
+talk about the rise of graphical and biometric authentication. 
+
+
+set the stage for the emoji passwords later. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%% COUNTERMEASURES
+%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Countermeasures}
+
+
+	\subsection{Password Composition Policies}
+	
+	the idea of policies dates back to the 70s: Morris and Thompson suggested to make users
+	either choose longer passwords or assign passwords to them \cite{Morris1979PasswordSecurity}
+	
+	%Lingo: Adhere to a policy
+	
+	
+	Weir \etal categorize policies into ``explicit'' and ``implicit'' policies \cite{Weir2010MetricsPolicies}, where explicit policies have predefined rules about the password structure (e.g. LUDS policy). Implicit policies are based on the estimated strength and are somewhat more volatile and intransparent to the users. Example: blacklist only becomes visible once the user tries to pick a password that's contained in the list. There are also ``external'' policies where the user's password is automatically changed by the system to add some randomness
+	
+	
+	LUDS as a key term \cite{Wheeler2016zxcvbn}
+	
+		
+	Range of Policies as shown by Shay \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
+	definitely mention: 28.0\% of passwords in comp8 fulfilled the symbol requirement only by placing ``!'' at the end and using no other symbols. 
+	
+	\cite{ZhangKennedy2016RevisitingPasswordRules}
+	
+	
+	Workplace-focused: \cite{Inglesant2010TrueCostOfUnusablePolicies} and \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+	
+	\cite{Florencio2014AdministratorsGuide} 
+	
+	\cite{Ur2015PWCreationLab}
+	
+	\cite{Shay2010EncounteringPasswordRequirements}
+	
+	\cite{Shay2016DesigningPasswordPolicies}
+	
+	\cite{Weir2010MetricsPolicies}
+	
+	\cite{Wang2015EmperorsPolicies}
+	
+	
+	\cite{Florencio2010WhereDoPoliciesComeFrom}
+	
+	\cite{Horsch2016PasswordPolicyMarkup}
+	
+	\cite{Chiasson2015QuantifyingExpiration}
+	\cite{Blocki2013OptimizingPasswordPolicies}
+	
+	Early comparison of the effects of policies on \textit{human} password selection by Komanduri \etal
+	\cite{Komanduri2011OfPasswordsAndPeople}
+	
+	
+	Shay tried to come up with an algorithm that lets administrators decide which policy to use \cite{Shay2009PolicySimulation}.
+	
+	
+
 	\subsection{Advice and Guidelines}
-	\subsection{Memorization Techniques}
-	\subsection{Real-Time Feedback}
+	
+	there is a plethora of advice and guidelines out there, but it's not all the same \footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}
+	
+	education in password matters only has so much effect. 
+	\cite{Forget2007HelpingUsers} says that even instructions don't work
+	
+	There's some work that argues that users want to create stronger passwords at least for some accounts, but they had
+	misinterpreted security advice. 
+	this is also reflected in \cite{Ur2016PerceptionsPassword}
+	
+	Great overview and critical discussion: \cite{ZhangKennedy2016RevisitingPasswordRules}
+	
+	
+	make it persuasive \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+	
+	
+		
+	
+	\subsection{Offering Memorization Techniques}
+	
+	
+	early approaches: random but pronounceable passwords. (good overview in \cite{Kuo2006HumanSelectionMnemonic})
+	
+	\cite{Bonneau2014ReliableStorage56Bits}
+	\cite{Forget2007HelpingUsers}
+	
+	Passphrases (\todo{maybe even merge this with subsection on advice})
+	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords, better to enter on virtual keyboards, e.g. TVs (although we don't have any data for that, but that's okay because passwords play a minor role (but still exist there)).
+	
+	Disadvantages: more typos (can be relieved by displaying the password in plain text  \cite{Melicher2016UsabilityMobileTextPasswords}), user choice often predictable
+	
+	\cite{Bonneau2012LinguisticProperties}: passphrases already deployed in PGP, Caine and Abel password leak \cite{Carnavalet2014AnalyzingPWStrengthMeters} 
+	
+	\cite{Shay2012CorrectHorseBatteryStaple}
+	
+	
+	
+	\subsection{Password Meters and Real-Time Feedback}
+	
+	\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
+	
+%	Shay \etal say that real-time feedback is not part of the password meter \cite{Shay2015SpoonfulOfSugar}
+	
+	
+	History: zxcvbn paper has some intel on early work on proactive password checks (in the 80s) \cite{Wheeler2016zxcvbn}. specifically (from 1995) \cite{Bishop1995ProactivePasswordChecking}
+	
+	
+	pro-active checks -- dictionary checks Shay argues in favor of dictionary checks \cite{Shay2014CanLongPasswordsBeSecureAndUsable} 
+	black lists \cite{Habib2017Blacklists} 
+	
+	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
+	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
+	
+	be careful not to talk too much about persuasion in this chapter. 
+	
 	\subsection{Password Managers}
+	
+	list all the pro's and con's of PWMs here in different dimensions, e.g. security and usability, kind of similar to \cite{Bonneau2012ReplacePasswords}
+	
+	
+	
+	%% from SOUPS MM Poster
+	We situate our work in understanding user behavior and attitudes regarding passwords. Here, large parts of the literature focus on \textit{coping strategies} that emerge with a growing number of accounts \cite{Florencio2007LargeScaleStudyPasswordHabits, Florencio2014PasswordPortfoliosFiniteUser}. For example, Stobert and Biddle conducted qualitative analyses to formalize the way users live with their passwords (the ``Password Life Cycle") \cite{Stobert2014PasswordLifeCycle}. This model depicts how users choose, commit, reuse, and reset their passwords. Their work also delivers valuable insights into memorization and organization strategies: Users have mental lists of passwords, e.g. a list for important accounts or a list per website topic. Without explicitly mentioning, the findings contribute to a mental model of password reuse. This is important, because reuse is one of the most common coping strategies \cite{Das2014TangledWeb, Gaw2006PasswordManagement, Hayashi2011DiaryStudyPWs} and many researchers discourage it, because a breach at one site can compromise many others \cite{Bonneau2012ScienceOfGuessing, Komanduri2011OfPasswordsAndPeople}. 
+	
+	To facilitate coping with passwords and possibly minimize reuse, dedicated tools have been investigated and proposed. Besides industry-driven password managers, HCI research has proposed a number of alternatives. For instance, Stobert and Biddle also propose a password manager that is designed to boost trust as it does not directly store passwords, but rather offers a image cues to recall passwords \cite{Stobert2014PWMThatDoesntRemember}. 
+	
+	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing.
+	
+	
+\section{The Passionate Discourse About Passwords}\label{sec:rw:passionate_discourse}
+talk about how critical and passionate this topic has been debated in the literature
+
+--> surprisingly, a lot of position papers (sometimes pure argumentation, sometimes with mathematical/logical reasoning) 
+
+Address Herley's, Florencio's, Sasse's work here. 
+
+e.g. Counterfactuals, Bullying, Finite Effort 

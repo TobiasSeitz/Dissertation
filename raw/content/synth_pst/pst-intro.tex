@@ -10,7 +10,7 @@ The Password Selection Support Toolkit (PSST) is a holistic approach to help use
 \end{enumerate}
 All this leads to an improvement of user experience as both pragmatic and hedonic qualities are maximized. 
 
-\section{Privacy Concerns}
+\section{Respecting Privacy Concerns}
 To make sure users can fully benefit from the power of the PSST, it is required that no information about the user's behavior travels through the web, i.e. to remote servers. Such knowledge would deeply compromise protection against foreign access. Attackers would intensify attacks on the stored behavioral data that would allow them to reverse engineer credentials. This has to be avoided at all costs. Consequently, the calculations need to take place on the client-side. With increasing computational power even for consumer electronic devices this does not seem to be a tough restriction. 
 
 \section{Adapting to Existing Strategies}
@@ -27,11 +27,16 @@ The PSST lets the user know, that their strategy is legitimate. It acknowledges 
 
 The PSST addresses password strategies, by learning them through both active involvement and observation. 
 
+
 \subsection{Learning Account Values}
 The PSST adjusts nudges and persuasion to the users' perceived value of a password. 
 
 \subsubsection{Measuring Password Value}
 Users often fail to assess the value of passwords correctly as we have seen in (@TODO REF SEC). 
+
+\subsection{Respect Context Factors beyond Account Value}
+Groß \etal argued that cognitive depletion has a notable impact on the strength of passwords \cite{Gross2016EffectCognitiveEffort}. They proposed including a remark like ``Only set a new password when you feel fresh and awake'' in password advice. This kind of remark fits best in a password reset task. 
+
 
 \section{Composition Policy Fulfillment}
 
@@ -47,5 +52,12 @@ However, in case the PSST manage to persuade a user towards are slightly differe
 \section{Hedonic Qualities}
 Hedonic UX qualities are often overlooked. The design and incorporates them from the very beginning. 
 
+\section{Nudging Where Appropriate}
+our results so far showed mixed results about successful nudges. 
 
 
+
+Conclusions: Most mitigations seem to fit better into the scenario when the user resets their password. This has a couple of advantages:
+\begin{itemize}
+	\item The system already knows the user. This can be either a webservice provider or a password manager. So, it can tailor the experience and take a wide range of context factors into account. 
+\end{itemize}

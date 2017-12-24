@@ -1,0 +1,3 @@
+#! /bin/bash
+
+rsync -va --exclude '.git' --exclude 'raw/build' --progress /Users/Tobi/Dissertation/ /Users/Tobi/Dropbox/Dissertation/

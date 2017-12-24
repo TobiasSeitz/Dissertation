@@ -1,0 +1,31 @@
+\chapter[Ideas for Holistic Password Support]{Ideas}\label{chap:pst:ideas}
+
+\section{Personalizing Password Policies}
+
+Segreti \etal SOUPS 2017
+\cite{Seitz2017PPT}
+\cite{Segreti2017AdaptivePolicies}
+
+\section{Contextualizing Password Feedback}
+like \cite{Kroeze2012GamifyingAuthentication} Pokémon Go could use an evolving Pokemon as password strength feedback. 
+
+``wuerstel meter'' as an example that we implemented.
+
+minimizes habituation effects as mentioned by Ur \etal \cite{Ur2012HelpingUsersCreateBetterPasswords}.
+
+\section{What do other people do? Clichés and biased views of password selection strategies}
+people are biased to think that their password strategy is unique, i.e. they do not realize that other users behave similarly. it would be interesting to study the revelation process - ask people on the street how they think that others create their passwords for different categories. independent variables: who creates a password, for what context?
+
+\section{Post 3rd Party Breach Password Invalidation}
+if a data leak is made public, sites can use the leaked passwords to audit the users on their sites. if they find that passwords have been compromised, they should decide (depending on a matching user name) if the password on their site should be invalidated and the user prompted to update it.
+
+kind of resembles a post-hoc blacklist.  
+
+catch: carefully craft Password Reset Emails \cite{Kim2017TooBusy}
+
+risks: users could be confused, looks like a phishing attack (why was my account hacked?)
+
+feature for password meters to determine stringency: 
+there could be a framework that uses \url{https://haveibeenpwned.com/API/v2} to adjust stringency 
+
+from \cite{Bishop1995ProactivePasswordChecking}: ``Many sites have responded to this threat with a reactive solution -- they scan their own password files and advise those users whose passwords they are able to crack. The problem with this solution is that while the local site is testing its security, the password file is still vulnerable from the outside. The other problems, of course, are that the testing is very time-consuming and only reports on those passwords it is able to crack. It does nothing to address user passwords which fall outside of the specific test cases (e.g., it is possible for a user to use as a password the letters ``query'' if this combination is not in the in-house test dictionary, it will not be detected, but there is nothing to stop an outside cracker from having a more sophisticated dictionary!).''
