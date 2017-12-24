@@ -1,18 +1,30 @@
 \chapter[Passwords -- A User Perspective]{Passwords -- \\
 	A User Perspective}\label{chap:rw:user_perspective}
+%lingo: arduous
 
-``but his thoughts were so full of the great riches he should possess, that he could not think of the word to make it open, but instead of `Sesame,' said, `Open, Barley!' and was much amazed to find that the door remained fast shut. He named several sorts of grain, but still the door would not open, and the more he endeavoured to remember the word `Simsim,' the more his memory was confounded, and he had as much forgotten it as if he had never heard it mentioned.'' (Kasim's predicament in \textit{Ali Baba and the Forty Thieves})
+``but his thoughts were so full of the great riches he should possess, that he could not think of the word to make it open, but instead of `Sesame,' said, `Open, Barley!' and was much amazed to find that the door remained fast shut. He named several sorts of grain, but still the door would not open, and the more he endeavoured to remember the word `Simsim,' the more his memory was confounded, and he had as much forgotten it as if he had never heard it mentioned.'' (Kasim's predicament in \textit{Ali Baba and the Forty Thieves}) \todo{this could be the opening of the chapter / fancychapter}
+
+Morris and Thompson were already concerned with user behavior regarding passwords in 1979 \cite{Morris1979PasswordSecurity}. They identified that users choose predictable passwords and that this can be leveraged for attacks. So, they suggested enforcing a certain minimum password length (six characters). At the time, the users were mostly professionals that received training to operate computers and could thus also have been trained to pick less predictable passwords \cite{Maguire2012YouOnlyLiveTwice}. But as computers were introduced to a larger audience, more people were exposed to password authentication. Naturally, this also induced a growing number of attacks, and it is increasingly difficult for users to defend themselves against them (see. Section \ref{sec:rw:attack_vectors}). Nowadays, password policies are in place that require not only a minimum of eight characters, but also mandate mixed-case letters, digits and special symbols to start with. The HCI community noticed the users' struggle in the 1990s and that we can -- and should -- design authentication systems with usability in mind. Perhaps, one of the breaking points where a new school of thought turned up in the literature was a paper by Adams and Sasse in 1999 \cite{Adams1999UsersEnemy}. The central and novel theme in there was a shift from \textit{fixing} the user to \textit{acknowledging} user behavior and designing for it. The paper managed to see over 1500 citations as of writing this.
+
+This chapter looks at the literature that mostly came after this seminal work. It discusses the users' problems, solutions, feelings, and opinions about using passwords. An essential goal is to give the reader an empathetic perspective and provide background information to understand why it seems hard to come up with viable solutions to make users' lives less frustrating. To get there, we first take a brief look at conducting user research with passwords. Hereafter we disseminate typical coping strategies and solutions. The chapter concludes with a comment on the discourse that has been going on between the very different schools of thought about passwords. 
+
+%Each person who gets in contact with the Internet will at some point create a password.
+
+% Everyone develops their own strategy how to do this and how to cope with passwords, probably already in early teenage years \cite{VonZezschwitz2013SurvivalShortest}. These strategies however are not unique and show macroscopic commonalities, which became evident after the first large-scale password leaks. 
+
+%Important: Under coping strategy, we also understand the selection process, because choosing a weak password over a strong one is also one way to \textit{cope} with the large number of passwords and the memorability burden. (make sure to mention this in the general introduction already.)
 
 
 
-
-
-@@TODO cite Wash paper @SOUPS 2016.
+%@@TODO cite Wash paper @SOUPS 2016.
 
 \cite{Bailey2014StatisticsReuse,Bojinov2010KamouflagePWM,Bonneau2015SecretsLies,Brown2004GeneratingPWs,Chiasson2009InterferencesGraphical,Conklin2004PWAuthenticationSystemPerspective,CSID2012PasswordHabits,Das2014TangledWeb,Dourish2004UserStrategiesEveryday,Florencio2014PasswordPortfoliosFiniteUser,Forget2015CYOA}
 \cite{Gaw2005ReuseRecycle,Gaw2006PasswordManagement,Habib2017Blacklists,Haque2014Hierarchy,Hayashi2011DiaryStudyPWs,Huha2015UserReplaceablePasswords,Ives2004DominoEffectReuse,Katsini2017StrategiesGraphicalPasswords,Keith2009PassphraseDesign,Komanduri2011OfPasswordsAndPeople,Kothari2017PasswordLogbooks,Kuo2006HumanSelectionMnemonic,Li2017,Loutfi2015PasswordsOtherSideOfTheFence,Lyastani2016PWMangling,Notoatmodjo2007,Peisert2013PriciplesAuthentication,Riley2006WhatUsersKnowWhatTheyDo}
 \cite{Shay2014ReligiousAunt,Shay2010EncounteringPasswordRequirements,Singh2007PasswordSharing,Stobert2014a,Stobert2015,Stobert2014PWMThatDoesntRemember,Stobert2014PasswordLifeCycle,Stobert2015ExpertPassword}
 \cite{Ur2015PWCreationLab,Bruggen2013ModifiyngUnlockingBehavior,Veras2012VisualizingSemanticsPasswords,Wang2015ChinesePWs,Wash2016UnderstandingPasswordChoices,Yang2016MnemonicSentenceBased,ZhangKennedy2016RevisitingPasswordRules}
+
+
+
 
 \section{Methodology: Running Password Studies}
 
@@ -76,16 +88,18 @@ Flor\^{e}ncio and Herley probably conducted the largest study to date on passwor
 	\cite{Huha2015UserReplaceablePasswords}
 
 	
-\section{User Behavior Regarding Passwords}
-\label{sec:rw:how-users-cope}
+\section{User Behavior Regarding Passwords}\label{sec:rw:how-users-cope}
+
 
 \todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
+
+
 
 \cite{Adams1999UsersEnemy} is considered the mother of all HCI \& USEC papers. -- but there were many others before that.
 
 ``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' from \cite{Feldmeier1990UnixPasswordSecurity},
 
-also \cite{Morris1979PasswordSecurity} from 1979
+also 
 
 
 ``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}).
@@ -94,6 +108,7 @@ also \cite{Morris1979PasswordSecurity} from 1979
 
 	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
 	
+	\cite{Jakobsson2013BenefitsUnderstandingPWs}
 
 		\subsubsection{Why do Users Select Weak Passwords?}
 	
