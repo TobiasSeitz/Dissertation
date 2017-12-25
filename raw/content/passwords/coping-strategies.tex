@@ -18,19 +18,12 @@ This chapter looks at the literature that mostly came after this seminal work. I
 
 %@@TODO cite Wash paper @SOUPS 2016.
 
-\cite{Bailey2014StatisticsReuse,Bojinov2010KamouflagePWM,Bonneau2015SecretsLies,Brown2004GeneratingPWs,Chiasson2009InterferencesGraphical,Conklin2004PWAuthenticationSystemPerspective,CSID2012PasswordHabits,Das2014TangledWeb,Dourish2004UserStrategiesEveryday,Florencio2014PasswordPortfoliosFiniteUser,Forget2015CYOA}
-\cite{Gaw2005ReuseRecycle,Gaw2006PasswordManagement,Habib2017Blacklists,Haque2014Hierarchy,Hayashi2011DiaryStudyPWs,Huha2015UserReplaceablePasswords,Ives2004DominoEffectReuse,Katsini2017StrategiesGraphicalPasswords,Keith2009PassphraseDesign,Komanduri2011OfPasswordsAndPeople,Kothari2017PasswordLogbooks,Kuo2006HumanSelectionMnemonic,Li2017,Loutfi2015PasswordsOtherSideOfTheFence,Lyastani2016PWMangling,Notoatmodjo2007,Peisert2013PriciplesAuthentication,Riley2006WhatUsersKnowWhatTheyDo}
-\cite{Shay2014ReligiousAunt,Shay2010EncounteringPasswordRequirements,Singh2007PasswordSharing,Stobert2014a,Stobert2015,Stobert2014PWMThatDoesntRemember,Stobert2014PasswordLifeCycle,Stobert2015ExpertPassword}
-\cite{Ur2015PWCreationLab,Bruggen2013ModifiyngUnlockingBehavior,Veras2012VisualizingSemanticsPasswords,Wang2015ChinesePWs,Wash2016UnderstandingPasswordChoices,Yang2016MnemonicSentenceBased,ZhangKennedy2016RevisitingPasswordRules}
-
-
-
 
 \section{Methodology: Running Password Studies}
 
 general overview a la. how to run a good password study 
 
-\cite{Krol2016ExperimentDesign,Peer2017,Consolvo2003,Ross2010,Sotirakopoulos2011,Oppenheimer2009InstructionalManipulationChecks,Harbach2016HardLockLife,Barbera2013,Carreras2013,Chamberlain2012ResearchInTheWild,Henze2013EmpiricalResearchUbiquitous,Kuhn1993,VonZezschwitz2013SurvivalShortest,Hassenzahl2003,Mazurek2013Measuring,Egelman2015a,Rosoff2014,Savage2012}
+\cite{Krol2016ExperimentDesign,Peer2017BeyondTheTurk,Consolvo2003ESM,Ross2010WhoAreTurkers,Sotirakopoulos2011ReplicationSSLWarnings,Oppenheimer2009InstructionalManipulationChecks,Harbach2016HardLockLife,Barbera2013SignalsFromTheCrowd,Carreras2013CrowdSensingContext,Chamberlain2012ResearchInTheWild,Henze2013EmpiricalResearchUbiquitous,Kuhn1993ParticipatoryDesign,VonZezschwitz2013SurvivalShortest,Hassenzahl2003AttrakDiffGerman,Mazurek2013Measuring,Egelman2015SeBIS,Rosoff2014BehavioralExperimentsFraud,Savage2012GainingWisdomCrowds}
 
 
 Methods:
@@ -120,10 +113,12 @@ Take human factors into account when you design secure systems \cite{Sasse2005Us
 
 ``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' from \cite{Feldmeier1990UnixPasswordSecurity},
 
-also 
+Industry reports: \cite{CSID2012PasswordHabits}
 
 
 ``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}).
+
+in the same vein: \cite{Chiasson2009InterferencesGraphical}
 
 
 password mechanisms and their users are a socio-technical system and the social aspect weighs heavy \cite{Weirich2001PrettyGoodPersuasion}
@@ -147,6 +142,9 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	a lot of RockYou's passwords are based on dates and this can be visualized and used for attacks \cite{Veras2012VisualizingSemanticsPasswords}
 	
 	Greek users do not behave differently than the rest, but the top 100 passwords are a bit different \cite{Violettas2014PasswordsAvoidGreece}
+	
+	
+	\cite{Li2017PersonalInformation}
 
 	\subsubsection{Why do Users Select Weak Passwords?}
 	
@@ -164,6 +162,9 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	Passphrases are super predictable because most people use common phrases \cite{Bonneau2012LinguisticProperties}
 	
+	\cite{Wang2015ChinesePWs}
+	
+	thesis on the ``why'': \cite{Notoatmodjo2007ExploringWeakestLink}
 	
 	qualitative studies \cite{Ur2015PWCreationLab, Stobert2014PasswordLifeCycle} 
 	quantitative studies \cite{Ur2016PerceptionsPassword, Seitz2017PASDJO}
@@ -184,7 +185,8 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	usually, people tend to use stronger PWs for important accounts
 	
 	Stronger passwords are not always necessary, do not force users to waste effort. \cite{Florencio2007DoStrongWebPasswords}	
-
+	
+	\cite{Shay2014ReligiousAunt}
 
 	\subsection{Password Reuse}
 	too many accounts problem.
@@ -232,6 +234,7 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
 	
 	Experts have certain articulate strategies to select and manage their passwords, and their situation awareness lets them judge important and non-important accounts more consistently  	\cite{Stobert2015ExpertPassword} 
+	but: not all of them behave the same way \cite{Loutfi2015PasswordsOtherSideOfTheFence}
 
 	Categorization: 
 	compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
@@ -244,12 +247,16 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	A new scale and insights into password support. Password hierarchy \cite{Haque2015PhdProposal}
 	
-	\subsection{Tools (Writing Down)}
+	\subsection{Tools}
+	
+	\subsection{Writing Down}
 	\cite{Herley2012PersistenceOfPasswords} is in favor of writing down IF the location is secure enough.
 	
 	Users struggle to manage passwords, but are unfamiliar with supporting tools, so they have developed elaborate strategies to cope \cite{Stobert2014Agony}
 	
 	Many people like using a password logbook and have interesting motivations to do so \cite{Kothari2017PasswordLogbooks}
+	
+	\cite{Conklin2004PWAuthenticationSystemPerspective}
 	
 		\subsubsection{Problem: Accessibility for Local Attackers}
 Word documents post-its (use a screen shot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .	
@@ -257,6 +264,11 @@ Word documents post-its (use a screen shot of french newspaper that was featured
 
 	\subsection{Fallback Methods}
 	Click on ``forgot'' password basically every time - to avoid this, some services mainly rely on one time passwords, because users are going to forget theirs anyway. 
+
+	\cite{Bonneau2015SecretsLies}
+	
+	
+
 
 
 	\subsection{Account Sharing}
@@ -307,7 +319,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	Range of Policies as shown by Shay \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
 	definitely mention: 28.0\% of passwords in comp8 fulfilled the symbol requirement only by placing ``!'' at the end and using no other symbols. 
 	
-	\cite{ZhangKennedy2016RevisitingPasswordRules}
+	Zhang-Kennedy 2016 (here and also below) \cite{ZhangKennedy2016RevisitingPasswordRules}
 	
 	
 	Workplace-focused: 
@@ -316,8 +328,6 @@ Usable security shouldn't only be done for end users but also for the people who
 	The authors present how they would design an experiment about persuasive messaging, but didn't really carry it out (and the method doesn't seem suitable) \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	
 	Don't try to fix the user, fix the system first, especially do not impose strict requirements and nonsensical policies \cite{Florencio2014AdministratorsGuide} 
-	
-	\cite{Ur2015PWCreationLab}
 	
 	Policy changes are a nuisance, but users feel more secure afterwards, and users write down passwords, share them and base them on dictionary words 	\cite{Shay2010EncounteringPasswordRequirements}
 	
@@ -381,6 +391,8 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	\cite{Bonneau2014ReliableStorage56Bits}
 	\cite{Forget2007HelpingUsers}
+	Sort of displaced here, but it might be discussed in Section \ref{sec:rw:authentication_without_pws} \cite{Forget2015CYOA}
+	\cite{Brown2004GeneratingPWs}
 	
 	In a convenience sample, persuasive text passwords were sufficiently memorable \cite{Forget2008MemorabilityPersuasivePasswords}
 	
@@ -394,7 +406,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	\paragraph{Mnemonics}
 	Using contextual cues related to a website to base a mnemonic PW on might make them more memorable \cite{Mcevoy2016ContextualizingMnemonicPhrase}
 	
-	Yet another memorization aid - work in progress \cite{Lyastani2016ImprovingMemorabilityMangling}
+	Yet another memorization aid - work in progress \cite{Lyastani2016PWMangling} 
 	
 	Even mnemonic phrase based passwords can be attacked easily, but if you tell people to choose something personal that no one else would choose and give an example might be the best piece of advice \cite{Yang2016MnemonicSentenceBased}
 	
@@ -406,7 +418,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	Mnemonic phrase based passwords are strong and memorable \cite{Yan2004PasswordMemorabilitySecurity}.
 	
-	
+	\cite{Keith2009PassphraseDesign}
 	
 	Disadvantages: more typos (can be relieved by displaying the password in plain text  \cite{Melicher2016UsabilityMobileTextPasswords}), user choice often predictable
 	
@@ -477,6 +489,8 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing.
 	
+	
+	\cite{Bojinov2010KamouflagePWM}
 	
 	
 	
