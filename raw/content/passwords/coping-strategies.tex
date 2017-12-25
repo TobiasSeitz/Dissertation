@@ -79,6 +79,9 @@ In the workplace: \cite{Adams1997MakingPWsSecureAndUsable, Inglesant2010TrueCost
  most important papers: 
  many people behave normally, and if you ask them in the survey if they did, this can improve the quality of the data drastically \cite{Fahl2013EcologicalValidityPasswordStudy}
  
+ 
+ Password guessability depends on context factors and MTurk passwords - albeit slightly weaker - are a good approximate of real passwords \cite{Mazurek2013Measuring}
+ 
  \cite{Krol2016ExperimentDesign}
 	
 	
@@ -154,8 +157,10 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	- policies allow it (\cite{Seitz2017PoliciesReuse})
 	- wrong mental model or misinterpretation of security advice (\cite{Ur2015PWCreationLab, Ur2016PerceptionsPassword, Seitz2017PASDJO})
 	- because they don't care
+	- They looked at depletion levels and password strength, but the method was kind of flawed so it's difficult to take this seriously \cite{Gross2016EffectCognitiveEffort}
 	- ... they underestimate the threat
 	- ... they are right to judge the account as low value (who would hack me?) \cite{LastPass2016PersonalitiesGetUsHacked}
+	- Passwords survive for a long time, sometimes in a modified version, and they tend to get slightly more complex over time and for important accounts\cite{VonZezschwitz2013SurvivalShortest}
 	
 	Passphrases are super predictable because most people use common phrases \cite{Bonneau2012LinguisticProperties}
 	
@@ -172,6 +177,8 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	
 	Users are not too bad at creating strong passwords, but often they misinterpret security advice which leads to weak password practices \cite{Ur2015PWCreationLab}
+	
+	Even after a credential leak people are not very invested with their weak passwords: LinkedIn's password reset email can be considered ineffective, but the more severe problem is that the email focused on LinkedIn only, because it's super important to change the password on all other sites \cite{Huh2017TooBusy}
 	
 	\subsubsection{What's the Problem with Weak Passwords?}
 	usually, people tend to use stronger PWs for important accounts
@@ -194,7 +201,9 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices} -- but there are contradictory results on this matter. -- Stobert and Biddle argue in the other direction \cite{Stobert2014PasswordLifeCycle}. 
 	
-	reuse statistic overview of different papers: \cite{Wash2016UnderstandingPasswordChoices} in the discussion section. 
+	reuse statistic overview of different papers: 
+	\cite{Wash2016UnderstandingPasswordChoices} in the discussion section
+	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}
 	
 	term that you read ever so often: users have a ``go-to password'' that they try first
 	and then often the policy can make them change another one. But! If the go-to password is strong and has certain characteristics (as is demonstrated in chapter \ref{chap:policies-reuse}), reusing this is possible and its threats perhaps underestimated. 
@@ -240,6 +249,8 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	Users struggle to manage passwords, but are unfamiliar with supporting tools, so they have developed elaborate strategies to cope \cite{Stobert2014Agony}
 	
+	Many people like using a password logbook and have interesting motivations to do so \cite{Kothari2017PasswordLogbooks}
+	
 		\subsubsection{Problem: Accessibility for Local Attackers}
 Word documents post-its (use a screen shot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .	
 
@@ -278,13 +289,17 @@ Usable security shouldn't only be done for end users but also for the people who
 	\subsection{Password Composition Policies}
 	
 	the idea of policies dates back to the 70s: Morris and Thompson suggested to make users
-	either choose longer passwords or assign passwords to them \cite{Morris1979PasswordSecurity}
+	either choose longer passwords or assign passwords to them - There are flaws in password authentication and we can do something to alleviate the problem, but cannot get rid of it entirely \cite{Morris1979PasswordSecurity}
+	
+	The algorithms at the time weren't suitable to defend against cracking attacks so it was thought to introduce a few mechanisms to shift responsibility to the users \cite{Feldmeier1990UnixPasswordSecurity}
 	
 	%Lingo: Adhere to a policy
 	
 	
 	Weir \etal categorize policies into ``explicit'' and ``implicit'' policies \cite{Weir2010MetricsPolicies}, where explicit policies have predefined rules about the password structure (e.g. LUDS policy). Implicit policies are based on the estimated strength and are somewhat more volatile and intransparent to the users. Example: blacklist only becomes visible once the user tries to pick a password that's contained in the list. There are also ``external'' policies where the user's password is automatically changed by the system to add some randomness
 	
+	
+	Policies influence security and usability, meters are often ineffective because only stringent meters seem to work \cite{Ur2012HelpingUsersCreateBetterPasswords}
 	
 	LUDS as a key term \cite{Wheeler2016zxcvbn}
 	
@@ -296,14 +311,15 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	
 	Workplace-focused: 
-	a postulation that password policies should be based on HCI principles rather than security considerations alone. The idea of a holistic password policy is put forward \cite{Inglesant2010TrueCostOfUnusablePolicies} 
-	and \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+	a postulation that password policies should be based on HCI principles rather than security considerations alone. The idea of a holistic password policy is put forward \cite{Inglesant2010TrueCostOfUnusablePolicies}
+	
+	The authors present how they would design an experiment about persuasive messaging, but didn't really carry it out (and the method doesn't seem suitable) \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	
 	Don't try to fix the user, fix the system first, especially do not impose strict requirements and nonsensical policies \cite{Florencio2014AdministratorsGuide} 
 	
 	\cite{Ur2015PWCreationLab}
 	
-	\cite{Shay2010EncounteringPasswordRequirements}
+	Policy changes are a nuisance, but users feel more secure afterwards, and users write down passwords, share them and base them on dictionary words 	\cite{Shay2010EncounteringPasswordRequirements}
 	
 	Most detailed insights into effects of password policy design we have to date, password substring blacklist suggestion \cite{Shay2016DesigningPasswordPolicies}
 	
@@ -319,13 +335,19 @@ Usable security shouldn't only be done for end users but also for the people who
 	\cite{Chiasson2015QuantifyingExpiration}
 	\cite{Blocki2013OptimizingPasswordPolicies}
 	
-	Early comparison of the effects of policies on \textit{human} password selection by Komanduri \etal
-	\cite{Komanduri2011OfPasswordsAndPeople}
+	Early comparison of the effects of policies on \textit{human} password selection by Komanduri \etal - A carefully chosen policy can lead to more secure and more usable passwords, in this case the basic16 policy was well-received \cite{Komanduri2011OfPasswordsAndPeople}
 	
 	
-	Shay tried to come up with an algorithm that lets administrators decide which policy to use \cite{Shay2009PolicySimulation}.
+	Shay tried to come up with an algorithm that lets administrators decide which policy to use - We could pick a password policy algorithmically based on a number of variables in this context \cite{Shay2009PolicySimulation}.
 	
 	basic16, 3class12, and 2word16 seem like the winners in terms of security and usability, but persuasion can help to diversify the themes for word-based passwords \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
+	
+	
+	Penalizing users by making them wait can be a strong nudge to comply and create a stronger password \cite{Malkin2013Waiting}
+	
+	It would be nice to have an easy way to create a repository with all password policies, but it isn't easy - at least it helps to agree on a standard language to define a password policy \cite{Steves2015PasswordPolicyLanguage}
+	
+	It would be good to have a formal description of password policies in a standardized schema \cite{Horsch2016PasswordPolicyMarkup}
 
 	\subsection{Advice and Guidelines}
 	
@@ -347,20 +369,36 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	
 	Stay realistic about password requirements and user effort \cite{Florencio2016CommACM}
+	
+	We can give better recommendations to users that are appropriately secure, actionable and usable \cite{ZhangKennedy2016RevisitingPasswordRules} (maybe also mention in policy section)
 		
 	
 	\subsection{Offering Memorization Techniques}
 	
+	%TODO some papers actually could be categorized as password generator papers (semi-involved with human password selection.)
 	
 	early approaches: random but pronounceable passwords. (good overview in \cite{Kuo2006HumanSelectionMnemonic})
 	
 	\cite{Bonneau2014ReliableStorage56Bits}
 	\cite{Forget2007HelpingUsers}
 	
-	It might be worthwhile to add a gamification layer onto password managers if you want to memorize some of your most important passwords \cite{Kroeze2012GamifyingAuthentication}\\
+	In a convenience sample, persuasive text passwords were sufficiently memorable \cite{Forget2008MemorabilityPersuasivePasswords}
+	
+	It might be worthwhile to add a gamification layer onto password managers if you want to memorize some of your most important passwords \cite{Kroeze2012GamifyingAuthentication}
+	
+	They proposed a model to securely generate site-specific passwords, but this is all just an idea \cite{Maqbali2016PasswordGenerators}
+	
+	
+	Security-wise this maybe a good idea, but the actual implementations is not as usable as it could be, however letting users modify system-assigned passwords seems beneficial in general \cite{Huha2015UserReplaceablePasswords}
 	
 	\paragraph{Mnemonics}
 	Using contextual cues related to a website to base a mnemonic PW on might make them more memorable \cite{Mcevoy2016ContextualizingMnemonicPhrase}
+	
+	Yet another memorization aid - work in progress \cite{Lyastani2016ImprovingMemorabilityMangling}
+	
+	Even mnemonic phrase based passwords can be attacked easily, but if you tell people to choose something personal that no one else would choose and give an example might be the best piece of advice \cite{Yang2016MnemonicSentenceBased}
+	
+	People's mnemonic passwords are predictably based on common phrases from movies, literature, etc., but still the resulting passwords are better than traditional passwords \cite{Kuo2006HumanSelectionMnemonic}
 	
 	\paragraph{Passphrases}
 	(\todo{maybe even merge this with subsection on advice})
@@ -403,11 +441,34 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	We should consider social nudges in usable security, too \cite{DiGioia2005SocialNavigationUsableSecurity}
 	
+	
+	A sudden surge of n-gram scores can be used to detect modifications of common/weak passwords \cite{Tupsamudre2016MarkovStrength}
+	
+	
+	passwords created using telepathwords were stronger and still memorable, but some Ps didn't like the idea \cite{Komanduri2014Telepathwords}
+	
+	Password meters from the industry are bad, machine-learning meters are good \cite{Wang2016fuzzyPWM}
+	
+	Users can well estimate the strength of their passwords, and can be nudged to act more securely for important accounts, but not for unimportant stuff \cite{Egelman2013DoesMyPasswordGoUpToEleven}
+	
+	Meters have a small effect on password strength, but slightly annoy people and it doesn't really matter how they look \cite{Ur2012HowDoesYourPasswordMeasureUp}
+	
+	Preliminary work to Ur et al.'s data-driven password meter \cite{Eargle2015YouCanDoBetter}
+	Use text feedback to craft more effective password meters, but this depends on the policy used \cite{Ur2017DataDrivenPWMeter}
+	
+	If you tell people how long it will take to crack their password, they are more likely to read your recommendations and modify their password \cite{Vance2013FearAppeals}
+	
+	Password meters score the same password very inconsistently and don't explain their scoring, and it seems the Dropbox meter is one of the better solutions \cite{Carnavalet2014AnalyzingPWStrengthMeters}
+	
+	the presentation of password requirements can affect usability and security, because it can prevent errors and speed up selection for some stricter policies \cite{Shay2015SpoonfulOfSugar}
+	
 	\subsection{Password Managers}
 	
 	list all the pro's and con's of PWMs here in different dimensions, e.g. security and usability, kind of similar to \cite{Bonneau2012ReplacePasswords}
 	
+	Dashlane has the best usability and security tradeoff - but the usability evaluation is kind of worthless without more background information \cite{AriasCabarcos2016ComparingPWM}
 	
+	Tapas is a password manager based on two-factor authentication and was well received in a 30/10 participant user study \cite{McCarney2012Tapas, McCarney2013PWMThesis}
 	
 	%% from SOUPS MM Poster
 	We situate our work in understanding user behavior and attitudes regarding passwords. Here, large parts of the literature focus on \textit{coping strategies} that emerge with a growing number of accounts \cite{Florencio2007LargeScaleStudyPasswordHabits, Florencio2014PasswordPortfoliosFiniteUser}. For example, Stobert and Biddle conducted qualitative analyses to formalize the way users live with their passwords (the ``Password Life Cycle") \cite{Stobert2014PasswordLifeCycle}. This model depicts how users choose, commit, reuse, and reset their passwords. Their work also delivers valuable insights into memorization and organization strategies: Users have mental lists of passwords, e.g. a list for important accounts or a list per website topic. Without explicitly mentioning, the findings contribute to a mental model of password reuse. This is important, because reuse is one of the most common coping strategies \cite{Das2014TangledWeb, Gaw2006PasswordManagement, Hayashi2011DiaryStudyPWs} and many researchers discourage it, because a breach at one site can compromise many others \cite{Bonneau2012ScienceOfGuessing, Komanduri2011OfPasswordsAndPeople}. 
@@ -415,6 +476,8 @@ Usable security shouldn't only be done for end users but also for the people who
 	To facilitate coping with passwords and possibly minimize reuse, dedicated tools have been investigated and proposed. Besides industry-driven password managers, HCI research has proposed a number of alternatives. For instance, Stobert and Biddle also propose a password manager that is designed to boost trust as it does not directly store passwords, but rather offers a image cues to recall passwords \cite{Stobert2014PWMThatDoesntRemember}. 
 	
 	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing.
+	
+	
 	
 	
 \section{The Passionate Discourse About Passwords}\label{sec:rw:passionate_discourse}
