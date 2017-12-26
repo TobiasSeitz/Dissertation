@@ -20,34 +20,129 @@ This chapter looks at the literature that mostly came after this seminal work. I
 
 
 \section{Methodology: Running Password Studies}
+% not relevant: how to measure password strength. solely focus on the ``HOW'' of data collection
+Before we report on insights about user behavior regarding passwords, we take a brief look into running studies that focus on passwords. There are two central aspects that make collecting data particularly challenging: acting ethically and maintaining high ecological validity of the data. In fact, these two goals create an area of tension that demands a critical selection of methods. Komanduri \etal note that ``ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system.'' \cite{Komanduri2011OfPasswordsAndPeople} But this would mean that researchers then have access to the user accounts that were under investigation. This is ethically questionable. Maybe the researchers themselves are benevolent, but the data is precious and thus could bring attackers to the scene. Since absolute security can barely be guaranteed, it is best to avoid that users disclose their actual credentials in a user study to the researchers. 
 
-general overview a la. how to run a good password study 
+% example for solution of ``proxy'' password
+If we cannot collect the participants' passwords, what is the best way to measure, e.g., cause and effect of interventions? Von Zezschwitz \etal used a ``proxy password'' that described the participants' actual passwords \cite{VonZezschwitz2013SurvivalShortest}, but which was insufficient to reconstruct the original. Participants were provided with an offline password analysis tool that they had to operate manually. The analysis served as a proxy and was then shared with the researchers by pasting it to the questionnaire form. 
 
-\cite{Krol2016ExperimentDesign,Peer2017BeyondTheTurk,Consolvo2003ESM,Ross2010WhoAreTurkers,Sotirakopoulos2011ReplicationSSLWarnings,Oppenheimer2009InstructionalManipulationChecks,Harbach2016HardLockLife,Barbera2013SignalsFromTheCrowd,Carreras2013CrowdSensingContext,Chamberlain2012ResearchInTheWild,Henze2013EmpiricalResearchUbiquitous,Kuhn1993ParticipatoryDesign,VonZezschwitz2013SurvivalShortest,Hassenzahl2003AttrakDiffGerman,Mazurek2013Measuring,Egelman2015SeBIS,Rosoff2014BehavioralExperimentsFraud,Savage2012GainingWisdomCrowds}
+% ethical dilemma
+Another ethical conundrum is sharing research about password attacks. For instance, one can put forward new cracking approaches (e.g. \cite{Marechal2008AdvancesPWCracking, Narayanan2005FastDictionaryAttacks, Weir2009PCFG}) that potentially affect common strength metrics (see Section \ref{sec:rw:pw_strength_metrics}) -- but attackers also benefit from this kind of knowledge. From an HCI perspective, one can also unfold how users select passwords, which allows optimizing cracking efficiency \cite{Weir2010MetricsPolicies, Wheeler2016zxcvbn}. 
+
+%TODO maybe extend this intro and talk about harbach's and Krol's findings
+%Krol2016ExperimentDesign
 
 
-Methods:
+ many people behave normally, and if you ask them in the survey if they did, this can improve the quality of the data drastically \cite{Fahl2013EcologicalValidityPasswordStudy}
+
+issues:
 \begin{itemize}
-	\item Analyzing leaked data \cite{Veras2012VisualizingSemanticsPasswords}
-	\item Lab study \cite{Sotirakopoulos2011}
-	\item Field study only with Logging \cite{Florencio2007LargeScaleStudyPasswordHabits}
-	\item Field study with an interactive prototype, often in conjunction with a survey / Diary 
-	\item café study  \cite{VonZezschwitz2013SurvivalShortest}
-	\item Mechanical Turk / CrowdSourced 
-	\item diary study, e.g. \cite{Hayashi2011DiaryStudyPWs}
-	\item Triangulation (survey, log analysis) \cite{Wash2016UnderstandingPasswordChoices}
+	\item finding efficient ways to attack passwords - this might also help attackers. 
+	\item sometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
 \end{itemize}
 
-all but the first allow controlled selection of passwords
+do people know if their passwords are studied?
 
-Example: 
+
+Not seldom, a triangulated approach is the most feasible to reach the actual ``truth'' about user behavior. In the following, the most prominent study methods are presented. 
+
+
+%\begin{itemize}
+%	\item[Ethics] Leaked Data, collecting real passwords from study participants
+%	\item[Ecological Validity] role playing, passwords are never used in real life, 
+%\end{itemize}
+%
+%
+%
+%general overview a la. how to run a good password study 
+
+\cite{Harbach2016HardLockLife,Henze2013EmpiricalResearchUbiquitous,Kuhn1993ParticipatoryDesign,VonZezschwitz2013SurvivalShortest,Hassenzahl2003AttrakDiffGerman,Mazurek2013Measuring,Egelman2015SeBIS,Rosoff2014BehavioralExperimentsFraud,Savage2012GainingWisdomCrowds}
+
+
+% briefly show the benefits and drawbacks of each method. 
+%TODO maybe some Usable Security book already has this? look into garfinkel/cranor book...
+\subsection{Analyzing Password Leaks and (Semi-)Public Data}
+closest to actual password behavior, with one large disadvantage: 
+\cite{Bonneau2012LinguisticProperties}
+\cite{Bonneau2012ScienceOfGuessing}
+\cite{Veras2012VisualizingSemanticsPasswords}
+\cite{Wash2016UnderstandingPasswordChoices}
+
+
+\subsection{Laboratory studies}
+% not focused on password: \cite{Sotirakopoulos2011ReplicationSSLWarnings}
+mostly used to collect qualitative data.
+semi/structured interviews: \cite{Stobert2014PasswordLifeCycle}
+
+
+makes memorability studies a bit more cumbersome but are not impossible. 
+
+Adams Sasse 1997 \cite{Adams1997MakingPWsSecureAndUsable}
+Weirich on Persuasion \cite{Weirich2001PrettyGoodPersuasion, Weirich2005PersuasivePasswordSecurity}
+
+café study also here because the experimenter is present and you have almost as much level of control as in the lab (except for the distracting surroundings but for passwords that might help sometimes)
+\cite{VonZezschwitz2013SurvivalShortest}
+
+\subsection{Field-, diary- and in-the-wild studies}
+%TODO maybe add subsubsections or paragraphs.. because this approach encompasses a lot of study types.
+
+online surveys 
+- with an interactive prototype 
+- or just with a survey tool
+
+diary studies here.  \cite{Hayashi2011DiaryStudyPWs}
+
+Experience Sampling \cite{Consolvo2003ESM}
+
+In the wild: \cite{Chamberlain2012ResearchInTheWild}; \cite{Renaud2017LessonsLearnedNudges}
+
+people are not always aware that their data is logged and behave normally (high eco val)
+
+Example for in-the-wild data: 
 Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
 
 \cite{Florencio2007LargeScaleStudyPasswordHabits}. The established protected password lists (PPL) to avoid intruding into people's privacy. They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). It was not possible to trace the incoming data back to a specific user, which might have resulted in over counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification, the key logging module of the toolbar would record a password reuse event (PRE) every time the user entered the word -- also in regular text searches, for example. Another limitation could be that they used entropy as a proxy for password strength. However, as discussed in the previous chapter, we have seen that this metric is more robust for system-generated passwords and that strength estimation has evolved over the past ten years. 
 
+\subsection{Crowd-sourcing and Mechanical Turk Studies}
+Special kind of ``field'' study which is why they are reported separately.
+
+problem: in europe it's not immediately possible, but there are alternatives. 
+
+also, adding more complex, interactive prototypes is challenging
+
+\cite{Peer2017BeyondTheTurk}
+\cite{Ross2010WhoAreTurkers}
+
+MTurk
+propagated and most commonly used at CMU e.g. \cite{Mazurek2013Measuring} \cite{Shay2014CanLongPasswordsBeSecureAndUsable} \cite{Shay2016DesigningPasswordPolicies}
+\cite{Shay2015UsablePoliciesMTurk}
+\cite{Ur2016PerceptionsPassword} \cite{Melicher2016UsabilityMobileTextPasswords} \cite{Ur2017DataDrivenPWMeter}
+
+most commonly, the study topic is disclosed so users know that their passwords are analyzed. 
+
+\cite{Huha2015UserReplaceablePasswords}
+
+problem:
+Password guessability depends on context factors and MTurk passwords - albeit slightly weaker - are a good approximate of real passwords \cite{Mazurek2013Measuring}
+
+
+\subsection{Triangulation}
+(survey, log analysis) \cite{Wash2016UnderstandingPasswordChoices}
+
+\subsection{Theory and Reasoning}
+not only empirical methods but also logic reasoning, argumentation is strong among usec papers
+
+
+\subsection{The Bottom Line: Emerging good practices and tools}
+
+UX: AttrakDiff is often 
+
+for surveys, IMCs are recommendable \cite{Oppenheimer2009InstructionalManipulationChecks}
+memory clearing tasks are often used in memorability studies.
+PGS 
+
+
 Qualitative studies:
-Adams Sasse 1997 \cite{Adams1997MakingPWsSecureAndUsable}
-Weirich on Persuasion \cite{Weirich2001PrettyGoodPersuasion, Weirich2005PersuasivePasswordSecurity}
 
 Quantitative: 
 Yan 2004 Memorability \cite{Yan2004PasswordMemorabilitySecurity}
@@ -60,63 +155,35 @@ In the workplace: \cite{Adams1997MakingPWsSecureAndUsable, Inglesant2010TrueCost
 
 \todo{Add a table with advantages and disadvantages of different study methods.}
 
-
-	\subsection{Ecological Validity}
-		
- as we have seen before, the approaches differ especially in the way ecological validity is achieved.
- 
- ``Ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system.'' \cite{Komanduri2011OfPasswordsAndPeople}
- 
- explain why ecological validity is super important in this context.
- 
- most important papers: 
- many people behave normally, and if you ask them in the survey if they did, this can improve the quality of the data drastically \cite{Fahl2013EcologicalValidityPasswordStudy}
- 
- 
- Password guessability depends on context factors and MTurk passwords - albeit slightly weaker - are a good approximate of real passwords \cite{Mazurek2013Measuring}
- 
- \cite{Krol2016ExperimentDesign}
-	
+			
 	
 	There's a Scale that we can use to cheaply measure security intentions so we can better weight study data from individuals \cite{Egelman2015SeBIS}
 	SeBIS is a useful tool and looks robust, but it might need more time to really be considered highly valid \cite{Egelman2016BehaviorEverFollows}
 
-	\subsection{Ethics}
+%\subsection{Best Practices on Ethical Standards}
 	look into ``Critical'' folder on mendeley
 	
-	issues:
-	\begin{itemize}
-		\item collecting plain text passwords - people sometimes
-		\item finding efficient ways to attack passwords - this might also help attackers. 
-		\item sometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
-	\end{itemize}
-	
 
-	\subsection{Mechanical Turk Studies}
-	
-	propagated and most commonly used at CMU e.g. \cite{Mazurek2013Measuring} \cite{Shay2014CanLongPasswordsBeSecureAndUsable} \cite{Shay2016DesigningPasswordPolicies}
-	\cite{Shay2015UsablePoliciesMTurk}
-	\cite{Ur2016PerceptionsPassword} \cite{Melicher2016UsabilityMobileTextPasswords} \cite{Ur2017DataDrivenPWMeter}
-	problem: in europe it's not immediately possible, but there are alternatives. 
-	
-	\cite{Huha2015UserReplaceablePasswords}
 
 	
 \section{User Behavior Regarding Passwords}\label{sec:rw:how-users-cope}
+Passwords are the cornerstone of \textit{knowledge-based} authentication. And although ``knowledge'' can be stored in and retrieved from computers, it is still a human capability to learn things to later ``know'' them. So, humans are a large factor in the equation and their actions and behavior to gain knowledge with and about passwords deserve to be studied in detail. 
 
+Some cybersecurity researchers started blaming system failures and vulnerabilities on users. For instance, Feldmeier \etal stated: ``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' \cite{Feldmeier1990UnixPasswordSecurity}. It quickly became a dictum that users were the ``weakest link'' in the figurative authentication chain and investing into the technical infrastructure might not be enough \cite{Sasse2001WeakestLink}. 
+
+
+Industry reports: \cite{CSID2012PasswordHabits}
+
+
+Although passwords were designed to protect ``systems'', the HCI community
 
 \todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
 
 Take human factors into account when you design secure systems \cite{Sasse2005UsableSecurityPosition}
 
-Blame it on the users:
-``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' from \cite{Feldmeier1990UnixPasswordSecurity},
-
 
 \cite{Adams1999UsersEnemy} is considered the mother of all HCI \& USEC papers. -- but there were many others before that.
 
-
-Industry reports: \cite{CSID2012PasswordHabits}
 
 
 ``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}).
@@ -135,7 +202,10 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 
 	\subsection{Selecting Weak Passwords}
 	% things to answer in this section:
-	% what's so difficult to select a strong
+	% what's so difficult about selecting a strong password?
+	% what do users do if they want to select a strong password?
+	% why don't they always do it?
+	% when do they select stronger passwords?
 
 	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
 	
