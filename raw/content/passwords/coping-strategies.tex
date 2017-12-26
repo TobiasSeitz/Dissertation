@@ -109,9 +109,12 @@ In the workplace: \cite{Adams1997MakingPWsSecureAndUsable, Inglesant2010TrueCost
 
 Take human factors into account when you design secure systems \cite{Sasse2005UsableSecurityPosition}
 
+Blame it on the users:
+``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' from \cite{Feldmeier1990UnixPasswordSecurity},
+
+
 \cite{Adams1999UsersEnemy} is considered the mother of all HCI \& USEC papers. -- but there were many others before that.
 
-``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' from \cite{Feldmeier1990UnixPasswordSecurity},
 
 Industry reports: \cite{CSID2012PasswordHabits}
 
@@ -130,7 +133,9 @@ insights into the password burden and context information where people log in, c
 
 a formal model of the Password Life Cycle, codebook for coping strategies \cite{Stobert2014PasswordLifeCycle}.
 
-\subsection{Selecting Weak Passwords}
+	\subsection{Selecting Weak Passwords}
+	% things to answer in this section:
+	% what's so difficult to select a strong
 
 	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
 	
@@ -215,14 +220,13 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser, ZhangKennedy2016RevisitingPasswordRules}. 
 	
-		
-	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}.
+
 	
 	
 	It's enough to know one low-value password that you mangle to crack a large part of high-value passwords \cite{Haque2014Hierarchy}
 	
 	
-	\subsubsection{Reuse Strategies}
+	%    \subsubsection{Reuse Strategies}
 	address the role of policies (see \cite{Seitz2017PoliciesReuse}).
 	
 	Participants rely on their memory, but reuse passwords, and they have a suboptimal mental model of how attacks work \cite{Gaw2006PasswordManagement}
@@ -242,8 +246,11 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	category: depending on policies. \cite{Stobert2014PasswordLifeCycle}
 	
 	
-	Coping with passwords by choosing weak passwords and reusing them is absolutely necessary, the problem is how to do it right \cite{Florencio2014PasswordPortfoliosFiniteUser}.
+	``Users see `good' passwords (that are memorable and conform to the policy) as a `resource', which they continue to use for new applications even if the original use is no longer allowed.'' (\cite{Inglesant2010TrueCostOfUnusablePolicies})
 	
+	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}.
+	
+	Coping with passwords by choosing weak passwords and reusing them is absolutely necessary, the problem is how to do it right \cite{Florencio2014PasswordPortfoliosFiniteUser}.
 	
 	A new scale and insights into password support. Password hierarchy \cite{Haque2015PhdProposal}
 	
@@ -258,7 +265,7 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	\cite{Conklin2004PWAuthenticationSystemPerspective}
 	
-		\subsubsection{Problem: Accessibility for Local Attackers}
+	Problem: Accessibility for Local Attackers
 Word documents post-its (use a screen shot of french newspaper that was featured on tv and you could see one of their passwords in the back. spouses can access them .	
 
 
@@ -267,8 +274,6 @@ Word documents post-its (use a screen shot of french newspaper that was featured
 
 	\cite{Bonneau2015SecretsLies}
 	
-	
-
 
 
 	\subsection{Account Sharing}
@@ -305,7 +310,17 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	The algorithms at the time weren't suitable to defend against cracking attacks so it was thought to introduce a few mechanisms to shift responsibility to the users \cite{Feldmeier1990UnixPasswordSecurity}
 	
+	%TODO here we need a reference to Bill Burr's idea of nailing policies down to a NIST standard.
+
+	Proctor \etal found in 2002 that certain ``proactive password restrictions'' lead to stronger passwords \cite{Proctor2002ImprovingAuthenticationProactivePasswordRestrictions}. In two laboratory experiments, they had participants create a new password for a university account. The policies differed in the required minimum length (five and eight) and additional requirements like upper-/lowercase letters and digits. In the first experiment, where passwords only had to be five characters long, introducing the additional requirements had a greater effect on strength than in the eight-character-minimum condition. Increasing the minimum length by three characters already had a stronger effect. Interestingly, they concluded ``Perhaps the most important message of this study is that restrictions on user-generated passwords may not accomplish their intended goals.'' The early hypothesis that policies are more or less ineffective is particularly surprising because in the fifteen years that followed, many research papers were written about such restrictions and many of them ultimately came to similar conclusions. In the following some of the most influential works are summarized.
+	%now we need to report on a couple of papers that come to the conclusion that policies are somewhat ineffective.
+	Inglesant and Sasse report on a diary study of password policies in corporate contexts \cite{Inglesant2010TrueCostOfUnusablePolicies}. a postulation that password policies should be based on HCI principles rather than security considerations alone. The idea of a holistic password policy is put forward 
+	
+	 
+	
 	%Lingo: Adhere to a policy
+	
+
 	
 	
 	Weir \etal categorize policies into ``explicit'' and ``implicit'' policies \cite{Weir2010MetricsPolicies}, where explicit policies have predefined rules about the password structure (e.g. LUDS policy). Implicit policies are based on the estimated strength and are somewhat more volatile and intransparent to the users. Example: blacklist only becomes visible once the user tries to pick a password that's contained in the list. There are also ``external'' policies where the user's password is automatically changed by the system to add some randomness
@@ -323,7 +338,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	
 	Workplace-focused: 
-	a postulation that password policies should be based on HCI principles rather than security considerations alone. The idea of a holistic password policy is put forward \cite{Inglesant2010TrueCostOfUnusablePolicies}
+	
 	
 	The authors present how they would design an experiment about persuasive messaging, but didn't really carry it out (and the method doesn't seem suitable) \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	
