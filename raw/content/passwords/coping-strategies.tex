@@ -26,22 +26,19 @@ Before we report on insights about user behavior regarding passwords, we take a 
 % example for solution of ``proxy'' password
 If we cannot collect the participants' passwords, what is the best way to measure, e.g., cause and effect of interventions? Von Zezschwitz \etal used a ``proxy password'' that described the participants' actual passwords \cite{VonZezschwitz2013SurvivalShortest}, but which was insufficient to reconstruct the original. Participants were provided with an offline password analysis tool that they had to operate manually. The analysis served as a proxy and was then shared with the researchers by pasting it to the questionnaire form. 
 
-% ethical dilemma
-Another ethical conundrum is sharing research about password attacks. For instance, one can put forward new cracking approaches (e.g. \cite{Marechal2008AdvancesPWCracking, Narayanan2005FastDictionaryAttacks, Weir2009PCFG}) that potentially affect common strength metrics (see Section \ref{sec:rw:pw_strength_metrics}) -- but attackers also benefit from this kind of knowledge. From an HCI perspective, one can also unfold how users select passwords, which allows optimizing cracking efficiency \cite{Weir2010MetricsPolicies, Wheeler2016zxcvbn}. 
+In Von Zezschwitz \etal's study, the participants knew that their passwords are the topic of the study.
+
+
+% ethical dilemma #2: sharing cracking algorithms.
+Another ethical conundrum is sharing research about password attacks. For instance, one can put forward new cracking approaches (e.g. \cite{Marechal2008AdvancesPWCracking, Narayanan2005FastDictionaryAttacks, Schmidt2013Pitfalls, Weir2009PCFG}) that potentially affect common strength metrics (see Section \ref{sec:rw:pw_strength_metrics}) -- but attackers also benefit from this kind of knowledge. From an HCI perspective, one can also unfold how users select passwords, which allows optimizing cracking efficiency \cite{Weir2010MetricsPolicies, Wheeler2016zxcvbn}. 
+
+do people know if their passwords are studied?
+ometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
 
 %TODO maybe extend this intro and talk about harbach's and Krol's findings
 %Krol2016ExperimentDesign
 
-
  many people behave normally, and if you ask them in the survey if they did, this can improve the quality of the data drastically \cite{Fahl2013EcologicalValidityPasswordStudy}
-
-issues:
-\begin{itemize}
-	\item finding efficient ways to attack passwords - this might also help attackers. 
-	\item sometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
-\end{itemize}
-
-do people know if their passwords are studied?
 
 
 Not seldom, a triangulated approach is the most feasible to reach the actual ``truth'' about user behavior. In the following, the most prominent study methods are presented. 
@@ -55,9 +52,6 @@ Not seldom, a triangulated approach is the most feasible to reach the actual ``t
 %
 %
 %general overview a la. how to run a good password study 
-
-\cite{Harbach2016HardLockLife,Henze2013EmpiricalResearchUbiquitous,Kuhn1993ParticipatoryDesign,VonZezschwitz2013SurvivalShortest,Hassenzahl2003AttrakDiffGerman,Mazurek2013Measuring,Egelman2015SeBIS,Rosoff2014BehavioralExperimentsFraud,Savage2012GainingWisdomCrowds}
-
 
 % briefly show the benefits and drawbacks of each method. 
 %TODO maybe some Usable Security book already has this? look into garfinkel/cranor book...
@@ -74,8 +68,11 @@ closest to actual password behavior, with one large disadvantage:
 mostly used to collect qualitative data.
 semi/structured interviews: \cite{Stobert2014PasswordLifeCycle}
 
+makes memorability studies a bit more cumbersome but are not impossible:
+Yan 2004 Memorability \cite{Yan2004PasswordMemorabilitySecurity}
 
-makes memorability studies a bit more cumbersome but are not impossible. 
+
+you can do participatory design \cite{Kuhn1993ParticipatoryDesign} but the USEC literature rarely reports on this kind of method.
 
 Adams Sasse 1997 \cite{Adams1997MakingPWsSecureAndUsable}
 Weirich on Persuasion \cite{Weirich2001PrettyGoodPersuasion, Weirich2005PersuasivePasswordSecurity}
@@ -90,11 +87,19 @@ online surveys
 - with an interactive prototype 
 - or just with a survey tool
 
+
+
+
 diary studies here.  \cite{Hayashi2011DiaryStudyPWs}
 
-Experience Sampling \cite{Consolvo2003ESM}
+Experience Sampling \cite{Consolvo2003ESM} 
 
-In the wild: \cite{Chamberlain2012ResearchInTheWild}; \cite{Renaud2017LessonsLearnedNudges}
+Actual password resets due to policy update / opportune moments: \cite{Fahl2013EcologicalValidityPasswordStudy}, \cite{Mazurek2013Measuring}, \cite{Renaud2017LessonsLearnedNudges}
+
+In the wild: \cite{Chamberlain2012ResearchInTheWild} and \cite{Henze2013EmpiricalResearchUbiquitous} for theoretical frameworks.
+Renaud \cite{Renaud2017LessonsLearnedNudges} over multiple years!
+
+Harbach more focused on quantifying authentication efforts to unlock mobile phones \cite{Harbach2016HardLockLife} 
 
 people are not always aware that their data is logged and behave normally (high eco val)
 
@@ -102,6 +107,9 @@ Example for in-the-wild data:
 Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
 
 \cite{Florencio2007LargeScaleStudyPasswordHabits}. The established protected password lists (PPL) to avoid intruding into people's privacy. They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). It was not possible to trace the incoming data back to a specific user, which might have resulted in over counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification, the key logging module of the toolbar would record a password reuse event (PRE) every time the user entered the word -- also in regular text searches, for example. Another limitation could be that they used entropy as a proxy for password strength. However, as discussed in the previous chapter, we have seen that this metric is more robust for system-generated passwords and that strength estimation has evolved over the past ten years. 
+
+Rosoff \etal \cite{Rosoff2014BehavioralExperimentsFraud} -- used PANAS, sent email with different conditions just like \cite{Huh2017TooBusy}
+
 
 \subsection{Crowd-sourcing and Mechanical Turk Studies}
 Special kind of ``field'' study which is why they are reported separately.
@@ -112,6 +120,7 @@ also, adding more complex, interactive prototypes is challenging
 
 \cite{Peer2017BeyondTheTurk}
 \cite{Ross2010WhoAreTurkers}
+\cite{Savage2012GainingWisdomCrowds}
 
 MTurk
 propagated and most commonly used at CMU e.g. \cite{Mazurek2013Measuring} \cite{Shay2014CanLongPasswordsBeSecureAndUsable} \cite{Shay2016DesigningPasswordPolicies}
@@ -135,17 +144,15 @@ not only empirical methods but also logic reasoning, argumentation is strong amo
 
 \subsection{The Bottom Line: Emerging good practices and tools}
 
-UX: AttrakDiff is often 
+UX: AttrakDiff is not too present in USEC \cite{Hassenzahl2003AttrakDiffGerman}, PANAS sometimes \cite{Rosoff2014BehavioralExperimentsFraud} but not really for passwords. Usually own-grown constructs are used, or lately SeBIS.
 
 for surveys, IMCs are recommendable \cite{Oppenheimer2009InstructionalManipulationChecks}
 memory clearing tasks are often used in memorability studies.
 PGS 
 
 
-Qualitative studies:
-
 Quantitative: 
-Yan 2004 Memorability \cite{Yan2004PasswordMemorabilitySecurity}
+
 
 Position Papers:
 Ives Domino Effect \cite{Ives2004DominoEffectReuse}
@@ -162,8 +169,6 @@ In the workplace: \cite{Adams1997MakingPWsSecureAndUsable, Inglesant2010TrueCost
 
 %\subsection{Best Practices on Ethical Standards}
 	look into ``Critical'' folder on mendeley
-	
-
 
 	
 \section{User Behavior Regarding Passwords}\label{sec:rw:how-users-cope}
@@ -497,7 +502,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	People's mnemonic passwords are predictably based on common phrases from movies, literature, etc., but still the resulting passwords are better than traditional passwords \cite{Kuo2006HumanSelectionMnemonic}
 	
-	\paragraph{Passphrases}
+	\paragraph{Passphrases}\label{sec:rw:passphrases}
 	(\todo{maybe even merge this with subsection on advice})
 	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords, better to enter on virtual keyboards, e.g. TVs (although we don't have any data for that, but that's okay because passwords play a minor role (but still exist there)).
 	
@@ -559,7 +564,17 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	the presentation of password requirements can affect usability and security, because it can prevent errors and speed up selection for some stricter policies \cite{Shay2015SpoonfulOfSugar}
 	
-	\subsection{Password Managers}
+	\subsection{Password Managers and Generators}
+	
+	Generators
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.49\linewidth]{rw/apple-pw-assistant-random}
+		\includegraphics[width=0.49\linewidth]{rw/apple-pw-assistant-memorable}
+		\caption{\label{fig:rw:pw_generators} On macOS, the Keychain application manages passwords for the user. If a new entry is manually created by the user, the password assistant can be used to generate different kinds of passwords: Random (image on the left), letters and numbers, numbers only, memorable (image on the right), and FIPS-181 compliant}
+	\end{figure}
+	
+	
 	
 	list all the pro's and con's of PWMs here in different dimensions, e.g. security and usability, kind of similar to \cite{Bonneau2012ReplacePasswords}
 	
