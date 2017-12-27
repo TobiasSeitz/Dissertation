@@ -239,6 +239,7 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	- ... they underestimate the threat
 	- ... they are right to judge the account as low value (who would hack me?) \cite{LastPass2016PersonalitiesGetUsHacked}
 	- Passwords survive for a long time, sometimes in a modified version, and they tend to get slightly more complex over time and for important accounts\cite{VonZezschwitz2013SurvivalShortest}
+	- people think complex passwords are not memorable enough \cite{Woods2018TooManyPasswords}
 	
 	Passphrases are super predictable because most people use common phrases \cite{Bonneau2012LinguisticProperties}
 	
@@ -378,7 +379,10 @@ if we must keep the human in the loop, e.g. because constraints dictate so, we n
 Usable security shouldn't only be done for end users but also for the people who implement security systems \cite{Acar2016NotYourDeveloper}
 
 
-	\subsection{Password Composition Policies}
+	\subsection{Password Composition Policies}\label{sec:rw:policies}
+	
+	
+	
 	
 	the idea of policies dates back to the 70s: Morris and Thompson suggested to make users
 	either choose longer passwords or assign passwords to them - There are flaws in password authentication and we can do something to alleviate the problem, but cannot get rid of it entirely \cite{Morris1979PasswordSecurity}
@@ -387,8 +391,15 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	%TODO here we need a reference to Bill Burr's idea of nailing policies down to a NIST standard.
 
-	Proctor \etal found in 2002 that certain ``proactive password restrictions'' lead to stronger passwords \cite{Proctor2002ImprovingAuthenticationProactivePasswordRestrictions}. In two laboratory experiments, they had participants create a new password for a university account. The policies differed in the required minimum length (five and eight) and additional requirements like upper-/lowercase letters and digits. In the first experiment, where passwords only had to be five characters long, introducing the additional requirements had a greater effect on strength than in the eight-character-minimum condition. Increasing the minimum length by three characters already had a stronger effect. Interestingly, they concluded ``Perhaps the most important message of this study is that restrictions on user-generated passwords may not accomplish their intended goals.'' The early hypothesis that policies are more or less ineffective is particularly surprising because in the fifteen years that followed, many research papers were written about such restrictions and many of them ultimately came to similar conclusions. In the following some of the most influential works are summarized.
-	%now we need to report on a couple of papers that come to the conclusion that policies are somewhat ineffective.
+
+
+	Proctor \etal found in 2002 that certain ``proactive password restrictions'' lead to stronger passwords \cite{Proctor2002ImprovingAuthenticationProactivePasswordRestrictions}. In two laboratory experiments, they had participants create a new password for a university account. The policies differed in the required minimum length (five and eight) and additional requirements like upper-/lowercase letters and digits. In the first experiment, where passwords only had to be five characters long, introducing the additional requirements had a greater effect on strength than in the eight-character-minimum condition. Increasing the minimum length by three characters already had a stronger effect. Interestingly, they concluded ``Perhaps the most important message of this study is that restrictions on user-generated passwords may not accomplish their intended goals.'' 
+	
+	%TODO NIST policy derived from their guessing approach in 2004. 
+	
+	Proctor \etal's early hypothesis that policies are more or less ineffective is particularly surprising because in the fifteen years that followed, many research papers were written about such restrictions and many of them ultimately came to similar conclusions. In the following some of the most influential works are summarized.
+	
+	%now we need to report on a couple of papers that come to the conclusion that policies are somewhat ineffective.	
 	Inglesant and Sasse report on a diary study of password policies in corporate contexts \cite{Inglesant2010TrueCostOfUnusablePolicies}. a postulation that password policies should be based on HCI principles rather than security considerations alone. The idea of a holistic password policy is put forward 
 	
 	 
