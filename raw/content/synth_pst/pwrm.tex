@@ -1,10 +1,27 @@
 \chapter[Proof-of-Concept: Password Reuse Manager]{Proof-of-Concept: Password Reuse Manager}\label{chap:pwrm}
 
 \section{Background and Context}
+Password managers (PWMs) are one of the common coping strategies for an ever growing number of accounts. 
+% übergang zu dem noch ausformulieren. 
+Zhang-Kennedy \etal provided a detailed literature review on common recommendations for users \cite{ZhangKennedy2016RevisitingPasswordRules}. They come to the conclusion that reuse is not necessarily bad. In fact, they provide an updated recommendation that to ``\textit{\textbf{strategically}} reuse passwords''. Moreover, Wash \etal stated that ``defining appropriate categories of websites for re-use of passwords of varying strengths is an open area of research;'' \cite{Wash2016UnderstandingPasswordChoices}. In this chapter, we report on the design, implementation, and basic evaluation of a password manager that incorporates the notion of secure strategic password-reuse. The chapter is partially based on a Bachelor thesis by Magdalena Sifferlinger, a Master Thesis by Martin Prinz, and a technical report by Anabelle Bockwoldt, Dimitri Reisler, and Julia Speckmeier. All these works were carried out under my supervision and guidance. \ar
 
-Zhang-Kennedy \etal provided very detailed literature review and took a look at the recommendations given to users. They come to the conclusion that reuse is not necessarily bad \cite[p.8-9]{ZhangKennedy2016RevisitingPasswordRules}. In fact, they provide an updated recommendation that is ``strategically reuse passwords''. In this chapter, we report on the design, implementation and evalaluation of a password manager that puts ``strategic reuse'' at its core. 
+\subsection{Conceptual Idea}
+Security-wise it is recommendable to have a unique, strong password for every account, but as discussed in detail in Section \ref{sec:rw:user-behavior}, the reality looks different, because user's are overwhelmed with the task. At the heart of this work, we embrace user behavior as it is and do not try to ``fix the user''. We design for current user behavior first, and apply nudging techniques later. This is the notion of \textit{supporting} password coping strategies, rather than \textit{fixing} them. 
 
 
+A number of studies has highlighted that users reuse passwords \ar. Virtually every user has developed their personal reuse strategy either independently, or after receiving advice by peers or the media. For instance, people mentally put accounts in categories  like ``important account'' and ``throwaway account'' \cite{Egelman2013DoesMyPasswordGoUpToEleven}. Others might have created a mangling scheme based on the purpose of the password. Our password manager aims to support users to continue using their strategy even with the password manager, but potentially in a smoother way. One of our goals is to eventually lower the barrier of adopting a password manager, because only around 12\% of (American) users rely on a password manager
+
+
+\subsection{Research Objectives and Contribution}
+\textbf{Design an implementation of paradigm-shifting password manager}
+
+
+\textbf{Platform for user studies}
+
+\textbf{Open Source Password Manager}
+Extensible, security audits, visually appealing design. Software that goes beyond simple prototype.
+
+\subsection{Related Work}
 Maqbali and Mitchell talk about a reuse algorithm implemented in their ``AutoPass'' prototype \cite{Maqbali2016PasswordGenerators}.
 ``site-specific'' pseudorandom passwords
 
@@ -12,17 +29,39 @@ Maqbali and Mitchell talk about a reuse algorithm implemented in their ``AutoPas
 
 \section{Design Iterations and Evaluations}
 
-``defining appropriate categories of websites for re-use of passwords of varying strengths is an open area of research;'' \cite{Wash2016UnderstandingPasswordChoices} 
+\subsection{Low-Fidelity Prototyping and Pre-Studies}
+% essentially magdalena sifferlinger's work here.
+Research Questions: which strategies to users utilize to categorize passwords?
+method: two-tiered: online study (N=35) and personal semi-structured interviews on the street (N=5). 
 
-\subsection{Persuasion in Password Managers}
-Talk about ATH Results here
 
+\subsection{Persuasive Patterns in Popular Password Managers}
+% ath stuff here.
+We conducted an analysis about which persuasive patterns can be found in password managers. The analysis served as a basis for some design decisions for the password reuse manager. 
+
+\paragraph{Method}
+To do that, we took a list of persuasive patterns \footurl{http://ui-patterns.com/patterns}{02.01.2018}
+
+\subsection{Persuasive Design Elements}
+
+\paragraph{Personalization}
+\paragraph{Security Feedback}
+
+
+other candidates: set completion, value attribution, recogntion over recall, kairos, feedback loops, 
+
+\paragraph{Results}
 
 \section{Field Study}
+\subsection{Prototype}
+%add some screenshots here
 \subsection{Sample}
 \subsection{Results}
 
-
-
 \section{Discussion}
 Suggestion of password categories -- can we use the decoy effect here?
+
+\section{Future Work}
+\section{Conclusion}
+
+

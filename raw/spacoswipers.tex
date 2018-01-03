@@ -34,7 +34,7 @@
 %\definecolor{platinum}{HTML}{E5E4E2}
 %\colorlet{diagrambg}{platinum}
 
-\usepackage[colorlinks=false]{hyperref}
+
 
 \makeindex
 
@@ -43,6 +43,8 @@
 \usepackage{titlesec} % lets us format the chapters etc.
 
 \include{texpreamble} % load additional stuff
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref} % do this after texpreamble so that we have the colordefinitions
+
 \setcounter{tocdepth}{1}
 \begin{document}
 	
