@@ -592,11 +592,21 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	the presentation of password requirements can affect usability and security, because it can prevent errors and speed up selection for some stricter policies \cite{Shay2015SpoonfulOfSugar}
 	
+	time to crack already in \cite{Yee2006Passpet} for master password in PWM
+	
+	
+	
 	\subsection{Password Managers and Generators}
 	
-	Generators
+	You give up control, if you generate random passwords. 
+	Password managers that do ``autofill'' have the nice side effect of reducing susceptibility to phishing attacks (domain mismatches, so it won't autofill on phishing sites. only if the site was attacked with XSS (form action redirect) the pwm is fooled to autofill. )
+	
+	Goals of password managers see \cite{Yee2006Passpet}
+	
+	Generators and generative approaches
 	\begin{figure}
 		\centering
+		%TODO we could use Dashlane's screenshot here. 
 		\includegraphics[width=0.49\linewidth]{rw/apple-pw-assistant-random}
 		\includegraphics[width=0.49\linewidth]{rw/apple-pw-assistant-memorable}
 		\caption{\label{fig:rw:pw_generators} On macOS, the Keychain application manages passwords for the user. If a new entry is manually created by the user, the password assistant can be used to generate different kinds of passwords: Random (image on the left), letters and numbers, numbers only, memorable (image on the right), and FIPS-181 compliant}
@@ -610,12 +620,16 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	Tapas is a password manager based on two-factor authentication and was well received in a 30/10 participant user study \cite{McCarney2012Tapas, McCarney2013PWMThesis}
 	
+	Passpet \cite{Yee2006Passpet}
+	
+	VersiPass \cite{Stobert2014PWMThatDoesntRemember}
+	
+	Password Multiplier \cite{Halderman2005ConvenientPWM}
+	
 	%% from SOUPS MM Poster
-	We situate our work in understanding user behavior and attitudes regarding passwords. Here, large parts of the literature focus on \textit{coping strategies} that emerge with a growing number of accounts \cite{Florencio2007LargeScaleStudyPasswordHabits, Florencio2014PasswordPortfoliosFiniteUser}. For example, Stobert and Biddle conducted qualitative analyses to formalize the way users live with their passwords (the ``Password Life Cycle") \cite{Stobert2014PasswordLifeCycle}. This model depicts how users choose, commit, reuse, and reset their passwords. Their work also delivers valuable insights into memorization and organization strategies: Users have mental lists of passwords, e.g. a list for important accounts or a list per website topic. Without explicitly mentioning, the findings contribute to a mental model of password reuse. This is important, because reuse is one of the most common coping strategies \cite{Das2014TangledWeb, Gaw2006PasswordManagement, Hayashi2011DiaryStudyPWs} and many researchers discourage it, because a breach at one site can compromise many others \cite{Bonneau2012ScienceOfGuessing, Komanduri2011OfPasswordsAndPeople}. 
+	We situate our work in understanding user behavior and attitudes regarding passwords. Here, large parts of the literature focus on \textit{coping strategies} that emerge with a growing number of accounts \cite{Florencio2007LargeScaleStudyPasswordHabits, Florencio2014PasswordPortfoliosFiniteUser}. For example, Stobert and Biddle conducted qualitative analyses to formalize the way users live with their passwords (the ``Password Life Cycle'') \cite{Stobert2014PasswordLifeCycle}. This model depicts how users choose, commit, reuse, and reset their passwords. Their work also delivers valuable insights into memorization and organization strategies: Users have mental lists of passwords, e.g. a list for important accounts or a list per website topic. Without explicitly mentioning, the findings contribute to a mental model of password reuse. This is important, because reuse is one of the most common coping strategies \cite{Das2014TangledWeb, Gaw2006PasswordManagement, Hayashi2011DiaryStudyPWs} and many researchers discourage it, because a breach at one site can compromise many others \cite{Bonneau2012ScienceOfGuessing, Komanduri2011OfPasswordsAndPeople}. 
 	
 	To facilitate coping with passwords and possibly minimize reuse, dedicated tools have been investigated and proposed. Besides industry-driven password managers, HCI research has proposed a number of alternatives. For instance, Stobert and Biddle also propose a password manager that is designed to boost trust as it does not directly store passwords, but rather offers a image cues to recall passwords \cite{Stobert2014PWMThatDoesntRemember}. 
-	
-	Finally, other researchers followed a mental model approach to understand how users make sense of security mitigations. For instance, Kang et al. utilized drawing tasks to establish users' mental model of data disclosure on the Internet \cite{Kang2015MentalModelsDrawing} to find guidelines for more privacy-sensitive solutions. Bravo-Lillo et al. focused on creating a mental model of security warnings \cite{BravoLillo2011WarningsMentalModel} to improve their framing and timing.
 	
 	
 	\cite{Bojinov2010KamouflagePWM}
