@@ -17,10 +17,10 @@ The goal of this project was to study the design of a novel password manager. It
 %Extensible, security audits, visually appealing design. Software that goes beyond simple prototype.
 
 \subsection{Related Work}
-Password managers can be classified as \textit{retrieval-based} or \textit{generative}. Retrieval-based password managers store the user's passwords securely and allow, e.g., automatically filling out forms for the user. Once a password is in the user's manager, they can choose to never type it again. Most commercial solutions work this way. On the downside, users do not ``practice'' their password as much and might not remember it in situations where the password manager is unavailable or too risky to use, e.g. in an Internet café in a foreign country. The generative password manager approach solves this problem, because no passwords are stored \cite{McCarney2012Tapas}. Halderman \etal presented Password Multiplier that uses a master password and hash functions to generate unique passwords for different sites \cite{Halderman2005ConvenientPWM}. Users only need access to the Password Multiplier browser extension and their credentials to log in from any place. Maqbali and Mitchell formalized this approach and sketched a new idea for pseudorandom passwords they called ``AutoPass''\cite{Maqbali2016PasswordGenerators}. It takes the master password, first part of the URL and optionally a digital object (e.g. a file, website, email address \cite{Biddle2011DigitalObjectsPWs}).
-Stobert and Biddle developed another generative password manager called VersiPass, which is closely related to our approach \cite{Stobert2014PWMThatDoesntRemember}. It works similar to Password Multiplier, but is based on graphical authentication as master password (PCCP \cite{Chiasson2008PCCP}). Moreover, accounts are categorized by purpose. 
+Password managers can be classified as \textit{retrieval-based} or \textit{generative}. Retrieval-based password managers store the user's passwords securely and allow, e.g., automatically filling out forms for the user. Once a password is in the user's manager, they can choose to never type it again. Most commercial solutions work this way. On the downside, users do not ``practice'' their password as much and might not remember it in situations where the password manager is unavailable or too risky to use, e.g. in an Internet café in a foreign country. The generative password manager approach solves this problem, because no passwords are stored \cite{McCarney2012Tapas}. Halderman \etal presented Password Multiplier that uses a master password and hash functions to generate unique passwords for different sites \cite{Halderman2005ConvenientPWM}. Users only need access to the Password Multiplier browser extension and their credentials to log in from any place. Chiasson \etal, however, found both usability and security problems with the system \cite{Chiasson2006PasswordManagers}. Maqbali and Mitchell later formalized this approach and sketched a new idea for pseudorandom passwords they called ``AutoPass''\cite{Maqbali2016PasswordGenerators}. It takes the master password, first part of the URL and optionally a digital object (e.g. a file, website, email address \cite{Biddle2011DigitalObjectsPWs}) to resolve some issues pointed out by Chiasson \etal. Stobert and Biddle developed another generative password manager called VersiPass, which is closely related to our approach \cite{Stobert2014PWMThatDoesntRemember}. It works similar to Password Multiplier, but is based on graphical authentication as master password (PCCP \cite{Chiasson2008PCCP}). Moreover, accounts are categorized by purpose.
 
-``Password managers often have poor support for roaming and inadequately studied usability [3].'' \cite{Herley2012PersistenceOfPasswords}
+
+Our solution is different to previous approaches in that it is a hybrid between a retrieval-based and generative password managers: The user can decide which method to use depending on the password category. By doing so we hypothesized to resolve the drawbacks from earlier solutions.
 
 \section{Design Iterations and Evaluations}
 We used a user-centered design approach to create our prototype. Before finalizing the prototype and evaluating it in the field (cf. Section \ref{sec:pwrm:field_study}), we created several versions and evaluated them in multiple settings. Here, we followed the idea of a lean, agile iteration to avoid investing too much effort into building the unsuitable features later. 
@@ -65,38 +65,24 @@ other candidates: set completion, value attribution, recogntion over recall, kai
 \paragraph{Hedonic Quality}
 not really a ``design pattern'', but if beautiful things work better \cite{Tractinsky1997, Fogg2001WhatMakesSitesCredible}, then why wouldn't this be a persuasive design element?
 
-\section{Minimum Viable Product}
-At this point the concept was mature enough to be implemented as a high fidelity prototype. Our goal was to make the prototype into a \textit{minimum viable product} (MVP). \todo{motivate this paradigm with LEAN UX}. In the following we present the key screens of the user interface and internal workings. %TODO why? 
 
-% MORE GOALS
+\section{Minimum Viable Product}
+At this point the concept was mature enough to be implemented as a high fidelity prototype. Our goal was to make the prototype into a \textit{minimum viable product} (MVP). \todo{motivate this paradigm with LEAN UX}. In the following we characterize resulting key features that go beyond password storage and retrieval. 
 
 \subsection{Central Features}
 \todo{Reframe this to be more in line with previous chapter.}
-Essential differences to other PWMs: different approach to onboarding (Dashlane simply grabs everything it can get from browsers without asking...)
+%Essential differences to other PWMs: different approach to onboarding (Dashlane simply grabs everything it can get from browsers without asking...)
 
-\todo{add table}
+\input{tables/pwm-comparison}
+
+There were other features of the click-prototype that received very positive feedback. However, some of them went beyond the features we categorized as ``most promising'' to get our idea across. 
+
 Our concept does not offer roaming through a cross-device sync and back-ups like all the commercial solutions do. We were motivated to keep it on a per-device level in multiple ways. 1) Storing sensitive data in the cloud can become a vulnerability if the provider fails to configure the security mechanisms correctly 2) users are wary of this and distrust managers that synchronize passwords to remote services \ar 3) we assume users remember their passwords anyway because they have a limited number of them, which they could type in an emergency. it was found that users prefer to memorize important, frequently used passwords anyway and potentially do not even disclose them to the PWM. That means for these accounts they are independent of the used device anyway. This was a design decision that may turn out to be a shortcoming, but it is one that can be fixed later. Potentially instead of an ``all or nothing'' approach, the users can decide which passwords can be saved to the cloud -- no other software allows this at this point. 
 
 
 \subsubsection{Password Categories, Unique Passwords, and Password Hints}
 % martin used ``Reuse Passwords'' but this is kind of misleading... need to find a way around this, as it might be factor for decreased usability.
 A drawback of the autofill feature is losing muscle memory. But since we do assume users reuse passwords that they can retrieve from memory, this is not a problematic feature. 
-
-\subsubsection{On-boarding Workflow}
-% persuasive patterns were implemented here. 
-% funnel
-% behavioral econo
-
-
-
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{pwrm/key-screen-2-onboarding}
-	\caption{\label{fig:pwrm:key-screen-onboarding} Onboarding wizard.}
-\end{figure}
-
-\subsubsection{Extension Home Screen}
 
 \begin{figure}[htbp]
 	\centering
@@ -111,12 +97,35 @@ Manual entry of username and password is okay, but not the focus of attention. K
 	\caption{\label{fig:pwrm:key-screen-entry} Manual entry of a new username/password pair. }
 \end{figure}
 
-\subsubsection{Interventions}
+\subsubsection{On-boarding Workflow}
+% persuasive patterns were implemented here. 
+% funnel
+% behavioral econo
+The first time a system is used has a big impact on the mental model that is formed around it \ar. Therefore, communicating functionality efficiently and effectively is a cornerstone of the on-boarding process.  
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{pwrm/key-screen-2-onboarding}
+	\caption{\label{fig:pwrm:key-screen-onboarding} Onboarding wizard.}
+\end{figure}
+
+
+\subsubsection{Ad Hoc Support}
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{pwrm/injection-hintboxes}
 	\caption{\label{fig:pwrm:injection-hintboxes} }
 \end{figure}
+
+
+\subsubsection{Persuasive Elements}
+\paragraph{Defaults:} There is a set of default categories that are commonly created by users. To the best of our knowledge, no other password manager uses this approach.
+
+
+\paragraph{Personalization:} The password manager is supposed to be adjustable to one's own coping strategy. Thus, it allows the user to create their own categories. 
+
+
 
 
 \subsection{Implementation}
@@ -137,21 +146,39 @@ PWRM is implemented using the WebExtensions API\footurl{https://developer.mozill
 
 
 \subsubsection{Recruiting and Demography}
-We published the call for participation on social networks
-
+We published the call for participation on social networks (Facebook, Slack, Instagram), email distributors, and Survey Circle\footurl{https://www.surveycircle.com/en/}{06.01.2018}. As an incentive we announced a raffle of two shopping vouchers, each worth 50€. 38 people reacted and started the screening process, and 18 finished it. After screening was complete, twelve people correctly followed the instructions to download, install and activate the PWRM browser extension. One crucial part was to transfer the user-id (a randomly generated string) over to a survey window to allow us to map log data with the survey responses. Eleven participants identified as female, and seven as male. Their age ranged from 22 and 58 (\average XX\todo{calc}, SD=XX), six were employed, the remaining participants were students. 
 
 \subsection{Results}
 
-\section{Discussion}
+\subsection{Discussion}
 Suggestion of password categories -- can we use the decoy effect here?
 
-\subsection{Limitations}
+\subsubsection{Limitations}
+
+Although we encouraged to use the PWRM, only 7 seemed to follow this instruction. We do not know what the reason why the remaining five participants failed to show activity.
+
+Extension was optimized for Firefox. At the time of the study, Chrome was the dominant browser in Germany, so we may have lost a few participants due to this fact. Possible this also explains the low activity for five participants, if they use multiple browsers in parallel. 
+
+Built-in pwm's might have taken over already.
+
 How well the system works would only be visible in a longer term study. Ten days might not be effective enough to bring out the benefits entirely, but only rough intuitive ratings (which is why we used the INTUI questionnaire)
 
 
-
-\section{Lessons Learned and Future Work}
-
 \section{Conclusion}
+
+\subsection{Lessons Learned}
+
+
+\subsection{Alterations after Study}
+TODO: get it to work with latest Firefox and Chrome versions....
+
+\subsection{Future Work}
+Memorability audit.
+
+flag if accounts should be automatically saved for later revision (without saving the password). Detect which of the passwords was used (was it a ``reuse password''? which one? put into the correct group automatically)
+
+Adaptation. 
+
+
 
 

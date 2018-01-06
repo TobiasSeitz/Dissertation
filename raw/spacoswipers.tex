@@ -4,6 +4,8 @@
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc} % writing of äöüß possible, instead of "a"o"u"s
 \usepackage[utf8]{inputenc} % for a UTF8 editor only
+\usepackage{pifont}
+\usepackage{newunicodechar}
 \usepackage{graphicx}
 \usepackage{mathptmx} % font times-roman for math. Formulas, bullets, etc.
 \usepackage{fancyhdr} % chapternames at top of page
@@ -30,20 +32,18 @@
 \usepackage[top=2cm, bottom=1.25in, left=2cm, right=2cm]{geometry}
 
 %COLORS
-\label{Color Definition}
 \usepackage{xcolor}
 %\definecolor{platinum}{HTML}{E5E4E2}
 %\colorlet{diagrambg}{platinum}
-
-
 
 \makeindex
 
 \makeglossaries
 
-\usepackage{titlesec} % lets us format the chapters etc.
+\usepackage{titlesec} % format the chapters etc.
 
-\include{texpreamble} % load additional stuff
+\include{texpreamble} % load additional stuff, but no packages!
+% link colorings: 
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref} % do this after texpreamble so that we have the colordefinitions
 
 \setcounter{tocdepth}{1}
