@@ -139,27 +139,34 @@ PWRM is implemented using the WebExtensions API\footurl{https://developer.mozill
 
 
 \section{Field Study}\label{sec:pwrm:field_study}
-
+To evaluate the prototype in a more realistic context, we conducted a qualitative field study. Here, we concentrated on real-world adoption scenarios, i.e. without a separate briefing stage because users who are about to adopt a password manager do not necessarily receive briefing either. Our research questions were:\\
+\noindent\textbf{RQ1:} What support mechanism is best received: retrieval, hints, or categories?\\
+\noindent\textbf{RQ2:} Which adjustments do participants make to alter the default settings?
+\noindent\textbf{RQ3:} What role do persuasive elements play for the experience of the manager?
 
 \subsection{Methodology}
-
-
+Since the goal of the study was still of explorative nature, we did not have independent variables. The study target duration was ten days for which participants were instructed to use the tool just as they needed. 
 
 \subsubsection{Recruiting and Demography}
 We published the call for participation on social networks (Facebook, Slack, Instagram), email distributors, and Survey Circle\footurl{https://www.surveycircle.com/en/}{06.01.2018}. As an incentive we announced a raffle of two shopping vouchers, each worth 50€. 38 people reacted and started the screening process, and 18 finished it. After screening was complete, twelve people correctly followed the instructions to download, install and activate the PWRM browser extension. One crucial part was to transfer the user-id (a randomly generated string) over to a survey window to allow us to map log data with the survey responses. Eleven participants identified as female, and seven as male. Their age ranged from 22 and 58 (\average XX\todo{calc}, SD=XX), six were employed, the remaining participants were students. 
 
+\todo{We need a small follow up because there are no actual qualitative statements we could use to highlight the effectiveness of the system.}
 \subsection{Results}
+\subsubsection{Log Files}
+Activity in the first run of the field study stagnated very quickly after the installation phase. Half of the participants only used it actively on the first day of the study. Since not only PWRM usage was logged, but also any submit event (only timestamp and event type), it is fair to assume that the participants did not use their browser either, or that they removed PWRM from their browser. The latter case was not logged. During the onboarding process, participants made an active decision which way to categorize their passwords. Three chose not to store passwords, but only password hints and categorize the hints either by topic or account importance. The choice of every participant matched the statements in their screening responses. 
 
 \subsection{Discussion}
 Suggestion of password categories -- can we use the decoy effect here?
+
+It still might not have worked because people did not yet feel supported -- most rely on memorization and algorithmic mangling of their passwords, so using the system did not yield a perceived benefit yet. Also, we did not instruct them to clear their \textbf{cookies}, which means they could have stayed logged in without needing the PWRM. 
 
 \subsubsection{Limitations}
 
 Although we encouraged to use the PWRM, only 7 seemed to follow this instruction. We do not know what the reason why the remaining five participants failed to show activity.
 
-Extension was optimized for Firefox. At the time of the study, Chrome was the dominant browser in Germany, so we may have lost a few participants due to this fact. Possible this also explains the low activity for five participants, if they use multiple browsers in parallel. 
+Extension was optimized for Firefox. At the time of the study, Chrome was the dominant browser in Germany, so we may have lost a few participants due to this fact. Possibly, this also explains the low activity for five participants, if they use multiple browsers in parallel. 
 
-Built-in pwm's might have taken over already.
+Built-in pwm's might have taken over already before our system could have become useful. We did not require participants to reset their browser. That's actually a lesson learned: PWMs adoption might be easier if the browser is ``fresh''.
 
 How well the system works would only be visible in a longer term study. Ten days might not be effective enough to bring out the benefits entirely, but only rough intuitive ratings (which is why we used the INTUI questionnaire)
 
@@ -167,7 +174,7 @@ How well the system works would only be visible in a longer term study. Ten days
 \section{Conclusion}
 
 \subsection{Lessons Learned}
-
+Adoption of PWM seems easier in fresh browsers. Otherwise, the PWM should use the built-in manager's passwords (permission necessary) and organize them for the user automatically. 
 
 \subsection{Alterations after Study}
 TODO: get it to work with latest Firefox and Chrome versions....
