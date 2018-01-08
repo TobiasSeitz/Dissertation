@@ -27,35 +27,44 @@ This chapter looks at the literature that mostly came after this seminal work. I
 
 %Important: Under coping strategy, we also understand the selection process, because choosing a weak password over a strong one is also one way to \textit{cope} with the large number of passwords and the memorability burden. (make sure to mention this in the general introduction already.)
 
-
-
 %@@TODO cite Wash paper @SOUPS 2016.
-
 
 \section{Methodology: Running Password Studies}\label{sec:rw:methodology}
 % not relevant: how to measure password strength. solely focus on the ``HOW'' of data collection
-Before we report on insights about user behavior regarding passwords, we take a look into running studies that focus on passwords. There are two central aspects that make collecting data particularly challenging: acting ethically and maintaining high ecological validity of the data. In fact, these two goals create an area of tension that demands a critical selection of methods. Komanduri \etal note that ``ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system'' \cite{Komanduri2011OfPasswordsAndPeople}. But this would mean that researchers obtain access to the user accounts that were under investigation. This is ethically questionable \cite{Egelman2012ItsNotStealing}. Maybe the researchers themselves are benevolent, but the data is precious and thus could bring attackers to the scene. Since absolute security can barely be guaranteed, it is best to avoid that users disclose their actual credentials in a user study to the researchers.
+Before we report on insights about user behavior regarding passwords, we take a look into running studies that focus on passwords. There are two central aspects that make collecting data particularly challenging: acting ethically and maintaining high ecological validity of the data. In fact, these two goals create an area of tension that demands a critical selection of methods. Komanduri \etal note that ``ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system'' \cite{Komanduri2011OfPasswordsAndPeople}. But this would mean that researchers obtain access to the user accounts that were under investigation. This is ethically questionable \cite{Egelman2012ItsNotStealing}. Maybe the researchers themselves are benevolent, but the data is precious and thus could bring attackers to the scene. Since absolute security can barely be guaranteed, it is best to avoid that users disclose their actual credentials during a user study to the researchers.
 
+\subsection{General Considerations for User Studies as Data Source}
+If we cannot collect the users' real password in its original form, what is the best way to measure, e.g., cause and effect of novel interventions? There are several alternatives. 
 % first solution: have people create a new one. 
-If we cannot collect the users' real passwords in its original form, what is the best way to measure, e.g., cause and effect of interventions? There are several alternatives. First, one asks participants to create a new password during the user study and stores these passwords as part of the dataset. This approach resolves the issue of real-world password disclosure, but introduces a number of problems.
+\paragraph{Create new password} First, one asks participants to create a new password during the user study and stores these passwords as part of the dataset. This approach resolves the issue of real-world password disclosure, but introduces a number of problems.
 % ethical dilemma #1: do people know that their passwords are studied?
 Studies should be ethical and thus transparent for the most part. Hence, the study topic should be known to the participants. However, if participants know that their passwords are studied, this could induce protective reactions as to not give any hint to their real passwords at all. In that case, the participants' selection strategy does not resemble much to their real-world behavior and thus the ecological validity of the data is low. 
 % ethical dilemma #2: sharing the collected data. 
-Some users, however, are less suspicious and provide one of their real passwords regardless of the instruction. The other alternative would be to conceal the purpose of the study through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Scientific research should also be valid, reliable, and generalizable. Therefore, the dataset is often part of the publication to allow others to assess these three qualities. But if users had entered their real passwords, it is risky to publish this dataset and leads to a second ethical conundrum. 
+Some users, however, are less suspicious and provide one of their real passwords regardless of the instruction. The other alternative would be to conceal the purpose of the study through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). For example, it can suffice to tell participants a convincing \textit{cover story}, e.g. that the purpose of the study is to do a usability test of a social networking site, which also happens to involve account setup. The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Thus, phishing or man in the middle attacks are sometimes carried out. Haque \etal conducted a laboratory study where they announced a cover story to create new accounts for popular websites \cite{Haque2014Hierarchy}. The websites, however, were re-created by the researchers and stored the passwords on their own servers. Egelman \etal used a proxy server to intercept traffic between the users and a real online portal, and altered the websites to communicate their cover story that the password had expired. Scientific research should also be valid, reliable, and generalizable. Therefore, the dataset is often part of the publication to allow others to assess these three qualities. But if users had entered their real passwords, it is risky to publish this dataset and leads to another ethical conundrum. 
 % ethical dilemma #3: sharing cracking algorithms.
 Much in the same vein, sharing research about successfully attacking passwords is affected by the same dilemma. For instance, one can put forward new cracking approaches (e.g. \cite{Marechal2008AdvancesPWCracking, Narayanan2005FastDictionaryAttacks, Schmidt2013Pitfalls, Weir2009PCFG}) that potentially affect common strength metrics (see Section \ref{sec:rw:pw_strength_metrics}) -- but attackers also benefit from this kind of knowledge. From an HCI perspective, one can also unfold how users select passwords, which allows optimizing cracking efficiency \cite{Weir2010MetricsPolicies, Wheeler2016zxcvbn}. 
 
-% solving the ``plain text password problem'': scenarios, IRBs, encryption, do not release dataset, differential privacy -- latest bonneau research
+% SOLUTIONS TO ETHICAL PROBLEMS
+There are several methods to avoid unethical studies that collect user passwords. 
+% IRBs
+First of all, studies involving human subjects are assessed by an institutional review board (IRB), especially in the United States. This is done to ensure an ethical study design that does not likely to cause participants any harm. In Europe, however, password studies are less commonly evaluated by an IRB (or authors do not mention it in the papers) \ar. 
+% Do not publish data sets.
+Secondly, one can refrain from releasing the data set. In fact, almost all publications on passwords collected during a user study omit publishing the corresponding data set. Only the abstract analysis is published and this is a widely-accepted standard practice, despite the questionable reliability. 
+% Differential privacy.
+A rather novel approach that reduces the likelihood of made-up data relies on the idea of publishing differentially private data sets. Here, algorithmically generated noise, which is indistinguishable from the orignal data, is added to the data set to preserve privacy of users. For password frequency lists, passwords could be mangled and extended by generated passwords that resemble real ones. Adversaries lack information whether the data is usable as signal or noise.
+This way, Blocki \etal managed to release a private frequency list of passwords at Yahoo that Bonneau had already anonymously analyzed in \cite{Bonneau2012ScienceOfGuessing}. 
+% Encryption
+Moreover, instead of collecting newly generated passwords in plain text, it is possible to store a hashed version. For instance, Wash \etal had participants install a browser extension that logged all form submits that included a password field \cite{Wash2016UnderstandingPasswordChoices}. To study reused passwords, they hashed and sent them over a secure connection to their servers. As long as a slow hash function and a strong salt are used, this approach is uncritical. However, it merely allows observing if the hashes match on several sites.
+% Meta data
+Finally, as a last option to collect password data, researchers can log meta-data instead of passwords. For instance, Von Zezschwitz \etal used a ``meta password'' that described the participants' actual passwords \cite{VonZezschwitz2013SurvivalShortest}, but which was insufficient to reconstruct the original. This can include the number of characters, upper-/lowercase letters, digits, and even proactive strength estimations. To collect the data, participants in von Zezschwitz \etal's study were provided with an offline password analysis tool. They entered their password into that and copy-pasted the result of the analysis into the questionnaire form. If one does not want to examine the passwords qualities, this approach is absolutely feasible. Florêncio and Herley used a similar approach for the large-scale data collection with around 500000 participants to avoid running into privacy issues \cite{Florencio2007LargeScaleStudyPasswordHabits}. The information transmitted to the logging server was pseudonymized and contained only meta features. The only downside is that one cannot run further analyses on the passwords, e.g. if a new strength metric is considered.
 
+% second solution: SELF REPORT instead of the task to create a password
+\paragraph{Self report}
+If one wants to refrain from having users create a new password, one can study their past behavior in different ways. In its simplest form, participants are simply asked how they create passwords. Stobert \& Biddle 
 
-% second solution: do not collect the plain text password
-A second alternative to collect password data through user studies is to refrain from storing the original password, but to transfer the password into a pseudonymous representation. For instance, Von Zezschwitz \etal used a ``meta password'' that described the participants' actual passwords \cite{VonZezschwitz2013SurvivalShortest}, but which was insufficient to reconstruct the original. To collect the data, participants were provided with an offline password analysis tool. They entered their password into this tool and copy-pasted the result of the analysis into the questionnaire form. 
+% option: self report behavior à la Stobert & Biddle.
+sometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy}) -- to conceal the study purpose and get ecologically valid passwords. 
 
-In Von Zezschwitz \etal's study, the participants knew that their passwords are the topic of the study.
-
-
-
-ometimes researchers ``phish'' participants to obtain their passwords (\cite{Egelman2013DoesMyPasswordGoUpToEleven, Haque2014Hierarchy, Mazurek2013Measuring}) -- to conceal the study purpose and get ecologically valid passwords. 
 
 %TODO maybe extend this intro and talk about harbach's and Krol's findings
 %Krol2016ExperimentDesign
@@ -86,8 +95,9 @@ closest to actual password behavior, with one large disadvantage:
 \cite{Veras2012VisualizingSemanticsPasswords}
 \cite{Wash2016UnderstandingPasswordChoices}
 
+\subsection{Study Settings and Method Space}
 
-\subsection{Laboratory studies}
+\paragraph{Laboratory studies}
 % not focused on password: \cite{Sotirakopoulos2011ReplicationSSLWarnings}
 mostly used to collect qualitative data.
 semi/structured interviews: \cite{Stobert2014PasswordLifeCycle}
@@ -104,7 +114,7 @@ Weirich on Persuasion \cite{Weirich2001PrettyGoodPersuasion, Weirich2005Persuasi
 café study also here because the experimenter is present and you have almost as much level of control as in the lab (except for the distracting surroundings but for passwords that might help sometimes)
 \cite{VonZezschwitz2013SurvivalShortest}
 
-\subsection{Field-, diary- and in-the-wild studies}
+\paragraph{Field-, diary- and in-the-wild studies}
 %TODO maybe add subsubsections or paragraphs.. because this approach encompasses a lot of study types.
 
 online surveys 
@@ -135,7 +145,7 @@ Flor\^{e}ncio and Herley probably conducted the largest study to date on passwor
 Rosoff \etal \cite{Rosoff2014BehavioralExperimentsFraud} -- used PANAS, sent email with different conditions just like \cite{Huh2017TooBusy}
 
 
-\subsection{Crowd-sourcing and Mechanical Turk Studies}
+\paragraph{Crowd-sourcing and Mechanical Turk Studies}
 Special kind of ``field'' study which is why they are reported separately.
 
 problem: in europe it's not immediately possible, but there are alternatives. 
@@ -159,11 +169,11 @@ problem:
 Password guessability depends on context factors and MTurk passwords - albeit slightly weaker - are a good approximate of real passwords \cite{Mazurek2013Measuring}
 
 
-\subsection{Triangulation}
+\paragraph{Triangulation}
 (survey, log analysis) \cite{Wash2016UnderstandingPasswordChoices}
 
-\subsection{Theory and Reasoning}
-not only empirical methods but also logic reasoning, argumentation is strong among usec papers
+%\subsection{Theory and Reasoning}
+%not only empirical methods but also logic reasoning, argumentation is strong among usec papers
 
 
 \subsection{The Bottom Line: Emerging good practices and tools}
