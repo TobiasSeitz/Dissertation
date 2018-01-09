@@ -37,8 +37,10 @@ Before we report on insights about user behavior regarding passwords, we take a 
 If we cannot collect the users' real password in its original form, what is the best way to measure, e.g., cause and effect of novel interventions? There are several alternatives. 
 % first solution: have people create a new one. 
 \paragraph{Password Creation Tasks} First, one asks participants to create a new password during the user study and stores these passwords as part of the dataset. This approach resolves the issue of real-world password disclosure, but introduces a number of problems.
-% ethical dilemma #1: do people know that their passwords are studied?
-Studies should be ethical and thus transparent for the most part. Hence, the study topic should be known to the participants. However, if participants know that their passwords are studied, this could induce protective reactions as to not give any hint to their real passwords at all. In that case, the participants' selection strategy does not resemble much to their real-world behavior and thus the ecological validity of the data is low. Although it appears trivial, Fahl \etal suggest that in this scenario, asking the participants whether they had acted like they normally would is a suitable indicator that helps in weighting the data \cite{Fahl2013EcologicalValidityPasswordStudy}. It is also recommendable to give users a specific scenario that helps users immerse themselves in the task. Komanduri \etal argue that having participants create passwords for fictional email accounts leads to more authentic behavior \cite{Komanduri2011OfPasswordsAndPeople}.
+% ethical dilemma #1: do people know that their passwords are studied? 
+Studies should be ethical and thus transparent for the most part. Hence, the study topic should be known to the participants. However, if participants know that their passwords are studied, this could induce protective reactions as to not give any hint to their real passwords at all. In that case, the participants' selection strategy does not resemble much to their real-world behavior and thus the ecological validity of the data is low. 
+% give a realistic risk
+Although it appears trivial, Fahl \etal suggest that in this scenario, asking the participants whether they had acted like they normally would is a suitable indicator that helps in weighting the data \cite{Fahl2013EcologicalValidityPasswordStudy}. It is also recommendable to give users a specific scenario that helps users immerse themselves in the task. Komanduri \etal argue that having participants create passwords for fictional email accounts leads to more authentic behavior \cite{Komanduri2011OfPasswordsAndPeople}.
 % ethical dilemma #2: sharing the collected data. 
 Some users, however, are less protective and provide one of their real passwords regardless of the instruction. The result is the same as if the purpose of the study was concealed through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). For example, it can suffice to tell participants a convincing \textit{cover story}, e.g. that the purpose of the study is to do a usability test of a social networking site, which also happens to involve account setup. The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers, however, it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Thus, phishing or man in the middle attacks are sometimes carried out. Haque \etal conducted a laboratory study where they announced a cover story to create new accounts for popular websites \cite{Haque2014Hierarchy}. The websites, however, were re-created by the researchers and stored the passwords on their own servers. Egelman \etal used a proxy server to intercept traffic between the users and a real online portal, and altered the websites to communicate their cover story that the password had expired. Scientific research should also be valid, reliable, and generalizable. Therefore, the dataset is often part of the publication to allow others to assess these three qualities. But if users had entered their real passwords, it is risky to publish this dataset and leads to another ethical conundrum. 
 % ethical dilemma #3: sharing cracking algorithms.
@@ -62,17 +64,20 @@ Finally, as a last option to collect password data, researchers can log meta-dat
 \paragraph{Retrospective Self Report}
 If one wants to refrain from having users create a new password, one can study their past behavior in different ways. In its simplest form, participants are simply asked to describe how they create passwords. Stobert \& Biddle did this in extensively to create the Password Life Cycle model \cite{Stobert2014PasswordLifeCycle} (see Section \ref{sec:rw:user-behavior}). Ur \etal used interviews to find out what users do to make their passwords stronger \cite{Ur2015PWCreationLab}. Das \etal found out through retrospective interviews that social contacts have a strong impact on users' security decisions \cite{Das2014EffectSocialInfluenceSecuritySensitivity}. Most commonly, however, typical online surveys feature a number of questions about personal behavior and attitudes, e.g. \cite{Adams1997MakingPWsSecureAndUsable, Gaw2006PasswordManagement, Kuo2006HumanSelectionMnemonic,Riley2006WhatUsersKnowWhatTheyDo, Shay2010EncounteringPasswordRequirements}. Questions about passwords are easy to implement in a survey and respondents can always choose how much they want to share. However, one has to stay aware that social desirability lowers the reliability of the data: since the media also to their part in shaming users for picking ``bad'' passwords, people may respond dishonestly about their password behavior. Many people are uncomfortable admitting their password is as simple as 12345. Another problem results from fading memories. Since most users have more than one password, it might be difficult for them to recall the correct past behavior. However, not only password studies suffer from this bias, but any study involving self report in general. 
 
-%Krol2016ExperimentDesign
 %TODO: mental rotation tests Peters, M. Revised Vandenberg & Kuse Mental Rotations Tests: forms MRT-A to MRT-D. Technical Report, Department of Psychology, University of Guelph, 1995
 
-%\begin{itemize}
-%	\item[Ethics] Leaked Data, collecting real passwords from study participants
-%	\item[Ecological Validity] role playing, passwords are never used in real life, 
-%\end{itemize}
-%
-%
-%
-%general overview a la. how to run a good password study 
+\paragraph{Principles}
+From user research in \acrshort{USEC} of the past decades, Krol \etal derive a set of general principles that researchers ought to consider when conducting experiments in security and privacy \cite{Krol2016ExperimentDesign}. We can integrate password studies in there:
+
+\begin{description}
+	\item[Primary Task] Creating a password should not be the sole task in the study. Instead, participants should achieve a primary task by authenticating with passwords, e.g. using a new system for a period of time \cite{Brostoff2000PassfacesEvaluation}. The reasoning behind this principle is that security tasks are secondary tasks and this constraint needs to be reflected in the experiment. However, re-focusing on a separate primary task is not always possible, e.g. in surveys. 
+	\item[Realistic Risk] Users should be able to realistically estimate the risk for secure interactions. As mentioned above, Komanduri \etal suggest carefully selecting real-world scenarios to achieve this \cite{Komanduri2011OfPasswordsAndPeople}.
+	\item[No Priming] Whenever human behavior is studied, experiments should avoid influencing and biasing participants with certain information. This avoids unnatural behavior.  
+	\item[Double Blind Experiments] If possible, the person carrying out the actual experiment should be involved in the planning and design of the study. Moreover, the participants should not know the details of the study, either. On the experimenter side, unconscious bias and influence is mitigated, and participants also do not know the ``treatment'' they receive (if any). 
+	\item[Context Definition] To increase internal validity, it is necessary to define the terms \textit{threat model}, \textit{security}, \textit{privacy}, \textit{usability}, depending on which are relevant for the study. A precise definition avoids misunderstanding and improves transparency, credibility, and trustworthiness of the experiment.
+\end{description}
+
+
 
 % briefly show the benefits and drawbacks of each method. 
 %TODO maybe some Usable Security book already has this? look into garfinkel/cranor book...
@@ -486,7 +491,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	It would be good to have a formal description of password policies in a standardized schema \cite{Horsch2016PasswordPolicyMarkup}
 
-	\subsection{Advice and Guidelines}\label{sec:rw:advice_guidance}
+	\subsection{Training, Advice, and Guidelines}\label{sec:rw:advice_guidance}
 	
 	there is a plethora of advice and guidelines out there, but it's not all the same \footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}
 	
@@ -499,6 +504,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	
 	Great overview and critical discussion: \cite{ZhangKennedy2016RevisitingPasswordRules}
 	
+	Example for training \cite{Bonneau2014ReliableStorage56Bits}
 	
 	make it persuasive \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	

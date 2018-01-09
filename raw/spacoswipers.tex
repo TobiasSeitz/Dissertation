@@ -25,7 +25,7 @@
 \usepackage{subcaption} %to have subfigures available
 \usepackage[svgnames,table]{xcolor}
 \usepackage{rotating}
-\usepackage[nomain]{glossaries}
+\usepackage{glossaries}
 \usepackage{float}
 \newcommand{\citep}[1]{\cite{#1}} %convenience for texmaker, but texstudio doesn't have this problem. 
 \usepackage[hyphens]{url}
@@ -38,15 +38,18 @@
 
 \makeindex
 
-\makeglossaries
+
 
 \usepackage{titlesec} % format the chapters etc.
 
 \include{texpreamble} % load additional stuff, but no packages!
 % link colorings: 
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref} % do this after texpreamble so that we have the colordefinitions
-
 \setcounter{tocdepth}{1}
+
+\include{glossary}
+\makeglossaries
+
 \begin{document}
 	
 \frontmatter
@@ -122,6 +125,8 @@
 
 %____________________________________________________________
 
+\printindex
+\glsaddall
 \printglossaries
 
 % REFERENCES FORMAT
