@@ -38,11 +38,11 @@ If we cannot collect the users' real password in its original form, what is the 
 % first solution: have people create a new one. 
 \subsubsection{Password Creation Tasks} First, one asks participants to create a new password during the user study and stores these passwords as part of the dataset. This approach resolves the issue of real-world password disclosure, but introduces a number of problems.
 % ethical dilemma #1: do people know that their passwords are studied? 
-Studies should be ethical and thus transparent for the most part. Hence, the study topic should be known to the participants. However, if participants know that their passwords are studied, this could induce protective reactions to prevent giving hints about their real passwords at all. In that case, the participants' selection strategy does not resemble much to their real-world behavior and thus the ecological validity of the data is low. 
+Studies should be ethical and thus transparent for the most part. Hence, the study topic should be known to the participants. However, if participants know that their passwords are studied, this could induce protective reactions to prevent giving hints about their real passwords at all. In that case, the participants' selection strategy does not resemble much to their real-world behavior and thus the ecological validity of the data is low \cite{Shay2012CorrectHorseBatteryStaple}. 
 % give a realistic risk
 Although it appears trivial, Fahl \etal suggest that in this scenario, asking the participants whether they had acted like they normally would is a suitable indicator that helps in weighting the data \cite{Fahl2013EcologicalValidityPasswordStudy}. It is also recommendable to give users a specific scenario that allows them to immerse themselves in the task. Komanduri \etal argue that having participants create passwords for fictional email accounts leads to more authentic behavior \cite{Komanduri2011OfPasswordsAndPeople}.
 % ethical dilemma #2: sharing the collected data. 
-Some users, however, are less protective and provide one of their real passwords regardless of the instruction. The result is the same as if the purpose of the study was concealed through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). For example, it can suffice to tell participants a convincing \textit{cover story}, e.g. that the purpose of the study is to do a usability test of a social networking site, which also happens to involve an account setup process. The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers, however, it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Thus, phishing or man in the middle attacks are sometimes carried out. Haque \etal conducted a laboratory study where they told participants a cover story to create new accounts for popular websites \cite{Haque2014Hierarchy}. The websites, however, were re-created by the researchers and stored the passwords on their own servers instead of performing actual registrations. Egelman \etal used a proxy server to intercept traffic between the users and a real online portal \cite{Egelman2013DoesMyPasswordGoUpToEleven}. They also altered the websites to communicate their cover story that the password had expired. This, however, creates an ethical conundrum, if the dataset is published along with the paper. To allow others to verify that research is valid, reliable, and generalizable, a published dataset is desirable, but in Egelman \etal or Haque \etal's study this would put real user accounts at risk.
+Some users, however, are less protective and provide one of their real passwords regardless of the instruction (e.g. 26.5\% in Fahl \etal's study \cite{Fahl2013EcologicalValidityPasswordStudy}). The result is the same as if the purpose of the study was concealed through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). For example, it can suffice to tell participants a convincing \textit{cover story}, e.g. that the purpose of the study is to do a usability test of a social networking site, which also happens to involve an account setup process. The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers, however, it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Thus, phishing or man in the middle attacks are sometimes carried out. Haque \etal conducted a laboratory study where they told participants a cover story to create new accounts for popular websites \cite{Haque2014Hierarchy}. The websites, however, were re-created by the researchers and stored the passwords on their own servers instead of performing actual registrations. Egelman \etal used a proxy server to intercept traffic between the users and a real online portal \cite{Egelman2013DoesMyPasswordGoUpToEleven}. They also altered the websites to communicate their cover story that the password had expired. This, however, creates an ethical conundrum, if the dataset is published along with the paper. To allow others to verify that research is valid, reliable, and generalizable, a published dataset is desirable, but in Egelman \etal or Haque \etal's study this would put real user accounts at risk.
 % ethical dilemma #3: sharing cracking algorithms.
 Much in the same vein, sharing research about successfully attacking passwords produces a similar dilemma. For instance, one can put forward new cracking approaches (e.g. \cite{Marechal2008AdvancesPWCracking, Narayanan2005FastDictionaryAttacks, Schmidt2013Pitfalls, Weir2009PCFG}) that potentially affect common strength metrics (see Section \ref{sec:rw:pw_strength_metrics}) -- but attackers also benefit from this kind of knowledge. From an HCI perspective, one can also unfold how users select passwords, which allows optimizing cracking efficiency \cite{Weir2010MetricsPolicies, Wheeler2016zxcvbn}. 
 
@@ -50,9 +50,9 @@ Much in the same vein, sharing research about successfully attacking passwords p
 % SOLUTIONS TO ETHICAL PROBLEMS
 There are several methods to avoid acting unethically in studies where users are required to create passwords. 
 % IRBs
-First of all, studies involving human subjects are assessed by an institutional review board (IRB), especially in the United States. This is done to ensure an ethical study design that is unlikely to cause participants any harm. In Europe, however, password studies are less commonly evaluated by an IRB (or authors fail to mention the process in their papers) \ar. 
+First of all, studies involving human subjects are assessed by an \gls{IRB}, especially in the United States. This is done to ensure an ethical study design that is unlikely to cause participants any harm. In Europe, however, password studies are less commonly evaluated by an IRB (or authors fail to mention the process in their papers) \ar. 
 % Do not publish data sets.
-Secondly, one can refrain from releasing the data set. In fact, almost all publications on passwords collected during a user study omit publishing the corresponding data set. Only the abstract analysis is published and this is a widely-accepted standard practice, despite the questionable reliability. 
+Secondly, one can refrain from releasing the data set, even if user names are removed. In fact, almost all publications on passwords collected during a user study omit publishing the corresponding data set. Only the abstract analysis is published and this is a widely-accepted standard practice, despite the questionable reliability. 
 % Differential privacy.
 A rather novel approach that reduces the likelihood of made-up data relies on the idea of publishing differentially private data sets. Here, algorithmically generated noise, which is indistinguishable from the orignal data, is added to the data set to preserve privacy of users. For password frequency lists, passwords could be mangled and extended by generated passwords that resemble real ones. Adversaries lack information whether the data is usable as signal or noise.
 This way, Blocki \etal managed to release a private frequency list of passwords at Yahoo that Bonneau had already anonymously analyzed in \cite{Bonneau2012ScienceOfGuessing}. 
@@ -94,71 +94,46 @@ Instead of users creating new passwords, it is possible to make inferences about
 %
 %
 
-\subsection{User Study Methods}
+\subsection{User Study Methods in Password Research}
 Research in \acrshort{USEC} takes advantage of the toolbelt of \acrshort{HCI} research in general. In the following, the most common methods for password studies are portrayed.
 \paragraph{Laboratory studies}
 % not focused on password: \cite{Sotirakopoulos2011ReplicationSSLWarnings}
 To gain the greatest control over experimental parameters, laboratory studies are the go-to method. Both qualitative and quantitative studies are carried out in the lab, with a slight surplus of qualitative studies. Among the most common methods, one finds (semi-)structured interviews (\cite{Adams1997MakingPWsSecureAndUsable,Gaw2006PasswordManagement, Stobert2014PasswordLifeCycle, Ur2015PWCreationLab, Weirich2001PrettyGoodPersuasion}) and usability testing (\cite{Egelman2013DoesMyPasswordGoUpToEleven,Forget2007HelpingUsers,Forget2015CYOA,Gross2016CognitiveDepletion,Imran2015PWsAdultsChildren, McCarney2012Tapas,Mcevoy2016ContextualizingMnemonicPhrase,Ruoti2015AuthenticationMelee, Yang2014EntryAffectsPasswordSecurity,VonZezschwitz2014HoneyIShrunkTheKeys}). Password memorability can be studied in the lab (\cite{Egelman2013DoesMyPasswordGoUpToEleven,Fahl2013EcologicalValidityPasswordStudy,Forget2008MemorabilityPersuasivePasswords,Mcevoy2016ContextualizingMnemonicPhrase,Yan2004PasswordMemorabilitySecurity}), but requires participants to return, which may be too bothersome for many. 
 
-Although technically it is not a ``lab'' environment, café studies sometimes are closely related to lab studies. Von Zezschwitz \etal collected qualitative and quantitative data on participants' past password behavior by inviting customers in a café to join them for a free coffee \cite{VonZezschwitz2013SurvivalShortest}. The experimenter has almost as much control as in a lab to answer certain research questions. Only the surroundings may distract somewhat. Other methods like participatory design / co-creation (\cite{Coventry2014SCENEBehavioralNudges,Read2009UnderMyPillow}) and focus groups (\cite{Eargle2015YouCanDoBetter,Hang2015Dissertation,Harbach2016HardLockLife,Singh2007PasswordSharing})are possible, but more rare than interviews and usability tests. 
+Although technically it is not a ``lab'' environment, café studies sometimes are closely related to lab studies. Von Zezschwitz \etal collected qualitative and quantitative data on participants' past password behavior by inviting customers in a café to join them for a free coffee \cite{VonZezschwitz2013SurvivalShortest}. The experimenter has almost as much control as in a lab to answer certain research questions. Only the surroundings may distract somewhat. Other methods like participatory design / co-creation (\cite{Coventry2014SCENEBehavioralNudges,Read2009UnderMyPillow}) and focus groups (\cite{Eargle2015YouCanDoBetter,Hang2015Dissertation,Harbach2016HardLockLife,Singh2007PasswordSharing}) are possible, but less frequently reported than interviews and usability tests. A common drawback of lab studies lies in the high costs, time consumption to carry them out, smaller sample sizes, and reduced ecological validity.
 
-\paragraph{Field-, diary- and in-the-wild studies}
-%TODO maybe add subsubsections or paragraphs.. because this approach encompasses a lot of study types.
+\paragraph{Field-Studies}
+Field studies for password research come in many flavors. 
+% regular online surveys (no mTurk)
+\textbf{Online surveys} are among the most common methods used in the field (\cite{Gaw2005ReuseRecycle,Halevi2013PilotStudyPersonality,Haque2014Hierarchy,Huh2017TooBusy, Kuo2006HumanSelectionMnemonic,Mazurek2013Measuring,Riley2006WhatUsersKnowWhatTheyDo, Violettas2014PasswordsAvoidGreece}), due to their lower cost and comparatively easy implementation. Other advantages like increased sample size and more diversity in the data speak in favor of online surveys. Survey tools like surveymonkey.com come in handy, but usually lack seamless integration of interactive prototypes. If a prototype should be evaluated through a survey, however, one has to either implement the entire survey structure or redirect participants from the survey platform to the prototype and back. Surveys are also the weapon of choice if there is an opportune moment that is worth studying. Mazurek \etal took the opportunity to distribute online questionnaires after a new password policy was introduced at \acrshort{CMU} \cite{Mazurek2013Measuring}. Fahl \etal profited from a similar situation at Leibniz-University Hannover, and Renaud \etal could even carry out a password studies across multiple years in this way \cite{Renaud2017LessonsLearnedNudges}.
 
-online surveys 
-- with an interactive prototype 
-- or just with a survey tool
+% mTurk studies
+A special kind of online studies that has been extensively used and propagated by \acrshort{CMU} researchers leverage \textbf{crowd-sourcing} platforms like the Amazon Mechanical Turk (\gls{mTurk})\footurl{https://www.mturk.com/}{10.01.2018}. Survey respondents are recruited by paying each one a small amount of money for a valid response. This way, increasing the sample size is straight-forward, if many users have already signed up on the platform and are eligible for the \acrfull{HIT}. Workers (known as ``turkers'') form an increasingly diverse population \cite{Ross2010WhoAreTurkers}, which is another benefit.
+% mturk examples.
+In password research, for instance, Kelley \etal's high-impact work on password guessability collected around 12000 passwords using \gls{mTurk} \cite{Kelley20012GuessAgain}. Ur \etal had participants rate the strength and memorability of a given set of passwords, which allowed them to identify certain misconceptions \cite{Ur2016PerceptionsPassword}. Mazurek \etal compared features of passwords created by turkers to real passwords of students and staff at their university \cite{Mazurek2013Measuring}. They take the large similarities of the two data sets as evidence that passwords created during an mTurk study are a reliable and valid data source, so there is no urgent need to analyze passwords of a deployed system. Shay wrote a PhD thesis specifically about evaluating password policies with crowd-sourced data \cite{Shay2015UsablePoliciesMTurk}. 
+% slightly starting to address issues
+In many cases, e.g. \cite{Shay2014CanLongPasswordsBeSecureAndUsable,Shay2016DesigningPasswordPolicies,Ur2017DataDrivenPWMeter}, the primary task is to create a fictional account or merely a password under certain constraints, which apparently violates Krol \etal's study principles \cite{Krol2016ExperimentDesign}. It is especially interesting that most studies are announced as some kind of password study, probably mandated by \glspl{IRB} . But Mazurek \etal's work demonstrates that this limitation is bearable. Moreover, studying the memorability of passwords is facilitated, because participants can be invited to return through an internal, anonymous messaging system. It is also possible to create more complex study designs with mTurk, e.g. if multiple device types should be used by the turkers to create passwords \cite{Melicher2016UsabilityMobileTextPasswords}. 
+% issues with mTurk studies
+Despite the wide range of advantages, there are shortcomings of crowd-sourced approaches as with any study method. First, turkers are incentivized to complete as many HITs as possible on the platform to earn money. Thus, completing a survey by providing quick answers without reading the questions could lead to unreliable data. Instructional Manipulation Checks (IMCs) and attention check questions (ACQs) can mitigate this problem \cite{Oppenheimer2009InstructionalManipulationChecks, Peer2017BeyondTheTurk}. Turkers are only paid if the commissioner accepts the HIT as valid, thus IMCs and attention checks are useful indicators here. Moreover, as of now, the mTurk platform can only be used in certain countries, e.g. the USA or UK. European alternatives exist, but are not yet par in terms of user base, response times, and feature set \cite{Peer2017BeyondTheTurk}. 
 
+% diary studies
+Aside from surveys, \textbf{diary studies} about passwords have proven feasible in the past. Inglesant and Sasse found out through a diary study that employees struggle with frequent password changes, which might not have become evident using other study means \cite{Inglesant2010TrueCostOfUnusablePolicies}. Hayashi and Hong used this method to analyze password re-use across different computers, services, and organizations \cite{Hayashi2011DiaryStudyPWs}. Since password authentication is a secondary task, keeping a diary of authentication events helps participants provide reliable behavioral data. However, it requires much effort to continuously stay aware of one's actions to log them. To avoid that participants forget logging, it can be worthwhile to ask them small questions. This method, known as \textbf{\gls{ESM}}, requests short responses either in predefined intervals or when the system detects a relevant event. ESM has not seen much attention in password studies on the web, but it authentication on mobiles was studied with this method \cite{Harbach2016HardLockLife}. Users carry their personal mobile with them almost all the time, so there is a high chance of successfully receiving the experience sample. ESM was also found useful for studies about security warnings in browsers \cite{Akhawe2013AliceInWarningland,Felt2016RethinkingConnectionSecurityIndicators}.
 
+% automated logging
+Perhaps, ESM is underused for password studies, because it is possible to automatically detect such events and survey the participants before and/or after the \textbf{automatic data collection}. Florêncio and Herley conducted one of the largest studies to date on password habits with this method \cite{Florencio2007LargeScaleStudyPasswordHabits}. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. Working at Microsoft, they were granted to utilize the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500,000 users during three months of running the collection. They conceived the method of protected password lists (PPL) to avoid intruding into people's privacy -- a kind of meta description of passwords which is sent to the logging server instead of the original password. It was thus not possible to trace the incoming data back to a specific user. However, there are a number of limitations this method. The authors point out that the anonymity of the incoming data-stream might have resulted in over-counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification as their passwords, the key logging module of the toolbar would have recorded a password reuse event (PRE) every time the user entered that word -- also in regular online communication. Nevertheless, the fact that users are typically focused on their primary tasks, background logging helps to collect unbiased data with high ecological validity. 
 
+% deployed systems
+A final option to study passwords in the field is to collect and analyze them in an already deployed system, which would be the ideal data source, according to Komanduri \etal \cite{Komanduri2011OfPasswordsAndPeople}. Brostoff and Sasse utilized a coursework system to evaluate Passfaces as alternative to passwords \cite{Brostoff2000PassfacesEvaluation}. Similarly, Renaud \etal used a coursework tool to evaluate the effectiveness of different password nudges \cite{Renaud2017LessonsLearnedNudges}. Mazurek \etal gained access to passwords of their University's \gls{SSO} and were able to break down differences in password selection behavior by departments. As one of the few exceptions from the industry, Bonneau analyzed a private password data set at Yahoo \cite{Bonneau2012ScienceOfGuessing} and Amazon \cite{Bonneau2012LinguisticProperties}. The data is highly ecologically valid and diverse if it originates from a real product or service. 
+% Drawbacks / Issues
+However, if interventions are implemented as part of a study, this might have negative consequences for both the \gls{SP} and the users. For instance, in an A/B setting one intervention to influence password selection might in fact lead to weaker passwords and put users at risk. Each user is a critical potential source of revenue for \glspl{SP}, so tampering with the sign-up procedure might lead to higher bounce rates and consequently financial loss. So it is unsurprising to see only rare instances of password studies carried out with deployed systems in public environments.
 
-diary studies here.  \cite{Hayashi2011DiaryStudyPWs}
-
-Experience Sampling \cite{Consolvo2003ESM} 
-
-Actual password resets due to policy update / opportune moments: \cite{Fahl2013EcologicalValidityPasswordStudy}, \cite{Mazurek2013Measuring}, \cite{Renaud2017LessonsLearnedNudges}
-
-In the wild: \cite{Chamberlain2012ResearchInTheWild} and \cite{Henze2013EmpiricalResearchUbiquitous} for theoretical frameworks.
-Renaud \cite{Renaud2017LessonsLearnedNudges} over multiple years!
-
-Harbach more focused on quantifying authentication efforts to unlock mobile phones \cite{Harbach2016HardLockLife} 
-
-people are not always aware that their data is logged and behave normally (high eco val)
-
-Example for in-the-wild data: 
-Flor\^{e}ncio and Herley probably conducted the largest study to date on password habits. Their intention was to find out among other things A) how often people type passwords, B) how many sites share a password C) how many distinct passwords a user has, and D) how the strong the passwords are. They utilized the Windows Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500000 users during three months of running the collection
-
-\cite{Florencio2007LargeScaleStudyPasswordHabits}. The established protected password lists (PPL) to avoid intruding into people's privacy. They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). It was not possible to trace the incoming data back to a specific user, which might have resulted in over counting of entries. Also, it was not measured how long the actual password entries takes. If users only used regular dictionary words without any modification, the key logging module of the toolbar would record a password reuse event (PRE) every time the user entered the word -- also in regular text searches, for example. Another limitation could be that they used entropy as a proxy for password strength. However, as discussed in the previous chapter, we have seen that this metric is more robust for system-generated passwords and that strength estimation has evolved over the past ten years. 
-
-Rosoff \etal \cite{Rosoff2014BehavioralExperimentsFraud} -- used PANAS, sent email with different conditions just like \cite{Huh2017TooBusy}
-
-
-\paragraph{Crowd-sourcing and Mechanical Turk Studies}
-Special kind of ``field'' study which is why they are reported separately.
-
-problem: in europe it's not immediately possible, but there are alternatives. 
-
-also, adding more complex, interactive prototypes is challenging
-
-\cite{Peer2017BeyondTheTurk}
-\cite{Ross2010WhoAreTurkers}
-\cite{Savage2012GainingWisdomCrowds}
-
-MTurk
-propagated and most commonly used at CMU e.g. \cite{Mazurek2013Measuring} \cite{Shay2014CanLongPasswordsBeSecureAndUsable} \cite{Shay2016DesigningPasswordPolicies}
-\cite{Shay2015UsablePoliciesMTurk}
-\cite{Ur2016PerceptionsPassword} \cite{Melicher2016UsabilityMobileTextPasswords} \cite{Ur2017DataDrivenPWMeter}
-
-most commonly, the study topic is disclosed so users know that their passwords are analyzed. 
-
-\cite{Huha2015UserReplaceablePasswords}
-
-problem:
-Password guessability depends on context factors and MTurk passwords - albeit slightly weaker - are a good approximate of real passwords \cite{Mazurek2013Measuring}
+%In the wild: \cite{Chamberlain2012ResearchInTheWild} and \cite{Henze2013EmpiricalResearchUbiquitous} for theoretical frameworks
 
 \paragraph{Survey Constructs}
 
 UX: AttrakDiff is not too present in USEC \cite{Hassenzahl2003AttrakDiffGerman}, PANAS sometimes \cite{Rosoff2014BehavioralExperimentsFraud} but not really for passwords. Usually own-grown constructs are used, or lately SeBIS.
+
+Rosoff \etal \cite{Rosoff2014BehavioralExperimentsFraud} -- used PANAS, sent email with different conditions just like \cite{Huh2017TooBusy}
 
 for surveys, IMCs are recommendable \cite{Oppenheimer2009InstructionalManipulationChecks}
 memory clearing tasks are often used in memorability studies.
@@ -303,7 +278,7 @@ a formal model of the Password Life Cycle, codebook for coping strategies \cite{
 	
 	People reuse their passwords and show predictable modification behavior \cite{Gaw2005ReuseRecycle}
 	
-	The burden of passwords was relatively high in 2007, people reuse passwords \cite{Florencio2007LargeScaleStudyPasswordHabits}
+	The burden of passwords was relatively high in 2007, people reuse passwords \cite{Florencio2007LargeScaleStudyPasswordHabits}: They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). 
 	
 	finite effort, and the payoff is invisible (comparison to smoking: I won't be affected, and in many cases that's true. But if you are affected you regret your behavior. )
 	
