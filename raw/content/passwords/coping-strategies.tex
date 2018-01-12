@@ -27,8 +27,6 @@ This chapter looks at the literature that mostly came after this seminal work. I
 
 %Important: Under coping strategy, we also understand the selection process, because choosing a weak password over a strong one is also one way to \textit{cope} with the large number of passwords and the memorability burden. (make sure to mention this in the general introduction already.)
 
-%@@TODO cite Wash paper @SOUPS 2016.
-
 \section{Methodology: Running Password Studies}\label{sec:rw:methodology}
 % not relevant: how to measure password strength. solely focus on the ``HOW'' of data collection
 Before we report on insights about user behavior regarding passwords, we take a look into running studies that focus on passwords. There are two central aspects that make collecting data particularly challenging: acting ethically and maintaining high ecological validity of the data. In fact, these two goals create an area of tension that demands a critical selection of methods. Komanduri \etal note that ``ideally, password studies would be conducted by collecting data on real passwords created by real users of a deployed system'' \cite{Komanduri2011OfPasswordsAndPeople}. But this would mean that researchers obtain access to the user accounts that were under investigation. This is ethically questionable \cite{Egelman2012ItsNotStealing}. Maybe the researchers themselves are benevolent, but the data is precious and thus could bring attackers to the scene. Since absolute security can barely be guaranteed, it is best to avoid that users disclose their actual credentials during a user study to the researchers.
@@ -128,7 +126,7 @@ However, if interventions are implemented as part of a study, this might have ne
 %In the wild: \cite{Chamberlain2012ResearchInTheWild} and \cite{Henze2013EmpiricalResearchUbiquitous} for theoretical frameworks
 
 \subsection{The Bottom Line: Emerging good practices and tools}
-Using one of the study methods above is the first step to get closer to answering the research methods. However, to get the full picture of the studied phenomenon, a \textbf{triangulated} approach appears to be the only option. For example, Wash \etal combined a survey with log analyses to study password reuse and self-report issues \cite{Wash2016UnderstandingPasswordChoices}. A multi-tiered approach like in Von Zezschwitz \etal's study helps to identify themes first (formative stage) and quantify them later (summative stage) \cite{VonZezschwitz2014HoneyIShrunkTheKeys}. Similarly, Huh \etal were able to refine their concept of system-initiate user-replaceable passwords through triangulation \cite{Huha2015UserReplaceablePasswords}. If constraints allow for only one method, it is recommendable to consider how to collect both quantitative and qualitative data points. For instance, in online surveys that evaluate a novel password intervention, it is always feasible to collect quantitative metrics (e.g. usability and password strength) and qualitative data (reasoning, explanations, feedback) to put study results into context. Those eager to find a starting point for \gls{USEC} experiments probably find essential aspects in Krol \etal's principles for experimental design \cite{Krol2016ExperimentDesign}. The methods described above can be drawn on to fulfill those principles, which is aimed at in Part \ref{part:problem_space} and \ref{part:design_space} of this thesis. 
+Using one of the study methods above is the first step to get closer to answering the research methods. However, to get the full picture of the studied phenomenon, a \textbf{triangulated} approach appears to be the only option. For example, Wash \etal combined a survey with log analyses to study password reuse and self-report issues \cite{Wash2016UnderstandingPasswordChoices}. A multi-tiered approach like in Von Zezschwitz \etal's study helps to identify themes first (formative stage) and quantify them later (summative stage) \cite{VonZezschwitz2014HoneyIShrunkTheKeys}. Similarly, Huh \etal were able to refine their concept of system-initiate user-replaceable passwords through triangulation \cite{Huha2015UserReplaceablePasswords}. Adams and Sasse conducted qualitative interviews to follow up web survey results \cite{Adams1999UsersEnemy}. If constraints allow for only one method, it is recommendable to consider how to collect both quantitative and qualitative data points. For instance, in online surveys that evaluate a novel password intervention, it is always feasible to collect quantitative metrics (e.g. usability and password strength) and qualitative data (reasoning, explanations, feedback) to put study results into context \cite{Adams1999UsersEnemy}. Those eager to find a starting point for \gls{USEC} experiments probably find essential aspects in Krol \etal's principles for experimental design \cite{Krol2016ExperimentDesign}. The methods described above can be drawn on to fulfill those principles, which is aimed at in Part \ref{part:problem_space} and \ref{part:design_space} of this thesis. 
 
 \todo{IF TIME: Add a table with advantages and disadvantages of different study methods.}
 
@@ -142,29 +140,14 @@ Using one of the study methods above is the first step to get closer to answerin
 
 	
 \section{User Behavior Regarding Passwords}\label{sec:rw:user-behavior}
-Passwords are the cornerstone of \textit{knowledge-based} authentication. And although ``knowledge'' can be stored in and retrieved from computers, it is still a human capability to learn things to later ``know'' them. So, humans are a large factor in the equation and their actions and behavior to gain knowledge with and about passwords deserve to be studied in detail. 
+% knowledge is a human quality.
+Passwords are the cornerstone of \textit{knowledge-based} authentication. And although ``knowledge'' can be stored inside and retrieved from computers, it is still a human capability to learn things and hereafter ``know'' them. So, humans are a large factor in the equation of knowledge-based authentication. Their actions and behavior to gain knowledge on passwords deserve to be studied in detail. 
 
-Some cybersecurity researchers started blaming system failures and vulnerabilities on users. For instance, Feldmeier \etal stated: ``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' \cite{Feldmeier1990UnixPasswordSecurity}. It quickly became a dictum that users were the ``weakest link'' in the figurative authentication chain and investing into the technical infrastructure might not be enough \cite{Sasse2001WeakestLink}. 
+% don't blame the users!
+Some cybersecurity researchers started blaming system failures and vulnerabilities on users. For instance, Feldmeier \etal stated in 1990: ``The main weakness in any password system is that users often choose easily guessable passwords: English words, names, trivial extensions to English words, etc., because they are easy to remember'' \cite{Feldmeier1990UnixPasswordSecurity}. It quickly became a dictum that users were the ``weakest link'' in the figurative authentication chain \cite{Sasse2001WeakestLink}. However, since the late 1990s, the \gls{HCI} advocates that systems take into account user capabilities and not the other way around \cite{Sasse2005UsableSecurityPosition}. Adams and Sasse postulated in 1999 that \glspl{SP} acknowledge that ``users are not the enemy'', which is one of the most influential position papers on the topic \cite{Adams1999UsersEnemy}. In that paper, they provide four central challenges in password authentication that users face: 1) Users have to deal with multiple passwords, 2) users do not intuitively create strong passwords 3) password procedures and work practices might conflict and 4) users have a sub-par understanding of organizational security issues. As a consequence, users develop coping strategies for those challenges. This early framework has since been fed with numerous research studies and is still valid today. 
 
-
-Industry reports: \cite{CSID2012PasswordHabits}
-
-
-Although passwords were designed to protect ``systems'', the HCI community
-
-\todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
-
-Take human factors into account when you design secure systems \cite{Sasse2005UsableSecurityPosition}
-
-
-\cite{Adams1999UsersEnemy} is considered the mother of all HCI \& USEC papers. -- but there were many others before that.
-
-
-
-``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}).
-
-in the same vein: \cite{Chiasson2009InterferencesGraphical}
-
+%TODO what are the specific challenges?
+``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}). in the same vein: \cite{Chiasson2009InterferencesGraphical}
 
 password mechanisms and their users are a socio-technical system and the social aspect weighs heavy \cite{Weirich2001PrettyGoodPersuasion}
 
@@ -172,8 +155,19 @@ Security is too hard for end-users and we need to make it more usable. (fair eno
 
 insights into the password burden and context information where people log in, categorization of accounts \cite{Hayashi2011DiaryStudyPWs}
 
+% abstract coping mechanisms
+Stobert and Biddle formalized user challenges and behavior in the ``Password Life Cycle'' (see Figure \ref{fig:rw:pw_life_cycle}), which they arrived at through qualitative interviews and coding the participants' responses \cite{Stobert2014PasswordLifeCycle}. It starts out with the challenge to \textbf{choose a password}. Coping strategies at this point revolve around reducing effort, e.g. to memorize the password. Including personal or personally meaningful information comes natural to users. Others include pointers to the time they created it, or word-associations about the website-content. Mnemonics are found with some users, especially those aiming to secure their account. In essence, however, users often memorize their \textit{coping strategy}, to recall their password. Consistent strategies reduce the effort effectively. Even if complex policies mandate a change to the first-choice password, users have a go-to strategy to deal with this situation, e.g. by appending a preferred symbol. When people create passwords, the most common action is to \textbf{reuse an old password}. This is not always possible, so users need to maintain and \textbf{commit to} a number of passwords. Behavioral patterns show that users mix different methods at this stage. A survey in 2017 from Pew Research Center with N=926 participants found that the vast majority commits to their passwords by memorizing them in their heads (preferred strategy for 65\% of the respondents) or by noting down the password (49\% do this, and it is the preferred strategy for 18\%) \cite{Olmstead2017AmerciansCybersecurity}. Some respondents also either saved passwords in their browser (18\%) or used a dedicated password manager (12\%), but this appears to be a negligible go-to strategy (5\% of the respondents). Once the user has committed to a password, they \textbf{live with it}, even if it produces difficulties in certain situations. For instance, the question ``when is it time to change the password?'' falls into that stage of the cycle. Finally, if passwords are not actively used on a regular basis, or were recently changed, it is very foreseeable that users \textbf{forget their passwords}. The password reset mechanism helps users cope in this situation. The two options at this point are to either create a completely new password (which increases the likelihood of forgetting it), or to reuse one (which potentially reduces the number of unique passwords). Then the cycle starts over. 
 
-a formal model of the Password Life Cycle, codebook for coping strategies \cite{Stobert2014PasswordLifeCycle}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.65\linewidth]{rw/pw-life-cycle-new}
+	\caption{\label{fig:rw:pw_life_cycle} Stobert and Biddle's ``Password Life Cycle'' \cite{Stobert2014PasswordLifeCycle} models typical stages of password behavior.}
+\end{figure}
+
+\todo{add a table that has all problems on one side and the possible user coping strategies on the other side.}
+
+%TODO link: from high-level coping strategies to more low-level, detail descriptions. 
+
 
 	\subsection{Selecting Weak Passwords}
 	% things to answer in this section:
@@ -581,6 +575,8 @@ Usable security shouldn't only be done for end users but also for the people who
 	VersiPass \cite{Stobert2014PWMThatDoesntRemember}
 	
 	Password Multiplier \cite{Halderman2005ConvenientPWM}
+	
+	Drawbacks: Single point of failure, security problems\footurl{https://www.businesswire.com/news/home/20151006006149/en/Latest-Data-Breach-Spotlights-Identity-Restoration}{11.01.2018} 
 	
 	%% from SOUPS MM Poster
 	We situate our work in understanding user behavior and attitudes regarding passwords. Here, large parts of the literature focus on \textit{coping strategies} that emerge with a growing number of accounts \cite{Florencio2007LargeScaleStudyPasswordHabits, Florencio2014PasswordPortfoliosFiniteUser}. For example, Stobert and Biddle conducted qualitative analyses to formalize the way users live with their passwords (the ``Password Life Cycle'') \cite{Stobert2014PasswordLifeCycle}. This model depicts how users choose, commit, reuse, and reset their passwords. Their work also delivers valuable insights into memorization and organization strategies: Users have mental lists of passwords, e.g. a list for important accounts or a list per website topic. Without explicitly mentioning, the findings contribute to a mental model of password reuse. This is important, because reuse is one of the most common coping strategies \cite{Das2014TangledWeb, Gaw2006PasswordManagement, Hayashi2011DiaryStudyPWs} and many researchers discourage it, because a breach at one site can compromise many others \cite{Bonneau2012ScienceOfGuessing, Komanduri2011OfPasswordsAndPeople}. 
