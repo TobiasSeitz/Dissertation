@@ -222,39 +222,24 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 	
 	% organize reused passwords:
 	% categories
-	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
-	compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
-	
-	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices} -- but there are contradictory results on this matter. -- Stobert and Biddle argue in the other direction \cite{Stobert2014PasswordLifeCycle}.
-	
-	reuse statistic overview of different papers: 
-	\cite{Wash2016UnderstandingPasswordChoices} in the discussion section
-	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords)
-	Interestingly, Florêncio and Herley found that stronger passwords are not re-used as often as weak passwords (only around 4 sites) \cite{Florencio2007LargeScaleStudyPasswordHabits}.
-	 \cite{Wash2016UnderstandingPasswordChoices} Users don't care if an account is financial or not, as long as it's perceived as high value, they reuse the password for that \cite{Bailey2014StatisticsReuse}
-	
-	term that you read ever so often: users have a ``go-to password'' that they try first
-	and then often the policy can make them change another one. But! If the go-to password is strong and has certain characteristics (as is demonstrated in chapter \ref{chap:policies-reuse}), reusing this is possible and its threats perhaps underestimated. 
-	
-	A new scale and insights into password support. Password hierarchy \cite{Haque2015PhdProposal}
-	
-	Experts have certain articulate strategies to select and manage their passwords, and their situation awareness lets them judge important and non-important accounts more consistently  	\cite{Stobert2015ExpertPassword} 
-	but: not all of them behave the same way \cite{Loutfi2015PasswordsOtherSideOfTheFence}
-	
-	finite effort, and the payoff is invisible (comparison to smoking: I won't be affected, and in many cases that's true. But if you are affected you regret your behavior. )
-	
-	% realization: hey this isn't secure, we need to modify the password (maybe algorithmically)
-	People reuse their passwords and show predictable modification behavior \cite{Gaw2005ReuseRecycle}
+	One such approach is to categorize passwords by different criteria. Here, we can borrow the ``Mental Accounting'' theory from Behavioral Economics to describe users' risk assessments. \cite{Stockinger2015TowardsBE,Thaler2004}. Users put their passwords into mental accounts that help them recall them later. 
+	% frequency
+	Wash \etal argues that frequently entered credentials are reused more likely than seldom used ones \cite{Wash2016UnderstandingPasswordChoices}. However, interviewees in Stobert and Biddle's study reported the opposite behavior \cite{Stobert2014PasswordLifeCycle}. 
+	% strength
+	Florêncio and Herley noticed that strong passwords (in terms of entropy) are less frequently reused than weak passwords \cite{Florencio2007LargeScaleStudyPasswordHabits}. Here again, Wash \etal observed the opposite: participants in their study prioritized stronger passwords as reuse candidates \cite{Wash2016UnderstandingPasswordChoices}. If the latter is true, than this is another indicator for problematic mental models regarding risk assessment: users try to follow security advice and prefer strength over uniquenessm which is typically also advised. Nonetheless, strategies (or at least results) appear to fluctuate throughout the years. 
+	% value
+	Many users cluster their secrets regarding the usage purpose \cite{Haque2014Hierarchy}, e.g. banking, social media, communication, shopping, etc. \cite{Notoatmodjo2007ExploringWeakestLink,Stobert2014PWMThatDoesntRemember}. Bailey \etal argue that users do not really respect the usage purpose, but the value, importance, and meaningfulness of the account \cite{Bailey2014StatisticsReuse}. In that sense, users do not appear to care if the password ought to protect financial information if the website does not mean much to them. Still, probably all users have a ``go-to password'' that is tried first for an account whose value is uncertain in the beginning \cite{Stobert2014PasswordLifeCycle}. 
+	% reuse with modifications
+	If password requirements disallow the preferred choice, the go-to password might not work anymore. Typically, users either pick another password from their portfolio in that situation, or they mangle their first choice until all requirements are met. As we show in Chapter \ref{chap:policies-reuse}, neither strategy is necessary if the go-to-password shows certain features. But in case the policy mandates a change, Gaw and Felten have laid out that user-chosen mangling strategies are predictable, too \cite{Gaw2006PasswordManagement}. Besides, policies might not be the only reason for password modifications. Over time, users sometimes are exposed to new security advice or other realizations that their previous password strategy is generally considered weak \cite{VonZezschwitz2013SurvivalShortest}. Taking the current (already memorized) credentials, and applying the recommendations to them is an obvious choice. 
+		
+	% expert behavior
+	Florêncio \etal describe reuse, categorization, memorable passwords, and mangling as ``finite effort'' \cite{Florencio2014PasswordPortfoliosFiniteUser}. They meticulously lay out that password these strategies are not only common, but inevitable and necessary. Even experts in cybersecurity show similar patterns \cite{Loutfi2015PasswordsOtherSideOfTheFence,Stobert2015ExpertPassword}. The major difference between mainstream users and experts is that the latter are more articulate and considerate about their coping strategies. 
 
-	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they believe strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}.
-	
-	reuse is the most convenient way but probably the most severe threat to one's online identity and finances. This is a hard problem. 
+%	A new scale and insights into password support. Password hierarchy \cite{Haque2015PhdProposal}
 	
 	% summary
-	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser, ZhangKennedy2016RevisitingPasswordRules}. 
-	
-	Coping with passwords by choosing weak passwords and reusing them is absolutely necessary, the problem is \textbf{how to do it right} \cite{Florencio2014PasswordPortfoliosFiniteUser}.
-	
+	In conclusion, we can hang on to the idea that password reuse is a necessary coping strategy. Zhang-Kennedy \etal motivate that it is not even ``bad'' or ``risky'' per se \cite{ZhangKennedy2016RevisitingPasswordRules}. The challenge is to do it ``right''. However, motivating users to alter this particular aspect is comparable to motivating a smoker to quit their guilty pleasure: Abandoning reuse does not show a visible immediate pay-off (nor does quitting smoking). In many cases, it does not cause harm, even though 16\% of US-Americans have experiences someone else taking over their accounts \cite{Olmstead2017AmerciansCybersecurity} (a similar percentage of active smokers develop lung cancer\footurl{https://www.verywell.com/what-percentage-of-smokers-get-lung-cancer-2248868}{13.01.2018}). 
+		
 	\subsection{External Storage}
 	
 	%Write down passwords.
