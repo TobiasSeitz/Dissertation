@@ -183,71 +183,41 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 	% when do they select stronger passwords?
 	Why do users select weak passwords? 
 	First of all, selecting a strong password is hard for most people. % I feel this lacks a reference ?
-	Picking up the definition of a strong password (``something that is easy to remember, but difficult to guess'' \cite{Bishop1995ProactivePasswordChecking}), users do not struggle with the first part of the sentence, but the latter. Users do not intuitively know what makes a password \textit{difficult to guess} \cite{Jakobsson2013BenefitsUnderstandingPWs}, and not even security researchers reach ultimate consensus on that matter. 
+	Picking up the definition of a strong password (``something that is easy to remember, but difficult to guess'' \cite{Bishop1995ProactivePasswordChecking}), users do not struggle with the first part of the sentence, but the latter. Users do not intuitively know what makes a password \textit{difficult to guess} \cite{Jakobsson2013BenefitsUnderstandingPWs}, and not even security researchers reach ultimate consensus on that matter.  
 	
-	Let us look at the first part: something that is easy to remember. Numerous studies have looked at what people do to make their passwords easy to remember. For instance, personal information is easy to remember (``\texttt{TobiasSeitz}''), as is that of close ones (``\texttt{LenaSeitz}'') and pets (``\texttt{Fonsi\&Alois}'') \cite{Brown2004GeneratingPWs,Li2017PersonalInformation}. Veras \etal found that dates are very commonly found in passwords \cite{Veras2012VisualizingSemanticsPasswords}. Looking at the top 25 most-used passwords\footnote{SplashData publishes such a list each year, for 2017: \url{http://fortune.com/2017/12/19/the-25-most-used-hackable-passwords-2017-star-wars-freedom/} \la{12.01.2018}}, a list published after each public data leak, we can easily spot more patterns. One group consists of ``keyboard patterns'' (qwerty, qazwsx) and ``number sequences'' (12345, 123456, 1234567489, 1234567, 123123). The remainder fall into the ``likings'' (football, monkey, iloveyou, starwars, dragon) and ``password thematic'' (Password, letmein, admin, welcome, login, passw0rd, master, hello, trustno1) categories. All of these passwords are particularly easy to remember, but extremely predictable. However, they are often still allowed at many websites \cite{Seitz2017PoliciesReuse}. Interestingly, such password lists differ marginally across countries \cite{Violettas2014PasswordsAvoidGreece,Wang2015ChinesePWs}.
+	% users want MEMORABLE passwords.
+	Let us look at the first part: something that is easy to remember. Numerous studies have looked at what people do to make their passwords easy to remember. For instance, personal information is easy to remember (``\texttt{TobiasSeitz}''), as is that of close ones (``\texttt{LenaSeitz}'') and pets (``\texttt{Fonsi\&Alois}'') \cite{Brown2004GeneratingPWs,Li2017PersonalInformation}. Veras \etal found that dates are very commonly found in passwords \cite{Veras2012VisualizingSemanticsPasswords}. Looking at the top 25 most-used passwords\footnote{SplashData publishes such a list each year, for 2017: \url{http://fortune.com/2017/12/19/the-25-most-used-hackable-passwords-2017-star-wars-freedom/} \la{12.01.2018}}, a list published after each public data leak, we can easily spot more patterns. One group consists of ``keyboard patterns'' (qwerty, qazwsx) and ``number sequences'' (12345, 123456, 1234567489, 1234567, 123123). The remainder fall into the ``likings'' (football, monkey, iloveyou, starwars, dragon) and ``password thematic'' (Password, letmein, admin, welcome, login, passw0rd, master, hello, trustno1) categories. All of these passwords are particularly easy to remember, but extremely predictable. However, they are often still allowed at many websites \cite{Seitz2017PoliciesReuse}. Interestingly, such password lists differ marginally across countries \cite{Violettas2014PasswordsAvoidGreece,Wang2015ChinesePWs}. Consequently, users' \textbf{desire to create memorable passwords} naturally leads to more obvious selections. 
 
+%	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{../statista/statistic_id463406_typical-configuration-of-internet-passwords-2015}
+	\caption{\todo{replace with own figure built from Kaspersky Lab report data} Survey results - how do people select their passwords (self report)}
+\end{figure}
 	
 	% wrong mental model of strong passwords
-	Another reason why weak passwords prevail lies in faulty mental models. Woods \etal found that users often \textit{believe} that it is not possible to create a strong password, so they do not try \cite{Woods2018TooManyPasswords}. Some users who aim to create stronger passwords still fail because their strategies to accomplish the task are also predictable. Gaw \etal found that mangling is predictable \cite{Gaw2005ReuseRecycle}. Ur \etal pointed out that users understand a great deal of password security, but their modification behavior of existing passwords is sub-par \cite{Ur2015PWCreationLab}. Moreover, they provide evidence that users succeed to identify strong passwords, but only certain characteristics are misleading \cite{Ur2016PerceptionsPassword}. For instance, including digits yielded significantly higher subjective strength ratings, but does not always effectively improve strength. What is more is that participants in their study showed a skewed understanding of password attacks. (\todo{add example}) Therefore, their focus to fend off a dictionary attack might be futile if they do not know that attackers attempt to crack the password billions of times. Ur \etal conclude that feedback should thus inform users about attack scenarios which helps them assess the risk more realistically. 
-
-		they underestimate the threat \cite{Adams1999UsersEnemy}
-		if they were told that passphrases were secure, they are not necessarily: Passphrases are super predictable because most people use common phrases \cite{Bonneau2012LinguisticProperties}
-	
-%	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
-	
-	
-	\begin{figure}[htbp]
-		\centering
-		\includegraphics[width=0.6\linewidth]{../statista/statistic_id463406_typical-configuration-of-internet-passwords-2015}
-		\caption{\todo{replace with own figure built from Kaspersky Lab report data} Survey results - how do people select their passwords (self report)}
-	\end{figure}
-	
-	Users act insecurely because they choose weak passwords that they reuse \cite{Riley2006WhatUsersKnowWhatTheyDo}
+	Another reason for the prevalence of weak passwords lies in faulty mental models. Some users who aim to create stronger passwords still fail because their strategies to accomplish the task are also predictable. Gaw \etal found that mangling is predictable \cite{Gaw2005ReuseRecycle}. Ur \etal pointed out that users understand a great deal of password security, but their modification behavior of existing passwords is sub-par \cite{Ur2015PWCreationLab}. Moreover, they provide evidence that users succeed to identify strong passwords, but only certain characteristics are misleading \cite{Ur2016PerceptionsPassword}. For instance, including digits yielded significantly higher subjective strength ratings, but does not always effectively improve strength. What is more is that participants in their study showed a skewed understanding of password attacks. (\todo{add example}) Therefore, their focus to fend off a dictionary attack might be futile if they do not know that attackers attempt to crack the password billions of times. Ur \etal conclude that feedback should thus inform users about attack scenarios which helps them assess the risk more realistically. Although it is sometimes argued that passphrases, i.e. a combination of multiple dictionary words, are often as secure as passwords from a richer character set \cite{Shay2012CorrectHorseBatteryStaple}, users fail to create strong passphrases, too. Bonneau studied the linguistic properties of passphrases at Amazon and noted that an attacker could easily model user behavior to effectively crack passphrases \cite{Bonneau2012LinguisticProperties}. So, in other words, the mental model ``passphrase = secure'' is also wrong and problematic. Finally, mental models also play a role for risk assessment in organizations. In many cases, employees underestimate the security threat that companies face day to day, which leads to insecure password practices \cite{Adams1999UsersEnemy, Weirich2001PrettyGoodPersuasion}. To summarize this point, users fail to create strong passwords, because in many cases \textbf{erroneous mental models} stand in the way.
 	
 	% laziness / rational rejection 
-	- people don't take password policies at organizations seriously.  \cite{Weirich2005PersuasivePasswordSecurity}
-	- because they don't care
-	- ... they are right to judge the account as low value (who would hack me?) \cite{LastPass2016PersonalitiesGetUsHacked}
-	
+	What the media often call ``laziness'' and ``stupidity'', may in fact be the rational rejection of password security. Riley pointed out that users are well aware of ``better'' behavior, but they often ignore it by choice \cite{Riley2006WhatUsersKnowWhatTheyDo}. Florêncio \etal argue that this behavior is absolutely rational, because some accounts do not require strong protection and it would be impossible for users to follow all security advice given by experts \cite{Florencio2014PasswordPortfoliosFiniteUser}. A case example of an account that may be valuable for some, but not for others is LinkedIn. The social-media platform which is focused on business connections suffered a severe data breach in 2012, but only became aware of a much larger leakage in 2016. Many hashed passwords had leaked and thus the affected users were prompted to reset their passwords. Huh \etal investigated the reasons (not) to reset the password and in many instances, people said that they do not use the service very often, did not want to, or were not really concerned about the risks \cite{Huh2017TooBusy}. Ur \etal's results also indicate that users do know in theory what makes a strong password \cite{Ur2016PerceptionsPassword}. A survey commissioned by LastPass reported that one group of users often do not care about their accounts if they are not meaningful to them \cite{LastPass2016PersonalitiesGetUsHacked}, while the other group is overly careful, but there does not appear to be a ``just fine'' area of behavior. The first group may believe that stronger passwords do not accomplish protection anyhow \cite{Florencio2007DoStrongWebPasswords}. Herley and Pieters argue that it is also difficult to objectively falsify claims about security precautions, which would help to debunk unjustified security advice \cite{Herley2015Counterfactuals}. So, in essence, users choose weak passwords because they think \textbf{the account is unimportant} and therefore it is fine to ignore security advice.  
+%	- people don't take password policies at organizations seriously.  \cite{Weirich2005PersuasivePasswordSecurity}
+
 	% other factors
-	- They looked at depletion levels and password strength, but the method was kind of flawed so it's difficult to take this seriously \cite{Gross2016EffectCognitiveEffort}
-
-
-	- Passwords survive for a long time, sometimes in a modified version, and they tend to get slightly more complex over time and for important accounts\cite{VonZezschwitz2013SurvivalShortest}
-	
-	
-	
-	
-	thesis on the ``why'': \cite{Notoatmodjo2007ExploringWeakestLink}
-	
+	Lastly, the literature lists a few other reasons that lead to weak passwords. Groß \etal looked at the association between cognitive depletion and selection behavior \cite{Gross2016EffectCognitiveEffort}. They reach the conclusion that if cognitively challenging tasks precede password selection, the resulting passwords tend to get weaker. Von Zezschwitz \etal point out that a user's first passwords are created probably in teenage years when security precautions might be much less evident to people \cite{VonZezschwitz2013SurvivalShortest}. For important accounts, these early passwords are modified, but still persist for many years after they were first committed to. 
 	% Input modality - mobile devices
-	Text entry under lab conditions for multiple password selection tasks in a row doesn't have a large effect on typical password metrics \cite{Yang2014EntryAffectsPasswordSecurity}
+	Mobile phones are another factor that steadily gains more importance. Under lab conditions, Yang \etal found that participants included more lowercase letters in passwords, if they created them on a smartphone \cite{Yang2014EntryAffectsPasswordSecurity}. Von Zezschwitz \etal corroborate the findings and argue that passwords created on smartphones are much less diverse than their desktop-counterparts, because they are shorter and contain mostly lowercase letters \cite{VonZezschwitz2014HoneyIShrunkTheKeys}. Two years later, Melicher \etal studied the interoperability of passwords on different platforms \cite{Melicher2016UsabilityMobileTextPasswords}. Interestingly, the passwords created on mobiles were only marginally weaker than those created on a desktop, but had more potential to lead to user frustration, especially if requirements were too bothersome. The individual keyboard on a mobile influences frustration levels, too \cite{Haque2014PsychometricsStrongPassword}. 
+	% Since biometric authentication prevails as unlock mechanism, the PINS and passwords users create as unlock protection tend to get weaker \cite{Cherapau2015ImpactOfTouchID}. 
+	In summary, contextual factors like cognitive depletion and the device used during password creation have a notable impact on password strength. 
+	%TODO consider: new character set: emojis. set the stage for the emoji passwords later. 
 	
-	input modality can be a strong influence on password selection in that mobile devices will lead to less diverse passwords \cite{VonZezschwitz2014HoneyIShrunkTheKeys}
-	
-	
-	Even after a credential leak people are not very invested with their weak passwords: LinkedIn's password reset email can be considered ineffective, but the more severe problem is that the email focused on LinkedIn only, because it's super important to change the password on all other sites \cite{Huh2017TooBusy}
-	
-%	\subsubsection{What's the Problem with Weak Passwords?}
-	usually, people tend to use stronger PWs for important accounts
-	
-	Stronger passwords are not always necessary, do not force users to waste effort. \cite{Florencio2007DoStrongWebPasswords}	
-	
-	\cite{Shay2014ReligiousAunt}
-	
-%	\subsubsection{The Influence of Mobile Devices}
-	touch some small aspects, especially Melicher's Paper \cite{Melicher2016UsabilityMobileTextPasswords} and \cite{VonZezschwitz2014HoneyIShrunkTheKeys}
-	\cite{Haque2014PsychometricsStrongPassword} 
-	
-	talk about the rise of graphical and biometric authentication. 
-	also \cite{Cherapau2015ImpactOfTouchID} -- fallback stuff.
-	
-	new character set: emojis.
-	set the stage for the emoji passwords later. 
+	% THEMES
+	We thus identify four main themes from related work that cause weak passwords: 1) Weak passwords are more memorable. 2) Hard-to-change mental models prevent the creation of stronger passwords. 3) In many situations, users rationally reject the effort to create a strong password. 4) Contextual factors notably influence selection strategies. In the following, we dissect another coping strategy, which is potentially even riskier than selecting weak passwords: password reuse.
 
 	\subsection{Password Reuse}
 	too many accounts problem. ``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}). in the same vein: \cite{Chiasson2009InterferencesGraphical}
+
+	Woods \etal argue that users often \textit{believe} that they cannot remember multiple passwords, so they do not even try \cite{Woods2018TooManyPasswords}.
 	
 	People reuse their passwords and show predictable modification behavior \cite{Gaw2005ReuseRecycle}
 	
