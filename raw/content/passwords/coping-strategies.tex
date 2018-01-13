@@ -186,7 +186,7 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 	Picking up the definition of a strong password (``something that is easy to remember, but difficult to guess'' \cite{Bishop1995ProactivePasswordChecking}), users do not struggle with the first part of the sentence, but the latter. Users do not intuitively know what makes a password \textit{difficult to guess} \cite{Jakobsson2013BenefitsUnderstandingPWs}, and not even security researchers reach ultimate consensus on that matter.  
 	
 	% users want MEMORABLE passwords.
-	Let us look at the first part: something that is easy to remember. Numerous studies have looked at what people do to make their passwords easy to remember. For instance, personal information is easy to remember (``\texttt{TobiasSeitz}''), as is that of close ones (``\texttt{LenaSeitz}'') and pets (``\texttt{Fonsi\&Alois}'') \cite{Brown2004GeneratingPWs,Li2017PersonalInformation}. Veras \etal found that dates are very commonly found in passwords \cite{Veras2012VisualizingSemanticsPasswords}. Looking at the top 25 most-used passwords\footnote{SplashData publishes such a list each year, for 2017: \url{http://fortune.com/2017/12/19/the-25-most-used-hackable-passwords-2017-star-wars-freedom/} \la{12.01.2018}}, a list published after each public data leak, we can easily spot more patterns. One group consists of ``keyboard patterns'' (qwerty, qazwsx) and ``number sequences'' (12345, 123456, 1234567489, 1234567, 123123). The remainder fall into the ``likings'' (football, monkey, iloveyou, starwars, dragon) and ``password thematic'' (Password, letmein, admin, welcome, login, passw0rd, master, hello, trustno1) categories. All of these passwords are particularly easy to remember, but extremely predictable. However, they are often still allowed at many websites \cite{Seitz2017PoliciesReuse}. Interestingly, such password lists differ marginally across countries \cite{Violettas2014PasswordsAvoidGreece,Wang2015ChinesePWs}. Consequently, users' \textbf{desire to create memorable passwords} naturally leads to more obvious selections. 
+	Let us look at the first part: something that is easy to remember. Numerous studies have looked at what people do to make their passwords easy to remember. For instance, personal information is easy to remember (``\texttt{TobiasSeitz}''), as is that of close ones (``\texttt{LenaSeitz}'') and pets (``\texttt{Fonsi\&Alois}'') \cite{Brown2004GeneratingPWs,Li2017PersonalInformation}. Veras \etal found that dates are very commonly found in passwords \cite{Veras2012VisualizingSemanticsPasswords}. Looking at the top 25 most-used passwords\footnote{SplashData publishes such a list each year, for 2017: \url{http://fortune.com/2017/12/19/the-25-most-used-hackable-passwords-2017-star-wars-freedom/} \la{12.01.2018}}, a list published after each public data leak, we can easily spot more patterns. One group consists of ``keyboard patterns'' (qwerty, qazwsx) and ``number sequences'' (12345, 123456, 1234567489, 1234567, 123123). The remainder fall into the ``likings'' (football, monkey, iloveyou, starwars, dragon) and ``password thematic'' (Password, letmein, admin, welcome, login, passw0rd, master, hello, trustno1) categories. All of these passwords are particularly easy to remember, which was quantified by Chiasson \etal \cite{Chiasson2009InterferencesGraphical}, but extremely predictable. However, they are often still allowed at many websites \cite{Seitz2017PoliciesReuse}. Interestingly, such password lists differ marginally across countries \cite{Violettas2014PasswordsAvoidGreece,Wang2015ChinesePWs}. Consequently, users' \textbf{desire to create memorable passwords} naturally leads to more obvious selections. 
 
 %	pass\textit{word} implies it has to be a word. Other names for the concept, but basically the same meaning: security code, passcode, secret, credentials, access token
 
@@ -215,67 +215,45 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 	We thus identify four main themes from related work that cause weak passwords: 1) Weak passwords are more memorable. 2) Hard-to-change mental models prevent the creation of stronger passwords. 3) In many situations, users rationally reject the effort to create a strong password. 4) Contextual factors notably influence selection strategies. In the following, we dissect another coping strategy, which is potentially even riskier than selecting weak passwords: password reuse.
 
 	\subsection{Password Reuse}
-	too many accounts problem. ``password overload'' and ``memory interference'' as technical terms must appear here (for discussion see \cite{Yang2016MnemonicSentenceBased}). in the same vein: \cite{Chiasson2009InterferencesGraphical}
-
-	Woods \etal argue that users often \textit{believe} that they cannot remember multiple passwords, so they do not even try \cite{Woods2018TooManyPasswords}.
+	% TOO MANY ACCOUNTS! Cannot remember them!
+	The primary reason for password reuse is the mere fact that users create new accounts on a regular basis, and it is logical to make sure to be able to log in later by choosing a secret they already know. ``Password overload'' essentially frames the problem \cite{Yang2016MnemonicSentenceBased}. ``Memory interference'' postulates reuse as a coping strategy \cite{Chiasson2009InterferencesGraphical}. In 2007, Florêncio and Herley conducted a large-scale study that empirically showed the challenges and coping strategies regarding this overload \cite{Florencio2007LargeScaleStudyPasswordHabits}: Users of the Windows Live Toolbar had 6.5 distinct passwords, each of which was used for 3.9 different websites. During the data collection period, users logged into 25 accounts on a regular basis, and typed around 8 passwords per day. Although keeping track of the multitude of username-password combinations is a tough challenge, most users still rely on their memory instead of other tools \cite{Olmstead2017AmerciansCybersecurity}. Users realize the challenge is hard, but Woods \etal argue that users underestimate their capabilities when it comes to memorizing passwords \cite{Woods2018TooManyPasswords}. Consequently, many people do not try to create a richer portfolio of passwords than the numbers from the 2007 study showed. More recent numbers show that between 39\% \cite{Olmstead2017AmerciansCybersecurity} and 76\% \cite{CSID2012PasswordHabits} of users rely on reuse as coping strategy. Since social desirability bias could lead to dishonest survey responses, the ``dark figure'' might even be higher, because, as Inglesant and Sasse put it, ``\textit{Users see `good' passwords (that are memorable and conform to the policy) as a `resource', which they continue to use for new applications even if the original use is no longer allowed.}'' (\cite{Inglesant2010TrueCostOfUnusablePolicies}). What is more is that the user-name is part of the authentication process, and users pick different aliases, pseudonyms, emails for different accounts.
 	
-	People reuse their passwords and show predictable modification behavior \cite{Gaw2005ReuseRecycle}
+	All this is consequential for the overall online security of an individual. The more a user relies on reuse passwords, the more severe phishing attacks and data breaches become. The metaphorical ``Domino Effect'' describes the situation after a breach: When an attacker obtains a password form one user's account, all the other accounts might fall with it \cite{Ives2004DominoEffectReuse}. It's enough to know even only one low-value password to crack a large part of high-value passwords via predictable mangling rules \cite{Das2014TangledWeb, Haque2014Hierarchy}. Still, password reuse is difficult to mitigate, so Ives argues to look into understanding the specific approaches better \cite{Ives2004DominoEffectReuse}.
 	
-	The burden of passwords was relatively high in 2007, people reuse passwords \cite{Florencio2007LargeScaleStudyPasswordHabits}: They found that users had about 7 distinct passwords in 2007, and that passwords are re-used at about 6 sites in average. Interestingly, they found that stronger passwords are not re-used as often as weak passwords (only around 4 sites). 
+	% organize reused passwords:
+	% categories
+	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
+	compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
 	
-	finite effort, and the payoff is invisible (comparison to smoking: I won't be affected, and in many cases that's true. But if you are affected you regret your behavior. )
-	
-	reuse is the most convenient way but probably the most severe threat to one's online identity and finances. This is a hard problem. 
-	
-	it's not just the passwords, it's also the user name 
-	
-	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices} -- but there are contradictory results on this matter. -- Stobert and Biddle argue in the other direction \cite{Stobert2014PasswordLifeCycle}. 
+	frequently entered passwords are reused more often \cite{Wash2016UnderstandingPasswordChoices} -- but there are contradictory results on this matter. -- Stobert and Biddle argue in the other direction \cite{Stobert2014PasswordLifeCycle}.
 	
 	reuse statistic overview of different papers: 
 	\cite{Wash2016UnderstandingPasswordChoices} in the discussion section
-	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}
+	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords)
+	Interestingly, Florêncio and Herley found that stronger passwords are not re-used as often as weak passwords (only around 4 sites) \cite{Florencio2007LargeScaleStudyPasswordHabits}.
+	 \cite{Wash2016UnderstandingPasswordChoices} Users don't care if an account is financial or not, as long as it's perceived as high value, they reuse the password for that \cite{Bailey2014StatisticsReuse}
 	
 	term that you read ever so often: users have a ``go-to password'' that they try first
 	and then often the policy can make them change another one. But! If the go-to password is strong and has certain characteristics (as is demonstrated in chapter \ref{chap:policies-reuse}), reusing this is possible and its threats perhaps underestimated. 
 	
-	\textbf{What's the problem?}
-	consequences: phishing attacks are problematic because of the domino effect (Ives \etal) Password reuse is difficult to defend against and we should look into understanding user behavior better \cite{Ives2004DominoEffectReuse}.
-	
-	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser, ZhangKennedy2016RevisitingPasswordRules}. 
-	
-
-	
-	
-	It's enough to know one low-value password that you mangle to crack a large part of high-value passwords \cite{Haque2014Hierarchy}
-	
-	
-	%    \subsubsection{Reuse Strategies}
-	address the role of policies (see \cite{Seitz2017PoliciesReuse}).
-	
-	Participants rely on their memory, but reuse passwords, and they have a suboptimal mental model of how attacks work \cite{Gaw2006PasswordManagement}
-	
-	Users don't care if an account is financial or not, as long as it's perceived as high value, they reuse the password for that \cite{Bailey2014StatisticsReuse}
-	
-	password reuse is common and modifications are predictable, so it's easy for attackers to optimize their attacks with knowledge from leaked credentials of a specific account \cite{Das2014TangledWeb}
-
-	Password Categories -- arch over to mental accounting from behavioral economics -- \cite{Thaler2004}
+	A new scale and insights into password support. Password hierarchy \cite{Haque2015PhdProposal}
 	
 	Experts have certain articulate strategies to select and manage their passwords, and their situation awareness lets them judge important and non-important accounts more consistently  	\cite{Stobert2015ExpertPassword} 
 	but: not all of them behave the same way \cite{Loutfi2015PasswordsOtherSideOfTheFence}
+	
+	finite effort, and the payoff is invisible (comparison to smoking: I won't be affected, and in many cases that's true. But if you are affected you regret your behavior. )
+	
+	% realization: hey this isn't secure, we need to modify the password (maybe algorithmically)
+	People reuse their passwords and show predictable modification behavior \cite{Gaw2005ReuseRecycle}
 
-	Categorization: 
-	compare password categorization to mental accounting, then we can cite \cite{Stockinger2015TowardsBE}
+	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they believe strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}.
 	
-	category: depending on policies. \cite{Stobert2014PasswordLifeCycle}
+	reuse is the most convenient way but probably the most severe threat to one's online identity and finances. This is a hard problem. 
 	
+	% summary
+	but reuse isn't bad per se, it's necessary \cite{Florencio2014PasswordPortfoliosFiniteUser, ZhangKennedy2016RevisitingPasswordRules}. 
 	
-	``Users see `good' passwords (that are memorable and conform to the policy) as a `resource', which they continue to use for new applications even if the original use is no longer allowed.'' (\cite{Inglesant2010TrueCostOfUnusablePolicies})
-	
-	Users try to prioritize stronger passwords as reuse candidates, and this also means that users try to follow security advice (they belief strong passwords are more important than unique passwords) \cite{Wash2016UnderstandingPasswordChoices}.
-	
-	Coping with passwords by choosing weak passwords and reusing them is absolutely necessary, the problem is how to do it right \cite{Florencio2014PasswordPortfoliosFiniteUser}.
-	
-	A new scale and insights into password support. Password hierarchy \cite{Haque2015PhdProposal}
+	Coping with passwords by choosing weak passwords and reusing them is absolutely necessary, the problem is \textbf{how to do it right} \cite{Florencio2014PasswordPortfoliosFiniteUser}.
 	
 	\subsection{External Storage}
 	
