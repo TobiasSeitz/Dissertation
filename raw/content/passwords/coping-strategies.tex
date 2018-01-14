@@ -252,27 +252,20 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 	Lyastani \etal recently investigated the impact of using a PWM on password strength and reuse \cite{Lyastani2017ImpactPWMPasswordStrength}. Those \glspl{PWM} which included a generator had a positive effect on overall password strength and diversity in the large sample studied in-situ. But existing user strategies thwarted a boost in security, e.g. if a built-in \gls{PWM} is solely used to store reused passwords. Users often benefit from automatically filled login-forms and do not have to type their passwords anymore, which is a huge usability plus. As with analog notepads, PWMs are a single point of failure, in case the master password is weak. This is one of the few instances in which a strong password is recommended without restrictions. Password managers are also a honey pot for attackers, who exploit security vulnerabilities of the software to gain access to user passwords \cite{Bonneau2012ReplacePasswords}. The situation is aggravated if passwords are synced to the manufacturer's cloud storage, although this is recommended by Yee to enable seamless availability \cite{Yee2006Passpet}. To summarize, password managers are a feasible solution for many users, but adoption rates are still fairly low. 
 
 	\subsection{Fallback Methods}
-	Click on ``forgot'' password basically every time - to avoid this, some services mainly rely on one time passwords, because users are going to forget theirs anyway. 
-
-	\cite{Bonneau2015SecretsLies}
-	
-	
-
+	Coping with a forgotten password shows more particularities of user behavior. If offered by \glspl{SP}, the easiest way to handle the situation is to obtain a password reset link via email and create a new password. In the past, password resets had been responsible for a large portion of helpdesk calls \cite{Sasse2001WeakestLink}, but self-service procedures have successfully mitigated the issue. Users tend to reuse passwords or mangle an old password when they forget and reset their credentials \cite{Stobert2014PasswordLifeCycle}. In some cases, however, password reset links are replaced by personal knowledge questions \cite{Bonneau2015SecretsLies}. These often present a great risk to user accounts because of the statistical probability involved (e.g. ``what was the make of your first car'' has a predictable distribution), or the information is findable on social networks (e.g. ``what is your city of birth''). Consequently, a strong primary password can be dominated by a weak fallback question and voids user efforts to secure their account. Perhaps the only strategy to maximize security within this scheme is to provide bogus answers to secret questions to fend-off statistical attacks \footurl{https://lifehacker.com/use-fake-answers-to-online-security-questions-1821628011}{14.01.2018}. 
 
 	\subsection{Account Sharing}
-	Account sharing is very common and often necessary, while current designs do not take this behavior into account \cite{Singh2007PasswordSharing}
+	Users often share their accounts, e.g. with close-ones, relatives, or co-workers \cite{Kaye2011PasswordSharing, Shay2010EncounteringPasswordRequirements}. Security advice generally discourages sharing passwords because it increases the likelihood of leaked credentials. However, Singh \etal point out that this behavior is absolutely intentional, and does not originate from lack of understanding the risks involved \cite{Singh2007PasswordSharing}. Password managers also integrate sharing features to give others quick and easy access to a set of passwords \cite{Li2014EmperorsNewPWM}. Account sharing plays a role in the overall security strategy, but personal passwords are usually less influenced by sharing considerations. 
 
 	\subsection{Summary}
-	This is where the password life cycle plays an essential role \cite{Stobert2014PasswordLifeCycle}
-	
-	FINITE USER EFFORT advocates the rationality of these coping strategies. 
+	We can identify themes in coping strategies at each stage of the Password Life Cycle \cite{Stobert2014PasswordLifeCycle}. Coping is a natural reaction to ``impossible demands'' arising from Password overload \cite{Sasse2005UsableSecurityPosition}. All strategies can be justified from an economic point of view \cite{Florencio2014PasswordPortfoliosFiniteUser}, although each of them generates security risks of varying severity. Password reuse is arguably the most severe problem, followed by selecting too obvious and weak passwords. It is critical to be consistent with one's own reuse strategy and pick strong passwords in a select number of cases, e.g. master passwords for \glspl{PWM} or central hubs like email accounts. In the following, we discuss how research has tried to influence risky behavior and support users in safe behaviors. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%
 %%%%% COUNTERMEASURES
 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Countermeasures}
+\section{User Support and Interventions}
 
 if we must keep the human in the loop, e.g. because constraints dictate so, we need to support them well and carefully \cite{Cranor2008FrameworkReasoning}
 
@@ -280,9 +273,6 @@ Usable security shouldn't only be done for end users but also for the people who
 
 
 	\subsection{Password Composition Policies}\label{sec:rw:policies}
-	
-	
-	
 	
 	the idea of policies dates back to the 70s: Morris and Thompson suggested to make users
 	either choose longer passwords or assign passwords to them - There are flaws in password authentication and we can do something to alleviate the problem, but cannot get rid of it entirely \cite{Morris1979PasswordSecurity}
@@ -362,7 +352,7 @@ Usable security shouldn't only be done for end users but also for the people who
 	It would be good to have a formal description of password policies in a standardized schema \cite{Horsch2016PasswordPolicyMarkup}
 
 	\subsection{Training, Advice, and Guidelines}\label{sec:rw:advice_guidance}
-	
+	``User education will only work if users are motivated.'' \cite{Sasse2001WeakestLink}
 	there is a plethora of advice and guidelines out there, but it's not all the same \footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}
 	
 	education in password matters only has so much effect. 
