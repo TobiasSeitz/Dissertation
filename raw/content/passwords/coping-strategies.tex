@@ -265,91 +265,50 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 %%%%% COUNTERMEASURES
 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{User Support and Interventions}
-
-if we must keep the human in the loop, e.g. because constraints dictate so, we need to support them well and carefully \cite{Cranor2008FrameworkReasoning}
-
-Usable security shouldn't only be done for end users but also for the people who implement security systems \cite{Acar2016NotYourDeveloper}
-
-
+\section{User Support and Interventions}\label{sec:rw:user-support-interventions}
+Since secure behavior does not come natural to users, there have been many attempts to make it more accessible to them and relieve the tensions between usability and security at the same time. Although systems can be changed in many ways, it is difficult to change the user. If the user needs to be kept in the loop, e.g. because constraints dictate so, we need to support them well and make careful decisions about how to support them \cite{Cranor2008FrameworkReasoning}. In the following, we highlight approaches not only to make systems more usable, but also to influence user behavior regarding passwords. 
+%Usable security shouldn't only be done for end users but also for the people who implement security systems \cite{Acar2016NotYourDeveloper}
 	\subsection{Password Composition Policies}\label{sec:rw:policies}
-	
-	the idea of policies dates back to the 70s: Morris and Thompson suggested to make users
-	either choose longer passwords or assign passwords to them - There are flaws in password authentication and we can do something to alleviate the problem, but cannot get rid of it entirely \cite{Morris1979PasswordSecurity}
-	
-	The algorithms at the time weren't suitable to defend against cracking attacks so it was thought to introduce a few mechanisms to shift responsibility to the users \cite{Feldmeier1990UnixPasswordSecurity}
-	
-	%TODO here we need a reference to Bill Burr's idea of nailing policies down to a NIST standard.
+	%Lingo: Adhere to a policy
+	% history, where did the idea originate?
+	Combating weak passwords has received the most attention from research and practice. The idea of enforcing certain password requriments dates back to the 1970s, i.e. the early days of cybersecurity. Morris and Thompson acknowledged password authentication is inherently flawed in terms of usability. They suggested to make users either choose longer passwords, or systematically assign passwords to them to \cite{Morris1979PasswordSecurity}.
+	At the time, guessing attacks were not as powerful as they are today and it was obvious to shift responsibility to users \cite{Feldmeier1990UnixPasswordSecurity}. When the Electronic Authentication guideline was published by \gls{NIST}, password composition policies became the de-facto standard in attempting to make users select stronger passwords. The NIST guideline suggested passwords be at least eight characters long, include at least one upper case letter, one lower case letter, one digit, and one special symbol \cite{Burr2004NISTEntropy}. Moreover, passwords may not be taken from a dictionary with common words and not be permutations of the username. By looking at entropy estimates, it was argued that the resulting passwords would achieve at least 30 bits of entropy. Interestingly, this was not the only specification for policies. The guideline specifically says that passwords could also be graded with some other metric and be rejected based on their estimated entropy. At the time, there was not much evidence that user-selected passwords created under the NIST-policy were in fact strong, which set of a number of research studies, and made password composition policies one of the most studied topics in password security. 
 
-
-
-	Proctor \etal found in 2002 that certain ``proactive password restrictions'' lead to stronger passwords \cite{Proctor2002ImprovingAuthenticationProactivePasswordRestrictions}. In two laboratory experiments, they had participants create a new password for a university account. The policies differed in the required minimum length (five and eight) and additional requirements like upper-/lowercase letters and digits. In the first experiment, where passwords only had to be five characters long, introducing the additional requirements had a greater effect on strength than in the eight-character-minimum condition. Increasing the minimum length by three characters already had a stronger effect. Interestingly, they concluded ``Perhaps the most important message of this study is that restrictions on user-generated passwords may not accomplish their intended goals.'' 
-	
-	%TODO NIST policy derived from their guessing approach in 2004. 
-	%% also mention that Bill Burr regrets putting it out there!
-	
-	Proctor \etal's early hypothesis that policies are more or less ineffective is particularly surprising because in the fifteen years that followed, many research papers were written about such restrictions and many of them ultimately came to similar conclusions. In the following some of the most influential works are summarized.
+	Proctor \etal found in 2002 that certain ``proactive password restrictions'' lead to stronger passwords \cite{Proctor2002ImprovingAuthenticationProactivePasswordRestrictions}. In two laboratory experiments, they had participants create a new password for a university account. The policies differed in the required minimum length (five and eight) and additional requirements like upper-/lowercase letters and digits. In the first experiment, where passwords only had to be five characters long, introducing the additional requirements had a greater effect on strength than in the eight-character-minimum condition. Increasing the minimum length by three characters already had a stronger effect. Interestingly, they concluded ``Perhaps the most important message of this study is that restrictions on user-generated passwords may not accomplish their intended goals.'' Proctor \etal's early hypothesis that policies are more or less ineffective is particularly surprising because in the fifteen years that followed, many research papers were written about such restrictions and many of them ultimately came to similar conclusions. In the following some of the most influential works are summarized.
 	
 	%now we need to report on a couple of papers that come to the conclusion that policies are somewhat ineffective.	
-	Inglesant and Sasse report on a diary study of password policies in corporate contexts \cite{Inglesant2010TrueCostOfUnusablePolicies}. a postulation that password policies should be based on HCI principles rather than security considerations alone. The idea of a holistic password policy is put forward 
+	Inglesant and Sasse report on a diary study of password policies in corporate contexts \cite{Inglesant2010TrueCostOfUnusablePolicies}. They reached the disillusioning conclusion that password policies reduce employees' productivity. Once they found a password that fulfilled the policy, participants used it as a resource to turn to when creating more accounts. Similarly, Komanduri found that users barely go beyond the minimum requirements of policies \cite{Komanduri2011OfPasswordsAndPeople}, but some policies yield better results than others. %The idea of a holistic password policy is put forward 
+	Weir \etal categorize policies into ``explicit'' and ``implicit'' policies \cite{Weir2010MetricsPolicies}, where explicit policies have predefined rules about the password structure like the NIST policies which is explicitly based on \gls{LUDS} \cite{Wheeler2016zxcvbn}. On the other hand, implicit policies focus on strength estimation and are somewhat more volatile and intransparent to the users. For instance, if the policy uses a blacklist of words, that are disallowed, the list is usually not displayed to users up front. The blacklist only becomes visible after the first attempt is made. Moreover, they used subsets of the RockYou data set that fulfilled the NIST policy. Here, Weir \etal provided early pointers that many of those passwords can be easily cracked, too. 
 	
-	 
-	
-	%Lingo: Adhere to a policy
-	
+	Thus, the logical next step was to find replacements for the NIST policy with better usability and security. First attempts to find it were of theoretical nature. Blocki \etal modeled an ``optimal'' policy as algorithmically solvable challenge \cite{Blocki2013OptimizingPasswordPolicies}, which was proposed by Shay \cite{Shay2009PolicySimulation}. However, while theoretically sound, empirical evidence was necessary to quantify the effects on user behavior. 
+	%There are also ``external'' policies where the user's password is automatically changed by the system to add some randomness
 
-	
-	
-	Weir \etal categorize policies into ``explicit'' and ``implicit'' policies \cite{Weir2010MetricsPolicies}, where explicit policies have predefined rules about the password structure (e.g. LUDS policy). Implicit policies are based on the estimated strength and are somewhat more volatile and intransparent to the users. Example: blacklist only becomes visible once the user tries to pick a password that's contained in the list. There are also ``external'' policies where the user's password is automatically changed by the system to add some randomness
-	
-	
-	Policies influence security and usability, meters are often ineffective because only stringent meters seem to work \cite{Ur2012HelpingUsersCreateBetterPasswords}
-	
-	LUDS as a key term \cite{Wheeler2016zxcvbn}
-	
+	% GUESS NUMBER GRAPH
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.6\linewidth]{rw/guess-number-graph}
+		\caption{\label{fig:rw:guess-number-graph} Guess number graph for passwords created under different password composition policies. A higher percentage of cracked passwords (larger y-values) indicates that passwords were weaker. In this case, passwords adhering to a basic12 policy were the weakest, while 3class16 produced the strongest passwords.}
+	\end{figure}
+	During the last few years, Shay \etal have established a taxonomy for policies \cite{Komanduri2011OfPasswordsAndPeople, Shay2014CanLongPasswordsBeSecureAndUsable,Shay2016DesigningPasswordPolicies}: Basic policies that only mandate a certain length (e.g. basic12), character-class centric policies that require between 2 and 4 different character classes and a given length (e.g. 3class12), policies requiring phrase-like syntax and a given length (e.g. 2word16), and complex policies that have more than 4 specific requirements (comp8). Table \ref{tab:rw:policy-descriptions} illustrates the specific differences as found in the taxonomy. In multiple studies they compared the guessability of passwords under different policies. They found that a 3class16 policy produced the least guessable passwords, while basic12 yielded the highest cracking success rates. For a limited attacker, who can make up to $10^6$ guesses, basic16 and basic20 performed poorly, but they fared well at the cut-off threshold of $10^{14}$. The NIST-policy (comp8) performed well up to $10^6$ guesses, but almost as many passwords had been cracked after $10^{14}$ guesses as for the basic12 policy. This refutes the postulation that character diversity automatically leads to stronger passwords when users select them. Shay \etal point out that 28\% in the comp8 condition only fulfilled the criteria by adding an exclamation mark ``!'' at the end, which is corroborated by Ur \etal \cite{Ur2015PWCreationLab}. So, as hypothesized, policies significantly influence the strength of user-generated passwords. In terms of usability, there are signficant differences, too. Shay \etal examined typical usability metrics, as well as user ratings. basic12 passwords were the easiest to create, fastest to type and easiest to remember. Interestingly, the 3class12 policy was comparable in all dimensions. All in all, basic16, 3class12, and 2word16 seem like the ``winners'' in terms of security and usability, but 2word16 passwords have high beta guess rates \cite{Shay2014CanLongPasswordsBeSecureAndUsable}. To combat this, Shay \etal suggest blacklisting specific sub-strings \cite{Shay2016DesigningPasswordPolicies}.
 		
-	Range of Policies as shown by Shay \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
-	definitely mention: 28.0\% of passwords in comp8 fulfilled the symbol requirement only by placing ``!'' at the end and using no other symbols. 
+	% Table tab:rw:policy-descriptions
+	% POLICY descriptions
+	\input{tables/policy-descriptions}
+
+	% Policies influence security and usability, meters are often ineffective because only stringent meters seem to work \cite{Ur2012HelpingUsersCreateBetterPasswords}
 	
-	Zhang-Kennedy 2016 (here and also below) \cite{ZhangKennedy2016RevisitingPasswordRules}
+	%The authors present how they would design an experiment about persuasive messaging, but didn't really carry it out (and the method doesn't seem suitable) \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+
+	% password expiration policy
+	In the industry and public institutions, password expiration policies are commonplace  \cite{Inglesant2010TrueCostOfUnusablePolicies,Chiasson2015QuantifyingExpiration}. Forcing users to reset their users in predefined intervals was argued to mitigate threats arising from data breaches. If password leaks go unnoticed, at least they expire at regular points. For users, an expiration policy drastically increases password overload and memory interference, for which the typical coping strategies (see Section \ref{sec:rw:user-behavior}) prevail: an expired ``password1'' quickly is reset to ``password2'' and so forth \cite{Zhang2010PasswordExpiration}. Thus, it has been argued that expiration is ineffective and causes users too much effort without graspable security benefits. Chiasson \etal set out to quantify the benefits of expiration but their mathematical model strongly indicated that the benefits are ``marginal at best'' \cite{Chiasson2015QuantifyingExpiration}. If expiration is not enforced, security experts often advise users to change their password often. Zhang-Kennedy \etal reframe this rule to ``change your password well'' \cite{ZhangKennedy2016RevisitingPasswordRules}, i.e. users ought to change it once they suspect (or find out) a service had been compromised.
 	
+	% more nudging - focused: Penalizing users by making them wait can be a strong nudge to comply and create a stronger password \cite{Malkin2013Waiting}
 	
-	Workplace-focused: 
+	% state of the world: policies in the wild 
+	Looking at real-world policies, Wang \etal also find inconsistencies, i.e. not all web sites require the same password characteristics	\cite{Wang2015EmperorsPolicies}. Users can get confused if multiple sites mandate different features for ``security reasons'', because they might wonder who is right. Florêncio and Herley compared policies of high-traffic websites and public institutions, mostly universities \cite{Florencio2010WhereDoPoliciesComeFrom}. Surprisingly, the most influential companies enforce some of the loosest policies. The researchers argue that decisions in these companies are not only influenced by security officers (who evangelize password strength and expiration) but also by user experience experts (who point out the usability issues). In public institutions, security advisors outnumber human-factors experts, which is why policies represent an ``overshoot'' of security there, imposing considerable nuisance at marginal security benefits. 
 	
-	
-	The authors present how they would design an experiment about persuasive messaging, but didn't really carry it out (and the method doesn't seem suitable) \cite{Zakaria2013DesigningEffectiveSecurityMessages}
-	
-	Don't try to fix the user, fix the system first, especially do not impose strict requirements and nonsensical policies \cite{Florencio2014AdministratorsGuide} 
-	
-	Policy changes are a nuisance, but users feel more secure afterwards, and users write down passwords, share them and base them on dictionary words 	\cite{Shay2010EncounteringPasswordRequirements}
-	
-	Most detailed insights into effects of password policy design we have to date, password substring blacklist suggestion \cite{Shay2016DesigningPasswordPolicies}
-	
-	\cite{Weir2010MetricsPolicies}
-	
-	\cite{Wang2015EmperorsPolicies}
-	
-	
-	\cite{Florencio2010WhereDoPoliciesComeFrom}
-	
-	\cite{Horsch2016PasswordPolicyMarkup}
-	
-	\cite{Chiasson2015QuantifyingExpiration}
-	\cite{Blocki2013OptimizingPasswordPolicies}
-	
-	Early comparison of the effects of policies on \textit{human} password selection by Komanduri \etal - A carefully chosen policy can lead to more secure and more usable passwords, in this case the basic16 policy was well-received \cite{Komanduri2011OfPasswordsAndPeople}
-	
-	
-	Shay tried to come up with an algorithm that lets administrators decide which policy to use - We could pick a password policy algorithmically based on a number of variables in this context \cite{Shay2009PolicySimulation}.
-	
-	basic16, 3class12, and 2word16 seem like the winners in terms of security and usability, but persuasion can help to diversify the themes for word-based passwords \cite{Shay2014CanLongPasswordsBeSecureAndUsable}
-	
-	
-	Penalizing users by making them wait can be a strong nudge to comply and create a stronger password \cite{Malkin2013Waiting}
-	
-	It would be nice to have an easy way to create a repository with all password policies, but it isn't easy - at least it helps to agree on a standard language to define a password policy \cite{Steves2015PasswordPolicyLanguage}
-	
-	It would be good to have a formal description of password policies in a standardized schema \cite{Horsch2016PasswordPolicyMarkup}
+	% summary:
+	To summarize, policies have power to influence password behavior. However, this influence arises from coercion and thus risks reduced usability. Users often cope by picking the easiest possible password that still fulfills the rules. This is why Florêncio \etal argue that we should not try to fix the user, but to fix the system (in this case policies) first \cite{Florencio2014AdministratorsGuide}. Especially, \glspl{SP} should be careful not to impose strict requirements and nonsensical policies\footnote{An amusing collection of nonsensical policies is collected on \url{https://twitter.com/PWTooStrong} \la{14.01.2018}}. However, if \glspl{SP} feel the need to move to a stricter policy (and expire passwords at the time of policy change), Shay \etal at least provide evidence that users feel better protected afterwards, even though their password changes are well predictable \cite{Shay2010EncounteringPasswordRequirements}. Finally, \gls{NIST} recently recognized that errors were made in the Electronic Authentication guideline and released an updated version \ar. William Burr, who was the lead author of the original policy recommendation, was recently quoted to regret his contribution. He told the Wall Street Journal ``\textit{It just drives people bananas and they don’t pick good passwords no matter what you do}''\footurl{http://fortune.com/2017/08/07/password-recommendation-special-characters/}{14.01.2018}. Shay \etal's results, however, somewhat relieve Burr from his remorse, because some policies help people pick ``good passwords''.
 
 	\subsection{Training, Advice, and Guidelines}\label{sec:rw:advice_guidance}
 	``User education will only work if users are motivated.'' \cite{Sasse2001WeakestLink}
