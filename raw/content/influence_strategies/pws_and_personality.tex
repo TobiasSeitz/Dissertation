@@ -307,6 +307,14 @@ medium associations between extraversion, agreeableness, and neuroticism (basica
 
 emoji policy similar results as traditional policies, i.e. it is wortwhile to experiment with it
 
+\paragraph{Descriptives and Hypothesis Tests}
+creation difficulty: Repeated measures linear mix model ANOVA. random intercept to account for the fact that people generally rate policy usability low. baseline (any could be chosen) emoji 12.
+
+emoji \average 7.89 (in [3;15] range), 2word12 + 0.12, 3class12 - 0.70 (easier)
+serial positioning effects do make a difference, but it also appears trivial in the overall sample.
+summary: no big difference between policies and ranking. (this is what makes the remainder more exciting, because a closer look at the data brings out how the numbers come to be)
+
+
 \paragraph{Creation Difficulty}
 % gender
 Female participants reported more difficulties for emoji12 ($\beta=0.91$) and 2word12 ($\beta=1.35$). 
@@ -324,12 +332,59 @@ neuroticism weak linear association emoji12 ($\beta=-0.22$), i.e. it was slightl
 agreeableness weak non linear, and interesting curve (up and down) for emoji12
 openness weak non linear, but too little data to conclusively decide. 
 % 2word12 personality
-effects not as clear as for the emoji policy. highly open people report less difficulty to create a 2word12 password.
+effects not as clear as for the emoji policy. highly open people report slightly less difficulty to create a 2word12 password.
 
+% 3class12
+linear associations are negligible for extraversion, conscientiousness, and neuroticism. 
+non-linear associations for agreeableness and openness. at value around 15 (from 20) the difficulty seems to increase (hard to interpret this finding). People with agreeableness scores of 18 and greater find it more difficult to create a 3class12 password by up to 1.5 points. Openness is inversely correlated here. the more open the participant was, the more likely they found it easy to create a 3class12 password. 
+
+
+\paragraph{Ranking}
+logistic additive regression %https://web.stanford.edu/~hastie/Papers/AdditiveLogisticRegression/alr.pdf
+did policy X land on top spot ? yes = 1, no = 1. thus, no encompasses the two other options.
+Logit model. see timo's work to better understand what's going on. 
+
+\begin{table}
+	\caption{\label{tab:pws_pers:distribution-binary-ranks} Distribution of binary rankings of the three available policies. Evidently, 3class12 was ranked best in most cases. }
+	\begin{tabular}{llll}
+		~ 			& emoji12	& 2word12 	& 3class12 \\ \hline\hline
+		1st rank	& 18		& 12		& 67 \\
+		other rank 	& 80 		& 85 		& 31 \\ \hline
+		n			& 98		& 98		& 98		 
+	\end{tabular}
+\end{table}
+
+% predictors: demography and structure
+strong effects. the probability of a non-IT person putting emoji12 at the top is $exp(\beta–{IT-0}=9.87)$, so around ten times higher. only one IT-person ranked emoji12 first. (this fits to the finding that non-IT people found it easier to create an emoji12 password).
+% order of policies 
+the order in which policies were displayed also produced a notable effect. If emoji12 is shown in 2nd $exp(\beta–{emoji-pos2}=0.27)$ or 3rd position $exp(\beta–{emoij-pos3}=0.76)$, the likelihood to rate it the best policy slightly decreases. Other positionings, as well as age-related preferences, were inconclusive.
+
+% personality
+generally weak associations.
+extraversion, weak linear effect regarding 2word12. likelihood to put 2word12 first decreases with higher extraversion scores $exp(\beta–{E-1}=0.82)$. for agreeableness both linear and non-linear effects are visible; higher scores increase chances to vote emoji12 first $exp(\beta–{A-1}=1.28)$. openness or conscientiousness have negligible, random associations. for neuroticism we lack data in edge cases (low or high trait scores) to draw conclusions. %there are more results in the BA, but I do not really see the point of reporting all the details of inconclusive results
+
+
+\paragraph{Password selection}
+
+\todo{create a emoiji selection histogram}. In essence, some emoji were strongly preferred, e.g. the red heart and the ``pouting face''. analyze: what were the usability ratings/rankings of those who picked the heart vs. the pouting face, i.e. are emojis with a positive connotation used by people who are happy that they can select an emoji password? I guess there are significant effects here. 
 
 \subsection{Lessons Learned}
 It could have been useful to include a recall test à la ``which passwords do you still remember after filling out the personality questionnaire?'' 
 
+\subsection{Discussion}
+%TODO re-read the discussion section, because the findings are a bit higher level and more understandable
+Most interesting finding: Non-IT people significantly less likely to put emoji policy first. 
+
+emoji (negatively) associated with emotional stability, i.e. less stable people who are more emotional in either direction were more positive towards emojis.
+
+non linear associations probably explicable by other variables, e.g. intercorrelation -- 
+\todo{discuss the personality traits and associations, try to explain them.}
+
+demographics play a role - (careful now, cowboy): policies could be tailored to gender. but i'm kind of reluctant to put this argument forward. at least IT background could be considered a factor for the policy. a personalized policy would make it more difficult for horizontal attacks because the policy is unpredictable.
+
+mutually exclusive effects for ranking are clear because of the binary nature.
+
+wild idea: if positioning influences the favorability of policies, one could leverage this. like anchoring and decoy (chose your own policy of the three). commitment and consistency as well (commit to your policy, create a strong password to be consistent with your commitment.)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%
