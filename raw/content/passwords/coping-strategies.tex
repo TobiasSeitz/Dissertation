@@ -265,7 +265,7 @@ Finally, if passwords are not actively used on a regular basis, or were recently
 %%%%% COUNTERMEASURES
 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{User Support and Interventions}\label{sec:rw:user-support-interventions}
+\section{Guiding and Aiding Users}\label{sec:rw:user-support-interventions}
 Since secure behavior does not come natural to users, there have been many attempts to make it more accessible to them and relieve the tensions between usability and security at the same time. Although systems can be changed in many ways, it is difficult to change the user. If the user needs to be kept in the loop, e.g. because constraints dictate so, we need to support them well and make careful decisions about how to support them \cite{Cranor2008FrameworkReasoning}. In the following, we highlight approaches not only to make systems more usable, but also to influence user behavior regarding passwords. 
 %Usable security shouldn't only be done for end users but also for the people who implement security systems \cite{Acar2016NotYourDeveloper}
 	\subsection{Password Composition Policies}\label{sec:rw:policies}
@@ -310,32 +310,39 @@ Since secure behavior does not come natural to users, there have been many attem
 	% summary:
 	To summarize, policies have power to influence password behavior. However, this influence arises from coercion and thus risks reduced usability. Users often cope by picking the easiest possible password that still fulfills the rules. This is why Florêncio \etal argue that we should not try to fix the user, but to fix the system (in this case policies) first \cite{Florencio2014AdministratorsGuide}. Especially, \glspl{SP} should be careful not to impose strict requirements and nonsensical policies\footnote{An amusing collection of nonsensical policies is collected on \url{https://twitter.com/PWTooStrong} \la{14.01.2018}}. However, if \glspl{SP} feel the need to move to a stricter policy (and expire passwords at the time of policy change), Shay \etal at least provide evidence that users feel better protected afterwards, even though their password changes are well predictable \cite{Shay2010EncounteringPasswordRequirements}. Finally, \gls{NIST} recently recognized that errors were made in the Electronic Authentication guideline and released an updated version \ar. William Burr, who was the lead author of the original policy recommendation, was recently quoted to regret his contribution. He told the Wall Street Journal ``\textit{It just drives people bananas and they don’t pick good passwords no matter what you do}''\footurl{http://fortune.com/2017/08/07/password-recommendation-special-characters/}{14.01.2018}. Shay \etal's results, however, somewhat relieve Burr from his remorse, because some policies help people pick ``good passwords''.
 
-	\subsection{Training, Advice, and Guidelines}\label{sec:rw:advice_guidance}
-	``User education will only work if users are motivated.'' \cite{Sasse2001WeakestLink}
-	there is a plethora of advice and guidelines out there, but it's not all the same \footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}
+	\subsection{User Education and Guidelines}\label{sec:rw:advice_guidance}
+	Policies can be considered a measure to ``enforce recommendations''. However, giving advice to users to educate them about password security is a softer approach. A Google search for ``password recommendations'' yields $\approx$ 113,000,000 results, some very brief\footurl{https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.7/com.ibm.qradar.doc/c_qradar_niap_password_recommendations.html}{15.01.2018}, others very elaborate and authoritative\footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}. The original \gls{NIST} also read more like a ``how to'' than a dictum for policies, although it was translated into policies after all. Sasse \etal expressed doubts about the effectiveness of user education, because it ``will only work if users are motivated'' \cite{Sasse2001WeakestLink}. We know by now that security is a secondary goal, and thus it is unlikely that people are motivated to educate themselves about it. Therefore, we have to focus on the restriction ``if users are motivated'' and present advice effectively in this opportune moment. Security can become the primary task, or on-par with the primary task. For instance, the moment users adopt a password manager and have to set-up their master password, they not only want simplify password management, but also ensure that their central hub is safeguarded against attacks. Some web-accounts are of great value and users are potentially more open to receive support to secure those. 
+	
+	% positive examples, work that argues in favor of education
+	make education ``persuasive''  \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+	
+	
+	% issues with education
+	
+	% 1) there is no consensus
+	
+	% 2) understanding/knowledge does not translate into action
+	
+	% 3) advice is forgotten and badly recalled later. Advice leads to wrong mental models
+	password strength perceptions probably derived from policies \cite{Ur2016PerceptionsPassword}
+	
 	
 	education in password matters only has so much effect. 
 	\cite{Forget2007HelpingUsers} says that even instructions don't work
 	
 	There's some work that argues that users want to create stronger passwords at least for some accounts, but they had
-	misinterpreted security advice. 
-	this is also reflected in \cite{Ur2016PerceptionsPassword}
-	
-	Great overview and critical discussion: \cite{ZhangKennedy2016RevisitingPasswordRules}
-	
-	Example for training \cite{Bonneau2014ReliableStorage56Bits}
-	
-	make it persuasive \cite{Zakaria2013DesigningEffectiveSecurityMessages}
-	
+	misinterpreted security advice.	this is also reflected in \cite{Ur2016PerceptionsPassword}
+
 	In privacy: people's mental models about privacy are vague and we can see it in their drawings/explanations that they're somewhat overly pessimistic and that education plays the major role \cite{Kang2015MentalModelsDrawing}
-	
 	
 	Stay realistic about password requirements and user effort \cite{Florencio2016CommACM}
 	
-	We can give better recommendations to users that are appropriately secure, actionable and usable \cite{ZhangKennedy2016RevisitingPasswordRules} (maybe also mention in policy section)
+	We can give better recommendations to users that are appropriately secure, actionable and usable \cite{ZhangKennedy2016RevisitingPasswordRules} 
 		
-	
-	\subsection{Offering Memorization Techniques}
+	%%%%%
+	%%%%%	Algorithms and Memorization Techniques
+	%%%%%
+	\subsection{Password Selection Algorithms \& Memorization Techniques}
 	
 	%TODO some papers actually could be categorized as password generator papers (semi-involved with human password selection.)
 	
@@ -351,6 +358,8 @@ Since secure behavior does not come natural to users, there have been many attem
 	It might be worthwhile to add a gamification layer onto password managers if you want to memorize some of your most important passwords \cite{Kroeze2012GamifyingAuthentication}
 	
 	They proposed a model to securely generate site-specific passwords, but this is all just an idea \cite{Maqbali2016PasswordGenerators}
+	
+	Example for training \cite{Bonneau2014ReliableStorage56Bits}
 	
 	
 	Security-wise this maybe a good idea, but the actual implementations is not as usable as it could be, however letting users modify system-assigned passwords seems beneficial in general \cite{Huha2015UserReplaceablePasswords}
@@ -384,51 +393,6 @@ Since secure behavior does not come natural to users, there have been many attem
 	\paragraph{Pronounceable Passwords}
 	pronounceable passwords are useful, but we don't know the best way to generate them \cite{Goldberg2015UnspeakablePasswords}
 	
-	
-	\subsection{Password Meters and Real-Time Feedback}
-	
-	\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
-	
-%	Shay \etal say that real-time feedback is not part of the password meter \cite{Shay2015SpoonfulOfSugar}
-	
-	
-	History: zxcvbn paper has some intel on early work on proactive password checks (in the 80s) \cite{Wheeler2016zxcvbn}. specifically (from 1995) \cite{Bishop1995ProactivePasswordChecking}
-	
-	
-	pro-active checks -- dictionary checks Shay argues in favor of dictionary checks \cite{Shay2014CanLongPasswordsBeSecureAndUsable} 
-	black lists \cite{Habib2017Blacklists} 
-	
-	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
-	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
-	
-	be careful not to talk too much about persuasion in this chapter. 
-	
-	We should consider social nudges in usable security, too \cite{DiGioia2005SocialNavigationUsableSecurity}
-	
-	
-	A sudden surge of n-gram scores can be used to detect modifications of common/weak passwords \cite{Tupsamudre2016MarkovStrength}
-	
-	
-	passwords created using telepathwords were stronger and still memorable, but some Ps didn't like the idea \cite{Komanduri2014Telepathwords}
-	
-	Password meters from the industry are bad, machine-learning meters are good \cite{Wang2016fuzzyPWM}
-	
-	Users can well estimate the strength of their passwords, and can be nudged to act more securely for important accounts, but not for unimportant stuff \cite{Egelman2013DoesMyPasswordGoUpToEleven}
-	
-	Meters have a small effect on password strength, but slightly annoy people and it doesn't really matter how they look \cite{Ur2012HowDoesYourPasswordMeasureUp}
-	
-	Preliminary work to Ur et al.'s data-driven password meter \cite{Eargle2015YouCanDoBetter}
-	Use text feedback to craft more effective password meters, but this depends on the policy used \cite{Ur2017DataDrivenPWMeter}
-	
-	If you tell people how long it will take to crack their password, they are more likely to read your recommendations and modify their password \cite{Vance2013FearAppeals}
-	
-	Password meters score the same password very inconsistently and don't explain their scoring, and it seems the Dropbox meter is one of the better solutions \cite{Carnavalet2014AnalyzingPWStrengthMeters}
-	
-	the presentation of password requirements can affect usability and security, because it can prevent errors and speed up selection for some stricter policies \cite{Shay2015SpoonfulOfSugar}
-	
-	time to crack already in \cite{Yee2006Passpet} for master password in PWM
-	
-	%TODO Move persuasion topic in here! maybe sort password meters (and managers sort of) in there. 
 	
 	\subsection{Password Managers and Generators}\label{sec:rw:pwm_generators}
 	
@@ -467,3 +431,119 @@ Since secure behavior does not come natural to users, there have been many attem
 	\cite{Bojinov2010KamouflagePWM}
 	
 	\cite{Fagan2017UsersConsiderationsPWMs}
+
+
+	%%%%%
+	%%%%%
+	%%%%%	PERSUASIVE INTERVENTIONS
+	%%%%%
+	%%%%%
+	\section{Persuasive Interventions}\label{sec:rw:persuasive-interventions}
+	Short history of behavioral economics and decision making studies
+	
+	portray irrational decisions and discuss why or not password selection is rational / irrational
+	
+	theory of planned behavior, intrinsic motivation, 
+	
+	
+	\begin{itemize}
+		\item Forget Papers: \cite{Forget2007PersuasionEducationSecurity} \cite{Forget2007HelpingUsers} \cite{Forget2008ImprovingPasswordsThroughPersuasion} \cite{Forget2008MemorabilityPersuasivePasswords} \cite{Forget2008PersuasionStrongerPasswords}
+		
+		\item Chiasson: \cite{Chiasson2008PCCP}
+	\end{itemize}
+	
+	
+	\cite{Furnell2017GuidanceCompliance,Kaptein2015PersonalizingPersuasiveTechnologies,Gulenko2014PasswordsEmotion,Azevedo2012AuthenticationGame,Kroeze2012GamifyingAuthentication,Schneider2016UnderstandingPersuasiveDesign,Cialdini2003CraftingNormativeMessages,Scott1995GDMS,Kim2015MobilePersuasionTrust,Bellur2014HeuristicsUsed,Baharin2015RhythmicPersuasionModel,Adams2015MindlessComputing,Han1994PersuasionCulture,Balebako2011,Acquisti2009,Forget2007PersuasionEducationSecurity,Forget2008ImprovingPasswordsThroughPersuasion,Xu2007,Zakaria2013DesigningEffectiveSecurityMessages,Egelman2010PleaseContinueToHold,Yevseyeva2014,DiGioia2005SocialNavigationUsableSecurity,Chiasson2008PCCP,Wiafe2012,Weirich2005PersuasivePasswordSecurity,Forget2008MemorabilityPersuasivePasswords,Jeske2013,Wang2014,Weirich2001PrettyGoodPersuasion,Adjerid,Shiv2005,Wiafe2012a,Almuhimedi2015a,Radke2013,Arachchilage2013GameDesingPhishing,Ashenden2013SecurityLikeSoap,Bahr2013,Korff2014TooMuchChoice,Muscanell2014,Woodruff2014PrivacyFundamentalist,Korff2014,Goldstein2008,Forget2008PersuasionStrongerPasswords,Wang2013,Hamari2014,Jameson2011PreferentialChoice,Instructor2013,Mamduhi2012,Lockton2012CognitiveBiases,Choe,Fogg2002Persuasive,Fogg2009,Lockton2010,Hekler2013,Lockton2009,Lee2011MiningBehavioralEconomics}
+	
+	Persuasive Wording in guidelines / education \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+	
+	% Foundations of Persuasion -- small excursus
+	\subsection{Persuasive Technology in Usable Security and Privacy}
+	
+	\subsubsection{Forget et al.: The Persuasive Authentication Framework (PAF)}
+	
+	\subsubsection{Cognitive Illusion and Biases}
+	Looking at the problem from behavioral economic point of view
+	
+	another term: ``cognitive distortions''
+	
+	We should keep biases in mind when designing communication about security (decisions) \cite{Garg2013HeuristicsAndBiases}
+	
+	Sunk costs: \cite{Herley2012PersistenceOfPasswords} say that too many actors have invested into passwords and now adopting a new scheme is hampered by the sunk costs fallacy.
+	
+	
+	Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} have a journal paper that has everything in it we need...
+	
+	% availability, overconfidence, decoy, anchors, hinsight, sunk costs
+	
+	
+	\subsubsection{Nudging and Behavioral Economics}
+		
+		
+		nudging privacy decisions is more prominent in the literature than nudging password decisions. 
+		
+		
+		%%%%% CENTRAL REFERENCE::
+		most prominently: Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} \cite{Acquisti2005PrivacyRationality}
+		%%%%%
+	
+	\subsection{Password Meters and Real-Time Feedback}
+	
+	\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
+	
+	%	Shay \etal say that real-time feedback is not part of the password meter \cite{Shay2015SpoonfulOfSugar}
+	
+	
+	History: zxcvbn paper has some intel on early work on proactive password checks (in the 80s) \cite{Wheeler2016zxcvbn}. specifically (from 1995) \cite{Bishop1995ProactivePasswordChecking}
+	
+	
+	pro-active checks -- dictionary checks Shay argues in favor of dictionary checks \cite{Shay2014CanLongPasswordsBeSecureAndUsable} 
+	black lists \cite{Habib2017Blacklists} 
+	
+	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
+	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
+	
+	be careful not to talk too much about persuasion in this chapter. 
+	
+	We should consider social nudges in usable security, too \cite{DiGioia2005SocialNavigationUsableSecurity}
+	
+	
+	A sudden surge of n-gram scores can be used to detect modifications of common/weak passwords \cite{Tupsamudre2016MarkovStrength}
+	
+	
+	passwords created using telepathwords were stronger and still memorable, but some Ps didn't like the idea \cite{Komanduri2014Telepathwords}
+	
+	Password meters from the industry are bad, machine-learning meters are good \cite{Wang2016fuzzyPWM}
+	
+	Users can well estimate the strength of their passwords, and can be nudged to act more securely for important accounts, but not for unimportant stuff \cite{Egelman2013DoesMyPasswordGoUpToEleven}
+	
+	Meters have a small effect on password strength, but slightly annoy people and it doesn't really matter how they look \cite{Ur2012HowDoesYourPasswordMeasureUp}
+	
+	Preliminary work to Ur et al.'s data-driven password meter \cite{Eargle2015YouCanDoBetter}
+	Use text feedback to craft more effective password meters, but this depends on the policy used \cite{Ur2017DataDrivenPWMeter}
+	
+	If you tell people how long it will take to crack their password, they are more likely to read your recommendations and modify their password \cite{Vance2013FearAppeals}
+	
+	Password meters score the same password very inconsistently and don't explain their scoring, and it seems the Dropbox meter is one of the better solutions \cite{Carnavalet2014AnalyzingPWStrengthMeters}
+	
+	the presentation of password requirements can affect usability and security, because it can prevent errors and speed up selection for some stricter policies \cite{Shay2015SpoonfulOfSugar}
+	
+	time to crack already in \cite{Yee2006Passpet} for master password in PWM
+	
+	\subsection{Personalization}
+	\subsubsection{Personality Traits}
+	\paragraph{Inventories, Constructs, and Proxies}
+	Big Five à la Costa and McCrea \cite{Costa1992NEO}
+	SeBIS (Egelman)
+	Haque construct \cite{Haque2014PsychometricsStrongPassword}
+	\paragraph{Personality Studies in Usable Security and Privacy}
+		
+	
+	Personality seems to be correlated with certain behavior online, primarily willingness to share and phishing susceptibility \cite{Halevi2013PilotStudyPersonality}
+	
+	
+	
+	Already the PAF introduced the personality dimension for effective persuasion. Recently, Egelman and Peer advocated to use psychometric cues to contextualize privacy or security messaging \cite{Egelman2015AverageUser}. In two studies they looked at the predicting power of different psychometric scales, among which we find the five-factor model (``Big Five''), the General Decision Making Style (GDMS) or the Domain-Specific Risk-Taking scale (DoSpeRT) @@TODO dreimal Quelle. They conducted two online experiments using Mechanical Turk. In the first round they used the Ten-Item-Personality Index and correlated the scores with several privacy metrics (e.g. the Privacy Concerns Scale or the Internet Users Information Privacy Concerns scale). They realized that the Big Five model was a rather weak predictor for the different scales, which lead them up to their second experiment, where they focused on decision-making metrics. Here, they observed stronger correlations, between e.g. the rational trait of the GDMS and both PCS and IUIPC. Following these observations, Egelman and Peer interpret them as evidence that privacy attitudes originate from rational decision-making, and also from people's intuitions, which sounds paradoxical at first, but it were different respondents who produced this result. They conclude that the decision-making metrics were about three times as powerful regarding their predictive power than the big five model regarding privacy attitudes and behavior. Finally, they propose the Security Behavior Intentions Scale (SeBIS). This scale intends to isolate confounding factors when correlating personalty traits with security behavior. Also, the authors offer a number of hypotheses and unanswered research questions that highlight how little exploiting personality traits in security nudges has been investigated. 
+	
+	
+	
