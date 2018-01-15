@@ -94,7 +94,7 @@ Most frequently, the influence of these personality traits have been explored fo
 %%%%
 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Three Studies on the Association between Personality and Passwords}
+\section{Study 1: Strength Perceptions and Personality}
 With an observational online study, we explored the associations between psychological variables and password strength perception. We regard the perception of strength as necessary step before looking at actual behavior, which is more difficult to observe. Hence, we tried to find associations between subjective password strength ratings and scores on well-established psychometric scales. Before we ran the study, we pre-registered the experiment with the open-science framework (OSF)\footnote{\url{https://osf.io/}, last accessed 11.09.2016} and conducted all analyses as predicted to mitigate confirmation bias. Since we consider our research efforts mostly exploratory, we approached the study without specific hypotheses regarding the influence of certain personality traits or decision making styles on the perception of password strength.
 
 \subsection{Structure}
@@ -250,6 +250,85 @@ We identified four overall themes in how the participants approached rating pass
 \subsubsection{Synthesis}
 We found that participants evaluate password strength by looking for specific patterns. Regression models and qualitative analysis show that respondents mostly penalized lack of diversity and randomness which is consistent with the related work \cite{Ur2016PerceptionsPassword}. Thus, the associations originating from different personality types or decision making style were small in many cases, but not negligible. The education level was generally insignificant regarding the strength evaluation. However, technical background and gender played a role in the comparison task, because male participants were more likely influenced by character variety. The predictive power of the independent variables was higher in the comparison task than in the standalone rating. The most important factors were \textbf{openness} on \textbf{conscientiousness} from the Big-Five model, and \textbf{rationality} from the GDMS. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%
+%%%%
+%%%%			Study 2: TIMO BA
+%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Study 2: Policies and Personality}
+
+GOALS: explore associations between big-five traits and password selection under different policies, both on usability and security metrics. Investigate the effects of using a non-traditional password policy based on emojis. user preference for one policy or another. explorative study so no p-values.
+
+
+
+
+metrics: difficulty to create password, preference in real world
+items: ``It was difficult to create a password that meets the requirements'', ``I found the password requirements bothersome'', ``It was easy to create a \textit{new} password''. (5-point scale)
+
+statistics: ranking and regression
+
+independent variables (predictors) personality traits scores on the five dimensions and control variables gender, age, IT proficiency.
+
+\subsection{Method}
+explorative study
+BFI-K (Rammstedt) 21 items -- openness is coded with 5 items, the rest with 4. Five point scales. Scores summed up after keying.
+repeatedly create passwords (within groups), order counterbalanced. emoji12 / 2word12 / 3class12
+emojis entered with a picker (see emoji passwords chapter)
+integrated into SosciSurvey survey tool (iframe)
+deactiveate auto-completion
+briefed not to participate through mobile phone. 
+
+demographics first, privacy briefing, BFI-K, PW selection.
+continuous scenario 1) Banking password 2) someone gained access to bank account so the password was reset 3) password has expired. 
+(realistic threat principle Krol \etal \cite{Krol2016ExperimentDesign})
+
+incentive: raffle of shoppig vouchers, emails stored separately, no correlation between the responses and email addresses.
+
+demography.
+N before dropout and sanity checks 222, afterwards 164. age \average 24.7 (SD=5.5). 79 female, 83 male, 2 preferred not to answer. 65 people had had formal training in computer science or information technology.
+
+40\% reuse, 32\% reuse with modifications or algorithm, 17\% create new one, 11\% password manager or generator (very much like the data from other sources!). 53\% memorize, 10\% write down cues, 16\% write them down on paper, 21\% use electronic aides.
+
+limitations:
+- homogeneous sample: most between 20 and 28, academics. but personality traits are spread out across this population normally.
+- no memorability part
+- within group design
+- no mobiles, but they have an influence on password selection \ref{sec:rw:user-behavior} from qual feedback we could tell that some participants used mobiles and this might have had an effect on pw selection (maybe rerun analyses without these participants?)
+- we started out with emoji16, but made the switch to emoji12 (after 43 participants), because emoji16 received the most negative feedback, but it was mostly due to the length. data removed for ranking (1-61) and difficulty to create (1-43). 
+
+statistical analyses::
+additive regression model (AM) = extension of linear regression, but is better fit for non-linear associations.
+mgcv R package
+
+
+\subsection{Results}
+medium associations between extraversion, agreeableness, and neuroticism (basically the other three dimensions that were not useful before), but control variables are associated to a larger degree.
+
+emoji policy similar results as traditional policies, i.e. it is wortwhile to experiment with it
+
+\paragraph{Creation Difficulty}
+% gender
+Female participants reported more difficulties for emoji12 ($\beta=0.91$) and 2word12 ($\beta=1.35$). 
+for 3class12 correlation was smaller ($\beta=-0.46$) and pointed in the opposite direction.
+% it background
+IT background revealed interesting effects too: emoji12 ($\beta=-0.10$) trivial, 3class12 ($\beta=0.21$) weak, 2word12 ($\beta=0.61$) medium. it looks as though people with higher IT knowledge struggle with a word-based policy, potentially because it is much less common in the wild. 
+% order of the policy
+If you factor in the order of the policy, the results look clearer. if emoji12 and 3class12 were shown in position 2, creation was more reported to be more difficult emoij12-2 ($\beta=0.52$), 3class12-2 ($\beta=1.19$) 
+% age
+we observed non-linear associations between age and creation difficulty, but the small age range forbids us to make conclusive inferences from our data.
+
+%emoji personality
+mostly non-linear associations for the emoij12 policy
+neuroticism weak linear association emoji12 ($\beta=-0.22$), i.e. it was slightly easier for people with higher neuroticism scores (this is a great result, albeit weak. neurotic people are by defintion more \textit{emotional}, and emojis seem to cater to this trait.)
+agreeableness weak non linear, and interesting curve (up and down) for emoji12
+openness weak non linear, but too little data to conclusively decide. 
+% 2word12 personality
+effects not as clear as for the emoji policy. highly open people report less difficulty to create a 2word12 password.
+
+
+\subsection{Lessons Learned}
+It could have been useful to include a recall test à la ``which passwords do you still remember after filling out the personality questionnaire?'' 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

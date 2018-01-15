@@ -309,7 +309,11 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	% summary:
 	To summarize, policies have power to influence password behavior. However, this influence arises from coercion and thus risks reduced usability. Users often cope by picking the easiest possible password that still fulfills the rules. This is why Florêncio \etal argue that we should not try to fix the user, but to fix the system (in this case policies) first \cite{Florencio2014AdministratorsGuide}. Especially, \glspl{SP} should be careful not to impose strict requirements and nonsensical policies\footnote{An amusing collection of nonsensical policies is collected on \url{https://twitter.com/PWTooStrong} \la{14.01.2018}}. However, if \glspl{SP} feel the need to move to a stricter policy (and expire passwords at the time of policy change), Shay \etal at least provide evidence that users feel better protected afterwards, even though their password changes are well predictable \cite{Shay2010EncounteringPasswordRequirements}. Finally, \gls{NIST} recently recognized that errors were made in the Electronic Authentication guideline and released an updated version \ar. William Burr, who was the lead author of the original policy recommendation, was recently quoted to regret his contribution. He told the Wall Street Journal ``\textit{It just drives people bananas and they don’t pick good passwords no matter what you do}''\footurl{http://fortune.com/2017/08/07/password-recommendation-special-characters/}{14.01.2018}. Shay \etal's results, however, somewhat relieve Burr from his remorse, because some policies help people pick ``good passwords''.
-
+	
+	%TODO cite Mayer \etal 2017 (similar to our password audit)
+	%TODO real time feedback in policy fulfillment could actually go here instead of the persuasion section
+	
+	% USER EDUCATION / ADVICE / GUIDES 
 	\subsection{User Education and Guidelines}\label{sec:rw:advice_guidance}
 	Policies can be considered a measure to ``enforce recommendations''. However, giving advice to users to educate them about password security is a softer approach. A Google search for ``password recommendations'' yields $\approx$ 113,000,000 results, some very brief\footurl{https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.7/com.ibm.qradar.doc/c_qradar_niap_password_recommendations.html}{15.01.2018}, others very elaborate and authoritative\footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}. The original \gls{NIST} also read more like a ``how to'' than a dictum for policies, although it was translated into policies after all. Sasse \etal expressed doubts about the effectiveness of user education, because it ``will only work if users are motivated'' \cite{Sasse2001WeakestLink}. We know by now that security is a secondary goal, and thus it is unlikely that people are motivated to educate themselves about it. Therefore, we have to focus on the restriction ``if users are motivated'' and present advice effectively in this opportune moment. Security can become the primary task, or on-par with the primary task. For instance, the moment users adopt a password manager and have to set-up their master password, they not only want simplify password management, but also ensure that their central hub is safeguarded against attacks. Some web-accounts are of great value and users are potentially more open to receive support to secure those. 
 	
@@ -441,9 +445,16 @@ Since secure behavior does not come natural to users, there have been many attem
 	\section{Persuasive Interventions}\label{sec:rw:persuasive-interventions}
 	Short history of behavioral economics and decision making studies
 	
+	persuasion is amongst the top-5 most-cited topics of the past 5 years at CHI
+	(alternative) nobel price awarded to Daniel Kahnemann and Richard Thaler - both behavioral economists
+	
+	\textbf{why persuasion for passwords?} because people are seldom motivated to invest effort voluntarily. persuasion makes alternatives more salient and attractive, but does not try manipulate people. manipulation: person should not realize their being manipulated. persuasion: the target behavior should be clear and the intention of the designer, too. 
+	
+	
 	portray irrational decisions and discuss why or not password selection is rational / irrational
 	
 	theory of planned behavior, intrinsic motivation, 
+	
 	
 	
 	\begin{itemize}
@@ -461,6 +472,8 @@ Since secure behavior does not come natural to users, there have been many attem
 	\subsection{Persuasive Technology in Usable Security and Privacy}
 	
 	\subsubsection{Forget et al.: The Persuasive Authentication Framework (PAF)}
+	\todo{add self-made figure / hierarchy}
+	social interaction: Das: Social sensitivity security advice: \cite{Das2014EffectSocialInfluenceSecuritySensitivity}
 	
 	\subsubsection{Cognitive Illusion and Biases}
 	Looking at the problem from behavioral economic point of view
@@ -468,6 +481,8 @@ Since secure behavior does not come natural to users, there have been many attem
 	another term: ``cognitive distortions''
 	
 	We should keep biases in mind when designing communication about security (decisions) \cite{Garg2013HeuristicsAndBiases}
+	
+	Schneier has a really good section on the reasoning of psychological effects and biases in \cite{Schneier2008PsychologySecurity} 
 	
 	Sunk costs: \cite{Herley2012PersistenceOfPasswords} say that too many actors have invested into passwords and now adopting a new scheme is hampered by the sunk costs fallacy.
 	
