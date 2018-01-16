@@ -315,20 +315,20 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	% USER EDUCATION / ADVICE / GUIDES 
 	\subsection{User Education and Guidelines}\label{sec:rw:advice_guidance}
-	Policies can be considered a means to ``enforce recommendations''. However, giving advice to users to educate them about password security is a softer approach. A Google search for ``password recommendations'' yields $\approx$ 113,000,000 results, some very brief\footurl{https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.7/com.ibm.qradar.doc/c_qradar_niap_password_recommendations.html}{15.01.2018}, others very elaborate and authoritative\footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}. The original \gls{NIST} guideline also read more like a ``how to'' than a dictum for policies, although it was translated into policies after all. Sasse \etal expressed doubts about the effectiveness of user education, because it ``will only work if users are motivated'' \cite{Sasse2001WeakestLink}. We know by now that security is a secondary goal, and thus it is unlikely that people are motivated to educate themselves about it. Therefore, we have to focus on the restriction ``if users are motivated'' and present advice effectively in this opportune moment. Security can become the primary task, or on-par with the primary task. For instance, the moment users adopt a password manager and have to set-up their master password, they not only want to simplify password management, but also ensure that their central hub is safeguarded against attacks. Some web-accounts are of great value and users are potentially more open to receive support to secure those. 
+	Policies can be considered a means to ``enforce recommendations''. However, giving advice to users to educate them about password security is a softer approach. A Google search for ``password recommendations'' yields $\approx$ 113,000,000 results, some very brief\footurl{https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.7/com.ibm.qradar.doc/c_qradar_niap_password_recommendations.html}{15.01.2018}, others very elaborate and authoritative\footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}. We summarized common advice and the characteristics of ``bad passwords'' in Section \ref{sec:rw:whats_a_bad_pw}. The original \gls{NIST} guideline also read more like a ``how to'' than a dictum for policies, although it was translated into policies after all. Sasse \etal expressed doubts about the effectiveness of user education, because it ``will only work if users are motivated'' \cite{Sasse2001WeakestLink}. We know by now that security is a secondary goal, and thus it is unlikely that people are motivated to educate themselves about it. Therefore, we have to focus on the restriction ``if users are motivated'' and present advice effectively in this opportune moment. Security can become the primary task, or on-par with the primary task. For instance, the moment users adopt a password manager and have to set-up their master password, they not only want to simplify password management, but also ensure that their central hub is safeguarded against attacks. Some web-accounts are of great value and users are potentially more open to receive support to secure those. 
 	
 	% positive examples, work that argues in favor of education
 	% make education ``persuasive''  \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	
 	% issues with education
-	We can identify four central problems with password strength guidelines. 
+	We can identify four central problems with password advice. 
 	% 1) there is no consensus
-	1) There is no consensus about adequate password strength, because it always depends on the attack model. Thus, any guideline should differentiate between threat models and brief the users about them. However, this is rarely done in practice and most advice is opinionated \cite{Herley2015Counterfactuals}. Besides, password advice becomes outdated if new threat models prevail.s
+	1) There is no consensus about adequate password strength, because it always depends on the attack model. Thus, any guideline should differentiate between threat models and brief the users about them. However, this is rarely done in practice and most advice is opinionated \cite{Herley2015Counterfactuals}. Besides, password advice becomes outdated if new threat models prevail.
 	% 2) understanding/knowledge does not translate into action
 	2) Reading a guide does not necessarily translate into action. Herley says users are rational in rejecting advice if it entails too much effort \cite{Herley2009SoLongThanksExternalities}. Forget \etal empirically showed that advice can lead to insecure behavior, too \cite{Forget2007HelpingUsers}. 
 	% 3) advice is forgotten and badly recalled later. Advice leads to wrong mental models
 	%\paragraph{Password advice considered harmful}
-	3) Users misread password advice. Ur \etal argue that users misconstrue a statement like ``adding digits, upper-case letters, lower-case letters and symbols add to the strength of the passwords'' to ``\textit{all} passwords with digits, upper and lower case letters, and symbols are strong'' \cite{Ur2016PerceptionsPassword}. Heterogeneous composition policies, and feedback can influence mental models, too.	
+	3) Users misread password advice. Ur \etal argue that users misconstrue a statement like ``adding digits, upper-case letters, lower-case letters and symbols add to the strength of the passwords'' to ``\textit{all} passwords with digits, upper and lower case letters, and symbols are strong'' \cite{Ur2016PerceptionsPassword}. Heterogeneous composition policies, and feedback can influence mental models, too.	Forget \etal argue that one needs to understand users' mental models of authentication first, before they can be effectively instructed \cite{Forget2007HelpingUsers}.
 	% 4) all advice will translate into attacks that incorporate the same advice.
 	4) Lastly, if password advice achieves to change user behavior on a larger scale, password guessing attacks will be modeled around the recommendations, too \cite{Herley2012PersistenceOfPasswords}. Thus, in the long run, advice needs to be revised because attacks become too efficient.
 		
@@ -340,59 +340,23 @@ Since secure behavior does not come natural to users, there have been many attem
 	%%%%%	Algorithms and Memorization Techniques
 	%%%%%
 	\subsection{Password Selection Algorithms \& Memorization Techniques}
-	Payne \etal provide an overview \cite{Payne2008BriefIntroUSEC}: passphrases, pass-algorithms, cognitive passwords, 
+	Many researchers have proposed techniques and algorithms to help users create memorable and strong passwords. Haskett put forward PassAlgorithms \cite{Haskett1984PassAlgorithms}, where the user remembered how to respond to a challenge rather than a static password. 
+	\paragraph{Mnemonics and Training}
+	Barton and Barton were likely the first to propose mangling strategies in this context \cite{Barton1984Mangling}. For instance, they suggested to use sentence-based mnemonics and mentally connect passwords to different cities. For Paris, a sentence like ``I love Paris in the Springtime'' would translate into ``IlPitS''. This work was seminal and some of its techniques persist in password recommendations today. Yan \etal empirically showed the benefits in terms of memorability and security of the resulting passwords \cite{Yan2004PasswordMemorabilitySecurity}. However, Forget \etal observed that telling participants to generate phrase-based passwords can be misinterpreted and more guidance is necessary to achieve benefits \cite{Forget2007HelpingUsers}. Maqbali \cite{Maqbali2016PasswordGenerators} and McEvoy \cite{Mcevoy2016ContextualizingMnemonicPhrase} recommend using contextual or site-specific cues on websites as mnemonics. 
 	
+	Memorization by repetitive training has also been suggested. Bonneau and Schechter put forward solution that is supposed to help users memorize ``56 bit secrets'' (for comparison, the original NIST guideline demanded 30 bit) \cite{Bonneau2014ReliableStorage56Bits}. Users first pick a self-selected password. They system then displays a random code (or words) for each user at login-time which needs to be typed correctly into a separate field. The code becomes part of the password and was displayed with increasing delays. But participants could skip the delay by entering the code from memory. After a median of 36 log-ins 96\% of participants had memorized a 56 bit secret. Despite the high success rates, it is questionable if this type of aide is in the users' interest, especially if it is deployed by more than one service. In a similar vein, Kroeze and Olivier proposed using gamification to make the training more enjoyable \cite{Kroeze2012GamifyingAuthentication}.
 	
-	\cite{Haskett1984PassAlgorithms}
-	%TODO some papers actually could be categorized as password generator papers (semi-involved with human password selection.)
-	
-	early approaches: random but pronounceable passwords. (good overview in \cite{Kuo2006HumanSelectionMnemonic})
-	
-	\cite{Bonneau2014ReliableStorage56Bits}
-	\cite{Forget2007HelpingUsers}
-	Sort of displaced here, but it might be discussed in Section \ref{sec:rw:authentication_without_pws} \cite{Forget2015CYOA}
-	\cite{Brown2004GeneratingPWs}
-	
-	In a convenience sample, persuasive text passwords were sufficiently memorable \cite{Forget2008MemorabilityPersuasivePasswords}
-	
-	It might be worthwhile to add a gamification layer onto password managers if you want to memorize some of your most important passwords \cite{Kroeze2012GamifyingAuthentication}
-	
-	They proposed a model to securely generate site-specific passwords, but this is all just an idea \cite{Maqbali2016PasswordGenerators}
-	
-	Example for training \cite{Bonneau2014ReliableStorage56Bits}
-	
-	
-	Security-wise this maybe a good idea, but the actual implementations is not as usable as it could be, however letting users modify system-assigned passwords seems beneficial in general \cite{Huha2015UserReplaceablePasswords}
-	
-	\paragraph{Mnemonics}
-	Using contextual cues related to a website to base a mnemonic PW on might make them more memorable \cite{Mcevoy2016ContextualizingMnemonicPhrase}
-	
-	Yet another memorization aid - work in progress \cite{Lyastani2016PWMangling} 
-	
-	Even mnemonic phrase based passwords can be attacked easily, but if you tell people to choose something personal that no one else would choose and give an example might be the best piece of advice \cite{Yang2016MnemonicSentenceBased}
-	
-	People's mnemonic passwords are predictably based on common phrases from movies, literature, etc., but still the resulting passwords are better than traditional passwords \cite{Kuo2006HumanSelectionMnemonic}
+	%	Yet another memorization aid - work in progress \cite{Lyastani2016PWMangling} 
+	In terms of security, mnemonic passwords are predictably based on common phrases from movies, literature, songs, etc., but stronger than intuitively selected passwords \cite{Kuo2006HumanSelectionMnemonic}. Yang \etal demonstrate that even mnemonic phrase-based passwords can be attacked easily \cite{Yang2016MnemonicSentenceBased}. Thus, like Zhang-Kennedy, they highlight the importance of original, personal phrases and show how users can be instructed effectively.
+		
+	%In a convenience sample, persuasive text passwords were sufficiently memorable \cite{Forget2008MemorabilityPersuasivePasswords}	
 	
 	\paragraph{Passphrases}\label{sec:rw:passphrases}
-	(\todo{maybe even merge this with subsection on advice})
-	Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords, better to enter on virtual keyboards, e.g. TVs (although we don't have any data for that, but that's okay because passwords play a minor role (but still exist there)).
+	Another technique proposed to create strong, memorable passwords is to create passphrases. Rather than taking single letters from a phrase, we understand them as a combination of words, e.g. the paragon ``\texttt{CorrectHorseBatteryStaple}''. Passphrases are usually longer than traditional pass\textit{words} and thus increase password strength. The PGP system uses passphrases to encrypt private keys on the clients. Keith \etal showed that, at the same time, they are more memorable than more complex passwords, especially if they include punctuation symbols \cite{Keith2009PassphraseDesign}. However, participants in their study made significantly more errors, which is the biggest usability caveat of long passphrases. On devices where text-entry is cumbersome (e.g. on mobiles or smart TVs), refraining from masking entry can mitigate this problem \cite{Melicher2016UsabilityMobileTextPasswords}. Paradoxically, passphrases sometimes exceed character limits for passwords on certain websites \cite{Carnavalet2014AnalyzingPWStrengthMeters}. 
 	
-	Mnemonic phrase based passwords are strong and memorable \cite{Yan2004PasswordMemorabilitySecurity}.
+	Moreover, Bonneau showed that user-selected passphrases are predictable \cite{Bonneau2012LinguisticProperties}. To mitigate predictable word combinations, system-assigned passphrases have been evaluated. Shay \etal conclude that this boosts strength, but users dislike them \cite{Shay2012CorrectHorseBatteryStaple}. Nonetheless, passphrases usually do not require a change to the provider's system, which makes them a viable, memorable and secure option, e.g. if they are mostly entered with a physical keyboard. 
 	
-	\cite{Keith2009PassphraseDesign}
-	
-	Disadvantages: more typos (can be relieved by displaying the password in plain text  \cite{Melicher2016UsabilityMobileTextPasswords}), user choice often predictable
-	
-	users might not even understand what you want from them if you say they should create a password based on a phrase \cite{Forget2007HelpingUsers}
-	
-	\cite{Bonneau2012LinguisticProperties}: passphrases already deployed in PGP, Caine and Abel password leak \cite{Carnavalet2014AnalyzingPWStrengthMeters} 
-	
-	\cite{Shay2012CorrectHorseBatteryStaple}
-	
-	
-	\paragraph{Pronounceable Passwords}
-	pronounceable passwords are useful, but we don't know the best way to generate them \cite{Goldberg2015UnspeakablePasswords}
-	
+	%Advantages: PW scheme doesn't have to be changed, people are generally familiar with the concept of passwords, better to enter on virtual keyboards, e.g. TVs (although we don't have any data for that, but that's okay because passwords play a minor role (but still exist there)).
 	
 	\subsection{Password Managers and Generators}\label{sec:rw:pwm_generators}
 	
@@ -410,6 +374,9 @@ Since secure behavior does not come natural to users, there have been many attem
 		\caption{\label{fig:rw:pw_generators} On macOS, the Keychain application manages passwords for the user. If a new entry is manually created by the user, the password assistant can be used to generate different kinds of passwords: Random (image on the left), letters and numbers, numbers only, memorable (image on the right), and FIPS-181 compliant}
 	\end{figure}
 	
+	\paragraph{Pronounceable Passwords}
+	Early work 
+	pronounceable passwords are useful, but we don't know the best way to generate them \cite{Goldberg2015UnspeakablePasswords}
 	
 	
 	Tapas is a password manager based on two-factor authentication and was well received in a 30/10 participant user study \cite{McCarney2012Tapas, McCarney2013PWMThesis}
@@ -419,6 +386,8 @@ Since secure behavior does not come natural to users, there have been many attem
 	VersiPass \cite{Stobert2014PWMThatDoesntRemember}
 	
 	Password Multiplier \cite{Halderman2005ConvenientPWM}
+	
+		Security-wise this maybe a good idea, but the actual implementations is not as usable as it could be, however letting users modify system-assigned passwords seems beneficial in general \cite{Huha2015UserReplaceablePasswords}
 	
 	Drawbacks: Single point of failure, security problems\footurl{https://www.businesswire.com/news/home/20151006006149/en/Latest-Data-Breach-Spotlights-Identity-Restoration}{11.01.2018} 
 	
