@@ -315,39 +315,35 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	% USER EDUCATION / ADVICE / GUIDES 
 	\subsection{User Education and Guidelines}\label{sec:rw:advice_guidance}
-	Policies can be considered a measure to ``enforce recommendations''. However, giving advice to users to educate them about password security is a softer approach. A Google search for ``password recommendations'' yields $\approx$ 113,000,000 results, some very brief\footurl{https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.7/com.ibm.qradar.doc/c_qradar_niap_password_recommendations.html}{15.01.2018}, others very elaborate and authoritative\footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}. The original \gls{NIST} also read more like a ``how to'' than a dictum for policies, although it was translated into policies after all. Sasse \etal expressed doubts about the effectiveness of user education, because it ``will only work if users are motivated'' \cite{Sasse2001WeakestLink}. We know by now that security is a secondary goal, and thus it is unlikely that people are motivated to educate themselves about it. Therefore, we have to focus on the restriction ``if users are motivated'' and present advice effectively in this opportune moment. Security can become the primary task, or on-par with the primary task. For instance, the moment users adopt a password manager and have to set-up their master password, they not only want simplify password management, but also ensure that their central hub is safeguarded against attacks. Some web-accounts are of great value and users are potentially more open to receive support to secure those. 
+	Policies can be considered a means to ``enforce recommendations''. However, giving advice to users to educate them about password security is a softer approach. A Google search for ``password recommendations'' yields $\approx$ 113,000,000 results, some very brief\footurl{https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.7/com.ibm.qradar.doc/c_qradar_niap_password_recommendations.html}{15.01.2018}, others very elaborate and authoritative\footurl{https://www.ncsc.gov.uk/guidance/helping-end-users-manage-their-passwords}{22.12.2017}. The original \gls{NIST} guideline also read more like a ``how to'' than a dictum for policies, although it was translated into policies after all. Sasse \etal expressed doubts about the effectiveness of user education, because it ``will only work if users are motivated'' \cite{Sasse2001WeakestLink}. We know by now that security is a secondary goal, and thus it is unlikely that people are motivated to educate themselves about it. Therefore, we have to focus on the restriction ``if users are motivated'' and present advice effectively in this opportune moment. Security can become the primary task, or on-par with the primary task. For instance, the moment users adopt a password manager and have to set-up their master password, they not only want to simplify password management, but also ensure that their central hub is safeguarded against attacks. Some web-accounts are of great value and users are potentially more open to receive support to secure those. 
 	
 	% positive examples, work that argues in favor of education
-	make education ``persuasive''  \cite{Zakaria2013DesigningEffectiveSecurityMessages}
-	
+	% make education ``persuasive''  \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	
 	% issues with education
-	
+	We can identify four central problems with password strength guidelines. 
 	% 1) there is no consensus
-	
+	1) There is no consensus about adequate password strength, because it always depends on the attack model. Thus, any guideline should differentiate between threat models and brief the users about them. However, this is rarely done in practice and most advice is opinionated \cite{Herley2015Counterfactuals}. Besides, password advice becomes outdated if new threat models prevail.s
 	% 2) understanding/knowledge does not translate into action
-	
+	2) Reading a guide does not necessarily translate into action. Herley says users are rational in rejecting advice if it entails too much effort \cite{Herley2009SoLongThanksExternalities}. Forget \etal empirically showed that advice can lead to insecure behavior, too \cite{Forget2007HelpingUsers}. 
 	% 3) advice is forgotten and badly recalled later. Advice leads to wrong mental models
-	password strength perceptions probably derived from policies \cite{Ur2016PerceptionsPassword}
+	%\paragraph{Password advice considered harmful}
+	3) Users misread password advice. Ur \etal argue that users misconstrue a statement like ``adding digits, upper-case letters, lower-case letters and symbols add to the strength of the passwords'' to ``\textit{all} passwords with digits, upper and lower case letters, and symbols are strong'' \cite{Ur2016PerceptionsPassword}. Heterogeneous composition policies, and feedback can influence mental models, too.	
+	% 4) all advice will translate into attacks that incorporate the same advice.
+	4) Lastly, if password advice achieves to change user behavior on a larger scale, password guessing attacks will be modeled around the recommendations, too \cite{Herley2012PersistenceOfPasswords}. Thus, in the long run, advice needs to be revised because attacks become too efficient.
+		
+	%In privacy: people's mental models about privacy are vague and we can see it in their drawings/explanations that they're somewhat overly pessimistic and that education plays the major role \cite{Kang2015MentalModelsDrawing}
 	
-	
-	education in password matters only has so much effect. 
-	\cite{Forget2007HelpingUsers} says that even instructions don't work
-	
-	There's some work that argues that users want to create stronger passwords at least for some accounts, but they had
-	misinterpreted security advice.	this is also reflected in \cite{Ur2016PerceptionsPassword}
-
-	In privacy: people's mental models about privacy are vague and we can see it in their drawings/explanations that they're somewhat overly pessimistic and that education plays the major role \cite{Kang2015MentalModelsDrawing}
-	
-	Stay realistic about password requirements and user effort \cite{Florencio2016CommACM}
-	
-	We can give better recommendations to users that are appropriately secure, actionable and usable \cite{ZhangKennedy2016RevisitingPasswordRules} 
+	To conclude, one needs to stay realistic about what can be achieved with password advice \cite{Florencio2016CommACM}. Zhang-Kennedy \etal provide this realistic view on advice \cite{ZhangKennedy2016RevisitingPasswordRules}. They revised the ``character diversity'' recommendation and suggest not using common passwords, predictable substitutions, or dictionary words. However, we still face the problem of communicating to users what ``common'' passwords and ``predictable substitutions'' are. Zhang-Kennedy \etal propose users should come up with original mnemonics, which is a special kind of advice discussed in the following. 	
 		
 	%%%%%
 	%%%%%	Algorithms and Memorization Techniques
 	%%%%%
 	\subsection{Password Selection Algorithms \& Memorization Techniques}
+	Payne \etal provide an overview \cite{Payne2008BriefIntroUSEC}: passphrases, pass-algorithms, cognitive passwords, 
 	
+	
+	\cite{Haskett1984PassAlgorithms}
 	%TODO some papers actually could be categorized as password generator papers (semi-involved with human password selection.)
 	
 	early approaches: random but pronounceable passwords. (good overview in \cite{Kuo2006HumanSelectionMnemonic})
