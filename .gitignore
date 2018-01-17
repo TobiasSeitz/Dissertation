@@ -221,3 +221,4 @@ TSWLatexianTemp*
 
 /raw/build/*.pdf
 /raw/*.pdf
+.Rproj.user
