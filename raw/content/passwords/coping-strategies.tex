@@ -386,9 +386,9 @@ Since secure behavior does not come natural to users, there have been many attem
 	HCI researchers have tried to solve these problems. Stobert and Biddle proposed VersiPass \cite{Stobert2014PWMThatDoesntRemember}. It uses graphical authentication and hints to avoid losing muscle memory, but it has not been empirically evaluated. Tapas is a decentralized password manager based on two-factor authentication, which was well received in two user studies \cite{McCarney2012Tapas, McCarney2013PWMThesis}. Yee's PassPet is a browser extension that lets users pick a ``pet name'' (label) for each website they have signed up for \cite{Yee2006Passpet}. The label is part of the password hashing and aims to increase both the security and memorability of the scheme, similar to the Password Multiplier system by Halderman \etal \cite{Halderman2005ConvenientPWM}. Fagan \etal investigated the reasons for (not) adopting a \gls{PWMg} \cite{Fagan2017UsersConsiderationsPWMs}. They found that users more prominently appreciate usability benefits. Those who do not use a \gls{PWM} distrusted the security, potentially due to a sub-par mental model. We can also hypothesize that many users want to stay independent and not give away control to a third party. 
 	
 	% summary.
-	In summary, password managers aide users with password selection, and scaling the increasing number of accounts. However, adoption rates are still low. Generated passwords are mostly a go-to method for more proficient users, and the academic research community has not been able to create PWM solutions with widespread adoption. 
+	In summary, password managers aide users with password selection, and scaling the increasing number of accounts. Generated passwords are mostly a go-to method for more proficient, security-aware users who actively seek to strengthen their passwords as much as possible. While, the academic research community has not been able to create PWM solutions with widespread adoption, many commercial solutions exist. However, the adoption rates indicate that current systems have not been fully adapted to the masses. 
 	
-%	Drawbacks: Single point of failure, security problems\footurl{https://www.businesswire.com/news/home/20151006006149/en/Latest-Data-Breach-Spotlights-Identity-Restoration}{11.01.2018} 
+	% Drawbacks: Single point of failure, security problems\footurl{https://www.businesswire.com/news/home/20151006006149/en/Latest-Data-Breach-Spotlights-Identity-Restoration}{11.01.2018} 
 	
 	% Kamouflage does not solve usability problems but is focused on security \cite{Bojinov2010KamouflagePWM}
 
@@ -398,40 +398,17 @@ Since secure behavior does not come natural to users, there have been many attem
 	%%%%%
 	%%%%%
 	\section{Persuasive Interventions}\label{sec:rw:persuasive-interventions}
-	Short history of behavioral economics and decision making studies
-	
-	persuasion is amongst the top-5 most-cited topics of the past 5 years at CHI
-	(alternative) nobel price awarded to Daniel Kahnemann and Richard Thaler - both behavioral economists
-	
-	\textbf{why persuasion for passwords?} because people are seldom motivated to invest effort voluntarily. persuasion makes alternatives more salient and attractive, but does not try manipulate people. manipulation: person should not realize their being manipulated. persuasion: the target behavior should be clear and the intention of the designer, too. 
+	Persuading users to behave differently is the last line of attack we shall discuss in this part. Using technology to persuade users can be traced back to Fogg's seminal work on ``captology'', which was later renamed to persuasive technology \cite{Fogg2002Persuasive}. He defines it as ``\textit{interactive computing system designed to change people's attitudes or behaviors}''. Persuasion itself is seen as ``an attempt to change attitudes or behaviors or both (without using coercion or deception)''. The latter part further distinguishes persuasion from manipulation. Password composition policies exert authority and coerce users to follow the rules. The need for autonomy as part of the Self-determination theory \cite{Ryan2000SelfDeterminationTheory} is thus undermined by policies. User education is voluntary and misses its goal because users seldom decide to educate themselves on password security. Therefore, persuasion could fill the gap of providing transparent education by making alternative behavior more salient \cite{Forget2007PersuasionEducationSecurity}. In the context of this thesis, we thus understand persuasive technology as an \textit{enabling} technology that adequately supports users while respecting their preferences. Persuasion in HCI has become an essential topic with numerous papers published at top-tier conferences. In fact, persuasion is one of the central topics among the top-5 most cited CHI-papers of the past five years\footurl{https://scholar.google.com/citations?&view_op=list_hcore&venue=6NNnGOq9_mAJ.2017}{17.01.2018}. Consequently, we regard it as highly promising direction for password research, which we illustrate below. 
 	
 	
-	portray irrational decisions and discuss why or not password selection is rational / irrational
-	
-	theory of planned behavior, intrinsic motivation, 
-	
-	
-	
-	\begin{itemize}
-		\item Forget Papers: \cite{Forget2007PersuasionEducationSecurity} \cite{Forget2007HelpingUsers} \cite{Forget2008ImprovingPasswordsThroughPersuasion} \cite{Forget2008MemorabilityPersuasivePasswords} \cite{Forget2008PersuasionStrongerPasswords}
-		
-		\item Chiasson: \cite{Chiasson2008PCCP}
-	\end{itemize}
-	
-	
-	\cite{Furnell2017GuidanceCompliance,Kaptein2015PersonalizingPersuasiveTechnologies,Gulenko2014PasswordsEmotion,Azevedo2012AuthenticationGame,Kroeze2012GamifyingAuthentication,Schneider2016UnderstandingPersuasiveDesign,Cialdini2003CraftingNormativeMessages,Scott1995GDMS,Kim2015MobilePersuasionTrust,Bellur2014HeuristicsUsed,Baharin2015RhythmicPersuasionModel,Adams2015MindlessComputing,Han1994PersuasionCulture,Balebako2011,Acquisti2009,Forget2007PersuasionEducationSecurity,Forget2008ImprovingPasswordsThroughPersuasion,Xu2007,Zakaria2013DesigningEffectiveSecurityMessages,Egelman2010PleaseContinueToHold,Yevseyeva2014,DiGioia2005SocialNavigationUsableSecurity,Chiasson2008PCCP,Wiafe2012,Weirich2005PersuasivePasswordSecurity,Forget2008MemorabilityPersuasivePasswords,Jeske2013,Wang2014,Weirich2001PrettyGoodPersuasion,Adjerid,Shiv2005,Wiafe2012a,Almuhimedi2015a,Radke2013,Arachchilage2013GameDesingPhishing,Ashenden2013SecurityLikeSoap,Bahr2013,Korff2014TooMuchChoice,Muscanell2014,Woodruff2014PrivacyFundamentalist,Korff2014,Goldstein2008,Forget2008PersuasionStrongerPasswords,Wang2013,Hamari2014,Jameson2011PreferentialChoice,Instructor2013,Mamduhi2012,Lockton2012CognitiveBiases,Choe,Fogg2002Persuasive,Fogg2009,Lockton2010,Hekler2013,Lockton2009,Lee2011MiningBehavioralEconomics}
-	
-	Persuasive Wording in guidelines / education \cite{Zakaria2013DesigningEffectiveSecurityMessages}
-	
-	% Foundations of Persuasion -- small excursus
-	\subsection{Persuasive Technology in Usable Security and Privacy}
-	
-	\subsubsection{Forget et al.: The Persuasive Authentication Framework (PAF)}
-	\todo{add self-made figure / hierarchy}
-	social interaction: Das: Social sensitivity security advice: \cite{Das2014EffectSocialInfluenceSecuritySensitivity}
-	
-	\subsubsection{Cognitive Illusion and Biases}
-	Looking at the problem from behavioral economic point of view
+	\subsection{Persuasive Technology and Behavioral Economics}
+	In the design of persuasive technology, we often encounter the concept of ``nudging'' people, i.e. figuratively giving them a small push to act in a certain way, as intended by the ``choice architect'' \cite{Thaler2008Nudge, Thaler2010ChoiceArchitecture}. For instance, by setting clever defaults, people are relieved of making an active decision and can just accept the default. Nudging strategies as part of ``soft paternalism'' or ``libertarian paternalism'' stem from the field of behavioral economics, which studies ``how individual, social, cognitive, and emotional biases influence economic decisions'' \cite{Acquisti2008DigitalPrivacy}. In other words, behavioral economists embrace the idea that people sometimes act irrationally when making economic decisions. For example, it is more likely that people purchase a glass of jam, if there are only six options instead of 24 \cite{Iyengar2000WhenChoiceIsDemotivating}. 
+	By referring to the dual systems theory, Kahneman argues that many sub-optimal decisions originate from System 1 which is responsible for intuitive and automatic thinking processes \cite{Kahnemann2002}. System 2 on the other hand is the rational and effortful part in our thinking processes. He explains that most of our thinking is carried out by System 1, because it would be impossible to put the same amount of effort into every decision that we make (e.g. ``should I brush my teeth today''). Persuasive technology now aims to either facilitate decision-making (supporting System 1), or block automatic processes to help the user adopt a different behavior (activating System 2). In the following we look into the central strategies to achieve this. 
+
+	% examples for irrational decisions
+	% how does persuasion help here?
+	\subsubsection{Cognitive Illusions, Biases, and Heuristics}
+	Irrational decision-making, according to behavioral economics, can originate from 
 	
 	another term: ``cognitive distortions''
 	
@@ -446,16 +423,34 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	% availability, overconfidence, decoy, anchors, hinsight, sunk costs
 	
+	\begin{itemize}
+		\item Forget Papers: \cite{Forget2007PersuasionEducationSecurity} \cite{Forget2007HelpingUsers} \cite{Forget2008ImprovingPasswordsThroughPersuasion} \cite{Forget2008MemorabilityPersuasivePasswords} \cite{Forget2008PersuasionStrongerPasswords}
+		
+		\item Chiasson: \cite{Chiasson2008PCCP}
+	\end{itemize}
 	
-	\subsubsection{Nudging and Behavioral Economics}
-		
-		
-		nudging privacy decisions is more prominent in the literature than nudging password decisions. 
-		
-		
-		%%%%% CENTRAL REFERENCE::
-		most prominently: Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} \cite{Acquisti2005PrivacyRationality}
-		%%%%%
+	
+	\cite{Furnell2017GuidanceCompliance,Gulenko2014PasswordsEmotion,Azevedo2012AuthenticationGame,Kroeze2012GamifyingAuthentication,Schneider2016UnderstandingPersuasiveDesign,Cialdini2003CraftingNormativeMessages,Scott1995GDMS,Kim2015MobilePersuasionTrust,Bellur2014HeuristicsUsed,Baharin2015RhythmicPersuasionModel,Adams2015MindlessComputing,Han1994PersuasionCulture,Balebako2011,Acquisti2009,Forget2007PersuasionEducationSecurity,Forget2008ImprovingPasswordsThroughPersuasion,Xu2007,Zakaria2013DesigningEffectiveSecurityMessages,Egelman2010PleaseContinueToHold,Yevseyeva2014,DiGioia2005SocialNavigationUsableSecurity,Chiasson2008PCCP,Wiafe2012,Weirich2005PersuasivePasswordSecurity,Forget2008MemorabilityPersuasivePasswords,Jeske2013,Wang2014,Weirich2001PrettyGoodPersuasion,Adjerid,Shiv2005,Wiafe2012a,Almuhimedi2015a,Radke2013,Arachchilage2013GameDesingPhishing,Ashenden2013SecurityLikeSoap,Bahr2013,Korff2014TooMuchChoice,Muscanell2014,Woodruff2014PrivacyFundamentalist,Korff2014,Goldstein2008,Forget2008PersuasionStrongerPasswords,Wang2013,Hamari2014,Jameson2011PreferentialChoice,Instructor2013,Mamduhi2012,Lockton2012CognitiveBiases,Choe,Fogg2002Persuasive,Fogg2009,Lockton2010,Hekler2013,Lockton2009,Lee2011MiningBehavioralEconomics}
+	
+	Persuasive Wording in guidelines / education \cite{Zakaria2013DesigningEffectiveSecurityMessages}
+
+	\subsubsection{Persuasive Design Patterns}
+	
+	% Foundations of Persuasion -- small excursus
+	\subsection{Persuasion in Usable Security and Privacy}
+	
+	\subsubsection{Forget et al.: The Persuasive Authentication Framework (PAF)}
+	\todo{add self-made figure / hierarchy}
+	social interaction: Das: Social sensitivity security advice: \cite{Das2014EffectSocialInfluenceSecuritySensitivity}
+	
+
+	\subsubsection{Privacy Nudges}
+				
+	nudging privacy decisions is more prominent in the literature than nudging password decisions. 
+
+	%%%%% CENTRAL REFERENCE::
+	most prominently: Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} \cite{Acquisti2005PrivacyRationality}
+	%%%%%
 	
 	\subsection{Password Meters and Real-Time Feedback}
 	
@@ -500,7 +495,9 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	time to crack already in \cite{Yee2006Passpet} for master password in PWM
 	
-	\subsection{Personalization}
+	\subsection{Personalization and Adaptation}
+	LastPass report \cite{LastPass2016PersonalitiesGetUsHacked}
+	
 	\subsubsection{Personality Traits}
 	\paragraph{Inventories, Constructs, and Proxies}
 	Big Five à la Costa and McCrea \cite{Costa1992NEO}
@@ -508,12 +505,8 @@ Since secure behavior does not come natural to users, there have been many attem
 	Haque construct \cite{Haque2014PsychometricsStrongPassword}
 	\paragraph{Personality Studies in Usable Security and Privacy}
 		
-	
-	Personality seems to be correlated with certain behavior online, primarily willingness to share and phishing susceptibility \cite{Halevi2013PilotStudyPersonality}
-	
-	
+	Personality seems to be correlated with certain behavior online, primarily willingness to share and phishing susceptibility \cite{Halevi2013PilotStudyPersonality}	
 	
 	Already the PAF introduced the personality dimension for effective persuasion. Recently, Egelman and Peer advocated to use psychometric cues to contextualize privacy or security messaging \cite{Egelman2015AverageUser}. In two studies they looked at the predicting power of different psychometric scales, among which we find the five-factor model (``Big Five''), the General Decision Making Style (GDMS) or the Domain-Specific Risk-Taking scale (DoSpeRT) @@TODO dreimal Quelle. They conducted two online experiments using Mechanical Turk. In the first round they used the Ten-Item-Personality Index and correlated the scores with several privacy metrics (e.g. the Privacy Concerns Scale or the Internet Users Information Privacy Concerns scale). They realized that the Big Five model was a rather weak predictor for the different scales, which lead them up to their second experiment, where they focused on decision-making metrics. Here, they observed stronger correlations, between e.g. the rational trait of the GDMS and both PCS and IUIPC. Following these observations, Egelman and Peer interpret them as evidence that privacy attitudes originate from rational decision-making, and also from people's intuitions, which sounds paradoxical at first, but it were different respondents who produced this result. They conclude that the decision-making metrics were about three times as powerful regarding their predictive power than the big five model regarding privacy attitudes and behavior. Finally, they propose the Security Behavior Intentions Scale (SeBIS). This scale intends to isolate confounding factors when correlating personalty traits with security behavior. Also, the authors offer a number of hypotheses and unanswered research questions that highlight how little exploiting personality traits in security nudges has been investigated. 
-	
-	
-	
+	\subsubsection{Personalized Secure User Interfaces}
+	\cite{Kaptein2015PersonalizingPersuasiveTechnologies}
