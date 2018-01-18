@@ -418,7 +418,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	% cybersecurity entails uncertainty (``what's best for me?'')
 	The lack of certainty is prevalent in decisions in cybersecurity, especially for mainstream users. For example, it is hard for users to assess the risk of threats online, and make a decision on the required protection level. Therefore, heuristics in this domain have been investigated to better understand user behavior. 
 	% hey, let's look at a few examples.
-	The list of cognitive fallacies is long, Wikipedia mentions 109 decision-making biases alone \footurl{https://en.wikipedia.org/wiki/List_of_cognitive_biases}{17.01.2018} (see Figure \ref{fig:rw:cognitive-biases}). Let us have a look at notable examples that directly relate to cybersecurity. 
+	The list of cognitive fallacies is long, Wikipedia mentions 109 decision-making biases alone \footurl{https://en.wikipedia.org/wiki/List_of_cognitive_biases}{17.01.2018} (see Figure \ref{fig:rw:cognitive-biases}). Let us discuss notable examples that directly relate to cybersecurity\footnote{Please refer to Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} for an in-depth and highly valuable discussion of biases in privacy and security}. To stay on topic, we explain all effects with ``password phenomena'', although the scenarios have not necessarily been empirically substantiated.
 	
 	\begin{figure}
 		\centering
@@ -427,18 +427,19 @@ Since secure behavior does not come natural to users, there have been many attem
 	\end{figure}
 
 	% sunk costs / disposition effect.
-	The \textbf{sunk costs} fallacy describes the situation when people have made an investment under uncertainty in the past and continue to stand by it, even if circumstances have changed and it would be better to abandon the commitment \cite{Thaler2004MentalAccounting}: Imagine someone bought a (nonrefundable) ticket to watch a movie at a theater. They dislike it from the start and after 25 minutes, they feel the movie is not going to get better. Due to the sunk costs of the ticket and unrecoverable effort to go to the theater, it is likely that they stick around instead of simply leaving the show. Herley \etal hint a similar scenario for replacing password authentication \cite{Herley2012PersistenceOfPasswords}. In their point of view, \glspl{SP} have invested into passwords and are now reluctant to move away to alternative schemes, although they might improve system security (see Section \ref{sec:rw:authentication_without_pws}). Similarly, users who have committed to a password and reused it many times, might see the time spent as sunk cost. Thus, they do not switch to a more secure alternative even if they know there are plenty. Arguably, the \textbf{Status Quo bias} plays a role in both examples, too. 
+	The \textbf{sunk costs} fallacy describes the situation when people have made an investment under uncertainty in the past and continue to stand by it, even if circumstances have changed and it would be better to abandon the commitment \cite{Thaler2004MentalAccounting}: Imagine someone bought a (nonrefundable) ticket to watch a movie at a theater. They dislike it from the start and after 25 minutes, they feel the movie is not going to get better. Due to the sunk costs of the ticket and unrecoverable effort to go to the theater, it is likely that they stick around instead of simply leaving the show. Herley \etal hint a similar scenario for replacing password authentication \cite{Herley2012PersistenceOfPasswords}. In their point of view, \glspl{SP} have invested into passwords and are now reluctant to move away to alternative schemes, although they might improve system security (see Section \ref{sec:rw:authentication_without_pws}). Similarly, users who have committed to a password and reused it many times, might see the time spent as sunk cost. Thus, they do not switch to a more secure alternative even if they know there are plenty. Arguably, the \textbf{Status Quo bias} plays a role in both examples, too: people tend to favor a pre-existing state of affairs over potentially uncertain changes.
 	
-	The \textbf{availability heuristic} is observed when people over- or underestimate the likelihood of events after being exposed to salient information. For instance, users might estimate the likelihood of being hacked as higher after someone in their social circle reports such an incident: the possibility has become more salient and available, thus future occurrences are seen as more probable. Das \etal partially confirmed such behavior through user interviews \cite{Das2014EffectSocialInfluenceSecuritySensitivity}. Certainly, \textbf{recency illusions} boost the availability heuristic, i.e. if a user who just found out about the ``hacking threat'' thinks that this threat had just emerged. % there are more examples in the same vein: frequency bias, selective attention/perception. 
+	%availability
+	The \textbf{availability heuristic} is observed when people over- or underestimate the likelihood of events after being exposed to salient information. For instance, users might estimate the likelihood of being hacked as higher after someone in their social circle reports such an incident: the possibility has become more salient and available, thus future occurrences are seen as more probable. Das \etal partially confirmed such behavior through user interviews \cite{Das2014EffectSocialInfluenceSecuritySensitivity}. Certainly, \textbf{recency illusions} boost the availability heuristic, i.e. a user who just found out about the ``hacking threat'' might think that this threat had just emerged. % there are more examples in the same vein: frequency bias, selective attention/perception. 
 	
-	The \textbf{anchoring} bias creates often unrelated reference points (or baselines) for decisions, especially comparisons. After a password breach, media reports typically mention some of the most-used passwords. Readers of news article anchor on the strength of obvious passwords like 12345 and compare their own. In many cases, their own password(s) seem much stronger by comparison, but might not be seen as strong if assessed separately. Similarly, if many people show insecure password behavior, this may reinforce an individuals insecure practices through the \textbf{bandwagon effect}.
+	% anchoring and bandwagon.
+	The \textbf{anchoring} bias creates reference points (or baselines) for decisions, especially comparisons \cite{Forget2007PersuasionEducationSecurity}. After a password breach, media reports typically mention some of the most-used passwords. Readers of news article anchor on the strength of obvious passwords like 12345 and compare their own. In many cases, their own password(s) seem much stronger by comparison, but might not be seen as strong if assessed separately. Similarly, if many people show insecure password behavior, this may reinforce an individual's practices through the \textbf{bandwagon effect}: ``if so many people behave insecurely, why would I act differently?'' \cite{Adams2015MindlessComputing}.
+	
+	% framing effects, preference reversal, loss aversion
+	People can also be biased by the way information is presented, which is known as \textbf{framing effect} \cite{Verendel2008ProspectTheorySecurity}. The wording is key here and can generate \textbf{preference reversal} and other inconsistencies \cite{Huber1982AsymetricallyDominated}.  For password authentication, framing can be found in educating users about passwords. Zakaria \etal \cite{Zakaria2013DesigningEffectiveSecurityMessages} suggest instructing users through real-world security comparisons. Framing consequences for users around losses may trigger \textbf{loss aversion} -- a tendency to perceive losses as more valuable than equivalent gains \cite{Ariely2005LossesGains}. Garg and Camp argue that security is currently framed as a \textit{definite} loss for end users, while ``the risk of not investing in security is a \textit{probable}'', thus uncertain, loss \cite{Garg2013HeuristicsAndBiases}. Cialidini shows the importance of crafting \textit{normative} messages, that refrain from emphasizing that a socially unacceptable behavior is still widespread \cite{Cialdini2003CraftingNormativeMessages}. For instance, a normative message after a policy rejects the user's first-chosen password might explain: ``The password is weak, because it is easily guessable for hackers'' (emphasis on the adversary) rather than ``..., because it is something many people would choose'' (emphasis on the social in-group).
 	
 	% goal gradient effect
 	Password meters (see Section \ref{sec:rw:password-meters})
-	
-	% loss aversion
-	
-	% availability
 	
 	% overconfidence
 	
@@ -454,14 +455,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	% bandwagon effect
 	
 	
-	
-	We should keep biases in mind when designing communication about security (decisions) \cite{Garg2013HeuristicsAndBiases}
-	
 	Schneier has a really good section on the reasoning of psychological effects and biases in \cite{Schneier2008PsychologySecurity} 
-		
-	Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} have a journal paper that has everything in it we need...
-	
-	% availability, overconfidence, decoy asymmetric / dominated choice, anchors, hinsight, sunk costs
 	
 	\begin{itemize}
 		\item Forget Papers: \cite{Forget2007PersuasionEducationSecurity} \cite{Forget2007HelpingUsers} \cite{Forget2008ImprovingPasswordsThroughPersuasion} \cite{Forget2008MemorabilityPersuasivePasswords} \cite{Forget2008PersuasionStrongerPasswords}
@@ -469,7 +463,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	\end{itemize}
 	
 	
-	\cite{Furnell2017GuidanceCompliance,Gulenko2014PasswordsEmotion,Azevedo2012AuthenticationGame,Kroeze2012GamifyingAuthentication,Schneider2016UnderstandingPersuasiveDesign,Cialdini2003CraftingNormativeMessages,Scott1995GDMS,Kim2015MobilePersuasionTrust,Bellur2014HeuristicsUsed,Baharin2015RhythmicPersuasionModel,Adams2015MindlessComputing,Han1994PersuasionCulture,Balebako2011,Acquisti2009,Forget2007PersuasionEducationSecurity,Forget2008ImprovingPasswordsThroughPersuasion,Xu2007,Zakaria2013DesigningEffectiveSecurityMessages,Egelman2010PleaseContinueToHold,Yevseyeva2014,DiGioia2005SocialNavigationUsableSecurity,Chiasson2008PCCP,Wiafe2012,Weirich2005PersuasivePasswordSecurity,Forget2008MemorabilityPersuasivePasswords,Jeske2013,Wang2014,Weirich2001PrettyGoodPersuasion,Adjerid,Shiv2005,Wiafe2012a,Almuhimedi2015a,Radke2013,Arachchilage2013GameDesingPhishing,Ashenden2013SecurityLikeSoap,Bahr2013,Korff2014TooMuchChoice,Muscanell2014,Woodruff2014PrivacyFundamentalist,Korff2014,Goldstein2008,Forget2008PersuasionStrongerPasswords,Wang2013,Hamari2014,Jameson2011PreferentialChoice,Instructor2013,Mamduhi2012,,Choe,Fogg2002Persuasive,Fogg2009,Lockton2010,Hekler2013,Lockton2009,Lee2011MiningBehavioralEconomics}
+	\cite{Cialdini2003CraftingNormativeMessages,Scott1995GDMS,Kim2015MobilePersuasionTrust,Bellur2014HeuristicsUsed,Baharin2015RhythmicPersuasionModel,Adams2015MindlessComputing,Han1994PersuasionCulture,Balebako2011,Acquisti2009,Forget2007PersuasionEducationSecurity,Forget2008ImprovingPasswordsThroughPersuasion,Xu2007,Zakaria2013DesigningEffectiveSecurityMessages,Egelman2010PleaseContinueToHold,Yevseyeva2014,DiGioia2005SocialNavigationUsableSecurity,Chiasson2008PCCP,Wiafe2012,Weirich2005PersuasivePasswordSecurity,Forget2008MemorabilityPersuasivePasswords,Jeske2013,Wang2014,Weirich2001PrettyGoodPersuasion,Adjerid,Shiv2005,Wiafe2012a,Almuhimedi2015a,Radke2013,Arachchilage2013GameDesingPhishing,Ashenden2013SecurityLikeSoap,Bahr2013,Korff2014TooMuchChoice,Muscanell2014,Woodruff2014PrivacyFundamentalist,Korff2014,Goldstein2008,Forget2008PersuasionStrongerPasswords,Wang2013,Hamari2014,Jameson2011PreferentialChoice,Instructor2013,Mamduhi2012,,Choe,Fogg2002Persuasive,Fogg2009,Lockton2010,Hekler2013,Lockton2009,Lee2011MiningBehavioralEconomics}
 	
 	Persuasive Wording in guidelines / education \cite{Zakaria2013DesigningEffectiveSecurityMessages}
 	
@@ -482,7 +476,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	\textbf{Goal gradient effect}
 	
 	\subsubsection{Playfulness}
-	
+	\cite{Azevedo2012AuthenticationGame,Kroeze2012GamifyingAuthentication}
 	
 	
 	\subsubsection{Heuristics}
