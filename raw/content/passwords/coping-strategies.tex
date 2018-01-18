@@ -405,7 +405,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	\todo{line of thought not consistent enough.}
 	
 	\subsubsection{Terminology in Persuasion and Behavioral Economics}
-	In the design of persuasive technology, we often encounter the concept of ``nudging'' people, i.e. figuratively giving them a small push to act in a certain way \cite{Thaler2008Nudge}. The ``choice architect'' decides on the direction of the push \cite{Thaler2010ChoiceArchitecture}. For instance, by setting clever \textit{defaults}, people are relieved of making an active decision and can just accept the default. Nudging strategies as part of ``soft paternalism'' or ``libertarian paternalism'' stem from the field of behavioral economics, which studies ``how individual, social, cognitive, and emotional biases influence economic decisions'' \cite{Acquisti2008DigitalPrivacy}. In other words, behavioral economists embrace the idea that people sometimes act irrationally when making economic decisions. For example, people are significantly more likely to purchase a glass of jam, if there are only six options instead of 24 \cite{Iyengar2000WhenChoiceIsDemotivating}. As we have seen in Section \ref{sec:rw:user-behavior}, password coping strategies ultimately involve such economic decisions: Given a risk, one needs to assess the severity, likelihood, costs of mitigating the risk, and the effectiveness of the protective measure \cite{Schneier2008PsychologySecurity}. Thus, theories from behavioral economics are a useful resource that can explain user behavior. 
+	In the design of persuasive technology, we often encounter the concept of ``nudging'' people, i.e. figuratively giving them a small push to act in a certain way \cite{Thaler2008Nudge}. The ``choice architect'' decides on the direction of the push \cite{Thaler2010ChoiceArchitecture}. For instance, by setting clever \textit{defaults}, people are relieved of making an active decision and can just accept the default. Nudging strategies as part of ``soft paternalism'' or ``libertarian paternalism'' stem from the field of behavioral economics, which studies ``how individual, social, cognitive, and emotional biases influence economic decisions'' \cite{Acquisti2008DigitalPrivacy}. In other words, behavioral economists embrace the idea that people sometimes act irrationally when making economic decisions. For example, people are significantly more likely to purchase a glass of jam, if there are only six options instead of 24 -- the so-called ``choice paradox'' \cite{Iyengar2000WhenChoiceIsDemotivating}. As we have seen in Section \ref{sec:rw:user-behavior}, password coping strategies ultimately involve such economic decisions: Given a risk, one needs to assess the severity, likelihood, costs of mitigating the risk, and the effectiveness of the protective measure \cite{Schneier2008PsychologySecurity}. Thus, theories from behavioral economics are a useful resource that can explain user behavior. 
 	
 	% where does irrational behavior come from? todo: is this part of terminology?
 	Referring to the dual process theory, Kahneman argues that many sub-optimal decisions originate from System 1 which is responsible for intuitive and automatic thinking processes \cite{Kahnemann2002}. System 2, on the other hand, is the rational and effortful part in our thinking processes. He explains that most of our thinking is carried out by System 1, because it would be impossible to put the same amount of effort into every decision that we make (e.g. it is unnecessary to weigh the pro's and con's in answering ``should I brush my teeth today?'').  In Password selection, both systems are involved, but depending on the context, one or the other is primarily responsible for the decision. For instance, users who have formed the habit to reuse one password for all accounts will do the same for the next account they create, thus the automatic System 1 is at play. However, if the composition policy forces the user to modify their password, the cognitive challenge rises and activates System 2. Persuasive technology aims to either facilitate decision-making (i.e. supporting System 1), or block automatic processes to help the user adopt a different behavior (i.e. activating System 2).
@@ -438,44 +438,31 @@ Since secure behavior does not come natural to users, there have been many attem
 	% framing effects, preference reversal, loss aversion
 	People can also be biased by the way information is presented, which is known as \textbf{framing effect} \cite{Verendel2008ProspectTheorySecurity}. The wording is key here and can generate \textbf{preference reversal} and other inconsistencies \cite{Huber1982AsymetricallyDominated}.  For password authentication, framing can be found in educating users about passwords. Zakaria \etal \cite{Zakaria2013DesigningEffectiveSecurityMessages} suggest instructing users through real-world security comparisons. Framing consequences for users around losses may trigger \textbf{loss aversion} -- a tendency to perceive losses as more valuable than equivalent gains \cite{Ariely2005LossesGains}. Garg and Camp argue that security is currently framed as a \textit{definite} loss for end users, while ``the risk of not investing in security is a \textit{probable}'', thus uncertain, loss \cite{Garg2013HeuristicsAndBiases}. Cialidini shows the importance of crafting \textit{normative} messages, that refrain from emphasizing that a socially unacceptable behavior is still widespread \cite{Cialdini2003CraftingNormativeMessages}. For instance, a normative message after a policy rejects the user's first-chosen password might explain: ``The password is weak, because it is easily guessable for hackers'' (emphasis on the adversary) rather than ``..., because it is something many people would choose'' (emphasis on the social in-group). Framing the attacker effectively is seen as opportunity in for persuasive password education by Weirich and Sasse \cite{Weirich2001PrettyGoodPersuasion,Weirich2005PersuasivePasswordSecurity}
 	
-	Finally, 
 	% goal gradient effect
-	Password meters (see Section \ref{sec:rw:password-meters})
+	As a final example of behavioral biases, people's motivation increases as they get closer to finishing a task. Hull coined this behavior the ``\textbf{goal-gradient hypothesis}'' \cite{Kivetz2006GoalGradient}. Behavioral economists have found it to induce irrational behavior: Kivetz \etal handed out two different designs of ``coffee cards'', that customers can fill up with each purchase \cite{Kivetz2006GoalGradient}. Once the card is full, they can redeem it for a free coffee. One of the designs had ten stamp-fields, while the other had twelve fields, two of which were already stamped. So, in both cases, customers received a free coffee after ten purchases. Surprisingly, more cards with twelve fields were redeemed after the trial period. People (wrongly) thought to be closer to goal, and thus were more motivated to achieve it. This ``goal distance model'' is sometimes used by password meters, i.e. a visualization of password strength. We discuss them in great detail in Section \ref{sec:rw:password-meters}. Password strength visualization can give the user a ``head start'' to motivate them to fill up the entire bar and achieve a ``strong password'' (i.e. a full coffe stamp card). 
 	
 	% overconfidence
-	
 	% hyperbolic discounting
-	immediate payoff: get access to account now. Make choices today that future selves would not have made despite the same level of information
-	
-	IKEA effect: people put disproportionally more value on objects partially built themselves. a suggested password might not be suitable, because it lacks ``personal effort''. Huh \etal leverage the IKEA effect by letting users replace characters of generated passwords. 
-	
-	Ostrich effect occurs when people ignore an obvious negative situation. Users who know that 
-	
-	Choice proliferation \cite{Knijnenburg2013MorePrivacyOptions,Korff2014TooMuchChoice}
-	
-	
+	%immediate payoff: get access to account now. Make choices today that future selves would not have made despite the same level of information
+	%IKEA effect: people put disproportionally more value on objects partially built themselves. a suggested password might not be suitable, because it lacks ``personal effort''. Huh \etal leverage the IKEA effect by letting users replace characters of generated passwords. 	
+	%Ostrich effect occurs when people ignore an obvious negative situation. Users who know that 
+
+	%Choice proliferation / choice paradox \cite{Knijnenburg2013MorePrivacyOptions,Korff2014TooMuchChoice}
+
 	% automation bias
-	
-	% bandwagon effect
-	
 	% potentially helpful if time allows: 
 	% Bellur2014HeuristicsUsed
-	
 
 	\subsection{Persuasive Design Patterns in Usable Security and Privacy}
 	
 	cognition vs. game mechanics vs. perception and memory vs. feedback vs. Social
 	
 	frameworks: \cite{Lockton2010DesignWithIntent} 	of course: \cite{Fogg2009BehavioralModel}
-	general influence on choice \cite{Jameson2011PreferentialChoice}
+	general influence on choice \cite{Jameson2011PreferentialChoice}, weapons of influence \cite{Cialdini2007Influence}
 	Prominence of behavior change research in HCI: \cite{Hekler2013TheoreticalGap}
 	
 	Making people wait activates System 2 \cite{Egelman2010PleaseContinueToHold, Malkin2013Waiting}
-	\cite{Jeske2014NudgingWhomHow}
-
-	maybe: weapons of influence \cite{Cialdini2007Influence}
-	
-	
+	\cite{Jeske2014NudgingWhomHow}	
 	
 	\subsubsection{Cognition / Decision oriented}
 	\textbf{Set completion}
@@ -506,6 +493,9 @@ Since secure behavior does not come natural to users, there have been many attem
 	Decision-centric heuristics
 	
 	
+	
+	KAIROS
+	
 	\subsubsection{Forget et al.: The Persuasive Authentication Framework (PAF)}
 	\todo{add self-made figure / hierarchy}
 	\cite{Forget2007PersuasionEducationSecurity}
@@ -533,7 +523,13 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	Fear appeals: \cite{Xu2007FearAppeals}
 	\cite{Muscanell2014WeaponsMisused}
-	
+
+	%%%%%%%%%%%%%%%%%
+	%%%%%%%
+	%%%%%%		PASSWORD METERS
+	%%%%%%
+	%%%%%%%
+	%%%%%%%%%%%%%%%%%
 	\subsection{Password Meters and Real-Time Feedback}\label{sec:rw:password-meters}
 	Password meters incorporate a number of persuasive design patterns at once: kairos, goal gradient effects, feedback, 
 	
