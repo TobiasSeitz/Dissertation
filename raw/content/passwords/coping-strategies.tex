@@ -454,19 +454,27 @@ Since secure behavior does not come natural to users, there have been many attem
 	% Bellur2014HeuristicsUsed
 
 	\subsection{Persuasive Design Patterns in Usable Security and Privacy}
-	\gls{PD} has been tried to formalize in several frameworks. Fogg's Behavior Model posits that three elements must converge to achieve a target \textbf{B}ehavior: \textbf{M}otivation, \textbf{A}bility, and \textbf{T}riggers \cite{Fogg2009BehavioralModel}. For passwords this implies that people need to be motivated to protect themselves, at the same time the need to know how to achieve protection and be exposed to a trigger. % The trigger is perhaps the most interesting part for persuasive design in the realm of authentication, because 
+	Phenomena involving biases and heuristics are often directly translated into a persuasive strategy, blurring the lines between them.
+	
+	\subsubsection{General Frameworks}
+	\gls{PD} has been tried to formalize in several frameworks. Fogg's Behavior Model posits that three elements must converge to achieve a target \textbf{B}ehavior: \textbf{m}otivation, \textbf{a}bility, and \textbf{t}riggers (B=mat) \cite{Fogg2009BehavioralModel}. For passwords this implies that people need to be motivated to protect themselves, at the same time the need to know how to achieve protection and be exposed to a trigger. % The trigger is perhaps the most interesting part for persuasive design in the realm of authentication, because 
 	Lockton \etal propsed the ``Design with Intent'' framework as a toolkit for persuasive interventions \cite{Lockton2010DesignWithIntent}. Jameson \etal show how to pick strategies from various toolkits to create a persuasive choice architecture \cite{Jameson2011PreferentialChoice}. 
 	
+
 	% example walk through on a generic level
-	Cialdini's generic ``six weapons of influence'' have also been used in the design of persuasive technology \cite{Cialdini2007Influence}. He lists authority, scarcity, liking, social proof / consensus, (commitment \&) consistency, and reciprocity as the principles of persuasion. Let us look at them from the angle of password authentication. The authority principle says that people are likely to follow the instructions of an authority, which explains why the \gls{NIST} guidelines have been widely adopted despite their downsides. 
-	%Scarcity drives motivation to act quickly to avoid losing an opportunity (see loss aversion), and framing effects are used to communicate the scarcity of a resource. For instance, the ``419 scam'' tactic in phishing emails frames time as a scarce resource: ``your account has been intruded, if you don't log in now, you lose access to it permanently'' \cite{Stajano2011Principles}. In this case persuasion is used for malicious purposes. 
+	Cialdini's generic ``six weapons of influence'' have been used in the design of persuasive technology \cite{Cialdini2007Influence}. He lists authority, scarcity, liking, social proof / consensus, (commitment \&) consistency, and reciprocity as the principles of persuasion. Let us look at them from the angle of password authentication. The authority principle says that people are likely to follow the instructions of an authority, which explains why the \gls{NIST} guidelines have been widely adopted despite their downsides. 
+	Scarcity drives motivation to act quickly to avoid losing an opportunity (see loss aversion), and framing effects are used to communicate the scarcity of a resource. For instance, the ``419 scam'' tactic in phishing emails frames time as a scarce resource: ``your account has been intruded, if you don't log in now, you lose access to it permanently'' \cite{Stajano2011Principles}. In this case persuasion is used for malicious purposes. 
 	People prefer to comply if they \textit{like} their counterpart. In theory, this would make password requirements less bothersome if used on a website that users like, or in a more aesthetically pleasing way. Although there is no empirical evidence that the principle works for registration forms specifically, other HCI research points in this direction \cite{Tractinsky2000WhatIsBeautiful, Fogg2001WhatMakesSitesCredible}. %TODO run a micro-survey to explore this, that's interesting. 
-	The social proof strategy makes other people's behavior more \textit{available}, because in decision-making people tend to copy others' decisions. For instance, it might help to point out that millions of users are already using a password manager in a news article about a new password leak. We can also apply Fogg's behavior model here: Reading about a password leak \textit{motivates} users to protect themselves, the social proof strategy acts as \textit{trigger}, and mentioning the ease-of-use of password managers gives users confidence about their ability to adopt a \gls{PWM}.
-	
-	In summary, many influence strategies have been empirically shown to persuade people. 	
+	The social proof strategy makes other people's behavior more \textit{available}, because in decision-making people tend to copy others' decisions. For instance, it might help to point out that millions of users are already using a password manager in a news article about a new password leak. We can also apply Fogg's behavior model here: Reading about a password leak \textit{motivates} users to protect themselves, the social proof strategy acts as \textit{trigger}, and mentioning the ease-of-use of password managers gives users confidence about their ability to adopt a \gls{PWM}. 
 	
 	
 	
+	\subsubsection{The Persuasive Authentication Framework (PAF) by Forget \etal}
+	\todo{add self-made figure / hierarchy}
+	\cite{Forget2007PersuasionEducationSecurity}
+	social interaction: Das: Social sensitivity security advice: \cite{Das2014EffectSocialInfluenceSecuritySensitivity}
+	
+	KAIROS
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	cognition vs. game mechanics vs. perception and memory vs. feedback vs. Social
 	
@@ -474,16 +482,18 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	\cite{Jeske2014NudgingWhomHow}	
 	
-	\subsubsection{Cognition / Decision oriented}
+	\subsubsection{Empirical Studies using Persuasive Interventions}
+	
+	% \subsubsection{Cognition / Decision oriented}
 	\textbf{Set completion}
 	\textbf{Goal gradient effect}
 	\textbf{Defaults} \cite{Chiasson2008PCCP}
 	
-	\subsubsection{Playfulness}
+	% \subsubsection{Playfulness}
 	\cite{Azevedo2012AuthenticationGame,Kroeze2012GamifyingAuthentication}
 	Phishing \cite{Arachchilage2013GameDesingPhishing}
 	
-	\subsubsection{Social Influence}
+	%\subsubsection{Social Influence}
 	% papers that use social nudges
 	Egelman \etal evaluated this strategy for password feedback \cite{Egelman2013DoesMyPasswordGoUpToEleven}. A visualization informed participants in their study who well their password fared compared to other users, e.g. ``your password is stronger than that of 85\% of our users''. They did not find evidence that this persuasive strategy influenced people, but maybe the approach could have been more focused on the \textit{proof} aspect, rather than \textit{competition}. The normative message is ``other people's passwords are bad, but many people act this way''. This could actually evoke backfire effects through social proof: although users see their password is stronger, they believe that the social norm is to pick weaker passwords, which makes them conform to the social norm. In fact, Weirich and Sasse have provided empirical evidence for such behavior \cite{Weirich2001PrettyGoodPersuasion}.
 	
@@ -497,26 +507,15 @@ Since secure behavior does not come natural to users, there have been many attem
 	``politeness as central element \cite{Bahr2013RationalInterfaces}
 	misusage of social influence. \cite{Muscanell2014WeaponsMisused}
 	
-	\subsubsection{Heuristics}
+	%\subsubsection{Heuristics}
 	\cite{Schneier2008PsychologySecurity}:
 	Probability heuristics \textbf{Availability heuristic}
 	risk heuristics 
 	Cost heuristics (mental accounting, time discounting)
 	Decision-centric heuristics
 	
-	
-	\subsubsection{Forget et al.: The Persuasive Authentication Framework (PAF)}
-	\todo{add self-made figure / hierarchy}
-	\cite{Forget2007PersuasionEducationSecurity}
-	social interaction: Das: Social sensitivity security advice: \cite{Das2014EffectSocialInfluenceSecuritySensitivity}
-	
-	KAIROS
-	
-	
-	
-	
-
-	\subsubsection{Privacy Nudges}
+	%\subsubsection{Privacy Nudges}
+	most prominently: Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} \cite{Acquisti2005PrivacyRationality}
 	privacy is an economic problem \cite{Woodruff2014PrivacyFundamentalist}
 	\cite{Yevseyeva2014RiskyNudging}
 	\cite{Balebako2011PrivacyNudgesMobile}				
@@ -526,11 +525,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	\cite{Almuhimedi2015PrivacyNudges}
 	\cite{Egelman2013ChoiceArchitecture}
 	\cite{Choe2013NudgingAwayVisualFraming}
-
-	%%%%% CENTRAL REFERENCE::
-	most prominently: Acquisiti \etal \cite{Acquisti2017NudgesPrivacySecurity} \cite{Acquisti2005PrivacyRationality}
-	%%%%%
-	
+		
 	\subsubsection{Dark Patterns}
 	malicious websites use persuasion techniques, too. ``your computer is infected. \textbf{ACT QUICK} to fix the problems''
 	
@@ -609,7 +604,4 @@ Since secure behavior does not come natural to users, there have been many attem
 	\cite{Kaptein2015PersonalizingPersuasiveTechnologies}
 	
 	\subsection{Summary}
-	Persuasive interventions help shaping user behavior and facilitate decision-making processes. However, persuasive technology asserts the claim to be in the ``users best interest'' and wants to enable them make ``better'' decisions. Thus, we have to be sure to do the right thing, if changing user behavior and attitudes is the ultimate goal. We follow Acquisit \etal's definition, and find that good decisions ``minimize adverse outcomes or are less likely to be regretted'' \cite{Acquisti2017NudgesPrivacySecurity}
-	
-	
-	effectiveness: \cite{Hamari2014DoPersuasiveTechnologies}
+	Persuasive interventions help shaping user behavior and facilitate decision-making processes. However, persuasive technology asserts the claim to be in the ``users best interest'' and wants to enable them make ``better'' decisions. Thus, we have to be sure to do the right thing, if changing user behavior and attitudes is the ultimate goal. We follow Acquisit \etal's definition, and find that good decisions ``minimize adverse outcomes or are less likely to be regretted'' \cite{Acquisti2017NudgesPrivacySecurity}. In summary, many influence strategies have been empirically shown to persuade people across a variety of domains \cite{Hamari2014DoPersuasiveTechnologies}. Thus, I believe in its feasibility for the design of secure and systems. 
