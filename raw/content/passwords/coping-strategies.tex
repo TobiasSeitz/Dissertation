@@ -510,7 +510,7 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	\subsubsection{Dark Patterns}
 	At the outset of this chapter, we discussed ethics as critical factor in password studies. Using persuasion inherently becomes ethically problematic if the intention of the influencer is concealed, either by poor design or by choice. Persuasive techniques are used to manipulate, too. Many social engineering scams  
-	on malicious websites use persuasion techniques, too. Muscanell \etal investigated the misuse of Cialdini's weapons of influence in cyber scams \cite{Muscanell2014WeaponsMisused}. They found that scammers exploit all of them in social engineering attacks. Muscanell \etal also propose mitigation strategies, but do not lay them out in detail. Attacks that take advantage of ``scarcity'' as persuasive strategy often rely on \textit{fear appeals}, e.g. ``Your computer is infected, download this software \textit{now} to remove all threats''. Xu \etal proposed using similar fear appeals to nudge users towards anti-spyware measures \cite{Xu2007FearAppeals}. There are a number of ``dark patterns'', which Nodder dismantles in his book ``Evil by Design'' \cite{Nodder2013EvilByDesign}. Some of them are still benign, others highly manipulative. However, Sasse strongly urges to resist them in the design of password persuasion because they wear off over time and often exaggerate the risks \cite{Sasse2015ScaringBullying}. Hence, dark patterns most likely turn out counterproductive. 
+	on malicious websites use persuasion techniques, too. Muscanell \etal investigated the misuse of Cialdini's weapons of influence in cyber scams \cite{Muscanell2014WeaponsMisused}. They found that scammers exploit all of them in social engineering attacks. Muscanell \etal also propose mitigation strategies, but do not lay them out in detail. Attacks that take advantage of ``scarcity'' as persuasive strategy often rely on \textit{fear appeals}, e.g. ``Your computer is infected, download this software \textit{now} to remove all threats''. Xu \etal proposed using similar fear appeals to nudge users towards anti-spyware measures \cite{Xu2007FearAppeals}, and Vance \etal utilized the ``time to crack'' as fear appeal during password selection \cite{Vance2013FearAppeals}. There are a number of ``dark patterns'', which Nodder dismantles in his book ``Evil by Design'' \cite{Nodder2013EvilByDesign}. Some of them are still benign, others highly manipulative. DarkPatterns.org summarizes them briefly, e.g. \textit{misdirection} - where the design aims to focus the user's attention on a decoy to plant something on them\footurl{https://darkpatterns.org/types-of-dark-pattern}{20.01.2017}. However, Sasse strongly urges to resist them in the design of password persuasion because they wear off over time and often exaggerate the risks \cite{Sasse2015ScaringBullying}. Hence, dark patterns most likely turn out counterproductive. 
 	
 	%%%%%%%%%%%%%%%%%
 	%%%%%%%
@@ -530,14 +530,22 @@ Since secure behavior does not come natural to users, there have been many attem
 	\textbf{Social interaction}: Verbal feedback can speak the user's own language and open a dialog. 
 	\textbf{Loss aversion} and \textbf{scarcity}: The strength estimation is only shown during password entry -- an opportunity to learn about one's own abilities which should not be missed. 
 	\textbf{Availability} and \textbf{salience}: The strength estimation makes weaknesses more salient and threats more available. 
-	\textbf{Framing}: verbal feedback, and color coding allow framing the strength in a nuanced way.
-
+	\textbf{Framing}: verbal feedback and color coding allow framing the strength in a nuanced way.
 	
-	\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
+	% history
+	Balancing all those strategies in a particular design has received much attention in HCI and security research. It is hard to trace back their origins, but proactive password checks have been part of policies since the late 1980s \cite{Wheeler2016zxcvbn}. Bishop and Klein developed the \texttt{pwcheck} command-line tool that was used to give terminal-users feedback on their password selection \cite{Bishop1995ProactivePasswordChecking}. A core challenge is the strength estimation proxy. Websites cannot implement a full-fledged cracking infrastructure just for the sake of password feedback. Thus, proxies and estimators are the go-to method. 
+	
+	% real word inconsistencies - due to bad estimation or different proxies
+	De Carné de Carnavalet and Mannan showed that the estimation algorithms in real-world password meters largely differ \cite{DeCarnedeCarnavalet2015PasswordMeters}. Such inconsistencies, which were also observed by Ur \etal \cite{Ur2012HowDoesYourPasswordMeasureUp}, have high potential to confuse users: if their password is rated ``strong'' on one site, and ``weak'' on another, much explanation is going to be necessary to let the users find out why the ratings differ. Persuasive interventions probably fail at that moment. The authors suggest zxcvbn as the most robust password meter for websites and the KeePass meter as an alternative for offline tools. Others have addressed the issues of industry password meters. Wang \etal developed \textit{fuzzyPSM} based on fuzzy \gls{PCFG}. Melicher implemented their neural network strength estimation in password meters, too \cite{Melicher2016NeuralNetworks}. 
+	
+	% do they work or not?
+	A number of studies have been conducted on the effectiveness of password meters. Ur \etal explored 14 different designs, respectively settings, of password meters \cite{Ur2012HowDoesYourPasswordMeasureUp}: different variations of the ``bar'' visualization, different stringency parameters, suggestions, and nudges. They were able to identify significant differences in passwords strength depending on the meter. Very stringent meters led to stronger passwords. Any kind of visual meter resulted in longer passwords, so text-only feedback is less persuasive. Many participants in their \gls{mTurk} study added another character at the end to receive a higher rating from the meter. Qualitative feedback and usability ratings showed that the stringent meters were unpleasant for many participants, reducing their persuasive power. Egelman \etal investigated context factors in the effectiveness of meters \cite{Egelman2013DoesMyPasswordGoUpToEleven}. They found that password meters seemed to have a greater positive effect on strength, if they were displayed on a site with higher perceived value. Participants in that study did not ``need'' the password meter, but receiving feedback on highly values websites made their importance more available. At the same time they concluded, that the design of the meter plays an insignificant role and that social nudges do not affect strength either. Moreover, both Ur \etal's and Egelman \etal's study showed that memorability was not affected by the meters.
+	
+	
+	
+	%\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
 	
 	%	Shay \etal say that real-time feedback is not part of the password meter \cite{Shay2015SpoonfulOfSugar}
-	
-	History: zxcvbn paper has some intel on early work on proactive password checks (in the 80s) \cite{Wheeler2016zxcvbn}. specifically (from 1995) \cite{Bishop1995ProactivePasswordChecking}
 	
 	
 	pro-active checks -- dictionary checks Shay argues in favor of dictionary checks \cite{Shay2014CanLongPasswordsBeSecureAndUsable} 
@@ -546,10 +554,6 @@ Since secure behavior does not come natural to users, there have been many attem
 	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
 	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
 	
-	be careful not to talk too much about persuasion in this chapter. 
-	
-	We should consider social nudges in usable security, too \cite{DiGioia2005SocialNavigationUsableSecurity}
-	
 	
 	A sudden surge of n-gram scores can be used to detect modifications of common/weak passwords \cite{Tupsamudre2016MarkovStrength}
 	
@@ -557,7 +561,6 @@ Since secure behavior does not come natural to users, there have been many attem
 	
 	passwords created using telepathwords were stronger and still memorable, but some Ps didn't like the idea \cite{Komanduri2014Telepathwords}
 	
-	Password meters from the industry are bad, machine-learning meters are good \cite{Wang2016fuzzyPWM}
 	
 	Users can well estimate the strength of their passwords, and can be nudged to act more securely for important accounts, but not for unimportant stuff \cite{Egelman2013DoesMyPasswordGoUpToEleven}
 	
