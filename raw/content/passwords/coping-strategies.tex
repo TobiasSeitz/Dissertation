@@ -40,7 +40,7 @@ Studies should be ethical and thus transparent for the most part. Hence, the stu
 % give a realistic risk
 Although it appears trivial, Fahl \etal suggest that in this scenario, asking the participants whether they had acted like they normally would is a suitable indicator that helps in weighting the data \cite{Fahl2013EcologicalValidityPasswordStudy}. It is also recommendable to give users a specific scenario that allows them to immerse themselves in the task. Komanduri \etal argue that having participants create passwords for fictional email accounts leads to more authentic behavior \cite{Komanduri2011OfPasswordsAndPeople}.
 % ethical dilemma #2: sharing the collected data. 
-Some users, however, are less protective and provide one of their real passwords regardless of the instruction (e.g. 26.5\% in Fahl \etal's study \cite{Fahl2013EcologicalValidityPasswordStudy}). The result is the same as if the purpose of the study was concealed through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). For example, it can suffice to tell participants a convincing \textit{cover story}, e.g. that the purpose of the study is to do a usability test of a social networking site, which also happens to involve an account setup process. The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers, however, it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Thus, phishing or man in the middle attacks are sometimes carried out. Haque \etal conducted a laboratory study where they told participants a cover story to create new accounts for popular websites \cite{Haque2014Hierarchy}. The websites, however, were re-created by the researchers and stored the passwords on their own servers instead of performing actual registrations. Egelman \etal used a proxy server to intercept traffic between the users and a real online portal \cite{Egelman2013DoesMyPasswordGoUpToEleven}. They also altered the websites to communicate their cover story that the password had expired. This, however, creates an ethical conundrum, if the dataset is published along with the paper. To allow others to verify that research is valid, reliable, and generalizable, a published dataset is desirable, but in Egelman \etal or Haque \etal's study this would put real user accounts at risk.
+Some users, however, are less protective and provide one of their real passwords regardless of the instruction (e.g. 26.5\% in Fahl \etal's study \cite{Fahl2013EcologicalValidityPasswordStudy}). The result is the same as if the purpose of the study was concealed through an act of deception, which is occasionally done in psychology studies (for a discussion see \cite{Tai2012Deception}). For example, it can suffice to tell participants a convincing \textit{cover story}, e.g. that the purpose of the study is to do a usability test of a social networking site, which also happens to involve an account setup process (see \cite{Furnell2017GuidanceCompliance}). The data would be ecologically valid because it removes observer-expectancy and other biases. For the researchers, however, it is extremely difficult to tell ``real'' passwords and ``new'' passwords apart. Thus, phishing or man in the middle attacks are sometimes carried out. Haque \etal conducted a laboratory study where they told participants a cover story to create new accounts for popular websites \cite{Haque2014Hierarchy}. The websites, however, were re-created by the researchers and stored the passwords on their own servers instead of performing actual registrations. Egelman \etal used a proxy server to intercept traffic between the users and a real online portal \cite{Egelman2013DoesMyPasswordGoUpToEleven}. They also altered the websites to communicate their cover story that the password had expired. This, however, creates an ethical conundrum, if the dataset is published along with the paper. To allow others to verify that research is valid, reliable, and generalizable, a published dataset is desirable, but in Egelman \etal or Haque \etal's study this would put real user accounts at risk.
 % ethical dilemma #3: sharing cracking algorithms.
 Much in the same vein, sharing research about successfully attacking passwords produces a similar dilemma. For instance, one can put forward new cracking approaches (e.g. \cite{Marechal2008AdvancesPWCracking, Narayanan2005FastDictionaryAttacks, Schmidt2013Pitfalls, Weir2009PCFG}) that potentially affect common strength metrics (see Section \ref{sec:rw:pw_strength_metrics}) -- but attackers also benefit from this kind of knowledge. From an HCI perspective, one can also unfold how users select passwords, which allows optimizing cracking efficiency \cite{Weir2010MetricsPolicies, Wheeler2016zxcvbn}. 
 
@@ -536,46 +536,55 @@ Since secure behavior does not come natural to users, there have been many attem
 	Balancing all those strategies in a particular design has received much attention in HCI and security research. It is hard to trace back their origins, but proactive password checks have been part of policies since the late 1980s \cite{Wheeler2016zxcvbn}. Bishop and Klein developed the \texttt{pwcheck} command-line tool that was used to give terminal-users feedback on their password selection \cite{Bishop1995ProactivePasswordChecking}. A core challenge is the strength estimation proxy. Websites cannot implement a full-fledged cracking infrastructure just for the sake of password feedback. Thus, proxies and estimators are the go-to method. 
 	
 	% real word inconsistencies - due to bad estimation or different proxies
-	De Carné de Carnavalet and Mannan showed that the estimation algorithms in real-world password meters largely differ \cite{DeCarnedeCarnavalet2015PasswordMeters}. Such inconsistencies, which were also observed by Ur \etal \cite{Ur2012HowDoesYourPasswordMeasureUp}, have high potential to confuse users: if their password is rated ``strong'' on one site, and ``weak'' on another, much explanation is going to be necessary to let the users find out why the ratings differ. Persuasive interventions probably fail at that moment. The authors suggest zxcvbn as the most robust password meter for websites and the KeePass meter as an alternative for offline tools. Others have addressed the issues of industry password meters. Wang \etal developed \textit{fuzzyPSM} based on fuzzy \gls{PCFG}. Melicher implemented their neural network strength estimation in password meters, too \cite{Melicher2016NeuralNetworks}. 
+	De Carné de Carnavalet and Mannan showed that the estimation algorithms in real-world password meters largely differ \cite{DeCarnedeCarnavalet2015PasswordMeters}. Such inconsistencies, which were also observed by Ur \etal \cite{Ur2012HowDoesYourPasswordMeasureUp}, have high potential to confuse users: if their password is rated ``strong'' on one site, and ``weak'' on another, much explanation is going to be necessary to let the users find out why the ratings differ. Persuasive interventions probably fail at that moment. The authors suggest zxcvbn as the most robust password meter for websites and the KeePass meter as an alternative for offline tools. Others have addressed the issues of industry password meters. Wang \etal developed \textit{fuzzyPSM} based on fuzzy \gls{PCFG}. Melicher \etal implemented their neural network strength estimation in password meters, too \cite{Melicher2016NeuralNetworks}. Tupsamudre \etal demonstrated that a sudden surge of n-gram scores can be used to proactively detect modifications of common passwords \cite{Tupsamudre2016MarkovStrength}
 	
 	% do they work or not?
+	\subsubsection{Effective or not?}
 	A number of studies have been conducted on the effectiveness of password meters. Ur \etal explored 14 different designs, respectively settings, of password meters \cite{Ur2012HowDoesYourPasswordMeasureUp}: different variations of the ``bar'' visualization, different stringency parameters, suggestions, and nudges. They were able to identify significant differences in passwords strength depending on the meter. Very stringent meters led to stronger passwords. Any kind of visual meter resulted in longer passwords, so text-only feedback is less persuasive. Many participants in their \gls{mTurk} study added another character at the end to receive a higher rating from the meter. Qualitative feedback and usability ratings showed that the stringent meters were unpleasant for many participants, reducing their persuasive power. Egelman \etal investigated context factors in the effectiveness of meters \cite{Egelman2013DoesMyPasswordGoUpToEleven}. They found that password meters seemed to have a greater positive effect on strength, if they were displayed on a site with higher perceived value. Participants in that study did not ``need'' the password meter, but receiving feedback on highly values websites made their importance more available. At the same time they concluded, that the design of the meter plays an insignificant role and that social nudges do not affect strength either. Moreover, both Ur \etal's and Egelman \etal's study showed that memorability was not affected by the meters.
+	% the ``state of the art''
+	Preliminary work to Ur et al.'s data-driven password meter focused on rhetorics \cite{Eargle2015YouCanDoBetter}
+	Use text feedback to craft more effective password meters, but this depends on the policy used \cite{Ur2017DataDrivenPWMeter}
+	see Figure \ref{fig:rw:cups-meter}
+	
+	\cite{Proctor2002ImprovingAuthenticationProactivePasswordRestrictions}
+	
+	\begin{figure}
+		\includegraphics[width=\linewidth]{rw/cups-meter-1}
+		\caption{\label{fig:rw:cups-meter}}
+	\end{figure}
+	
+	% novel ideas for password meters.
+	\subsubsection{Beyond colorful bars}
+	Visualizing strength is not the only way to design a password meter. Komanduri \etal crafted a sly prototype to tell users their passwords are predictable: their \textit{Telepathwords} system predicts the next character the user is about to type \cite{Komanduri2014Telepathwords}. The rationale of the system is that users do not mindlessly enter a weak password anymore, i.e. that the feedback should activate System 2 thinking processes. Furthermore, realizing that the next character can be automatically guessed might evoke fear appeal and steer people away from predictable passwords. Komanduri \etal evaluated Telepathwords with an \gls{mTurk}-study using a role-playing scenario. They found that password created in the Telepathwords groups outperformed traditional password policies in regard to strength and memorability. However, participants were significantly more annoyed by Telepathwords, perhaps because of the inconvenient truth and fear appeal. Khern-am-nuai \etal measured the persuasiveness of context-based warning messages as part of the password meter \cite{Khern-am-nuai2017ContextBasedMeter}. They found that participants in their \gls{mTurk}-study made significantly more changes to their initial choice when a warning, like ``Weak. We estimate
+	that the password you chose is among the 30,000 weak-est passwords'', was present. However, the study suffered from a few important limitations (e.g. removing all data from users who were unable to log-in after 30 to 60 minutes). Kroeze and Olivier proposed evolving a Pokemon figure as users type to visualize the growth in strength  \cite{Kroeze2012GamifyingAuthentication}. Furnell and Esmael evaluated feedback through emojis and found positive effects on the length of user-selected passwords \cite{Furnell2017GuidanceCompliance}. Afjan \etal allowed users to interactively explore the visualization they had received from the password meter \cite{Aljaffan2017PasswordSecurityVisualizer}. Shay \etal tried to help users select a stronger password through a wizard that explained mnemonic phrase-based passwords \cite{Shay2015SpoonfulOfSugar}. Besides, they compared this strategy to the insertion approach we saw in Forget \etal's persuasive text passwords (PTP) \cite{Forget2008ImprovingPasswordsThroughPersuasion}. Both approaches were generally disliked by the participants, though. 
 	
 	
+	% a different kind of meter: guidance makes policies less annoying / assistance / suggestion
+	Apart from pure strength visualization and persuasive messages, real-time feedback can accompany a password policy. The user sees a list of requirements and as they enter their password, they get feedback on the aspects that have already been fulfilled. Shay \etal found that this kind of feedback can reduce user frustration with policies in general \cite{Shay2015SpoonfulOfSugar}. 
+
+	
+	% summary
+	\subsubsection{Light and Shadow}
 	
 	%\todo{Define what we mean by password meter} Because some papers don't differentiate between the meters, verbal feedback, suggestions, and real-time feedback on policy fulfillment. (this will be good to show with examples from the real world.)
-	
-	%	Shay \etal say that real-time feedback is not part of the password meter \cite{Shay2015SpoonfulOfSugar}
 	
 	
 	pro-active checks -- dictionary checks Shay argues in favor of dictionary checks \cite{Shay2014CanLongPasswordsBeSecureAndUsable} 
 	black lists \cite{Habib2017Blacklists} 
 	
-	spoonful (guidance) \cite{Shay2015SpoonfulOfSugar}
-	\cite{Forget2008ImprovingPasswordsThroughPersuasion}
 	
 	
-	A sudden surge of n-gram scores can be used to detect modifications of common/weak passwords \cite{Tupsamudre2016MarkovStrength}
-	
-	\cite{Aljaffan2017PasswordSecurityVisualizer} makes them more interactive
-	
-	passwords created using telepathwords were stronger and still memorable, but some Ps didn't like the idea \cite{Komanduri2014Telepathwords}
 	
 	
-	Users can well estimate the strength of their passwords, and can be nudged to act more securely for important accounts, but not for unimportant stuff \cite{Egelman2013DoesMyPasswordGoUpToEleven}
 	
-	Meters have a small effect on password strength, but slightly annoy people and it doesn't really matter how they look \cite{Ur2012HowDoesYourPasswordMeasureUp}
 	
-	Preliminary work to Ur et al.'s data-driven password meter \cite{Eargle2015YouCanDoBetter}
-	Use text feedback to craft more effective password meters, but this depends on the policy used \cite{Ur2017DataDrivenPWMeter}
+
 	
-	If you tell people how long it will take to crack their password, they are more likely to read your recommendations and modify their password \cite{Vance2013FearAppeals}
+	If you tell people how long it will take to crack their password, they are more likely to read your recommendations and modify their password \cite{Vance2013FearAppeals} time to crack already in \cite{Yee2006Passpet} for master password in PWM
 	
 	Password meters score the same password very inconsistently and don't explain their scoring, and it seems the Dropbox meter is one of the better solutions \cite{Carnavalet2014AnalyzingPWStrengthMeters}
 	
 	the presentation of password requirements can affect usability and security, because it can prevent errors and speed up selection for some stricter policies \cite{Shay2015SpoonfulOfSugar}
-	
-	time to crack already in \cite{Yee2006Passpet} for master password in PWM
 	
 	%\subsection{Suggestion}
 	%\cite{Forget2008ImprovingPasswordsThroughPersuasion}
