@@ -164,21 +164,21 @@ Data collection started in December 2016 and the first data dump was created in 
 The 115 users played 242 full games in total. Thus, on average, a user played 2.1 full games (SD=2.3, Min = 1, Max 16).
 The time pressure motivated users to rate as many passwords as possible. We found that an average of 24.44 passwords (SD=10.39) were rated per game, which amounts to 5915 passwords rated. Users spent $\approx$ 2.45 seconds per estimation on average. The zxcvbn strength estimates were fairly consistent within each condition (see Figure \ref{fig:pasdjo:zxcvbn-score-distribution}). Random passwords consistently received a score of 4 our of 5. Common passwords were either rated with 1 or 2. Passwords in the Mangled condition filled the full spectrum of ratings, but the majority had a score of 2. Interestingly, passphrases were the least predictable condition. From $n = 1414$ passphrases, 25.03\% received a score of 3, and 74.54\% a score of 4. The remaining eight passphrases were deemed weaker with a score of 2, e.g. \texttt{soilwithin} or \texttt{augsburgtime}, but it is not clear why this was the case (perhaps because one of the words had a very low guess number). However, the vast majority of passphrase-scores are explicable with the number of characters. For the users, the length of the passphrase is then the only criterion to decide between a score of 3 and 4. 
 
-Moreover, from the distribution in Figure \ref{fig:pasdjo:zxcvbn-score-distribution} we can observe that in most cases, the maximum deviation $D_{max}$ less than 4: $D_{max} = 3$ in 5420 cases, and $D_{max} = 2$ in 410 cases. In other words, the user's estimate deviates by \textit{at most} 3 score points in 98.56\% of cases. At the same time, it is difficult to \textit{under}estimate passwords that had already received a low score. This narrows interval of the expectancy value for common and mangled passwords, i.e. users are more likely to \textit{over}estimate these -- if at all. These two findings motivate taking the absolute value of the deviation and create an overall accuracy score for each game played, just like we did.
-
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.9\linewidth]{pasdjo/score-distribution-all}
 	\caption{\label{fig:pasdjo:zxcvbn-score-distribution} Distribution of zxcvbn scores for N=5915 passwords collected in the first four months of deployment (1 = weak, 5 = strong). Random passwords were the most stable condition with consistent score of 4. Mangled passwords show a range of 1 to 5, but passphrases were least predictable.}
 \end{figure}
 
-%What data did we throw out and why? how much of the dataset is that?
+Moreover, from the distribution in Figure \ref{fig:pasdjo:zxcvbn-score-distribution} we can observe that in most cases, the maximum deviation $D_{max}$ less than 4: $D_{max} = 3$ in 5420 cases, and $D_{max} = 2$ in 410 cases. In other words, the user's estimate deviates by \textit{at most} 3 score points in 98.56\% of cases. At the same time, it is difficult to \textit{under}estimate passwords that had already received a low score. This narrows interval of the expectancy value for common and mangled passwords, i.e. users are more likely to \textit{over}estimate these -- if at all. These two findings motivate taking the absolute value of the deviation and create an overall accuracy score for each game played, just like we did. 
 
-\subsubsection{Results}
-here we report on the findings as discussed in the OzCHI paper.
+%What data did we throw out and why (known accounts)? how much of the dataset is that?
+
+\subsubsection{``First Game'' Statistics}
+A player's first game is vital for the assessment of their pre-existing strength perceptions in different conditions. After the first game, learning effects induced by our feedback are likely to change their subsequent judgments. Therefore, the first game is the most valuable indicator of mental models of password strength. In their first game, players achieved an average score of 2010 points (SD=653.16, Min=350, Max=3675). On average, they rated 27.21 passwords in their first game (SD=8.34), which is more than in later games, but not significantly ($t_{32}(2) = 1.13, p > 0.1, 95\%-CI = [-2.04;7.12]$).%created with JASP and file first-vs-sub-rounds-played
 
 
-
+%here we report on the findings as discussed in the OzCHI paper.
 
 \subsection{Extended Sample and Results}
 %TODO consider running another test a year afterwards.
@@ -198,7 +198,10 @@ here we report on the findings as discussed in the OzCHI paper.
 The time pressure and lead to users only spending 2.45 seconds on average per password. Can we assume that this indicates System 1 responded?
 
 \subsection{Passphrases}
-If you correctly identify a passphrase, you still need to count the number of characters to make a more informed decision about the strength estimation. The time pressure kept users from doing just that so we can 
+If you correctly identify a passphrase, you still need to count the number of characters to make a more informed decision about the strength estimation. The time pressure kept users from doing just that so we can safely assume that passphrases were rated very intuitively %TODO it would be possible to merge this section with the one above. 
+
+\subsection{Changing users' mental models with PASDJO}
+The learning effects clearly indicate that users learned assessing password strength after playing PASDJO. This makes us wonder if deploying such a game in different contexts, potentially in even shorter forms could effectively educate users. 
 
 \section{Limitations}
 \begin{itemize}
