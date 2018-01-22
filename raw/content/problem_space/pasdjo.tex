@@ -138,7 +138,7 @@ Last, ethically running password studies (see Section \ref{sec:rw:methodology}) 
 \subsection{Implementation}
 For the implementation, we used modern web technologies to create a state-of-the-art user experience. The front-end uses the polymer library\footurl{https://www.polymer-project.org/}{22.01.2018}. \textit{Custom elements}, which were recently standardized in the WebComponents standard\footurl{https://www.webcomponents.org/specs}{22.11.2018}, serve to separate concerns through encapsulation. On the back-end, we rely on the Firebase platform\footurl{https://firebase.google.com/}{22.01.2018}. It allows setting up an easy and secure authentication, respectively authorization, workflow. Moreover, the data is stored in a \textit{real-time-database} that uses fast web-socket connections to synchronize data between client and servers.
 
-\begin{figure}[hbp]
+\begin{figure}[!tbp]
 	\centering
 	\begin{subfigure}[t]{0.3\linewidth}
 		\includegraphics[width=\textwidth]{pasdjo/welcome-iphone-frame}
@@ -175,7 +175,28 @@ Moreover, from the distribution in Figure \ref{fig:pasdjo:zxcvbn-score-distribut
 %What data did we throw out and why (known accounts)? how much of the dataset is that?
 
 \subsubsection{``First Game'' Statistics}
-A player's first game is vital for the assessment of their pre-existing strength perceptions in different conditions. After the first game, learning effects induced by our feedback are likely to change their subsequent judgments. Therefore, the first game is the most valuable indicator of mental models of password strength. In their first game, players achieved an average score of 2010 points (SD=653.16, Min=350, Max=3675). On average, they rated 27.21 passwords in their first game (SD=8.34), which is more than in later games, but not significantly ($t_{32}(2) = 1.13, p > 0.1, 95\%-CI = [-2.04;7.12]$).%created with JASP and file first-vs-sub-rounds-played
+A player's first game is vital for the assessment of their pre-existing strength perceptions in different conditions. After the first game, learning effects induced by our feedback are likely to change their subsequent judgments. Therefore, the first game is the most valuable indicator of mental models of password strength. In their first game, players achieved an average score of 2010 points (SD=653.16, Min=350, Max=3675), which translated to an average accuracy of 74.58 per cent of the achievable points. Moreover, players rated 27.21 passwords in their first game (SD=8.34), which is more than in subsequent games, albeit not significantly ($t_{32}(2) = 1.13, p > 0.1, 95\%-CI = [-2.04;7.12]$).%created with JASP (first-vs-sub-rounds-played.csv)
+The first games consisted of 6.9 Common (25.3\%), 6.8 Mangled (25\%), 7.2 Random passwrods (26.5\%), and 6.3 Passphrases (23.2\%). The conditions were thus evenly distributed (\statsgt{3}{2.36}{0.05}). 
+
+%\paragraph{Accuracy Breakdown}
+As a next step, we can evaluate the achieved accuracy for each player in each condition. Since four users of did not rate at least two passwords in each condition, we remove their data and maintain a sample of N=111 users. Non-parametric tests are used to account for the coarse password ratings (1 through 5). 
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\linewidth]{pasdjo/deviation-viz}
+	\caption{\label{fig:pasdjo:deviation-viz} Average user ratings in each of the four conditions, plotted alongside mean zxcvbn scores. Users' estimations were least accurate for passphrases, which they had rated 1.4 points lower than zxcvbn.}
+\end{figure}
+
+In their first game, players showed fairly consistent inaccuracies (see Figure \ref{fig:pasdjo:deviation-viz}) . Mangled passwords were the only condition that was overestimated (estimated median deviation $Md=0.5$). Interestingly, common passwords were underestimated slightly, although there was little room for underestimation ($Md=-0.5$). Random passwords were also underestimated by about half a point ($Md=-0.5$). The users in this data set rated passphrases exceptionally low ($Md = -1.6$). A Friedman rank-sum test showed significant significant differences for the deviations across the four conditions (\statslt{3}{187.84}{0.001}). We followed up this finding with Bonferroni-corrected post-hoc tests, i.e. $\alpha_{Bonf}=0.008$. Wilcoxon paired sample tests revealed significantly different deviations between all pairs of conditions, except for the common/random pair. In other words, common and random passwords were equally inaccurately assessed by the users. 
+
+\subsubsection{Score Development}
+From the 115 users who finished one game, 33 kept on playing for at least one more game. We tried to model their progress through a linear regression with gameIndex as predictor and achieved percentage as dependent variable. To account for the fact that some users played more rounds per game, we weighted the percentage with the number of passwords rated in that game. The model shows that players were able to improve their accuracy significantly by playing multiple times (F(1)=49.37, \pvallt{0.001}, $\beta$ = 0.54, $R^2_{adj}$ = 0.23). Figure \ref{fig:pasdjo:percent-evolution} visualizes the progress of users who played at least twice. In there, it is also evident that the slope is not stringent, i.e. an individual user's accuracy does not necessarily increase steadily. We attribute this to the element of randomness in the game, which makes it more difficult in some cases to rate the passwords, while it might be easier in the subsequent game. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{pasdjo/percent-evolution-reg-multi}
+	\caption{\label{fig:pasdjo:percent-evolution} Achieved percentage (accuracy) evolution depending on the number of games played. Each dot represents a full game of a user, the size of the dot indicates how many passwords were rated in that particular game. Although a linear model works, we used a locally weighted polynomial regression (LOESS) to fit a line through the data points. Users clearly become better the more they play.}
+\end{figure}
 
 
 %here we report on the findings as discussed in the OzCHI paper.
