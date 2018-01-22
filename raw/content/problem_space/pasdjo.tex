@@ -37,6 +37,7 @@ The specific research questions for this project were as follows:
 \begin{itemize}
 \item[RQ1] How well can users identify weak and strong passwords?
 \item[RQ2] What types of password topologies lead to the most errors?
+% maybe can we corroborate Ur \etal's findings in a cheaper and more engaging way? 
 \end{itemize}
 
 
@@ -57,9 +58,7 @@ The game is relatively simple: Players judge how strong or weak a given password
 \subsubsection{Scoring and Metrics}
 A crucial point of the game is how the passwords are rated objectively. Here, we rely on the zxcvbn library\footnote{\url{https://github.com/dropbox/zxcvbn}} (described in detail in Section \ref{sec:rw:pw_strength_metrics}) because it is highly reliable and straightforward to use on a web page. It also comes with a number of word lists that are helpful to implement different scenarios, respectively conditions. Beside the guess-number metric, zxcvbn also scores passwords on a scale from zero (weak) to four (strong). We translate this scale to one star (weak) to five stars (strong) in the game. 
 
-For a correct estimation -- ``correct'' in the sense that zxcvbn comes to the same strength estimation -- a player is awarded 100 points. The difference between the user's rating and the zxcvbn score is  the \textbf{\textit{deviation}} ($D$). A player's rating can deviate by at most four stars, e.g. if they rate a five-star password with a score of one and vice versa. In that case, the player should not get any points, but in all other cases, the player is still awarded fewer points. For each integral deviation in either direction there is a penalty of 25 minus-points (maximum of 100 points, at most 4 errors, which leads to $100 / 4 = 25$). The points of the estimations are summed up and build the \textbf{\textit{achieved}} score ($A$). As an overall accuracy measure, at the end of the game we calculate the ratio of achieved and possible points and display it as percentage ($P$). 
-
-The game thus implements the following scoring function, where $U$ is the user's estimation on a scale from 1 to 5, $Z$ is the zxcvbn score on the same scale, and $n$ is the number of passwords a user has rated within the time limit. 
+For a correct estimation, a match between zxcvbn score and the player's score, a player is awarded 100 points. The difference between the user's rating and the zxcvbn score is the \textbf{\textit{deviation}} ($D$). A player's rating can deviate by at most four stars, e.g. if they rate a five-star password with a score of one and vice versa. In that case, the player should not get any points, but in all other cases, the player is still awarded fewer points. For each integral deviation in either direction there is a penalty of 25 minus-points (maximum of 100 points, at most 4 errors, which leads to $100 / 4 = 25$). The points of the estimations are summed up and build the \textbf{\textit{achieved}} score ($A$). As an overall accuracy measure, at the end of the game we calculate the ratio of achieved and possible points and display it as percentage ($P$). The game thus implements the following scoring function, where $U$ is the user's estimation on a scale from 1 to 5, $Z$ is the zxcvbn score on the same scale, and $n$ is the number of passwords a user has rated within the time limit. 
 
 \noindent The scoring function takes an array of user ratings and zxcvbn scores for $n$ passwords and returns a vector consisting of the achieved points $A$ and accuracy metric $P$.
 \[
@@ -89,30 +88,23 @@ The score and accuracy are displayed to the users once the game is finished, see
 \end{figure}
 
 \subsubsection{Persuasive Design Elements}
-discuss: 
-
-low barrier to play the game: easy to understand, only takes one minute (persuasive weapon: commitment, small favors)
-motivation: you might learn something or you can evaluate if your knowledge is correct (persuasive weapon: authority zxcvbn tells you what's correct) and discuss with other people. you can challenge your assumptions. 
-
-we could also argue with Fogg Behavior model. 
-
-%TODO Persuasive patterns (re Nicolas' comment at OzCHI)
+We used a number of persuasive techniques (see Section \ref{sec:rw:persuasive-interventions}) in the design of the game. Most of them relate to the \acrlong{PAF} \cite{Forget2007PersuasionEducationSecurity}. First of all, we lower the barrier to play the game through \textit{simplification}: the task is immediately clear and does not require special skills. Since one round only takes sixty seconds, it is easier for users to \textit{commit} to finish the game. The feedback screen uses positive \textit{language} to create the notion of a \textit{social interaction}, which also serves \textit{self-monitoring}. Also, feedback and points serve as \textit{reinforcement} for correct ratings, i.e. a subtle form of \textit{conditioning}. Moreover, the user interface is \textit{tailored} to the user, as they can see their own previous scores. If they log in, their profile picture and a personal greeting \textit{personalize} their experience. Through the player's eyes, the game's strength ratings are ``right'', which can be attributed to the \textit{authority} principle. Finally, the game leverages the \textit{goal-gradient effect} by giving the player small amounts of points even for inaccurate estimations. At the end, the player receives a score that seems improvable through playing another round. 
 
 \subsection{Password Generation and Study Conditions}
 \makeatletter
 PASDJO initially had four different password types that act as levels of the independent variable: Common passwords, mangled passwords, passphrases, and random passwords. During gameplay, the condition for the next password was selected at random. The following paragraphs depict the conditions in detail. 
 
 
-\textbf{Common passwords: } We take the word lists that come with the zxcvbn library. One of these lists contains 47023 leaked passwords ordered by frequency, from which we randomly pick one for this condition. The data stems from breaches of user databases at RockYou, Yahoo and Xato \cite{Wheeler2016zxcvbn}. All passwords are lower-case and can be considered weak, because they are usually amongst the first attempts in a guessing attack \cite{Ur2015MeasuringRealWorldAccuracies} unless the adversary launches a targeted attack where personal information plays a more important role. Zxcvbn rates the top 1000 passwords with a score of 1 (e.g. ``12345'', ``password'', ``monkey''), and the remaining passwords are scored with two stars (e.g. ``iloveyou2'', ``skywalker'', ``apollo13''). It is worth noting that many of these passwords would not be accepted anymore by websites as common policies demand at least 8 characters (see Chapter \ref{chap:policies-reuse}), which RockYou and Xato did not enforce at the time. %TODO the last remark could go somewhere else. 
+\paragraph{Common passwords: } We take the word lists that come with the zxcvbn library. One of these lists contains 47023 leaked passwords ordered by frequency, from which we randomly pick one for this condition. The data stems from breaches of user databases at RockYou, Yahoo and Xato \cite{Wheeler2016zxcvbn}. All passwords are lower-case and can be considered weak, because they are usually amongst the first attempts in a guessing attack \cite{Ur2015MeasuringRealWorldAccuracies} unless the adversary launches a targeted attack where personal information plays a more important role. Zxcvbn rates the top 1000 passwords with a score of 1 (e.g. ``12345'', ``password'', ``monkey''), and the remaining passwords are scored with two stars (e.g. ``iloveyou2'', ``skywalker'', ``apollo13''). It is worth noting that many of these passwords would not be accepted anymore by websites as common policies demand at least 8 characters (see Chapter \ref{chap:policies-reuse}), which RockYou and Xato did not enforce at the time. %TODO the last remark could go somewhere else. 
 
 
-\textbf{Mangled passwords: } For the mangled password condition, we take the same list of the top 47023 passwords, but we algorithmically substitute certain characters. The substitutions look like ``leet''  / ``l33t'' speak, which is a typical way to try to increase password strength \cite{Das2014TangledWeb, Mazurek2013Measuring}. For instance, an ``a'' is replaced by an ``\@'', or an ``s'' is substituted with the dollar sign ``\$''. Also, random characters are transformed to uppercase. To allow recognizing the original word, we only mangle up to 30\% of the characters of the password. Since we only use substitutions that zxcvbn recognizes, mangled passwords mostly receive a score of two. However, in rare occasions, they occupy the full range, i.e., ``p@ssw0rd'' (1), ``b0n3he@d'' (2), ``fireFI9hter'' (3), ``123qaz456w\$x'' (4), ``123Q@z4s6w\$x'' (5). 
+\paragraph{Mangled passwords: } For the mangled password condition, we take the same list of the top 47023 passwords, but we algorithmically substitute certain characters. The substitutions look like ``leet''  / ``l33t'' speak, which is a typical way to try to increase password strength \cite{Das2014TangledWeb, Mazurek2013Measuring}. For instance, an ``a'' is replaced by an ``\@'', or an ``s'' is substituted with the dollar sign ``\$''. Also, random characters are transformed to uppercase. To allow recognizing the original word, we only mangle up to 30\% of the characters of the password. Since we only use substitutions that zxcvbn recognizes, mangled passwords mostly receive a score of two. However, in rare occasions, they occupy the full range, i.e., ``p@ssw0rd'' (1), ``b0n3he@d'' (2), ``fireFI9hter'' (3), ``123qaz456w\$x'' (4), ``123Q@z4s6w\$x'' (5). 
 
 
-\textbf{Random passwords: } We implemented a simple string generation algorithm to create random passwords. They are lowercase alphanumeric passwords containing letters from the German alphabet, i.e. [a-z0-9äöü]. Zxcvbn consistently gives them a score of four, which makes them easy to rate. In a real-world attack they can only be brute-forced \cite{Florencio2014AdministratorsGuide, Wheeler2016zxcvbn}.
+\paragraph{Random passwords: } We implemented a simple string generation algorithm to create random passwords. They are lowercase alphanumeric passwords containing letters from the German alphabet, i.e. [a-z0-9äöü]. Zxcvbn consistently gives them a score of four, which makes them easy to rate. In a real-world attack they can only be brute-forced \cite{Florencio2014AdministratorsGuide, Wheeler2016zxcvbn}.
 
 
-\textbf{Passphrases: } We combine two entries from the English Wikipedia index to create a passphrase (also shipped with zxcvbn). The words were required to be between 4 and 11 characters long. This restriction leads to a dictionary size of 27202 entries. Thus, there are $27202^2 \approx 10^9$ possible combinations, which is unpredictable enough to withstand online guessing attacks. This is reflected by the rather high scores: zxcvbn gives passphrases mostly a score of three or four, e.g. ``armedtamils'' (3), ``boostedeuros'' (4). If the words appear in other dictionaries, e.g. the ``TV subtitles'' word list, they are more likely to result in a score of three. However, for a user it is not straight-forward to tell whether a passphrase scores three or four points, which makes this condition harder to get right. 
+\paragraph{Passphrases: } We combine two entries from the English Wikipedia index to create a passphrase (also shipped with zxcvbn). The words were required to be between 4 and 11 characters long. This restriction leads to a dictionary size of 27202 entries. Thus, there are $27202^2 \approx 10^9$ possible combinations, which is unpredictable enough to withstand online guessing attacks. This is reflected by the rather high scores: zxcvbn gives passphrases mostly a score of three or four, e.g. ``armedtamils'' (3), ``boostedeuros'' (4). If the words appear in other dictionaries, e.g. the ``TV subtitles'' word list, they are more likely to result in a score of three. However, for a user it is not straight-forward to tell whether a passphrase scores three or four points, which makes this condition harder to get right. 
 
 \vspace*{2ex}
 For the remainder of the chapter we refer to these four condition as ``Common'', ``Mangled'', ``Random'', and ``Passphrase''.
@@ -131,22 +123,30 @@ Since the game was deployed publicly, the method can be denoted as an unsupervis
 \noindent\textbf{Randomization and password space} Ur \etal's study was designed well in that it tested a wide range of password characteristics and there were multiple options per condition. However, the options were predefined by the researchers and limited in that sense. In our case, we can pick passwords from much larger word-lists at random and use algorithms to randomly adjust certain characteristics. This allows for higher internal validity of the data collection.
 
 \vspace*{1ex}
-\noindent\textbf{Intrinsic Motivation} The game is 
+\noindent\textbf{Intrinsic Motivation} Participants in an online survey often receive an incentive to participate. In an \gls{mTurk}-studie each participant receives a small amount of money. Contrarily, there is no extrinsic incentive to play PASDJO. 
+
+\vspace*{1ex}
+\noindent\textbf{Intuition} The game uses time pressure to induce intuitive responses. Thus, if playing fast enough, we expect to measure System 1's responses instead of System 2 \cite{Kahnemann2011FastAndSlow}. This is vital because password selection is often a System 1 process, i.e. an intuitive and automatic. In an online survey, the participants can take as much time as they'd like to reason about their response. However, this is a hypothetic benefit that needs further empirical evidence. 
 
 \subsubsection{Drawbacks}
+The game approach to collecting password strength perceptions naturally entails drawbacks, too. First and foremost, we do not collect demographic data. In a survey, it is common practice to include questions about basic demographic information. If we included such questions as part of our game, we might have scared off users and damaged persuasive strategies. Thus, the collected data stems from an unknown population, which is a limitation. %TODO maybe add a sentence why it is still good to collect the data.
 
-Lack of demographics
+Furthermore, the lack of demographic data also makes it hard to track usage across multiple devices. The same player could first get in touch on a desktop and then later decide to keep playing on their mobile. Allowing users to log in and synchronize their game history can mitigate this problem to some degree.
 
-playing on multiple devices is hard to trace
-
-disclaimers are somewhat hidden as a trade off of lowering the barrier to play the game
+Last, ethically running password studies (see Section \ref{sec:rw:methodology}) demands that participants be debriefed appropriately. In our case, we provide a separate ``About'' page that is accessible from anywhere in the app. Nevertheless, it requires that users seek this information, which -- realistically -- only few people might do. 
 
 \subsection{Implementation}
-polymer firebase webpage PWA 
-UX considerations: load quickly, run offline and large data transfer (mobile first paradigm), disclaimers
+For the implementation, we used modern web technologies to create a state-of-the-art user experience. The front-end uses the polymer library\footurl{https://www.polymer-project.org/}{22.01.2018}. \textit{Custom elements}, which were recently standardized in the WebComponents standard\footurl{https://www.webcomponents.org/specs}{22.11.2018}, serve to separate concerns through encapsulation. On the back-end, we rely on the Firebase platform\footurl{https://firebase.google.com/}{22.01.2018}. It allows setting up an easy and secure authentication, respectively authorization, workflow. Moreover, the data is stored in a \textit{real-time-database} that uses fast web-socket connections to synchronize data between client and servers.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{pasdjo/welcome-iphone-frame}
+\end{figure}
+
+We took user experience heuristics to design the game for a large audience. Among others, we based our solution on the Progressive Web-App heuristics\footurl{https://developers.google.com/web/progressive-web-apps/checklist}{22.01.2018}, which we hoped would lower the barrier to engage with the game. Since we expected many people from Germany would play the game, the interface is fully localized. Depending on the browser language, it automatically picks the preferred language. Moreover, the interface is responsive to different screen sizes to provide a seamless experience. We chose a short URL \url{pasdjo.de} to facilitate visiting the website from mobile devices where typing is cumbersome. Upon visiting the web page, a welcome screen briefly explains the rules. As part of our onboarding process, we give users the opportunity to try out the rating interface, so they can get comfortable even before they play for the first time. For mobile users, we had to ensure that the game loads quickly. This is challenging, because we have to transfer a number of word lists to generate the passwords randomly. Therefore, we used a lazy-loading design pattern to render the UI first and load data in the background. At the same time, we minimize and compress the source files to reduce data transfers. The first page load consumes 1.6 MB of data. To ensure subsequent visits are faster and do not stress the user's mobile quota, a \textit{service-worker} caches resources in the background. It intercepts requests to the remote server in the future and instead serves local resources\footnote{This is an erratum in our original publication, where we reported using IndexedDBs}. This strategy reduces the transfer size for subsequent requests to a mere 10.3 KB, which are mostly consumed by authentication and incremental synchronization. 
 \section{Log Analysis}
 
-\subsection{Sample}
+\subsection{First Sample}
 
 December 2016 until March 2017
 two important events: Open Lab Day of our research group and student orientation day at LMU central
@@ -154,8 +154,12 @@ Thus, it is likely that most players were students or in academia.
 
 What data did we throw out and why? how much of the dataset is that?
 
-\subsection{Results}
 
+
+\subsection{Results}
+here we report on the findings as discussed in the OzCHI paper.
+
+\subsection{Extended Sample and Results}
 %TODO consider running another test a year afterwards.
 
 
