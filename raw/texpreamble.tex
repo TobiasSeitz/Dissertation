@@ -25,13 +25,14 @@
 %Stats
 \newcommand{\statslt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$<$~#3}
 \newcommand{\stats}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$=$~#3}
+\newcommand{\statsgt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$=$~#3}
 \newcommand{\pval}[1]{\textit{p}~$=$~#1}
 \newcommand{\pvallt}[1]{\textit{p}~$<$~#1}
 \newcommand{\mean}[2]{\textit{m}~$=$~#1, \textit{sd}~$=$~#2}
 \newcommand{\meant}[2]{\textit{m}$=$#1 \textit{sd}$=$#2}
 \newcommand{\meanonly}[1]{\textit{m}~$=$~#1}
 \newcommand{\median}[1]{\textit{median}~$=$~#1}
-
+\newcommand{\average}{average:\xspace}
 %tables and figures
 \newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
 \newunicodechar{✓}{\ding{51}}
@@ -51,7 +52,13 @@
 \newcommand{\la}[1]{\textit{(last accessed #1)}}
 \newcommand{\lastaccess}[1]{\textit{(last accessed #1)}}
 \newcommand{\footurl}[2]{\footnote{\url{#1} \lastaccess{#2}}}
-\newcommand{\average}{average:\xspace}
+%alternative approach: try if time:
+%\newcommand{\footurl}[2]{
+%	\bibitem{#1}~, \url{http://en.wikipedia.org/wiki/Business_logic_layer}, #2.
+%	\cite{#1}
+%}
+
+
 \newcommand{\etal}{et al.\xspace}
 \newcommand{\todo}[1]{\textcolor{pinkaccent}{\textbf{@TODO} {#1}}}
 \newcommand{\ar}{\textcolor{pinkaccent}{\textbf{@ref}}}
@@ -94,3 +101,5 @@
 \titlespacing*{\section}{0pt}{1cm}{0.75cm}
 \titlespacing*{\subsection}{0pt}{0.75cm}{0.5ex}
 \titlespacing*{\subsubsection}{0pt}{0.75cm}{0.5ex}
+
+\raggedbottom
