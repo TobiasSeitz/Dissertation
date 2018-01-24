@@ -1,0 +1,147 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage{booktabs}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc} % writing of äöüß possible, instead of "a"o"u"s
+\usepackage[utf8]{inputenc} % for a UTF8 editor only
+\usepackage{pifont}
+\usepackage{newunicodechar}
+\usepackage{graphicx}
+\usepackage{mathptmx} % font times-roman for math. Formulas, bullets, etc.
+\usepackage{fancyhdr} % chapternames at top of page
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{sectsty}
+\usepackage[ngerman,english]{babel}\selectlanguage{english}
+\usepackage{makeidx} % allows for an index
+%\usepackage{subfigure} % enable subfigures
+\usepackage[nottoc,notindex]{tocbibind} % include bib in toc
+\usepackage[subfigure]{tocloft}
+\usepackage{ifthen} % allow sophisticated control structures
+\usepackage{substr} % allows substring detection
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{subcaption} %to have subfigures available
+\usepackage[svgnames,table]{xcolor}
+\usepackage{rotating}
+\usepackage{glossaries}
+\usepackage{float}
+\newcommand{\citep}[1]{\cite{#1}} %convenience for texmaker, but texstudio doesn't have this problem. 
+\usepackage[hyphens]{url}
+\usepackage[top=2cm, bottom=1.25in, left=2cm, right=2cm]{geometry}
+
+%COLORS
+\usepackage{xcolor}
+%\definecolor{platinum}{HTML}{E5E4E2}
+%\colorlet{diagrambg}{platinum}
+
+\makeindex
+
+
+
+\usepackage{titlesec} % format the chapters etc.
+
+\include{texpreamble} % load additional stuff, but no packages!
+% link colorings: 
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref} % do this after texpreamble so that we have the colordefinitions
+\setcounter{tocdepth}{1}
+
+\include{glossary}
+\makeglossaries
+
+\begin{document}
+	
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+
+% ################################################### MAIN PART
+\input{content/introduction/intro}
+\part{AUTHENTICATION ON THE WEB}
+\label{part:related_work}
+
+%\input{content/introduction/contribution}
+%\input{content/introduction/overview}
+
+% Background and Related Work
+\input{content/passwords/intro}
+\input{content/passwords/passwords}
+
+\input{content/passwords/coping-strategies}
+
+% merged with user perspective \input{content/persuasion_usec/persuasion_usec}
+
+\input{content/passwords/pw-summary}
+
+%\input{content/passwords/selection}
+
+%\input{content/passwords/downfall-of-passwords}
+
+
+\part{EVALUATING THE PROBLEM}
+\label{part:problem_space}
+% motivate that it's still important to do this, because we don't already
+% know everything from related work. 
+\input{content/problem_space/pasdjo} %published
+%\input{content/problem_space/auth_tasks} % can go 
+\input{content/problem_space/mm_pwm} %published
+\input{content/problem_space/policies_reuse} %published
+\input{content/influence_strategies/pws_and_personality} %published (short paper at Persuasive)
+%\input{content/problem_space/roskilde_study}
+%\input{content/problem_space/keystrokes_reuse}
+
+
+% DESIGN SPACE
+\part{PERSUASIVE DESIGN STRATEGIES}
+\label{part:design_space}
+%\input{content/influence_strategies/intro}
+\input{content/influence_strategies/redesigning_feedback}
+\input{content/influence_strategies/emojipasswords} %published
+
+\input{content/influence_strategies/decoy} %published
+%TODO put this into the final discussion at the end.
+%\input{content/influence_strategies/side_effects} 
+
+
+\part{SYNTHESIS}
+\label{part:synthesis_conclusion}
+\input{content/synth_pst/pst-intro}
+\input{content/synth_pst/pwrm}
+\input{content/synth_pst/ideas}
+%\input{content/synth_pst/policy-fulfillment}
+%\input{content/synth_pst/coping-strategies}
+\input{content/conclusion/summary}
+\input{content/conclusion/limitations_future}
+\input{content/conclusion/end_sermon}
+
+% ################################################### MAIN PART
+
+%____________________________________________________________
+\cleardoublepage
+
+%____________________________________________________________
+
+\backmatter
+
+%____________________________________________________________
+
+\printindex
+\glsaddall
+\printglossaries
+
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+\bibliographystyle{SIGCHI-Reference-Format}
+%\bibliographystyle{acm-sigchi-modern}
+\bibliography{library}
+
+
+\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Index}
+%\printindex
+
+
+\end{document}
