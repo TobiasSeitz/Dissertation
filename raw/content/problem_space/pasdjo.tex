@@ -110,7 +110,7 @@ PASDJO initially had four different password types that act as levels of the ind
 \vspace*{2ex}
 For the remainder of the chapter we refer to these four condition as ``Common'', ``Mangled'', ``Random'', and ``Passphrase''.
 
-\subsection{Benefits and Shortcomings of the Game-based Approach}
+\subsection{Benefits and Shortcomings of the Game-based Approach}\label{sec:pasdjo:beneftis_shortcomings_method}
 Since the game was deployed publicly, the method can be denoted as an unsupervised in-the-wild study. This approach has certain benefits and shortcomings as discussed in the following. 
 
 \subsubsection{Benefits}
@@ -270,24 +270,32 @@ We also re-calculated the users' average accuracy in each condition, again only 
 The time pressure and lead to users only spending 2.45 seconds on average per password. Can we assume that this indicates System 1 responded?
 
 \subsection{Passphrases}
+% passphrases were hard to estimate. 
 If you correctly identify a passphrase, you still need to count the number of characters to make a more informed decision about the strength estimation. The time pressure kept users from doing just that so we can safely assume that passphrases were rated very intuitively %TODO it would be possible to merge this section with the one above. 
+
+% system generated passphrases vs user-generated passphrases.
 
 \subsection{Changing users' mental models with PASDJO}
 The learning effects clearly indicate that users learned assessing password strength after playing PASDJO. This makes us wonder if deploying such a game in different contexts, potentially in even shorter forms could effectively educate users. 
 
 \section{Limitations}
-\begin{itemize}
-	\item were already addressed in new versions of the game. 
-	\item used as an activity at Google	
-\end{itemize}
+We discussed the most important limitations regarding the methodology in Section \ref{sec:pasdjo:beneftis_shortcomings_method}. Therefore, we focus on the limitations in the data and test results in this section. 
 
+% clustering of dates around events -- see figure with time line histogram
+From Figure \ref{fig:pasdjo:games-1y}, it is evident that most games were played at special events at the university or at conferences. Therefore, we can safely assume that our sample consists mostly of students, their peers, and academics. Thus, we must be careful not to expect the same strength assessment from other user groups or larger populations. Nonetheless, many players in our one-year trial might not have a background in cybersecurity and thus, we are confident that the sample still represents a useful cross-section of a diverse enough population. Plus, the data was collected in the wild, which further increases its ecological validity. 
+
+% version bump
+Moreover, version 2 introduced a number of improvements that would have been nice-to-have already in the earlier version. Still, in the first version, the different conditions were easier to tell apart. Thus, causal effects are easier to isolate. 
+
+% zxcbn!
+Finally, the strength ratings in PASDJO are solely based on zxcbn scores. While it is a state-of-the-art metric (see Section \ref{sec:rw:zxcbn}), other metrics might model real-world attacks better in some situations. For instance, we could have chosen Melicher's JavaScript implementation of neural network strength estimation \cite{Melicher2016NeuralNetworks}. However, it is more challenging to integrate and also does not map password strength to a scale from 1 to 5, but to a guess number. The same goes for other estimators. Nonetheless, zxcvbn's assessments correlated strongly with the output from \gls{PGS}. Therefore, we are confident that zxcvbn is the best tool for the constraints of our game. In the future, it might be worthwhile use multiple strength metrics to obtain a more differentiated strength assessment.
 
 \section{Summary}
 \begin{itemize}
 	\item users performed better than anticipated
-	\item misconceptions mainly involve passphrases and mangled passwords
+	\item misconceptions mainly involve passphrases and mangled passwords (and predictable alterations!). common passwords were confidently identified. 
 	\item the game was updated after the first results were in and is still deployed. Google even uses it internally. 
-	\item the source code is available on GitHub.
+	\item the source code is available on GitHub \footurl{https://github.com/TobiasSeitz/pasdjo}{24.01.2018}.
 	\item contribution: longitudinal data.
 \end{itemize}
 
@@ -297,4 +305,9 @@ Better onboarding
 Challenges
 Player Profiles 
 adding the game to password management software
+
+
+\subsubsection{Take-Aways}
+
+
 
