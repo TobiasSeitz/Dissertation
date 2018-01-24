@@ -248,11 +248,11 @@ We also re-calculated the users' average accuracy in each condition, again only 
 \begin{figure}[htbp]
 	\begin{subfigure}[t]{0.49\linewidth}
 		\includegraphics[width=\textwidth]{pasdjo/user-rating-v1-ci-annotated}
-		\caption{\label{fig:pasdjo:1y-performance}Deviations of user ratings of v1 players.}
+		\caption{\label{fig:pasdjo:1y-performance}Deviations of user ratings of v1 players (N=181)}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.49\linewidth}
 		\includegraphics[width=\textwidth]{pasdjo/user-rating-v2-ci-annotated}
-		\caption{\label{fig:pasdjo:v2-performance}Deviations of user ratings of v2 players.}
+		\caption{\label{fig:pasdjo:v2-performance}Deviations of user ratings of v2 players.(N=52)}
 	\end{subfigure}
 	\caption{\label{fig:pasdjo:v1-v2-deviations} Users' average ratings, for PASDJO version 1 on the left and version 2 on the right. The version switch appears to boost accuracy for common and random passwords, but not for mangled passwords and passphrases.}
 \end{figure}
@@ -260,6 +260,8 @@ We also re-calculated the users' average accuracy in each condition, again only 
 
 
 \section{Discussion}
+\subsection{Players' Overall Performance}
+Overall, we can attest players a fairly good performance. This assessment resounds to Ur \etal's results \cite{Ur2016PerceptionsPassword}. Players performed best in the ``Common'' condition, i.e. they can identify commonly used passwords with high certainty. Algorithmically mangled -- but common! -- passwords caused a bit more trouble. The fact that this was the only condition where people judged strength as too high reveals the users' mental model: \textit{if one substitutes individual letters with digits and symbols, the password must become stronger}. The additional data for version 1 helped narrow down the confidence intervals and moving closer to the ``actual truth''. After about one year, the average rating for mangled passwords had moved closer to the zxcvbn score (compare Figures \ref{fig:pasdjo:deviation-viz} and \ref{fig:pasdjo:1y-performance}). Perhaps this means that the players that followed ($\delta(n)=70$) had a better mental model of the implications of character substitutions. However, since none of the other average ratings changed significantly, the shift might be due to chance. 
 
 \subsection{Strength Perception vs. Selection}
 - the data shows strong similarities to Ur \etal \cite{Ur2016PerceptionsPassword}
@@ -278,7 +280,7 @@ If you correctly identify a passphrase, you still need to count the number of ch
 \subsection{Changing users' mental models with PASDJO}
 The learning effects clearly indicate that users learned assessing password strength after playing PASDJO. This makes us wonder if deploying such a game in different contexts, potentially in even shorter forms could effectively educate users. 
 
-\section{Limitations}
+\subsection{Limitations}
 We discussed the most important limitations regarding the methodology in Section \ref{sec:pasdjo:beneftis_shortcomings_method}. Therefore, we focus on the limitations in the data and test results in this section. 
 
 % clustering of dates around events -- see figure with time line histogram
