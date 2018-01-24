@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+
+\rowcolors{2}{AliceBlue}{Beige}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|} \hline
+\textbf{Feature}&\textbf{Capturing Method}&\textbf{Implicit / Explicit}&\textbf{Spoofing Threats}&\textbf{Problems}\\ \hline \hline
+
+Face \& Iris & Camera & Both & Photographs of the legitimate user & Lighting situation and make-up  \\ \hline
+
+Fingerprint & Fingerprint reader & Explicit. Implicit imminent. & Play-Doh casts, Scotch Tape, 2D/3D prints  & Dirt, Water, Finger injuries \\ \hline
+
+Speech & Microphone & Both & Recordings of the user's voice & Sickness, natural voice changes, background noise \\ \hline
+
+Gait	 & Camera or Accelerometer & Both & Imitation  & Injuries, carrying load, footwear, ground surface, being seated \\ \hline
+
+Keystroke & Hard/soft keyboard & Primarily implicit & Imitation & Enrollment, reliability \\ \hline
+
+Location & GPS or infrastructure calculated position & Primarily implicit & Forged GPS locations & limited places, precision \\ \hline
+
+Network/File/App Usage & Software protocol & Implicit & Imitation & Precision \\ \hline
+
+%Call Patterns & Log Data & implicit & None & No constraints & high efficacy variance for different users \\ \hline
+
+\end{tabular}
+}
+\caption{\label{tbl:rw:auth_comparison}Comparison of different biometric authentication methods. Adapted from \cite{Stockinger2011ImplicitAuthentication}}
+\end{table}
+
+%TODO: add example reference, like bonneau did.

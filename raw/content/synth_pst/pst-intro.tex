@@ -1,8 +1,11 @@
-%!TEX root = ../../psst.tex
+%!TEX root = ../../pst-intro.tex
 
-\chapter[Overview]{Overview}\label{chap:psst_overview}
+\chapter[Password Support Toolkit]{Password Support Toolkit}\label{chap:pct_intro}
+The Password Coping Toolkit (PST) is a holistic approach to help users of any experience level manage their password portfolio of any size. Ideally, continuous usage of the PST enables and encourages users to 
 
-The Password Selection Support Toolkit (PSST) is a holistic approach to help users of any experience level manage their password portfolio of any size. Ideally, continuous usage of the PSST enables and encourages users to 
+\todo{Decide on a final name of the tookit.}
+extension to persuasive authentication framework. 
+
 \begin{enumerate}
 \item[a)] improve their strategies
 \item[b)] strengthen the passwords
@@ -11,7 +14,7 @@ The Password Selection Support Toolkit (PSST) is a holistic approach to help use
 All this leads to an improvement of user experience as both pragmatic and hedonic qualities are maximized. 
 
 \section{Respecting Privacy Concerns}
-To make sure users can fully benefit from the power of the PSST, it is required that no information about the user's behavior travels through the web, i.e. to remote servers. Such knowledge would deeply compromise protection against foreign access. Attackers would intensify attacks on the stored behavioral data that would allow them to reverse engineer credentials. This has to be avoided at all costs. Consequently, the calculations need to take place on the client-side. With increasing computational power even for consumer electronic devices this does not seem to be a tough restriction. 
+To make sure users can fully benefit from the power of the PCT, it is required that no information about the user's behavior travels through the web, i.e. to remote servers. Such knowledge would deeply compromise protection against foreign access. Attackers would intensify attacks on the stored behavioral data that would allow them to reverse engineer credentials. This has to be avoided at all costs. Consequently, the calculations need to take place on the client-side. With increasing computational power even for consumer electronic devices this does not seem to be a tough restriction. 
 
 \section{Adapting to Existing Strategies}
 As discussed in Chapter \ref{sec:password_selection}, each individual user handles password selection and memorization differently, even though patterns occur. 
@@ -20,16 +23,16 @@ The most prevalent factors for password selection are:
 \begin{itemize}
 \item Account Value
 \item Memorability
-\item \textbf{Perceived Strength}. As we have seen, people's perception of strength has changed, so as to speak ``they were enlightened''. Everyday practice has taught users that difficult passwords are good, but everybody thinks that they seem hard to do. The PSST allows to shift this perception. 
+\item \textbf{Perceived Strength}. As we have seen, people's perception of strength has changed, so as to speak ``they were enlightened''. Everyday practice has taught users that difficult passwords are good, but everybody thinks that they seem hard to do. The PCT allows to shift this perception. 
 \end{itemize}
 
-The PSST lets the user know, that their strategy is legitimate. It acknowledges them and does not want to change them.  Even password re-use can be beneficial.
+The PCT lets the user know, that their strategy is legitimate. It acknowledges them and does not want to change them.  Even password re-use can be beneficial.
 
-The PSST addresses password strategies, by learning them through both active involvement and observation. 
+The PCT addresses password strategies, by learning them through both active involvement and observation. 
 
 
 \subsection{Learning Account Values}
-The PSST adjusts nudges and persuasion to the users' perceived value of a password. 
+The PCT adjusts nudges and persuasion to the users' perceived value of a password. 
 
 \subsubsection{Measuring Password Value}
 Users often fail to assess the value of passwords correctly as we have seen in (@TODO REF SEC). 
@@ -39,15 +42,18 @@ Groß \etal argued that cognitive depletion has a notable impact on the strength
 
 
 \section{Composition Policy Fulfillment}
+Apple already has something like this (generate ``FIPS compatible'' password), but it doesn't speak the user's language nor does it explain what this is and when using it is necessary. Our idea is to take the user out of the loop and not burden them with such decisions when they feel the need to generate a password. 
 
 \section{Supporting Memorization}
-After the users picked their password, be it completely independently or with aid by the PSST, they are now facing the critical stage of memorizing it. In case they simply re-used or modified an old password, this phase is very short. They might write down which of their ready-made credentials they utilized. This is necessary and helpful if the account value is not clear or might change in the future. 
+After the users picked their password, be it completely independently or with aid by the PCT, they are now facing the critical stage of memorizing it. In case they simply re-used or modified an old password, this phase is very short. They might write down which of their ready-made credentials they utilized. This is necessary and helpful if the account value is not clear or might change in the future. 
 
-However, in case the PSST manage to persuade a user towards are slightly different option than they would have chosen without it, memorization is extremely important. As such, the PSST provides means to support this process in @TODO ways:
+However, in case the PCT manage to persuade a user towards are slightly different option than they would have chosen without it, memorization is extremely important. As such, the PCT provides means to support this process in @TODO ways:
 \begin{itemize}
 \item training. 
 \item \textbf{Storing}. The password is stored and can be retrieved from a local database. 
 \end{itemize}
+
+generate memorable passwords when appropriate. 
 
 \section{Hedonic Qualities}
 Hedonic UX qualities are often overlooked. The design and incorporates them from the very beginning. 
@@ -56,8 +62,14 @@ Hedonic UX qualities are often overlooked. The design and incorporates them from
 our results so far showed mixed results about successful nudges. 
 
 
-
 Conclusions: Most mitigations seem to fit better into the scenario when the user resets their password. This has a couple of advantages:
 \begin{itemize}
 	\item The system already knows the user. This can be either a webservice provider or a password manager. So, it can tailor the experience and take a wide range of context factors into account. 
 \end{itemize}
+
+
+\section{Further Considerations}
+
+\textbf{Persuasion is always opinionated}. The choice architect has a target behavior in mind, and it is an essential feature of persuasion opposed to manipulation that this target is in the user's own interest, and they can freely choose to act differently. 
+
+
