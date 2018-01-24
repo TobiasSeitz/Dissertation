@@ -191,7 +191,7 @@ In their first game, players showed fairly consistent inaccuracies (see Figure \
 There was no notable correlation between the number of passwords rated during a game and the resulting accuracy ($\rho=-0.1$, \pvalgt{0.1}). In other words, fast players were about as accurate as slow players. Mangled passwords were the only condition that was overestimated (estimated median deviation $Md=0.5$). Interestingly, common passwords were underestimated slightly, although there was little room for underestimation ($Md=-0.5$). Random passwords were also underestimated by about half a point ($Md=-0.5$). The users in this data set rated passphrases exceptionally low ($Md = -1.6$). A Friedman rank-sum test showed significant significant differences for the deviations across the four conditions (\statslt{3}{187.84}{0.001}). We followed up this finding with Bonferroni-corrected post-hoc tests, i.e. $\alpha_{Bonf}=0.008$. Wilcoxon paired sample tests revealed significantly different deviations between all pairs of conditions, except for the common/random pair. In other words, common and random passwords were equally inaccurately assessed by the users. 
 
 \subsubsection{Score Development}
-From the 115 users who finished one game, 33 kept on playing for at least one more game. We tried to model their progress through a linear regression with gameIndex as predictor and achieved percentage as dependent variable. To account for the fact that some users played more rounds per game, we weighted the percentage with the number of passwords rated in that game. The model shows that players were able to improve their accuracy by playing multiple times (F(1)=49.37, \pvallt{0.001}, $\beta$ = 0.54, $R^2_{adj}$ = 0.23). Figure \ref{fig:pasdjo:percent-evolution} visualizes the progress of users who played at least twice. In there, it is also evident that the slope is not stringent, i.e. an individual user's accuracy does not necessarily increase steadily. We attribute this to the element of randomness in the game, which makes it more difficult in some cases to rate the passwords, while it might be easier in a subsequent game. 
+From the 115 users who finished one game, 33 kept on playing for at least one more game. We tried to model their progress through a linear regression with gameIndex as predictor and achieved percentage as dependent variable. To account for the fact that some users played more rounds per game, we weighted the percentage with the number of passwords rated in that game. The model shows that players were able to improve their accuracy by playing multiple times (F(1)=49.37, \pvallt{0.001}, $\beta$ = 0.54, $R^2_{adj}$ = 0.23). The increased accuracy is mostly due to more accurate estimation of passphrases: performing linear regressions with average deviation of each condition as dependent variable, with gameIndex as predictor, we observed that \textit{only passphrases} have a non-trivial model fit ($R^2_{adj}$ = 0.19). For all other dependents, gameIndex had virtually no effect on the tendency. Players therefore primarily learned to estimate passphrases. Figure \ref{fig:pasdjo:percent-evolution} visualizes the progress of users who played at least twice. In there, it is also evident that the slope is not stringent, i.e. an individual user's accuracy does not necessarily increase steadily. We attribute this to the element of randomness in the game, which makes it more difficult in some cases to rate the passwords, while it might be easier in a subsequent game. 
 
 \begin{figure}
 	\centering
@@ -243,6 +243,7 @@ After publishing the first results, I had iterated the design and implementation
 Among the players who played at least two games, the overall score development has not changed visibly (see Figure \ref{fig:pasdjo:1y-progress}), with no notable differences in the regression model 
 (F(1)=67.12, \pvallt{0.001}, $\beta$ = 0.53, $R^2_{adj}$ = 0.23). However, if we look at the players who played version 2, we can observe a slight decrease in the model fit (F(1)=8.83, \pvallt{0.01}, $\beta$ = 0.43, $R^2_{adj}$ = 0.20): There were 12 players who played version 2 more than once ($M=2.9, SD=2.29$). Their progress is shown in Figure \ref{fig:pasdjo:v2-progress}. The decrease can be explained by the fact that only one player played more than three times in this reduced data set. %another user scored really really hight in their first game already, distorting the model 
 
+
 %%%%%%%% Strength perceptions
 \subsubsection{Strength Perception in the First Game}
 We also re-calculated the users' average accuracy in each condition, again only using the players that had generated data in all conditions in their first game (see Figure \ref{fig:pasdjo:v1-v2-deviations}). As before, the deviations from the zxcvbn scores differed significantly across conditions in version 1 (\statslt{3}{316.4}{0.001}). The same goes for version 2 of the game ((\statslt{4}{108.7}{0.001})). All post-hoc pairwise comparisons showed significant differences \pvallt{0.008} for version 1. For version 2, the situation is not as clear, because the sample is smaller (724 observations). The significantly different pairs were Mangled-Common, Mangled-Passphrase, Mangled-Predictable, Mangled-Random, Passphrase-Common, Passphrase-Predictable, Passphrase-Random \pvallt{0.005}. The lack of significant pairwise comparisons is also visible in Figure \ref{fig:pasdjo:v2-performance}: The users' ratings did not deviate much from the zxcvbn score in both the Common and the Random condition, which explains this result. In other words, mangled and predictable passwords as well as passphrases caused the players the most trouble, so their accuracy in these three conditions differed significantly. 
@@ -259,6 +260,8 @@ We also re-calculated the users' average accuracy in each condition, again only 
 \end{figure}
 
 
+
+
 %%%%%%%% 
 %%%%%%%% DISCUSSION
 %%%%%%%%
@@ -272,18 +275,18 @@ Users rarely rate the strength of passwords. The only notable instance where thi
 
 We can safely assume that users in our sample know that common passwords are weak, and they are misguided by character substitutions. We believe that this has immediate implications on their selection behavior: it can be hypothesized that users intentionally pick weak passwords -- as data breaches reveal time and time again. If they think, a stronger password is necessary, they mangle weak passwords and overestimate the security benefits. Therefore, there is a lesson we can learn here: users do not need feedback on obviously weak passwords. They \textit{do} need feedback if they select a predictably altered password. Ur \etal mention this already in their recent work on password meters \cite{Ur2017DataDrivenPWMeter}. However, many password meters and feedback mechanisms do not yet discourage predictable mangling. 
 
-\subsection{Intuition and Passphrases}
+\subsection{Intuition or Deliberation?}
 PASDJO players spent 2.45 seconds on average to rate the strength of each password. Which kind of thinking processes were responsible here? Is it probable that users acted intuitively (System 1) or did the ponder enough to activate System 2 processes? We can find evidence for both. 
 % faster players were not significantly worse than slower players in terms of accuracy. 
 In their first game, fast players were about as accurate as slow players. For those players who played multiple games, we used the number of passwords they managed to rate as weight in regression models. We did this for validity reasons, but, in fact, the effect was negligible: We ran the tests without the weight and model fit did not change notably. All this is interesting because fast players were most likely to use \textit{heuristics}, or Acquisiti \etal calls them: \textit{mental shortcuts} to come to an assessment. Otherwise they would have been less accurate or slower. This is one piece of evidence that the time pressure can induce System 1 thinking processes. The slower players on the other hand obviously had to think harder to estimate password strength; System 2 had to be activated. 
 % passphrases were hard to estimate. 
 In PASDJO v2, zxcvbn scores for passphrases and random passwords were much more diverse (see Figure \ref{fig:pasdjo:score-distribution-v2}). So, if a fast player wanted to be accurate in these cases, they needed to rely on two heuristics: \textit{are there dictionary words or does it look random?} and \textit{how many characters are in the password}. Only then does one have a chance to assessing strength correctly. For the \textit{length}-heuristic, it is even necessary to count the characters. We can safely assume that 2.45 are not enough to make the distinction between a 17 character (average score = 3.9) and a 19 character passphrase (average score: 5.0). For random passwords, it could be feasible to count characters, because scores are much more predictable(length(7,8)$~\rightarrow~$3, length(9,10)$~\rightarrow~$4, length(>10)$~\rightarrow~$5). Nonetheless, we maintain the assumption that rough heuristics helped more than analyzing all features. 
 
-We can only wonder if the speed of password perception is also associated with selection time. If users take less time to sign up to a given service, they might be using mental shortcuts to accomplish the tasks. The specific heuristics can be context factors, preferred password, composition policy, etc. This opens new research questions that have not been addresses in the literature, to the best of my knowledge. 
-% system generated passphrases vs user-generated passphrases.
+We can only wonder if the speed of password perception is also associated with selection time -- are skilled PASDJO-players capable of choosing a password quickly? If users take less time to sign up to a given service, they might be using mental shortcuts to accomplish the tasks. There is much evidence that context factors, preferred password, or composition policy are indeed used as mental shortcuts. Investigating perception speed with selection speed poses new research questions that have not been addressed in the literature as such. 
 
+% system generated passphrases vs user-generated passphrases.
 \subsection{Changing users' mental models with PASDJO}
-The learning effects clearly indicate that users learned assessing password strength after playing PASDJO. This makes us wonder if deploying such a game in different contexts, potentially in even shorter forms could effectively educate users. 
+The learning curves in Figures \ref{fig:pasdjo:percent-evolution} and \ref{fig:pasdjo:v2-progess-comparison} clearly indicate that players learned assessing password strength after playing PASDJO. Most notably, players learned to estimate passphrases. Thus, if the \textit{Authority} principle succeeded as a persuasive strategy, this might have influenced the users' mental model around passphrases. More generally, this finding shows that mental models of password strength are not static. If this were the case, PASDJO could be actively utilized to educate users about password strength, especially passphrases. Persuasive interventions could challenge users to rate the strength of a passphrase in the opportune moment and then debrief users to correct their mental model. We created such an intervention with our studies on the Decoy effect (see chapter \ref{chap:decoy}), which indeed show the predicted influence on mental models. 
 
 \subsection{Limitations}
 We discussed the most important limitations regarding the methodology in Section \ref{sec:pasdjo:beneftis_shortcomings_method}. Therefore, we focus on the limitations in the data and test results in this section. 
@@ -308,10 +311,16 @@ Finally, the strength ratings in PASDJO are solely based on zxcbn scores. While 
 
 
 \subsection{Future Work}
+
+research related:
+how much does playing pasdjo influence password selection? even if done in the lab?
+adding the game to password management software
+
+game-related:
 Better onboarding
 Challenges
 Player Profiles 
-adding the game to password management software
+
 
 
 \subsubsection{Take-Aways}
