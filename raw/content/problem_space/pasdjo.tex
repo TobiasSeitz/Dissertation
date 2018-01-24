@@ -235,15 +235,16 @@ After publishing the first results, I had iterated the design and implementation
 	\end{subfigure}
 	\begin{subfigure}[t]{0.49\linewidth}
 		\includegraphics[width=\textwidth]{pasdjo/v2-player-progress-multiplayers}
-		\caption{\label{fig:pasdjo:v2-progess}Performance of version-2 players}
+		\caption{\label{fig:pasdjo:v2-progress}Performance of version-2 players}
 	\end{subfigure}
-	\caption{\label{fig:pasdjo:v2-progess-comparison} Performance development during the first 13 months of public deployment (\ref{fig:pasdjo:1y-progress}). In November 2017, version 2 was released, where a linear model is a better fit (\ref{fig:pasdjo:v2-progress})}
+	\caption{\label{fig:pasdjo:v2-progess-comparison} Performance development during the first 13 months of public deployment (\ref{fig:pasdjo:1y-progress}). In November 2017, version 2 was released, which roughly shows a similar learning curve.}
 \end{figure}
 Among the players who played at least two games, the overall score development has not changed visibly (see Figure \ref{fig:pasdjo:1y-progress}), with no notable differences in the regression model 
-(F(1)=67.12, \pvallt{0.001}, $\beta$ = 0.53, $R^2_{adj}$ = 0.23). However, if we look at the players who played version 2, we can observe a slight decrease in the model fit (F(1)=8.83, \pvallt{0.01}, $\beta$ = 0.43, $R^2_{adj}$ = 0.20): There were 12 players who played version 2 more than once ($M=2.9, SD=2.29$). Their progress is shown in Figure \ref{fig:pasdjo:v2-progess}. The decrease can be explained by the fact that only one player played more than three times in this reduced data set. %another user scored really really hight in their first game already, distorting the model 
+(F(1)=67.12, \pvallt{0.001}, $\beta$ = 0.53, $R^2_{adj}$ = 0.23). However, if we look at the players who played version 2, we can observe a slight decrease in the model fit (F(1)=8.83, \pvallt{0.01}, $\beta$ = 0.43, $R^2_{adj}$ = 0.20): There were 12 players who played version 2 more than once ($M=2.9, SD=2.29$). Their progress is shown in Figure \ref{fig:pasdjo:v2-progress}. The decrease can be explained by the fact that only one player played more than three times in this reduced data set. %another user scored really really hight in their first game already, distorting the model 
 
 %%%%%%%% Strength perceptions
 \subsubsection{Strength Perception in the First Game}
+We also re-calculated the users' average accuracy in each condition, again only using the players that had generated data in all conditions in their first game (see Figure \ref{fig:pasdjo:v1-v2-deviations}). As before, the deviations from the zxcvbn scores differed significantly across conditions in version 1 (\statslt{3}{316.4}{0.001}). The same goes for version 2 of the game ((\statslt{4}{108.7}{0.001})). All post-hoc pairwise comparisons showed significant differences \pvallt{0.008} for version 1. For version 2, the situation is not as clear, because the sample is smaller (724 observations). The significantly different pairs were Mangled-Common, Mangled-Passphrase, Mangled-Predictable, Mangled-Random, Passphrase-Common, Passphrase-Predictable, Passphrase-Random \pvallt{0.005}. The lack of significant pairwise comparisons is also visible in Figure \ref{fig:pasdjo:v2-performance}: The users' ratings did not deviate much from the zxcvbn score in both the Common and the Random condition, which explains this result. In other words, mangled and predictable passwords as well as passphrases caused the players the most trouble, so their accuracy in these three conditions differed significantly. 
 \begin{figure}[htbp]
 	\begin{subfigure}[t]{0.49\linewidth}
 		\includegraphics[width=\textwidth]{pasdjo/user-rating-v1-ci-annotated}
@@ -253,7 +254,7 @@ Among the players who played at least two games, the overall score development h
 		\includegraphics[width=\textwidth]{pasdjo/user-rating-v2-ci-annotated}
 		\caption{\label{fig:pasdjo:v2-performance}Deviations of user ratings of v2 players.}
 	\end{subfigure}
-	%\caption{\label{fig:pasdjo:v1-v2-deviations}}
+	\caption{\label{fig:pasdjo:v1-v2-deviations} Users' average ratings, for PASDJO version 1 on the left and version 2 on the right. The version switch appears to boost accuracy for common and random passwords, but not for mangled passwords and passphrases.}
 \end{figure}
 
 
