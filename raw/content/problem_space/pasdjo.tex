@@ -246,7 +246,7 @@ Among the players who played at least two games, the overall score development h
 
 %%%%%%%% Strength perceptions
 \subsubsection{Strength Perception in the First Game}
-We also re-calculated the users' average accuracy in each condition, again only using the players that had generated data in all conditions in their first game (see Figure \ref{fig:pasdjo:v1-v2-deviations}). As before, the deviations from the zxcvbn scores differed significantly across conditions in version 1 (\statslt{3}{316.4}{0.001}). The same goes for version 2 of the game ((\statslt{4}{108.7}{0.001})). All post-hoc pairwise comparisons showed significant differences \pvallt{0.008} for version 1. For version 2, the situation is not as clear, because the sample is smaller (724 observations). The significantly different pairs were Mangled-Common, Mangled-Passphrase, Mangled-Predictable, Mangled-Random, Passphrase-Common, Passphrase-Predictable, Passphrase-Random \pvallt{0.005}. The lack of significant pairwise comparisons is also visible in Figure \ref{fig:pasdjo:v2-performance}: The users' ratings did not deviate much from the zxcvbn score in both the Common and the Random condition, which explains this result. In other words, mangled and predictable passwords as well as passphrases caused the players the most trouble, so their accuracy in these three conditions differed significantly. 
+We also re-calculated the users' average accuracy in each condition, again only using the players that had generated data in all conditions in their first game (see Figure \ref{fig:pasdjo:v1-v2-deviations}). As before, the deviations from the zxcvbn scores differed significantly across conditions in version 1 (\statslt{3}{316.4}{0.001}). The same goes for version 2 of the game ((\statslt{4}{108.7}{0.001})). All post-hoc pairwise comparisons showed significant differences \pvallt{0.008} for version 1. For version 2, the situation is not as clear, because the sample is smaller (724 observations). The significantly different pairs were Mangled-Common, Mangled-Passphrase, Mangled-Predictable, Mangled-Random, Passphrase-Common, Passphrase-Predictable, Passphrase-Random \pvallt{0.005}. The lack of significant pairwise comparisons is also visible in Figure \ref{fig:pasdjo:v2-performance}: The users' ratings did not deviate much from the zxcvbn score in both the Common and the Random condition, which explains this result. In other words, mangled and predictable passwords, as well as passphrases caused the players the most trouble, so their accuracy in these three conditions differed significantly. 
 \begin{figure}[htbp]
 	\begin{subfigure}[t]{0.49\linewidth}
 		\includegraphics[width=\textwidth]{pasdjo/user-rating-v1-ci-annotated}
@@ -301,29 +301,25 @@ Moreover, version 2 introduced a number of improvements that would have been nic
 Finally, the strength ratings in PASDJO are solely based on zxcbn scores. While it is a state-of-the-art metric (see Section \ref{sec:rw:zxcbn}), other metrics might model real-world attacks better in some situations. For instance, we could have chosen Melicher's JavaScript implementation of neural network strength estimation \cite{Melicher2016NeuralNetworks}. However, it is more challenging to integrate and also does not map password strength to a scale from 1 to 5, but to a guess number. The same goes for other estimators. Nonetheless, zxcvbn's assessments correlated strongly with the output from \gls{PGS}. Therefore, we are confident that zxcvbn is the best tool for the constraints of our game. In the future, it might be worthwhile use multiple strength metrics to obtain a more differentiated strength assessment.
 
 \section{Summary}
-\begin{itemize}
-	\item users performed better than anticipated -- has education paid off? (arch to introduction)
-	\item misconceptions mainly involve passphrases and mangled passwords (and predictable alterations!). common passwords were confidently identified. 
-	\item the game was updated after the first results were in and is still deployed. Google even uses it internally. 
-	\item the source code is available on GitHub \footurl{https://github.com/TobiasSeitz/pasdjo}{24.01.2018}.
-	\item contribution: longitudinal data.
-\end{itemize}
+In this project, we explored password strength perceptions in a novel approach. It had earlier been shown in surveys that users do not always have an accurate understanding of what contributes to the strength of a password. Rather than conducting a survey, we implemented a novel password game, which allows for better randomization of the measurements. Moreover, the game has unique potential to measure learning effects of the players. The source code of PASDJO is openly available\footurl{https://github.com/TobiasSeitz/pasdjo}{24.01.2018}, so other researchers can adjust the parameters to their own needs. For instance, PASDJO was customized for a competition as part of a Google-internal event in October 2017. 
 
+We contribute insights from a longitudinal field study. Our sample comprises more than ten thousand strength estimations, which allows for accurate analyses. PASDJO players accurately recognized the strength of commonly used passwords (RQ1). Furthermore, players largely underestimated the strength of multi-word passphrases, so this was the most error-prone password topology (RQ2). However, if they went on to play multiple games, they adjusted their mental model and rated such passphrases higher. This clearly demonstrates learning effects induced by playing PASDJO. Users were also misled by leet (l33t) substitutions in otherwise predictable passwords, so they slightly overestimated their strength. However, all in all, players performed better than anticipated. Perhaps, educational efforts from the past decades have somewhat paid off, which brings us back to our initial motivation and research objectives: The folk model of a ``naive'' user seems wrong. Current password meters and similar feedback systems thus might fail to persuade users because the information they provide is redundant or well-known. Therefore, we posit that feedback on password accomodate the fact that people often act deliberately and rationally. For instance, if service providers aim to persuade users to create a unique passphrase, the benefits need to be more \textit{salient} and made \textit{available}. Passphrases are a feasible alternative for master passwords in password managers, therefore we believe that persuasive techniques are viable for them. 
 
 \subsection{Future Work}
+The game can be used as-is to answer additional research questions. For example, it would be very interesting to measure how much playing PASDJO influences actual password selection. To measure this, participants could be invited to a user study in the lab with a cover story. Once arrived, they are asked to sit in the waiting area until the experimenter picks them up again. PASDJO is installed as a demo in the waiting area and there could be a monetary incentive to ``beat the highscore''. Afterwards, they complete a usability test where the focus is steered away from the sign-up form. In such a study setting, it should be possible to measure password selection under PASDJO's short term influence. To study the influence in the wild, the game could be reduced and made part of an oboarding process to a password manager. If necessary, one could think of another cover story, e.g. \textit{please wait while we set up your system, you can distract yourself with this tiny game while you wait}.
 
-research related:
-how much does playing pasdjo influence password selection? even if done in the lab?
-adding the game to password management software
+The game can also evolve in the near future. For instance, players could be taken through a few trial passwords to make sure everyone has the same understanding of the task. To incentivize participation, additional game elements like challenges and quests are thinkable. Allowing players to set up profiles serves the \textit{personalization} principle and also could be used to collect basic demographic information. 
 
-game-related:
-Better onboarding
-Challenges
-Player Profiles 
-
-
-
-\subsubsection{Take-Aways}
-
-
-
+\vspace*{2cm}\noindent
+\fbox{
+	\hspace{1cm}
+	\parbox[c][8cm]{0.7\linewidth}{
+		\section*{Take Aways}
+		\begin{itemize}[leftmargin=*]
+			\item Users can identify weak passwords, but overestimate the strength of mangled passwords.
+			\item Passphrases are seen as weak, but it is possible to influence users' mental models with persuasive design.
+			\item A game-based approach is feasible to collect data inexpensively.
+		\end{itemize}
+	}
+	\hspace{1cm}
+}
