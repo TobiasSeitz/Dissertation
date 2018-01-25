@@ -8,29 +8,21 @@ However, this is only one side of the medal: password reuse is rampant. Coping w
 As explained in Section \ref{sec:rw:policies}, password composition policies are one of the interventions targeted at weak passwords. However, in many cases users fulfill requirements in predictable ways; the primary goal is thus missed. So, if password policies do not always help password strength, they might still prevent password reuse: if they were heterogeneous across different web sites with mutually exclusive requirements, users cannot reuse passwords like they would naturally do. In this chapter, we investigate password policies of one hundred of the most-visited web-services in Germany and try to find how well their differences prevent password reuse. Some results of this investigation have been previously published together with Manuel Hartman, Jakob Pfab, and Samuel Souque \cite{Seitz2017PoliciesReuse}. In this chapter we shed light on the findings and discuss them in the context of supporting password authentication. 
 
 \section{Background and Context}
-
 % reuse issues
-\cite{Das2014TangledWeb}
-\cite{Jaeger2016AnalysisOfLeaks}
-\cite{Stobert2014PasswordLifeCycle}
-\cite{Wash2016UnderstandingPasswordChoices}
-
-``diversify'' passwords \cite{Segreti2017AdaptivePolicies}
+Password reuse is a major threat because it is easy for attackers to compromise many accounts at once. Even if users try to slightly modify their base password, attackers are still able to crack a large portion of the resulting passwords \cite{Das2014TangledWeb,Jaeger2016AnalysisOfLeaks}. There is mixed evidence about the subset of passwords that are reused more often, but generally one can identify a ``go-to password'' for regular sites, ``high-value passwords'' for important sites, and a ``don't care'' password for the rest \cite{Bailey2014StatisticsReuse,Stobert2014PasswordLifeCycle, Haque2014Hierarchy, Florencio2007LargeScaleStudyPasswordHabits, Stobert2015ExpertPassword, Ur2015PWCreationLab,Wash2016UnderstandingPasswordChoices}. 
 
 % Blacklists prevent reuse of leaked passwords. 
-\cite{Habib2017Blacklists}
+Password policies were originally designed to combat weak passwords, but some of them try to steer users away from reused passwords. Usually, this is done through black lists that block passwords that have already been exposed after a data breach. If a user tried to reuse a password which has been leaked, the system can detect this and enforce the creation of a new one. However, Habib \etal showed that users perform predictable alterations to circumvent the black-list filter \cite{Habib2017Blacklists}. In total, they identified 13 modification techniques. For instance, participants in the study added digits, symbols, words or letters. Habib \etal conclude that blacklists are thus only useful, if a user's second attempt does not obviously reuse the blacklisted word. Segreti \etal evaluated a different approach to combat reuse, known as the ``Popularity is Everything'' system \cite{Segreti2017AdaptivePolicies}. Here, a password becomes blacklisted after a certain number of users have used the same password. Reuse in this case means reused by many users, instead of a single individual reusing the credentials multiple times. 
 
 % you can't display the blacklisted words in the UI, it would be good to have a policy description
-closely related: \cite{Wang2015EmperorsPolicies}
-
-	It would be nice to have an easy way to create a repository with all password policies, but it isn't easy - at least it helps to agree on a standard language to define a password policy \cite{Steves2015PasswordPolicyLanguage}
-
-It would be good to have a formal description of password policies in a standardized schema \cite{Horsch2016PasswordPolicyMarkup}
-
-
+In most cases, it is impossible to display the full list of blacklisted words in the user interface. Thus, to find out a site's policy, it has to be reverse engineered by testing different passwords and look if they are acceptable or not. Florêncio and Herley audited policies of public institutions and high-traffic website \cite{Florencio2010WhereDoPoliciesComeFrom}. They found that online retailers have much looser password policies than government or university sites. Wang and Wang similarly checked the policies of 50 representative websites \cite{Wang2015EmperorsPolicies}. They took passwords from leaked datasets and picked 16 passwords with varying hypothetical strength. They did not aim to identify black-lists or forbidden character types. Carnavalet and Mannan managed to automate dictionary checks by leveraging keep-alive connections \cite{Carnavalet2014AnalyzingPWStrengthMeters}. However, they focused on server-side strength estimations rather than blacklists per se. To conduct research on policies in the wild, it would be favorable to have a repository that contains all policies. Steves \etal proposed to do crowd-source the data and define a formal language (based on XML) to describe policies \cite{Steves2015PasswordPolicyLanguage}. The idea was later picked up and extended by Horsch \etal \cite{Horsch2016PasswordPolicyMarkup}. The repository would also be useful for a password generator that takes the site's policy into account to avoid rejected passwords. On the other hand, adversaries benefit from the policy repository, too. They could optimize guessing attacks by removing unnecessary guesses. 
 
 % summary: in an ideal world, policies would make users pick good passwords AND prevent direct reuse. 
+In summary, a password policy would ensure users pick adequately strong passwords and at the same time prevent dangerous reuse. Estimating the risk is still an open challenge. As of now, there have not been investigations into the efficacy to prevent reuse among current in-the-wild policies. Finding out whether current policies were suitable to combat password reuse as a whole was our primary objective. 
+
 \section{Method}
+
+%select representative web sites. 
 
 \section{Results}
 \subsubsection{Policies are Mostly homogenous, with slight differences}
