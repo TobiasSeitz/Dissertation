@@ -15,19 +15,80 @@ Password reuse is a major threat because it is easy for attackers to compromise 
 Password policies were originally designed to combat weak passwords, but some of them try to steer users away from reused passwords. Usually, this is done through black lists that block passwords that have already been exposed after a data breach. If a user tried to reuse a password which has been leaked, the system can detect this and enforce the creation of a new one. However, Habib \etal showed that users perform predictable alterations to circumvent the black-list filter \cite{Habib2017Blacklists}. In total, they identified 13 modification techniques. For instance, participants in the study added digits, symbols, words or letters. Habib \etal conclude that blacklists are thus only useful, if a user's second attempt does not obviously reuse the blacklisted word. Segreti \etal evaluated a different approach to combat reuse, known as the ``Popularity is Everything'' system \cite{Segreti2017AdaptivePolicies}. Here, a password becomes blacklisted after a certain number of users have used the same password. Reuse in this case means reused by many users, instead of a single individual reusing the credentials multiple times. 
 
 % you can't display the blacklisted words in the UI, it would be good to have a policy description
-In most cases, it is impossible to display the full list of blacklisted words in the user interface. Thus, to find out a site's policy, it has to be reverse engineered by testing different passwords and look if they are acceptable or not. Florêncio and Herley audited policies of public institutions and high-traffic website \cite{Florencio2010WhereDoPoliciesComeFrom}. They found that online retailers have much looser password policies than government or university sites. Wang and Wang similarly checked the policies of 50 representative websites \cite{Wang2015EmperorsPolicies}. They took passwords from leaked datasets and picked 16 passwords with varying hypothetical strength. They did not aim to identify black-lists or forbidden character types. Carnavalet and Mannan managed to automate dictionary checks by leveraging keep-alive connections \cite{Carnavalet2014AnalyzingPWStrengthMeters}. However, they focused on server-side strength estimations rather than blacklists per se. To conduct research on policies in the wild, it would be favorable to have a repository that contains all policies. Steves \etal proposed to do crowd-source the data and define a formal language (based on XML) to describe policies \cite{Steves2015PasswordPolicyLanguage}. The idea was later picked up and extended by Horsch \etal \cite{Horsch2016PasswordPolicyMarkup}. The repository would also be useful for a password generator that takes the site's policy into account to avoid rejected passwords. On the other hand, adversaries benefit from the policy repository, too. They could optimize guessing attacks by removing unnecessary guesses. 
+In most cases, it is impossible to display the full list of blacklisted words in the user interface. Thus, to find out a site's policy, it has to be reverse engineered by testing different passwords and look if they are acceptable or not. Florêncio and Herley audited policies of public institutions and high-traffic website \cite{Florencio2010WhereDoPoliciesComeFrom}. They found that online retailers have much looser password policies than government or university sites. Wang and Wang similarly checked the policies of 50 representative websites \cite{Wang2015EmperorsPolicies}. They took passwords from leaked datasets and picked 16 passwords with varying hypothetical strength. They did not aim to identify black-lists or special forbidden character types. Carnavalet and Mannan managed to automate dictionary checks by leveraging keep-alive connections \cite{Carnavalet2014AnalyzingPWStrengthMeters}. However, they focused on server-side strength estimations rather than blacklists per se. To conduct research on policies in the wild, it would be favorable to have a repository that contains all policies. Steves \etal proposed to do crowd-source the data and define a formal language (based on XML) to describe policies \cite{Steves2015PasswordPolicyLanguage}. The idea was later picked up and extended by Horsch \etal \cite{Horsch2016PasswordPolicyMarkup}. The repository would also be useful for a password generator that takes the site's policy into account to avoid rejected passwords. On the other hand, adversaries benefit from the policy repository, too. They could optimize guessing attacks by removing unnecessary guesses. 
 
 % summary: in an ideal world, policies would make users pick good passwords AND prevent direct reuse. 
 In summary, a password policy would ensure users pick adequately strong passwords and at the same time prevent dangerous reuse. Estimating the risk is still an open challenge. As of now, there have not been investigations into the efficacy to prevent reuse among current in-the-wild policies. Finding out whether current policies were suitable to combat password reuse as a whole was our primary objective. 
 
 \section{Method}
+% select representative web sites. 
+Studying password policies needs to address two central aspects: selecting representative web sites and selecting appropriate passwords. The first part is relatively straight-forward. We took Alexa.com rankings as indicator for the popularity of a website. To accomplish the analysis in a reasonable time frame, we took 100 web sites (100\% more than Wang and Wang, and 33\% more than Florêncio and Herley). In May 2016, from the 100 most visited web sites in Germany, 83 allowed public online registrations. The remaining 17 sites were banks, mobile carriers, or pay-tv providers who require offline registration and verification as a security measure. The websites and their policies are listed in Table \ref{tab:appendix:policies} (Appendix). Although we took the most-visited websites in Germany, the results have implications for an international audience, because many of the audited sites operate globally.
 
-%select representative web sites. 
+The second challenge is finding suitable passwords to reverse-engineer password requirements. We approached this task in two separate stages to find a good candidate set. 
+
+\subsubsection{First Stage: Identification of suitable passwords} Similar to Wang and Wang, we crafted 15 passwords showing typical password characteristics. The passwords followed common policy categories as proposed by Shay \etal \cite{Shay2016DesigningPasswordPolicies}. For instance, some passwords met a \textit{3class12} policy by including three different character classes (lower-/uppercase letters, digits) and a minimum length of 12. Next, we tried to register new accounts with all of these 15 passwords at all 83 websites. In case the site rejected the password, we investigated the reasons and modified the password until the policy was fulfilled. This new password was then added to our test set. During this stage, a number of sites revealed blacklisted symbols. If this was the case, we intentionally crafted a password with the blacklisted characters and added it to our set, so that we could se if other websites implicitly utilize the same blacklist. Similarly, if there were maximum length enforcements, we added a password longer than that to our list. This process resulted in a test set of \textbf{46} diverse passwords. The list was structured by the following criteria:\par
+\noindent~\\
+\noindent
+\begin{tabular}{@{}p{0.3\linewidth}p{0.65\linewidth}@{}}
+	\textbf{length} & minimum and maximum length restrictions\\\hline
+	\textbf{character classes} & the presence of enforced character classes, i.e. mandatory, forbidden, and allowed characters\\\hline
+	\textbf{complexity} & the most stringent policy that the password would fulfill, as classified by Shay \etal \cite{Shay2016DesigningPasswordPolicies}. The categories were \textit{basic}, \textit{2class}, \textit{3class}, and \textit{complex}\\\hline
+	\textbf{dictionary} &  the presence of a pro-active dictionary check, including common passwords.\\\hline
+	\textbf{additional requirements} &  black-/whitelisted symbols instead of a whole character class, additional requirements like large enough edit-distance from username
+\end{tabular}
+
+\subsubsection{Second Stage: Re-Evaluation with Extended Test Set} After identifying suitable passwords, we tried to use all of them on each web site, i.e. we performed a total of $46*83=3813$ checks. To avoid re-creating accounts with different email addresses, we tried to reset passwords wherever this was offered. 
+% multiple sites basically use an SSO (bing, msn, microsoft, live // google.com, google.de )
+Furthermore, we include top-level domains in the analysis that implement an \gls{SSO} scheme (e.g. live.com, msn.com, microsoft.com), because this might not be evident for the users. 
+
+%TODO maybe: why didn't we use the XML schema proposed by Horsch?
 
 \section{Results}
+We found it was possible to create passwords that would meet 82 of the 83 policies (\textasciitilde98.88\%). In the following we illustrate why this is possible. 
+
+\subsection{Complexity}
+Most policies fell into the ``basic'' category. This means that their sole requirement was a minimum (or maximum) length. As shown in Figure \ref{fig:policies_reuse:policies-distribution-edited}, around three quarters of the sites used a basic policy\footnote{\label{foot:policies_reuse:chi-publication-inconsistency}In the CHI publication, we reported slightly different numbers: 57 \textit{basic}, 11 \textit{2class}, 3 \textit{3class}, 1 \textit{complex}, 10 \textit{other}. It is in fact possible to put the \textit{other} policies in the remaining found categories, which explains the updated distribution}. The websites at the top of the table all use a \textit{basic} policy, i.e. Google, Facebook, Amazon. However, we found it was also common to reject passwords if they contained certain characters, especially non-ASCII symbols (see Table \ref{tab:policies_reuse:black-white-lists}). For instance, Google disallows any non-ASCII character. So, even dictionary words that include characters from non-English alphabets, e.g. the German umlauts äöü, will be rejected in this case. In a few instances, the sites already provide a list of characters that are either allowed or disallowed at registration time. Eleven web sites (13.3\%) specifically require at least two different character types (\textit{2class}). 
+% interesting: 2class with restrictions at IKEA: symbols do not count towards the two character classes. 
+Ikea even requires letters and digits and would not count a symbol towards the two character classes -- we still opted to categorize this as a \textit{2class} policy (see remark in footnote \ref{foot:policies_reuse:chi-publication-inconsistency}). \textit{Complex} policies in the wild have further restrictions, e.g. four different character classes. Bahn.de demanded three \textit{different} characters, i.e. a password like \texttt{annnna} would be rejected, but \texttt{banana} would not. Paypal.com disallowed using the same character three times in a row, which rejects a couple of German compounds like \texttt{Schifffahrt}. Nevertheless, it is easy to find a password that fulfills the complexity requirements of all 83 websites: ``theSIS18!'' is a 3class password that would pass 
+
+% TABLE: white / blacklist
+\input{tables/policies-white-black-lists}
+
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=\linewidth]{figures/policies/policies-distribution-edited-v2}
+	\caption{\label{fig:policies_reuse:policies-distribution-edited}Distribution of minimum complexity of the policies. Most sites only require a given length.}
+\end{figure}
+
+\subsubsection{Length requirements} 
+The length requirements and restrictions were fairly inconsistent in the test set. The average minimum required length was $M=6.3$ ($SD=1.9$, see Figure \ref{fig:policies_reuse:min-max-length}). No website had a minimum length greater than nine characters. Among the top 10 most-visited sites, facebook.com, amazon.de, ebay.de allowed six-character passwords. Even system-generated 6-character passwords can be brute-forced in a matter of hours in an offline attack \footurl{https://arstechnica.com/information-technology/2012/12/25-gpu-cluster-cracks-every-standard-windows-password-in-6-hours/}{27.01.2018}. Wikipedia, which is also in the top 10, had a minimum length of one character. Interestingly, two tech-oriented websites allowed the same (heise.de and chip.de). Perhaps the \glspl{SP} expect their technical audience to create stronger passwords anyhow, and they do also not much personal information. 
+% max length
+We were surprised that 40 sites (48.2\%) imposed a \textit{maximum} length restriction, which is counterproductive in terms of password security. The average maximum length was $M=43$ characters ($SD=32$). Ten websites rejected passwords longer than 20 characters, so a number of passphrases would be excluded. 
+
+In order to effectively prevent password re-use, the maximum length on one site would need to be lower than the minimum length of another site. This was not the case in any permutation of policy pairs. The closest difference was the maximum length at ikea.de (10 characters) and the minimum length at yahoo.com (9 characters). Thus, only a nine or ten character password could be reused on all the tested websites. 
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=\linewidth]{policies/length-min-violin.pdf}
+	\includegraphics[width=\linewidth]{policies/length-max-violin.pdf}
+	\caption{\label{fig:policies_reuse:min-max-length}Density distribution of password length rules. We excluded maximum lengths beyond 245 characters, which explains the hard cut-off in the bottom plot.}
+\end{figure}
+
 \subsubsection{Policies are Mostly homogenous, with slight differences}
+
 \subsubsection{Policies do not prevent password-reuse}
 
 \section{Discussion and Implications}
 
-\section{Limitations}
+\subsection{Utility in Automated Password Generation}
+We demonstrate that it is possible to take the description the policies against ta number of re\footurl{http://jakob-p.github.io/goldenpassword/}{26.01.2018}
+
+\subsection{Limitations}
+% not all 100 websites, most-visited per category not investigated
+% longest password in test set 246 chars, 
+% not all possible character sets, e.g. No emojis
+
+\section{Conclusion}
+
+Published on GitHub \footurl{https://github.com/mimuc/password-policy-dataset}{25.01.2018}
+
+
