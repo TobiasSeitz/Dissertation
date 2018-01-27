@@ -90,20 +90,44 @@ Neither length, nor complexity requirements were heterogeneous enough to prevent
 
 On the other hand, a policy could dynamically adjusted if the users signs up with a ``golden password''. It is very likely that a password showing the above described characteristics is reused across many web sites. As Florêncio \etal pointed out, this is not necessarily a bad thing \cite{Florencio2014PasswordPortfoliosFiniteUser}. However, if a high-value password is reused for an unimportant account, this interference could lead to problems. Stobert showed that experts are less prone to this threat \cite{Stobert2015ExpertPassword}, but regular users cannot always estimate the importance of an account up front. As a consequence, dynamically adjusting the policy could be a solution. Alternatively, it might be feasible to more prominently warn users about reuse and explain the implications. As shown by Ur \etal, showing alternatives can help in this situation. 
 
-\subsection{Automated Password Generation}
-With this knowledge, we can build password generators that 
-We demonstrate that it is possible to take the description the policies against ta number of re\footurl{http://jakob-p.github.io/goldenpassword/}{26.01.2018}
+\subsection{Smarter Password Generation}
+Our data clearly shows that generating random passwords can become troublesome for users: many policies restrict the length and allowed characters. Although many password generators allow the users to adjust some parameters of password creation (like Apple's system shown in Figure \ref{fig:rw:pw_generators}), more effort is required to find the right parameters. Thus, a system designed to take away cognitive effort becomes effortful once more. A better solution is to use contextual information for password generation. Typically, password managers have built-in generators. To avoid that users have to adjust parameters, a password manager could automatically retrieve the policy for a given website (context) and generate a strong password that fulfills it. As a proof of concept, we built a web-based prototype that demonstrates how contextual policy information can be used for password generation\footurl{http://jakob-p.github.io/goldenpassword/}{26.01.2018} (see Figure \ref{fig:policies_reuse:webapp}). 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{policies/webapp-screenshot}
+	\caption{\label{fig:policies_reuse:webapp}We built a small web app to demonstrate how contextual policy information can be used to a) generate suitable passwords and b) find out which web sites accept a given password.}
+\end{figure}
 
 \subsection{Limitations}
+Although the data can be very useful for password generators and for the design of future composition policies, it is limited in some ways. 
 % not all 100 websites, most-visited per category not investigated
+First, the list of web sites is not comprehensive, we merely observed a tiny snapshot of the high-traffic websites, which already required days of work for the entire team. We also could have investigated the top websites in different categories to get an even more representative sample. However, the current dataset already depicts the state of affairs in reasonable detail, and is comparable to similar publications \cite{Florencio2010WhereDoPoliciesComeFrom, Wang2015EmperorsPolicies}. 
 % longest password in test set 246 chars, 
+Furthermore, the longest password in our test set had a length of 246 characters. We concluded that there is no length restriction if this password was accepted by a given website, but there might just be a higher restriction. Nevertheless, since only a fraction of users use passwords this long, this limitation has almost no consequences.
+
 % not all possible character sets, e.g. No emojis
+Moreover, for several reasons we did not include emojis in all our tests although they are in fact part of the unicode character set. First, emojis break some input fields, because most of them are encoded with 4 bytes instead of 2. This means that they show up as two characters in the input field, which distorts length requirements. Furthermore, not all websites were encoded in the extended UTF32 standard and hence failed to submit the data. 
+
 % some policies have already changed since our study, e.g. idealo now uses a 6-char policy without any other restrictions (tested with aaaaaa)
+Lastly, password policies change over time. Since carrying out our research in May 2016, we found by randomly re-sampling policies that they have changed. For instance, idealo.de used to enforce a \textit{complex} policy, but they have switched to a \textit{basic6} as of January 2018. Therefore, our data has a limited lifespan. The big players on the list, like Facebook, Google, or Amazon, are slower to enforce new polices due to the even larger user base and business impact. An automated process similar to the one from Carnavalet and Mannan \cite{Carnavalet2014AnalyzingPWStrengthMeters} could help validate the data in the future. 
 
 \section{Conclusion and Future Work}
+In this project, we extensively audited password policies of the top 100 web sites in Germany. The data set is published for further analysis on GitHub\footurl{https://github.com/mimuc/password-policy-dataset}{25.01.2018}. 83 of the websites offered public registration, and we could reuse a single password on 82 of them. Hence, we were able to answer our main research question ``\textit{Do password policies prevent password reuse?}'' with a resounding ``\textbf{no}''. Thus, we further question the use of strict password policies as a means to influence password selection. It has been shown that they do not necessarily lead to stronger passwords. Now we have shown that they also do not prevent reuse. As a consequence, it would be easier for users if restrictions on password selection were loosened. Restrictions enforcing a maximum length or a certain set of symbols should be abolished to ensure universal password generators integrate with the websites. A \textit{basic8} policy appears to work for the major players, so more service providers can follow them. To account for the potential security vulnerabilities, blacklisted common passwords and adaptive blacklists are promising solutions \cite{Habib2017Blacklists, Segreti2017AdaptivePolicies}. Future research should thus evaluate the specific blacklists and user support to help them find alternatives in case their password was blacklisted. 
 
-Published on GitHub \footurl{https://github.com/mimuc/password-policy-dataset}{25.01.2018}
-
-%TODO Take aways.
+\vspace*{2cm}\noindent
+\fbox{
+	\hspace{1cm}
+	\parbox[c][8cm]{0.7\linewidth}{
+		\section*{Take Aways}
+		\begin{itemize}[leftmargin=*]
+			\item Most password policies in the wild used a basic policy with length as the only requirement. 
+			\item About half of the policies enforced a maximum length. 
+			\item It was possible to reuse a nine or ten character password that includes uppercase and lowercase letters, and at least one digit on 98\% of websites in the test set. 
+			\item Only the requirement of certain symbols generated conflicts between policies.
+		\end{itemize}
+	}
+	\hspace{1cm}
+}
 
 
