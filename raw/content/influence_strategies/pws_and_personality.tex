@@ -1,41 +1,41 @@
-\chapter[Studies on Password Selection and Personality Traits]{Understanding Password Selection Through the Lens of Personality Traits}\label{chap:pws_and_personality}
+\chapter[Password Personality]{Understanding Password Selection Through the Lens of Personality Traits}\label{chap:pws_and_personality}
 
-first mentioned in \cite{Weirich2001PrettyGoodPersuasion} that personality could make a difference
+%\section{Introduction}
+% general introduction
+% show that not *everyone* does the same
+% selection is an individual task, not everyone selects passwords in the same way
+Although there are certain patterns, password selection is a task that each individual handles in their own way. 
+% even perception differs.
+We have shown in chapter \ref{chap:pasdjo} that password strength is even subjectively \textit{evaluated} differently depending on certain characteristics. Again, while there was an overall tendency, we were not able to break down the strength ratings by individual differences: was there a special user group who performed better than others in the game? What characterizes this user group? Moreover, our previous chapter shed light on password policies in the wild. In a few notable cases, the rules were challenging and reject a substantial part of passwords. Users have developed strategies to cope with rejected passwords, but it would be interesting to know the exact factors that contribute to their behavior in these circumstances. Egelman and Peer make a strong argument that there is no ``average user'' so it is necessary to look at individual differences to understand user behavior \cite{Egelman2015AverageUser}. 
 
-more related work: Groß \etal \cite{Gross2016CognitiveDepletion}
+% personality traits in cybersecurity are a thing
+Demographic background is one of the external factors that influences password selection \cite{Mazurek2013Measuring,  Violettas2014PasswordsAvoidGreece, Wang2015ChinesePWs}. Personality traits have been brought into the discussion to explain user preferences, actions, and behaviors in security questions \cite{Brown2004GeneratingPWs, Gross2016EffectCognitiveEffort, Shropshire2006PersonalityITSec, Zakaria2013DesigningEffectiveSecurityMessages}. Especially in research about phishing susceptibility we find evidence that personality traits have the potential to explain behavior \cite{Halevi2013PilotStudyPersonality,Halevi2015SpearPhishing,ParrishJr2009PersonalityPhishing,Uebelacker2014SocialEngineering}. 
+% personality traits even matter for passwords
+Empirical results from password studies have been discussed and explained with different personality traits, too \cite{Haque2014PsychometricsStrongPassword,Weirich2001PrettyGoodPersuasion}. It is a evident that a user's personality shines through, when they select a word based on personal preferences. 
+% characterize personality in this realm
+Petrie classified users in distinct password personalities: family-oriented, fans, fantasists, and cryptics\footnote{The original survey is not available online anymore. In a personal inquiry with Ms Petrie, she said that the original data is with the firm who commissioned the survey. The aggregated statistics are available at \url{http://passwordresearch.com/stats/statistic130.html}, \la{29.01.2018}}. A LastPass report more roughly divides password usage into two groups \cite{LastPass2016PersonalitiesGetUsHacked}: Type A users want to stay in control and are driven to act securely, so they developed an elaborate system that they perceive as suitable. Type B users do not believe that their accounts are valuable to attackers, so they do not prioritize security over usability. 
+% this kind of categorization is nice, but too rough, maybe something more sound would solve the situation.
+Those two taxonomies stem from analysis of user-selected passwords, i.e. a retrospective evaluation. However, predictive approaches are under-explored. For instance, if a user is generally an emotional person, does this impact their password selection strategies? If a user is diligent in real life, do they invest effort to diligently craft passwords, too? 
+%``I can't remember passwords anyway'' could be attributed to a person who is less conscientious and/or less neurotic. 
+%Are neurotic people more concerned about password strength, because they fear attacks more?
 
-\section{Introduction}
+% that's what we do.
+In a series of user studies we explored the associations between personality traits and passwords. If such associations exist, a new range of support systems opens that are tailored to a user's personality. Current one-fits-all approaches could be re-designed radically. The research was carried out in cooperation with three students. In each separate project we focused on a different stage of the password life-cycle. Timo Erdelt investigated personality as predictor for the usability of composition policies \cite{Erdelt2017BA}. Paul Huber explored correlations between strength perceptions and personality traits \cite{Huber2016BA}. Finally, Aline Neumann examined personality factors in password selection \cite{Neumann2017BA}. In total, 453 individuals participated in three separate online studies. In the following chapter, the projects are put into context and their findings are discussed on a bigger picture. 
 
-% SET THE SCENE
+\subsubsection*{Research Objectives}
+Our primary goal was to find ways to predict password behavior from personality traits. At this point, the discourse about risky passwords included personality factors as explanatory variables. However, only few empirical studies had been carried out to challenge the assumptions. We aimed to provide such empirical data and a discussion of the implications on the design of password policies and password authentication systems. For instance, adjusting requirements of password policies depending on the user's personality promises to reduce frustration of password selection. Thus, our over-arching research question can be framed as ``\textit{Does personality influence user's mental models of password strength and selection strategies?}''.
 
-% 1. Passwords are a burden for all of us, and it is getting worse. Users have a portfolio, but what is it made of and why?
-As passwords remain the main authentication method on the web, users face an ever increasing challenge to select and maintain passwords. Users' strategies to mitigate this burden are often predictable, such that they use easily guessable passwords and re-use them on more than one service. If required to change a specific password, e.g. after a database breach occurred, users often simply pick another from their own password portfolio \cite{Bonneau2015ImperfectAuthentication, Florencio2014PasswordPortfoliosFiniteUser, Stobert2014PasswordLifeCycle}. How users decide among alternative passwords is a highly individual process, and it is an open question how individual predisposition of the psyche influences the decision making in these situations.
-%Although the motivation for acting this way is well understood, we do not know how much of this kind of predictable behavior can be explained by looking at the user's psyche.  
-%Although we have indication that passwords are maintained for a long time \cite{VonZezschwitz2013SurvivalShortest}, we know little about the influencing factors on how the actual portfolio comes to be. 
-
-
-% 2. demographics and education do not explain everything about privacy attitudes, personality and GDMS are valuable.
-Apart from demographic and educational factors that evidently affect password creation and coping strategies \cite{Mazurek2013Measuring}, researchers in usable security and privacy have started considering psychological variables to improve explanations for predictable user behavior. Two prominent examples for such variables are the Big-Five personality traits \cite{Goldberg1990BigFive} and the general decision making style (GDMS) \cite{Scott1995GDMS}. The Big Five model tries to characterize a person's attitudes and behavior with five distinct traits, namely openness, conscientiousness, extraversion, agreeableness and neuroticism. The GDMS model describes how people decide by classifying decision-making into rational, intuitive, dependent, avoidant and spontaneous styles. How users form privacy attitudes has been explored extensively \cite{Acquisti2005PrivacyRationality,Korff2014TooMuchChoice,Spiekermann2001EPrivacyPreferences,Woodruff2014PrivacyFundamentalist}. Egelman and Peer, however, were one of the few who suggested taking the Big-Five traits and decision making style into account to explain the preconditions for privacy attitudes \cite{Egelman2015AverageUser}. They found out that someone's decision making style is more predictive than personality traits regarding general privacy attitudes. %In this paper, we investigate if this is also true for another crucial type of privacy behavior, which is to judge the strength of passwords. 
-
-% 3. creating a password is also a decision making process. 
-% 4. password strength perceptions have been explored for average users, but where are the individual differences? 
-%    --> why are the individual differences necessary?
-%    --> why do we think that the differences could result from personality or decision making style?
-
-Decision-making tasks can also be found in password selection: When a user is required to create a password, he or she can either come up with a new one by combining letters, digits and symbols or pick an old password from his or her personal portfolio that usually consists of around five distinct passwords \cite{Florencio2007LargeScaleStudyPasswordHabits}. In any case, the outcome of this decision-making process depends on evaluating ease of typing, memorability, or the perceived strength. When users judge the strength and memorability of passwords, they do this in predictable ways \cite{Ur2016PerceptionsPassword}. They often base their judgment on the variety of characters forming the password. Although there are indeed certain themes in the way users perceive strength, the perceptions are not shared unanimously among all users. Examining what causes the discrepancies is important to help users better understand password strength and to design usable support systems. We hypothesize that the perception of password strength may be influenced by variables like personality traits or decision making style. 
-
-In this paper, we investigate the associations between the Big-Five personality traits, general decision making style and users' perceptions of password strength. In an online study with 100 participants, we administered psychometric tests and collected subjective strength ratings of diverse passwords. We examined the associations between the psychometrics and password strength ratings. Among our key findings, we observed that respondents with high openness scores were more skeptical than the rest about the strength of passwords shown in the study. Moreover, those who score high on conscientiousness were more likely to compare two given passwords by the variety of characters. Rational decision makers performed significantly worse in identifying the stronger of two given passwords.
-
-\subsection{Research Questions}
-We posed the following research questions before we set out to conduct the study.\\
-\textbf{RQ1 - Psychological Factors} How much do psychological factors affect the perceived strength of passwords?\\
-\textbf{RQ2 - Big-Five vs GDMS} Are the Big-Five traits stronger or weaker predictors for strength perception than other psychological variables?\\
-\textbf{RQ3 - Portfolio Factors} Is the personal password portfolio associated with strength perception?
-
-\subsection{Contribution Summary}
-% CONTRIBUTION STATEMENT:
-Our work is one of the first to specifically investigate the relationship between personality traits, decision-making style and perceived password strength. We contribute evidence for (a) the existence of associations between the openness and consciousness traits and password strength assessment. We show that (b) users who show a rational decision making style perform worse in identifying stronger passwords than those who decide intuitively. Furthermore, we (c) conclude that the Big-Five traits were somewhat more predictive than general decision-making style, but that they should be combined depending on the problem. We also identified that (d) the composition of a personal password is also associated with the perception of other passwords. The contributions can help to inform the design of more usable password policies and real-time feedback, as outlined in Section \ref{sec:implications}.
-
+%more related work: Groß \etal \cite{Gross2016CognitiveDepletion}
+%
+%Goals/motivation: 
+%- some publications tried interpreted their findings as a consequence of different personality traits. first mentioned in \cite{Weirich2001PrettyGoodPersuasion} that personality could make a difference -- however, this had never been tried to empirically measure. 
+%- explore differences in certain coping strategies (selection and reuse) through the lens of personality
+%- find suitable ways to adjust password policies \cite{Seitz2017PersonalizingPasswordPolicies} - when users need to reset their password, after they had used the service for a while. 
+%
+%We posed the following research questions before we set out to conduct the study.\\
+%\textbf{RQ1 - Psychological Factors} How much do psychological factors affect the perceived strength of passwords?\\
+%\textbf{RQ2 - Big-Five vs GDMS} Are the Big-Five traits stronger or weaker predictors for strength perception than other psychological variables?\\
+%\textbf{RQ3 - Portfolio Factors} Is the personal password portfolio associated with strength perception?
 
 \section{Background and Related Work}
 %We position our work in usable security and privacy, in particular password research. Moreover, we include psychological models to better understand users dealing with passwords. 
@@ -104,6 +104,9 @@ The study was divided into six parts of which two were standard psychometric tes
 % META STATISTICS / CREATION
 The second part was about collecting characteristics about the passwords that our participants used on real online accounts. Here, we asked about typical password attributes, like LUDS (lower-, uppercase, digits, symbols), length and the inclusion of dictionary words. The collection of such password descriptions is an ethically reasonable way to study actual behavior that does not directly involve creating and disclosing an entire password \cite{VonZezschwitz2013SurvivalShortest}. Participants could select from a list of accounts that they used on a regular basis, e.g. Facebook, YouTube, Netflix, Google. If they did not have any of the selectable accounts they could provide another. The description of a participant's password is called \textit{meta password} in the remainder of the paper. 
 %TODO entscheiden ob das reinkommt Additionally we had them create a password which they would rate as sufficient to protect such an online account and that is memorable. We asked not to enter a password that they were currently using. At the end of the study, we again inquired after the fictional password to measure short-term memorability. 
+
+
+%%% TABLE: PASSWORDS
 \input{tables/passwords-table}
 
 %  RATING
@@ -344,15 +347,7 @@ logistic additive regression %https://web.stanford.edu/~hastie/Papers/AdditiveLo
 did policy X land on top spot ? yes = 1, no = 1. thus, no encompasses the two other options.
 Logit model. see timo's work to better understand what's going on. 
 
-\begin{table}
-	\caption{\label{tab:pws_pers:distribution-binary-ranks} Distribution of binary rankings of the three available policies. Evidently, 3class12 was ranked best in most cases. }
-	\begin{tabular}{llll}
-		~ 			& emoji12	& 2word12 	& 3class12 \\ \hline\hline
-		1st rank	& 18		& 12		& 67 \\
-		other rank 	& 80 		& 85 		& 31 \\ \hline
-		n			& 98		& 98		& 98		 
-	\end{tabular}
-\end{table}
+\input{tables/policy-preference}
 
 % predictors: demography and structure
 strong effects. the probability of a non-IT person putting emoji12 at the top is $exp(\beta–{IT-0}=9.87)$, so around ten times higher. only one IT-person ranked emoji12 first. (this fits to the finding that non-IT people found it easier to create an emoji12 password).
@@ -479,8 +474,24 @@ Our results indicate that users have different, sometimes sophisticated approach
 \section{Conclusion and Future Work}
 In our work we explored the relationship between personality traits, decision making styles and perceived password strength. An online survey with 100 participants revealed first indications of such relationships, most of which originated from the two personality traits openness and conscientiousness. We found that the Big-Five inventory is a moderate albeit non-negligible factor for a users' subjective perception of password strength. When passwords are compared, the rational and intuitive decision making style is also an important factor. 
 
+\subsection{Contribution Summary}
+% CONTRIBUTION STATEMENT:
+Our work is one of the first to specifically investigate the relationship between personality traits and password strength, respectively password policies. We contribute evidence for (a) the existence of associations between the openness and consciousness traits and password strength assessment. We show that (b) users who show a rational decision making style perform worse in identifying stronger passwords than those who decide intuitively. Furthermore, we (c) conclude that the Big-Five traits were somewhat more predictive than general decision-making style, but that they should be combined depending on the problem. We also identified that (d) the composition of a personal password is also associated with the perception of other passwords. The contributions can help to inform the design of more usable password policies and real-time feedback, as outlined in Section \ref{sec:implications}.
+
+\subsubsection{Future Work}
 A possible next step is to try and leverage information about personality traits to tailor password feedback to make it more effective. As pointed out by related work, some users overestimate the strength improvement of using digits in passwords \cite{Ur2016PerceptionsPassword}, which we generally confirmed with our study. However, not all participants were equally influenced by digits or different character classes inside passwords. Respecting the personality type in real-time feedback while enforcing policies could make the messages more effective and boost usability at the same time. Beyond password policies, personality traits can inform choice architectures. For example, the Choose-Your-Own-Authentication approach \cite{Forget2015CYOA} can benefit from informed default settings depending on personality trait characteristics. The collection and aggregation of the necessary information could be done on mobile phones \cite{DeMontjoye2013}. We consider this approach promising because it has a good chance to improve the user experience of authentication mechanisms and it is already possible to achieve the goal with off-the-shelf technology.
 
-% use section* for acknowledgement
-\section*{Acknowledgment}
-We would like to thank the participants in our study for taking the time to help us understand password perception and coping strategies better. We further thank all the people with whom we had discussions about our results, and who have commented on earlier versions of this manuscript to help us improve it.  
+
+
+\noindent
+\fbox{
+	\hspace{1cm}
+	\parbox[c][8cm]{0.7\linewidth}{
+		\section*{Take Aways}
+		\begin{itemize}[leftmargin=*]
+			\item Personality is weakly associated with all the measured dimensions: strength perception, policy preference / usability, and password selection. 
+		\end{itemize}
+	}
+	\hspace{1cm}
+}
+
