@@ -8,6 +8,7 @@ library(scales)
 policyData <- read_csv("~/Dissertation/statistics/policies/password-policies-germany-categorized.csv")
 #policyData <- read.table("policies/password-policies-germany.csv", header=TRUE, sep=",", na.strings="NA", dec=".", strip.white=TRUE)
 
+
 chartData <- data.frame(table(policyData$complexity))
 names(chartData) <- c("Policy","Count")
 rownames(chartData)<- chartData$Policy
@@ -34,3 +35,6 @@ g
 g <- g + theme(text=element_text(family="ArialMT"))
 ggsave(plot=g, filename="policies-distribution.pdf", path="policies", width=11, height=2.0)
 embed_fonts("policies/policies-distribution.pdf", outfile="policies/policies-distribution.pdf")
+
+
+table(policyData$dictionaryCheck)
