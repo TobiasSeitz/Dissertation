@@ -3,50 +3,34 @@
 We start out with the exploration of psychological factors for the design of password policies. We were motivated by the fact that at this point, policies are a one-fits-all solution that evidently does not work in the same ways for all users: Shay \etal observed that subjective usability ratings for policies differed among participants \cite{Shay2012CorrectHorseBatteryStaple, Shay2014CanLongPasswordsBeSecureAndUsable}. For instance, about 40\% of their participants found it difficult to create a password under a ``3class16'' policy, but another 40\% found it easy \cite{Shay2014CanLongPasswordsBeSecureAndUsable}. Following the general discourse and related results from privacy research, we hypothesized that an individual's personality might be responsible for their attitudes towards one policy or another. Therefore, our goal in this project was to explore such associations between personality traits and policy preference. 
 %GOALS: explore associations between big-five traits and password selection under different policies, both on usability and security metrics. Investigate the effects of using a non-traditional password policy based on emojis. user preference for one policy or another. explorative study so no p-values.
 \subsection{Method}
+% general methodology
 Our study was completely exploratory, because the literature did not allow us to derive narrow hypotheses. Since personality traits are nuanced, we opted for an online survey to collect a larger sample. Personality was assessed in the Five-Factor Model. We opted for the BFI-K construct by Rammstedt and John \cite{Rammstedt2005BFI}, because it is freely available in German. Moreover, with its 21 items, the time to fill out the questionnaire is kept reasonably low. 
-We evaluated three different password policies: a traditional (3class12), an uncommon (2word12), and a novel policy (emoji12). The reason for this classification was that they were different enough to isolate personality effects. 
+Participants were asked to create several passwords in a row, i.e. the study followed a within-groups protocol. Here, we evaluated three different password policies: a traditional (3class12), an uncommon (2word12), and a novel policy (emoji12) that required the selection of at least one emoji through a graphical user interface (more on emojis in chapter \ref{chap:emojipasswords}). The reason for this choice was that the policies are different enough to serve as levels of the independent variable ``policy''. Participants assessed the ``difficulty to create'' a password for each policy. Moreover, we had them rank the policies by their personal preference, so the choice of 3class12, 2word12, and emoji12 would help them spot and judge the differences easily. 
 
 \subsubsection{Structure and Tasks}
-The study was divided into 3 overall parts. In the first part, participants were briefed about privacy details of the study and they provided demographic background information. Then they proceeded to the personality questionnaire before they were asked to perform three experimental tasks. Each task was essentially to create a password. We chose an online-banking scenario. 
+The study was divided into 3 overall parts. In the first part, participants were briefed about privacy details of the study and they provided demographic background information. Then they proceeded to the personality questionnaire before they were asked to perform three experimental tasks. Each consisted of creating a password and assessing the difficulty with agreement levels on the three items \textit{``It was difficult to create a password that meets the requirements''}, \textit{``I found the password requirements bothersome''}, and \textit{``It was easy to create a \textit{new} password''}. Agreement was measured on a five-point scale ranging from ``Strongly disagree'' to ``Strongly agree''. Inversely keying the items as well double encoding makes the data more robust against implausible responses. 
 
-\subsubsection{Sample and Demography}
+The order of the policies was counterbalanced to mitigate order effects, we recorded the order as a control variable. We chose an online-banking scenario for all three selections. The first prompt was to create a password to protect an online banking account. Secondly, participants were told that someone had gained access to their account and the bank locked them out. As a security precaution, they had to reset their first password. The last task description explained that their password had expired after one year and they need to reset it again. This storyline was designed to fulfill the \textit{realistic threat} principle proposed by Krol \etal (see Section \ref{sec:rw:principles-experiments}) \cite{Krol2016ExperimentDesign}. 
 
-metrics: difficulty to create password, preference in real world
-statistics: ranking and regression
-items: ``It was difficult to create a password that meets the requirements'', ``I found the password requirements bothersome'', ``It was easy to create a \textit{new} password''. (5-point scale)
-independent variables (predictors) personality traits scores on the five dimensions and control variables gender, age, IT proficiency.
+We used SosciSurvey, a standard survey tool, to collect the responses. The dynamic parts involving password selection were embedded in iframes. To match the data from the survey tool and the iframe we used URL query parameters containing the response ID. We asked participants to switch to a desktop browser to avoid styling glitches and unexpected behavior from the prototypes. %Auto-complete was prevented in any case
 
-BFI-K (Rammstedt) 21 items -- openness is coded with 5 items, the rest with 4. Five point scales. Scores summed up after keying.
-repeatedly create passwords (within groups), order counterbalanced. emoji12 / 2word12 / 3class12
-emojis entered with a picker (see emoji passwords chapter)
-integrated into SosciSurvey survey tool (iframe)
-deactiveate auto-completion
-briefed not to participate through mobile phone. 
+\subsubsection{Recruiting and Demographic Background}
+We recruited participants through posts on social networks and by sending out the invitation link in a university-wide newsletter (more than 5000 recipients). To incentivize participation, we announced a raffle of five shopping vouchers with a value of 20€ each. At this point, 222 people had started participation. After drop-out and plausibility checks, the remaining sample size was $N=164$. As expected, the age distribution was narrow: our sample consisted mostly of students in their mid-twenties \average 24.7 (SD=5.5). 79 respondents were female, 83 male, and 2 preferred not to answer. In the background screener, 65 people (40\%) indicated to possess formal training in computer science or information technology. We also requested self-reported assessments on password behaviors. Here we found that 40\% reuse passwords without modification, 32\% reuse them with modifications or with a mnemnoic technique. 17\% often create new passwords. In terms of management strategy, the majority (53\%) tries to memorize passwords. 11\% use a password manager or generator. Written cues served as aid for 10\% of respondents, and 16\% write passwords down on analog media, while 21\% use electronic files. Interestingly, the distribution of coping strategies is very close to survey findings gathered with more diverse samples \cite{CSID2012PasswordHabits}. Hence, we believe to have caught a representative snapshot of password behavior.
 
-demographics first, privacy briefing, BFI-K, PW selection.
-continuous scenario 1) Banking password 2) someone gained access to bank account so the password was reset 3) password has expired. 
-(realistic threat principle Krol \etal \cite{Krol2016ExperimentDesign})
+\subsubsection{Statistical Analyses}
+For statistical analyses, we consulted the StabLab\footurl{http://www.stablab.stat.uni-muenchen.de/}{30.01.2018} to identify suitable methods. After a revision of the collected data and the necessary assumption checks, the associations were explored with additive models (AM). Their advantage over linear regression is more flexible for non-linear associations \footurl{https://en.wikipedia.org/wiki/Additive_model}{30.01.2018}. The \textit{mgcv} package for R was used to calculate the models.
 
-incentive: raffle of shoppig vouchers, emails stored separately, no correlation between the responses and email addresses.
+Scores on the Big-Five sub-dimensions served as independent variables, i.e. the predictors in the regression models. \textit{Openness} is coded with five items, while the remaining four dimensions were assessed with four items. The agreement levels for each item were mapped to numeric values from 1 to 5. The score on a sub-dimension is the sum of agreement levels. To better estimate effect sizes, we control for gender, age and IT proficiency in the models. 
+\subsubsection{Method limitations}
+The method, albeit carefully executed, faces a few limitations regarding the interpretability. First, the sample was fairly homogeneous, because participants were mostly between 20 and 28 years old and have an academic background. However, personality traits are not age dependent \ar?. Our study was strongly focused on individual preferences and usability perceptions of different policies, so only a within-groups design was feasible. However, in real-life password selection, users rarely select three passwords in a row. The choice of our storyline still makes confident about the ecological validity \cite{Fahl2013EcologicalValidityPasswordStudy}. The repeated measures design did not allow us to measure the policies' influence on password memorability, which we have to postpone to another study. At this stage, the preference was more valuable for our exploration than memorability effects. Besides, we briefed participants to fill out the survey on a desktop PC or a similar device. We cannot guarantee that all participants followed this instruction, which might have had an effect on their password selection \cite{Melicher2016UsabilityMobileTextPasswords}. 
 
-demography.
-N before dropout and sanity checks 222, afterwards 164. age \average 24.7 (SD=5.5). 79 female, 83 male, 2 preferred not to answer. 65 people had had formal training in computer science or information technology.
+Finally, we unfortunately made a mistake in the deployment of the emoji-based policy. Instead of 12 characters, it required participants to select 16 characters beside the emoji. We realized this fact by looking at descriptive statistics during the course of the study, because the policy performed significantly worse than the other two. We re-deployed the emoji-based policy immediately after we had realized the error. Consequently, we had to remove the data for the creation difficulty and ranking in cases 1-61, reducing the overall sample size to 103. Nonetheless, the sample size is sufficiently large to investigate medium to strong effects. 
 
-40\% reuse, 32\% reuse with modifications or algorithm, 17\% create new one, 11\% password manager or generator (very much like the data from other sources!). 53\% memorize, 10\% write down cues, 16\% write them down on paper, 21\% use electronic aides.
-
-limitations:
-- homogeneous sample: most between 20 and 28, academics. but personality traits are spread out across this population normally.
-- no memorability part
-- within group design
-- no mobiles, but they have an influence on password selection \ref{sec:rw:user-behavior} from qual feedback we could tell that some participants used mobiles and this might have had an effect on pw selection (maybe rerun analyses without these participants?)
-- we started out with emoji16, but made the switch to emoji12 (after 43 participants), because emoji16 received the most negative feedback, but it was mostly due to the length. data removed for ranking (1-61) and difficulty to create (1-43). 
-
-statistical analyses::
-additive regression model (AM) = extension of linear regression, but is better fit for non-linear associations.
-mgcv R package
-
+%- we started out with emoji16, but made the switch to emoji12 (after 43 participants), because emoji16 received the most negative feedback, but it was mostly due to the length. data removed for ranking (1-61) and difficulty to create (1-43). 
 
 \subsection{Results}
+
+
 medium associations between extraversion, agreeableness, and neuroticism (basically the other three dimensions that were not useful before), but control variables are associated to a larger degree.
 
 emoji policy similar results as traditional policies, i.e. it is wortwhile to experiment with it
