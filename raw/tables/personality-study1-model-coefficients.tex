@@ -1,0 +1,62 @@
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+\hline
+ & Model 1 & Model 2 & Model 3 \\
+\hline
+(Intercept)               & $9.99^{***}$ & $7.04^{***}$ & $6.26^{*}$ \\
+                          & $(2.35)$     & $(0.75)$     & $(2.52)$   \\
+Age                       & $0.02$       &              & $-0.05$    \\
+                          & $(0.06)$     &              & $(0.06)$   \\
+GenderFemale              & $0.91$       & $1.35^{*}$   & $-0.46$    \\
+                          & $(0.58)$     & $(0.66)$     & $(0.61)$   \\
+ITNo                      & $-0.10$      & $0.60$       & $0.21$     \\
+                          & $(0.59)$     & $(0.66)$     & $(0.63)$   \\
+Extraversion              & $-0.05$      &              & $-0.01$    \\
+                          & $(0.08)$     &              & $(0.08)$   \\
+Conscientiousness         & $0.01$       &              & $0.08$     \\
+                          & $(0.09)$     &              & $(0.10)$   \\
+Neuroticism               & $-0.22^{*}$  &              & $0.05$     \\
+                          & $(0.09)$     &              & $(0.09)$   \\
+emojiPos1                 & $0.52$       &              &            \\
+                          & $(0.65)$     &              &            \\
+emojiPos2                 & $0.23$       &              &            \\
+                          & $(0.63)$     &              &            \\
+EDF: s(Agreeableness)     & $3.27$       & $2.77$       & $2.02$     \\
+                          & $(4.11)$     & $(3.48)$     & $(2.55)$   \\
+EDF: s(Openness)          & $2.50$       & $1.79$       & $1.53$     \\
+                          & $(3.11)$     & $(2.24)$     & $(1.89)$   \\
+twoWordPos1               &              & $-0.38$      &            \\
+                          &              & $(0.74)$     &            \\
+twoWordPos2               &              & $-0.07$      &            \\
+                          &              & $(0.73)$     &            \\
+EDF: s(Age)               &              & $1.81$       &            \\
+                          &              & $(2.25)$     &            \\
+EDF: s(Extraversion)      &              & $1.52$       &            \\
+                          &              & $(1.87)$     &            \\
+EDF: s(Conscientiousness) &              & $3.32$       &            \\
+                          &              & $(4.14)$     &            \\
+EDF: s(Neuroticism)       &              & $1.53$       &            \\
+                          &              & $(1.88)$     &            \\
+threeClassPos1            &              &              & $1.19$     \\
+                          &              &              & $(0.66)$   \\
+threeClassPos2            &              &              & $0.77$     \\
+                          &              &              & $(0.69)$   \\
+\hline
+AIC                       & 591.89       & 615.92       & 604.37     \\
+BIC                       & 635.73       & 668.02       & 642.01     \\
+Log Likelihood            & -280.17      & -289.22      & -288.64    \\
+Deviance                  & 772.78       & 899.67       & 890.95     \\
+Deviance explained        & 0.15         & 0.21         & 0.10       \\
+Dispersion                & 7.41         & 8.89         & 8.37       \\
+R$^2$                     & 0.04         & 0.08         & 0.00       \\
+GCV score                 & 8.47         & 10.44        & 9.36       \\
+Num. obs.                 & 119          & 119          & 119        \\
+Num. smooth terms         & 2            & 6            & 2          \\
+\hline
+\multicolumn{4}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end{tabular}
+\caption{Statistical models}
+\label{table:coefficients}
+\end{center}
+\end{table}

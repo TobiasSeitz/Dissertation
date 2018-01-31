@@ -20,16 +20,20 @@ We recruited participants through posts on social networks and by sending out th
 \subsubsection{Statistical Analyses}
 For statistical analyses, we consulted the StabLab\footurl{http://www.stablab.stat.uni-muenchen.de/}{30.01.2018} to identify suitable methods. After a revision of the collected data and the necessary assumption checks, the associations were explored with additive models (AM). Their advantage over linear regression is more flexible for non-linear associations \footurl{https://en.wikipedia.org/wiki/Additive_model}{30.01.2018}. The \textit{mgcv} package for R was used to calculate the models.
 
-Scores on the Big-Five sub-dimensions served as independent variables, i.e. the predictors in the regression models. \textit{Openness} is coded with five items, while the remaining four dimensions were assessed with four items. The agreement levels for each item were mapped to numeric values from 1 to 5. The score on a sub-dimension is the sum of agreement levels. To better estimate effect sizes, we control for gender, age and IT proficiency in the models. 
-\subsubsection{Method limitations}
+Scores on the Big-Five sub-dimensions served as independent variables, i.e. the predictors in the regression models. \textit{Openness} is coded with five items, while the remaining four dimensions were assessed with four items. The agreement levels for each item were mapped to numeric values from 1 to 5. The score on each sub-dimension is the sum of agreement levels. To better estimate effect sizes, we control for gender, age and IT proficiency in the models. 
+\subsubsection{Method Limitations}
 The method, albeit carefully executed, faces a few limitations regarding the interpretability. First, the sample was fairly homogeneous, because participants were mostly between 20 and 28 years old and have an academic background. However, personality traits are not age dependent \ar?. Our study was strongly focused on individual preferences and usability perceptions of different policies, so only a within-groups design was feasible. However, in real-life password selection, users rarely select three passwords in a row. The choice of our storyline still makes confident about the ecological validity \cite{Fahl2013EcologicalValidityPasswordStudy}. The repeated measures design did not allow us to measure the policies' influence on password memorability, which we have to postpone to another study. At this stage, the preference was more valuable for our exploration than memorability effects. Besides, we briefed participants to fill out the survey on a desktop PC or a similar device. We cannot guarantee that all participants followed this instruction, which might have had an effect on their password selection \cite{Melicher2016UsabilityMobileTextPasswords}. 
 
+% we had to redeploy the prototype.
 Finally, we unfortunately made a mistake in the deployment of the emoji-based policy. Instead of 12 characters, it required participants to select 16 characters beside the emoji. We realized this fact by looking at descriptive statistics during the course of the study, because the policy performed significantly worse than the other two. We re-deployed the emoji-based policy immediately after we had realized the error. Consequently, we had to remove the data for the creation difficulty and ranking in cases 1-61, reducing the overall sample size to 103. Nonetheless, the sample size is sufficiently large to investigate medium to strong effects. 
 
 %- we started out with emoji16, but made the switch to emoji12 (after 43 participants), because emoji16 received the most negative feedback, but it was mostly due to the length. data removed for ranking (1-61) and difficulty to create (1-43). 
 
 \subsection{Results}
+Overall, associations between personality and creation difficulty were moderate. In the following, we only describe non-trivial and interesting associations. 
 
+
+\input{tables/personality-study1-model-coefficients}
 
 medium associations between extraversion, agreeableness, and neuroticism (basically the other three dimensions that were not useful before), but control variables are associated to a larger degree.
 
@@ -54,8 +58,14 @@ If you factor in the order of the policy, the results look clearer. if emoji12 a
 % age
 we observed non-linear associations between age and creation difficulty, but the small age range forbids us to make conclusive inferences from our data.
 
+
+\begin{figure}
+\includegraphics[width=\linewidth]{personality/dc-emoji-b5}
+\includegraphics[width=\linewidth]{personality/dc-emoji-control-mod}
+\caption{\label{fig:personality:dc-emoji-b5}Associations between predictors and difficulty to create a password under the emoji12 policy. Visualizations of the General Additive Model (gam).}
+\end{figure}
 %emoji personality
-mostly non-linear associations for the emoij12 policy
+mostly non-linear associations for the emoij12 policy (see Figure \ref{fig:personality:dc-emoji-b5})
 neuroticism weak linear association emoji12 ($\beta=-0.22$), i.e. it was slightly easier for people with higher neuroticism scores (this is a great result, albeit weak. neurotic people are by defintion more \textit{emotional}, and emojis seem to cater to this trait.)
 agreeableness weak non linear, and interesting curve (up and down) for emoji12
 openness weak non linear, but too little data to conclusively decide. 
@@ -88,10 +98,9 @@ extraversion, weak linear effect regarding 2word12. likelihood to put 2word12 fi
 
 \todo{create a emoiji selection histogram}. In essence, some emoji were strongly preferred, e.g. the red heart and the ``pouting face''. analyze: what were the usability ratings/rankings of those who picked the heart vs. the pouting face, i.e. are emojis with a positive connotation used by people who are happy that they can select an emoji password? I guess there are significant effects here. 
 
-\subsection{Lessons Learned}
+\subsection{Learnings}
 It could have been useful to include a recall test à la ``which passwords do you still remember after filling out the personality questionnaire?'' 
 
-\subsection{Discussion}
 %TODO re-read the discussion section, because the findings are a bit higher level and more understandable
 Most interesting finding: Non-IT people significantly less likely to put emoji policy first. s
 
