@@ -1,0 +1,64 @@
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+	\hline
+	& emoji12 & 2word12 & 3class12 \\
+	\hline
+	(Intercept)           & $123.77^{***}$ & $98.71^{**}$  & $159.83^{***}$ \\
+	& $(28.79)$      & $(34.57)$     & $(45.19)$      \\
+	Age                   & $1.55$         & $0.12$        &                \\
+	& $(0.95)$       & $(0.90)$      &                \\
+	GenderFemale          & $19.92^{*}$    & $29.00^{**}$  & $10.99$        \\
+	& $(9.87)$       & $(9.16)$      & $(10.57)$      \\
+	ITNo                  & $-6.83$        & $14.37$       & $15.64$        \\
+	& $(10.11)$      & $(9.58)$      & $(10.99)$      \\
+	Conscientiousness     & $-3.58^{*}$    & $-3.40^{*}$   & $-2.09$        \\
+	& $(1.58)$       & $(1.49)$      & $(1.70)$       \\
+	emojiPos1             & $-37.24^{***}$ &               &                \\
+	& $(10.95)$      &               &                \\
+	emojiPos2             & $-51.03^{***}$ &               &                \\
+	& $(10.71)$      &               &                \\
+	EDF: s(Extraversion)  & $1.44$         &               &                \\
+	& $(1.76)$       &               &                \\
+	EDF: s(Agreeableness) & $1.10$         & $1.72$        &                \\
+	& $(1.20)$       & $(2.16)$      &                \\
+	EDF: s(Neuroticism)   & $2.84$         & $3.30$        &                \\
+	& $(3.57)$       & $(4.13)$      &                \\
+	EDF: s(Openness)      & $1.22$         &               &                \\
+	& $(1.41)$       &               &                \\
+	Extraversion          &                & $-0.42$       & $-2.71$        \\
+	&                & $(1.22)$      & $(1.40)$       \\
+	Openness              &                & $0.86$        & $-1.49$        \\
+	&                & $(1.21)$      & $(1.35)$       \\
+	twoWordPos1           &                & $-10.78$      &                \\
+	&                & $(10.57)$     &                \\
+	twoWordPos2           &                & $-33.43^{**}$ &                \\
+	&                & $(10.52)$     &                \\
+	Agreeableness         &                &               & $3.40^{*}$     \\
+	&                &               & $(1.64)$       \\
+	Neuroticism           &                &               & $-3.33^{*}$    \\
+	&                &               & $(1.64)$       \\
+	threeClassPos1        &                &               & $-7.15$        \\
+	&                &               & $(11.52)$      \\
+	threeClassPos2        &                &               & $-41.44^{***}$ \\
+	&                &               & $(11.99)$      \\
+	EDF: s(Age)           &                &               & $2.76^{**}$    \\
+	&                &               & $(3.43)$       \\
+	\hline
+	AIC                   & 1266.94        & 1252.46       & 1283.54        \\
+	BIC                   & 1307.51        & 1294.21       & 1321.78        \\
+	Log Likelihood        & -618.87        & -611.20       & -628.01        \\
+	Deviance              & 229220.93      & 201509.84     & 267271.98      \\
+	Deviance explained    & 0.29           & 0.26          & 0.30           \\
+	Dispersion            & 2174.73        & 1919.59       & 2515.74        \\
+	R$^2$                 & 0.21           & 0.16          & 0.22           \\
+	GCV score             & 2455.30        & 2176.04       & 2817.89        \\
+	Num. obs.             & 119            & 119           & 119            \\
+	Num. smooth terms     & 4              & 2             & 1              \\
+	\hline
+	\multicolumn{4}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end{tabular}
+\caption{General Additive Models for \textbf{Time to Create} passwords in first personality study.}
+\label{tab:personality:study-1:timing-models}
+\end{center}
+\end{table}

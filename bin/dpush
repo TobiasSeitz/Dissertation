@@ -6,3 +6,4 @@ git add .
 git commit -m "auto commit `date`"
 git push origin --all
 git push drive --all
+git push lrz --all
