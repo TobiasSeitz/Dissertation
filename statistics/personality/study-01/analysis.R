@@ -48,7 +48,7 @@ data.difficulty$threeClassPos <- factor(data.difficulty$threeClassPos)
 data.difficulty$meanDiff <- rowMeans(data.difficulty[which(colnames(data.difficulty) == "emojiDif" | colnames(data.difficulty) == "twoWordDif" | colnames(data.difficulty) == "threeClassDif")], na.rm=TRUE)
 
 # factorize data set of policy ranking
-data.ratings$Gender[data.ratings$Geschlecht == 3] <- NA
+data.ratings$Gender[data.ratings$Gender == 3] <- NA
 data.ratings$Gender <- factor(data.ratings$Gender,levels=c(1,2),labels=c("Male","Female"))
 data.ratings$IT <- factor(data.ratings$IT,levels=c(1,2),labels=c("Yes","No"))
 data.ratings$emojiPos <- factor(data.ratings$emojiPos)
