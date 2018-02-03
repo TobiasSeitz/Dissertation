@@ -21,7 +21,6 @@ d100$D_Gender <- factor(d100$D_Gender,levels=c("Male","Female"),labels=c("Male",
 d100$D_ComputerScienceBackground <- factor(d100$D_ComputerScienceBackground, levels=c("No","Yes"), labels=c("No","Yes"))
 
 
-testVariables <- c("G_Digits","G_Special","G_Uppercase")
 responseVariablesRating <- c("G_Common","G_Passphrase","G_Pattern",
                                 "G_LengthLong","G_LengthShort",
                                 "G_Weak","G_Medium","G_Strong",
@@ -43,15 +42,42 @@ predictorsGDMS <- list("GDMS_Rational","GDMS_Intuitive", "GDMS_Avoidant",  "GDMS
 autoModelsRating <- lapply(responseVariablesRating,function(column){
   autoFormula <- as.formula(paste(column,"~ s(D_Age) + D_Gender + D_ComputerScienceBackground + s(B5_Extraversion) + s(B5_Agreeableness) +
                               s(B5_Conscientiousness) + s(B5_Neuroticism) + s(B5_Openness)"))
-  autoGam <- gam(autoFormula, data=d100);
-  autoGamPlots <- plotGAM(autoGam, controlVariables = controlVariables, predictors = predictorsB5, yLab=column, xLab.predictors = "Trait Score")
+  gam(autoFormula, data=d100);
+})
+
+extractParameterFromSmoother <- function(x){gsub("\\)","",gsub("s\\(","",x))}
+updatedModels <- lapply(autoModelsRating, function(model){
+  mSummary <- summary(model) # gives us everything we need.
+  mSmoothedFrame <- as.data.frame(mSummary$s.table);
+  mParametricFrame <- as.data.frame(mSummary$pTerms.table);
+  mResponse <- all.vars(model$formula)[1]
+  mLinearRows <- rownames(mSmoothedFrame[mSmoothedFrame$edf <= 1.1,])
+  mParametricRows <- rownames(mParametricFrame)
+  mCurveRows <- rownames(mSmoothedFrame[mSmoothedFrame$edf > 1.1,])
+  mLinearPredictors <- sapply(mLinearRows, extractParameterFromSmoother)
+  mLinearPredictors <- unname(mLinearPredictors) # for some reason the name persists...
+  
+  nRightHand <- c(mParametricRows, mLinearPredictors,mCurveRows)
+  
+  nFormulaString <- paste(nRightHand, collapse=" + ")
+  nFormulaString <- paste(mResponse,nFormulaString,sep=" ~ ")
+  nFormula = as.formula(nFormulaString)
+  gam(nFormula,data=d100)
+})
+
+lapply(updatedModels,summary)
+plotreg(updatedModels,)
+
+## plot
+lapply(updatedModels, function(model){
+  column <- all.vars(model$formula)[1]
+  autoGamPlots <- plotGAM(model, controlVariables = controlVariables, predictors = predictorsB5, yLab=column, xLab.predictors = "Trait Score")
   autoFileNameB5 <- paste("rating-",column,"-b5.pdf",sep="")
   autoFileNameControl <- paste("rating-",column,"-control.pdf",sep="")
-  savePlot(autoGamPlots[[1]],autoFileNameB5,path="graphs")
-  savePlot(autoGamPlots[[2]],autoFileNameControl,path="graphs")
-  autoGam
+  savePlot(autoGamPlots[[1]],autoFileNameB5,path="graphs/updated")
+  savePlot(autoGamPlots[[2]],autoFileNameControl,path="graphs/updated")
 })
-autoModelsRating[1]
+
 
 ###############################################################################################################################
 ### 
