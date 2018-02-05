@@ -21,14 +21,14 @@ int_breaks <-
     pretty(x, n)[pretty(x, n) %% 1 == 0]
 
 # creates two separate plots of GAMs 
-#   model: created by gam()
+#   gaModel: created by gam()
 #   controlVariables: vector/list of the names of the control variables
 #   predictors: vector/list of the names of the predictors
 #   yLab: custom y-axis label
 #   xLab.control: custom x-axis label for the control variables plot
 #   xLab.predictors: custom x-axis label for the predictors plot
 plotGAM <-
-  function(model,
+  function(gaModel,
            controlVariables,
            predictors,
            yLab = NULL,
@@ -42,9 +42,10 @@ plotGAM <-
     #
     # most of the following was stolen from Dag Hjerman's answer on Stack Overflow: https://stackoverflow.com/a/21182922/1447479
     #
+    #gaModel$data <- model.frame(gaModel);
     
     # use plot = FALSE to get plot data from visreg without plotting
-    plotData <- visreg(model, type = "contrast", plot = FALSE)
+    plotData <- visreg(gaModel, type = "contrast", plot = FALSE)
     # The output from visreg is a list of the same length as the number of 'x' variables,
     #   so we use ldply to pick the objects we want from the each list part and make a dataframe:
     smooths <- ldply(plotData, function(part)
