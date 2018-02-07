@@ -1,0 +1,59 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Overall ~ D_Age + B5_Extraversion + B5_Agreeableness + B5_Conscientiousness + 
+    B5_Openness + s(B5_Neuroticism) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    61.678638  11.274613   5.471 4.38e-07 ***
+D_Age                          -0.093851   0.109439  -0.858    0.394    
+B5_Extraversion                 0.009633   0.127079   0.076    0.940    
+B5_Agreeableness                0.316534   0.205366   1.541    0.127    
+B5_Conscientiousness           -0.027252   0.183921  -0.148    0.883    
+B5_Openness                    -0.367652   0.152369  -2.413    0.018 *  
+D_GenderFemale                  0.404587   2.246576   0.180    0.858    
+D_ComputerScienceBackgroundYes -3.161434   2.229337  -1.418    0.160    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df     F p-value  
+s(B5_Neuroticism) 6.356  7.464 1.808   0.077 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =   0.16   Deviance explained = 27.3%
+GCV = 87.709  Scale est. = 75.118    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 9 iterations.
+The RMS GCV score gradient at convergence was 0.000101062 .
+The Hessian was positive definite.
+Model rank =  17 / 17 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'  edf k-index p-value
+s(B5_Neuroticism) 9.00 6.36    1.16    0.92
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.044 -0.030  0.192 -0.108 -0.034 -0.126 -0.097  0.015 -0.196 -0.051  0.112  0.025 -0.007 -0.041 -0.036 -0.002 -0.060 -0.007 -0.010  0.003 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.044 -0.032  0.190 -0.097 -0.032 -0.178 -0.074  0.003 -0.161 -0.069  0.068  0.078 -0.036 -0.120 -0.115 -0.037 -0.026 -0.014 -0.057  0.012 
+[1] "\nCONCURVITY"
+              para s(B5_Neuroticism)
+worst    0.9944881        0.59470266
+observed 0.9944881        0.02039196
+estimate 0.9944881        0.39801555

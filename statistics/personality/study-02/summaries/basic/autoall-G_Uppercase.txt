@@ -1,0 +1,82 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Uppercase ~ s(D_Age) + D_Gender + D_ComputerScienceBackground + 
+    s(B5_Extraversion, k = 3, bs = "cr") + s(B5_Agreeableness, 
+    k = 3, bs = "cr") + s(B5_Conscientiousness, k = 3, bs = "cr") + 
+    s(B5_Neuroticism, k = 3, bs = "cr") + s(B5_Openness, k = 3, 
+    bs = "cr") + s(GDMS_Rational, k = 3, bs = "cr") + s(GDMS_Intuitive, 
+    k = 3, bs = "cr") + s(GDMS_Avoidant, k = 3, bs = "cr") + 
+    s(GDMS_Dependent, k = 3, bs = "cr") + s(GDMS_Spontaneous, 
+    k = 3, bs = "cr")
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     25.3959     0.6881  36.908   <2e-16 ***
+D_GenderFemale                  -0.1734     1.0026  -0.173    0.863    
+D_ComputerScienceBackgroundYes  -0.4243     0.9882  -0.429    0.669    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                          edf Ref.df     F p-value
+s(D_Age)                1.000  1.000 0.296   0.588
+s(B5_Extraversion)      1.300  1.505 0.319   0.746
+s(B5_Agreeableness)     1.000  1.000 0.010   0.923
+s(B5_Conscientiousness) 1.669  1.878 1.046   0.359
+s(B5_Neuroticism)       1.000  1.000 0.256   0.614
+s(B5_Openness)          1.000  1.000 1.118   0.293
+s(GDMS_Rational)        1.000  1.000 0.927   0.338
+s(GDMS_Intuitive)       1.440  1.677 0.407   0.500
+s(GDMS_Avoidant)        1.545  1.779 0.349   0.624
+s(GDMS_Dependent)       1.000  1.000 0.137   0.712
+s(GDMS_Spontaneous)     1.000  1.000 0.001   0.982
+
+R-sq.(adj) =  -0.0476   Deviance explained = 11.1%
+GCV =  19.54  Scale est. = 16.423    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 20 iterations.
+The RMS GCV score gradient at convergence was 1.793328e-07 .
+The Hessian was positive definite.
+Model rank =  32 / 32 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                           k'   edf k-index p-value
+s(D_Age)                9.000 1.000   0.983    0.38
+s(B5_Extraversion)      2.000 1.300   0.937    0.24
+s(B5_Agreeableness)     2.000 1.000   0.987    0.45
+s(B5_Conscientiousness) 2.000 1.669   1.184    0.98
+s(B5_Neuroticism)       2.000 1.000   1.031    0.57
+s(B5_Openness)          2.000 1.000   1.051    0.64
+s(GDMS_Rational)        2.000 1.000   1.073    0.78
+s(GDMS_Intuitive)       2.000 1.440   0.750    0.00
+s(GDMS_Avoidant)        2.000 1.545   0.917    0.20
+s(GDMS_Dependent)       2.000 1.000   1.121    0.84
+s(GDMS_Spontaneous)     2.000 1.000   1.186    0.96
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.098 -0.159  0.129  0.044 -0.049 -0.110  0.001  0.055 -0.036 -0.074  0.039  0.065  0.107 -0.056 -0.039 -0.018  0.008 -0.134 -0.087  0.105 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.098 -0.170  0.098  0.044 -0.005 -0.121 -0.043  0.024 -0.003 -0.058  0.003  0.041  0.150 -0.009 -0.039 -0.096 -0.003 -0.117 -0.085  0.042 
+[1] "\nCONCURVITY"
+              para  s(D_Age) s(B5_Extraversion) s(B5_Agreeableness) s(B5_Conscientiousness) s(B5_Neuroticism) s(B5_Openness) s(GDMS_Rational) s(GDMS_Intuitive)
+worst    0.7299474 0.6279192          0.5717606           0.5630594               0.7697185         0.6563924      0.6394639        0.6371156         0.6486689
+observed 0.7299474 0.3007486          0.4752953           0.4977413               0.4365414         0.5619924      0.5065920        0.6283455         0.6472259
+estimate 0.7299474 0.2858330          0.4926585           0.5143578               0.6513740         0.5315135      0.4812834        0.5877065         0.5590787
+         s(GDMS_Avoidant) s(GDMS_Dependent) s(GDMS_Spontaneous)
+worst           0.6269381         0.4997617           0.7228461
+observed        0.4629602         0.3705146           0.7134422
+estimate        0.5639050         0.4279067           0.6451156

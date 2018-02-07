@@ -1,0 +1,66 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Strong ~ B5_Agreeableness + B5_Conscientiousness + B5_Neuroticism + 
+    B5_Openness + GDMS_Rational + GDMS_Avoidant + GDMS_Dependent + 
+    GDMS_Spontaneous + s(D_Age) + s(B5_Extraversion) + s(GDMS_Intuitive) + 
+    D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                    26.93344    8.34976   3.226   0.0018 **
+B5_Agreeableness                0.14062    0.11063   1.271   0.2072   
+B5_Conscientiousness           -0.04004    0.12134  -0.330   0.7423   
+B5_Neuroticism                 -0.09625    0.08114  -1.186   0.2389   
+B5_Openness                    -0.09882    0.08214  -1.203   0.2324   
+GDMS_Rational                  -0.03827    0.18641  -0.205   0.8378   
+GDMS_Avoidant                  -0.01048    0.11790  -0.089   0.9294   
+GDMS_Dependent                  0.02022    0.11961   0.169   0.8662   
+GDMS_Spontaneous                0.01148    0.15688   0.073   0.9419   
+D_GenderFemale                 -0.15816    1.11130  -0.142   0.8872   
+D_ComputerScienceBackgroundYes -1.11266    1.08726  -1.023   0.3091   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                     edf Ref.df     F p-value
+s(D_Age)           2.945  3.664 0.730   0.478
+s(B5_Extraversion) 1.733  2.192 0.678   0.486
+s(GDMS_Intuitive)  1.222  1.411 0.061   0.812
+
+R-sq.(adj) =  0.0195   Deviance explained = 17.7%
+GCV = 24.012  Scale est. = 19.954    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 9 iterations.
+The RMS GCV score gradient at convergence was 2.962496e-05 .
+The Hessian was positive definite.
+Model rank =  38 / 38 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                      k'   edf k-index p-value
+s(D_Age)           9.000 2.945   1.010    0.44
+s(B5_Extraversion) 9.000 1.733   0.977    0.40
+s(GDMS_Intuitive)  9.000 1.222   0.857    0.08
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.016  0.006  0.136 -0.110 -0.032 -0.141 -0.163  0.033 -0.129  0.022  0.101 -0.021  0.173 -0.027 -0.028 -0.033 -0.118 -0.071 -0.228 -0.125 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.016  0.006  0.136 -0.107 -0.037 -0.163 -0.145  0.028 -0.100  0.030  0.057 -0.016  0.114 -0.067 -0.033 -0.107 -0.064 -0.068 -0.220 -0.104 
+[1] "\nCONCURVITY"
+              para  s(D_Age) s(B5_Extraversion) s(GDMS_Intuitive)
+worst    0.9981103 0.6230588          0.6609300         0.7116550
+observed 0.9981103 0.1953240          0.3941608         0.5878937
+estimate 0.9981103 0.3130438          0.5129507         0.5191083

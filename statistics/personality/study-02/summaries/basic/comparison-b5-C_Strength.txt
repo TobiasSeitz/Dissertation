@@ -1,0 +1,48 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+C_Strength ~ B5_Extraversion + B5_Agreeableness + B5_Neuroticism + 
+    s(D_Age) + s(B5_Conscientiousness) + s(B5_Openness) + D_Gender + 
+    D_ComputerScienceBackground
+
+Parametric coefficients:
+                                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    28.0633641  4.3852214   6.400 7.43e-09 ***
+B5_Extraversion                 0.0004356  0.0481032   0.009   0.9928    
+B5_Agreeableness                0.0824848  0.0774627   1.065   0.2899    
+B5_Neuroticism                 -0.0668214  0.0583352  -1.145   0.2551    
+D_GenderFemale                  0.3899714  0.7852192   0.497   0.6207    
+D_ComputerScienceBackgroundYes  1.5063879  0.7959090   1.893   0.0617 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                          edf Ref.df     F p-value   
+s(D_Age)                1.865  2.338 1.726 0.21564   
+s(B5_Conscientiousness) 2.249  2.857 4.721 0.00644 **
+s(B5_Openness)          2.225  2.799 2.269 0.14590   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.188   Deviance explained = 28.1%
+GCV = 12.058  Scale est. = 10.57     n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 5 iterations.
+The RMS GCV score gradient at convergence was 7.165852e-05 .
+The Hessian was positive definite.
+Model rank =  33 / 33 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                           k'   edf k-index p-value
+s(D_Age)                9.000 1.865   1.059    0.64
+s(B5_Conscientiousness) 9.000 2.249   1.096    0.80
+s(B5_Openness)          9.000 2.225   0.964    0.34
+NULL
+[1] "\nAUTOCORRELATION"
+[1] "\nCONCURVITY"

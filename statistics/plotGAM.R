@@ -38,6 +38,7 @@ plotGAM <-
     # point size for the residuals
     pointSize <- 1
     residualColor <- '#aaaaaa' # gray
+    estimateColor <- '#2196F3' # blue
     
     #
     # most of the following was stolen from Dag Hjerman's answer on Stack Overflow: https://stackoverflow.com/a/21182922/1447479
@@ -94,7 +95,7 @@ plotGAM <-
     # make sure the important part sits on top by plotting the lines after the points.
     predictorPlot <- predictorPlot + 
       # the estimated curve
-      geom_line() +
+      geom_line(col=estimateColor) +
       # lower bound curve
       geom_line(aes(y = lower), linetype = "dashed") +
       # upper bound curve

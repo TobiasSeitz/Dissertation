@@ -1,0 +1,65 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Medium ~ D_Age + B5_Extraversion + B5_Agreeableness + B5_Neuroticism + 
+    B5_Openness + GDMS_Rational + GDMS_Intuitive + GDMS_Avoidant + 
+    GDMS_Spontaneous + s(B5_Conscientiousness) + s(GDMS_Dependent) + 
+    D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                                Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                    17.646576   6.695698   2.636  0.00997 **
+D_Age                          -0.077365   0.050598  -1.529  0.12995   
+B5_Extraversion                -0.031448   0.060952  -0.516  0.60722   
+B5_Agreeableness                0.074930   0.093038   0.805  0.42283   
+B5_Neuroticism                  0.019786   0.069055   0.287  0.77517   
+B5_Openness                    -0.091935   0.068526  -1.342  0.18327   
+GDMS_Rational                   0.005299   0.155249   0.034  0.97285   
+GDMS_Intuitive                  0.017547   0.126152   0.139  0.88970   
+GDMS_Avoidant                  -0.009919   0.100676  -0.099  0.92175   
+GDMS_Spontaneous                0.175953   0.133072   1.322  0.18961   
+D_GenderFemale                  0.842847   0.947040   0.890  0.37597   
+D_ComputerScienceBackgroundYes -1.055011   0.936414  -1.127  0.26304   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                          edf Ref.df     F p-value
+s(B5_Conscientiousness) 1.264  1.486 0.193   0.817
+s(GDMS_Dependent)       1.167  1.316 0.049   0.893
+
+R-sq.(adj) =  -0.0203   Deviance explained = 11.8%
+GCV = 17.283  Scale est. = 14.789    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 6 iterations.
+The RMS GCV score gradient at convergence was 1.428024e-05 .
+The Hessian was positive definite.
+Model rank =  30 / 30 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                           k'   edf k-index p-value
+s(B5_Conscientiousness) 9.000 1.264   0.915    0.12
+s(GDMS_Dependent)       9.000 1.167   0.964    0.38
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.036 -0.034  0.149 -0.131 -0.175 -0.061 -0.177  0.109 -0.061 -0.033  0.145  0.024  0.042  0.024 -0.005 -0.012  0.038 -0.101  0.033 -0.074 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.036 -0.035  0.146 -0.125 -0.178 -0.106 -0.170  0.133 -0.090 -0.040  0.036  0.008  0.072 -0.049  0.032 -0.035  0.093 -0.056  0.025 -0.080 
+[1] "\nCONCURVITY"
+              para s(B5_Conscientiousness) s(GDMS_Dependent)
+worst    0.9972039               0.7107513         0.4690386
+observed 0.9972039               0.5570407         0.2503054
+estimate 0.9972039               0.5364813         0.2559484
