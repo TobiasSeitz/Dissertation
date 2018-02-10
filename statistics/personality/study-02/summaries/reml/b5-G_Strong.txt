@@ -32,24 +32,20 @@ Call:
 gam(formula = nFormula, data = d, method = method, select = select)
 
 Standardized Coefficients::
-                   (Intercept)               B5_Agreeableness                 B5_Neuroticism                    B5_Openness 
-                  0.0000000000                   0.1562342310                  -0.1597209725                  -0.1510156740 
-                D_GenderFemale D_ComputerScienceBackgroundYes           s(B5_Extraversion).1           s(B5_Extraversion).2 
-                 -0.0240422600                  -0.1124894044                  -0.0342158392                   0.0308910027 
-          s(B5_Extraversion).3           s(B5_Extraversion).4           s(B5_Extraversion).5           s(B5_Extraversion).6 
-                  0.0166045048                   0.0317510536                   0.0233849659                  -0.0283869363 
-          s(B5_Extraversion).7           s(B5_Extraversion).8           s(B5_Extraversion).9      s(B5_Conscientiousness).1 
-                  0.0270078820                  -0.1713950443                   0.0461103556                   0.0197915384 
-     s(B5_Conscientiousness).2      s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5 
-                  0.0005615009                  -0.0033214104                   0.0069599576                  -0.0071317401 
-     s(B5_Conscientiousness).6      s(B5_Conscientiousness).7      s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
-                  0.0063517833                  -0.0031595474                  -0.0325502315                  -0.0497270668 
-                    s(D_Age).1                     s(D_Age).2                     s(D_Age).3                     s(D_Age).4 
-                 -0.1707686490                  -0.0465330974                   0.0223088395                  -0.0094995900 
-                    s(D_Age).5                     s(D_Age).6                     s(D_Age).7                     s(D_Age).8 
-                 -0.0088800065                  -0.0158353935                   0.0190201246                  -0.0388926029 
-                    s(D_Age).9 
-                 -0.1444874651 
+                   (Intercept)               B5_Agreeableness                 B5_Neuroticism                    B5_Openness                 D_GenderFemale 
+                  0.0000000000                   0.1562342310                  -0.1597209725                  -0.1510156740                  -0.0240422600 
+D_ComputerScienceBackgroundYes           s(B5_Extraversion).1           s(B5_Extraversion).2           s(B5_Extraversion).3           s(B5_Extraversion).4 
+                 -0.1124894044                  -0.0342158392                   0.0308910027                   0.0166045048                   0.0317510536 
+          s(B5_Extraversion).5           s(B5_Extraversion).6           s(B5_Extraversion).7           s(B5_Extraversion).8           s(B5_Extraversion).9 
+                  0.0233849659                  -0.0283869363                   0.0270078820                  -0.1713950443                   0.0461103556 
+     s(B5_Conscientiousness).1      s(B5_Conscientiousness).2      s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5 
+                  0.0197915384                   0.0005615009                  -0.0033214104                   0.0069599576                  -0.0071317401 
+     s(B5_Conscientiousness).6      s(B5_Conscientiousness).7      s(B5_Conscientiousness).8      s(B5_Conscientiousness).9                     s(D_Age).1 
+                  0.0063517833                  -0.0031595474                  -0.0325502315                  -0.0497270668                  -0.1707686490 
+                    s(D_Age).2                     s(D_Age).3                     s(D_Age).4                     s(D_Age).5                     s(D_Age).6 
+                 -0.0465330974                   0.0223088395                  -0.0094995900                  -0.0088800065                  -0.0158353935 
+                    s(D_Age).7                     s(D_Age).8                     s(D_Age).9 
+                  0.0190201246                  -0.0388926029                  -0.1444874651 
 
 [1] "\nGAM.CHECK:"
 
@@ -64,7 +60,7 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                            k'   edf k-index p-value
-s(B5_Extraversion)      9.000 1.741   0.990    0.40
-s(B5_Conscientiousness) 9.000 1.245   1.127    0.90
-s(D_Age)                9.000 2.006   0.976    0.43
+s(B5_Extraversion)      9.000 1.741   0.990    0.41
+s(B5_Conscientiousness) 9.000 1.245   1.127    0.84
+s(D_Age)                9.000 2.006   0.976    0.32
 NULL

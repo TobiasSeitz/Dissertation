@@ -29,7 +29,7 @@ int_breaks <-
 #   xLab.predictors: custom x-axis label for the predictors plot
 plotGAM <-
   function(gaModel,
-           controlVariables,
+           controlVariables=NULL,
            predictors,
            yLab = NULL,
            xLab.control = NULL,
@@ -66,16 +66,29 @@ plotGAM <-
     
     #### subset datafor control variables and predictors, to put them into separate figures in a manuscript
     # shout out to: https://stackoverflow.com/a/11612314/1447479
-    controlSmooths <- smooths[smooths$Variable %in% controlVariables, ]
     predictorSmooths <- smooths[smooths$Variable %in% predictors, ]
-    controlResiduals <-
-      residuals[residuals$Variable %in% controlVariables, ]
     predictorResiduals <-
       residuals[residuals$Variable %in% predictors, ]
     
+    
+    
+    
     # basic plot setup with the smooths data
-    predictorPlot <- ggplot(predictorSmooths, aes(x, smooth))
-    controlPlot <- ggplot(controlSmooths, aes(x, smooth))
+    predictorPlot <- ggplot(predictorSmooths, aes(x, smooth)) + 
+      geom_rug(alpha = 1/2, sides="b", data=predictorResiduals,aes(x,y))
+      # geom_bar(aes(x),data=predictorResiduals)
+    
+    if(!is.null(controlVariables)){
+      controlSmooths <- smooths[smooths$Variable %in% controlVariables, ]
+      controlResiduals <-
+        residuals[residuals$Variable %in% controlVariables, ]
+      
+      controlPlot <- ggplot(controlSmooths, aes(x, smooth)) +
+        geom_rug(alpha = 1/2, sides="b", data=controlResiduals,aes(x,y))
+    } else{
+      controlPlot <- NULL
+    }
+    
     
     # residuals can get very visually heavy, so it sometimes is a good idea to hide them. 
     # this is done through the plotResiduals flag
@@ -85,11 +98,13 @@ plotGAM <-
                                    aes(x, y),
                                    col = residualColor,
                                    size = pointSize) + theme(legend.position = "none")
-      controlPlot <-
-        controlPlot + geom_point(data = controlResiduals,
-                                 aes(x, y),
-                                 col = residualColor,
-                                 size = pointSize) + theme(legend.position = "none")
+      if(!is.null(controlVariables)){
+        controlPlot <-
+          controlPlot + geom_point(data = controlResiduals,
+                                   aes(x, y),
+                                   col = residualColor,
+                                   size = pointSize) + theme(legend.position = "none")  
+      }
     }
     
     # make sure the important part sits on top by plotting the lines after the points.
@@ -107,19 +122,24 @@ plotGAM <-
       facet_grid(. ~ Variable, scales = "free_x") +
       labs(x = "Predictor Score")
     
-    controlPlot <- controlPlot + geom_line() +
-      geom_line(aes(y = lower), linetype = "dashed") +
-      geom_line(aes(y = upper), linetype = "dashed") +
-      scale_x_continuous(breaks = int_breaks) +
-      facet_grid(. ~ Variable, scales = "free_x") +
-      labs(x = "Control Variable Level")
+    if(!is.null(controlVariables)){
+      controlPlot <- controlPlot + geom_line() +
+        geom_line(aes(y = lower), linetype = "dashed") +
+        geom_line(aes(y = upper), linetype = "dashed") +
+        scale_x_continuous(breaks = int_breaks) +
+        facet_grid(. ~ Variable, scales = "free_x") +
+        labs(x = "Control Variable Level")
+    }
+    
     
     ## the user can set a couple of custom labels.
     if (!is.null(yLab)) {
       predictorPlot <- predictorPlot + labs(y = yLab)
-      controlPlot <- controlPlot + labs(y = yLab)
+      if(!is.null(controlVariables)){
+        controlPlot <- controlPlot + labs(y = yLab)  
+      }
     }
-    if (!is.null(xLab.control)) {
+    if (!is.null(xLab.control) & !is.null(controlVariables)) {
       controlPlot <- controlPlot + labs(x = xLab.control)
     }
     if (!is.null(xLab.predictors)) {

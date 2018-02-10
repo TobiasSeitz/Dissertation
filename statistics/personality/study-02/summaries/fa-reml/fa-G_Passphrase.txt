@@ -1,0 +1,75 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Passphrase ~ Factor1 + Factor2 + Factor5 + Factor6 + Factor7 + 
+    Factor8 + Factor9 + Factor10 + s(Factor3) + s(Factor4) + 
+    s(D_Age) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     8.554836   0.464372  18.422   <2e-16 ***
+Factor1                         0.443918   0.274233   1.619    0.109    
+Factor2                        -0.219697   0.303786  -0.723    0.472    
+Factor5                         0.043201   0.308295   0.140    0.889    
+Factor6                        -0.069794   0.297505  -0.235    0.815    
+Factor7                         0.298101   0.289974   1.028    0.307    
+Factor8                         0.006059   0.261292   0.023    0.982    
+Factor9                        -0.212001   0.293698  -0.722    0.472    
+Factor10                       -0.158613   0.312057  -0.508    0.613    
+D_GenderMale                    1.261684   0.674501   1.871    0.065 .  
+D_ComputerScienceBackgroundYes -0.505562   0.645623  -0.783    0.436    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value  
+s(Factor3) 1.388  1.674 2.031  0.1894  
+s(Factor4) 2.343  2.946 2.862  0.0378 *
+s(D_Age)   3.198  3.969 1.477  0.1972  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.148   Deviance explained = 29.4%
+-REML = 234.13  Scale est. = 6.281     n = 100
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+                   (Intercept)                        Factor1                        Factor2                        Factor5                        Factor6 
+                  0.0000000000                   0.1570984271                  -0.0756092673                   0.0141496016                  -0.0232345868 
+                       Factor7                        Factor8                        Factor9                       Factor10                   D_GenderMale 
+                  0.1008177879                   0.0022103900                  -0.0729101574                  -0.0500515071                   0.2304708238 
+D_ComputerScienceBackgroundYes                   s(Factor3).1                   s(Factor3).2                   s(Factor3).3                   s(Factor3).4 
+                 -0.0849041396                   0.0318611823                   0.0089128647                   0.0017747140                  -0.0048019863 
+                  s(Factor3).5                   s(Factor3).6                   s(Factor3).7                   s(Factor3).8                   s(Factor3).9 
+                  0.0004997382                   0.0062429752                  -0.0001046729                  -0.0376885384                  -0.1549459155 
+                  s(Factor4).1                   s(Factor4).2                   s(Factor4).3                   s(Factor4).4                   s(Factor4).5 
+                  0.2631878981                  -0.1150129581                  -0.0422684450                  -0.0807354224                  -0.0035186493 
+                  s(Factor4).6                   s(Factor4).7                   s(Factor4).8                   s(Factor4).9                     s(D_Age).1 
+                  0.0903972092                  -0.0099899638                  -0.4755651072                  -0.0769216833                  -0.4769439660 
+                    s(D_Age).2                     s(D_Age).3                     s(D_Age).4                     s(D_Age).5                     s(D_Age).6 
+                 -0.0849400544                  -0.0254837096                   0.0685933169                   0.0767536607                   0.0459208787 
+                    s(D_Age).7                     s(D_Age).8                     s(D_Age).9 
+                 -0.0349533808                   0.5283367023                  -0.8255666475 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 8 iterations.
+Gradient range [-5.757692e-07,6.517353e-07]
+(score 234.1313 & scale 6.280992).
+Hessian positive definite, eigenvalue range [0.04478657,43.03983].
+Model rank =  38 / 38 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+              k'   edf k-index p-value
+s(Factor3) 9.000 1.388   1.089    0.81
+s(Factor4) 9.000 2.343   1.141    0.88
+s(D_Age)   9.000 3.198   0.982    0.34
+NULL

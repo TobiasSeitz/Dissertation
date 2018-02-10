@@ -66,7 +66,6 @@ To better understand the reasoning behind the ratings and comparisons, we also i
 \subsection{Recruitment}
 We utilized the online research platform Prolific\footnote{\url{https://prolific.ac}, accessed 01.09.2016} to administer our survey. Participants received \$2.65 upon successful completion, which took 20 minutes in average. This compensation level is suggested as part of the ethical reward guidelines on the platform. Only an English-speaking audience was eligible to participate. From the 178 people who started the survey, 104 finished it. To prevent low quality answers, we introduced an attention check during the comparison part of the experiment.  
 
-%In the first phase of the study, the participants were asked to imagine their email provider required them to create a new password and they could not select their current one. This measurement was taken early to prevent bias from showing different types of passwords. The answers were collected in plain text. We proceeded to have the users choose the type of account that they would be willing to secure with their selected password in the real world. This would indicate the effort and the value of their selection.
 
 
 \subsection{Ethical Considerations}
@@ -82,23 +81,6 @@ Furthermore, the methodology relies on self-assessment and honest answers, which
 
 Finally, the study set-up and procedure may also influence the interpretability of the outcome. We decided not to randomize the order of the question blocks to maintain full control over the general procedure. When we measure dependent variables, the order of questions is still randomized in the question groups. This way, the potential fatigue effects are the same for all participants at the different stages, while the important questions are in random order. Moreover, the items for password pairs were not fully counterbalanced on all levels to prevent fatigue when answering the entire questionnaire. A more exhaustive set of tested passwords would increase the generalizability. 
 
-%we need to be aware that a more faceted personality profile may reveal larger differences. 
-%TODO viele antworten deuteten darauf hin, dass englisch nicht in die muttersprache ist. 
-%TODO meta password characteristics are not an accurate proxy for password strength, as depicted in the background section. 
-%Our proxy for password strength is the result of the zxcvbn estimator algorithm \cite{Wheeler2016zxcvbn}. While it can estimate the strength of passwords in attack scenarios up to one million guesses, its estimates become more fuzzy above this threshold. However, for the purpose of the study, the estimate was considered good enough as it still highly correlates with the estimates of more sophisticated tools like the password guessing service (PGS) \cite{Ur2015MeasuringRealWorldAccuracies}. 
-%\begin{itemize}
-%\item we might measure intelligence
-%\item self-reporting might not be accurate
-%\end{itemize}
-
-
-%As we collected plain text passwords that could -- in theory -- be linked backed to an individual, we took special care to point out that participants should not enter their actual password, but to think of a new one. The additional meta characteristics are most likely insufficient to reconstruct a participant's actual password. 
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\linewidth]{figures/MetaPW-Violinplot}
-%	\caption{\label{fig:MetaPW-ViolinPlot} Violin plot of strength ratings, grouped by the number of uppercase letters in the participants' meta password. The plot gets broader, the more respondents scored in the particular range. The plot shows a negative association between overall password strength and uppercase letters in the meta password.}
-%\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,7 +106,7 @@ On average, the respondents correctly identified weak, medium and strong passwor
 \end{figure}
 
 %%%%%% TABLE 
-\input{tables/regression-rating}
+%\input{tables/regression-rating}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% 
@@ -136,8 +118,7 @@ Next we analyze associations between personality and password perception. Intern
 %TODO marginal effects first, then combine the most important covariates in a smooth term (s(x, y))
 
 \paragraph{Model 1: Big-Five Scores with minimal REML smoothing}
-For overall strength rating, most covariates revealed linear associations (see Table \ref{tab:appendix:gam-overall-rating-reml} lists the coefficients). In Figure \ref{fig:personality:study2:rating-b5-predictors-G_Overall}, we see that participants who scored higher on the ``Openness'' trait generally judged passwords lower. This effect was flagged as significant in the model ($B=-0.36$). Although having a computer-science background revealed stronger correlation estimates ($B=-2.92$), the association was not significant. 
-%Table \ref{tab:Regression-Rating} shows the regression results of standalone password ratings. The overall ratings in the first column, which we consider the most important metric, were negatively associated with the \textit{openness} trait ($\beta = -0.25, p < 0.05$) (see also Figure \ref{fig:openness-scatterplot}). In other words, participants with higher openness scores were generally more pessimistic regarding password strength, which was also the case if participants had a technical background, albeit this association was not as strong. Higher agreeableness scores were slightly associated with more optimistic overall password ratings. Interestingly, with conscientiousness and extraversion, two of the big-five factors never played a significant role and thus are omitted in Table \ref{tab:Regression-Rating}.
+For overall strength rating, most covariates revealed linear associations (see Table \ref{tab:appendix:gam-overall-rating-reml} lists the coefficients). In Figure \ref{fig:personality:study2:rating-b5-predictors-G_Overall}, we see that participants who scored higher on the \textit{openness} trait generally judged passwords lower. This effect was flagged as significant in the model ($B=-0.36, \beta=-0.25$). For \textit{agreeableness}, we can see a slightly more positive trend, i.e. participants tended to rate passwords higher, the higher they scored on the \textit{agreeableness} scale. The other traits did not show any conclusive association. Having a computer-science background revealed slightly lower assessments ($B=-2.92, \beta=-0.14$), but the association was not significant. The model fit was poor with \Rsqadj{0.06} and an explained deviance of 14.7\%. Associations and model fits were comparable for the ``short password'' and ``weak password'' categories. The highest model fit was achieved for the ``Passphrase'' category (\Rsqadj{0.17}, explained deviance 26.3\%), suggesting that passphrases were largely responsible for the overall strength rating model. In summary, personality did not explain much of the participants' assessment. Penalizing smoothing parameters in stronger ways achieved higher model fits, however, the likelihood of overfitting the models increases. Therefore, we explored different factor constellations to get closer to explaining strength perceptions.
 
 \begin{figure}[htbp]
 	\centering
@@ -146,15 +127,41 @@ For overall strength rating, most covariates revealed linear associations (see T
 \end{figure}
 
 
-
-%The decision making style predictors were retained in four of the nine models, but never showed high predictive power. Contrarily, the openness trait was retained in the regression models across the board. For example, especially the weaker passwords receive lower ratings from people with higher openness scores. However, the average adjusted $R^2$ across all categories tells us that the models explain only a rather small portion of the variance in the password ratings ($M=0.06~(SD=0.03)$). 
-
-%The lower half of Table \ref{tab:B5-Regression-Comparison} shows the analysis results for standalone password ratings. One can see that there were no striking associations between predictors and dependent variables. Also, the models with the highest $R^2$ value needed six degrees of freedom on average. This means that no particular decision making style stands out to inform the predictions. The maximum $R^2$ value across the models here is $0.05$, i.e. very low. Thus, decision making style did not explain variances satisfactorily.
-
-\begin{figure}
+\paragraph{Model 2: Extracted Factors as Predictors}
+Although the IPIP scale showed good internal consistency, we can try to break down the contributing factors. Usually, a \textit{Principal Component Analysis} (PCA) reduces the number of factors, but does not have to. In our case, we would expect five distinct factors from the 50 items, but a PCA revealed that there might be \textbf{ten} for our data set. We thus extracted those factors with a standard factor analysis using varimax rotation and used these factors as predictors instead of the big-five trait scores. The resulting model explained a larger portion of the deviance (20.1\% vs. 14.7\%) for overall assessment, but the R-square value remained constant. Coefficients for Factor 3 were biggest ($B=-2.16, \beta=-0.21$), and all items of the openness sub-scale loaded onto it. To a much smaller degree, conscientiousness, agreeableness, and extraversion items also formed this factor. As a consequence, marginal effects, i.e. caused by only one personality trait, can be ruled out -- it is a combination of trait scores that explains associations in our model. However, only a confirmatory study with a larger sample size can deliver final answers as to the specific trait combinations. As of now, we hypothesize that participants showing particular constellations of openness, conscientiousness and extraversion scores rated all passwords lower than other participants.
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{figures/Openness-ScatterPlot3}
-	\caption{\label{fig:openness-scatterplot} Scatter plot of openness scores on x-axis and overall password ratings on y-axis, with fitted regression line and 95\% confidence interval. Participants scoring high on openness are a little more pessimistic in rating the strength of passwords.}
+	\includegraphics[width=\linewidth]{personality/rating-fa-predictors-G_Overall}
+	\caption{\label{fig:personality:study2:rating-fa-predictors-G_Overall}Factor 3, which was mostly loaded with \textit{openness} items, Factor 9 (mostly \textit{conscientiousness}), and Factor 10 (mostly \textit{extraversion}) were associated with lower ratings.}
+\end{figure}
+
+\paragraph{Model 3: Mixed Model -- Password Characteristics and Big Five Traits}
+Similar to the evaluation of PASDJO strength ratings, we can take features of the passwords as covariates, e.g. the number of digits or the total length. Figure \ref{fig:personality:study2:boxplot-ratings-pws} visualizes the ratings for each password. We see that strength ratings take the entire score spectrum in many cases. Using password features as covariates allows us to identify their weight in the assessment. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{personality/boxplot-ratings-pws-v2}
+	\caption{\label{fig:personality:study2:boxplot-ratings-pws}Strength assessments of the 13 passwords in the study. Broad interquartile ranges for indicate that participants largely disagreed on the strength.}
+\end{figure}
+
+\makeatletter
+First, we look at marginal associations between ratings and the number of lowercase, uppercase, digits, and symbols (LUDS metric), which is basically a linear model. All coefficients are positive ($\beta_{L} = 0.15$, $\beta_{U} = 0.24$,$\beta_{D} = 0.26$,$\beta_{S} = 0.13$) but weakly associated and the model fit is rather poor (\Rsqadj{0.12}). Mixing it with the Big-Five traits as predictors improves the fit slightly (\Rsqadj{0.15}). If we factor in \textit{password length} as an interaction term with the LUDS metrics, the fit improves further (\Rsqadj{0.20}). The correlation between the number of digits and ratings becomes strong ($\beta_{L} = 0.84$), i.e. more digits are perceived as stronger. This, however, was surprisingly contradicted when we account for the fact that two passwords had digits as substitutions for letters (\textit{p@ssw0rd} and \textit{F@m1Ly07\%}). Thus, the final model includes an interaction term $digits*substitutions*symbols$ as covariate. In Figure \ref{fig:personality:study2:rating-mixed-model} we can see the resulting associations. Password length was the main association, while the influence of character substitutions reversed the positive impression of symbols, digits and uppercase characters.
+%what about Big five? 
+Personality traits on the other side, although statistically significant, were weak. However, removing them from the model entirely would have led to a notable decrease in model fit. 
+
+\paragraph{Conclusion} The mixed model is strongly influenced by interaction terms between predictable character substitutions. In general, more digits, uppercase letters, and symbols led to higher strength ratings, but this association was strongly reversed if digits or symbols acted as l33t substitutions. Thus, we conclude that respondents were skeptical about this password creation strategy in the rating part. By and large, personality was a minor factor.
+
+% weird: including the number of substitutions flips the direction of the correlation: but since only p@ssw0rd and F@m1Ly07% had numbers and substitutions, this means that people penalized these two passwords. 
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[t]{\linewidth}
+		\includegraphics[width=\textwidth]{personality/rating-manual-mixed-v8-predictors}
+	\end{subfigure}
+	\begin{subfigure}[b]{\linewidth}
+	\includegraphics[width=\textwidth]{personality/rating-manual-mixed-v8-b5}
+	\end{subfigure}
+	\caption{\label{fig:personality:study2:rating-mixed-model}Longer passwords were perceived as stronger, digits }
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,7 +178,7 @@ We found weak associations between the control variables and password strength a
 
 In all the models, the predictive power was moderate, with an average $R^2_{adj}$ value of $0.13~(SD=0.04)$. However, the model fit was much better than before, when passwords had to be rated without a point of reference. We see that for the comparison, openness was again an important predictor, but conscientiousness was even more important. The associations between GDMS and password comparisons form a diverse spectrum with no evident pattern. 
 
-\input{tables/regression-comparison}
+%\input{tables/regression-comparison}
 
 \subsubsection{Qualitative Findings}
 While entering an elaborate response was not mandatory, all but one participant (\textit{n}=99) gave a brief and in most cases comprehensible explanation for their ratings. The numbers do not necessarily add up to \textit{n}, because answers could receive multiple codes.

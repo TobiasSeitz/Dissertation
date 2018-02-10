@@ -32,16 +32,14 @@ Call:
 gam(formula = nFormula, data = d, method = method, select = select)
 
 Standardized Coefficients::
-                   (Intercept)                B5_Extraversion               B5_Agreeableness                 B5_Neuroticism 
-                    0.00000000                     0.07044955                     0.09085799                     0.20017955 
-                   B5_Openness                          D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes 
-                   -0.25968417                    -0.17686304                    -0.03229833                    -0.11496404 
-     s(B5_Conscientiousness).1      s(B5_Conscientiousness).2      s(B5_Conscientiousness).3      s(B5_Conscientiousness).4 
-                    0.26226183                    -0.07722674                    -0.01388386                     0.06754007 
-     s(B5_Conscientiousness).5      s(B5_Conscientiousness).6      s(B5_Conscientiousness).7      s(B5_Conscientiousness).8 
-                   -0.05639642                     0.05826909                    -0.03213211                    -0.27084627 
-     s(B5_Conscientiousness).9 
-                    0.30019201 
+                   (Intercept)                B5_Extraversion               B5_Agreeableness                 B5_Neuroticism                    B5_Openness 
+                    0.00000000                     0.07044955                     0.09085799                     0.20017955                    -0.25968417 
+                         D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2 
+                   -0.17686304                    -0.03229833                    -0.11496404                     0.26226183                    -0.07722674 
+     s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5      s(B5_Conscientiousness).6      s(B5_Conscientiousness).7 
+                   -0.01388386                     0.06754007                    -0.05639642                     0.05826909                    -0.03213211 
+     s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
+                   -0.27084627                     0.30019201 
 
 [1] "\nGAM.CHECK:"
 
@@ -56,5 +54,5 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                           k'  edf k-index p-value
-s(B5_Conscientiousness) 9.00 2.26    1.06     0.7
+s(B5_Conscientiousness) 9.00 2.26    1.06    0.73
 NULL

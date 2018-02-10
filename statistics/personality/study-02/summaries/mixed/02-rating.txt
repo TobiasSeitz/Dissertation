@@ -1,0 +1,53 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+rating ~ (digits * length) + (lowercase * length) + (symbols * 
+    length) + (uppercase * length) + chunks + substitutions + 
+    score
+
+Parametric coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      11.06759    2.82745   3.914 9.54e-05 ***
+digits           -1.76108    0.75052  -2.346 0.019102 *  
+length           -0.04728    0.65070  -0.073 0.942088    
+lowercase        -1.27534    0.38245  -3.335 0.000878 ***
+symbols           7.74849    1.51127   5.127 3.39e-07 ***
+uppercase        -0.65484    0.22393  -2.924 0.003512 ** 
+chunks            0.22396    0.32456   0.690 0.490294    
+substitutions    -3.40475    0.51519  -6.609 5.66e-11 ***
+score            -0.22769    0.20605  -1.105 0.269353    
+digits:length     0.12317    0.03914   3.147 0.001686 ** 
+length:lowercase  0.05790    0.02058   2.814 0.004973 ** 
+length:symbols   -0.48920    0.09517  -5.140 3.17e-07 ***
+length:uppercase -0.02281    0.06323  -0.361 0.718353    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+R-sq.(adj) =  0.205   Deviance explained = 21.3%
+-REML = 2543.4  Scale est. = 2.8253    n = 1300
+[1] "\nBETAs:"
+
+Call:
+gam(formula = rating ~ (digits * length) + (lowercase * length) + 
+    (symbols * length) + (uppercase * length) + chunks + substitutions + 
+    score, data = merged, method = "REML")
+
+Standardized Coefficients::
+     (Intercept)           digits           length        lowercase          symbols        uppercase           chunks    substitutions            score 
+       0.0000000       -1.6547700       -0.1111234       -3.0010722        3.4354064       -0.4721004        0.1355794       -1.3036085       -0.1748479 
+   digits:length length:lowercase   length:symbols length:uppercase 
+       1.6621669        3.2770832       -3.4705560       -0.2130668 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-7.383119e-08,-7.383119e-08]
+(score 2543.426 & scale 2.825299).
+Hessian positive definite, eigenvalue range [643.5,643.5].
+Model rank =  13 / 13 
+
+NULL

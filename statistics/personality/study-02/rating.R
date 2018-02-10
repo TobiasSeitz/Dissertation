@@ -121,7 +121,7 @@ plot(pcB5)
 b5FactorScores <- factanal(b5Items[,2:ncol(b5Items)],factors=10,rotation="varimax",scores="regression")$scores
 b5FactorScores <- as.data.frame(b5FactorScores)
 
-testFrame <- data.frame(d100,b5FactorScores)
+faB5 <- data.frame(d100,b5FactorScores)
 predictorsFA <- as.list(names(b5FactorScores))
 
 pdf("panels.pdf")
@@ -137,7 +137,7 @@ lapply(list(responseFrame,b5Frame,gdmsFrame,sebisFrame),cor.plot,number=TRUE)
 dev.off()
 
 
-fa(b5Frame,1,n.obs = 100,fm="wls")
+fa(b5Frame,2,n.obs = 100,fm="wls")
 
 allPredictors <- c(predictorsB5,predictorsGDMS)
 
@@ -164,11 +164,13 @@ res
 autoModelsRatingB5 <- lapply(responseVariablesRating, getSmoothedGAM,predictors=predictorsB5,d<-d100, select=FALSE,method="REML")
 autoModelsRatingGDMS <- lapply(responseVariablesRating, getSmoothedGAM,predictors=predictorsGDMS,d<-d100)
 autoModelsRatingSeBIS <- lapply(responseVariablesRating, getSmoothedGAM,predictors=predictorsSeBIS,d<-d100)
+autoModelsRatingFA <- lapply(responseVariablesRating, getSmoothedGAM,predictors=predictorsFA,d<-faB5,method="REML")
 
 #autoModelsAll <- lapply(responseVariablesRating, getSmoothedGAM, predictors=allPredictors,d<-d100)
 
 ## we now use select=TRUE in gam() to add more penalty to terms. So we don't need to simplify anymore.
 updatedModelsB5 <- lapply(autoModelsRatingB5, simplifyGAM,method="REML");
+updatedModelsFA <- lapply(autoModelsRatingFA, simplifyGAM,method="REML")
 #updatedModelsSeBIS <- lapply(autoModelsRatingSeBIS, simplifyGAM);
 #updatedModelsGDMS <- lapply(autoModelsRatingGDMS, simplifyGAM);
 #updatedModelsAll <- lapply(autoModelsAll,simplifyGAM)
@@ -181,6 +183,11 @@ updatedModelsB5 <- lapply(autoModelsRatingB5, simplifyGAM,method="REML");
 lapply(updatedModelsB5, generatePDF, 
        controlVariables = controlVariables, predictors = predictorsB5,
        prefix.predictors="rating-b5-predictors-", prefix.control="rating-b5-controls-",path="graphs/b5-reml",xLab.predictors = "Trait Scores")
+# FA
+lapply(updatedModelsFA, generatePDF, 
+       controlVariables = controlVariables, predictors = predictorsFA,
+       prefix.predictors="rating-b5-predictors-", prefix.control="rating-b5-controls-",path="graphs/fa-reml",xLab.predictors = "Trait Scores")
+
 # GDMS
 lapply(autoModelsRatingGDMS, generatePDF, 
        controlVariables = controlVariables, predictors = predictorsGDMS,
@@ -206,6 +213,10 @@ allUpdatedModels <- c(updatedModelsB5,updatedModelsGDMS, updatedModelsSeBIS);
 for(i in updatedModelsB5) {
   outputSummary(i, prefix="b5-", path="summaries/reml")
 }
+
+for(i in updatedModelsFA) {
+  outputSummary(i, prefix="fa-", path="summaries/fa-reml")
+}
 for(i in autoModelsRatingGDMS) {
   outputSummary(i, prefix="gdms-", path="summaries/penalized")
 }
@@ -228,10 +239,10 @@ sink(file=NULL)
 ### FROM PCA/Factor analysis
 ###
 ###############################################################################################################################
-rFactorModel <- getSmoothedGAM("G_Overall",predictorsFA,k=5,d<-testFrame,select=FALSE,method="REML")
+rFactorModel <- getSmoothedGAM("G_Overall",predictorsFA,k=5,d<-faB5,select=FALSE,method="REML")
 rFactorModel_simple <- simplifyGAM(rFactorModel)
 rFactorModel_simple_GCV <- simplifyGAM(rFactorModel,method="GCV.Cp",select=TRUE)
-rFactorModel_manual <- gam(G_Overall ~ + s(Factor3, k = 5) + s(Factor4, k = 5) + D_Gender +  D_ComputerScienceBackground, method="REML",data=testFrame)
+rFactorModel_manual <- gam(G_Overall ~ + s(Factor3, k = 5) + s(Factor4, k = 5) + D_Gender +  D_ComputerScienceBackground, method="REML",data=faB5)
 
 summary(rFactorModel)
 summary(rFactorModel_simple)
@@ -303,3 +314,17 @@ summary(rSmoothedModelB5)
 rOverallPlots <- plotGAM(rOverallModel_simple,controlVariables = controlVariables, predictors = predictorsB5,yLab = "Overall Strength Rating",xLab.predictors = "Trait Score")
 savePlot(rOverallPlots[[1]],"rating-overall-b5.pdf",path="graphs")
 savePlot(rOverallPlots[[2]],"rating-overall-control.pdf",path="graphs")
+
+
+
+###############################################################################################################################
+###
+### Example for handy-work 
+### Overall Strength Ratings
+###
+###############################################################################################################################
+rOverallModel <- gamm(G_Overall ~ s(B5_Extraversion) + s(B5_Agreeableness) +
+                        s(B5_Conscientiousness) + s(B5_Neuroticism) + s(B5_Openness) +
+                        s(D_Age) + D_Gender + D_ComputerScienceBackground ,
+                      #select = TRUE,
+                      data = dNormed)

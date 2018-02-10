@@ -32,20 +32,16 @@ Call:
 gam(formula = nFormula, data = d, method = method, select = select)
 
 Standardized Coefficients::
-                   (Intercept)                B5_Extraversion               B5_Agreeableness                    B5_Openness 
-                  0.000000e+00                   1.456078e-02                   1.104989e-01                  -2.067543e-01 
-                         D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes      s(B5_Conscientiousness).1 
-                 -3.110100e-02                  -2.562050e-02                  -1.219714e-01                   1.662937e-01 
-     s(B5_Conscientiousness).2      s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5 
-                 -5.422425e-02                  -3.473553e-02                   7.549961e-02                  -6.038067e-02 
-     s(B5_Conscientiousness).6      s(B5_Conscientiousness).7      s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
-                  6.098071e-02                  -2.943189e-02                  -3.057945e-01                   1.491373e-01 
-           s(B5_Neuroticism).1            s(B5_Neuroticism).2            s(B5_Neuroticism).3            s(B5_Neuroticism).4 
-                 -3.145648e-04                   8.168769e-05                   1.364361e-04                  -8.917438e-05 
-           s(B5_Neuroticism).5            s(B5_Neuroticism).6            s(B5_Neuroticism).7            s(B5_Neuroticism).8 
-                  2.899650e-05                   1.005393e-04                   5.935456e-05                   4.940125e-04 
-           s(B5_Neuroticism).9 
-                  2.919589e-02 
+                   (Intercept)                B5_Extraversion               B5_Agreeableness                    B5_Openness                          D_Age 
+                  0.000000e+00                   1.456078e-02                   1.104989e-01                  -2.067543e-01                  -3.110100e-02 
+                D_GenderFemale D_ComputerScienceBackgroundYes      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2      s(B5_Conscientiousness).3 
+                 -2.562050e-02                  -1.219714e-01                   1.662937e-01                  -5.422425e-02                  -3.473553e-02 
+     s(B5_Conscientiousness).4      s(B5_Conscientiousness).5      s(B5_Conscientiousness).6      s(B5_Conscientiousness).7      s(B5_Conscientiousness).8 
+                  7.549961e-02                  -6.038067e-02                   6.098071e-02                  -2.943189e-02                  -3.057945e-01 
+     s(B5_Conscientiousness).9            s(B5_Neuroticism).1            s(B5_Neuroticism).2            s(B5_Neuroticism).3            s(B5_Neuroticism).4 
+                  1.491373e-01                  -3.145648e-04                   8.168769e-05                   1.364361e-04                  -8.917438e-05 
+           s(B5_Neuroticism).5            s(B5_Neuroticism).6            s(B5_Neuroticism).7            s(B5_Neuroticism).8            s(B5_Neuroticism).9 
+                  2.899650e-05                   1.005393e-04                   5.935456e-05                   4.940125e-04                   2.919589e-02 
 
 [1] "\nGAM.CHECK:"
 
@@ -61,5 +57,5 @@ indicate that k is too low, especially if edf is close to k'.
 
                            k'   edf k-index p-value
 s(B5_Conscientiousness) 9.000 2.184   1.030    0.60
-s(B5_Neuroticism)       9.000 1.003   0.961    0.36
+s(B5_Neuroticism)       9.000 1.003   0.961    0.28
 NULL

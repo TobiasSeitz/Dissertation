@@ -32,20 +32,16 @@ Call:
 gam(formula = nFormula, data = d, method = method, select = select)
 
 Standardized Coefficients::
-                   (Intercept)                B5_Extraversion           B5_Conscientiousness                 B5_Neuroticism 
-                   0.000000000                   -0.143460686                   -0.034891242                   -0.130914733 
-                   B5_Openness                 D_GenderFemale D_ComputerScienceBackgroundYes          s(B5_Agreeableness).1 
-                  -0.156368708                    0.139386107                   -0.126787631                   -0.003628719 
-         s(B5_Agreeableness).2          s(B5_Agreeableness).3          s(B5_Agreeableness).4          s(B5_Agreeableness).5 
-                   0.016946881                   -0.019181480                    0.022825920                    0.014545312 
-         s(B5_Agreeableness).6          s(B5_Agreeableness).7          s(B5_Agreeableness).8          s(B5_Agreeableness).9 
-                  -0.022567842                    0.013729723                    0.122025646                    0.136367362 
-                    s(D_Age).1                     s(D_Age).2                     s(D_Age).3                     s(D_Age).4 
-                   0.005533713                   -0.005223967                    0.014490025                   -0.011013995 
-                    s(D_Age).5                     s(D_Age).6                     s(D_Age).7                     s(D_Age).8 
-                  -0.010594234                   -0.011013118                    0.011622246                   -0.090055165 
-                    s(D_Age).9 
-                   0.148286746 
+                   (Intercept)                B5_Extraversion           B5_Conscientiousness                 B5_Neuroticism                    B5_Openness 
+                   0.000000000                   -0.143460686                   -0.034891242                   -0.130914733                   -0.156368708 
+                D_GenderFemale D_ComputerScienceBackgroundYes          s(B5_Agreeableness).1          s(B5_Agreeableness).2          s(B5_Agreeableness).3 
+                   0.139386107                   -0.126787631                   -0.003628719                    0.016946881                   -0.019181480 
+         s(B5_Agreeableness).4          s(B5_Agreeableness).5          s(B5_Agreeableness).6          s(B5_Agreeableness).7          s(B5_Agreeableness).8 
+                   0.022825920                    0.014545312                   -0.022567842                    0.013729723                    0.122025646 
+         s(B5_Agreeableness).9                     s(D_Age).1                     s(D_Age).2                     s(D_Age).3                     s(D_Age).4 
+                   0.136367362                    0.005533713                   -0.005223967                    0.014490025                   -0.011013995 
+                    s(D_Age).5                     s(D_Age).6                     s(D_Age).7                     s(D_Age).8                     s(D_Age).9 
+                  -0.010594234                   -0.011013118                    0.011622246                   -0.090055165                    0.148286746 
 
 [1] "\nGAM.CHECK:"
 

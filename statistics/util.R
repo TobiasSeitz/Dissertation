@@ -71,6 +71,15 @@ simplifyGAM <- function(smoothedModel,select=FALSE,method="REML"){
   # m$data <- d
   m
 }
+smoothPredictors <- function(p,k=NULL){
+  if(is.null(k)){
+    p <- paste0("s(",p,")")  
+  }
+  else {
+    p <- paste0("s(",p,",k=",k,")")  
+  }
+  p
+}
 
 
 # https://stackoverflow.com/a/30265548/1447479 
