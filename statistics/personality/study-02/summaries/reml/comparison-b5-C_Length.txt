@@ -1,0 +1,68 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+C_Length ~ B5_Extraversion + B5_Agreeableness + B5_Neuroticism + 
+    s(B5_Conscientiousness) + s(B5_Openness) + s(D_Age) + D_Gender + 
+    D_ComputerScienceBackground
+
+Parametric coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    16.781003   4.206106   3.990 0.000137 ***
+B5_Extraversion                 0.056159   0.046090   1.218 0.226309    
+B5_Agreeableness                0.086263   0.074397   1.159 0.249398    
+B5_Neuroticism                  0.001175   0.055925   0.021 0.983286    
+D_GenderFemale                  0.269636   0.752998   0.358 0.721140    
+D_ComputerScienceBackgroundYes  1.609364   0.761698   2.113 0.037449 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                          edf Ref.df     F p-value  
+s(B5_Conscientiousness) 1.964  2.494 2.756  0.0542 .
+s(B5_Openness)          2.135  2.686 3.217  0.0536 .
+s(D_Age)                2.052  2.575 1.515  0.3028  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.153   Deviance explained = 24.9%
+-REML = 259.36  Scale est. = 9.7403    n = 100
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+                   (Intercept)                B5_Extraversion               B5_Agreeableness                 B5_Neuroticism                 D_GenderFemale 
+                   0.000000000                    0.142706230                    0.128278909                    0.002752765                    0.039436824 
+D_ComputerScienceBackgroundYes      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2      s(B5_Conscientiousness).3      s(B5_Conscientiousness).4 
+                   0.216405495                    0.018237330                   -0.073267894                   -0.017622809                    0.053500470 
+     s(B5_Conscientiousness).5      s(B5_Conscientiousness).6      s(B5_Conscientiousness).7      s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
+                  -0.054293987                    0.048974976                   -0.025867305                   -0.249011748                   -0.290883015 
+              s(B5_Openness).1               s(B5_Openness).2               s(B5_Openness).3               s(B5_Openness).4               s(B5_Openness).5 
+                   0.223945366                    0.038035835                    0.003122413                    0.012405659                    0.012580694 
+              s(B5_Openness).6               s(B5_Openness).7               s(B5_Openness).8               s(B5_Openness).9                     s(D_Age).1 
+                   0.012159657                    0.007602190                   -0.042390943                    0.453761528                   -0.152775821 
+                    s(D_Age).2                     s(D_Age).3                     s(D_Age).4                     s(D_Age).5                     s(D_Age).6 
+                  -0.012250149                    0.027536061                   -0.021080973                   -0.023099242                   -0.023993374 
+                    s(D_Age).7                     s(D_Age).8                     s(D_Age).9 
+                   0.024577468                   -0.143662098                    0.024269205 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-4.06856e-05,4.898292e-05]
+(score 259.3633 & scale 9.740313).
+Hessian positive definite, eigenvalue range [0.09491107,45.51827].
+Model rank =  33 / 33 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                           k'   edf k-index p-value
+s(B5_Conscientiousness) 9.000 1.964   0.883    0.12
+s(B5_Openness)          9.000 2.135   1.055    0.66
+s(D_Age)                9.000 2.052   1.136    0.91
+NULL

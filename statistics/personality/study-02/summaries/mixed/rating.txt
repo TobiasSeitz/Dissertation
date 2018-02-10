@@ -1,0 +1,66 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+rating ~ B5_Agreeableness + s(B5_Openness) + s(B5_Neuroticism) + 
+    digits + symbols + uppercase + substitutions + symbols:substitutions
+
+Parametric coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            2.60614    0.37348   6.978 4.79e-12 ***
+B5_Agreeableness       0.02694    0.01004   2.683  0.00739 ** 
+digits                 0.22458    0.03041   7.386 2.72e-13 ***
+symbols                0.50702    0.07286   6.959 5.45e-12 ***
+uppercase              0.18017    0.03615   4.985 7.06e-07 ***
+substitutions         -1.87165    0.20128  -9.299  < 2e-16 ***
+symbols:substitutions  0.86174    0.13434   6.414 1.98e-10 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df     F  p-value    
+s(B5_Openness)    1.362  1.643 8.704  0.00108 ** 
+s(B5_Neuroticism) 6.899  7.945 3.962 9.44e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.208   Deviance explained = 21.7%
+-REML = 2542.2  Scale est. = 2.8152    n = 1300
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+          (Intercept)      B5_Agreeableness                digits               symbols 
+         0.000000e+00          7.171775e-02          2.110207e-01          2.247963e-01 
+            uppercase         substitutions symbols:substitutions      s(B5_Openness).1 
+         1.298939e-01         -7.166168e-01          5.264033e-01          1.271561e-02 
+     s(B5_Openness).2      s(B5_Openness).3      s(B5_Openness).4      s(B5_Openness).5 
+        -9.886922e-04          5.700086e-05          1.074044e-04          1.006989e-04 
+     s(B5_Openness).6      s(B5_Openness).7      s(B5_Openness).8      s(B5_Openness).9 
+        -5.478908e-05         -1.028531e-05          3.416745e-04         -8.466597e-02 
+  s(B5_Neuroticism).1   s(B5_Neuroticism).2   s(B5_Neuroticism).3   s(B5_Neuroticism).4 
+        -4.346744e-01          2.485851e-01          3.579286e-01         -4.297138e-02 
+  s(B5_Neuroticism).5   s(B5_Neuroticism).6   s(B5_Neuroticism).7   s(B5_Neuroticism).8 
+        -1.646330e-01          1.760381e-01          1.237490e-01          4.261749e-01 
+  s(B5_Neuroticism).9 
+        -5.034637e-01 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-0.0002702296,0.003575878]
+(score 2542.24 & scale 2.815163).
+Hessian positive definite, eigenvalue range [0.005915002,645.51].
+Model rank =  25 / 25 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'  edf k-index p-value
+s(B5_Openness)    9.00 1.36    1.01    0.66
+s(B5_Neuroticism) 9.00 6.90    1.03    0.88
+NULL

@@ -31,6 +31,7 @@
 \usepackage[hyphens]{url}
 \usepackage[top=2cm, bottom=1.25in, left=2cm, right=2cm]{geometry}
 \usepackage{enumitem}
+\usepackage{siunitx} % Tabellenwerte an Dezimalstelle zentrieren
 %COLORS
 \usepackage{xcolor}
 %\definecolor{platinum}{HTML}{E5E4E2}
@@ -57,7 +58,9 @@
 \tableofcontents
 \mainmatter
 
+
 % ################################################### MAIN PART
+% preface
 \input{content/introduction/intro}
 \part{AUTHENTICATION ON THE WEB}
 \label{part:related_work}
@@ -86,9 +89,9 @@
 % know everything from related work. 
 \input{content/problem_space/pasdjo} %published
 %\input{content/problem_space/auth_tasks} % can go 
-\input{content/problem_space/mm_pwm} %published
 \input{content/problem_space/policies_reuse} %published
-\input{content/influence_strategies/pws_and_personality} %published (short paper at Persuasive)
+\input{content/influence_strategies/pws_and_personality} %mostly new 
+\input{content/problem_space/mm_pwm} %published
 %\input{content/problem_space/roskilde_study}
 %\input{content/problem_space/keystrokes_reuse}
 
@@ -130,6 +133,8 @@
 \printindex
 \glsaddall
 \printglossaries
+
+\input{content/appendix}
 
 % REFERENCES FORMAT
 % References must be the same font size as other body text.

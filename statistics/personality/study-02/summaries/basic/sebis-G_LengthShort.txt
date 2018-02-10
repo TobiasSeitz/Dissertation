@@ -1,0 +1,61 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_LengthShort ~ D_Age + SeBIS_Securement + SeBIS_Awareness + 
+    SeBIS_Updating + SeBIS_Passwords + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    24.17171    6.06376   3.986 0.000134 ***
+D_Age                          -0.06651    0.07363  -0.903 0.368722    
+SeBIS_Securement               -0.08352    0.14066  -0.594 0.554104    
+SeBIS_Awareness                 0.34106    0.21320   1.600 0.113092    
+SeBIS_Updating                 -0.30710    0.26767  -1.147 0.254234    
+SeBIS_Passwords                 0.34584    0.32709   1.057 0.293134    
+D_GenderFemale                  1.66443    1.31766   1.263 0.209719    
+D_ComputerScienceBackgroundYes -1.44274    1.38824  -1.039 0.301408    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+R-sq.(adj) =  0.0387   Deviance explained = 10.7%
+GCV = 36.693  Scale est. = 33.757    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Model required no smoothing parameter selectionModel rank =  8 / 8 
+
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.058 -0.049  0.143 -0.135 -0.091 -0.102 -0.135  0.201  0.019  0.037  0.147  0.001  0.039 -0.119 -0.048 -0.084  0.048 -0.031  0.083  0.033 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.058 -0.052  0.138 -0.125 -0.094 -0.149 -0.130  0.196  0.047  0.061  0.049  0.010  0.060 -0.105  0.029 -0.123  0.119 -0.040  0.077 -0.040 
+[1] "\nCONCURVITY"
+Called from: concurvity(m, full = TRUE)
+Called from: print(concurvity(m, full = TRUE))
+Analysis of Deviance Table
+
+Model 1: G_Overall ~ s(D_Age) + D_Gender + D_ComputerScienceBackground + 
+    s(B5_Extraversion, k = 3, bs = "cr") + s(B5_Agreeableness, 
+    k = 3, bs = "cr") + s(B5_Conscientiousness, k = 3, bs = "cr") + 
+    s(B5_Neuroticism, k = 3, bs = "cr") + s(B5_Openness, k = 3, 
+    bs = "cr") + s(GDMS_Rational, k = 3, bs = "cr") + s(GDMS_Intuitive, 
+    k = 3, bs = "cr") + s(GDMS_Avoidant, k = 3, bs = "cr") + 
+    s(GDMS_Dependent, k = 3, bs = "cr") + s(GDMS_Spontaneous, 
+    k = 3, bs = "cr")
+Model 2: G_Overall ~ D_Age + B5_Extraversion + B5_Agreeableness + B5_Neuroticism + 
+    B5_Openness + GDMS_Rational + GDMS_Intuitive + GDMS_Avoidant + 
+    GDMS_Spontaneous + s(B5_Conscientiousness) + s(GDMS_Dependent) + 
+    D_Gender + D_ComputerScienceBackground
+  Resid. Df Resid. Dev     Df Deviance
+1    84.590     7415.2                
+2    84.208     7391.6 0.3822     23.6

@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{l|SS|SS|SS}
+          & \multicolumn{2}{c|}{\textit{emoji12}} & \multicolumn{2}{c|}{\textit{2word12}} & \multicolumn{2}{c}{\textit{3class12}} \\ \hline \hline
+          (Intercept) & \multicolumn{2}{c|}{$9.99$} & \multicolumn{2}{c|}{$7.04$} & \multicolumn{2}{c}{$6.26$} \\ \hline
+\multicolumn{1}{c|}{Predictor}  & \multicolumn{1}{c}{$\beta$} & \multicolumn{1}{c|}{$\sigma_n$} & \multicolumn{1}{c}{$\beta$} & \multicolumn{1}{c|}{$\sigma_n$} & \multicolumn{1}{c}{$\beta$} & \multicolumn{1}{c}{$\sigma_n$}  \\
+    Age & 0.02  & 0.06  &       &       & -0.05 & 0.06 \\
+    Gender (female) & 0.91  & 0.58  & 1.35  & 0.66  & -0.46 & 0.61 \\
+    No IT Background & -0.10 & 0.59  & 0.60  & 0.66  & 0.21  & 0.63 \\
+    Extraversion & -0.05 & 0.08  &       &       & -0.01 & 0.08 \\
+    Conscientiounsness & 0.01  & 0.09  &       &       & 0.08  & 0.10 \\
+    Neuroticism & -0.22 & 0.09  &       &       & 0.05  & 0.09 \\
+    \textit{emoji12} Position 2 & 0.52  & 0.65  &       &       &       &  \\
+    \textit{emoji12} Position 3 & 0.23  & 0.63  &       &       &       &  \\
+    \textit{2word12} Position 2 &       &       & -0.38 & 0.74  &       &  \\
+    \textit{2word12} Position 3 &       &       & -0.07 & 0.73  &       &  \\
+    \textit{3class12} Position 2 &       &       &       &       & 1.19  & 0.66 \\
+    \textit{3class12} Position 3 &       &       &       &       & 0.77  & 0.69 \\ \hline
+%    edf: s(Age) & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{1.81} & \multicolumn{2}{c}{} \\
+%    edf: s(Agreeableness) & \multicolumn{2}{c|}{3.27} & \multicolumn{2}{c|}{2.77} & \multicolumn{2}{c}{2.02} \\
+%    edf: s(Openess) & \multicolumn{2}{c|}{2.50} & \multicolumn{2}{c|}{1.79} & \multicolumn{2}{c}{1.53} \\
+%    edf: s(Extraversion) & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{1.52} & \multicolumn{2}{c}{} \\
+%    edf: s(Conscientiousness) & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{3.32} & \multicolumn{2}{c}{} \\
+%    edf: s(Neuroticism) & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{1.53} & \multicolumn{2}{c}{} \\ \hline
+    Explained Deviance & \multicolumn{2}{c|}{0.15} & \multicolumn{2}{c|}{0.21} & \multicolumn{2}{c}{0.10} \\
+    Num. Observations. & \multicolumn{2}{c|}{119} & \multicolumn{2}{c|}{119} & \multicolumn{2}{c}{119} \\
+    Num. Smooth terms & \multicolumn{2}{c|}{2} & \multicolumn{2}{c|}{6} & \multicolumn{2}{c}{2} \\\hline
+    \multicolumn{7}{l}{\textit{Description:}} \\ 
+    \multicolumn{7}{l}{$\beta$ = Correlation coefficient} \\
+    \multicolumn{7}{l}{$\sigma_n$ = standard error} \\
+    \multicolumn{7}{l}{edf = estimated degrees of freedom by non-linear effects} \\
+    \multicolumn{7}{l}{(\glqq estimated degrees of freedom\grqq)} \\
+    \multicolumn{7}{l}{Smooth terms = non-linear effects in the model} \\
+    \end{tabular}%
+  \caption{Additive regression models for the difficulty to create passwords under the three policies.}
+\label{tab:personality:study-1-coffections-clean}
+\end{table}%

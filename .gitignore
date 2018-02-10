@@ -1,3 +1,8 @@
+##### TOBI:
+statistics/personality/**/*.pdf
+.RData
+**/*/.RData
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

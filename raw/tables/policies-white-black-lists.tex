@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\small
+\centering
+	\begin{tabular}{lll}
+		\textbf{Web site} & \textbf{Whitelisted symbols} & \textbf{Blacklisted symbols}\\ \hline
+		ebay.de & !@\#\$\%\textasciicircum*-\_+= & \\
+		web.de & !\#\$\%\&()*+,-./:;<=>?@[\textbackslash]\textasciicircum\_\{|\}\textasciitilde\SÄäÖöÜü{\ss} & \\
+		gmx.net & !\#\$\%\&()*+,-./:;<=>?@[\textbackslash]\textasciicircum\_\{|\}\textasciitilde\SÄäÖöÜü{\ss} &\\
+		t-online.de & !\#\$\%\&()*+,-./<=>?@[\textbackslash]\_\{|\}\textasciitilde &\\
+%		google.com & ! \"\#\$\%\&\'()*+,-./:;<=>?@[\textbackslash]\textasciicircum \_`{|}~&\\
+%		msn.com & @\#\$\%\textasciicircum*-\_+= &\\
+		live.com & @\#\$\%\textasciicircum*-\_+= &\\
+		mobile.de & !\$\%\&?-\_+\# & \\
+		pornhub.com & \textbf{/\_} & \\
+%		microsoft.com & @\#\$\%\textasciicircum*-\_+= & \\
+		1und1.de & @\#\$\%\textasciicircum*-\_+= &\\
+		chefkoch.de & äöüÄÖÜ{\ss}, \_, -, !?\&. &\\
+		zeit.de & äöüÄÖÜ{\ss} ,.!?:;\#\&* ()\_+=/<>- &\\
+		lidl.de & @\#\$\%\textasciicircum\&+=.:-!? &\\
+		\bottomrule
+		spiegel.de & & `space' `new line' \\
+        outbrain.com & & `space' \\
+   		welt.de & & `space' \\
+   		netflix.com & & \textasciitilde \\
+	\end{tabular}
+	\caption{
+		Many websites only allow ASCII characters. This table shows the sites that restrict the ASCII set even further. Some sites are mutually exclusive regarding the usage of certain symbols only by looking at a small subset of the tested sites, e.g. netflix.com and t-online.de. The full rules can be found in the Appendix \ref{tab:appendix:policies}
+	}
+	\label{tab:policies_reuse:black-white-lists}
+\end{table}

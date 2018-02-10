@@ -1,0 +1,41 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Medium ~ D_Age + GDMS_Intuitive + GDMS_Avoidant + GDMS_Dependent + 
+    GDMS_Spontaneous + s(GDMS_Rational) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    16.67685    2.87515   5.800 9.61e-08 ***
+D_Age                          -0.06622    0.04859  -1.363    0.176    
+GDMS_Intuitive                  0.02640    0.11608   0.227    0.821    
+GDMS_Avoidant                  -0.04654    0.08330  -0.559    0.578    
+GDMS_Dependent                  0.03870    0.09621   0.402    0.688    
+GDMS_Spontaneous                0.13846    0.11957   1.158    0.250    
+D_GenderFemale                  0.80899    0.87329   0.926    0.357    
+D_ComputerScienceBackgroundYes -1.31605    0.90595  -1.453    0.150    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                   edf Ref.df     F p-value
+s(GDMS_Rational) 1.557  1.927 0.422   0.655
+
+R-sq.(adj) =  -7.86e-05   Deviance explained = 8.64%
+GCV = 16.028  Scale est. = 14.496    n = 100
+[1] "GAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 6 iterations.
+The RMS GCV score gradient at convergence was 3.425948e-05 .
+The Hessian was positive definite.
+Model rank =  17 / 17 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                   k'  edf k-index p-value
+s(GDMS_Rational) 9.00 1.56    1.13    0.87
+NULL

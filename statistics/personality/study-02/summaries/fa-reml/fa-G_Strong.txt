@@ -1,0 +1,68 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Strong ~ Factor2 + Factor3 + Factor4 + Factor5 + Factor7 + 
+    Factor8 + Factor9 + Factor10 + D_Age + s(Factor1) + s(Factor6) + 
+    D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    22.86428    1.89925  12.039   <2e-16 ***
+Factor2                        -0.13319    0.52382  -0.254   0.7999    
+Factor3                        -0.59657    0.49171  -1.213   0.2284    
+Factor4                         1.00918    0.50623   1.994   0.0494 *  
+Factor5                        -0.36361    0.52199  -0.697   0.4880    
+Factor7                         0.96518    0.48842   1.976   0.0514 .  
+Factor8                         0.13189    0.44673   0.295   0.7685    
+Factor9                        -0.37408    0.51008  -0.733   0.4654    
+Factor10                       -0.38899    0.52708  -0.738   0.4626    
+D_Age                           0.02023    0.05630   0.359   0.7202    
+D_GenderMale                    0.68767    1.11369   0.617   0.5386    
+D_ComputerScienceBackgroundYes -1.00452    1.11067  -0.904   0.3683    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value
+s(Factor1) 1.852  2.358 0.932   0.371
+s(Factor6) 1.756  2.230 0.791   0.442
+
+R-sq.(adj) =  0.0695   Deviance explained = 20.7%
+-REML = 281.29  Scale est. = 18.936    n = 100
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+                   (Intercept)                        Factor2                        Factor3                        Factor4                        Factor5 
+                   0.000000000                   -0.027592594                   -0.122215347                    0.206081743                   -0.071689018 
+                       Factor7                        Factor8                        Factor9                       Factor10                          D_Age 
+                   0.196492179                    0.028965866                   -0.077441787                   -0.073888981                    0.038729859 
+                  D_GenderMale D_ComputerScienceBackgroundYes                   s(Factor1).1                   s(Factor1).2                   s(Factor1).3 
+                   0.075614851                   -0.101549362                   -0.032650469                   -0.007772214                    0.016954182 
+                  s(Factor1).4                   s(Factor1).5                   s(Factor1).6                   s(Factor1).7                   s(Factor1).8 
+                   0.028618847                   -0.017930011                   -0.026757535                   -0.013684035                   -0.134981603 
+                  s(Factor1).9                   s(Factor6).1                   s(Factor6).2                   s(Factor6).3                   s(Factor6).4 
+                   0.137897237                   -0.033495311                    0.052402980                   -0.024475205                    0.045648288 
+                  s(Factor6).5                   s(Factor6).6                   s(Factor6).7                   s(Factor6).8                   s(Factor6).9 
+                   0.015360174                    0.042508639                    0.019774503                   -0.219728669                   -0.121752205 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-2.653896e-05,1.444005e-06]
+(score 281.2932 & scale 18.93569).
+Hessian positive definite, eigenvalue range [0.1960146,43.00757].
+Model rank =  30 / 30 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+             k'  edf k-index p-value
+s(Factor1) 9.00 1.85    1.15    0.89
+s(Factor6) 9.00 1.76    1.14    0.90
+NULL

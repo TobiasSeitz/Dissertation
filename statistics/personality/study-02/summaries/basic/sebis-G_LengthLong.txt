@@ -1,0 +1,61 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_LengthLong ~ SeBIS_Passwords + s(D_Age) + s(SeBIS_Securement) + 
+    s(SeBIS_Awareness) + s(SeBIS_Updating) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     18.9093     3.9767   4.755 8.19e-06 ***
+SeBIS_Passwords                  0.7392     0.2859   2.585   0.0115 *  
+D_GenderFemale                  -1.1202     1.2106  -0.925   0.3575    
+D_ComputerScienceBackgroundYes  -1.0059     1.1771  -0.855   0.3953    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                      edf Ref.df     F p-value  
+s(D_Age)            1.342  1.605 2.398   0.168  
+s(SeBIS_Securement) 1.155  1.292 0.052   0.909  
+s(SeBIS_Awareness)  1.663  2.088 0.484   0.674  
+s(SeBIS_Updating)   8.325  8.865 2.482   0.019 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.185   Deviance explained = 31.3%
+GCV = 26.859  Scale est. = 22.432    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 97 iterations.
+The RMS GCV score gradient at convergence was 4.477243e-05 .
+The Hessian was positive definite.
+Model rank =  40 / 40 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                       k'   edf k-index p-value
+s(D_Age)            9.000 1.342   0.870    0.06
+s(SeBIS_Securement) 9.000 1.155   0.914    0.16
+s(SeBIS_Awareness)  9.000 1.663   1.087    0.76
+s(SeBIS_Updating)   9.000 8.325   1.154    0.92
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.091 -0.097  0.201  0.073 -0.034 -0.102  0.053  0.011 -0.141  0.142  0.121 -0.104  0.164  0.059  0.049 -0.154  0.053 -0.011 -0.056 -0.121 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.091 -0.107  0.186  0.103  0.019 -0.135 -0.007 -0.005 -0.092  0.142  0.137 -0.032  0.149  0.004  0.064 -0.183  0.019 -0.100  0.071 -0.125 
+[1] "\nCONCURVITY"
+              para  s(D_Age) s(SeBIS_Securement) s(SeBIS_Awareness) s(SeBIS_Updating)
+worst    0.9890215 0.9076713           0.5386415          0.5502087         0.9075825
+observed 0.9890215 0.3668557           0.3181975          0.3009118         0.2695690
+estimate 0.9890215 0.3443104           0.4132964          0.2873671         0.3746483

@@ -1,0 +1,56 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Overall ~ D_Age + SeBIS_Awareness + SeBIS_Updating + SeBIS_Passwords + 
+    s(SeBIS_Securement) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     44.7199     9.6221   4.648 1.12e-05 ***
+D_Age                            0.0138     0.1183   0.117   0.9073    
+SeBIS_Awareness                  0.2692     0.3422   0.787   0.4335    
+SeBIS_Updating                  -0.5900     0.4297  -1.373   0.1731    
+SeBIS_Passwords                  1.0136     0.5247   1.932   0.0565 .  
+D_GenderFemale                   0.7226     2.1166   0.341   0.7336    
+D_ComputerScienceBackgroundYes  -3.0365     2.2299  -1.362   0.1766    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                      edf Ref.df     F p-value
+s(SeBIS_Securement) 1.232  1.429 0.138    0.71
+
+R-sq.(adj) =  0.0302   Deviance explained = 10.1%
+GCV = 94.524  Scale est. = 86.743    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 6 iterations.
+The RMS GCV score gradient at convergence was 0.0003379706 .
+The Hessian was positive definite.
+Model rank =  16 / 16 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                      k'  edf k-index p-value
+s(SeBIS_Securement) 9.00 1.23    1.12    0.84
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+ 1.000 -0.022 -0.031  0.216 -0.085 -0.071 -0.120 -0.068  0.127 -0.138  0.063  0.149 -0.045  0.130 -0.086 -0.039 -0.150 -0.005 -0.023 -0.093  0.056 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20 
+-0.022 -0.032  0.215 -0.081 -0.063 -0.182 -0.043  0.155 -0.088  0.070  0.056  0.002  0.108 -0.129 -0.016 -0.240  0.148 -0.049 -0.009  0.023 
+[1] "\nCONCURVITY"
+              para s(SeBIS_Securement)
+worst    0.9910867          0.21254163
+observed 0.9910867          0.09865128
+estimate 0.9910867          0.11433712

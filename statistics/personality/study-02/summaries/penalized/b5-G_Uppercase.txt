@@ -1,0 +1,70 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Uppercase ~ s(D_Age) + D_Gender + D_ComputerScienceBackground + 
+    s(B5_Extraversion) + s(B5_Agreeableness) + s(B5_Conscientiousness) + 
+    s(B5_Neuroticism) + s(B5_Openness)
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     25.3807     0.6546  38.770   <2e-16 ***
+D_GenderFemale                  -0.2013     0.8974  -0.224    0.823    
+D_ComputerScienceBackgroundYes  -0.3315     0.9303  -0.356    0.722    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                              edf Ref.df     F p-value  
+s(D_Age)                1.785e-11      9 0.000  0.5773  
+s(B5_Extraversion)      1.786e-11      9 0.000  0.4279  
+s(B5_Agreeableness)     1.312e-10      9 0.000  0.4632  
+s(B5_Conscientiousness) 1.803e-11      9 0.000  0.7245  
+s(B5_Neuroticism)       5.492e+00      9 1.277  0.0545 .
+s(B5_Openness)          7.688e-01      8 0.169  0.1657  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Rank: 56/57
+R-sq.(adj) =  0.0787   Deviance explained = 15.6%
+GCV = 15.917  Scale est. = 14.443    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 25 iterations.
+The RMS GCV score gradient at convergence was 1.100098e-07 .
+The Hessian was positive definite.
+Model rank =  56 / 57 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                              k'      edf  k-index p-value
+s(D_Age)                9.00e+00 1.78e-11 1.00e+00    0.46
+s(B5_Extraversion)      9.00e+00 1.79e-11 9.79e-01    0.39
+s(B5_Agreeableness)     9.00e+00 1.31e-10 9.98e-01    0.42
+s(B5_Conscientiousness) 9.00e+00 1.80e-11 1.18e+00    0.90
+s(B5_Neuroticism)       9.00e+00 5.49e+00 1.21e+00    0.98
+s(B5_Openness)          9.00e+00 7.69e-01 1.05e+00    0.68
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17 
+ 1.000 -0.111 -0.194  0.182  0.111 -0.039 -0.124 -0.009  0.043 -0.064 -0.098  0.032 -0.003  0.043 -0.012 -0.093 -0.025  0.073 
+    18     19     20 
+-0.085 -0.120  0.043 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18 
+-0.111 -0.209  0.140  0.117  0.052 -0.120 -0.083 -0.025 -0.033 -0.068  0.002 -0.030  0.082  0.013 -0.092 -0.109  0.013 -0.066 
+    19     20 
+-0.088 -0.019 
+[1] "\nCONCURVITY"
+              para  s(D_Age) s(B5_Extraversion) s(B5_Agreeableness) s(B5_Conscientiousness) s(B5_Neuroticism) s(B5_Openness)
+worst    0.8369015 0.9974953          0.9029800           0.7824970               0.8735318         0.8478634      0.9975111
+observed 0.8369015 0.5822897          0.6199397           0.5377187               0.7915900         0.4923343      0.6334443
+estimate 0.8369015 0.6252642          0.6140194           0.5564082               0.6894686         0.6932545      0.6441642

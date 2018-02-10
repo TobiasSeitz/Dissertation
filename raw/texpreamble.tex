@@ -25,7 +25,7 @@
 %Stats
 \newcommand{\statslt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$<$~#3}
 \newcommand{\stats}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$=$~#3}
-\newcommand{\statsgt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$=$~#3}
+\newcommand{\statsgt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$>$~#3}
 \newcommand{\pval}[1]{\textit{p}~$=$~#1}
 \newcommand{\pvallt}[1]{\textit{p}~$<$~#1}
 \newcommand{\pvalgt}[1]{\textit{p}~$>$~#1}
@@ -34,6 +34,7 @@
 \newcommand{\meanonly}[1]{\textit{m}~$=$~#1}
 \newcommand{\median}[1]{\textit{median}~$=$~#1}
 \newcommand{\average}{average:\xspace}
+\newcommand{\Rsqadj}[1]{$R_{adj}^2$~$=$~#1}
 %tables and figures
 \newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
 \newunicodechar{✓}{\ding{51}}
@@ -67,7 +68,8 @@
 
 \usepackage[light]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
 
-\renewcommand{\floatpagefraction}{.8}%
+
+\renewcommand{\floatpagefraction}{.8}% this avoids putting larger images onto separate pages.
 
 
 \titleformat{\chapter} % command

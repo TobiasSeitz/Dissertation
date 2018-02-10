@@ -1,0 +1,67 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+G_Medium ~ s(D_Age) + D_Gender + D_ComputerScienceBackground + 
+    s(GDMS_Rational) + s(GDMS_Intuitive) + s(GDMS_Avoidant) + 
+    s(GDMS_Dependent) + s(GDMS_Spontaneous)
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     17.0408     0.6115  27.868   <2e-16 ***
+D_GenderFemale                   0.7087     0.8084   0.877    0.383    
+D_ComputerScienceBackgroundYes  -1.2016     0.8832  -1.361    0.177    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                          edf Ref.df     F p-value
+s(D_Age)            5.141e-01      8 0.106   0.188
+s(GDMS_Rational)    2.020e-11      9 0.000   0.645
+s(GDMS_Intuitive)   2.349e-11      9 0.000   0.461
+s(GDMS_Avoidant)    1.323e-11      9 0.000   1.000
+s(GDMS_Dependent)   2.301e-11      9 0.000   0.515
+s(GDMS_Spontaneous) 7.126e-01      8 0.178   0.137
+
+R-sq.(adj) =  0.0295   Deviance explained = 6.11%
+GCV = 14.688  Scale est. = 14.067    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 23 iterations.
+The RMS GCV score gradient at convergence was 1.025844e-07 .
+The Hessian was positive definite.
+Model rank =  57 / 57 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                          k'      edf  k-index p-value
+s(D_Age)            9.00e+00 5.14e-01 1.06e+00    0.66
+s(GDMS_Rational)    9.00e+00 2.02e-11 1.09e+00    0.82
+s(GDMS_Intuitive)   9.00e+00 2.35e-11 8.84e-01    0.12
+s(GDMS_Avoidant)    9.00e+00 1.32e-11 1.21e+00    0.99
+s(GDMS_Dependent)   9.00e+00 2.30e-11 9.41e-01    0.28
+s(GDMS_Spontaneous) 9.00e+00 7.13e-01 1.08e+00    0.78
+NULL
+[1] "\nAUTOCORRELATION"
+
+Autocorrelations of series 'residuals(m)', by lag
+
+     0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17 
+ 1.000 -0.033 -0.028  0.134 -0.167 -0.154 -0.081 -0.186  0.132 -0.096 -0.038  0.184 -0.012  0.043  0.068  0.009 -0.046  0.080 
+    18     19     20 
+-0.133  0.016 -0.071 
+
+Partial autocorrelations of series 'residuals(m)', by lag
+
+     1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18 
+-0.033 -0.029  0.132 -0.162 -0.161 -0.122 -0.173  0.135 -0.136 -0.059  0.060 -0.012  0.049 -0.020  0.069 -0.083  0.142 -0.099 
+    19     20 
+ 0.024 -0.071 
+[1] "\nCONCURVITY"
+              para  s(D_Age) s(GDMS_Rational) s(GDMS_Intuitive) s(GDMS_Avoidant) s(GDMS_Dependent) s(GDMS_Spontaneous)
+worst    0.7495601 0.7895053        0.8249911         0.7511928        0.7807885         0.7773340           0.8280537
+observed 0.7495601 0.6455142        0.5660554         0.6897023        0.5688632         0.6198721           0.7381602
+estimate 0.7495601 0.6185750        0.6992597         0.6730888        0.5641923         0.5883742           0.7248216

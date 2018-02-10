@@ -1,0 +1,43 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+C_Length ~ D_Age + SeBIS_Securement + SeBIS_Passwords + s(SeBIS_Awareness) + 
+    s(SeBIS_Updating) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    18.952086   3.010511   6.295 1.24e-08 ***
+D_Age                           0.060332   0.042751   1.411   0.1618    
+SeBIS_Securement               -0.001523   0.081544  -0.019   0.9851    
+SeBIS_Passwords                 0.057399   0.195042   0.294   0.7692    
+D_GenderFemale                  0.217069   0.796411   0.273   0.7858    
+D_ComputerScienceBackgroundYes  2.148216   0.789877   2.720   0.0079 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                     edf Ref.df     F p-value
+s(SeBIS_Awareness) 2.994  3.779 1.230   0.346
+s(SeBIS_Updating)  4.826  5.890 1.216   0.334
+
+R-sq.(adj) =  0.0862   Deviance explained = 20.5%
+GCV = 12.196  Scale est. = 10.511    n = 100
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 5 iterations.
+The RMS GCV score gradient at convergence was 3.532219e-06 .
+The Hessian was positive definite.
+Model rank =  24 / 24 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                     k'  edf k-index p-value
+s(SeBIS_Awareness) 9.00 2.99    1.03    0.55
+s(SeBIS_Updating)  9.00 4.83    1.27    1.00
+NULL
+[1] "\nAUTOCORRELATION"
+[1] "\nCONCURVITY"
