@@ -1,0 +1,46 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+C_ClassDelta ~ B5_Extraversion + B5_Agreeableness + B5_Conscientiousness + 
+    B5_Neuroticism + B5_Openness + D_Age + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                                Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                    45.031457  13.428902   3.353  0.00117 **
+B5_Extraversion                -0.017605   0.123964  -0.142  0.88738   
+B5_Agreeableness               -0.007484   0.202285  -0.037  0.97057   
+B5_Conscientiousness            0.523384   0.178383   2.934  0.00423 **
+B5_Neuroticism                  0.052804   0.154018   0.343  0.73251   
+B5_Openness                    -0.145493   0.144574  -1.006  0.31691   
+D_Age                          -0.063604   0.107170  -0.593  0.55433   
+D_GenderFemale                 -4.268966   2.062338  -2.070  0.04129 * 
+D_ComputerScienceBackgroundYes -0.647448   2.095518  -0.309  0.75805   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+R-sq.(adj) =  0.085   Deviance explained = 15.9%
+-REML = 355.89  Scale est. = 75.199    n = 100
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+                   (Intercept)                B5_Extraversion               B5_Agreeableness           B5_Conscientiousness                 B5_Neuroticism 
+                   0.000000000                   -0.016736333                   -0.004163521                    0.362667358                    0.046285419 
+                   B5_Openness                          D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes 
+                  -0.102551625                   -0.060595004                   -0.233590271                   -0.032570660 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-6.341141e-08,-6.341141e-08]
+(score 355.8896 & scale 75.19851).
+Hessian positive definite, eigenvalue range [45.5,45.5].
+Model rank =  9 / 9 
+
+NULL

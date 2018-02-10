@@ -1,0 +1,57 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+C_Digits ~ B5_Extraversion + B5_Agreeableness + B5_Conscientiousness + 
+    B5_Openness + D_Age + s(B5_Neuroticism) + D_Gender + D_ComputerScienceBackground
+
+Parametric coefficients:
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    26.40121    4.96810   5.314 7.73e-07 ***
+B5_Extraversion                 0.02598    0.05682   0.457  0.64863    
+B5_Agreeableness               -0.04387    0.09240  -0.475  0.63606    
+B5_Conscientiousness            0.29298    0.08258   3.548  0.00062 ***
+B5_Openness                    -0.10999    0.06662  -1.651  0.10220    
+D_Age                           0.00971    0.04883   0.199  0.84283    
+D_GenderFemale                 -1.48613    0.97673  -1.522  0.13164    
+D_ComputerScienceBackgroundYes -1.09547    0.96916  -1.130  0.26135    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df     F p-value
+s(B5_Neuroticism) 2.165  2.779 1.649   0.172
+
+R-sq.(adj) =  0.121   Deviance explained = 20.3%
+-REML = 282.96  Scale est. = 15.554    n = 100
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+                   (Intercept)                B5_Extraversion               B5_Agreeableness           B5_Conscientiousness                    B5_Openness 
+                    0.00000000                     0.05320937                    -0.05259275                     0.43741977                    -0.16704527 
+                         D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes            s(B5_Neuroticism).1            s(B5_Neuroticism).2 
+                    0.01993214                    -0.17520812                    -0.11873803                    -0.10620583                    -0.04296657 
+           s(B5_Neuroticism).3            s(B5_Neuroticism).4            s(B5_Neuroticism).5            s(B5_Neuroticism).6            s(B5_Neuroticism).7 
+                    0.01970939                    -0.02589029                     0.00196488                     0.02266448                     0.01370306 
+           s(B5_Neuroticism).8            s(B5_Neuroticism).9 
+                    0.13705579                     0.16182198 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-2.477104e-08,3.17065e-10]
+(score 282.9563 & scale 15.55412).
+Hessian positive definite, eigenvalue range [0.2923023,45.5075].
+Model rank =  17 / 17 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'  edf k-index p-value
+s(B5_Neuroticism) 9.00 2.16    1.15     0.9
+NULL
