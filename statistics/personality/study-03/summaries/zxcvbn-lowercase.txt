@@ -1,0 +1,59 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+lowercase ~ Conscientiousness + Agreeableness + Neuroticism + 
+    s(Openness) + s(Extraversion) + s(age)
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       10.961693   1.705560   6.427 1.32e-09 ***
+Conscientiousness -0.168052   0.092234  -1.822   0.0702 .  
+Agreeableness     -0.171703   0.089235  -1.924   0.0560 .  
+Neuroticism       -0.000698   0.090798  -0.008   0.9939    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                  edf Ref.df     F p-value
+s(Openness)     2.065  2.610 1.331   0.353
+s(Extraversion) 1.720  2.174 0.753   0.545
+s(age)          1.852  2.308 0.231   0.703
+
+R-sq.(adj) =  0.0403   Deviance explained = 8.77%
+-REML = 486.57  Scale est. = 14.066    n = 176
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+      (Intercept) Conscientiousness     Agreeableness       Neuroticism     s(Openness).1     s(Openness).2     s(Openness).3 
+     0.0000000000     -0.1406354522     -0.1543202488     -0.0006093244      0.1315284724      0.0297707361     -0.0340776396 
+    s(Openness).4     s(Openness).5     s(Openness).6     s(Openness).7     s(Openness).8     s(Openness).9 s(Extraversion).1 
+     0.0240148880      0.0282250931      0.0256418480      0.0312454645      0.1580775005      0.0376810824      0.0777437355 
+s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 
+     0.0328908791     -0.0110724162      0.0124742179      0.0105512858     -0.0151501333      0.0157076594      0.0982510626 
+s(Extraversion).9          s(age).1          s(age).2          s(age).3          s(age).4          s(age).5          s(age).6 
+     0.1041156764      0.0475448044      0.0123102532     -0.0099613389      0.0129271287     -0.0082791025     -0.0091477170 
+         s(age).7          s(age).8          s(age).9 
+    -0.0150278279     -0.1240094347      0.1304300919 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-9.187485e-06,3.52078e-05]
+(score 486.5683 & scale 14.0656).
+Hessian positive definite, eigenvalue range [0.04588769,84.50701].
+Model rank =  31 / 31 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                  k'  edf k-index p-value
+s(Openness)     9.00 2.06    1.06    0.80
+s(Extraversion) 9.00 1.72    1.08    0.84
+s(age)          9.00 1.85    1.03    0.62
+NULL

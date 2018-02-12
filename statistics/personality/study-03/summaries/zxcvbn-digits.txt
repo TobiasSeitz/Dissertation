@@ -1,0 +1,53 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+digits ~ Openness + Extraversion + Agreeableness + Neuroticism + 
+    age + s(Conscientiousness)
+
+Parametric coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    4.21064    1.15450   3.647 0.000353 ***
+Openness      -0.06527    0.04640  -1.407 0.161403    
+Extraversion  -0.09464    0.05772  -1.640 0.102963    
+Agreeableness -0.01001    0.04784  -0.209 0.834588    
+Neuroticism    0.02530    0.04902   0.516 0.606412    
+age           -0.01725    0.02461  -0.701 0.484366    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                       edf Ref.df     F p-value
+s(Conscientiousness) 1.383  1.677 0.798   0.322
+
+R-sq.(adj) =  0.00907   Deviance explained = 4.52%
+-REML = 385.08  Scale est. = 4.1631    n = 176
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+           (Intercept)               Openness           Extraversion          Agreeableness            Neuroticism 
+           0.000000000           -0.115593790           -0.126790119           -0.016797068            0.041258527 
+                   age s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 s(Conscientiousness).4 
+          -0.054469509           -0.016028514            0.004692678           -0.008107703           -0.009213922 
+s(Conscientiousness).5 s(Conscientiousness).6 s(Conscientiousness).7 s(Conscientiousness).8 s(Conscientiousness).9 
+           0.006675811           -0.010536541            0.009521063            0.049045906            0.106673886 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-1.308234e-05,1.24353e-05]
+(score 385.0798 & scale 4.163145).
+Hessian positive definite, eigenvalue range [0.05090129,84.50042].
+Model rank =  15 / 15 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'   edf k-index p-value
+s(Conscientiousness) 9.000 1.383   0.979    0.42
+NULL

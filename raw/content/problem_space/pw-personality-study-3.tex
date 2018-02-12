@@ -1,11 +1,7 @@
 \section{Study 3: Password Selection}
 % ALINE
 % GOALS
-As a final step in our ``password personality'' exploration, we ran an online survey. Having investigated preferences for policies and the perception of passwords, the main goal of the third study was to evaluate potential associations between personality and password \textit{selection}. To overcome some of the limitations of the previous study, we hoped to increase the sample size and reduce the number of items during the study. Moreover, further answers about the participants' explanations and motivations were considered to better understand the weight of personality factors. We determined the following research questions:
-\begin{itemize}
-	\item Are there correlations between password features (topology) and personality traits?
-	\item Does personality influence password management behavior?
-\end{itemize}
+As a final step in our ``password personality'' exploration, we ran an online survey. Having investigated preferences for policies and the perception of passwords, the main goal of the third study was to evaluate potential associations between personality and password \textit{selection}. To overcome some of the limitations of the previous study, we hoped to increase the sample size and reduce the number of items during the study. Moreover, further answers about the participants' explanations and motivations were considered to better understand the weight of personality factors. We determined the following research questions: 1) Are there correlations between password features (topology) and personality traits? 2) Do certain facets of personality shine through in password management behavior, e.g. the tendency to write down passwords?
 
 \subsection{Procedure and Tools}
 The study was designed to take no more than ten minutes. The briefing page informed participants about the purpose of the study and data disclosure policies. After acknowledging the conditions of participation, respondents were asked to create a password. To boost ecological validity, we provided a fictitious but realistic scenario \cite{Komanduri2011OfPasswordsAndPeople}. The task was to come up with a new password for a new email account that they were going to use as their main address. Further, the instruction pointed out that the incentive would only be paid of if the participants chose a password they could recall later on. A \textit{basic8} policy was enforced, as it is one of the most representative policies in the wild (see chapter \ref{chap:policies_reuse}). This loose policy would also allow for both very complex and rather simple passwords, which could be associated with personality traits. Having successfully confirmed the password, respondents were taken to a questionnaire about demographics, just like in the first two studies. 
@@ -15,8 +11,32 @@ Next, participants completed the BFI-K questionnaire consisting of 21 items that
 Afterwards, we surveyed respondents about their password management behaviors and preferences. We used multiple-choice and open responses to collect qualitative, self-reported data. For instance, we wanted to know how they cope with multiple accounts or how they reuse passwords. The survey concluded with a recall task, where participants provided their initially chosen password. They could try as often as they liked, and the number of attempts were recorded. In case they were unable to recall their password, they could proceed anyhow and take part in the lottery. If they chose to provide an email address in the final step, this data was stored separately from the questionnaire data to avoid privacy issues. 
 
 \subsection{Recruitment and Sample}
+Participants were invited via a university newsletter, and snowballing the link via personal connections and posts on social networks. The questionnaire was in German and participants were screened about their command of the German language. We instructed participants to take the survey on a desktop. 
+%TODO aline says 184 but the data set is smaller :-/ ?
+%all the following numbers are from the smaller data set.
+184 people completed the survey, but we had to drop the responses of 8 participants because their reponse timings were too unrealistic. From the 176 remaining respondents, 89 were male, 86 female and 1 preferred not to answer. 116 were students, i.e. a rather high proportion (66\%). Consequently, the average age was 25 years (range [16;55], $SD$=6, $Md$= 24). 67 (38\%) reportedly had an IT-background. 129 respondents chose to participate in the raffle for shopping vouchers. 
+
+\subsection{Limitations}
+\todo{Password selection not realistic / attention check item was badly placed and not well explained. 30 feedback emails.}
 
 \subsection{Results}
+% descriptives
+The resulting passwords had a median-length of 10 characters ([8;22]), i.e. many participants went beyond the minimum requirement. Figure \ref{fig:personality:study3:metrics-overview} visualizes additional metrics that show that passwords were stronger than expected. In the following, we try to fit generalized additive models to the data using big-five trait scores as covariates. 
 
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=1\linewidth]{figures/personality/study3-metrics-overview}
+	\caption{\label{fig:personality:study3:metrics-overview} Zxcvbn metrics for user selected passwords.}
+\end{figure}
+
+% maximum R-sq 
+\subsubsection{Password Composition}
+First, we use zxcvbn metrics as response variables, i.e. we explore marginal associations from big five traits. As before, we include age, gender and IT-background as control covariates. 
+
+\subsubsection{Memorability}
+
+
+\subsection{Password Management Strategies}
+% binary -- logit model ``write down'': yes no
 
 \subsection{Learnings}
