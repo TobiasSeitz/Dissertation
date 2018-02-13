@@ -2,52 +2,14 @@
 library(mgcv)
 library(ggplot2)
 library(reshape2)
+library(psych)
+library(corrplot)
 
 source("../../plotCI.R");
 source("../../plotGAM.R");
 source("../../util.R");
 
-d <- read.csv("personality-pw-selection.csv", sep = ";", dec = ".")
-
-# avoid that the the one third gender is factored into the models
-d$gender[d$gender == 3] <- NA
-d$gender <- factor(d$gender, levels = c(1,2), labels=c("Male","Female"))
-
-pwSummary <- summary(d)
-
-######################################################
-#####
-#####   Descriptives and stuff.
-#####
-######################################################
-zxcvbnMetrics <- list("length",
-                      "digits","symbols","uppercase","lowercase",
-                      #"guesses",
-                      "score",
-                      "guesses_log10",
-                      "substitutions","chunks"
-                      );
-
-dLongZxcvbn <- melt(d,id.vars="X...CASE",measure.vars=zxcvbnMetrics)
-(pZxcvbnMetrics <- ggplot(dLongZxcvbn,aes(variable,value)) + 
-    geom_boxplot(aes(colour=variable)) +
-    labs(x="Metric",y="Value", col="Metric") +
-    scale_y_continuous(breaks = seq(0,20,1)) +
-    guides(colour = guide_legend(reverse=T)) +
-    theme(axis.text.y = element_blank()) +
-    coord_flip()
-)
-savePlot(pZxcvbnMetrics,"metrics-overview.pdf",path="graphs")
-
-
-
-######################################################
-#####
-#####   selection models. 
-#####
-######################################################
-controlVars <- list("age","gender","it_background")
-
+## makes a gam and ensures that "age" is smoothed as control variable, but the rest isn't.
 getGam <- function(responseVar, d, predictors, controlVars, method=NULL,select=FALSE) {
   smoothedPredictors <- lapply(predictors,smoothPredictors,k=5)
   smoothedControls <- lapply(controlVars, function(var){
@@ -73,6 +35,71 @@ getGam <- function(responseVar, d, predictors, controlVars, method=NULL,select=F
   m
 }
 
+# this data looks stale: d <- read.csv("personality-pw-selection.csv", sep = ";", dec = ".")
+# I've re-coded it:
+d <- read.csv("data/data_recoded.csv", sep = ";", dec = ".")
+
+# avoid that the the one third gender is factored into the models
+d$gender[d$gender == 3] <- NA
+d$gender <- factor(d$gender, levels = c(1,2), labels=c("Male","Female"))
+
+
+######################################################
+#####
+#####   Descriptives and stuff.
+#####
+######################################################
+zxcvbnMetrics <- list("length",
+                      "digits","symbols","uppercase","lowercase",
+                      #"guesses",
+                      "score",
+                      "guesses_log10",
+                      "substitutions","chunks"
+                      );
+
+dLongZxcvbn <- melt(d,id.vars="X...CASE",measure.vars=zxcvbnMetrics)
+(pZxcvbnMetrics <- ggplot(dLongZxcvbn,aes(variable,value)) + 
+    geom_boxplot(aes(colour=variable)) +
+    labs(x="Metric",y="Value", col="Metric") +
+    scale_y_continuous(breaks = seq(0,20,1)) +
+    guides(colour = guide_legend(reverse=T)) +
+    theme(axis.text.y = element_blank()) +
+    coord_flip()
+)
+savePlot(pZxcvbnMetrics,"metrics-overview.pdf",path="graphs")
+
+sink(file="descriptives.txt")
+print(describe(d))
+sink(file=NULL)
+describe(d)
+
+
+# correlation
+correlationFrame <- d[,which(names(d) %in% predictorsB5)]
+b5CorrPValues <- cor.mtest(correlationFrame)
+corrplot(cor(correlationFrame),
+         method="color",
+         type="upper",
+         addCoef.col = "black",
+         p.mat = b5CorrPValues,
+         sig.level = 0.01,
+         insig = "blank"
+         )
+
+
+
+
+######################################################
+#####
+#####   selection models. 
+#####
+######################################################
+controlVars <- list("age","gender","it_background","occupation")
+
+
+
+predictorsB5 <- list("Openness","Conscientiousness", "Extraversion", "Agreeableness","Neuroticism");
+
 autoModelsMetrics <- lapply(zxcvbnMetrics, getGam, d<-d, controlVars = controlVars, predictors = predictorsB5)
 autoModelsMetrics_simple <- lapply(autoModelsMetrics, simplifyGAM)
 
@@ -80,7 +107,7 @@ autoModelsMetrics_simple <- lapply(autoModelsMetrics, simplifyGAM)
 summary(autoModelsMetrics[[1]])
 # test plot:
 plot(autoModelsMetrics[[1]], jit=TRUE,pages=1)
-plotGAM(autoModelsMetrics[[1]], predictors = predictorsB5, controlVariables = controlVars)[[2]]
+plotGAM(autoModelsMetrics_simple[[1]], predictors = predictorsB5, controlVariables = controlVars)[[1]]
 
 ### plot 
 lapply(autoModelsMetrics_simple, generatePDF, 
@@ -91,19 +118,50 @@ for(i in autoModelsMetrics_simple){
   outputSummary(i,prefix="zxcvbn-",path="summaries")
 }
 
-predictorsB5 <- list("Openness","Conscientiousness", "Extraversion", "Agreeableness","Neuroticism");
+## correlation plot
+ggplot(data=d, aes(x=Neuroticism,y=length)) + 
+  geom_point() +
+  #geom_jitter() +
+  geom_smooth(method="lm")
+  
+  
+######################################################
+#####
+#####   Factor Extraction
+#####
+######################################################
+# principal components
+# derive components
+b5Items <- subset(d, select = 18:38);
+pcB5 <- princomp(b5Items) # omit ID variable
+summary(pcB5)
+plot(pcB5)
 
-predictorsModel <- lapply(predictorsB5, smoothPredictors,k=5)
+# pca plot showed 10 components (i.e. a lot more than the 5 we'd expect)
+# factor analysis
+b5FactorScores <- factanal(b5Items,factors=7,rotation="varimax",scores="regression")$scores
+b5FactorScores <- as.data.frame(b5FactorScores)
+
+faB5 <- data.frame(d,b5FactorScores)
+predictorsFA <- as.list(names(b5FactorScores))
+
+
+autoModelsMetricsFA <- lapply(zxcvbnMetrics, getGam,d<-faB5, predictors=predictorsFA,
+                              controlVars = controlVars)
+
+autoModelsMetricsFA_simple <- lapply(autoModelsMetricsFA,simplifyGAM);
+
+
+### plot 
+lapply(autoModelsMetricsFA_simple, generatePDF, 
+       controlVariables = controlVars, predictors = predictorsFA,
+       prefix.predictors="zxcvbn-fa-predictors-", prefix.control="zxcvbn-fa-controls-",path="graphs/fa",xLab.predictors = "Factor Scores")
+# summaries
+for(i in autoModelsMetricsFA_simple){
+  outputSummary(i,prefix="zxcvbn-",path="summaries/fa")
+}
 
 
 
-responseVariables <- list("length")
 
-testFormula <- paste("length",paste0(predictorsModel,controlVars,collapse="+"),sep="~")
-
-testModel <- gam(as.formula(testFormula),data=d,method="REML")
-testModel_simple <- simplifyGAM(testModel)
-summary(testModel_simple)
-
-plot(testModel_simple, pages=1,jit=T)
-# gender 1 = male, 2 = femaled
+  

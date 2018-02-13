@@ -1,0 +1,64 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+uppercase ~ Factor2 + Factor5 + Factor6 + Factor7 + age + s(Factor1) + 
+    s(Factor3) + s(Factor4) + gender + it_background + occupation
+
+Parametric coefficients:
+               Estimate Std. Error t value Pr(>|t|)  
+(Intercept)    0.510276   0.477871   1.068   0.2872  
+Factor2        0.095484   0.125828   0.759   0.4491  
+Factor5        0.024236   0.128966   0.188   0.8512  
+Factor6       -0.089111   0.132085  -0.675   0.5009  
+Factor7       -0.112545   0.138884  -0.810   0.4189  
+age            0.006440   0.019164   0.336   0.7373  
+genderFemale   0.445996   0.235411   1.895   0.0600 .
+it_background  0.499014   0.225922   2.209   0.0286 *
+occupation    -0.003855   0.064279  -0.060   0.9523  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value   
+s(Factor1) 3.459  4.296 3.656 0.00676 **
+s(Factor3) 1.872  2.336 0.579 0.70267   
+s(Factor4) 1.502  1.858 1.134 0.39860   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.0924   Deviance explained =   17%
+-REML = 312.76  Scale est. = 1.784     n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, data = d, method = method, select = select)
+
+Standardized Coefficients::
+  (Intercept)       Factor2       Factor5       Factor6       Factor7           age  genderFemale it_background    occupation  s(Factor1).1  s(Factor1).2 
+ 0.0000000000  0.0600561539  0.0146500107 -0.0517274771 -0.0606822006  0.0298133791  0.1594855179  0.1729993146 -0.0050387553 -0.4820121027 -0.2644822561 
+ s(Factor1).3  s(Factor1).4  s(Factor1).5  s(Factor1).6  s(Factor1).7  s(Factor1).8  s(Factor1).9  s(Factor3).1  s(Factor3).2  s(Factor3).3  s(Factor3).4 
+ 0.0536698955 -0.1422997767 -0.1094315238 -0.1142396819 -0.1032501446 -0.6740056212 -0.5197254770  0.0929044801  0.0121498051 -0.0195841019  0.0027950188 
+ s(Factor3).5  s(Factor3).6  s(Factor3).7  s(Factor3).8  s(Factor3).9  s(Factor4).1  s(Factor4).2  s(Factor4).3  s(Factor4).4  s(Factor4).5  s(Factor4).6 
+ 0.0025264504 -0.0002675982  0.0006194638 -0.0168460399 -0.0391473093 -0.0309967066  0.0003418097 -0.0068541251 -0.0082291258 -0.0055339953  0.0067937163 
+ s(Factor4).7  s(Factor4).8  s(Factor4).9 
+-0.0056531204  0.0469990678  0.0462195184 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-3.554501e-05,3.946755e-05]
+(score 312.758 & scale 1.783986).
+Hessian positive definite, eigenvalue range [0.05020773,81.52178].
+Model rank =  36 / 36 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+              k'   edf k-index p-value
+s(Factor1) 9.000 3.459   0.962    0.29
+s(Factor3) 9.000 1.872   1.038    0.64
+s(Factor4) 9.000 1.502   0.963    0.28
+NULL

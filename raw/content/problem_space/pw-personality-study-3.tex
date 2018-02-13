@@ -31,7 +31,11 @@ The resulting passwords had a median-length of 10 characters ([8;22]), i.e. many
 
 % maximum R-sq 
 \subsubsection{Password Composition}
-First, we use zxcvbn metrics as response variables, i.e. we explore marginal associations from big five traits. As before, we include age, gender and IT-background as control covariates. 
+%TODO aline's data suggests that all this was associated with agreeableness, instead of neuroticism, but I found a labelling error. discuss!
+First, we use zxcvbn metrics as response variables, and explore marginal associations with big five traits. As before, we include age, gender and IT-background as control covariates. We found that only password length was (significantly) associated with B5-traits: Participants with higher \textit{neuroticism} scores tended to create shorter passwords ($\beta = -0.21$), using fewer lower-case letters as a side effect ($\beta = -0.19$). A second corollary was that passwords from participants scoring high on neuroticism were divided into fewer chunks ($\beta=-0.26$). However, it is hard to read this result, because even very long random passwords consist of only one matching sequence (``bruteforce''). 
+%control variables and model fit. 
+Having an IT background, on the contrary, was positively associated with password length ($\beta = 0.21$), and consequently password strength ($\beta=0.19$). None of the models however, achieved considerable fit: the maximum R-squared (adjusted) value was \Rsqadj{0.13} (for the number of symbols as target variable). We tried to achieve a better fit by performing a principal component analysis. This was not effective, either. We conclude that password selection analyzed with standard quantitative metrics is only very slightly predictable by personality profiles. 
+%OPTIONAL point much smaller R-sq than in second study. 
 
 \subsubsection{Memorability}
 
@@ -40,3 +44,4 @@ First, we use zxcvbn metrics as response variables, i.e. we explore marginal ass
 % binary -- logit model ``write down'': yes no
 
 \subsection{Learnings}
+Password length/strength marginally associated with Neuroticism

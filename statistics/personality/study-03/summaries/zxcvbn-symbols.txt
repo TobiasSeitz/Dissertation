@@ -3,59 +3,70 @@ Family: gaussian
 Link function: identity 
 
 Formula:
-symbols ~ Conscientiousness + Agreeableness + Neuroticism + s(Openness) + 
-    s(Extraversion) + s(age)
+symbols ~ Openness + Agreeableness + Neuroticism + s(Conscientiousness) + 
+    s(Extraversion) + s(age) + gender + it_background + occupation
 
 Parametric coefficients:
-                   Estimate Std. Error t value Pr(>|t|)  
-(Intercept)       -0.010560   0.320522  -0.033   0.9738  
-Conscientiousness  0.036182   0.017346   2.086   0.0385 *
-Agreeableness     -0.005762   0.016828  -0.342   0.7325  
-Neuroticism        0.010757   0.017093   0.629   0.5300  
+               Estimate Std. Error t value Pr(>|t|)  
+(Intercept)   -0.323491   0.348070  -0.929   0.3541  
+Openness       0.004758   0.016956   0.281   0.7794  
+Agreeableness  0.032455   0.017141   1.893   0.0601 .
+Neuroticism    0.004081   0.017155   0.238   0.8122  
+genderFemale   0.212516   0.117182   1.814   0.0716 .
+it_background  0.159377   0.115987   1.374   0.1713  
+occupation     0.060959   0.033380   1.826   0.0697 .
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
-                  edf Ref.df     F p-value  
-s(Openness)     2.573  3.235 2.655  0.0485 *
-s(Extraversion) 2.094  2.667 0.805  0.3993  
-s(age)          2.126  2.646 2.175  0.1318  
+                       edf Ref.df     F p-value  
+s(Conscientiousness) 2.248  2.862 1.134  0.2990  
+s(Extraversion)      2.710  3.407 3.419  0.0155 *
+s(age)               2.096  2.611 1.437  0.3225  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-R-sq.(adj) =  0.096   Deviance explained = 14.7%
--REML = 204.82  Scale est. = 0.49446   n = 176
+R-sq.(adj) =  0.133   Deviance explained = 19.8%
+-REML = 204.31  Scale est. = 0.47594   n = 175
 [1] "\nBETAs:"
 
 Call:
 gam(formula = nFormula, data = d, method = method, select = select)
 
 Standardized Coefficients::
-      (Intercept) Conscientiousness     Agreeableness       Neuroticism     s(Openness).1     s(Openness).2     s(Openness).3 
-     0.0000000000      0.1567388227     -0.0268066474      0.0486130955     -0.1273388408      0.0277404010     -0.0005446224 
-    s(Openness).4     s(Openness).5     s(Openness).6     s(Openness).7     s(Openness).8     s(Openness).9 s(Extraversion).1 
-    -0.0177152297     -0.0231613377     -0.0194221655     -0.0311798596     -0.1910545683      0.0897785890      0.0169885375 
-s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 
-    -0.0318341562     -0.0025312480      0.0217126702      0.0152553311     -0.0149985769      0.0154546200      0.1512487717 
-s(Extraversion).9          s(age).1          s(age).2          s(age).3          s(age).4          s(age).5          s(age).6 
-    -0.1047965704      0.1210802441      0.0357797401      0.0446779218     -0.0397744019      0.0186088740      0.0278762341 
-         s(age).7          s(age).8          s(age).9 
-     0.0478818503      0.1765895017      0.1216724809 
+           (Intercept)               Openness          Agreeableness            Neuroticism 
+           0.000000000            0.021502363            0.140138621            0.018936716 
+          genderFemale          it_background             occupation s(Conscientiousness).1 
+           0.143812412            0.104561148            0.150793967            0.033837259 
+s(Conscientiousness).2 s(Conscientiousness).3 s(Conscientiousness).4 s(Conscientiousness).5 
+          -0.041762129            0.002611339            0.022419318            0.015034168 
+s(Conscientiousness).6 s(Conscientiousness).7 s(Conscientiousness).8 s(Conscientiousness).9 
+          -0.015227443            0.016029540            0.162038947           -0.070500590 
+     s(Extraversion).1      s(Extraversion).2      s(Extraversion).3      s(Extraversion).4 
+          -0.145608161            0.013873332            0.016603442           -0.027829240 
+     s(Extraversion).5      s(Extraversion).6      s(Extraversion).7      s(Extraversion).8 
+          -0.034686742           -0.028305451           -0.045030915           -0.275920340 
+     s(Extraversion).9               s(age).1               s(age).2               s(age).3 
+           0.112152319            0.126501589            0.036256979            0.042425733 
+              s(age).4               s(age).5               s(age).6               s(age).7 
+          -0.035618601            0.017110298            0.024933715            0.042864645 
+              s(age).8               s(age).9 
+           0.146840043            0.069016379 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
 full convergence after 6 iterations.
-Gradient range [-6.199427e-08,5.095577e-10]
-(score 204.8172 & scale 0.4944557).
-Hessian positive definite, eigenvalue range [0.3115112,84.5147].
-Model rank =  31 / 31 
+Gradient range [-3.093838e-08,2.151435e-10]
+(score 204.3097 & scale 0.4759374).
+Hessian positive definite, eigenvalue range [0.3542147,82.51735].
+Model rank =  34 / 34 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
-                  k'  edf k-index p-value
-s(Openness)     9.00 2.57    1.08     0.8
-s(Extraversion) 9.00 2.09    1.02     0.5
-s(age)          9.00 2.13    1.17     1.0
+                       k'  edf k-index p-value
+s(Conscientiousness) 9.00 2.25    1.00    0.48
+s(Extraversion)      9.00 2.71    1.11    0.90
+s(age)               9.00 2.10    1.21    1.00
 NULL
