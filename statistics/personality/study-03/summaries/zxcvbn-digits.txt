@@ -29,17 +29,16 @@ R-sq.(adj) =  -0.0129   Deviance explained = 4.15%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-       (Intercept)           Openness  Conscientiousness       Extraversion        Neuroticism 
-       0.000000000        0.033792967       -0.130857713       -0.100883271       -0.017625778 
-               age       genderFemale      it_background         occupation s(Agreeableness).1 
-      -0.068796869       -0.008530863       -0.003821658        0.027900428       -0.013793405 
-s(Agreeableness).2 s(Agreeableness).3 s(Agreeableness).4 s(Agreeableness).5 s(Agreeableness).6 
-       0.004263769       -0.007229393       -0.008223109        0.005868659       -0.009398741 
-s(Agreeableness).7 s(Agreeableness).8 s(Agreeableness).9 
-       0.008461474        0.043919002        0.096842287 
+       (Intercept)           Openness  Conscientiousness       Extraversion        Neuroticism                age 
+       0.000000000        0.033792967       -0.130857713       -0.100883271       -0.017625778       -0.068796869 
+      genderFemale      it_background         occupation s(Agreeableness).1 s(Agreeableness).2 s(Agreeableness).3 
+      -0.008530863       -0.003821658        0.027900428       -0.013793405        0.004263769       -0.007229393 
+s(Agreeableness).4 s(Agreeableness).5 s(Agreeableness).6 s(Agreeableness).7 s(Agreeableness).8 s(Agreeableness).9 
+      -0.008223109        0.005868659       -0.009398741        0.008461474        0.043919002        0.096842287 
 
 [1] "\nGAM.CHECK:"
 
@@ -54,5 +53,5 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                     k'   edf k-index p-value
-s(Agreeableness) 9.000 1.340   0.983    0.42
+s(Agreeableness) 9.000 1.340   0.983    0.36
 NULL

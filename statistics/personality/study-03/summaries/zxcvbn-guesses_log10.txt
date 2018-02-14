@@ -30,19 +30,18 @@ R-sq.(adj) =  0.0151   Deviance explained = 6.81%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness      genderFemale 
-     0.000000e+00      6.851466e-02     -4.439711e-02     -4.679976e-02     -2.402791e-02     -2.790719e-03 
-    it_background        occupation  s(Neuroticism).1  s(Neuroticism).2  s(Neuroticism).3  s(Neuroticism).4 
-     1.943884e-01     -1.084260e-01      2.338371e-03      1.199036e-02     -9.377548e-03      8.875491e-03 
- s(Neuroticism).5  s(Neuroticism).6  s(Neuroticism).7  s(Neuroticism).8  s(Neuroticism).9          s(age).1 
-     8.510426e-03      9.435240e-03      9.012305e-03      5.562094e-02     -1.485418e-01      5.742645e-05 
-         s(age).2          s(age).3          s(age).4          s(age).5          s(age).6          s(age).7 
-     2.422958e-06     -1.535369e-06      3.366906e-06     -3.836315e-06     -1.022043e-06     -1.015649e-06 
-         s(age).8          s(age).9 
-    -3.471435e-05      1.572686e-02 
+      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness      genderFemale     it_background 
+     0.000000e+00      6.851466e-02     -4.439711e-02     -4.679976e-02     -2.402791e-02     -2.790719e-03      1.943884e-01 
+       occupation  s(Neuroticism).1  s(Neuroticism).2  s(Neuroticism).3  s(Neuroticism).4  s(Neuroticism).5  s(Neuroticism).6 
+    -1.084260e-01      2.338371e-03      1.199036e-02     -9.377548e-03      8.875491e-03      8.510426e-03      9.435240e-03 
+ s(Neuroticism).7  s(Neuroticism).8  s(Neuroticism).9          s(age).1          s(age).2          s(age).3          s(age).4 
+     9.012305e-03      5.562094e-02     -1.485418e-01      5.742645e-05      2.422958e-06     -1.535369e-06      3.366906e-06 
+         s(age).5          s(age).6          s(age).7          s(age).8          s(age).9 
+    -3.836315e-06     -1.022043e-06     -1.015649e-06     -3.471435e-05      1.572686e-02 
 
 [1] "\nGAM.CHECK:"
 
@@ -57,6 +56,6 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                   k'   edf k-index p-value
-s(Neuroticism) 9.000 1.356   0.929    0.18
-s(age)         9.000 1.001   0.989    0.43
+s(Neuroticism) 9.000 1.356   0.929    0.17
+s(age)         9.000 1.001   0.989    0.41
 NULL

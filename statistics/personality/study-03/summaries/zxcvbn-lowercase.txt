@@ -29,19 +29,18 @@ R-sq.(adj) =  0.0687   Deviance explained = 13.1%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-      (Intercept)          Openness Conscientiousness     Agreeableness       Neuroticism      genderFemale 
-      0.000000000       0.010750660       0.024856707      -0.124389826      -0.194375340      -0.114308871 
-    it_background        occupation s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 
-      0.083477471      -0.160375916       0.194581358       0.049473462      -0.051924121       0.035012892 
-s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 s(Extraversion).9          s(age).1 
-      0.040250826       0.036344054       0.044426366       0.223885733       0.049960037       0.112233223 
-         s(age).2          s(age).3          s(age).4          s(age).5          s(age).6          s(age).7 
-      0.027353010      -0.010277733       0.012603062      -0.011550155      -0.009854661      -0.016552388 
-         s(age).8          s(age).9 
-     -0.183354198       0.263508849 
+      (Intercept)          Openness Conscientiousness     Agreeableness       Neuroticism      genderFemale     it_background 
+      0.000000000       0.010750660       0.024856707      -0.124389826      -0.194375340      -0.114308871       0.083477471 
+       occupation s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 s(Extraversion).5 s(Extraversion).6 
+     -0.160375916       0.194581358       0.049473462      -0.051924121       0.035012892       0.040250826       0.036344054 
+s(Extraversion).7 s(Extraversion).8 s(Extraversion).9          s(age).1          s(age).2          s(age).3          s(age).4 
+      0.044426366       0.223885733       0.049960037       0.112233223       0.027353010      -0.010277733       0.012603062 
+         s(age).5          s(age).6          s(age).7          s(age).8          s(age).9 
+     -0.011550155      -0.009854661      -0.016552388      -0.183354198       0.263508849 
 
 [1] "\nGAM.CHECK:"
 
@@ -57,5 +56,5 @@ indicate that k is too low, especially if edf is close to k'.
 
                   k'  edf k-index p-value
 s(Extraversion) 9.00 2.34    1.04    0.74
-s(age)          9.00 2.22    1.05    0.75
+s(age)          9.00 2.22    1.05    0.71
 NULL

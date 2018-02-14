@@ -1,0 +1,59 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+guesses_log10 ~ OpennessK + ConscientiousnessK + ExtraversionK + 
+    NeuroticismK + s(AgreeablenessK, k = 4) + s(age, k = 4) + 
+    gender + it_background + occupation
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        10.66569    2.06105   5.175 6.56e-07 ***
+OpennessK           0.14718    0.11043   1.333   0.1844    
+ConscientiousnessK -0.04645    0.12573  -0.369   0.7123    
+ExtraversionK      -0.16708    0.13213  -1.264   0.2078    
+NeuroticismK       -0.12749    0.09233  -1.381   0.1692    
+genderFemale        0.17483    0.45994   0.380   0.7043    
+it_background       1.11836    0.47334   2.363   0.0193 *  
+occupation         -0.17087    0.13425  -1.273   0.2049    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df     F p-value
+s(AgreeablenessK) 1.234  1.429 0.079   0.893
+s(age)            1.001  1.002 0.212   0.646
+
+R-sq.(adj) =  0.0227   Deviance explained = 7.45%
+-REML = 431.85  Scale est. = 7.8688    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+        (Intercept)           OpennessK  ConscientiousnessK       ExtraversionK        NeuroticismK        genderFemale 
+       0.000000e+00        1.096356e-01       -3.041824e-02       -9.858191e-02       -1.137599e-01        3.089185e-02 
+      it_background          occupation s(AgreeablenessK).1 s(AgreeablenessK).2 s(AgreeablenessK).3            s(age).1 
+       1.915780e-01       -1.103670e-01        3.503858e-02       -1.446678e-02       -1.795796e-02       -7.271132e-05 
+           s(age).2            s(age).3 
+      -5.202464e-06        4.196093e-02 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-0.0001680654,0.0003720331]
+(score 431.8453 & scale 7.868758).
+Hessian positive definite, eigenvalue range [0.0001678623,82.49979].
+Model rank =  14 / 14 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                     k'   edf k-index p-value
+s(AgreeablenessK) 3.000 1.234   0.933    0.16
+s(age)            3.000 1.001   0.988    0.36
+NULL

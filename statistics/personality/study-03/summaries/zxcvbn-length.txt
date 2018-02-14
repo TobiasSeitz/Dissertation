@@ -29,23 +29,22 @@ R-sq.(adj) =  0.0876   Deviance explained =   15%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-           (Intercept)           Extraversion          Agreeableness            Neuroticism 
-           0.000000000           -0.110945557           -0.046998669           -0.209064619 
-                   age           genderFemale          it_background             occupation 
-           0.060477336           -0.040043747            0.209650770           -0.179387835 
-         s(Openness).1          s(Openness).2          s(Openness).3          s(Openness).4 
-           0.229251031            0.009202477            0.078142102           -0.039992193 
-         s(Openness).5          s(Openness).6          s(Openness).7          s(Openness).8 
-          -0.048669315            0.034843873           -0.048014341           -0.477986159 
-         s(Openness).9 s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 
-           0.440232081            0.085081948            0.016065544           -0.008989279 
-s(Conscientiousness).4 s(Conscientiousness).5 s(Conscientiousness).6 s(Conscientiousness).7 
-           0.021073475            0.017497532           -0.020592885            0.021212121 
-s(Conscientiousness).8 s(Conscientiousness).9 
-           0.158327732           -0.079575533 
+           (Intercept)           Extraversion          Agreeableness            Neuroticism                    age 
+           0.000000000           -0.110945557           -0.046998669           -0.209064619            0.060477336 
+          genderFemale          it_background             occupation          s(Openness).1          s(Openness).2 
+          -0.040043747            0.209650770           -0.179387835            0.229251031            0.009202477 
+         s(Openness).3          s(Openness).4          s(Openness).5          s(Openness).6          s(Openness).7 
+           0.078142102           -0.039992193           -0.048669315            0.034843873           -0.048014341 
+         s(Openness).8          s(Openness).9 s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 
+          -0.477986159            0.440232081            0.085081948            0.016065544           -0.008989279 
+s(Conscientiousness).4 s(Conscientiousness).5 s(Conscientiousness).6 s(Conscientiousness).7 s(Conscientiousness).8 
+           0.021073475            0.017497532           -0.020592885            0.021212121            0.158327732 
+s(Conscientiousness).9 
+          -0.079575533 
 
 [1] "\nGAM.CHECK:"
 
@@ -60,6 +59,6 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                        k'  edf k-index p-value
-s(Openness)          9.00 2.90    1.06    0.78
-s(Conscientiousness) 9.00 1.94    1.07    0.79
+s(Openness)          9.00 2.90    1.06    0.73
+s(Conscientiousness) 9.00 1.94    1.07    0.78
 NULL

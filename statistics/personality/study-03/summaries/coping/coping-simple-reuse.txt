@@ -1,0 +1,57 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+reuse ~ Conscientiousness + Extraversion + Agreeableness + Neuroticism + 
+    s(Openness, k = 4) + s(age, k = 4) + gender + it_background + 
+    occupation
+
+Parametric coefficients:
+                  Estimate Std. Error z value Pr(>|z|)  
+(Intercept)        0.04382    2.87189   0.015   0.9878  
+Conscientiousness  0.13047    0.12059   1.082   0.2793  
+Extraversion       0.08922    0.09087   0.982   0.3261  
+Agreeableness      0.17280    0.09101   1.899   0.0576 .
+Neuroticism        0.06610    0.09281   0.712   0.4764  
+genderFemale       0.63720    0.63057   1.011   0.3123  
+it_background     -1.23375    0.60149  -2.051   0.0403 *
+occupation        -0.26681    0.16630  -1.604   0.1086  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+              edf Ref.df Chi.sq p-value
+s(Openness) 2.195  2.534  2.884   0.244
+s(age)      1.824  1.984  2.728   0.222
+
+R-sq.(adj) =  0.104   Deviance explained = 21.8%
+-REML =  54.03  Scale est. = 1         n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+      (Intercept) Conscientiousness      Extraversion     Agreeableness       Neuroticism      genderFemale     it_background 
+       0.00000000        1.17928247        1.04796705        1.81461944        0.74581434        1.04865393       -1.96846104 
+       occupation     s(Openness).1     s(Openness).2     s(Openness).3          s(age).1          s(age).2          s(age).3 
+      -1.60507749       -0.09693186       -4.12652404        3.62411707       13.07133059       -2.44522426       10.40784865 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 8 iterations.
+Gradient range [-1.117841e-10,1.397387e-09]
+(score 54.0297 & scale 1).
+Hessian positive definite, eigenvalue range [0.212607,0.2910582].
+Model rank =  14 / 14 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+               k'   edf k-index p-value
+s(Openness) 3.000 2.195   1.003    0.72
+s(age)      3.000 1.824   0.899    0.14
+NULL

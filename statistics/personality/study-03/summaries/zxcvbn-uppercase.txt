@@ -31,15 +31,16 @@ R-sq.(adj) =  0.055   Deviance explained = 11.6%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-      (Intercept)          Openness Conscientiousness     Agreeableness       Neuroticism               age 
-       0.00000000       -0.04657429        0.01984776        0.03381008        0.08095941        0.01040664 
-     genderFemale     it_background        occupation s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 
-       0.14893967        0.17917085       -0.01772831       -0.52022345       -0.27919412        0.15331392 
-s(Extraversion).4 s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 s(Extraversion).9 
-      -0.10103650       -0.11949177       -0.10351399       -0.13617150       -0.55597670       -0.38832008 
+      (Intercept)          Openness Conscientiousness     Agreeableness       Neuroticism               age      genderFemale 
+       0.00000000       -0.04657429        0.01984776        0.03381008        0.08095941        0.01040664        0.14893967 
+    it_background        occupation s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 s(Extraversion).5 
+       0.17917085       -0.01772831       -0.52022345       -0.27919412        0.15331392       -0.10103650       -0.11949177 
+s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 s(Extraversion).9 
+      -0.10351399       -0.13617150       -0.55597670       -0.38832008 
 
 [1] "\nGAM.CHECK:"
 
@@ -54,5 +55,5 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                   k'  edf k-index p-value
-s(Extraversion) 9.00 3.29    1.09    0.88
+s(Extraversion) 9.00 3.29    1.09    0.86
 NULL

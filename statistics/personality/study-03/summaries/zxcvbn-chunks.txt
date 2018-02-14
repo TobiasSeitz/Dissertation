@@ -32,19 +32,18 @@ R-sq.(adj) =  0.102   Deviance explained = 16.5%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-      (Intercept) Conscientiousness     Agreeableness       Neuroticism               age      genderFemale 
-      0.000000000      -0.061191960      -0.110972162      -0.258905993       0.096231584      -0.055932929 
-    it_background        occupation     s(Openness).1     s(Openness).2     s(Openness).3     s(Openness).4 
-      0.110625758      -0.129595094      -0.002341649      -0.019596911       0.056020885      -0.037312308 
-    s(Openness).5     s(Openness).6     s(Openness).7     s(Openness).8     s(Openness).9 s(Extraversion).1 
-     -0.035772317       0.028776843      -0.038092614      -0.300318989       0.176565957       0.349051229 
-s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 
-      0.097483003      -0.092337893       0.038043145       0.052021578       0.047661187       0.060856620 
-s(Extraversion).8 s(Extraversion).9 
-      0.268486286       0.181293630 
+      (Intercept) Conscientiousness     Agreeableness       Neuroticism               age      genderFemale     it_background 
+      0.000000000      -0.061191960      -0.110972162      -0.258905993       0.096231584      -0.055932929       0.110625758 
+       occupation     s(Openness).1     s(Openness).2     s(Openness).3     s(Openness).4     s(Openness).5     s(Openness).6 
+     -0.129595094      -0.002341649      -0.019596911       0.056020885      -0.037312308      -0.035772317       0.028776843 
+    s(Openness).7     s(Openness).8     s(Openness).9 s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 
+     -0.038092614      -0.300318989       0.176565957       0.349051229       0.097483003      -0.092337893       0.038043145 
+s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 s(Extraversion).9 
+      0.052021578       0.047661187       0.060856620       0.268486286       0.181293630 
 
 [1] "\nGAM.CHECK:"
 
@@ -60,5 +59,5 @@ indicate that k is too low, especially if edf is close to k'.
 
                   k'  edf k-index p-value
 s(Openness)     9.00 2.22    1.10    0.88
-s(Extraversion) 9.00 2.92    1.03    0.60
+s(Extraversion) 9.00 2.92    1.03    0.56
 NULL

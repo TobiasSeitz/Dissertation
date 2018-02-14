@@ -1,0 +1,58 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+substitutions ~ OpennessK + ExtraversionK + AgreeablenessK + 
+    s(ConscientiousnessK, k = 3) + s(NeuroticismK, k = 3) + s(age, 
+    k = 3) + gender + it_background + occupation
+
+Parametric coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)    -0.04061    0.45404  -0.089    0.929
+OpennessK       0.03101    0.01998   1.552    0.123
+ExtraversionK  -0.01288    0.02401  -0.537    0.592
+AgreeablenessK -0.00401    0.02909  -0.138    0.891
+genderFemale   -0.02608    0.08369  -0.312    0.756
+it_background  -0.02002    0.08617  -0.232    0.817
+occupation      0.01748    0.02437   0.718    0.474
+
+Approximate significance of smooth terms:
+                        edf Ref.df     F p-value
+s(ConscientiousnessK) 1.329  1.549 0.155   0.783
+s(NeuroticismK)       1.730  1.927 1.263   0.267
+s(age)                1.369  1.601 0.454   0.688
+
+R-sq.(adj) =  -0.00589   Deviance explained = 5.44%
+-REML = 149.76  Scale est. = 0.25846   n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+            (Intercept)               OpennessK           ExtraversionK          AgreeablenessK            genderFemale 
+             0.00000000              0.12929172             -0.04255151             -0.01086784             -0.02579473 
+          it_background              occupation s(ConscientiousnessK).1 s(ConscientiousnessK).2       s(NeuroticismK).1 
+            -0.01919679              0.06320811              0.03271331             -0.01311801              0.11010641 
+      s(NeuroticismK).2                s(age).1                s(age).2 
+             0.03182286              0.03871723              0.02477045 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-1.026473e-05,4.461069e-06]
+(score 149.7626 & scale 0.2584594).
+Hessian positive definite, eigenvalue range [0.04755237,82.50236].
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                         k'   edf k-index p-value
+s(ConscientiousnessK) 2.000 1.329   0.909    0.12
+s(NeuroticismK)       2.000 1.730   0.966    0.24
+s(age)                2.000 1.369   0.973    0.28
+NULL

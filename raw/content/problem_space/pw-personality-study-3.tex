@@ -21,7 +21,7 @@ Participants were invited via a university newsletter, and snowballing the link 
 
 \subsection{Results}
 % descriptives
-The resulting passwords had a median-length of 10 characters ([8;22]), i.e. many participants went beyond the minimum requirement. Figure \ref{fig:personality:study3:metrics-overview} visualizes additional metrics that show that passwords were stronger than expected. In the following, we try to fit generalized additive models to the data using big-five trait scores as covariates. 
+The resulting passwords had a median-length of 10 characters ([8;22]), i.e. many participants went beyond the minimum requirement. Figure \ref{fig:personality:study3:metrics-overview} visualizes additional metrics that show that passwords were stronger than expected. Moreover, overall internal consistency was at $\alpha=0.65$, thus slightly below the bar. Subscales for each trait were fairly consistent. In the following, we try to fit generalized additive models to the data using big-five trait scores as covariates. 
 
 \begin{figure}[tbph]
 	\centering
@@ -34,14 +34,34 @@ The resulting passwords had a median-length of 10 characters ([8;22]), i.e. many
 %TODO aline's data suggests that all this was associated with agreeableness, instead of neuroticism, but I found a labelling error. discuss!
 First, we use zxcvbn metrics as response variables, and explore marginal associations with big five traits. As before, we include age, gender and IT-background as control covariates. We found that only password length was (significantly) associated with B5-traits: Participants with higher \textit{neuroticism} scores tended to create shorter passwords ($\beta = -0.21$), using fewer lower-case letters as a side effect ($\beta = -0.19$). A second corollary was that passwords from participants scoring high on neuroticism were divided into fewer chunks ($\beta=-0.26$). However, it is hard to read this result, because even very long random passwords consist of only one matching sequence (``bruteforce''). 
 %control variables and model fit. 
-Having an IT background, on the contrary, was positively associated with password length ($\beta = 0.21$), and consequently password strength ($\beta=0.19$). None of the models however, achieved considerable fit: the maximum R-squared (adjusted) value was \Rsqadj{0.13} (for the number of symbols as target variable). We tried to achieve a better fit by performing a principal component analysis. This was not effective, either. We conclude that password selection analyzed with standard quantitative metrics is only very slightly predictable by personality profiles. 
+Having an IT background, on the contrary, was positively associated with password length ($\beta = 0.21$). A one-tailed Mann-Whitney test confirms this ($W=4204$,\pvallt{0.04}). Consequently, password strength was higher if participants had an IT background ($\beta=0.19$). None of the models however, achieved considerable fit: the maximum R-squared (adjusted) value was \Rsqadj{0.13} (for the number of symbols as target variable). We tried to achieve a better fit by performing a principal component analysis. This was not effective, either. We conclude that password selection analyzed with standard quantitative metrics is only very slightly predictable by personality profiles. 
 %OPTIONAL point much smaller R-sq than in second study. 
 
-\subsubsection{Memorability}
+%\subsection{Selection Strategies} -- no noteworthy association so we leave this out. and also I don't understand how Aline approached this. the categories seem too arbitrary. 
 
+\subsubsection{Password Management Strategies}
+Respondents freely reported reusing passwords (88.4\%), and 65.34\% said to categorize their passwords. Memorizing passwords was the preferred strategy for 109 participants, followed by notes on paper or a file ($n$=43). Using a password manager was the least favored option ($n=24$).
 
-\subsection{Password Management Strategies}
 % binary -- logit model ``write down'': yes no
+We created generalized additive logit models for every management strategy, i.e. binary outcomes like ``Using a password manager'': 1 (true) or 0 (false). 
+
+Since the percentage of participants reusing passwords is so high, influence by personality traits was unlikely to be detected. Consequently, none of the associations was flagged as significant for ``reuse''. However, older participants were more likely to reuse passwords as shown in Figure \ref{fig:personality:study3:age-openness-coping-all}. Participants with an IT background reported less password reuse ($\beta=-1.97$). We can observe another interesting aspect in Figure \ref{fig:personality:study3:age-openness-coping-all} which depicts associations between coping strategies and age, respectively Openness scores. Although not flagged as significant, age and openness show a positive tendency towards using a password manager. Similarly, memorizing passwords is less likely to be found with older and more open participants. Generally, memorizing passwords seems to be the only unfavorable coping strategy for older participants. 
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=1\linewidth]{figures/personality/age-openness-coping-all}
+	\caption{\label{fig:personality:study3:age-openness-coping-all}Age and Oppenness model plots for the three coping strategies password manager, paper-notes and memorization.}
+\end{figure}
+
+\subsubsection{Memorability}
+Only 18 out of 176 participants (10\%) failed to recall the newly created password at the end of the survey. Thus, associations with personality traits were unlikely.
+
+\subsubsection{Other findings}
+One participant P48claimed that their password (\texttt{!Q\"W3e4}) was not based on keyboard patterns. Zxcvbn also failed to recognize the pattern, because it only is obvious on a keyboard with a German layout where the quotation marks are entered with Shift+2. 
+
+Internal consistency analysis with the alpha function suggested to reverse neuroticism items to increase reliability. This is an odd finding, but could be due to chance. 
+
 
 \subsection{Learnings}
 Password length/strength marginally associated with Neuroticism
+
+binary outcome (memorability) needs a larger sample 

@@ -1,0 +1,56 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+uppercase ~ OpennessK + ConscientiousnessK + ExtraversionK + 
+    AgreeablenessK + NeuroticismK + s(age, k = 3) + gender + 
+    it_background + occupation
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)  
+(Intercept)         3.19300    1.29409   2.467   0.0146 *
+OpennessK          -0.02055    0.05447  -0.377   0.7065  
+ConscientiousnessK -0.07370    0.06226  -1.184   0.2382  
+ExtraversionK      -0.07830    0.06554  -1.195   0.2339  
+AgreeablenessK     -0.07324    0.07907  -0.926   0.3556  
+NeuroticismK        0.01981    0.04564   0.434   0.6649  
+genderFemale        0.24415    0.22830   1.069   0.2864  
+it_background       0.48148    0.23528   2.046   0.0423 *
+occupation         -0.02593    0.06659  -0.389   0.6975  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+         edf Ref.df     F p-value
+s(age) 1.202  1.363 0.184   0.817
+
+R-sq.(adj) =  0.0135   Deviance explained = 6.57%
+-REML = 316.59  Scale est. = 1.9392    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+       (Intercept)          OpennessK ConscientiousnessK      ExtraversionK     AgreeablenessK       NeuroticismK 
+        0.00000000        -0.03097746        -0.09768646        -0.09349660        -0.07176984         0.03576709 
+      genderFemale      it_background         occupation           s(age).1           s(age).2 
+        0.08730710         0.16692004        -0.03389634         0.01847744         0.01813469 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-5.049102e-05,6.576047e-05]
+(score 316.5921 & scale 1.939181).
+Hessian positive definite, eigenvalue range [0.02024139,82.50006].
+Model rank =  11 / 11 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+         k'  edf k-index p-value
+s(age) 2.00 1.20    1.06    0.78
+NULL

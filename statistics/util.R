@@ -15,6 +15,16 @@ renameColumn <- function(df,oldName,newName) {
   names(df)[names(df) == oldName] <- newName
 }
 
+smoothPredictors <- function(p,k=NULL){
+  if(is.null(k)){
+    p <- paste0("s(",p,")")  
+  }
+  else {
+    p <- paste0("s(",p,",k=",k,")")  
+  }
+  p
+}
+
 # if we use a smoothening functin in a formula, we need to strip that from the column name later
 # to get the original variable name. 
 extractParameterFromSmoother <- function(x){gsub("\\)","",gsub("s\\(","",x))}
@@ -28,7 +38,7 @@ extractParameterFromSmoother <- function(x){gsub("\\)","",gsub("s\\(","",x))}
 #   smoothedModel: GAM object (from gam() of the mgcv package)
 #   d: data frame to run the new gam() function on. 
 # returns: gam object
-simplifyGAM <- function(smoothedModel,select=FALSE,method="REML"){
+simplifyGAM <- function(smoothedModel,select=FALSE,method="REML",family="gaussian",k=5){
   # copy the dataframe
   d <- model.frame(smoothedModel);
   
@@ -54,8 +64,14 @@ simplifyGAM <- function(smoothedModel,select=FALSE,method="REML"){
   mLinearPredictors <- sapply(mLinearRows, extractParameterFromSmoother)
   mLinearPredictors <- unname(mLinearPredictors) # for some reason the name persists... #TODO
   
+  
+  mUpperK <- ceiling(max(mSmoothedFrame[["edf"]])) + 1 # only use a small enough k
+  mSmoothedPredictors <- sapply(mCurveRows, extractParameterFromSmoother)
+  mSmoothedPredictors <- unname(mSmoothedPredictors)
+  mSmoothedPredictors <- lapply(mSmoothedPredictors, smoothPredictors,k=min(k,mUpperK))
+  
   # compile the right hand of the formula by merging the three vectors.
-  nRightHand <- c(mLinearPredictors, mCurveRows, mParametricRows)
+  nRightHand <- c(mLinearPredictors, mSmoothedPredictors, mParametricRows)
   
   # concatenate the right hand with a "+""
   nFormulaString <- paste(nRightHand, collapse=" + ")
@@ -64,21 +80,12 @@ simplifyGAM <- function(smoothedModel,select=FALSE,method="REML"){
   # final step: assemble the formula
   nFormula = as.formula(nFormulaString)
   # and make the gam.
-  m <- gam(nFormula,select = select, method=method,data=d)
+  m <- gam(nFormula,select = select, method=method,data=d,family=family)
   # optional, but recommended:
   # add a pointer to the data to the model
   # visreg, e.g., needs this to extract residuals.
   # m$data <- d
   m
-}
-smoothPredictors <- function(p,k=NULL){
-  if(is.null(k)){
-    p <- paste0("s(",p,")")  
-  }
-  else {
-    p <- paste0("s(",p,",k=",k,")")  
-  }
-  p
 }
 
 
@@ -142,11 +149,11 @@ generatePDF <- function(model,
                         prefix.predictors = "model-predictors-", 
                         prefix.control = "model-controls-", 
                         path = "graphs", 
-                        xLab.predictors = NULL){
+                        xLab.predictors = NULL,...){
   dependent <- all.vars(model$formula)[1]
   autoPlots <- plotGAM(model,controlVariables=controlVariables, predictors=predictors, yLab = dependent, xLab.predictors=xLab.predictors) 
-  savePlot(autoPlots[[1]],paste0(prefix.predictors,dependent,".pdf"),path=path)
-  savePlot(autoPlots[[2]],paste0(prefix.control,dependent,".pdf"),path=path)
+  savePlot(autoPlots[[1]],paste0(prefix.predictors,dependent,".pdf"),path=path,...)
+  savePlot(autoPlots[[2]],paste0(prefix.control,dependent,".pdf"),path=path,...)
 }
 
 # creates a text file with the summary.
@@ -189,5 +196,52 @@ cor.mtest <- function(mat, ...) {
   }
   colnames(p.mat) <- rownames(p.mat) <- colnames(mat)
   p.mat
+}
+
+# Multiple plot function
+# http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
+#
+# ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
+# - cols:   Number of columns in layout
+# - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#
+# If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
+# then plot 1 will go in the upper left, 2 will go in the upper right, and
+# 3 will go all the way across the bottom.
+#
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+  
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+  
+  numPlots = length(plots)
+  
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                     ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+  
+  if (numPlots==1) {
+    print(plots[[1]])
+    
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+    
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+      
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
 }
 
