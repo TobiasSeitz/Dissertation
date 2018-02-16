@@ -25,6 +25,7 @@ controlVars <- list("age","gender","it_background","occupation")
 ############# Management
 # show a histogram of strategies.
 ggplot(d) + geom_histogram(aes(x=writeDown,colour=writeDown),stat = "count")
+count(d$writeDown)
 
 # we need to transform the categorical data into binary. 
 pwmMask <- c(1,0,0)

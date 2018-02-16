@@ -13,6 +13,7 @@ library(lm.beta)
 
 renameColumn <- function(df,oldName,newName) {
   names(df)[names(df) == oldName] <- newName
+  df
 }
 
 smoothPredictors <- function(p,k=NULL){

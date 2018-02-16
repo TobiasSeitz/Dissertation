@@ -1,25 +1,80 @@
 \chapter[Mental Models of Password Managers]{Mental Models of Password Managers}\label{chap:mental_models_pwm}
 
-based on \cite{Prinz2017MentalModel}
+An important spillover of our previous exploration is that password managers are more likely adopted the longer people had struggled with juggling passwords: Older participants in the third personality study were more likely to use a \gls{PWM}. We have already corroborated market surveys that indicate a generally low adoption rate of password management software. As discussed in Sections \ref{sec:rw:user-behavior} and \ref{sec:rw:pwm_generators}, it has been hypothesized that users do not fully trust third parties with their credentials, so there seems to be an urge to stay in charge. Consequently, most users still try to memorize their passwords. On the other hand, password managers do provide many usability and security benefits, but why do users fail to see them? To this end, we see a lack of understanding about how users make sense of password managers. Our goal was to understand users' mental models of password managers first and then identify opportunities to improve them, which could increase adoption rates. 
+%RQs
+We thus aimed to answer the following research questions: 1) How do users think a password manager works? 2) What are their reasons (not) to adopt one?
+
+To answer these questions, Martin Prinz and I explored attitudes and understandings in semi-structured qualitative user interviews. To get a more complete picture, we interviewed both people who already use a \gls{PWM} and also people who prefer other coping strategies. The outcome of this investigation has been published as an extended abstract at SOUPS 2017 \cite{Prinz2017MentalModel}.
 
 \section{Background and Context}
+%%%
+% technical side
+%%%
+
+% PWM have existed since xyz. -- not possible to point a specific origin. 
+Password managers can be either built into web browsers or act as a standalone solution that is independent of the password's purpose. Dedicated password managers have existed since the mid to late 1990s. Web Confidential\footurl{http://www.web-confidential.com/}{16.02.2018} was probably one of the first programs to facilitate password management, when it first surfaced in 1998. However, which of the browsers was first to add password storage capabilities cannot be easily traced back, but all major browsers added this feature in the early 2000s. Given the long history of this kind of user aide, adoption is still at only 12\% \cite{Olmstead2017AmerciansCybersecurity}. Even security experts disagree on the specific security benefits of different implementations\footurl{https://www.wired.com/2015/07/websites-please-stop-blocking-password-managers-2015/}{16.02.2018}. 
+
+% different system architectures: built into browser, local software (dedicated programm and/or browser extension), distributed storage.
+There are different architectures for handling passwords: offline password managers keep a database of encrypted passwords locally on the user's machine, while online managers provide more mobility because passwords are held on a server or a distributed storage solution \cite{McCarney2012Tapas}. \textit{KeePass} and \textit{Password Safe} are notable representatives for the offline storage paradigm, while the cloud-based approach is dominated by third-party solutions like \textit{LastPass}, \textit{1Password}, and \textit{Dashlane}. Browser vendors have also transitioned to store passwords in the cloud, e.g. Apple Keychain for Safari, or Google Smartlock for Chrome. 
 
 
-\subsection{Research Questions}
-
-\section{Related Work}
-Do not forget to read and cite the Don Norman chapter on mental models "Some observations on mental models"
-\section{Approach: PASDJO - The Password Game}
+% pwms are not universally accepted as the best solution.
+% some websites block password managers (by disabling the ``paste'' event on their login form), because under some circumstances password managers can be used to track users. 
 
 
-\section{Log Analysis}
+%%%
+% user side:
+%%%
+% academic
+
+% briefly summarize experiments focused around mental models of password managers
+Don Norman chapter on mental models "Some observations on mental models": MM provide predictive and explanatory power for understanding an interaction \cite{Norman1982ObservationsMentalModels}
+
+\cite{Kang2015MentalModelsDrawing} \cite{BravoLillo2011WarningsMentalModel}
+
+
+
+\section{User Interviews}
+
+\subsection{Method}
 
 \subsection{Sample}
+
 \subsection{Results}
+% analysis approach
+
+\subsubsection{Interviews}
+\subsubsection{Drawing Tasks}
 
 
-\section{Discussion}
+\section{Mental Model}
 
 
-\section{Limitations}
+\section{Opportunities and Challenges}
+
+\subsection{Customization and Personalization}
+
+\subsection{Improving Sense of Agency}
+
+\subsection{Leveraging Context}
+
+\subsection{Limitations}
+
+\section{Conclusion}
+
+
+\noindent
+\fbox{
+	\hspace{1cm}
+	\parbox[c][12cm]{0.7\linewidth}{
+		\section*{Take Aways}
+		\begin{itemize}[leftmargin=*]
+			\item 
+		\end{itemize}
+	}
+	\hspace{1cm}
+}
+
+
+
 
