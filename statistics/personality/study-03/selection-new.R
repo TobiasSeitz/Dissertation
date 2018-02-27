@@ -165,7 +165,7 @@ ggplot(data=d, aes(x=Neuroticism,y=length)) +
 
 # principal components
 # derive components
-b5Items <- subset(d, select = 18:38);
+b5Items <- subset(da, select = 18:38);
 
 # internal consistency
 #alpha(subset(d,select=18:21),check.keys=TRUE) # extraversion

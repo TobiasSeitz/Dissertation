@@ -9,11 +9,11 @@ cope_memorize ~ Openness + Conscientiousness + Extraversion +
 
 Parametric coefficients:
                   Estimate Std. Error z value Pr(>|z|)  
-(Intercept)        1.67292    1.40328   1.192   0.2332  
-Openness          -0.02810    0.05540  -0.507   0.6120  
-Conscientiousness  0.11258    0.06771   1.663   0.0964 .
-Extraversion      -0.12288    0.05313  -2.313   0.0207 *
-Agreeableness      0.10584    0.05673   1.866   0.0621 .
+(Intercept)        3.12269    1.57063   1.988   0.0468 *
+Openness           0.02810    0.05540   0.507   0.6120  
+Conscientiousness -0.11258    0.06771  -1.663   0.0964 .
+Extraversion       0.12288    0.05313   2.313   0.0207 *
+Agreeableness     -0.10584    0.05673  -1.866   0.0621 .
 age               -0.05959    0.03193  -1.866   0.0620 .
 genderFemale       0.01853    0.38350   0.048   0.9615  
 it_background     -0.89025    0.36337  -2.450   0.0143 *
@@ -34,10 +34,12 @@ gam(formula = nFormula, family = family, data = d, method = method,
     select = select)
 
 Standardized Coefficients::
-      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness               age      genderFemale 
-       0.00000000       -0.19355088        0.63773559       -0.90460353        0.69657382       -0.79577964        0.01910871 
-    it_background        occupation  s(Neuroticism).1  s(Neuroticism).2 
-      -0.89025207       -0.09967452       -0.29457041        0.14016283 
+      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness 
+       0.00000000        0.19355088       -0.63773559        0.90460353       -0.69657382 
+              age      genderFemale     it_background        occupation  s(Neuroticism).1 
+      -0.79577964        0.01910871       -0.89025207       -0.09967452       -0.29457041 
+ s(Neuroticism).2 
+      -0.14016283 
 
 [1] "\nGAM.CHECK:"
 
@@ -52,5 +54,5 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                  k'  edf k-index p-value
-s(Neuroticism) 2.00 1.56    1.04    0.66
+s(Neuroticism) 2.00 1.56    1.06    0.76
 NULL

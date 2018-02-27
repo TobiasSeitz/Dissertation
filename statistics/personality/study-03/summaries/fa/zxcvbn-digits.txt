@@ -4,55 +4,58 @@ Link function: identity
 
 Formula:
 digits ~ Factor1 + Factor2 + Factor3 + Factor5 + Factor6 + Factor7 + 
-    age + s(Factor4) + gender + it_background + occupation
+    age + s(Factor4, k = 4) + gender + it_background + occupation
 
 Parametric coefficients:
               Estimate Std. Error t value Pr(>|t|)    
-(Intercept)    2.82573    0.72542   3.895 0.000143 ***
-Factor1       -0.26669    0.17133  -1.557 0.121534    
-Factor2       -0.01046    0.18721  -0.056 0.955505    
-Factor3        0.05648    0.16131   0.350 0.726698    
-Factor5       -0.31575    0.19193  -1.645 0.101876    
-Factor6       -0.05011    0.19784  -0.253 0.800371    
-Factor7        0.12706    0.21037   0.604 0.546683    
-age           -0.02229    0.02911  -0.766 0.444993    
-genderFemale  -0.03310    0.35708  -0.093 0.926264    
-it_background -0.02849    0.34383  -0.083 0.934065    
-occupation     0.05270    0.09787   0.539 0.590952    
+(Intercept)    2.82135    0.72542   3.889 0.000147 ***
+Factor1       -0.26866    0.17138  -1.568 0.118913    
+Factor2       -0.01018    0.18708  -0.054 0.956677    
+Factor3        0.05590    0.16115   0.347 0.729135    
+Factor5       -0.31747    0.19183  -1.655 0.099871 .  
+Factor6       -0.05139    0.19766  -0.260 0.795209    
+Factor7        0.12845    0.21010   0.611 0.541817    
+age           -0.02219    0.02910  -0.763 0.446845    
+genderFemale  -0.03032    0.35705  -0.085 0.932424    
+it_background -0.02889    0.34364  -0.084 0.933113    
+occupation     0.05301    0.09786   0.542 0.588777    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
-            edf Ref.df     F p-value  
-s(Factor4) 2.45  3.059 2.398  0.0686 .
+             edf Ref.df    F p-value  
+s(Factor4) 2.267  2.668 2.71  0.0487 *
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-R-sq.(adj) =  0.0104   Deviance explained = 8.12%
--REML = 379.24  Scale est. = 4.1502    n = 175
+R-sq.(adj) =  0.0106   Deviance explained = 8.04%
+-REML = 379.18  Scale est. = 4.1494    n = 175
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-  (Intercept)       Factor1       Factor2       Factor3       Factor5       Factor6       Factor7           age  genderFemale it_background    occupation 
-  0.000000000  -0.121987114  -0.004504880   0.027341946  -0.130669734  -0.019914405   0.046903628  -0.070647538  -0.008103048  -0.006761976   0.047165806 
- s(Factor4).1  s(Factor4).2  s(Factor4).3  s(Factor4).4  s(Factor4).5  s(Factor4).6  s(Factor4).7  s(Factor4).8  s(Factor4).9 
-  0.077055833  -0.033553887  -0.071179725  -0.044920535  -0.060218129   0.055286648  -0.054236800   0.303250382   0.156952522 
+  (Intercept)       Factor1       Factor2       Factor3       Factor5       Factor6 
+  0.000000000  -0.122890924  -0.004382970   0.027061068  -0.131379483  -0.020421969 
+      Factor7           age  genderFemale it_background    occupation  s(Factor4).1 
+  0.047415057  -0.070342749  -0.007423641  -0.006856091   0.047437435  -0.083955861 
+ s(Factor4).2  s(Factor4).3 
+  0.191421162   0.113107189 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
 full convergence after 6 iterations.
-Gradient range [-3.325351e-07,1.565025e-09]
-(score 379.2439 & scale 4.150203).
-Hessian positive definite, eigenvalue range [0.6480456,81.5065].
-Model rank =  20 / 20 
+Gradient range [-3.658249e-07,5.648428e-09]
+(score 379.1757 & scale 4.149368).
+Hessian positive definite, eigenvalue range [0.5841403,81.50496].
+Model rank =  14 / 14 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
              k'  edf k-index p-value
-s(Factor4) 9.00 2.45    1.17    0.98
+s(Factor4) 3.00 2.27    1.17       1
 NULL

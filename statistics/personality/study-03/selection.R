@@ -1,4 +1,3 @@
-
 library(mgcv)
 library(ggplot2)
 library(reshape2)
@@ -45,26 +44,22 @@ d$gender[d$gender == 3] <- NA
 d$gender <- factor(d$gender, levels = c(1,2), labels=c("Male","Female"))
 
 ## try and reverse neuroticism
-d$Neuroticism_r <- (6-d$N1) + (6-d$N2R) + (6-d$N3) + (6-d$N4)
+#d$Neuroticism_r <- (6-d$N1) + (6-d$N2R) + (6-d$N3) + (6-d$N4)
 
-# try and reverse things.
-dKeyed <- d
-reversedItems <- list("E1R","E3R","A1R","A3R","A4R","C2R","N2R","O5R")
-dKeyed$E1R <- 6 - dKeyed$E1R
-dKeyed$E3R <- 6 - dKeyed$E3R
-dKeyed$A1R <- 6 - dKeyed$A3R
-dKeyed$A4R <- 6 - dKeyed$A4R
-dKeyed$C2R <- 6 - dKeyed$C2R
-dKeyed$N2R <- 6 - dKeyed$N2R
-dKeyed$O5R <- 6 - dKeyed$O5R
+b5Items <- subset(d, select = 18:38);
 
-dKeyed$NeuroticismK <- dKeyed$N1 + dKeyed$N2R + dKeyed$N3 + dKeyed$N4
-dKeyed$OpennessK <- dKeyed$O1 + dKeyed$O2 + dKeyed$O3 + dKeyed$O4 + dKeyed$O5R
-dKeyed$ConscientiousnessK <- dKeyed$C1 + dKeyed$C2R + dKeyed$C3 + dKeyed$C4
-dKeyed$AgreeablenessK <- dKeyed$A1R + dKeyed$A2 + dKeyed$A3R + dKeyed$A4R
-dKeyed$ExtraversionK <- dKeyed$E1R + dKeyed$E2 + dKeyed$E3R + dKeyed$E4
-
-compare(d,dKeyed) # should be false for the frames
+# the scores are actually wrong as of now:
+# we need to reverse all b5 items.
+for(item in names(b5Items)) {
+  d[[item]] <- 6 - d[[item]]
+}
+# now recalculate the scores:
+d$Openness <- d$O1 + d$O2 + d$O3 + d$O4 + d$O5R;
+d$Conscientiousness <- d$C1 + d$C2R + d$C3 + d$C4;
+d$Extraversion <- d$E1R + d$E2 + d$E3R + d$E4;
+d$Agreeableness <- d$A1R + d$A2 + d$A3R + d$A4R;
+d$Neuroticism <- d$N1 + d$N2R + d$N3 + d$N4;
+# and that's it!
 
 
 ######################################################
@@ -98,6 +93,9 @@ describe(d)
 
 
 # correlation
+predictorsB5 <- list("Openness","Conscientiousness", "Extraversion", "Agreeableness","Neuroticism");
+controlVars <- list("age","gender","it_background","occupation")
+
 correlationFrame <- d[,which(names(d) %in% predictorsB5)]
 b5CorrPValues <- cor.mtest(correlationFrame)
 corrplot(cor(correlationFrame),
@@ -112,54 +110,38 @@ corrplot(cor(correlationFrame),
 # do IT people create longer passwords?
 wilcox.test(length~it_background,data = d,alternative = "less")
 
+# were men more likely to work in IT?
+
+
 ######################################################
 #####
 #####   selection models. 
 #####
 ######################################################
 
-predictorsB5 <- list("Openness","Conscientiousness", "Extraversion", "Agreeableness","Neuroticism");
-predictorsB5Keyed <- list("OpennessK","ConscientiousnessK", "ExtraversionK", "AgreeablenessK","NeuroticismK");
-controlVars <- list("age","gender","it_background","occupation")
 
 autoModelsMetrics <- lapply(zxcvbnMetrics, getGam, d<-d, controlVars = controlVars, predictors = predictorsB5)
 autoModelsMetrics_simple <- lapply(autoModelsMetrics, simplifyGAM)
 
 
-### there was a weird part in the data that made me doubt that aline remembered to re-encode reversely keyed items,
-### so I did this and ran the models againt. 
-autoModelsMetricsKeyed <- lapply(zxcvbnMetrics, getGam, d<-dKeyed, controlVars = controlVars, predictors = predictorsB5Keyed)
-autoModelsMetricsKeyed_simple <- lapply(autoModelsMetricsKeyed, simplifyGAM)
-
-
 # test summary
 summary(autoModelsMetrics[[1]])
 summary(autoModelsMetrics_simple[[1]])
-summary(autoModelsMetricsKeyed[[1]])
-summary(autoModelsMetricsKeyed_simple[[1]])
-anova(autoModelsMetrics_simple[[1]],autoModelsMetricsKeyed_simple[[1]])
+anova(autoModelsMetrics_simple[[1]],autoModelsMetrics[[1]], test="Chisq")
 
 # test plot:
 plot(autoModelsMetrics[[1]], jit=TRUE,pages=1)
 plotGAM(autoModelsMetrics_simple[[1]], predictors = predictorsB5, controlVariables = controlVars)[[1]]
-plotGAM(autoModelsMetricsKeyed_simple[[1]], predictors = predictorsB5, controlVariables = controlVars)[[1]]
+
 
 ### plot 
 lapply(autoModelsMetrics_simple, generatePDF, 
        controlVariables = controlVars, predictors = predictorsB5,
        prefix.predictors="zxcvbn-b5-predictors-", prefix.control="zxcvbn-b5-controls-",path="graphs/b5-reml",xLab.predictors = "Trait Scores")
-lapply(autoModelsMetricsKeyed_simple, generatePDF, 
-       controlVariables = controlVars, predictors = predictorsB5Keyed,
-       prefix.predictors="zxcvbn-b5k-predictors-", prefix.control="zxcvbn-b5k-controls-",path="graphs/b5-reml",xLab.predictors = "Trait Scores")
-
-
 
 ## summaries
 for(i in autoModelsMetrics_simple){
   outputSummary(i,prefix="zxcvbn-",path="summaries")
-}
-for(i in autoModelsMetricsKeyed_simple){
-  outputSummary(i,prefix="zxcvbn-keyed-",path="summaries")
 }
 
 
@@ -167,7 +149,7 @@ for(i in autoModelsMetricsKeyed_simple){
 ggplot(data=d, aes(x=Neuroticism,y=length)) + 
   geom_point() +
   #geom_jitter() +
-  geom_smooth(method="lm")
+  geom_smooth(method="loess")
   
   
 ######################################################
@@ -179,11 +161,10 @@ ggplot(data=d, aes(x=Neuroticism,y=length)) +
 
 # principal components
 # derive components
-b5Items <- subset(d, select = 18:38);
 
 # internal consistency
 #alpha(subset(d,select=18:21),check.keys=TRUE) # extraversion
-alpha(b5Items,check.keys=TRUE)
+alpha(b5Items,check.keys=F)
 
 # it looks as though all neuroticism items should be reversed. could be done with something like this 
 # (right now that won't work but the idea is to subtract the score from 6 to reverse it. 
@@ -191,12 +172,6 @@ alpha(b5Items,check.keys=TRUE)
 
 alpha(subset(d,select=30:33),check.keys=TRUE) # neuroticism
 alpha(subset(b5Items,select=13:16),check.keys=TRUE) # neuroticism
-
-#let's try something.
-testReverseItems <- list("E1R","E3R","A1R","A3R","A4R","C2R","N2R","O5R")
-lapply(testReverseItems,function(item){
-  b5Items[[item]] <- 6 - b5Items[[item]]
-})
 
 pcB5 <- princomp(b5Items) # omit ID variable
 summary(pcB5)
@@ -243,3 +218,4 @@ influenceMetrics <- list(
 autoModelsInfluence <- lapply(influenceMetrics, getGam, d<-d, controlVars = controlVars, predictors = predictorsB5, family="binomial")
 autoModelsInfluence_simple <- lapply(autoModelsInfluence, simplifyGAM, family="binomial")
 lapply(autoModelsInfluence_simple,summary)
+## only "residency" with good explanation of deviance (R-sq: 0.113, dev expl: 42.2%)

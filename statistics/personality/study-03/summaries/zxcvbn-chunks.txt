@@ -4,31 +4,31 @@ Link function: identity
 
 Formula:
 chunks ~ Conscientiousness + Agreeableness + Neuroticism + age + 
-    s(Openness) + s(Extraversion) + gender + it_background + 
+    s(Openness, k = 4) + s(Extraversion, k = 4) + gender + it_background + 
     occupation
 
 Parametric coefficients:
-                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)        3.08394    0.55768   5.530 1.26e-07 ***
-Conscientiousness -0.01913    0.02498  -0.766  0.44482    
-Agreeableness     -0.02986    0.02023  -1.476  0.14185    
-Neuroticism       -0.06484    0.02010  -3.226  0.00152 ** 
-age                0.01276    0.01149   1.110  0.26847    
-genderFemale      -0.09604    0.13834  -0.694  0.48854    
-it_background      0.19593    0.13712   1.429  0.15495    
-occupation        -0.06087    0.03909  -1.557  0.12141    
+                  Estimate Std. Error t value Pr(>|t|)   
+(Intercept)        0.36426    0.57432   0.634   0.5268   
+Conscientiousness  0.01842    0.02500   0.737   0.4624   
+Agreeableness      0.02941    0.02025   1.452   0.1484   
+Neuroticism        0.06504    0.02014   3.229   0.0015 **
+age                0.01255    0.01151   1.090   0.2772   
+genderFemale      -0.08959    0.13815  -0.649   0.5176   
+it_background      0.20056    0.13719   1.462   0.1457   
+occupation        -0.06016    0.03912  -1.538   0.1261   
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
                   edf Ref.df     F p-value  
-s(Openness)     2.222  2.801 1.139  0.2660  
-s(Extraversion) 2.922  3.667 2.682  0.0326 *
+s(Openness)     2.025  2.409 1.245  0.2191  
+s(Extraversion) 2.406  2.761 4.110  0.0274 *
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-R-sq.(adj) =  0.102   Deviance explained = 16.5%
--REML = 233.07  Scale est. = 0.6656    n = 175
+R-sq.(adj) =  0.0974   Deviance explained = 15.7%
+-REML = 233.09  Scale est. = 0.6689    n = 175
 [1] "\nBETAs:"
 
 Call:
@@ -36,28 +36,26 @@ gam(formula = nFormula, family = family, data = d, method = method,
     select = select)
 
 Standardized Coefficients::
-      (Intercept) Conscientiousness     Agreeableness       Neuroticism               age      genderFemale     it_background 
-      0.000000000      -0.061191960      -0.110972162      -0.258905993       0.096231584      -0.055932929       0.110625758 
-       occupation     s(Openness).1     s(Openness).2     s(Openness).3     s(Openness).4     s(Openness).5     s(Openness).6 
-     -0.129595094      -0.002341649      -0.019596911       0.056020885      -0.037312308      -0.035772317       0.028776843 
-    s(Openness).7     s(Openness).8     s(Openness).9 s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 
-     -0.038092614      -0.300318989       0.176565957       0.349051229       0.097483003      -0.092337893       0.038043145 
-s(Extraversion).5 s(Extraversion).6 s(Extraversion).7 s(Extraversion).8 s(Extraversion).9 
-      0.052021578       0.047661187       0.060856620       0.268486286       0.181293630 
+      (Intercept) Conscientiousness     Agreeableness       Neuroticism               age 
+      0.000000000       0.058906216       0.109286074       0.259703331       0.094631239 
+     genderFemale     it_background        occupation     s(Openness).1     s(Openness).2 
+     -0.052177706       0.113237914      -0.128078446      -0.001035859      -0.197494433 
+    s(Openness).3 s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 
+     -0.236593423       0.386980197       0.098948982      -0.174012244 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
 full convergence after 6 iterations.
-Gradient range [-6.101263e-08,6.942606e-10]
-(score 233.0731 & scale 0.6655978).
-Hessian positive definite, eigenvalue range [0.2752494,82.5158].
-Model rank =  26 / 26 
+Gradient range [-4.135496e-07,8.030075e-09]
+(score 233.0922 & scale 0.6688968).
+Hessian positive definite, eigenvalue range [0.2553818,82.50922].
+Model rank =  14 / 14 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                   k'  edf k-index p-value
-s(Openness)     9.00 2.22    1.10    0.88
-s(Extraversion) 9.00 2.92    1.03    0.56
+s(Openness)     3.00 2.03    1.10    0.94
+s(Extraversion) 3.00 2.41    1.01    0.50
 NULL

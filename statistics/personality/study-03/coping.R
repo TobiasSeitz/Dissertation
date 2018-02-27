@@ -11,6 +11,8 @@ source("../../util.R");
 # this data looks stale: d <- read.csv("personality-pw-selection.csv", sep = ";", dec = ".")
 # I've re-coded it:
 d <- read.csv("data/data_recoded.csv", sep = ";", dec = ".")
+# attention: the scores are off (reversed) in this dataset - 
+# look at selection.R to reverse the items and re-calculate the scores. 
 
 # avoid that the the one third gender is factored into the models
 d$gender[d$gender == 3] <- NA
@@ -46,7 +48,8 @@ autoModelsCoping_simple <- lapply(autoModelsCoping,simplifyGAM,family="binomial"
 
 # test
 plot(autoModelsCoping[[2]],jit=T,pages=1);
-### plot 
+
+### plot regular
 lapply(autoModelsCoping, generatePDF, 
        controlVariables = controlVars, predictors = predictorsB5,
        prefix.predictors="coping-b5-predictors-", prefix.control="coping-b5-controls-",path="graphs/b5-reml",xLab.predictors = "Trait Scores")
@@ -76,7 +79,7 @@ manualIVs <- list("Openness");
 copingModelManual <- gam(cope_pwm ~ age*Openness, data=d, method="REML", family="binomial")
 plotsPwm <- plotGAM(copingModelManual, manualCVs, manualIVs, yLab="Password Manager", 
                     xLab.predictors = "Openness", xLab.control = "Age")
-
+plotsPwm[[1]]
 ## there is no visible difference with this model. 
 copingModelManual <- gam(cope_paper ~ age*Openness, data=d, method="REML", family="binomial")
 plotsPaper <- plotGAM(copingModelManual, manualCVs, manualIVs, yLab="Paper", 
@@ -91,6 +94,7 @@ plotsReuse <- plotGAM(copingModelManual, manualCVs, manualIVs, yLab="Reuse",
                          xLab.predictors = "Openness", xLab.control = "Age")
 
 ## unfortunately multiplot doesn't return, so use RStudio's export function.
+# best resolution: 
 multiplot(plotsPwm[[1]], plotsPwm[[2]], 
           plotsPaper[[1]], plotsPaper[[2]],
           plotsMemorize[[1]], plotsMemorize[[2]], 
@@ -102,6 +106,7 @@ multiplot(plotsPwm[[1]], plotsPwm[[2]],
 ageModel <- gam(Openness ~ age*it_background, data=d, method="REML")
 summary(ageModel)
 plotGAM(ageModel,list("age","Openness","it_background"), list("age","Openness","it_background"))
+# nope
 
 # correlation
 correlationFrame <- d[,which(names(d) %in% list("age","it_background","Openness"))]
@@ -114,4 +119,4 @@ corrplot(cor(correlationFrame),
          sig.level = 0.01,
          insig = "blank"
 )
-# conclusion: not significantly in our dataset, but most people were younger. 
+# conclusion: not significantly in our dataset, but most people were younger anyway

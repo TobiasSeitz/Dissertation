@@ -75,7 +75,10 @@ plotGAM <-
     
     # basic plot setup with the smooths data
     predictorPlot <- ggplot(predictorSmooths, aes(x, smooth)) + 
-      geom_rug(alpha = 1/2, sides="b", data=predictorResiduals,aes(x,y))
+      geom_rug(alpha = 1/2, 
+               sides="b", 
+               data=predictorResiduals,aes(x,y),
+               position = "jitter")
       # geom_bar(aes(x),data=predictorResiduals)
     
     if(!is.null(controlVariables)){
@@ -84,7 +87,10 @@ plotGAM <-
         residuals[residuals$Variable %in% controlVariables, ]
       
       controlPlot <- ggplot(controlSmooths, aes(x, smooth)) +
-        geom_rug(alpha = 1/2, sides="b", data=controlResiduals,aes(x,y))
+        geom_rug(alpha = 1/2, 
+                 sides="b", 
+                 data=controlResiduals,aes(x,y),
+                 position = "jitter")
     } else{
       controlPlot <- NULL
     }
@@ -94,16 +100,22 @@ plotGAM <-
     # this is done through the plotResiduals flag
     if (plotResiduals) {
       predictorPlot <-
-        predictorPlot + geom_point(data = predictorResiduals,
+        predictorPlot + geom_jitter(data = predictorResiduals,
                                    aes(x, y),
                                    col = residualColor,
-                                   size = pointSize) + theme(legend.position = "none")
+                                   size = pointSize,
+                                   width = 0.1,
+                                   alpha = 0.5
+                                   ) + theme(legend.position = "none")
       if(!is.null(controlVariables)){
         controlPlot <-
-          controlPlot + geom_point(data = controlResiduals,
-                                   aes(x, y),
+          controlPlot + geom_jitter(data = controlResiduals,
+                                   aes(x, y,alpha = 0.5),
                                    col = residualColor,
-                                   size = pointSize) + theme(legend.position = "none")  
+                                   size = pointSize,
+                                   width = 0.1, # how jitter randomness 
+                                   alpha = 0.5 # opacity of the points
+                                   ) + theme(legend.position = "none")  
       }
     }
     

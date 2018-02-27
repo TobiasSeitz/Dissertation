@@ -1,0 +1,33 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+forgot ~ length
+
+Parametric coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -4.92205    0.94281  -5.221 1.78e-07 ***
+length       0.22983    0.07204   3.190  0.00142 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+R-sq.(adj) =  0.0742   Deviance explained = 8.81%
+-REML = 53.079  Scale est. = 1         n = 176
+[1] "\nBETAs:"
+
+Call:
+gam(formula = forgot ~ length, family = "binomial", data = d, 
+    method = "REML")
+
+Standardized Coefficients::
+(Intercept)      length 
+   0.000000    2.309401 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+Model required no smoothing parameter selectionModel rank =  2 / 2 
+
+NULL

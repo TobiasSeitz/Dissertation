@@ -35,34 +35,38 @@ Call:
 gam(formula = autoFormula, family = family, data = d, select = select)
 
 Standardized Coefficients::
-           (Intercept)           genderFemale          it_background             occupation          s(Openness).1          s(Openness).2 
-          0.000000e+00           3.261476e-02          -8.902154e-01          -1.054155e-01           1.067741e-06          -1.205369e-06 
-         s(Openness).3          s(Openness).4 s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 s(Conscientiousness).4 
-         -6.821888e-06          -2.005947e-01          -2.012967e-06           1.673204e-06           2.169093e-06           6.370646e-01 
-     s(Extraversion).1      s(Extraversion).2      s(Extraversion).3      s(Extraversion).4     s(Agreeableness).1     s(Agreeableness).2 
-          2.668953e-05          -6.296667e-06          -2.852032e-05          -8.848195e-01           1.967762e-06          -9.014989e-07 
-    s(Agreeableness).3     s(Agreeableness).4       s(Neuroticism).1       s(Neuroticism).2       s(Neuroticism).3       s(Neuroticism).4 
-          3.145694e-07           6.882287e-01           4.520532e-03          -1.787213e-02          -2.051487e-01           1.063216e-01 
+           (Intercept)           genderFemale          it_background             occupation 
+          0.000000e+00           3.261479e-02          -8.902154e-01          -1.054155e-01 
+         s(Openness).1          s(Openness).2          s(Openness).3          s(Openness).4 
+         -1.063973e-06          -1.201116e-06          -6.797818e-06           2.005947e-01 
+s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 s(Conscientiousness).4 
+          2.035402e-06           1.691853e-06           2.193268e-06          -6.370647e-01 
+     s(Extraversion).1      s(Extraversion).2      s(Extraversion).3      s(Extraversion).4 
+         -3.045707e-05          -7.741974e-06          -3.177445e-05           8.848198e-01 
+    s(Agreeableness).1     s(Agreeableness).2     s(Agreeableness).3     s(Agreeableness).4 
+         -1.843624e-06 1.0           1.773223e-07          -6.882288e-01 
+      s(Neuroticism).1       s(Neuroticism).2       s(Neuroticism).3       s(Neuroticism).4 
+         -7.551867e-02          -2.127187e-02          -2.056588e-01          -1.063217e-01 
               s(age).1               s(age).2               s(age).3               s(age).4 
-          2.970839e-07          -3.526034e-07          -5.013323e-07          -7.799492e-01 
+          2.989019e-07          -3.547611e-07          -5.044002e-07          -7.799492e-01 
 
 [1] "\nGAM.CHECK:"
 
 Method: UBRE   Optimizer: outer newton
 full convergence after 9 iterations.
-Gradient range [-2.188226e-07,-3.277795e-08]
+Gradient range [-2.239895e-07,-3.297852e-08]
 (score 0.2824595 & scale 1).
-Hessian positive definite, eigenvalue range [3.277779e-08,0.00171912].
+Hessian positive definite, eigenvalue range [3.297836e-08,0.001719121].
 Model rank =  28 / 28 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
-                       k'  edf k-index p-value
-s(Openness)          4.00 1.00    1.25    1.00
-s(Conscientiousness) 4.00 1.00    1.14    0.98
-s(Extraversion)      4.00 1.00    1.03    0.66
-s(Agreeableness)     4.00 1.00    1.01    0.52
-s(Neuroticism)       4.00 1.44    1.04    0.70
-s(age)               4.00 1.00    0.99    0.42
+                        k'   edf k-index p-value
+s(Openness)          4.000 1.000   1.294    1.00
+s(Conscientiousness) 4.000 1.000   1.144    0.96
+s(Extraversion)      4.000 1.000   1.036    0.67
+s(Agreeableness)     4.000 1.000   0.951    0.22
+s(Neuroticism)       4.000 1.441   1.061    0.77
+s(age)               4.000 1.000   0.990    0.40
 NULL

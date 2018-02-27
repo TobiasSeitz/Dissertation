@@ -8,12 +8,12 @@ cope_pwm ~ Openness + Conscientiousness + Extraversion + Agreeableness +
 
 Parametric coefficients:
                   Estimate Std. Error z value Pr(>|z|)   
-(Intercept)       -1.89356    2.19407  -0.863  0.38812   
-Openness           0.21241    0.07791   2.726  0.00640 **
-Conscientiousness -0.08677    0.09380  -0.925  0.35493   
-Extraversion      -0.07593    0.07588  -1.001  0.31704   
-Agreeableness     -0.06820    0.07786  -0.876  0.38107   
-Neuroticism       -0.09519    0.08192  -1.162  0.24525   
+(Intercept)       -3.34723    2.41922  -1.384  0.16648   
+Openness          -0.21241    0.07791  -2.726  0.00640 **
+Conscientiousness  0.08677    0.09380   0.925  0.35493   
+Extraversion       0.07593    0.07588   1.001  0.31704   
+Agreeableness      0.06820    0.07786   0.876  0.38107   
+Neuroticism        0.09519    0.08192   1.162  0.24525   
 age                0.04079    0.03768   1.082  0.27905   
 genderFemale      -1.13362    0.58832  -1.927  0.05399 . 
 it_background      1.49289    0.54159   2.756  0.00584 **
@@ -31,10 +31,10 @@ gam(formula = nFormula, family = family, data = d, method = method,
     select = select)
 
 Standardized Coefficients::
-      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness       Neuroticism               age 
-        0.0000000         2.0615927        -0.6925877        -0.7874939        -0.6324156        -0.9484391         0.7674518 
-     genderFemale     it_background        occupation 
-       -1.6474725         2.1033814        -0.2009657 
+      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness 
+        0.0000000        -2.0615927         0.6925877         0.7874939         0.6324156 
+      Neuroticism               age      genderFemale     it_background        occupation 
+        0.9484391         0.7674518        -1.6474725         2.1033814        -0.2009657 
 
 [1] "\nGAM.CHECK:"
 
