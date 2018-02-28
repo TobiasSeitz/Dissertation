@@ -1,0 +1,79 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+emojiDif ~ s(Age) + Gender + IT + s(Extraversion) + s(Agreeableness) + 
+    s(Conscientiousness) + s(Neuroticism) + s(Openness) + emojiPos
+
+Parametric coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    7.2631     0.6565  11.064   <2e-16 ***
+GenderFemale   0.9143     0.5763   1.587    0.116    
+ITNo          -0.1038     0.5944  -0.175    0.862    
+emojiPos1      0.5161     0.6492   0.795    0.428    
+emojiPos2      0.2348     0.6280   0.374    0.709    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                       edf Ref.df     F p-value  
+s(Age)               1.000  1.000 0.123  0.7265  
+s(Extraversion)      1.000  1.000 0.476  0.4919  
+s(Agreeableness)     3.273  4.108 1.841  0.1221  
+s(Conscientiousness) 1.000  1.000 0.006  0.9370  
+s(Neuroticism)       1.000  1.000 5.695  0.0188 *
+s(Openness)          2.503  3.115 0.656  0.5378  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.0431   Deviance explained = 15.5%
+GCV = 8.4657  Scale est. = 7.4146    n = 119
+[1] "\nBETAs:"
+
+Call:
+gam(formula = emojiDif ~ s(Age) + Gender + IT + s(Extraversion) + 
+    s(Agreeableness) + s(Conscientiousness) + s(Neuroticism) + 
+    s(Openness) + emojiPos, data = data.difficulty)
+
+Standardized Coefficients::
+           (Intercept)           GenderFemale                   ITNo              emojiPos1              emojiPos2               s(Age).1 
+          0.000000e+00           1.644542e-01          -1.691697e-02           8.680728e-02           4.001146e-02           7.275929e-13 
+              s(Age).2               s(Age).3               s(Age).4               s(Age).5               s(Age).6               s(Age).7 
+          1.549398e-13          -3.512128e-13           3.055511e-13          -4.629327e-13           4.532442e-13          -3.780848e-13 
+              s(Age).8               s(Age).9      s(Extraversion).1      s(Extraversion).2      s(Extraversion).3      s(Extraversion).4 
+          3.178324e-12           3.417599e-02          -4.130857e-13           7.449289e-14          -7.801832e-14           4.299778e-14 
+     s(Extraversion).5      s(Extraversion).6      s(Extraversion).7      s(Extraversion).8      s(Extraversion).9     s(Agreeableness).1 
+          2.982251e-14           2.470466e-14          -6.563819e-15          -1.580945e-13          -7.493114e-02           6.005298e-01 
+    s(Agreeableness).2     s(Agreeableness).3     s(Agreeableness).4     s(Agreeableness).5     s(Agreeableness).6     s(Agreeableness).7 
+         -8.455828e-02           1.095080e-01           2.548157e-04          -2.302726e-02          -2.224285e-02          -2.606620e-02 
+    s(Agreeableness).8     s(Agreeableness).9 s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 s(Conscientiousness).4 
+         -7.502959e-02           2.860329e-01          -4.638604e-13          -1.659103e-13           9.141128e-14          -9.876156e-14 
+s(Conscientiousness).5 s(Conscientiousness).6 s(Conscientiousness).7 s(Conscientiousness).8 s(Conscientiousness).9       s(Neuroticism).1 
+          8.662387e-14           9.702073e-14          -8.505604e-14          -4.943812e-13           7.870300e-03           6.188612e-13 
+      s(Neuroticism).2       s(Neuroticism).3       s(Neuroticism).4       s(Neuroticism).5       s(Neuroticism).6       s(Neuroticism).7 
+         -8.901091e-13          -3.405953e-13          -1.736450e-13          -2.645945e-13          -1.850922e-13           1.964037e-13 
+      s(Neuroticism).8       s(Neuroticism).9          s(Openness).1          s(Openness).2          s(Openness).3          s(Openness).4 
+          9.948236e-13          -2.653031e-01           1.670474e-01           9.454714e-02          -2.635189e-02           6.564845e-03 
+         s(Openness).5          s(Openness).6          s(Openness).7          s(Openness).8          s(Openness).9 
+          1.136739e-03           5.836136e-03           2.641002e-03           9.301796e-02           2.548102e-01 
+
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 15 iterations.
+The RMS GCV score gradient at convergence was 2.059452e-07 .
+The Hessian was positive definite.
+Model rank =  59 / 59 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'   edf k-index p-value
+s(Age)               9.000 1.000   1.082    0.79
+s(Extraversion)      9.000 1.000   1.084    0.78
+s(Agreeableness)     9.000 3.273   0.948    0.27
+s(Conscientiousness) 9.000 1.000   1.226    1.00
+s(Neuroticism)       9.000 1.000   1.036    0.60
+s(Openness)          9.000 2.503   0.943    0.28
+NULL

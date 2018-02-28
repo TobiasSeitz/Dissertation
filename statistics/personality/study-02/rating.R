@@ -327,3 +327,6 @@ rOverallModel <- gamm(G_Overall ~ s(B5_Extraversion) + s(B5_Agreeableness) +
                         s(D_Age) + D_Gender + D_ComputerScienceBackground ,
                       #select = TRUE,
                       data = dNormed)
+
+
+

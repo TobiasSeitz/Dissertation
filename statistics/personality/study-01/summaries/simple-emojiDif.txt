@@ -1,0 +1,61 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+emojiDif ~ Age + Gender + IT + Extraversion + s(Agreeableness) + 
+    Conscientiousness + Neuroticism + s(Openness) + emojiPos
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        9.988633   2.347192   4.256 4.57e-05 ***
+Age                0.019614   0.055928   0.351   0.7265    
+GenderFemale       0.914315   0.576272   1.587   0.1156    
+ITNo              -0.103800   0.594406  -0.175   0.8617    
+Extraversion      -0.054607   0.079177  -0.690   0.4919    
+Conscientiousness  0.007466   0.094182   0.079   0.9370    
+Neuroticism       -0.215058   0.090120  -2.386   0.0188 *  
+emojiPos1          0.516112   0.649238   0.795   0.4284    
+emojiPos2          0.234781   0.628040   0.374   0.7093    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                   edf Ref.df     F p-value
+s(Agreeableness) 3.273  4.108 1.841   0.122
+s(Openness)      2.503  3.115 0.656   0.538
+
+R-sq.(adj) =  0.0431   Deviance explained = 15.5%
+GCV = 8.4657  Scale est. = 7.4146    n = 119
+[1] "\nBETAs:"
+
+Call:
+gam(formula = emojiDif ~ Age + Gender + IT + Extraversion + s(Agreeableness) + 
+    Conscientiousness + Neuroticism + s(Openness) + emojiPos, 
+    data = data.difficulty)
+
+Standardized Coefficients::
+       (Intercept)                Age       GenderFemale               ITNo       Extraversion  Conscientiousness        Neuroticism 
+      0.0000000000       0.0341759929       0.1644541550      -0.0169169736      -0.0749311399       0.0078703003      -0.2653031270 
+         emojiPos1          emojiPos2 s(Agreeableness).1 s(Agreeableness).2 s(Agreeableness).3 s(Agreeableness).4 s(Agreeableness).5 
+      0.0868072850       0.0400114593       0.6005298051      -0.0845582842       0.1095080426       0.0002548157      -0.0230272630 
+s(Agreeableness).6 s(Agreeableness).7 s(Agreeableness).8 s(Agreeableness).9      s(Openness).1      s(Openness).2      s(Openness).3 
+     -0.0222428491      -0.0260661959      -0.0750295888       0.2860328762       0.1670474258       0.0945471365      -0.0263518873 
+     s(Openness).4      s(Openness).5      s(Openness).6      s(Openness).7      s(Openness).8      s(Openness).9 
+      0.0065648450       0.0011367393       0.0058361364       0.0026410016       0.0930179566       0.2548101917 
+
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 5 iterations.
+The RMS GCV score gradient at convergence was 1.676232e-06 .
+The Hessian was positive definite.
+Model rank =  27 / 27 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'   edf k-index p-value
+s(Agreeableness) 9.000 3.273   0.948    0.28
+s(Openness)      9.000 2.503   0.943    0.23
+NULL

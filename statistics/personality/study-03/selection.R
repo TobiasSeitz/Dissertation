@@ -111,7 +111,7 @@ corrplot(cor(correlationFrame),
 wilcox.test(length~it_background,data = d,alternative = "less")
 
 # were men more likely to work in IT?
-
+cor(d[,which(names(d) %in% list("gender","it_background","age"))])
 
 ######################################################
 #####

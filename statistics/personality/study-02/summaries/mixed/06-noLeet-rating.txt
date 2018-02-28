@@ -4,70 +4,57 @@ Link function: identity
 
 Formula:
 rating ~ (digits * length) + (lowercase * length) + (symbols * 
-    length) + (uppercase * length) + substitutions + s(B5_Openness, 
-    k = 7) + B5_Agreeableness + s(B5_Neuroticism, k = 9)
+    length) + (uppercase * length) + (digits * substitutions * 
+    symbols)
 
 Parametric coefficients:
-                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)       8.915058   1.940929   4.593 4.80e-06 ***
-digits           -2.464062   0.555596  -4.435 1.00e-05 ***
-length            0.534159   0.209589   2.549 0.010932 *  
-lowercase        -1.612818   0.274936  -5.866 5.67e-09 ***
-symbols           6.796825   1.082321   6.280 4.63e-10 ***
-uppercase        -0.650009   0.202499  -3.210 0.001361 ** 
-substitutions    -3.207431   0.428106  -7.492 1.26e-13 ***
-B5_Agreeableness  0.026767   0.009853   2.717 0.006686 ** 
-digits:length     0.145485   0.034356   4.235 2.45e-05 ***
-length:lowercase  0.045291   0.012799   3.539 0.000417 ***
-length:symbols   -0.434072   0.072579  -5.981 2.88e-09 ***
-length:uppercase -0.084447   0.025196  -3.352 0.000827 ***
+                             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                  17.83259    5.59506   3.187 0.001471 ** 
+digits                       -4.56998    1.50047  -3.046 0.002369 ** 
+length                        0.52622    0.21415   2.457 0.014132 *  
+lowercase                    -3.05539    0.99206  -3.080 0.002115 ** 
+symbols                      13.47284    4.53999   2.968 0.003057 ** 
+uppercase                    -1.07308    0.34735  -3.089 0.002049 ** 
+substitutions                -5.11889    1.33443  -3.836 0.000131 ***
+digits:length                 0.27837    0.09441   2.948 0.003251 ** 
+length:lowercase              0.10834    0.04359   2.485 0.013070 *  
+length:symbols               -0.88391    0.30582  -2.890 0.003914 ** 
+length:uppercase             -0.16048    0.05637  -2.847 0.004483 ** 
+digits:substitutions          0.00000    0.00000      NA       NA    
+digits:symbols                0.00000    0.00000      NA       NA    
+symbols:substitutions         0.00000    0.00000      NA       NA    
+digits:symbols:substitutions -0.22056    0.14548  -1.516 0.129732    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Approximate significance of smooth terms:
-                    edf Ref.df     F  p-value    
-s(B5_Openness)    1.759  2.214 6.497  0.00125 ** 
-s(B5_Neuroticism) 6.656  7.453 4.207 5.68e-05 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-R-sq.(adj) =  0.239   Deviance explained =   25%
--REML =   2531  Scale est. = 2.7058    n = 1300
+Rank: 12/15
+R-sq.(adj) =  0.206   Deviance explained = 21.3%
+-REML = 2538.2  Scale est. = 2.8232    n = 1300
 [1] "\nBETAs:"
 
 Call:
 gam(formula = rating ~ (digits * length) + (lowercase * length) + 
-    (symbols * length) + (uppercase * length) + substitutions + 
-    s(B5_Openness, k = 7) + B5_Agreeableness + s(B5_Neuroticism, 
-    k = 9), data = merged, method = "REML")
+    (symbols * length) + (uppercase * length) + (digits * substitutions * 
+    symbols), data = merged, method = "REML")
 
 Standardized Coefficients::
-        (Intercept)              digits              length           lowercase             symbols 
-       0.0000000000       -2.3153122438        1.2554451612       -3.7952108613        3.0134719083 
-          uppercase       substitutions    B5_Agreeableness       digits:length    length:lowercase 
-      -0.4686152245       -1.2280575645        0.0712690630        1.9632866913        2.5634953185 
-     length:symbols    length:uppercase    s(B5_Openness).1    s(B5_Openness).2    s(B5_Openness).3 
-      -3.0794376516       -0.7888077173        0.0328794903       -0.0035370888       -0.0001519241 
-   s(B5_Openness).4    s(B5_Openness).5    s(B5_Openness).6 s(B5_Neuroticism).1 s(B5_Neuroticism).2 
-       0.0006637093        0.0063596515       -0.0640143490       -0.3666422771        0.2601170095 
-s(B5_Neuroticism).3 s(B5_Neuroticism).4 s(B5_Neuroticism).5 s(B5_Neuroticism).6 s(B5_Neuroticism).7 
-       0.3489572274       -0.0459535144       -0.1950123905        0.1806589597        0.4422158364 
-s(B5_Neuroticism).8 
-      -0.3254470098 
+                 (Intercept)                       digits                       length                    lowercase 
+                   0.0000000                   -4.2940998                    1.2367882                   -7.1898004 
+                     symbols                    uppercase                substitutions                digits:length 
+                   5.9733799                   -0.7736231                   -1.9599151                    3.7565629 
+            length:lowercase               length:symbols             length:uppercase         digits:substitutions 
+                   6.1321726                   -6.2707272                   -1.4990209                    0.0000000 
+              digits:symbols        symbols:substitutions digits:symbols:substitutions 
+                   0.0000000                    0.0000000                   -0.3742133 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
-full convergence after 9 iterations.
-Gradient range [-0.00186157,0.008621602]
-(score 2530.985 & scale 2.70577).
-Hessian positive definite, eigenvalue range [0.01850226,643.0041].
-Model rank =  26 / 26 
+full convergence after 6 iterations.
+Gradient range [-7.580343e-08,-7.580343e-08]
+(score 2538.171 & scale 2.823174).
+Hessian positive definite, eigenvalue range [642.5,642.5].
+Model rank =  12 / 15 
 
-Basis dimension (k) checking results. Low p-value (k-index<1) may
-indicate that k is too low, especially if edf is close to k'.
-
-                    k'  edf k-index p-value
-s(B5_Openness)    6.00 1.76    1.04    0.90
-s(B5_Neuroticism) 8.00 6.66    1.05    0.96
 NULL

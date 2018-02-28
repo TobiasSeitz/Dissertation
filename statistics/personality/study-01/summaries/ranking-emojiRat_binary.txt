@@ -1,0 +1,43 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+emojiRat_binary ~ s(Age, k = 5) + Gender + IT + Extraversion + 
+    Agreeableness + Conscientiousness + s(Neuroticism, k = 5) + 
+    Openness + emojiPos
+
+Parametric coefficients:
+                  Estimate Std. Error z value Pr(>|z|)  
+(Intercept)       -6.84226    2.77516  -2.466   0.0137 *
+GenderFemale      -0.78797    0.73750  -1.068   0.2853  
+ITNo               2.28790    1.12320   2.037   0.0417 *
+Extraversion       0.09475    0.10203   0.929   0.3531  
+Agreeableness      0.24913    0.12112   2.057   0.0397 *
+Conscientiousness -0.05785    0.10436  -0.554   0.5793  
+Openness           0.01958    0.10151   0.193   0.8470  
+emojiPos1         -1.32141    0.80387  -1.644   0.1002  
+emojiPos2         -0.26934    0.72974  -0.369   0.7121  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf Ref.df Chi.sq p-value
+s(Age)         1.505  1.835  1.015   0.631
+s(Neuroticism) 2.452  2.974  5.885   0.137
+
+R-sq.(adj) =  0.233   Deviance explained = 26.9%
+UBRE = -0.03838  Scale est. = 1         n = 98
+[1] "\nBETAs:"
+
+	Kruskal-Wallis rank sum test
+
+data:  twoWordTime by Gender
+Kruskal-Wallis chi-squared = 5.5753, df = 1, p-value = 0.01822
+
+          Length Class  Mode     
+statistic 1      -none- numeric  
+parameter 1      -none- numeric  
+p.value   1      -none- numeric  
+method    1      -none- character
+data.name 1      -none- character
