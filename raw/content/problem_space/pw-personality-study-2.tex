@@ -11,7 +11,7 @@ Before we ran the study, we pre-registered the experiment with the open-science 
 The study was divided into six parts. Two parts were standard psychometric tests. After a brief introduction where the participants were informed about the background of the study, the first step was to provide basic demographic information regarding gender, age, educational and professional background. %This information is important for the ratings on the password scales, because advanced knowledge in IT(-security) may lead to a different rating than the general audience. 
 
 % Second Part: META STATISTICS / CREATION
-\paragraph{Meta Password} The second part collected characteristics about the passwords that our participants used on real online accounts. Here, we asked about typical password attributes, like LUDS (lower-, uppercase, digits, symbols), length and the inclusion of dictionary words. The collection of such password descriptions is an ethically reasonable way to study actual behavior that does not directly involve creating and disclosing an entire password \cite{VonZezschwitz2013SurvivalShortest}. Participants could select from a list of accounts that they used on a regular basis, e.g. Facebook, YouTube, Netflix, Google. If they did not have any of the selectable accounts they could provide another. We call the description of a participant's password on any of these sites ``\textit{meta password}'' in the remainder of the chapter. We included this part in the survey to use meta password characteristics as control variables in regression models.
+\paragraph{Meta Password} The second part collected characteristics about the passwords that our participants used on real online accounts. Here, we asked about typical password attributes, like LUDS (lower-, uppercase, digits, symbols), length and the inclusion of dictionary words. The collection of such password descriptions is an ethically reasonable way to study actual behavior that does not directly involve creating and disclosing an entire password \cite{VonZezschwitz2013SurvivalShortest}. Participants could select from a list of accounts that they used on a regular basis, e.g. Facebook, YouTube, Netflix, Google. If they did not have any of the selectable accounts they could provide another. We call the description of a participant's password on any of these sites ``\textit{meta password}'' in the remainder of the chapter. We included this part in the survey to explore further covariates for strength perception.
 %TODO entscheiden ob das reinkommt Additionally we had them create a password which they would rate as sufficient to protect such an online account and that is memorable. We asked not to enter a password that they were currently using. At the end of the study, we again inquired after the fictional password to measure short-term memorability. 
 
 %%% TABLE: PASSWORDS
@@ -166,6 +166,14 @@ Personality traits on the other side, although statistically significant, were w
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% 
+%%% 		META PASSWORD
+%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Standalone ratings modeled with Meta password}
+Trying to understand if participants' past behavior might have influenced their judgment, we created GAMs analogously with metrics of their \textit{meta password}. The only notable association, which was conclusive across the board, was the reported number of uppercase characters. We found that with increasing usage of uppercase letters, participants tended to give lower ratings ($\beta=-0.27$). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 
 %%% 		STRENGTH COMPARISON
 %%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,6 +184,8 @@ We explored whether personality traits influence how participants decide between
 In this particular model, there were weak associations between gender and character diversity. Male participants were more likely to prefer the password consisting of more character classes ($\beta = 0.23$). Having a computer-science background correlated with preference for the longer password ($\beta = 0.21$).
 
 In all the models, the predictive power was moderate and did not reach the levels from Model 3 in the rating task. However, the correlation coefficients were stronger for personality trait. We find that the decision between two given passwords is mostly associated with the conscientiousness and openness traits.
+
+
 
 %\input{tables/regression-comparison}
 

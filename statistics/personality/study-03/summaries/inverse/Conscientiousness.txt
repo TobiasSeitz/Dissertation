@@ -1,0 +1,58 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+Conscientiousness ~ digits + uppercase + substitutions + chunks + 
+    age + s(symbols, k = 3) + s(lowercase, k = 3) + gender + 
+    it_background + occupation
+
+Parametric coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   12.90684    1.04477  12.354  < 2e-16 ***
+digits         0.23936    0.13962   1.714  0.08835 .  
+uppercase      0.10686    0.16830   0.635  0.52635    
+substitutions -0.25276    0.41258  -0.613  0.54097    
+chunks        -0.21504    0.31033  -0.693  0.48934    
+age            0.02852    0.03635   0.785  0.43374    
+genderFemale   1.38197    0.42762   3.232  0.00149 ** 
+it_background -0.07850    0.45515  -0.172  0.86328    
+occupation    -0.02549    0.12948  -0.197  0.84418    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+               edf Ref.df     F p-value
+s(symbols)   1.751  1.937 1.586   0.224
+s(lowercase) 1.434  1.678 0.797   0.552
+
+R-sq.(adj) =  0.0532   Deviance explained = 11.4%
+-REML = 424.12  Scale est. = 7.1781    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+   (Intercept)         digits      uppercase  substitutions         chunks            age   genderFemale  it_background 
+    0.00000000     0.17802310     0.05441288    -0.04653127    -0.06723093     0.06724072     0.25163072    -0.01385749 
+    occupation   s(symbols).1   s(symbols).2 s(lowercase).1 s(lowercase).2 
+   -0.01696629     0.15612133    -0.08248488     0.05878671     0.05675208 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-1.990566e-08,-2.989131e-09]
+(score 424.1246 & scale 7.17815).
+Hessian positive definite, eigenvalue range [0.09170388,82.0023].
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+               k'  edf k-index p-value
+s(symbols)   2.00 1.75    1.05    0.70
+s(lowercase) 2.00 1.43    0.95    0.26
+NULL

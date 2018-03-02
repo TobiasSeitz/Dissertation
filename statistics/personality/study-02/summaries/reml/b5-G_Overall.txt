@@ -4,55 +4,54 @@ Link function: identity
 
 Formula:
 G_Overall ~ B5_Extraversion + B5_Agreeableness + B5_Neuroticism + 
-    B5_Openness + D_Age + s(B5_Conscientiousness) + D_Gender + 
+    B5_Openness + D_Age + s(B5_Conscientiousness, k = 3) + D_Gender + 
     D_ComputerScienceBackground
 
 Parametric coefficients:
                                Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                    62.22916   13.04628   4.770 7.05e-06 ***
-B5_Extraversion                -0.02393    0.13126  -0.182   0.8557    
-B5_Agreeableness                0.33495    0.21402   1.565   0.1211    
-B5_Neuroticism                 -0.03265    0.16304  -0.200   0.8417    
-B5_Openness                    -0.36553    0.15261  -2.395   0.0187 *  
-D_Age                          -0.11445    0.11498  -0.995   0.3222    
-D_GenderFemale                  0.87962    2.17909   0.404   0.6874    
-D_ComputerScienceBackgroundYes -2.92371    2.22271  -1.315   0.1917    
+(Intercept)                    61.96069   13.03074   4.755 7.46e-06 ***
+B5_Extraversion                -0.01993    0.13104  -0.152    0.879    
+B5_Agreeableness                0.33637    0.21389   1.573    0.119    
+B5_Neuroticism                 -0.02846    0.16282  -0.175    0.862    
+B5_Openness                    -0.36468    0.15268  -2.388    0.019 *  
+D_Age                          -0.11696    0.11490  -1.018    0.311    
+D_GenderFemale                  0.92315    2.17845   0.424    0.673    
+D_ComputerScienceBackgroundYes -2.90200    2.21792  -1.308    0.194    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
                           edf Ref.df     F p-value
-s(B5_Conscientiousness) 1.804  2.289 0.418   0.594
+s(B5_Conscientiousness) 1.582  1.826 0.621    0.52
 
-R-sq.(adj) =  0.0635   Deviance explained = 14.7%
--REML = 359.49  Scale est. = 83.76     n = 100
+R-sq.(adj) =  0.0623   Deviance explained = 14.4%
+-REML = 359.46  Scale est. = 83.871    n = 100
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-                   (Intercept)                B5_Extraversion               B5_Agreeableness                 B5_Neuroticism                    B5_Openness 
-                    0.00000000                    -0.02180815                     0.17862131                    -0.02743638                    -0.24696468 
-                         D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2 
-                   -0.10451251                     0.04613658                    -0.14098451                     0.09798126                    -0.02291003 
-     s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5      s(B5_Conscientiousness).6      s(B5_Conscientiousness).7 
-                   -0.02108154                     0.03956294                    -0.03299077                     0.03321361                    -0.01796140 
-     s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
-                   -0.16476332                     0.09220115 
+                   (Intercept)                B5_Extraversion               B5_Agreeableness                 B5_Neuroticism 
+                    0.00000000                    -0.01816482                     0.17937821                    -0.02391109 
+                   B5_Openness                          D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes 
+                   -0.24639139                    -0.10680873                     0.04841967                    -0.13993799 
+     s(B5_Conscientiousness).1      s(B5_Conscientiousness).2 
+                   -0.09165259                     0.01846487 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
 full convergence after 6 iterations.
-Gradient range [-6.903175e-08,6.07856e-10]
-(score 359.4897 & scale 83.76043).
-Hessian positive definite, eigenvalue range [0.1823423,45.50356].
-Model rank =  17 / 17 
+Gradient range [-1.461017e-08,-3.729739e-12]
+(score 359.4597 & scale 83.87094).
+Hessian positive definite, eigenvalue range [0.167667,45.50187].
+Model rank =  10 / 10 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                           k'  edf k-index p-value
-s(B5_Conscientiousness) 9.00 1.80    1.06     0.7
+s(B5_Conscientiousness) 2.00 1.58    1.05    0.66
 NULL

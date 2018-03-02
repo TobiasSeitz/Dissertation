@@ -107,11 +107,15 @@ Most frequently, the influence of these personality traits have been explored fo
 %%%%			GENERAL DISCUSSION
 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion of Research Questions}
+\section{Discussion and Implications}
 In this section we interpret the results and hope to shed light on potential explanations for their origins. % and show the implications for password-authentication systems.
 
 %TODO more elaborately discuss the origin of the results.
 
+% Egelman says:
+% Which psychographic segments should be targeted?
+openness, neuroticism the biggest drivers - 
+\subsection{Segmenting Users: Password Personality}
 % quick run thru results:
 study 1:
 on average: difficulty to create passwords under different policies the same, but digging deeper shows significant differences depending on Neuroticism (emoji12), Gender (female 2word12 and emoji12 more difficult), and at which position the respective policy came (especially for emoji and 3class12). no other effects / explicable findings.
@@ -129,7 +133,6 @@ Interestingly none of the personality influence of these two traits were visible
 study 3:
 neuroticism and password length go together. significant but weak correlations here and there but generally poor model fits. 
 
-
 it background and password strength/length 
 older participants more likely to cope with passwords in different ways (PWM, paper, reuse), but not with memorization. its a natural thing - as you get older you will have had more chances to create accounts so the burden increases and you start looking for new ways to deal with it. 
 
@@ -137,15 +140,23 @@ the longer the self-selected passwords the more likely they were forgotten at th
 
 %TODO look at the numbers - when were there conclusive associations with personality traits and then draw inferences from the numbers. 
 
+%%%% ACTUAL 
+Finally, our data allows us to create initial blueprints of user-segmentation, that can be turned into \gls{persona} through future research to inform design decisions.
 
-% Egelman says:
-% Which psychographic segments should be targeted?
-openness, neuroticism the biggest drivers - 
+brainiacs: extroverts,  w/o it background, younger, more open
+reusers: older w/o IT background
+paper pilots: introverts, female
+pw-managers: older, less open, it-background, male
+\todo{make this nice, but not too elaborate because I'd like to create a good version in the discussion that follows. }
+
+This first version of the taxonomy can already inform future research and design. In the following we can zoom out and factor in more insights from the previous study to refine the segmentation.
 
 % Which privacy and security mitigations are most likely to benefit from being tailored to individual traits?
 
 % How can knowledge of a user's individual differences be *abused*, and how might this be prevented
 as predictive models get better (machine learning instead of statistical approaches) the likelihood of exploiting the information increases
+
+\input{tables/personality-associations-overview-v2}
 
 % How can the segmentation be performed automatically without active user involvement?
 % 	difficult questions -- smartphones
@@ -156,9 +167,28 @@ However, including elaborate psychometric tests in addition to the core of the r
 
 Still, adding even a few more items to a questionnaire might not always be possible due to study constraints like budget or timeliness of data elicitation. There is, however, a promising approach to quickly and inexpensively obtain personality data from study participants' past behavior. It is possible to infer personality facets from social media data, e.g. public interactions on Facebook \cite{Youyou2015Personality}. Youyou et al. found that such metrics can even outperform psychometric questionnaires. Stachl \etal also found conclusive associations between smartphone usage and personality traits \cite{Stachl2017PersonalitySmartphones}. We thus suggest requesting permission to read either smartphone or social network data as part of the study. Crowd-workers in a large-scale study by Bentley and Chen, for instance, showed little concern to install software on smartphones for research purposes \cite{Bentley2015Phonebook}. While we would not go so far as to read all contacts, call and message history, we believe a differentially private approach can replace personality tests. 
 
+\subsection{Design Implication: Suggestions}
+% strength suggestions
+Addressing personality facets might also become beneficial for real-time feedback during password creation. In the wild, we encounter password meters that estimate the strength of the password and in some cases even provide verbal feedback about what the user can do to improve the password (e.g. \cite{Wheeler2016zxcvbn}). A simple approach is to try to convince the user to pick a stronger password by suggesting a new one or a modified version of the entered password \cite{Forget2008ImprovingPasswordsThroughPersuasion, Seitz2016SuggestionsDecoy, Shay2015SpoonfulOfSugar}. 
 
+Coming back to the finding that personality had a notable effect on how participants \textit{compared} two passwords, we suppose that it plays a role for real-time suggestions, too. How a modified version or newly generated password is received likely depends on the user's personality. For instance, if the user's password is visible in clear text while they enter it, displaying an alternative password resembles the comparison task from our study -- which one is stronger? Strength feedback facilitates answering this question. It seems to be easier for \textit{conscientious} people to assess the strength of their password, if there is a clear list of requirements than can be ``checked off'', to make it superior to the suggested password. 
+
+% coping suggestions.
+On the other hand, we found that personality and demographic factors are useful to segment audiences. We found that older participants in our third study were more likely to appreciate if they do not need to memorize passwords. They were more likely to use a password manager, paper notes or reusing passwords to reduce cognitive efforts. Thus, there is a great opportunity to suggest a coping strategy instead of a stronger password. For instance, websites or browsers could extend sign-up forms with a prompt to use a password manager. Pointing out the value of not having to memorize the newly created password could speak to especially older participants and drive adoption rates, if the user journey from sign-up to password-manager set-up is simple enough. Kairos, one of the persuasion principles presented in Section \ref{sec:rw:persuasive_patterns}, more likely possesses a higher nudging power than, e.g. a news article recommending a password manager, because users are experiencing the problem first-hand during account creation. 
+
+\subsection{Design Implications: Target Mitigations}
+Results from the first study showed differences in the way participants dealt with password rules. The second study indicated that users the perception of password strength depends on both topology and personality. 
+
+Identity providers like Facebook or Google still rely on password authentication, and currently implement a ``one-fits-all'' policy. However, once users have used the services for a while, those parties already possess a large amount of user information. Consequently, the identity providers could alter the enforced policy for individual users depending on personality trait characteristics inferred from usage patterns. We propose to dynamically adjust the policy, for example when users reset their password. Users with an IT background could be asked to conform to a complex
+ and long policy, while users showing stronger signs of neuroticism could be nudged towards including an emoji in their password. Such approaches could support the existing mental models of password strength and reduce user frustration with requirements. Ultimately, this can boost usability or user experience of the service. 
+ 
+ \todo{This argument is later revisited in the ``ideas'' an/or PST section, so maybe cross-reference it.}
+ 
+\subsection{Statistical Models}
+Reflecting on the use of GAMs - standardized coefficients must be interpreted with care. Standardizing binary variables is not useful, but for Gender and IT background, we reported beta values because the slope was visible in the plots. In any case, the plots should be considered first, because we then are not miscued by the standardized beta. \todo{tell the reader that this is why we refrained from indicating effect sizes in the table that compares the effects}
 
 \section{Conclusion and Future Work}
+
 
 
 \subsection{Contribution Summary}
@@ -174,12 +204,13 @@ A possible next step is to try and leverage information about personality traits
 \noindent
 \fbox{
 	\hspace{1cm}
-	\parbox[c][8cm]{0.7\linewidth}{
+	\parbox[c][15cm]{0.7\linewidth}{
 		\section*{Take Aways}
 		\begin{itemize}[leftmargin=*]
-			\item Personality is weakly associated with all the measured dimensions: strength perception, policy preference / usability, and password selection. 
+			\item Personality is weakly associated with all the measured dimensions: strength perception, policy preference / usability, and password selection. Most notably openness and neuroticism showed conclusive associationes.
 			\item The models for the perception of passphrases achieved the highest fit, suggesting a predictable association between personality and strength perception for this type of password. Comparing two passwords was associated with the conscientiousness traits. Mixed models that use both password features and personality trait scores as covariates are the most feasible approach.
-			\item Older users might be the best target group for password support tools
+			\item Older users might be the best target group for password support tools, because age was a good predictor of their usage. Suggesting good tools during account creation might lead to higher adoption 
+%			\item Segmentation of users
 			\item 
 		\end{itemize}
 	}

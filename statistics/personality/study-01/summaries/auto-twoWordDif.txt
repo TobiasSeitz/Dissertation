@@ -1,0 +1,58 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+twoWordDif ~ Conscientiousness + Extraversion + s(Openness, k = 3) + 
+    s(Agreeableness, k = 3) + s(Neuroticism, k = 3) + s(Age, 
+    k = 3) + Gender + IT
+
+Parametric coefficients:
+                  Estimate Std. Error t value Pr(>|t|)   
+(Intercept)        5.53832    1.83089   3.025  0.00311 **
+Conscientiousness  0.02539    0.10349   0.245  0.80667   
+Extraversion       0.08082    0.08462   0.955  0.34167   
+GenderFemale       1.25852    0.63595   1.979  0.05037 . 
+ITNo               0.54050    0.65639   0.823  0.41206   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                   edf Ref.df     F p-value
+s(Openness)      1.545  1.793 0.806   0.523
+s(Agreeableness) 1.005  1.010 0.994   0.319
+s(Neuroticism)   1.620  1.855 0.867   0.440
+s(Age)           1.732  1.928 1.476   0.187
+
+R-sq.(adj) =  0.0463   Deviance explained = 12.6%
+-REML = 301.86  Scale est. = 9.2279    n = 119
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+       (Intercept)  Conscientiousness       Extraversion       GenderFemale               ITNo      s(Openness).1      s(Openness).2 s(Agreeableness).1 
+      0.0000000000       0.0239496814       0.0992476952       0.2025734071       0.0788312112       0.0862735927      -0.0030687391      -0.0004736528 
+s(Agreeableness).2   s(Neuroticism).1   s(Neuroticism).2           s(Age).1           s(Age).2 
+     -0.1011722881      -0.0957557947      -0.0018726653       0.1582094558      -0.1709463523 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 11 iterations.
+Gradient range [-7.356252e-05,0.001234766]
+(score 301.8606 & scale 9.227857).
+Hessian positive definite, eigenvalue range [8.470279e-05,55.00432].
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'   edf k-index p-value
+s(Openness)      2.000 1.545   1.117    0.86
+s(Agreeableness) 2.000 1.005   0.909    0.13
+s(Neuroticism)   2.000 1.620   0.891    0.10
+s(Age)           2.000 1.732   1.082    0.73
+NULL

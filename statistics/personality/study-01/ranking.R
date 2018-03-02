@@ -1,4 +1,20 @@
-# ranking: depends on data from analysis.R
+source('../../util.R')
+
+data.ratings <- read.csv("data/data_creationRating_emoji12 (103 Datasets).CSV",
+                         sep = ";", dec = ",")
+
+names(data.ratings)[names(data.ratings) == "Geschlecht"] <- "Gender"
+names(data.ratings)[names(data.ratings) == "Alter"] <- "Age"
+names(data.ratings)[names(data.ratings) == "Openess"] <- "Openness"
+
+# factorize data set of policy ranking
+data.ratings$Gender[data.ratings$Gender == 3] <- NA
+data.ratings$Gender <- factor(data.ratings$Gender,levels=c(1,2),labels=c("Male","Female"))
+data.ratings$IT <- factor(data.ratings$IT,levels=c(1,2),labels=c("Yes","No"))
+data.ratings$emojiPos <- factor(data.ratings$emojiPos)
+data.ratings$twoWordPos <- factor(data.ratings$twoWordPos)
+data.ratings$threeClassPos <- factor(data.ratings$threeClassPos)
+
 #############################################################################
 #
 # Model for calculating the likelihood of ranking a policy on a specific place
@@ -35,7 +51,7 @@ emojiRanking <- gam(emojiRat_binary ~ s(Age, k=5) + Gender + IT + Extraversion +
                     family = binomial(link = "logit"), data = data.ratings)
 plot(emojiRanking, pages = 1, scale = 0, jit = TRUE)
 summary(emojiRanking)
-outputSummary(emojiRanking, "ranking-","summaries")
+outputSummary(emojiRanking, "ranking-","summaries",printBeta = FALSE)
 
 twoWordRanking <- gam(twoWordRat_binary ~ s(Age, k=5) + Gender + IT + Extraversion + s(Agreeableness, k=5) +
                         Conscientiousness + Neuroticism + Openness + twoWordPos,
@@ -111,3 +127,34 @@ anova(m7)
 
 texreg(m5)
 exp(0.86) #?
+
+
+
+#############################################################################
+##  automate stuff for ranking
+#############################################################################
+responsesLogit <- list("emojiRat_binary","twoWordRat_binary","threeClassRat_binary");
+predictorsLogit <- list("Openness","Conscientiousness","Extraversion","Agreeableness","Neuroticism")
+controlsLogit <- list("Age","Gender","IT") # important: start with a continuous variable, age is fine right now.
+autoModelsRanking <- lapply(responsesLogit, 
+                              getGAM, 
+                              predictors=predictorsLogit, 
+                              controls=controlsLogit, 
+                              controls.smoothed = list("Age"),
+                              d <- data.ratings,
+                              k = 5, 
+                              method="REML",
+                              family=binomial()
+)
+autoModelsRanking_simple <- lapply(autoModelsRanking, simplifyGAM, family=binomial())
+
+source('../../plotGAM.R')
+### plot 
+lapply(autoModelsRanking, generatePDF, 
+       controlVariables = controlsLogit, predictors = predictorsLogit,
+       prefix.predictors="ranking-predictors-", prefix.control="ranking-controls-",path="graphs/auto",xLab.predictors = "Trait Scores")
+
+## summaries
+for(i in autoModelsRanking_simple){
+  outputSummary(i,prefix="auto-ranking-",path="summaries",printBeta = FALSE)
+}

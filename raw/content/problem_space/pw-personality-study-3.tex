@@ -17,7 +17,7 @@ Participants were invited via a university newsletter, and snowballing the link 
 184 people completed the survey, but we had to drop the responses of 8 participants because their response timings were unrealistically fast (lower than 2 * standard deviation). From the 176 remaining respondents, 89 were male, 86 female and 1 preferred not to answer. 116 were students, i.e. a rather high proportion (66\%). Consequently, the average age was 25 years (range [16;55], $SD$=6, $Md$= 24). 67 (38\%) reportedly had an IT-background. 129 respondents chose to participate in the raffle for shopping vouchers. 
 
 \subsection{Limitations}
-\todo{Password selection not realistic / attention check item was badly placed and not well explained. 30 feedback emails.}
+As many password-selection studies, our study is limited by the purposefulness of the task: Participants knew they were only going to use the password in the study. To mitigate this, we tried to give participants enough context information to immerse themselves into the situation. Moreover, while the study was ongoing, we received 30 feedback emails asking for clarification about the attention check questions. We had introduced an additional item at a random position in the personality construct. This led to misunderstandings that we failed to identify in the design and piloting of the survey. Some respondents thought that this question was a measure of their personality, too, and indicated giving a wrong answer on purpose. We therefore had to omit this sanity check entirely, because it did not feasibly tell whether participants had read the questions carefully enough. Instead, we based the decisions to drop responses on the timings. 
 
 \subsection{Results}
 % descriptives
@@ -58,18 +58,10 @@ Only 18 out of 176 participants (10\%) failed to recall the newly created passwo
 %One participant (P48) claimed that their password (\texttt{!Q\"W3e4}) was not based on keyboard patterns. Zxcvbn also failed to recognize the pattern, because it only is obvious on a keyboard with a German layout where the quotation marks are entered with Shift+2.
 %Internal consistency analysis with the alpha function suggested to reverse neuroticism items to increase reliability. This is an odd finding, but could be due to chance. 
 
-\subsection{Summary}
+\subsection{Summary and Interpretation}
 We observed that password length was marginally associated with Neuroticism, but no other personality traits. Higher neuroticism scores can be paraphrases as smaller emotional stability. Losing access to an account might lead to stronger emotional reactions. So, possibly, participants showing this trait want to make sure that this scenario does not happen by choosing a longer and stronger password. Participants working in or studying an IT-related field, were also more likely to pick longer passwords, but achieved significantly higher guess numbers. This corroborates findings from Mazurek \etal conclusively \cite{Mazurek2013Measuring}. Fitting generalized additive models to data of 176 participants did not show sufficiently strong model fits to warrant definite inferences about the influence of personality traits on password metrics. To a higher degree of certainty, however, we can state that personality must not be ruled out for password selection, which is an unprecedented result. We especially saw this when we dropped the big five scores as predictors for memorizing the password. 
 
 Regarding the retrospective data, we did find salience. Although the overall sample shows that using a password manager is unattractive, a deeper analysis revealed that the participants' age and openness scores are linked to using a \gls{PWM}, or to memorization efforts. These predictors were inversely associated, which means that there could be a ``sweet spot'' of openness scores and age. Consequently, this gives us the opportunity to segment target groups for password managers more effectively: Older users might be more receptive for password support tools. Lower openness scores indicate that people are more conservative, ``down to earth'', and appreciate conventions \cite{McCrae1987ValidationFFM}. These values also appear plausible for older participants in the light of related research \cite{Srivastava2003PersonalityAdulthood}. Thus, we conclude that the design of future password support tools should be centered on different age groups. We will also see in Chapters \ref{chap:mental_models_pwm} and \ref{chap:pwrm} that none of the current solutions is specifically tailored to different user groups. Current one-size-fits-all solutions might hence explain to some degree why \glspl{PWM} are still underused.
 
-Finally, our data allows us to create initial blueprints of user-segmentation, that can be turned into \gls{persona} through future research to inform design decisions.
 
-brainiacs: extroverts,  w/o it background, younger, more open
-reusers: older w/o IT background
-paper pilots: introverts, female
-pw-managers: older, less open, it-background, male
-\todo{make this nice, but not too elaborate because I'd like to create a good version in the discussion that follows. }
-
-This first version of the taxonomy can already inform future research and design. In the following we can zoom out and factor in more insights from the previous study to refine the segmentation.
 %TODO binary outcome (memorability) needs a larger sample to pinpoint the marginal associations of personality traits with memorability. 

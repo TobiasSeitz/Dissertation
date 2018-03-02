@@ -97,15 +97,7 @@ getSmoothedGAM <- function(column,predictors,d,k=NULL,method=NULL,select=FALSE){
   # having D_Gender first breaks all kinds of things later.
   # you have been warned.
   controls <- "s(D_Age,k=5) + D_Gender + D_ComputerScienceBackground"
-  smoothedPredictors <- lapply(predictors,function(p){
-    if(is.null(k)){
-      p <- paste0("s(",p,")")  
-    }
-    else {
-      p <- paste0("s(",p,",k=",k,")")  
-    }
-    p
-  })
+  smoothedPredictors <- lapply(predictors,smoothPredictors,k=k)
   concatPredictors = paste(smoothedPredictors,collapse = "+")
   rightHand <- paste(concatPredictors, controls, sep = "+");
   autoFormula <- as.formula(paste(column,rightHand,sep = "~"))
@@ -119,6 +111,29 @@ getSmoothedGAM <- function(column,predictors,d,k=NULL,method=NULL,select=FALSE){
   m
 }
 
+# https://stackoverflow.com/a/30265548/1447479 
+# creates a GAM with hardcoded control variables. Smoothes D_Age
+getGAM <- function(column, predictors, controls, d, k=NULL, select=FALSE, controls.smoothed = NULL, ...){
+  # attention: to avoid weird collapses of the universe, make sure to have a continuous variable as first variable.
+  # having a binary factor first breaks all kinds of things later.
+  # you have been warned.
+  smoothedPredictors <- lapply(predictors,smoothPredictors,k=k)
+  smoothedControls <- lapply(controls, function(var){
+    if(!is.null(controls.smoothed) & var %in% controls.smoothed){
+      c <- smoothPredictors(var,k=k)
+    } else {
+      c <- as.character(var)
+    }
+    c
+  })
+  concatPredictors = paste(smoothedPredictors,collapse = "+")
+  concatControls = paste(smoothedControls,collapse = "+")
+  rightHand <- paste(concatPredictors, concatControls, sep = "+");
+  autoFormula <- as.formula(paste(column,rightHand,sep = "~"))
+  # see https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/gam.selection.html
+  m <- gam(autoFormula, select = select, data=d, ...); # adding method="REML" results in less magic.  
+  m
+}
 
 
 
@@ -158,7 +173,7 @@ generatePDF <- function(model,
 }
 
 # creates a text file with the summary.
-outputSummary <- function(m,prefix="",path=NULL){
+outputSummary <- function(m,prefix="",path=NULL,printBeta = TRUE){
   # create a directory if it does not exist
   if(!is.null(path)) dir.create(path, showWarnings = FALSE)
   else path <- getwd()
@@ -168,8 +183,11 @@ outputSummary <- function(m,prefix="",path=NULL){
   sink(fullpath);
   
   print(summary(m))
-  print("\nBETAs:")
-  print(lm.beta(m))
+  if(printBeta){
+    print("\nBETAs:")
+    print(lm.beta(m))  
+  }
+
   print("\nGAM.CHECK:")
   print(gam.check(m))
   #print("\nAUTOCORRELATION")

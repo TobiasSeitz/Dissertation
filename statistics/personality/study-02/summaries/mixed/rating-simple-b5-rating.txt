@@ -54,6 +54,6 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                       k'   edf k-index p-value
-s(B5_Extraversion) 4.000 2.328   0.956    0.06
-s(B5_Neuroticism)  4.000 1.003   0.956    0.04
+s(B5_Extraversion) 4.000 2.328   0.956    0.10
+s(B5_Neuroticism)  4.000 1.003   0.956    0.06
 NULL

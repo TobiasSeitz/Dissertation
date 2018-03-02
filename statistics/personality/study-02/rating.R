@@ -258,6 +258,11 @@ AIC(rFactorModel, rFactorModel_simple, rFactorModel_simple_GCV, rFactorModel_man
 anova(autoModelsRatingB5[[1]],updatedModelsB5[[1]],test='F')
 
 cooks.distance(autoModelsRatingB5[[1]],updatedModelsB5[[1]])
+
+
+
+
+
 ###############################################################################################################################
 ###
 ### Example for handy-work 

@@ -1,0 +1,42 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+threeClassRat_binary ~ Openness + Conscientiousness + Extraversion + 
+    Agreeableness + Age + s(Neuroticism, k = 4) + Gender + IT
+
+Parametric coefficients:
+                    Estimate Std. Error z value Pr(>|z|)  
+(Intercept)        2.1811139  1.8176957   1.200   0.2302  
+Openness           0.0005925  0.0720873   0.008   0.9934  
+Conscientiousness  0.0836120  0.0844721   0.990   0.3223  
+Extraversion       0.0212689  0.0692432   0.307   0.7587  
+Agreeableness     -0.1912282  0.0873769  -2.189   0.0286 *
+Age               -0.0224047  0.0447903  -0.500   0.6169  
+GenderFemale       0.7436145  0.5383847   1.381   0.1672  
+ITNo              -0.3325359  0.5676826  -0.586   0.5580  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf Ref.df Chi.sq p-value
+s(Neuroticism) 2.021  2.422  3.898   0.255
+
+R-sq.(adj) =  0.0275   Deviance explained = 9.33%
+-REML = 66.266  Scale est. = 1         n = 98
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 3 iterations.
+Gradient range [-6.85876e-08,-6.85876e-08]
+(score 66.26649 & scale 1).
+Hessian positive definite, eigenvalue range [0.2854222,0.2854222].
+Model rank =  11 / 11 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                  k'   edf k-index p-value
+s(Neuroticism) 3.000 2.021   0.927    0.24
+NULL

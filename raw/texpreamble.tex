@@ -39,6 +39,22 @@
 \newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
 \newunicodechar{✓}{\ding{51}}
 \newunicodechar{✘}{\ding{56}}
+\newunicodechar{↗}{\ding{246}}
+\newunicodechar{↘}{\ding{244}}
+
+% emojis
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+\newcommand*\inlinegraphics[1]{%
+	\settototalheight\myheight{Xygp}%
+	\settodepth\mydepth{Xygp}%
+	\raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
+}
+\newcommand{\emoji}[1]{\inlinegraphics{../latex-emoji/ios/#1}}%
+% this works: \newcommand{\emoji}[1]{\includegraphics[width=1em]{../latex-emoji/ios/#1}}%
 
 \graphicspath{{figures/}}
 

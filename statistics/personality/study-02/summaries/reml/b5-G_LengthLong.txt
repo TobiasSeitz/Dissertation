@@ -3,64 +3,57 @@ Family: gaussian
 Link function: identity 
 
 Formula:
-G_LengthLong ~ B5_Neuroticism + B5_Openness + D_Age + s(B5_Extraversion) + 
-    s(B5_Agreeableness) + s(B5_Conscientiousness) + D_Gender + 
-    D_ComputerScienceBackground
+G_LengthLong ~ B5_Neuroticism + B5_Openness + D_Age + s(B5_Extraversion, 
+    k = 3) + s(B5_Agreeableness, k = 3) + s(B5_Conscientiousness, 
+    k = 3) + D_Gender + D_ComputerScienceBackground
 
 Parametric coefficients:
                                Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                    35.91924    4.63186   7.755 1.34e-11 ***
-B5_Neuroticism                 -0.09853    0.08994  -1.096   0.2762    
-B5_Openness                    -0.14480    0.08494  -1.705   0.0917 .  
-D_Age                           0.02709    0.06309   0.429   0.6688    
-D_GenderFemale                 -0.05595    1.20662  -0.046   0.9631    
-D_ComputerScienceBackgroundYes -1.44620    1.22187  -1.184   0.2397    
+(Intercept)                    35.84864    4.63546   7.734 1.44e-11 ***
+B5_Neuroticism                 -0.10202    0.09003  -1.133   0.2601    
+B5_Openness                    -0.14231    0.08504  -1.673   0.0977 .  
+D_Age                           0.02934    0.06287   0.467   0.6418    
+D_GenderFemale                 -0.04717    1.20631  -0.039   0.9689    
+D_ComputerScienceBackgroundYes -1.41925    1.21938  -1.164   0.2475    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
                           edf Ref.df     F p-value
-s(B5_Extraversion)      1.561  1.942 0.377   0.676
-s(B5_Agreeableness)     1.324  1.584 2.074   0.205
-s(B5_Conscientiousness) 1.606  2.010 0.312   0.716
+s(B5_Extraversion)      1.549  1.791 0.559   0.567
+s(B5_Agreeableness)     1.236  1.416 1.267   0.199
+s(B5_Conscientiousness) 1.255  1.439 0.146   0.827
 
-R-sq.(adj) =  0.0816   Deviance explained =   17%
--REML = 301.61  Scale est. = 25.287    n = 100
+R-sq.(adj) =  0.0783   Deviance explained = 16.2%
+-REML = 301.56  Scale est. = 25.38     n = 100
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-                   (Intercept)                 B5_Neuroticism                    B5_Openness                          D_Age                 D_GenderFemale 
-                  0.0000000000                  -0.1492113577                  -0.1763269465                   0.0445786362                  -0.0052886186 
-D_ComputerScienceBackgroundYes           s(B5_Extraversion).1           s(B5_Extraversion).2           s(B5_Extraversion).3           s(B5_Extraversion).4 
-                 -0.1256880451                  -0.0252847495                   0.0244936565                   0.0094966197                   0.0212784941 
-          s(B5_Extraversion).5           s(B5_Extraversion).6           s(B5_Extraversion).7           s(B5_Extraversion).8           s(B5_Extraversion).9 
-                  0.0172076207                  -0.0199234203                   0.0190965314                  -0.1198510143                  -0.0001873129 
-         s(B5_Agreeableness).1          s(B5_Agreeableness).2          s(B5_Agreeableness).3          s(B5_Agreeableness).4          s(B5_Agreeableness).5 
-                 -0.0179839665                   0.0018983327                  -0.0077214252                   0.0076160511                   0.0054029750 
-         s(B5_Agreeableness).6          s(B5_Agreeableness).7          s(B5_Agreeableness).8          s(B5_Agreeableness).9      s(B5_Conscientiousness).1 
-                 -0.0081808467                   0.0048813837                   0.0459211664                   0.1693783110                   0.0641592025 
-     s(B5_Conscientiousness).2      s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5      s(B5_Conscientiousness).6 
-                  0.0103383550                  -0.0054771337                   0.0163317107                  -0.0162721364                   0.0136668934 
-     s(B5_Conscientiousness).7      s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
-                 -0.0070412467                  -0.0705943954                   0.0520265926 
+                   (Intercept)                 B5_Neuroticism                    B5_Openness                          D_Age 
+                   0.000000000                   -0.154493498                   -0.173296493                    0.048291419 
+                D_GenderFemale D_ComputerScienceBackgroundYes           s(B5_Extraversion).1           s(B5_Extraversion).2 
+                  -0.004459202                   -0.123346135                   -0.082550066                   -0.002479350 
+         s(B5_Agreeableness).1          s(B5_Agreeableness).2      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2 
+                   0.029622497                    0.177556796                   -0.030833193                   -0.009265684 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
-full convergence after 10 iterations.
-Gradient range [-0.0003832873,0.0007685291]
-(score 301.6099 & scale 25.28741).
-Hessian positive definite, eigenvalue range [0.028691,45.50356].
-Model rank =  33 / 33 
+full convergence after 6 iterations.
+Gradient range [-0.0002631987,0.0007414412]
+(score 301.5623 & scale 25.37959).
+Hessian positive definite, eigenvalue range [0.01992898,45.50158].
+Model rank =  12 / 12 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
-                          k'  edf k-index p-value
-s(B5_Extraversion)      9.00 1.56    1.06    0.72
-s(B5_Agreeableness)     9.00 1.32    1.09    0.79
-s(B5_Conscientiousness) 9.00 1.61    1.01    0.49
+                           k'   edf k-index p-value
+s(B5_Extraversion)      2.000 1.549   1.064    0.74
+s(B5_Agreeableness)     2.000 1.236   1.083    0.78
+s(B5_Conscientiousness) 2.000 1.255   0.997    0.47
 NULL

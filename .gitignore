@@ -1,5 +1,8 @@
 ##### TOBI:
 statistics/personality/**/*.pdf
+latex-emoji
+
+
 .RData
 **/*/.RData
 

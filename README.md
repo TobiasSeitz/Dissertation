@@ -1,7 +1,7 @@
 # Dissertation
-PhD Thesis: Supporting Password Coping Strategies with Persuasive Design
+PhD Thesis: Supporting Users in Password Authentication with Persuasive Design
 
-CodeName ***spacoswipers*** 
+CodeName ***susipawipedes*** 
 
 ## Commands
 

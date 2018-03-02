@@ -21,8 +21,7 @@ source("plotGAM.R")
 # import correct data sets
 data.difficulty <- read.csv("data/data_creationDifficult_emoji12 (121 Datasets).CSV",
                   sep = ";", dec = ",")
-data.ratings <- read.csv("data/data_creationRating_emoji12 (103 Datasets).CSV",
-                     sep = ";", dec = ",")
+
 
 # make colnames English
 names(data.difficulty)[names(data.difficulty) == "Geschlecht"] <- "Gender"
@@ -46,14 +45,9 @@ data.difficulty$twoWordPos <- factor(data.difficulty$twoWordPos)
 data.difficulty$threeClassPos <- factor(data.difficulty$threeClassPos)
 ## calculate average difficulty
 data.difficulty$meanDiff <- rowMeans(data.difficulty[which(colnames(data.difficulty) == "emojiDif" | colnames(data.difficulty) == "twoWordDif" | colnames(data.difficulty) == "threeClassDif")], na.rm=TRUE)
+data.difficulty$meanTime <- (data.difficulty$emojiTime + data.difficulty$threeClassTime + data.difficulty$twoWordTime) / 3;
 
-# factorize data set of policy ranking
-data.ratings$Gender[data.ratings$Gender == 3] <- NA
-data.ratings$Gender <- factor(data.ratings$Gender,levels=c(1,2),labels=c("Male","Female"))
-data.ratings$IT <- factor(data.ratings$IT,levels=c(1,2),labels=c("Yes","No"))
-data.ratings$emojiPos <- factor(data.ratings$emojiPos)
-data.ratings$twoWordPos <- factor(data.ratings$twoWordPos)
-data.ratings$threeClassPos <- factor(data.ratings$threeClassPos)
+
 
 ### let's look at some descriptives first.
 
@@ -246,3 +240,30 @@ wilcox.test(meanTime ~ Gender, data= data.difficulty, na.action = "omit")
 ggplot(data.difficulty,aes(Gender,meanTime)) + geom_boxplot()
 wilcox.test(twoWordTime ~ Gender, data= data.difficulty)
 
+#############################################################################
+##  automate stuff for difficulty and timing
+#############################################################################
+responsesGaussian <- list("emojiDif","twoWordDif","threeClassDif","meanTime");
+predictors <- list("Openness","Conscientiousness","Extraversion","Agreeableness","Neuroticism")
+controls <- list("Age","Gender","IT") # important: start with a continuous variable, age is fine right now.
+autoModelsUsability <- lapply(responsesGaussian, 
+                              getGAM, 
+                              predictors=predictors, 
+                              controls=controls, 
+                              controls.smoothed = list("Age"),
+                              d <- data.difficulty,
+                              k = 5, 
+                              method="REML"
+                              )
+autoModelsUsability_simple <- lapply(autoModelsUsability, simplifyGAM)
+
+source('../../plotGAM.R')
+### plot 
+lapply(autoModelsUsability_simple, generatePDF, 
+       controlVariables = controls, predictors = predictors,
+       prefix.predictors="predictors-", prefix.control="controls-",path="graphs/auto",xLab.predictors = "Trait Scores")
+
+## summaries
+for(i in autoModelsUsability_simple){
+  outputSummary(i,prefix="auto-",path="summaries")
+}

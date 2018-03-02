@@ -1,0 +1,44 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+twoWordRat_binary ~ Openness + Conscientiousness + Extraversion + 
+    Neuroticism + s(Agreeableness, k = 4) + s(Age, k = 4) + Gender + 
+    IT
+
+Parametric coefficients:
+                   Estimate Std. Error z value Pr(>|z|)  
+(Intercept)        2.982612   3.050385   0.978   0.3282  
+Openness          -0.037841   0.107763  -0.351   0.7255  
+Conscientiousness -0.048387   0.136092  -0.356   0.7222  
+Extraversion      -0.207124   0.101576  -2.039   0.0414 *
+Neuroticism       -0.002387   0.115249  -0.021   0.9835  
+GenderFemale      -0.704635   0.798481  -0.882   0.3775  
+ITNo              -1.116248   0.740137  -1.508   0.1315  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                   edf Ref.df Chi.sq p-value
+s(Agreeableness) 2.026  2.388  3.460   0.229
+s(Age)           2.087  2.464  3.037   0.224
+
+R-sq.(adj) =  0.141   Deviance explained = 22.6%
+-REML = 36.779  Scale est. = 1         n = 98
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-9.300155e-09,6.331131e-10]
+(score 36.77944 & scale 1).
+Hessian positive definite, eigenvalue range [0.1071807,0.3716582].
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'   edf k-index p-value
+s(Agreeableness) 3.000 2.026   0.941    0.34
+s(Age)           3.000 2.087   0.858    0.12
+NULL

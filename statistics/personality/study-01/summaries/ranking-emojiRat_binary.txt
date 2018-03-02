@@ -28,16 +28,19 @@ s(Neuroticism) 2.452  2.974  5.885   0.137
 
 R-sq.(adj) =  0.233   Deviance explained = 26.9%
 UBRE = -0.03838  Scale est. = 1         n = 98
-[1] "\nBETAs:"
+[1] "\nGAM.CHECK:"
 
-	Kruskal-Wallis rank sum test
+Method: UBRE   Optimizer: outer newton
+full convergence after 4 iterations.
+Gradient range [-1.340867e-08,4.623504e-10]
+(score -0.03838045 & scale 1).
+Hessian positive definite, eigenvalue range [0.001858138,0.004166677].
+Model rank =  17 / 17 
 
-data:  twoWordTime by Gender
-Kruskal-Wallis chi-squared = 5.5753, df = 1, p-value = 0.01822
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
 
-          Length Class  Mode     
-statistic 1      -none- numeric  
-parameter 1      -none- numeric  
-p.value   1      -none- numeric  
-method    1      -none- character
-data.name 1      -none- character
+                  k'   edf k-index p-value
+s(Age)         4.000 1.505   0.993    0.46
+s(Neuroticism) 4.000 2.452   0.945    0.30
+NULL

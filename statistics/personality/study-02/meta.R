@@ -25,3 +25,8 @@ lapply(updatedModelsMeta, generatePDF,
        path="graphs/meta-reml",
        xLab.predictors = "Meta Password Statistics")
 
+for(i in updatedModelsMeta){
+  outputSummary(i, path="summaries/meta")
+}
+
+

@@ -8,32 +8,8 @@ library(compare)
 source("../../plotCI.R");
 source("../../plotGAM.R");
 source("../../util.R");
+source("getGam.R");
 
-## makes a gam and ensures that "age" is smoothed as control variable, but the rest isn't.
-getGam <- function(responseVar, d, predictors, controlVars, method=NULL,select=FALSE,family="gaussian") {
-  smoothedPredictors <- lapply(predictors,smoothPredictors,k=5)
-  smoothedControls <- lapply(controlVars, function(var){
-    if (var=="age"){
-      c <- smoothPredictors(var,k=5)
-    } else{
-      c <- as.character(var)
-    }
-    c
-  })
-  
-  concatPredictors = paste(smoothedPredictors,collapse = "+")
-  concatControls = paste(smoothedControls,collapse = "+")
-  rightHand <- paste(concatPredictors, concatControls, sep = "+");
-  autoFormula <- as.formula(paste(responseVar,rightHand,sep = "~"))
-  # see https://stat.ethz.ch/R-manual/R-devel/library/mgcv/html/gam.selection.html
-  if(!is.null(method)){
-    m <- gam(autoFormula, select = select, data=d, method=method,family=family); # adding method="REML" results in less magic.  
-  }
-  else{
-    m <- gam(autoFormula, select = select, data=d, family=family); # adding method="REML" results in less magic.  
-  }
-  m
-}
 
 # this data looks stale: d <- read.csv("personality-pw-selection.csv", sep = ";", dec = ".")
 # I've re-coded it:
