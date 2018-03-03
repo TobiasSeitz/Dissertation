@@ -24,6 +24,14 @@ d$gender <- factor(d$gender, levels = c(1,2), labels=c("Male","Female"))
 
 b5Items <- subset(d, select = 18:38);
 
+# subjective complexity factor.
+# lowercase perceived complexity (PC): 1
+# uppercase PC: 2
+# digit PC: 3
+# symbols PC: 4
+d$complexity_level <- 0
+d$complexity_level <- d$lowercase + (2*d$uppercase) + (3*d$digits) + (4*d$symbols)
+
 # the scores are actually wrong as of now:
 # we need to reverse all b5 items.
 for(item in names(b5Items)) {
@@ -195,3 +203,14 @@ autoModelsInfluence <- lapply(influenceMetrics, getGam, d<-d, controlVars = cont
 autoModelsInfluence_simple <- lapply(autoModelsInfluence, simplifyGAM, family="binomial")
 lapply(autoModelsInfluence_simple,summary)
 ## only "residency" with good explanation of deviance (R-sq: 0.113, dev expl: 42.2%)
+
+######################################################
+#####
+#####   PERCEIVED COMPLEXITY
+#####
+######################################################
+perceivedComplexityModel <- getGAM("complexity_level",predictorsB5, controlVars, d<-d, controls.smoothed = c("age"))
+perceivedComplexityModel_simple <- simplifyGAM(perceivedComplexityModel)
+generatePDF(perceivedComplexityModel_simple, controlVariables =  controlVars, predictors = predictorsB5)
+## okay, nothing. 
+
