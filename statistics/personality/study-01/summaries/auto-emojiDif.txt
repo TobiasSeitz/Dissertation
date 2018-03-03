@@ -32,10 +32,8 @@ gam(formula = nFormula, family = family, data = d, method = method,
     select = select)
 
 Standardized Coefficients::
-      (Intercept) Conscientiousness      Extraversion     Agreeableness       Neuroticism               Age      GenderFemale              ITNo     s(Openness).1 
-       0.00000000        0.01530720       -0.07511822       -0.18090277       -0.25685138        0.01845389        0.17339198       -0.02002008        0.02292644 
-    s(Openness).2 
-      -0.01041031 
+      (Intercept) Conscientiousness      Extraversion     Agreeableness       Neuroticism               Age      GenderFemale              ITNo     s(Openness).1     s(Openness).2 
+       0.00000000        0.01530720       -0.07511822       -0.18090277       -0.25685138        0.01845389        0.17339198       -0.02002008        0.02292644       -0.01041031 
 
 [1] "\nGAM.CHECK:"
 
@@ -50,5 +48,5 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                k'   edf k-index p-value
-s(Openness) 2.000 1.190   0.875    0.07
+s(Openness) 2.000 1.190   0.875    0.08
 NULL

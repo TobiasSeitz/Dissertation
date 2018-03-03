@@ -53,7 +53,7 @@
 	\settodepth\mydepth{Xygp}%
 	\raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
 }
-\newcommand{\emoji}[1]{\inlinegraphics{../latex-emoji/ios/#1}}%
+\newcommand{\emoji}[2][ios]{\inlinegraphics{../latex-emoji/#1/#2}}%
 % this works: \newcommand{\emoji}[1]{\includegraphics[width=1em]{../latex-emoji/ios/#1}}%
 
 \graphicspath{{figures/}}

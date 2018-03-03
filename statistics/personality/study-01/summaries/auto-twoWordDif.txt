@@ -33,10 +33,10 @@ gam(formula = nFormula, family = family, data = d, method = method,
     select = select)
 
 Standardized Coefficients::
-       (Intercept)  Conscientiousness       Extraversion       GenderFemale               ITNo      s(Openness).1      s(Openness).2 s(Agreeableness).1 
-      0.0000000000       0.0239496814       0.0992476952       0.2025734071       0.0788312112       0.0862735927      -0.0030687391      -0.0004736528 
-s(Agreeableness).2   s(Neuroticism).1   s(Neuroticism).2           s(Age).1           s(Age).2 
-     -0.1011722881      -0.0957557947      -0.0018726653       0.1582094558      -0.1709463523 
+       (Intercept)  Conscientiousness       Extraversion       GenderFemale               ITNo      s(Openness).1      s(Openness).2 s(Agreeableness).1 s(Agreeableness).2   s(Neuroticism).1   s(Neuroticism).2 
+      0.0000000000       0.0239496814       0.0992476952       0.2025734071       0.0788312112       0.0862735927      -0.0030687391      -0.0004736528      -0.1011722881      -0.0957557947      -0.0018726653 
+          s(Age).1           s(Age).2 
+      0.1582094558      -0.1709463523 
 
 [1] "\nGAM.CHECK:"
 
@@ -51,8 +51,8 @@ Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                     k'   edf k-index p-value
-s(Openness)      2.000 1.545   1.117    0.86
-s(Agreeableness) 2.000 1.005   0.909    0.13
-s(Neuroticism)   2.000 1.620   0.891    0.10
-s(Age)           2.000 1.732   1.082    0.73
+s(Openness)      2.000 1.545   1.117    0.90
+s(Agreeableness) 2.000 1.005   0.909    0.16
+s(Neuroticism)   2.000 1.620   0.891    0.14
+s(Age)           2.000 1.732   1.082    0.84
 NULL

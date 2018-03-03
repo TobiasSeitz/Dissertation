@@ -33,10 +33,8 @@ gam(formula = nFormula, family = family, data = d, method = method,
     select = select)
 
 Standardized Coefficients::
-       (Intercept)  Conscientiousness       Extraversion        Neuroticism                Age       GenderFemale               ITNo      s(Openness).1 
-       0.000000000        0.069206777       -0.001710552        0.048793972       -0.110091261       -0.070672727        0.006484434        0.020360002 
-     s(Openness).2 s(Agreeableness).1 s(Agreeableness).2 
-      -0.155794981       -0.040285607        0.026150051 
+       (Intercept)  Conscientiousness       Extraversion        Neuroticism                Age       GenderFemale               ITNo      s(Openness).1      s(Openness).2 s(Agreeableness).1 s(Agreeableness).2 
+       0.000000000        0.069206777       -0.001710552        0.048793972       -0.110091261       -0.070672727        0.006484434        0.020360002       -0.155794981       -0.040285607        0.026150051 
 
 [1] "\nGAM.CHECK:"
 
@@ -52,5 +50,5 @@ indicate that k is too low, especially if edf is close to k'.
 
                     k'   edf k-index p-value
 s(Openness)      2.000 1.168   1.049    0.72
-s(Agreeableness) 2.000 1.333   0.988    0.34
+s(Agreeableness) 2.000 1.333   0.988    0.42
 NULL

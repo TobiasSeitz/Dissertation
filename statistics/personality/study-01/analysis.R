@@ -47,7 +47,11 @@ data.difficulty$threeClassPos <- factor(data.difficulty$threeClassPos)
 data.difficulty$meanDiff <- rowMeans(data.difficulty[which(colnames(data.difficulty) == "emojiDif" | colnames(data.difficulty) == "twoWordDif" | colnames(data.difficulty) == "threeClassDif")], na.rm=TRUE)
 data.difficulty$meanTime <- (data.difficulty$emojiTime + data.difficulty$threeClassTime + data.difficulty$twoWordTime) / 3;
 
-
+####  did conscientious people take more time for the first task?
+data.difficulty$firstTime <- 0
+data.difficulty$firstTime[data.difficulty$emojiPos==0] <- data.difficulty$emojiTime[data.difficulty$emojiPos==0]
+data.difficulty$firstTime[data.difficulty$twoWordPos==0] <- data.difficulty$emojiTime[data.difficulty$twoWordPos==0]
+data.difficulty$firstTime[data.difficulty$threeClassPos==0] <- data.difficulty$emojiTime[data.difficulty$threeClassPos==0]
 
 ### let's look at some descriptives first.
 
@@ -234,6 +238,7 @@ plotreg(
 
 
 
+
 #############################################################################
 ## 
 wilcox.test(meanTime ~ Gender, data= data.difficulty, na.action = "omit")
@@ -243,7 +248,9 @@ wilcox.test(twoWordTime ~ Gender, data= data.difficulty)
 #############################################################################
 ##  automate stuff for difficulty and timing
 #############################################################################
-responsesGaussian <- list("emojiDif","twoWordDif","threeClassDif","meanTime");
+
+
+responsesGaussian <- list("emojiDif","twoWordDif","threeClassDif","meanTime","firstTime");
 predictors <- list("Openness","Conscientiousness","Extraversion","Agreeableness","Neuroticism")
 controls <- list("Age","Gender","IT") # important: start with a continuous variable, age is fine right now.
 autoModelsUsability <- lapply(responsesGaussian, 
@@ -267,3 +274,6 @@ lapply(autoModelsUsability_simple, generatePDF,
 for(i in autoModelsUsability_simple){
   outputSummary(i,prefix="auto-",path="summaries")
 }
+
+
+

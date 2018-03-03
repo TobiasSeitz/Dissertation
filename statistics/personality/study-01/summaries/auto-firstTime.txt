@@ -1,0 +1,54 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+firstTime ~ Conscientiousness + Agreeableness + Neuroticism + 
+    Age + s(Openness, k = 3) + s(Extraversion, k = 3) + Gender + 
+    IT
+
+Parametric coefficients:
+                  Estimate Std. Error t value Pr(>|t|)  
+(Intercept)        88458.4    41840.1   2.114   0.0368 *
+Conscientiousness  -3553.7     1743.6  -2.038   0.0440 *
+Agreeableness       1264.7     1651.9   0.766   0.4455  
+Neuroticism         -198.3     1668.9  -0.119   0.9056  
+Age                 1250.4     1033.9   1.209   0.2291  
+GenderFemale       20662.8    10757.8   1.921   0.0574 .
+ITNo               -8025.0    11084.3  -0.724   0.4706  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                  edf Ref.df     F p-value
+s(Openness)     1.161  1.296 0.118   0.855
+s(Extraversion) 1.619  1.855 1.816   0.255
+
+R-sq.(adj) =  0.0337   Deviance explained = 10.6%
+-REML = 1374.8  Scale est. = 2.6546e+09  n = 119
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+      (Intercept) Conscientiousness     Agreeableness       Neuroticism               Age      GenderFemale              ITNo     s(Openness).1     s(Openness).2 s(Extraversion).1 s(Extraversion).2 
+       0.00000000       -0.19894331        0.07766696       -0.01299368        0.11571143        0.19737601       -0.06945912        0.01874846       -0.01074465       -0.09653185        0.09796285 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 5 iterations.
+Gradient range [-0.000626008,0.000738694]
+(score 1374.778 & scale 2654605364).
+Hessian positive definite, eigenvalue range [0.01314688,55.00113].
+Model rank =  11 / 11 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                  k'  edf k-index p-value
+s(Openness)     2.00 1.16    1.06    0.66
+s(Extraversion) 2.00 1.62    1.05    0.74
+NULL
