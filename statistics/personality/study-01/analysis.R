@@ -101,10 +101,11 @@ savePlot(pTimingCI, "timing-ci", 8,height,path="graphs")
 
 emojiDifficulty <- gam(emojiDif ~ s(Age) + Gender + IT + s(Extraversion) + s(Agreeableness) +
               s(Conscientiousness) + s(Neuroticism) + s(Openness) + emojiPos,
-            data = data.difficulty)
+            data = data.difficulty,method = "REML")
 summary(emojiDifficulty)
 texreg(emojiDifficulty)
 outputSummary(emojiDifficulty,"difficulty-","summaries")
+generatePDF(emojiDifficulty,controlVariables = list("Age","Gender","IT","emojiPos"), predictors = predictors, yLab = "Difficulty to create emoji password", xLab.predictors = "Trait Scores")
 #plot(emojiDifficulty, pages = 1, jit=TRUE, scale = 0)
 
 ## for plot output
@@ -259,16 +260,15 @@ autoModelsUsability <- lapply(responsesGaussian,
                               controls=controls, 
                               controls.smoothed = list("Age"),
                               d <- data.difficulty,
-                              k = 5, 
-                              method="REML"
+                              k = 10
                               )
-autoModelsUsability_simple <- lapply(autoModelsUsability, simplifyGAM)
+autoModelsUsability_simple <- lapply(autoModelsUsability, simplifyGAM,k=10, method="GCV.Cp")
 
 source('../../plotGAM.R')
 ### plot 
 lapply(autoModelsUsability_simple, generatePDF, 
        controlVariables = controls, predictors = predictors,
-       prefix.predictors="predictors-", prefix.control="controls-",path="graphs/auto",xLab.predictors = "Trait Scores")
+       prefix.predictors="predictors-", prefix.control="controls-",path="graphs/auto/GCV",xLab.predictors = "Trait Scores")
 
 ## summaries
 for(i in autoModelsUsability_simple){

@@ -77,10 +77,35 @@ The task order also showed medium-strong influence on creation difficulty. If em
 %, too: emoji12 ($B=-0.10$) trivial, 3class12 ($B=0.21$) weak, 2word12  medium. it looks as though people with higher IT knowledge struggle with a word-based policy, potentially because it is much less common in the wild. 
 
 \begin{figure}
-\includegraphics[width=\linewidth]{personality/dc-emoji-b5}
-\includegraphics[width=\linewidth]{personality/dc-emoji-control-mod}
-\caption{\label{fig:personality:dc-emoji-b5}Associations between predictors and difficulty to create a password under the emoji12 policy. Visualizations of the functions derived from the General Additive Models (gam).}
+\includegraphics[width=\linewidth]{personality/dc-emoji-b5-v2}
+\includegraphics[width=\linewidth]{personality/dc-emoji-control-mod-v2}
+\caption{\label{fig:personality:dc-emoji-b5}Associations between predictors and \textbf{difficulty} to create a password under the emoji12 policy. Visualizations of the functions derived from the Generalized Additive Models (gam). Neuroticism was significantly negatively associated with difficulty (highlighted in blue), i.e. it was easier to create emoji-passwords if participants scored high on neuroticism.}
 \end{figure}
+
+\noindent
+\fbox{
+	\label{sec:personality:study1:how-to-read-diagrams}
+	\hspace{1cm}
+	\centering
+	\parbox[t][13cm]{0.85\linewidth}{
+		\section*{How to Read Smoothed Regression Plots}
+		Figure \ref{fig:personality:dc-emoji-b5} shows the first example of regression plots that will be used throughout the thesis where appropriate. There is a separate plot for each marginal association with a given predictor. The solid curve/line represents the estimated regression curve. If it is a straight line, the association can be modeled as linear effect (e.g. Neuroticism in Figure \ref{fig:personality:dc-emoji-b5}). If it is a curve, the association is modeled with polynomial terms of different degrees (e.g. Agreeableness in Figure \ref{fig:personality:dc-emoji-b5}). The model intercept is at $y=0$. In many cases, residuals are plotted at their respective $(x,y)$ position to give a sense of clusters. At the bottom border of the plots, we often add ``rugs'' to show the number of observations/residuals along the x-axis. 
+		
+		Interpreting the effect size and significant contribution is visible in two was. First, the slope of the fitted line shows estimated strength of associations. Second, there are two dashed curves surrounding the fitted curve/line that visualize 95\% confidence intervals. Both curves are entirely above, respectively entirely below, the intersection between the fitted curve and the intercept at $y=0$, the association is significant at the 0.05 alpha level.
+		
+		In Figure \ref{fig:personality:dc-emoji-b5}, we highlighted this for the neuroticism plot. Left to the point of intersection, both dashed lines are above the intercept (in pink color); analogously, the dashed lines are below the intercept  on the right-hand side.
+		
+%		\begin{itemize}[leftmargin=*]
+%			\item Personality is weakly associated with all the measured dimensions: strength perception, policy preference / usability, and password selection. Most notably openness and neuroticism showed conclusive associationes.
+%			\item The models for the perception of passphrases achieved the highest fit, suggesting a predictable association between personality and strength perception for this type of password. Comparing two passwords was associated with the conscientiousness traits. Mixed models that use both password features and personality trait scores as covariates are the most feasible approach.
+%			\item Older users might be the best target group for password support tools, because age was a good predictor of their usage. Suggesting good tools during account creation might lead to higher adoption 
+%			%			\item Segmentation of users
+%			\item Nudges designed for neuroticism should make emotional state more salient and highlight the benefits of \underline{long} passwords. 
+%		\end{itemize}
+	}
+	\hspace{1cm}
+}
+
 \paragraph{Personality Traits}
 Contrarily to the modeling functions for control variables, we observed mostly non-linear associations between trait scores and creation difficulty (see Figure \ref{fig:personality:dc-emoji-b5}).
 %emoji personality
