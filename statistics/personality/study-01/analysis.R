@@ -105,7 +105,7 @@ emojiDifficulty <- gam(emojiDif ~ s(Age) + Gender + IT + s(Extraversion) + s(Agr
 summary(emojiDifficulty)
 texreg(emojiDifficulty)
 outputSummary(emojiDifficulty,"difficulty-","summaries")
-generatePDF(emojiDifficulty,controlVariables = list("Age","Gender","IT","emojiPos"), predictors = predictors, yLab = "Difficulty to create emoji password", xLab.predictors = "Trait Scores")
+generatePDF(emojiDifficulty,controlVariables = list("Age","Gender","IT","emojiPos"), predictors = predictors, xLab.predictors = "Trait Scores")
 #plot(emojiDifficulty, pages = 1, jit=TRUE, scale = 0)
 
 ## for plot output
