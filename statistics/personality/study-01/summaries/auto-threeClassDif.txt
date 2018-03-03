@@ -1,0 +1,54 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+threeClassDif ~ Conscientiousness + Extraversion + Neuroticism + 
+    Age + s(Openness, k = 3) + s(Agreeableness, k = 3) + Gender + 
+    IT
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)   
+(Intercept)        7.565423   2.419173   3.127  0.00226 **
+Conscientiousness  0.068308   0.099046   0.690  0.49187   
+Extraversion      -0.001297   0.080947  -0.016  0.98725   
+Neuroticism        0.041152   0.094940   0.433  0.66554   
+Age               -0.065737   0.058704  -1.120  0.26525   
+GenderFemale      -0.408805   0.607782  -0.673  0.50261   
+ITNo               0.041396   0.631214   0.066  0.94783   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                   edf Ref.df     F p-value
+s(Openness)      1.168  1.307 2.492   0.136
+s(Agreeableness) 1.333  1.555 0.384   0.719
+
+R-sq.(adj) =  -0.0236   Deviance explained = 5.01%
+-REML = 299.46  Scale est. = 8.5861    n = 119
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+       (Intercept)  Conscientiousness       Extraversion        Neuroticism                Age       GenderFemale               ITNo      s(Openness).1      s(Openness).2 s(Agreeableness).1 s(Agreeableness).2 
+       0.000000000        0.069206777       -0.001710552        0.048793972       -0.110091261       -0.070672727        0.006484434        0.020360002       -0.155794981       -0.040285607        0.026150051 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-3.94812e-05,6.859619e-05]
+(score 299.4553 & scale 8.586061).
+Hessian positive definite, eigenvalue range [0.01295548,55.00056].
+Model rank =  11 / 11 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'   edf k-index p-value
+s(Openness)      2.000 1.168   1.049    0.72
+s(Agreeableness) 2.000 1.333   0.988    0.42
+NULL

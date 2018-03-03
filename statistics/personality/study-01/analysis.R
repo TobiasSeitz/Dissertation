@@ -8,11 +8,11 @@ library(plyr)
 #package um latex tabellen auszugeben
 library("texreg")
 library(lme4)
-require(reshape2)
+library(reshape2)
 
 # for confidence interval plots.
 source("../../plotCI.R");
-
+source('../../util.R')
 source("plotGAM.R")
 
 # BibTex citations
@@ -21,8 +21,7 @@ source("plotGAM.R")
 # import correct data sets
 data.difficulty <- read.csv("data/data_creationDifficult_emoji12 (121 Datasets).CSV",
                   sep = ";", dec = ",")
-data.ratings <- read.csv("data/data_creationRating_emoji12 (103 Datasets).CSV",
-                     sep = ";", dec = ",")
+
 
 # make colnames English
 names(data.difficulty)[names(data.difficulty) == "Geschlecht"] <- "Gender"
@@ -46,14 +45,13 @@ data.difficulty$twoWordPos <- factor(data.difficulty$twoWordPos)
 data.difficulty$threeClassPos <- factor(data.difficulty$threeClassPos)
 ## calculate average difficulty
 data.difficulty$meanDiff <- rowMeans(data.difficulty[which(colnames(data.difficulty) == "emojiDif" | colnames(data.difficulty) == "twoWordDif" | colnames(data.difficulty) == "threeClassDif")], na.rm=TRUE)
+data.difficulty$meanTime <- (data.difficulty$emojiTime + data.difficulty$threeClassTime + data.difficulty$twoWordTime) / 3;
 
-# factorize data set of policy ranking
-data.ratings$Gender[data.ratings$Gender == 3] <- NA
-data.ratings$Gender <- factor(data.ratings$Gender,levels=c(1,2),labels=c("Male","Female"))
-data.ratings$IT <- factor(data.ratings$IT,levels=c(1,2),labels=c("Yes","No"))
-data.ratings$emojiPos <- factor(data.ratings$emojiPos)
-data.ratings$twoWordPos <- factor(data.ratings$twoWordPos)
-data.ratings$threeClassPos <- factor(data.ratings$threeClassPos)
+####  did conscientious people take more time for the first task?
+data.difficulty$firstTime <- 0
+data.difficulty$firstTime[data.difficulty$emojiPos==0] <- data.difficulty$emojiTime[data.difficulty$emojiPos==0]
+data.difficulty$firstTime[data.difficulty$twoWordPos==0] <- data.difficulty$emojiTime[data.difficulty$twoWordPos==0]
+data.difficulty$firstTime[data.difficulty$threeClassPos==0] <- data.difficulty$emojiTime[data.difficulty$threeClassPos==0]
 
 ### let's look at some descriptives first.
 
@@ -103,9 +101,11 @@ savePlot(pTimingCI, "timing-ci", 8,height,path="graphs")
 
 emojiDifficulty <- gam(emojiDif ~ s(Age) + Gender + IT + s(Extraversion) + s(Agreeableness) +
               s(Conscientiousness) + s(Neuroticism) + s(Openness) + emojiPos,
-            data = data.difficulty)
+            data = data.difficulty,method = "REML")
 summary(emojiDifficulty)
 texreg(emojiDifficulty)
+outputSummary(emojiDifficulty,"difficulty-","summaries")
+generatePDF(emojiDifficulty,controlVariables = list("Age","Gender","IT","emojiPos"), predictors = predictors, xLab.predictors = "Trait Scores")
 #plot(emojiDifficulty, pages = 1, jit=TRUE, scale = 0)
 
 ## for plot output
@@ -128,6 +128,7 @@ model1_emoji <- gam(emojiDif ~ Age + Gender + IT + Extraversion + s(Agreeablenes
               data = data.difficulty)
 plot(model1_emoji, pages = 1, jit=TRUE)
 summary(model1_emoji)
+outputSummary(model1_emoji,"simple-","summaries")
 gam.check(emojiDifficulty)
 
 ######
@@ -238,119 +239,41 @@ plotreg(
 
 
 
+
+#############################################################################
+## 
+wilcox.test(meanTime ~ Gender, data= data.difficulty, na.action = "omit")
+ggplot(data.difficulty,aes(Gender,meanTime)) + geom_boxplot()
+wilcox.test(twoWordTime ~ Gender, data= data.difficulty)
+
+#############################################################################
+##  automate stuff for difficulty and timing
 #############################################################################
 
 
-#############################################################################
-#
-# Model for calculating the likelihood of ranking a policy on a specific place
-# --------------------------------------------------------------
-# we use the data.ratings dataset because there was an inconsistency in the phrasing of the question for 18 people after we
-# had changed to policy from 1emoji16 to 1emoji12 
+responsesGaussian <- list("emojiDif","twoWordDif","threeClassDif","meanTime","firstTime");
+predictors <- list("Openness","Conscientiousness","Extraversion","Agreeableness","Neuroticism")
+controls <- list("Age","Gender","IT") # important: start with a continuous variable, age is fine right now.
+autoModelsUsability <- lapply(responsesGaussian, 
+                              getGAM, 
+                              predictors=predictors, 
+                              controls=controls, 
+                              controls.smoothed = list("Age"),
+                              d <- data.difficulty,
+                              k = 10
+                              )
+autoModelsUsability_simple <- lapply(autoModelsUsability, simplifyGAM,k=10, method="GCV.Cp")
 
-# clean data -- convert 0 to NA
-data.ratings$emojiRat[data.ratings$emojiRat == 0] <- NA
-data.ratings$twoWordRat[data.ratings$twoWordRat == 0] <- NA
-data.ratings$threeClassRat[data.ratings$threeClassRat == 0] <- NA
+source('../../plotGAM.R')
+### plot 
+lapply(autoModelsUsability_simple, generatePDF, 
+       controlVariables = controls, predictors = predictors,
+       prefix.predictors="predictors-", prefix.control="controls-",path="graphs/auto/GCV",xLab.predictors = "Trait Scores")
 
-# create distinct levels of ratings
-data.ratings$emojiRat <- factor(data.ratings$emojiRat)
-data.ratings$twoWordRat <- factor(data.ratings$twoWordRat)
-data.ratings$threeClassRat <- factor(data.ratings$threeClassRat)
+## summaries
+for(i in autoModelsUsability_simple){
+  outputSummary(i,prefix="auto-",path="summaries")
+}
 
-# we model the preference for one policy or another as binary decision in each case (preferred = yes / no).
-data.ratings$emojiRat_binary <- factor(as.numeric(data.ratings$emojiRat == 1))
-data.ratings$twoWordRat_binary <- factor(as.numeric(data.ratings$twoWordRat == 1))
-data.ratings$threeClassRat_binary <- factor(as.numeric(data.ratings$threeClassRat == 1))
-
-# since the decision is binary, we use a logit model.
-model3 <- gam(emojiRat_binary ~ s(Age) + Gender + IT + s(Extraversion) + s(Agreeableness) +
-                s(Conscientiousness) + s(Neuroticism) + s(Openness) + emojiPos,
-              family = binomial(link = "logit"), data = data.ratings)
-#plot(model3, pages = 1, jit = TRUE)
-plot(model3, pages = 1, jit = TRUE, scale = 0)
-summary(model3)
-
-# k=5 beschreibt, dass Maximal ein Polynom vom Grad 5 verwendet werden soll.
-emojiRanking <- gam(emojiRat_binary ~ s(Age, k=5) + Gender + IT + Extraversion + Agreeableness +
-                Conscientiousness + s(Neuroticism, k=5) + Openness + emojiPos,
-              family = binomial(link = "logit"), data = data.ratings)
-plot(emojiRanking, pages = 1, scale = 0, jit = TRUE)
-summary(emojiRanking)
-
-twoWordRanking <- gam(twoWordRat_binary ~ s(Age, k=5) + Gender + IT + Extraversion + s(Agreeableness, k=5) +
-                         Conscientiousness + Neuroticism + Openness + twoWordPos,
-                       family = binomial(link = "logit"), data = data.ratings)
-plot(twoWordRanking, pages = 1, scale = 0, jit = TRUE)
-summary(twoWordRanking)
-
-threeClassRanking <- gam(threeClassRat_binary ~ Age + Gender + IT + Extraversion + Agreeableness +
-                         Conscientiousness + s(Neuroticism, k=5) + Openness + threeClassPos,
-                       family = binomial(link = "logit"), data = data.ratings)
-plot(threeClassRanking, pages = 1, scale = 0, jit = TRUE)
-summary(threeClassRanking)
-
-length(data.ratings$emojiRat_binary)
-exp(1)
-#die chance emoji auf platz 1 zu wählen steigt bei hohen agree werten. 
-#so ist sie z.b. bei einem unterschied von 1 exp(1) mal so groß
-
-
-# create latex table from the three models.
-texreg(list(emojiRanking, twoWordRanking, threeClassRanking),custom.model.names = c("emoji12","2word12","3class12"))
-pModelComparisonplotreg <- plotreg(
-  list(emojiRanking, twoWordRanking, threeClassRanking),
-  custom.model.names = c("emoji12","2word12","3class12"),
-  file="rankingModelComparison.pdf"
-)
-
-# Repeated measures ANOVA (Untersuchung durch lineares gemischtes Modell) ---
-dat1 <- data.difficulty[,c("emojiDif","twoWordDif","threeClassDif")]
-dat2 <- data.difficulty[,c("emojiPos","twoWordPos","threeClassPos")]
-dat1$Person <- dat2$id <- 1:nrow(dat1)
-# Datensatz in long-Format bringen
-dat1_long <- reshape(dat1, direction = "long", varying = 1:3,
-                    v.names = "Dif", timevar = "PW_Art", idvar = "Person")
-dat2_long <- reshape(dat2, direction = "long", varying = 1:3,
-                     v.names = "Pos", timevar = "PW_Art", idvar = "Person")
-dat_long <- merge(dat1_long, dat2_long, by = c("Person","PW_Art"))
-head(dat_long)
-
-dat_long$PW_Art[dat_long$PW_Art == 1] <- "emoji"
-dat_long$PW_Art[dat_long$PW_Art == 2] <- "twoWord"
-dat_long$PW_Art[dat_long$PW_Art == 3] <- "threeClass"
-dat_long$PW_Art <- factor(dat_long$PW_Art)
-
-
-# Ueberpruefen, ob Zuordnung noch stimmt
-all.equal(sort(dat_long$Dif[dat_long$PW_Art == "emoji"]), sort(dat1$emojiDif))
-all.equal(sort(dat_long$Dif[dat_long$PW_Art == "twoWord"]), sort(dat1$twoWordDif))
-all.equal(sort(dat_long$Dif[dat_long$PW_Art == "threeClass"]), sort(dat1$threeClassDif))
-
-str(dat_long)
-
-
-# emoji ist die abhängige Variable
-#m5 <- lmer(Dif ~ PW_Art + Pos + (1|Person), data = dat_long)
-dat_long$PW_Art <- relevel(dat_long$PW_Art, "emoji")
-m5 <- lmer(Dif ~ PW_Art + Pos + (1|Person), data = dat_long,
-           contrasts = list(Pos = contr.sum))
-summary(m5)
-anova(m5) # to get F values
-
-# mache twoWord zur abhängigen Variable
-dat_long$PW_Art <- relevel(dat_long$PW_Art, "twoWord")
-m6 <- lmer(Dif ~ PW_Art + Pos + (1|Person), data = dat_long)
-summary(m6)
-anova(m6)
-
-# mache threeClass zur abhängigen Variable
-dat_long$PW_Art <- relevel(dat_long$PW_Art, "threeClass")
-m7 <- lmer(Dif ~ PW_Art + Pos + (1|Person), data = dat_long)
-summary(m7)
-anova(m7)
-
-texreg(m5)
-exp(0.86) #?
 
 

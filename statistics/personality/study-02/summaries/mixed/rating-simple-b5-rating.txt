@@ -4,65 +4,56 @@ Link function: identity
 
 Formula:
 rating ~ B5_Openness + B5_Conscientiousness + B5_Agreeableness + 
-    s(B5_Extraversion) + s(B5_Neuroticism) + digits + symbols + 
-    uppercase + lowercase
+    s(B5_Extraversion, k = 5) + s(B5_Neuroticism, k = 5) + digits + 
+    symbols + uppercase + lowercase
 
 Parametric coefficients:
-                       Estimate Std. Error t value Pr(>|t|)    
-(Intercept)           2.7759099  0.5772766   4.809 1.70e-06 ***
-B5_Openness          -0.0279238  0.0082219  -3.396 0.000704 ***
-B5_Conscientiousness  0.0003445  0.0097403   0.035 0.971794    
-B5_Agreeableness      0.0266162  0.0111155   2.395 0.016785 *  
-digits                0.2762588  0.0310142   8.908  < 2e-16 ***
-symbols               0.2948697  0.0624900   4.719 2.63e-06 ***
-uppercase             0.3308323  0.0387187   8.545  < 2e-16 ***
-lowercase             0.0644135  0.0129637   4.969 7.65e-07 ***
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)           2.658070   0.561327   4.735 2.43e-06 ***
+B5_Openness          -0.026195   0.007972  -3.286  0.00104 ** 
+B5_Conscientiousness  0.001986   0.009711   0.204  0.83803    
+B5_Agreeableness      0.026596   0.011124   2.391  0.01695 *  
+digits                0.276259   0.031326   8.819  < 2e-16 ***
+symbols               0.294870   0.063119   4.672 3.30e-06 ***
+uppercase             0.330832   0.039108   8.459  < 2e-16 ***
+lowercase             0.064413   0.013094   4.919 9.81e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
-                     edf Ref.df     F  p-value    
-s(B5_Extraversion) 1.611  2.012 0.195 0.799387    
-s(B5_Neuroticism)  6.718  7.783 3.410 0.000566 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+                     edf Ref.df     F p-value
+s(B5_Extraversion) 2.328  2.861 0.880   0.338
+s(B5_Neuroticism)  1.003  1.006 0.005   0.947
 
-R-sq.(adj) =  0.149   Deviance explained = 15.9%
--REML = 2596.4  Scale est. = 3.0263    n = 1300
+R-sq.(adj) =  0.131   Deviance explained = 13.8%
+-REML = 2601.4  Scale est. = 3.0876    n = 1300
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-         (Intercept)          B5_Openness B5_Conscientiousness     B5_Agreeableness 
-         0.000000000         -0.094198620          0.001142376          0.070868553 
-              digits              symbols            uppercase            lowercase 
-         0.259581703          0.130734780          0.238509285          0.151574942 
-s(B5_Extraversion).1 s(B5_Extraversion).2 s(B5_Extraversion).3 s(B5_Extraversion).4 
-        -0.024016285          0.007161789          0.003356331          0.006025065 
-s(B5_Extraversion).5 s(B5_Extraversion).6 s(B5_Extraversion).7 s(B5_Extraversion).8 
-         0.004225981         -0.005119705          0.004986941         -0.028978788 
-s(B5_Extraversion).9  s(B5_Neuroticism).1  s(B5_Neuroticism).2  s(B5_Neuroticism).3 
-         0.018697102         -0.416606120          0.244757988          0.351507109 
- s(B5_Neuroticism).4  s(B5_Neuroticism).5  s(B5_Neuroticism).6  s(B5_Neuroticism).7 
-        -0.046895029         -0.152430091          0.171971506          0.113428177 
- s(B5_Neuroticism).8  s(B5_Neuroticism).9 
-         0.421485980         -0.483629744 
+         (Intercept)          B5_Openness B5_Conscientiousness     B5_Agreeableness               digits              symbols 
+        0.000000e+00        -8.836728e-02         6.584705e-03         7.081500e-02         2.595817e-01         1.307348e-01 
+           uppercase            lowercase s(B5_Extraversion).1 s(B5_Extraversion).2 s(B5_Extraversion).3 s(B5_Extraversion).4 
+        2.385093e-01         1.515749e-01        -9.658984e-02         3.100968e-02        -6.704898e-02         6.778649e-02 
+ s(B5_Neuroticism).1  s(B5_Neuroticism).2  s(B5_Neuroticism).3  s(B5_Neuroticism).4 
+        8.205523e-05         1.095938e-06        -3.680944e-05         2.122528e-03 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
-full convergence after 7 iterations.
-Gradient range [-0.0009023875,0.002059934]
-(score 2596.392 & scale 3.026323).
-Hessian positive definite, eigenvalue range [0.04695985,645.0108].
-Model rank =  26 / 26 
+full convergence after 10 iterations.
+Gradient range [-0.0006800533,0.0009227728]
+(score 2601.359 & scale 3.087564).
+Hessian positive definite, eigenvalue range [0.0006792456,644.9998].
+Model rank =  16 / 16 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
-                     k'  edf k-index p-value
-s(B5_Extraversion) 9.00 1.61    0.97    0.12
-s(B5_Neuroticism)  9.00 6.72    0.98    0.26
+                      k'   edf k-index p-value
+s(B5_Extraversion) 4.000 2.328   0.956    0.10
+s(B5_Neuroticism)  4.000 1.003   0.956    0.06
 NULL

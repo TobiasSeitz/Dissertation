@@ -5,7 +5,6 @@ library(plyr)
 library(texreg)
 library(lme4)
 library(reshape2)
-library(visreg)
 library(itsadug)
 library(Hmisc)
 library(psych)
@@ -63,6 +62,10 @@ sebisFrame <- d100[,which(names(d100) %in% predictorsSeBIS)]
 sink(file="descriptives.txt")
 print(describe(d100))
 sink(file=NULL)
+
+# look at normality tests.
+shapiro.test(d100$G_Overall)
+ks.test(d100$G_Overall, pnorm())
 
 # 1a. normalize
 pointsPerItem <- 7;
@@ -259,6 +262,11 @@ AIC(rFactorModel, rFactorModel_simple, rFactorModel_simple_GCV, rFactorModel_man
 anova(autoModelsRatingB5[[1]],updatedModelsB5[[1]],test='F')
 
 cooks.distance(autoModelsRatingB5[[1]],updatedModelsB5[[1]])
+
+
+
+
+
 ###############################################################################################################################
 ###
 ### Example for handy-work 
@@ -328,3 +336,6 @@ rOverallModel <- gamm(G_Overall ~ s(B5_Extraversion) + s(B5_Agreeableness) +
                         s(D_Age) + D_Gender + D_ComputerScienceBackground ,
                       #select = TRUE,
                       data = dNormed)
+
+
+

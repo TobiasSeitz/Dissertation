@@ -1,0 +1,64 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+Neuroticism ~ uppercase + lowercase + substitutions + s(digits, 
+    k = 4) + s(symbols, k = 4) + s(chunks, k = 4) + s(age, k = 4) + 
+    gender + it_background + occupation
+
+Parametric coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   10.12195    1.06570   9.498  < 2e-16 ***
+uppercase     -0.09354    0.20200  -0.463  0.64393    
+lowercase      0.08303    0.11314   0.734  0.46406    
+substitutions  0.04354    0.49682   0.088  0.93027    
+genderFemale   1.46788    0.51339   2.859  0.00481 ** 
+it_background  0.53484    0.55365   0.966  0.33547    
+occupation     0.21338    0.15694   1.360  0.17586    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value  
+s(digits)  1.639  1.984 0.790  0.4733  
+s(symbols) 2.055  2.400 2.629  0.0841 .
+s(chunks)  1.376  1.648 1.463  0.1503  
+s(age)     2.042  2.420 3.610  0.0174 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.126   Deviance explained = 19.2%
+-REML = 454.34  Scale est. = 10.322    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+  (Intercept)     uppercase     lowercase substitutions  genderFemale it_background    occupation   s(digits).1   s(digits).2 
+  0.000000000  -0.038152808   0.092435007   0.006420884   0.214093893   0.075627944   0.113762698   0.067244843  -0.073328192 
+  s(digits).3  s(symbols).1  s(symbols).2  s(symbols).3   s(chunks).1   s(chunks).2   s(chunks).3      s(age).1      s(age).2 
+  0.050511829  -0.055918835  -0.118568965   0.107058204   0.020926424   0.059161788   0.123994581  -0.082430115   0.181647548 
+     s(age).3 
+ -0.261251406 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-7.119148e-05,2.392281e-08]
+(score 454.3421 & scale 10.32162).
+Hessian positive definite, eigenvalue range [0.05536077,82.00841].
+Model rank =  19 / 19 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+              k'   edf k-index p-value
+s(digits)  3.000 1.639   1.078    0.82
+s(symbols) 3.000 2.055   0.985    0.39
+s(chunks)  3.000 1.376   0.957    0.28
+s(age)     3.000 2.042   1.215    1.00
+NULL

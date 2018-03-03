@@ -1,0 +1,61 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+t_random ~ Conscientiousness + Agreeableness + age + s(Openness, 
+    k = 5) + s(Extraversion, k = 5) + s(Neuroticism, k = 5) + 
+    gender + it_background
+
+Parametric coefficients:
+                  Estimate Std. Error z value Pr(>|z|)  
+(Intercept)       -2.55347    2.31968  -1.101   0.2710  
+Conscientiousness  0.08685    0.12082   0.719   0.4722  
+Agreeableness     -0.01557    0.10046  -0.155   0.8769  
+age                0.01079    0.04331   0.249   0.8034  
+genderFemale      -1.64645    0.76270  -2.159   0.0309 *
+it_background     -1.15438    0.64581  -1.787   0.0739 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                  edf Ref.df Chi.sq p-value  
+s(Openness)     1.405  1.695  0.478  0.7715  
+s(Extraversion) 1.788  2.219  6.616  0.0516 .
+s(Neuroticism)  2.029  2.511  5.514  0.1031  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.158   Deviance explained = 21.8%
+-REML =  49.72  Scale est. = 1         n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+      (Intercept) Conscientiousness     Agreeableness               age      genderFemale     it_background     s(Openness).1     s(Openness).2 
+        0.0000000         0.8273797        -0.1722695         0.2422041        -2.8558433        -1.9412182        -0.2919324        -0.1015715 
+    s(Openness).3     s(Openness).4 s(Extraversion).1 s(Extraversion).2 s(Extraversion).3 s(Extraversion).4  s(Neuroticism).1  s(Neuroticism).2 
+        0.2804071        -0.2743421         1.1531622         0.2063806        -0.3923904         1.4962966        -1.2344682         0.7759573 
+ s(Neuroticism).3  s(Neuroticism).4 
+       -0.3977769         2.7397572 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 5 iterations.
+Gradient range [-7.332934e-06,7.819756e-07]
+(score 49.72017 & scale 1).
+Hessian positive definite, eigenvalue range [0.04164015,0.1839363].
+Model rank =  18 / 18 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                   k'   edf k-index p-value
+s(Openness)     4.000 1.405   0.981    0.56
+s(Extraversion) 4.000 1.788   0.932    0.33
+s(Neuroticism)  4.000 2.029   0.970    0.59
+NULL

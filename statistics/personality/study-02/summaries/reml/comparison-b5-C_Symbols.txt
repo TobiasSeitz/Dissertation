@@ -3,56 +3,61 @@ Family: gaussian
 Link function: identity 
 
 Formula:
-C_Symbols ~ B5_Extraversion + B5_Agreeableness + B5_Neuroticism + 
-    B5_Openness + D_Age + s(B5_Conscientiousness) + D_Gender + 
-    D_ComputerScienceBackground
+C_Symbols ~ B5_Neuroticism + B5_Openness + D_Age + s(B5_Extraversion, 
+    k = 5) + s(B5_Agreeableness, k = 5) + s(B5_Conscientiousness, 
+    k = 5) + D_Gender + D_ComputerScienceBackground
 
 Parametric coefficients:
-                                Estimate Std. Error t value Pr(>|t|)   
-(Intercept)                    21.664441   6.516852   3.324  0.00129 **
-B5_Extraversion                 0.012633   0.065610   0.193  0.84775   
-B5_Agreeableness                0.021110   0.106809   0.198  0.84377   
-B5_Neuroticism                 -0.012896   0.081557  -0.158  0.87472   
-B5_Openness                     0.011632   0.075778   0.154  0.87835   
-D_Age                          -0.004625   0.058016  -0.080  0.93664   
-D_GenderFemale                 -1.957598   1.084583  -1.805  0.07447 . 
-D_ComputerScienceBackgroundYes  0.031070   1.119620   0.028  0.97792   
+                                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    22.5480157  4.2268682   5.334 6.95e-07 ***
+B5_Neuroticism                  0.0007014  0.0822749   0.009   0.9932    
+B5_Openness                     0.0089524  0.0772302   0.116   0.9080    
+D_Age                          -0.0105693  0.0572492  -0.185   0.8539    
+D_GenderFemale                 -1.9104638  1.1016792  -1.734   0.0863 .  
+D_ComputerScienceBackgroundYes  0.4422731  1.1194017   0.395   0.6937    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Approximate significance of smooth terms:
-                          edf Ref.df     F p-value
-s(B5_Conscientiousness) 3.151  3.979 1.506   0.236
+                        edf Ref.df     F p-value
+s(B5_Extraversion)        1      1 0.140   0.709
+s(B5_Agreeableness)       1      1 0.123   0.727
+s(B5_Conscientiousness)   1      1 1.914   0.170
 
-R-sq.(adj) =  0.0495   Deviance explained = 14.7%
--REML = 297.17  Scale est. = 20.617    n = 100
+R-sq.(adj) =  0.0107   Deviance explained = 9.06%
+-REML = 293.24  Scale est. = 21.458    n = 100
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-                   (Intercept)                B5_Extraversion               B5_Agreeableness                 B5_Neuroticism                    B5_Openness 
-                   0.000000000                    0.023378112                    0.022860533                   -0.022003779                    0.015959779 
-                         D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2 
-                  -0.008576859                   -0.208501789                    0.003042358                    0.495913087                   -0.478820637 
-     s(B5_Conscientiousness).3      s(B5_Conscientiousness).4      s(B5_Conscientiousness).5      s(B5_Conscientiousness).6      s(B5_Conscientiousness).7 
-                  -0.114354623                    0.168439826                   -0.160903553                    0.182763243                   -0.086953594 
-     s(B5_Conscientiousness).8      s(B5_Conscientiousness).9 
-                  -0.780842189                    0.565040843 
+                   (Intercept)                 B5_Neuroticism                    B5_Openness                          D_Age 
+                  0.000000e+00                   1.196745e-03                   1.228276e-02                  -1.959977e-02 
+                D_GenderFemale D_ComputerScienceBackgroundYes           s(B5_Extraversion).1           s(B5_Extraversion).2 
+                 -2.034815e-01                   4.330781e-02                  -7.382269e-06                  -1.478212e-06 
+          s(B5_Extraversion).3           s(B5_Extraversion).4          s(B5_Agreeableness).1          s(B5_Agreeableness).2 
+                  1.156808e-05                   4.586091e-02                  -3.349115e-06                   3.936240e-06 
+         s(B5_Agreeableness).3          s(B5_Agreeableness).4      s(B5_Conscientiousness).1      s(B5_Conscientiousness).2 
+                  2.029549e-06                   4.107008e-02                  -8.392142e-06                  -5.815236e-06 
+     s(B5_Conscientiousness).3      s(B5_Conscientiousness).4 
+                 -8.400134e-06                   1.778476e-01 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
-full convergence after 5 iterations.
-Gradient range [-3.730957e-05,2.277772e-05]
-(score 297.1674 & scale 20.61654).
-Hessian positive definite, eigenvalue range [0.1207638,45.52547].
-Model rank =  17 / 17 
+full convergence after 10 iterations.
+Gradient range [-4.104112e-05,7.504072e-05]
+(score 293.2375 & scale 21.45842).
+Hessian positive definite, eigenvalue range [1.259785e-05,45.49992].
+Model rank =  18 / 18 
 
 Basis dimension (k) checking results. Low p-value (k-index<1) may
 indicate that k is too low, especially if edf is close to k'.
 
                           k'  edf k-index p-value
-s(B5_Conscientiousness) 9.00 3.15    1.27       1
+s(B5_Extraversion)      4.00 1.00    1.10    0.83
+s(B5_Agreeableness)     4.00 1.00    1.02    0.52
+s(B5_Conscientiousness) 4.00 1.00    1.21    0.97
 NULL

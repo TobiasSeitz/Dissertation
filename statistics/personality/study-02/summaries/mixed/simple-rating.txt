@@ -3,38 +3,37 @@ Family: gaussian
 Link function: identity 
 
 Formula:
-rating ~ lowercase + uppercase + digits + symbols
+rating ~ lowercase + uppercase + substitutions
 
 Parametric coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  2.72269    0.16714  16.290  < 2e-16 ***
-lowercase    0.06441    0.01320   4.880 1.20e-06 ***
-uppercase    0.33083    0.03943   8.391  < 2e-16 ***
-digits       0.27626    0.03158   8.747  < 2e-16 ***
-symbols      0.29487    0.06363   4.634 3.95e-06 ***
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    3.88754    0.16414  23.684  < 2e-16 ***
+lowercase      0.01269    0.01389   0.913  0.36115    
+uppercase      0.34541    0.04011   8.611  < 2e-16 ***
+substitutions -0.23685    0.08052  -2.941  0.00332 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 
-R-sq.(adj) =  0.117   Deviance explained =   12%
--REML = 2597.9  Scale est. = 3.1381    n = 1300
+R-sq.(adj) =  0.0666   Deviance explained = 6.87%
+-REML = 2631.8  Scale est. = 3.3181    n = 1300
 [1] "\nBETAs:"
 
 Call:
-gam(formula = rating ~ lowercase + uppercase + digits + symbols, 
+gam(formula = rating ~ lowercase + uppercase + substitutions, 
     data = merged, method = "REML")
 
 Standardized Coefficients::
-(Intercept)   lowercase   uppercase      digits     symbols 
-  0.0000000   0.1515749   0.2385093   0.2595817   0.1307348 
+  (Intercept)     lowercase     uppercase substitutions 
+   0.00000000    0.02985541    0.24901982   -0.09068475 
 
 [1] "\nGAM.CHECK:"
 
 Method: REML   Optimizer: outer newton
 full convergence after 6 iterations.
-Gradient range [-4.397917e-07,-4.397917e-07]
-(score 2597.88 & scale 3.138066).
-Hessian positive definite, eigenvalue range [647.5,647.5].
-Model rank =  5 / 5 
+Gradient range [-1.065878e-06,-1.065878e-06]
+(score 2631.77 & scale 3.31814).
+Hessian positive definite, eigenvalue range [648,648].
+Model rank =  4 / 4 
 
 NULL

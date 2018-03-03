@@ -58,12 +58,12 @@ lapply(updatedModelsComparisonSeBIS, generatePDF,
 for(i in updatedModelsComparisonB5) {
   outputSummary(i, prefix="comparison-b5-", path="summaries/reml")
 }
-for(i in updatedModelsComparisonGDMS) {
-  outputSummary(i, prefix="comparison-gdms-", path="summaries")
-}
-for(i in updatedModelsComparisonSeBIS){
-  outputSummary(i, prefix="comparison-sebis-", path="summaries")
-}
+#for(i in updatedModelsComparisonGDMS) {
+#  outputSummary(i, prefix="comparison-gdms-", path="summaries")
+#}
+#for(i in updatedModelsComparisonSeBIS){
+#  outputSummary(i, prefix="comparison-sebis-", path="summaries")
+#}
 
 # to check autocorrelation (lines must not cross 0.2 by much)
 #acf(residuals(updatedModelsComparisonB5[[1]]))

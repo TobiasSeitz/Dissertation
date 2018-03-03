@@ -1,0 +1,61 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+guesses_log10 ~ Factor1 + Factor2 + Factor3 + Factor5 + Factor6 + 
+    Factor7 + s(Factor4, k = 4) + s(age, k = 4) + gender + it_background + 
+    occupation
+
+Parametric coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    8.71128    0.51132  17.037   <2e-16 ***
+Factor1        0.05159    0.23727   0.217   0.8281    
+Factor2       -0.40326    0.25964  -1.553   0.1223    
+Factor3        0.09964    0.22348   0.446   0.6563    
+Factor5       -0.08619    0.26633  -0.324   0.7466    
+Factor6        0.10435    0.27445   0.380   0.7043    
+Factor7       -0.10041    0.29139  -0.345   0.7308    
+genderFemale  -0.05162    0.49428  -0.104   0.9170    
+it_background  1.05838    0.47666   2.220   0.0278 *  
+occupation    -0.17937    0.13576  -1.321   0.1883    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value
+s(Factor4) 1.974  2.398 0.247   0.660
+s(age)     1.001  1.002 0.024   0.876
+
+R-sq.(adj) =  0.00619   Deviance explained = 7.46%
+-REML = 430.43  Scale est. = 8.0013    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+  (Intercept)       Factor1       Factor2       Factor3       Factor5       Factor6 
+ 0.000000e+00  1.703317e-02 -1.253265e-01  3.481484e-02 -2.574372e-02  2.993060e-02 
+      Factor7  genderFemale it_background    occupation  s(Factor4).1  s(Factor4).2 
+-2.675124e-02 -9.120173e-03  1.813024e-01 -1.158560e-01  2.007780e-01 -6.944506e-02 
+ s(Factor4).3      s(age).1      s(age).2      s(age).3 
+-2.009934e-01 -6.161702e-05 -3.443856e-06  1.450673e-02 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 8 iterations.
+Gradient range [-0.000113104,0.000276681]
+(score 430.4304 & scale 8.001311).
+Hessian positive definite, eigenvalue range [0.0001129991,81.50264].
+Model rank =  16 / 16 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+              k'   edf k-index p-value
+s(Factor4) 3.000 1.974   1.063    0.74
+s(age)     3.000 1.001   0.989    0.38
+NULL

@@ -1,0 +1,46 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+emojiRat_binary ~ Openness + Conscientiousness + Extraversion + 
+    Agreeableness + s(Neuroticism, k = 4) + s(Age, k = 4) + Gender + 
+    IT
+
+Parametric coefficients:
+                  Estimate Std. Error z value Pr(>|z|)   
+(Intercept)       -7.91042    2.62606  -3.012  0.00259 **
+Openness           0.05302    0.10004   0.530  0.59614   
+Conscientiousness -0.05592    0.10079  -0.555  0.57901   
+Extraversion       0.10848    0.10099   1.074  0.28273   
+Agreeableness      0.23504    0.11983   1.962  0.04982 * 
+GenderFemale      -0.87012    0.69740  -1.248  0.21215   
+ITNo               2.18793    1.11121   1.969  0.04896 * 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf Ref.df Chi.sq p-value  
+s(Neuroticism) 2.509  2.828  7.690  0.0788 .
+s(Age)         1.706  2.003  1.219  0.5430  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.197   Deviance explained = 24.6%
+-REML = 42.994  Scale est. = 1         n = 98
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 4 iterations.
+Gradient range [-2.175907e-05,1.752417e-06]
+(score 42.9935 & scale 1).
+Hessian positive definite, eigenvalue range [0.1363469,0.4190526].
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                  k'   edf k-index p-value
+s(Neuroticism) 3.000 2.509   0.902    0.18
+s(Age)         3.000 1.706   1.009    0.57
+NULL

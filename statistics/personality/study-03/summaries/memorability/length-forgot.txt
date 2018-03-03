@@ -1,0 +1,66 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+forgot ~ length + s(Openness, k = 5) + s(Agreeableness, k = 5) + 
+    s(Extraversion, k = 5) + s(Conscientiousness, k = 5) + s(Neuroticism, 
+    k = 5)
+
+Parametric coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -5.32843    1.07219   -4.97 6.71e-07 ***
+length       0.22369    0.07988    2.80   0.0051 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                       edf Ref.df Chi.sq p-value  
+s(Openness)          1.000  1.000  1.942  0.1634  
+s(Agreeableness)     1.000  1.000  0.137  0.7115  
+s(Extraversion)      3.165  3.611  9.282  0.0421 *
+s(Conscientiousness) 1.748  2.148  1.224  0.5752  
+s(Neuroticism)       1.000  1.000  0.547  0.4595  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.186   Deviance explained =   25%
+-REML = 49.066  Scale est. = 1         n = 176
+[1] "\nBETAs:"
+
+Call:
+gam(formula = forgot ~ length + s(Openness, k = 5) + s(Agreeableness, 
+    k = 5) + s(Extraversion, k = 5) + s(Conscientiousness, k = 5) + 
+    s(Neuroticism, k = 5), family = "binomial", data = d, method = "REML")
+
+Standardized Coefficients::
+           (Intercept)                 length          s(Openness).1          s(Openness).2          s(Openness).3 
+          0.000000e+00           2.247718e+00          -3.108001e-05          -8.639722e-06          -1.502243e-05 
+         s(Openness).4     s(Agreeableness).1     s(Agreeableness).2     s(Agreeableness).3     s(Agreeableness).4 
+          1.642787e+00          -2.038308e-07           2.983437e-07          -8.212352e-06           3.832757e-01 
+     s(Extraversion).1      s(Extraversion).2      s(Extraversion).3      s(Extraversion).4 s(Conscientiousness).1 
+         -1.087636e+01          -3.188170e+00          -1.584284e-01           1.147160e+01           1.430732e+00 
+s(Conscientiousness).2 s(Conscientiousness).3 s(Conscientiousness).4       s(Neuroticism).1       s(Neuroticism).2 
+          1.448086e-01           1.179117e+00           7.461172e-01          -1.097773e-05          -6.176152e-07 
+      s(Neuroticism).3       s(Neuroticism).4 
+         -2.459724e-06           8.224890e-01 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 11 iterations.
+Gradient range [-6.266128e-06,1.357859e-06]
+(score 49.06588 & scale 1).
+Hessian positive definite, eigenvalue range [3.450363e-06,0.5922295].
+Model rank =  22 / 22 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'   edf k-index p-value
+s(Openness)          4.000 1.000   0.998    0.72
+s(Agreeableness)     4.000 1.000   0.927    0.29
+s(Extraversion)      4.000 3.165   0.846    0.06
+s(Conscientiousness) 4.000 1.748   0.780    0.01
+s(Neuroticism)       4.000 1.000   0.923    0.26
+NULL

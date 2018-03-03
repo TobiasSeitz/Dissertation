@@ -26,13 +26,16 @@ R-sq.(adj) =  -0.00515   Deviance explained = 7.61%
 [1] "\nBETAs:"
 
 Call:
-gam(formula = nFormula, data = d, method = method, select = select)
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
 
 Standardized Coefficients::
-                   (Intercept)                B5_Extraversion               B5_Agreeableness           B5_Conscientiousness                 B5_Neuroticism 
-                    0.00000000                    -0.01577435                     0.08005036                    -0.03807695                     0.03491038 
-                   B5_Openness                          D_Age                 D_GenderFemale D_ComputerScienceBackgroundYes 
-                   -0.15820194                    -0.14673500                     0.09768864                    -0.11662120 
+                   (Intercept)                B5_Extraversion               B5_Agreeableness           B5_Conscientiousness 
+                    0.00000000                    -0.01577435                     0.08005036                    -0.03807695 
+                B5_Neuroticism                    B5_Openness                          D_Age                 D_GenderFemale 
+                    0.03491038                    -0.15820194                    -0.14673500                     0.09768864 
+D_ComputerScienceBackgroundYes 
+                   -0.11662120 
 
 [1] "\nGAM.CHECK:"
 

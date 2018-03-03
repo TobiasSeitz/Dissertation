@@ -1,0 +1,56 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+Agreeableness ~ digits + symbols + uppercase + lowercase + substitutions + 
+    age + s(chunks, k = 3) + gender + it_background + occupation
+
+Parametric coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   10.426968   1.632691   6.386 1.69e-09 ***
+digits        -0.113795   0.161521  -0.705   0.4821    
+symbols       -0.817051   0.364700  -2.240   0.0264 *  
+uppercase      0.029848   0.195967   0.152   0.8791    
+lowercase     -0.014201   0.111125  -0.128   0.8985    
+substitutions -0.239812   0.480005  -0.500   0.6180    
+age            0.095473   0.042375   2.253   0.0256 *  
+genderFemale   0.091501   0.499821   0.183   0.8550    
+it_background -0.318525   0.530089  -0.601   0.5487    
+occupation    -0.006128   0.151292  -0.041   0.9677    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+            edf Ref.df     F p-value
+s(chunks) 1.638  1.869 1.037   0.263
+
+R-sq.(adj) =  0.0419   Deviance explained =   10%
+-REML = 450.41  Scale est. = 9.8054    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+  (Intercept)        digits       symbols     uppercase     lowercase substitutions           age  genderFemale it_background 
+  0.000000000  -0.072846313  -0.189222372   0.013081337  -0.016986895  -0.037998629   0.193720655   0.014340115  -0.048396325 
+   occupation   s(chunks).1   s(chunks).2 
+ -0.003510685  -0.159749108   0.247625291 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-9.798013e-06,-9.378519e-06]
+(score 450.4122 & scale 9.805445).
+Hessian positive definite, eigenvalue range [0.2022689,82.00125].
+Model rank =  12 / 12 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+            k'  edf k-index p-value
+s(chunks) 2.00 1.64    1.08    0.82
+NULL

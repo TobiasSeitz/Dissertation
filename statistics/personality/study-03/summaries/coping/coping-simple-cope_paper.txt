@@ -1,0 +1,58 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+cope_paper ~ Openness + Extraversion + Agreeableness + Neuroticism + 
+    age + s(Conscientiousness, k = 4) + gender + it_background + 
+    occupation
+
+Parametric coefficients:
+              Estimate Std. Error z value Pr(>|z|)   
+(Intercept)   -2.90843    1.78383  -1.630  0.10301   
+Openness       0.10478    0.06447   1.625  0.10411   
+Extraversion  -0.18483    0.06052  -3.054  0.00226 **
+Agreeableness  0.08740    0.06409   1.364  0.17264   
+Neuroticism   -0.02853    0.06073  -0.470  0.63845   
+age            0.03176    0.03292   0.965  0.33467   
+genderFemale   0.56587    0.43352   1.305  0.19179   
+it_background  0.27780    0.41433   0.670  0.50254   
+occupation     0.07064    0.11727   0.602  0.54693   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                     edf Ref.df Chi.sq p-value
+s(Conscientiousness)   1      1  1.582   0.209
+
+R-sq.(adj) =  0.0525   Deviance explained = 10.2%
+-REML = 99.506  Scale est. = 1         n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+           (Intercept)               Openness           Extraversion          Agreeableness 
+          0.000000e+00           8.191160e-01          -1.544059e+00           6.528097e-01 
+           Neuroticism                    age           genderFemale          it_background 
+         -2.290011e-01           4.813152e-01           6.623891e-01           3.152633e-01 
+            occupation s(Conscientiousness).1 s(Conscientiousness).2 s(Conscientiousness).3 
+          3.022734e-01          -4.418291e-05           3.975090e-05           6.154446e-01 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-3.338499e-05,-3.338499e-05]
+(score 99.50586 & scale 1).
+Hessian positive definite, eigenvalue range [3.337878e-05,3.337878e-05].
+Model rank =  12 / 12 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                      k' edf k-index p-value
+s(Conscientiousness) 3.0 1.0     1.1    0.94
+NULL

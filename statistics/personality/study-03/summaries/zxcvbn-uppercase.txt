@@ -1,0 +1,59 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+uppercase ~ Openness + Conscientiousness + Agreeableness + Neuroticism + 
+    age + s(Extraversion, k = 5) + gender + it_background + occupation
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)  
+(Intercept)        0.975133   1.021221   0.955   0.3411  
+Openness           0.019216   0.033070   0.581   0.5620  
+Conscientiousness -0.010180   0.040559  -0.251   0.8021  
+Agreeableness     -0.014061   0.033662  -0.418   0.6767  
+Neuroticism       -0.033023   0.033439  -0.988   0.3248  
+age                0.002312   0.019057   0.121   0.9036  
+genderFemale       0.419565   0.230664   1.819   0.0708 .
+it_background      0.512095   0.226893   2.257   0.0253 *
+occupation        -0.013500   0.065163  -0.207   0.8361  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                  edf Ref.df     F p-value  
+s(Extraversion) 3.024  3.521 2.903  0.0205 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.0568   Deviance explained = 11.7%
+-REML = 318.35  Scale est. = 1.854     n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+      (Intercept)          Openness Conscientiousness     Agreeableness       Neuroticism 
+       0.00000000        0.04589172       -0.01999216       -0.03208399       -0.08096378 
+              age      genderFemale     it_background        occupation s(Extraversion).1 
+       0.01070201        0.15003412        0.17753425       -0.01764688       -0.67190125 
+s(Extraversion).2 s(Extraversion).3 s(Extraversion).4 
+      -0.45230834       -0.54263033        0.37665036 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 5 iterations.
+Gradient range [-1.607615e-05,4.092186e-07]
+(score 318.3462 & scale 1.85397).
+Hessian positive definite, eigenvalue range [0.6128739,82.51252].
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                  k'  edf k-index p-value
+s(Extraversion) 4.00 3.02    1.09    0.86
+NULL

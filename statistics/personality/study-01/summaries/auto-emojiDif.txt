@@ -1,0 +1,52 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+emojiDif ~ Conscientiousness + Extraversion + Agreeableness + 
+    Neuroticism + Age + s(Openness, k = 3) + Gender + IT
+
+Parametric coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       12.24062    2.50743   4.882 3.59e-06 ***
+Conscientiousness  0.01452    0.09376   0.155   0.8772    
+Extraversion      -0.05474    0.07655  -0.715   0.4760    
+Agreeableness     -0.15644    0.08797  -1.778   0.0781 .  
+Neuroticism       -0.20821    0.08977  -2.319   0.0222 *  
+Age                0.01059    0.05553   0.191   0.8491    
+GenderFemale       0.96401    0.57470   1.677   0.0963 .  
+ITNo              -0.12284    0.59645  -0.206   0.8372    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value
+s(Openness) 1.19  1.344 0.147   0.838
+
+R-sq.(adj) =  0.00788   Deviance explained = 7.67%
+-REML = 294.35  Scale est. = 7.6874    n = 119
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+      (Intercept) Conscientiousness      Extraversion     Agreeableness       Neuroticism               Age      GenderFemale              ITNo     s(Openness).1     s(Openness).2 
+       0.00000000        0.01530720       -0.07511822       -0.18090277       -0.25685138        0.01845389        0.17339198       -0.02002008        0.02292644       -0.01041031 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-1.487198e-05,2.137519e-05]
+(score 294.3498 & scale 7.687406).
+Hessian positive definite, eigenvalue range [0.01790909,55.00014].
+Model rank =  10 / 10 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+               k'   edf k-index p-value
+s(Openness) 2.000 1.190   0.875    0.08
+NULL

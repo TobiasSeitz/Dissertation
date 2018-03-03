@@ -1,0 +1,61 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+lowercase ~ OpennessK + ExtraversionK + AgreeablenessK + NeuroticismK + 
+    s(ConscientiousnessK, k = 4) + s(age, k = 4) + gender + it_background + 
+    occupation
+
+Parametric coefficients:
+               Estimate Std. Error t value Pr(>|t|)   
+(Intercept)    10.00635    3.36191   2.976  0.00336 **
+OpennessK       0.05766    0.14636   0.394  0.69411   
+ExtraversionK  -0.16510    0.17276  -0.956  0.34064   
+AgreeablenessK  0.03485    0.20920   0.167  0.86789   
+NeuroticismK   -0.16386    0.12028  -1.362  0.17499   
+genderFemale   -0.20139    0.60116  -0.335  0.73806   
+it_background   0.95678    0.62939   1.520  0.13041   
+occupation     -0.31147    0.17712  -1.759  0.08054 . 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                        edf Ref.df     F p-value   
+s(ConscientiousnessK) 1.647  2.029 5.307 0.00551 **
+s(age)                2.506  2.819 1.130 0.24070   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.0824   Deviance explained = 14.1%
+-REML = 477.71  Scale est. = 13.436    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+            (Intercept)               OpennessK           ExtraversionK          AgreeablenessK            NeuroticismK 
+             0.00000000              0.03184954             -0.07223448              0.01251369             -0.10841404 
+           genderFemale           it_background              occupation s(ConscientiousnessK).1 s(ConscientiousnessK).2 
+            -0.02638502              0.12152856             -0.14917182             -0.02184558             -0.07089973 
+s(ConscientiousnessK).3                s(age).1                s(age).2                s(age).3 
+             0.31502113             -0.22914827             -0.29957244              0.51515200 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 8 iterations.
+Gradient range [-4.841812e-06,3.663502e-08]
+(score 477.7111 & scale 13.43638).
+Hessian positive definite, eigenvalue range [0.1462342,82.50817].
+Model rank =  14 / 14 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                         k'   edf k-index p-value
+s(ConscientiousnessK) 3.000 1.647   0.874    0.04
+s(age)                3.000 2.506   1.041    0.69
+NULL

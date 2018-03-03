@@ -1,0 +1,48 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+chunks ~ OpennessK + ConscientiousnessK + ExtraversionK + AgreeablenessK + 
+    NeuroticismK + age + gender + it_background + occupation
+
+Parametric coefficients:
+                    Estimate Std. Error t value Pr(>|t|)  
+(Intercept)         1.673721   0.779272   2.148   0.0332 *
+OpennessK           0.034259   0.033440   1.024   0.3071  
+ConscientiousnessK  0.056768   0.038242   1.484   0.1396  
+ExtraversionK      -0.061760   0.040256  -1.534   0.1269  
+AgreeablenessK      0.002227   0.048535   0.046   0.9635  
+NeuroticismK       -0.034339   0.028032  -1.225   0.2223  
+age                 0.017748   0.012110   1.466   0.1447  
+genderFemale        0.094882   0.140237   0.677   0.4996  
+it_background       0.202394   0.144319   1.402   0.1627  
+occupation         -0.046661   0.040842  -1.142   0.2549  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+R-sq.(adj) =  0.0127   Deviance explained = 6.38%
+-REML = 237.94  Scale est. = 0.73168   n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+       (Intercept)          OpennessK ConscientiousnessK      ExtraversionK     AgreeablenessK       NeuroticismK 
+       0.000000000        0.084117088        0.122540843       -0.120110753        0.003554803       -0.100995275 
+               age       genderFemale      it_background         occupation 
+       0.133823181        0.055258618        0.114276112       -0.099338646 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 6 iterations.
+Gradient range [-3.416009e-07,-3.416009e-07]
+(score 237.936 & scale 0.7316786).
+Hessian positive definite, eigenvalue range [82.5,82.5].
+Model rank =  10 / 10 
+
+NULL

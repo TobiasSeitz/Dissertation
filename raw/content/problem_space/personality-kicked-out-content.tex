@@ -86,3 +86,123 @@ Before we analyzed the influence of personality traits on the ratings, checked a
 
 We also see moderate associations between decision making style and the evaluation based on length and strength as measured by zxcvbn. There is a noteworthy finding concerning people ranking high on rational or intuitive decision making style. We find that rational decision makers were worse at identifying the stronger password ($\beta = -0.35, p < 0.01$) than the intuitive decision makers ($\beta = -0.18, ns$).  
 
+\subsection{Big Five Traits vs. Decision-Making Style (RQ2)}
+We initially posed the question whether the Big-Five Model or the General Decision Making Style is better at predicting how users evaluate passwords. This question is difficult to answer with our current results. In absolute terms, the Big-Five variables more often boosted predictive power, but this alone is not sufficient to prefer them to GDMS. As discussed above, openness and conscientiousness were the strongest predictors of the Big-Five model, while the rest was largely insignificant. For the GDMS, the rational and intuitive dimensions showed noteworthy associations. It appears the question is not, whether one scale is better than the other, rather than what can be gained by combining them, and for what kind of scenario it makes sense to do so. 
+
+For the standalone rating, adding the predictors from the GDMS fails to increase predictive power. The model fit can be achieved with the Big-Five factors alone, because the fit is low in any case. However, this is not the case when predicting the outcome of deciding which one of two given passwords is stronger. Here, the models became better if the GMDS factors were added. Likewise, sticking to GDMS and omitting predictors from the Big Five model is also suboptimal for the comparison task, because we lose much of the predictive power. 
+
+We conclude that the origin of this finding must be in the nature of the task. Rating one password without an anchor seems more difficult, and thus it is probably easier for open people who are good at solving difficult problems. On the other hand, if there is a second password, the decision seems to trigger additional mental processes to solve the task and is easier for people who have static mental models about password strength characteristics. Intuitive decision makers were less likely to fail at spotting the stronger password than rational decision makers. It looks as if the decision is rational, but not objective, or that the rational deciders ``overthink'' their assessment. 
+
+\subsection{The Role of Our Own Passwords (RQ3)}
+Respondents' meta-passwords also showed some predictive power for password ratings. However, they were basically not associated with the outcome of the comparison task. %Especially participants who use more uppercase letters in their own password(s) gave lower strength ratings. 
+Although we can only speculate, participants may possibly have compared the study passwords to their own password only during the rating task. Hence, characteristics from their own password may have become more salient, e.g. the use of uppercase letters. Once they saw two passwords on the screen during the comparison task, their own baseline might have turned less important. This would substantiate that the scenario -- standalone rating or comparison -- is really the key to get the full picture of password perception. %If this were the case, looking at the influence of psychological factors in the two tasks separately is even more necessary. 
+
+Moreover, users keep a portfolio of passwords that differ in strength, and they use their stronger passwords on high-value accounts \cite{Egelman2013DoesMyPasswordGoUpToEleven,Florencio2007LargeScaleStudyPasswordHabits}. This implies that users have a couple of ``weak'' passwords, but still consider them suitable in some situations, e.g. when they do not believe they need the account again. Our qualitative analysis, however, found no evidence of participants mentioning this factor when evaluating the strength of the given passwords. None of them mentioned judging the strength of the passwords in regards to what they are meant to protect. Thus, we conclude another kind of scenario may be necessary, in which the evaluation also takes the usage context into account.
+
+
+
+
+
+
+%\subsection{RQ1: Traits of Password Strength Perception}
+\subsection{The Weight of Openness and Conscientiousness}
+%1. interpret negative correlation between openness and password rating
+The passwords in our study received lower strength ratings from people with high openness scores, i.e. those who would describe themselves as creative, imaginative, intelligent or liberal. %At the same time, the meta passwords of these participants were similar to those of other participants. The effect thus only seems to concern the \textit{perception} of password strength -- not personal behavior. 
+Looking for an explanation for these observations, we could attribute them to the ``divergent thinking'' facet exhibited by people with higher openness scores \cite{McCrae1987DivergentThinking} as well as the association with general intelligence \cite{DeYoung2015}. In this sense, participants with higher scores in openness could have been more likely to discover patterns in passwords due to higher creativity and cognitive abilities. A cue for this interpretation is P21's description of his approach: 
+\begin{quote}
+	\textit{``If it looked like dictionary passwords I rated it lower, more random unrepeated ones rated higher. Combinations of words also scored higher''}
+\end{quote}
+There were only few participants (6) who mentioned word combinations as beneficial for password strength. This diverges from the more commonly mentioned theme that dictionary words are bad for password strength. Accordingly, an explanation for the diverging assessment by participants with higher openness scores lies in the problem-solving skills that are usually attributed to more open people \cite{DeYoung2015, McCrae1987DivergentThinking}. The tasks we picked for our study are indeed problems that can be solved by relying on objective criteria. It is thus very likely that those participants took a more objective, albeit critical stance when rating the strength of the passwords. They correctly identified that password length is usually more important than the inclusion of digits. 
+
+%2. interpret positive correlation with conscientiousness and LUDS
+% policies have primed people too much and  
+In contrast, conscientious participants were more likely to compare passwords by their variety of characters instead of length. It seems that they diligently check off an imaginary list of criteria that a strong password needs to have, just like when users face requirements dictated by policies.  Although much research has gone into optimizing password policies for a general audience, the recommendation of the 2word16 policy over more complex ones \cite{Shay2016DesigningPasswordPolicies}, for example, has not been implemented at scale in practice, yet. Instead, policies for the most part demand the inclusion of different character classes \cite{Wang2015EmperorsPolicies}. Our data suggest that conscientious participants, who are characterized as being more scrupulous and neat, are more likely to look out for details about character classes when they judge the strength of a password. Thus, we assume that conscientious participants benefit from having such a list of requirements dictated by policies and that they would not easily adopt policies demanding words instead of character diversity.
+%The exposure to this type of policies might be the main reason why many participants in our study penalized passwords that contained words or that were in some ways meaningful.
+
+We reason that managing passwords, i.e. \textit{creating}, \textit{committing to} and \textit{coping with} them \cite{Stobert2014PasswordLifeCycle}, is a problem that is more easily solvable for people with open minds or a disposition to treat the problem with diligence. It is less affected by their leaning towards agreeableness, extraversion, or neuroticism. So, we reason that password strength as an objective measure is also associated with the personality traits that are informed by objectivity. In that sense, the regression models understandably benefited from openness and conscientiousness.
+
+
+
+
+\section{Implications for Research and Design} \label{sec:implications}
+From the discussed points, we would like to point out where the findings have immediate and indirect implications. 
+
+\subsection{Assessing Personality Traits in Password Studies}
+Studying passwords is challenging, because we often lack access to real-world testbeds. Thus, online studies are the go-to method, which is usually reliable. However, the modification of independent variables in these online studies may not be the sole cause of effects. Confounding variables beyond demographic questions are seldom considered. Psychometrics may come in useful to evaluate causal relationships, however, they are to this date often neglected. We have shown that they have explanatory value and thus should not be neglected, if we want to stop designing security mitigations for the ``average user'' \cite{Egelman2015AverageUser}. 
+
+However, including elaborate psychometric tests in addition to the core of the research question is probably unrealistic. Thus, to keep studies short and prevent participant fatigue, we propose to focus on the openness and conscientiousness personality traits. These can be measured with a bare minimum of 20 items, so they do not take more than five minutes to answer. If the scenarios in the password study resemble our comparison task, it is potentially viable to also include assessments on rational and intuitive decision making. 
+
+Still, adding more items to a questionnaire might not always be possible. There is, however, a promising approach to quickly and inexpensively obtain personality data from study participants' past behavior. It is possible to infer personality facets from social media data, e.g. the number of friends on Facebook or public interactions \cite{Youyou2015Personality}. Youyou et al. found that such metrics can even outperform psychometric questionnaires. We thus suggest to request permission to access information that participants made available on such platforms and run personality analyses on the anonymized versions of it. Requesting permission to install software on mobile devices for research purposes has received little concern with crowd-workers in a large-scale study by Bentley and Chen \cite{Bentley2015Phonebook}. While we would not go so far as to read all contacts, call and message history, we believe a privacy sensitive version of this approach can replace personality tests.
+
+\subsection{Password Suggestions}
+Addressing personality facets might also become beneficial for real-time feedback during password creation. In the wild, we encounter password meters that estimate the strength of the password and in some cases even provide verbal feedback about what the user can do to improve the password (e.g. \cite{Wheeler2016zxcvbn}). A simple approach is to try and convince the user to pick a stronger password by suggesting a new one or a modified version of the entered password \cite{Forget2008ImprovingPasswordsThroughPersuasion, Seitz2016SuggestionsDecoy, Shay2015SpoonfulOfSugar}. 
+
+Coming back to the finding that personality has an effect on how people \textit{compare} two passwords, we suppose that it plays a role for real-time suggestions, too. How a modified version or newly generated password is received likely depends on the user's personality. For instance, if the user's password is visible in clear text while they enter it, adding a suggestion next to the password results in a scenario similar to the comparison task from our study. Then we can conclude that it would be easier for conscientious people to assess the strength of their password, if there is a clear list of requirements than can be ``checked off'', to make it superior to the suggested password. Moreover, users with high openness trait characteristics might make their password longer if they see the suggested password is much longer than their own. The results from Seitz et al. point in this direction, because their study participants picked longer passwords, if a long password was suggested \cite{Seitz2016SuggestionsDecoy}. We reason that the approach could have produced larger effect sizes, had the participants' personality been taken into account and had the password been displayed in plain text. Similarly, user acceptance suffered in Shay et al.'s modification approach, maybe because it was not tailored to individual users \cite{Shay2015SpoonfulOfSugar}.
+
+%\begin{itemize}
+%\item there have been attempts to convince users of stronger passwords by simply suggesting new ones or alterations of the existing passwords \cite{Forget2008ImprovingPasswordsThroughPersuasion, Seitz2016SuggestionsDecoy, Shay2015SpoonfulOfSugar}. 
+%\item If the user's password is visible during selection (a scenario most often useful on mobile devices \cite{Melicher2016UsabilityMobileTextPasswords}, this could make them compare the strength 
+%\item there's a question if the users can stay neutral enough to re-evalute their own password 
+%\end{itemize}
+
+
+% DESIGN Space. Problem solving or not? 
+\subsection{Personalized Password Policies}
+Our results indicate that users have different, sometimes sophisticated approaches when they evaluate password strength, which is in line with related work \cite{Ur2016PerceptionsPassword}. The origin of these approaches is not directly linked to personality, but personality traits may influence what users pay attention to when they face password policies. Diligent users could look out for and remember a list of requirements, while only the minimum length is important for creative minds. Identity providers like Facebook or Google rely on passwords to authenticate users and currently implement a ``one-fits-all'' password policy. However, once users have used the services for a while, those parties already possess a large amount of user information. Consequently, the identity providers could alter the enforced policy for individual users depending on personality trait characteristics inferred from usage patterns. We propose to dynamically adjust the policy, for example when users reset their password. Conscientious users may welcome a more complex policy,  e.g. 3class12 (cf. Shay et al \cite{Shay2016DesigningPasswordPolicies}), while others create passwords with a 2word16 requirement. Such approaches could reduce user frustration and boost usability. 
+
+%%TODO identity providers.
+%\begin{itemize}
+%\item our results indicate that users have different approaches to evaluating passwords
+%\item since we see interactions with personality, we hypothesize that their personality influences what they
+%take from password policies (e.g. what they can remember, or what they believe). 
+%\item we cannot adjust / personalize password policies for unknown users
+%\item we can personalize policies for password resets, because we already have some data about the user
+%and it can be used to inform personality assessment.
+%\item is the policy presented
+%
+%\end{itemize}
+
+
+%Considering that people's personality is a factor that affects the perception of password strength, this directly leads to the question about how we can address personality in current password policies. The policies put a high burden on users and their effect is controversial. Thus, we could try and make password policies more usable by the framing them to better reach the right audiences in the right ways, rather than using ``one fits all'' approach. Of course, at the moment of password selection, a service does not know the user yet and thus lacks information on their personality. However, the problem might be solvable on mobile devices, where the usage patterns let us already draw conclusions about the user's personality \cite{Oliveira2011Psychographics}. The idea of adjusting password policies depending on the device on which the password is created has also been put forward recently \cite{Melicher2016UsabilityMobileTextPasswords}. It thus seems beneficial to investigate how to bring the two concepts together. 
+
+% Which psychographic segments should be targeted?
+openness, neuroticism the biggest drivers - 
+% quick run thru results:
+study 1:
+on average: difficulty to create passwords under different policies the same, but digging deeper shows significant differences depending on Neuroticism (emoji12), Gender (female 2word12 and emoji12 more difficult), and at which position the respective policy came (especially for emoji and 3class12). no other effects / explicable findings.
+
+IT background -> emoji policy disliked. if it appeared later in the study, preference also decreased. high neuroticism or agreeableness scores --> put emoji first
+
+time to create: conscientious Ps less time, but the more often the task was carried out the less time people took - learning effects and/or fatigue. Or they might have given 
+
+--> summary: neuroticism and emojis associated. IT background <3 traditional policies. within groups design was a good choice at this stage because we could identify associations with rankings, but learning effects and ordering had significantly influenced people. 
+
+study 2: 
+people were able to judge password strength fairly well (as in PASDJO). openness was the most useful trait to explain strength perceptions. LUDS metrics predict subjective strength ratings well which is supported by self-reported rating strategies. However, associations were strongly reversed if digits or symbols acted as l33t substitutions - which we did not read in qualitative statements. The finding also contradicts PASDJO's results, but is limited by the fact that passwords were not randomly generated, so we conclude that it was the particular choice of passwords that generated this result. Respondents were skeptical about this password creation strategy for the two l33t passwords. In general, more digits, uppercase letters and symbols lead to higher ratings. Personality on the other hand was a minor factor in strength \textbf{perception}. This changed when participants had to \textit{compare} passwords -- conscientious participants showed stronger signs of reyling on LUDS characteristics, while open participants voted for the longer password, which helps segment participant groups. 
+Interestingly none of the personality influence of these two traits were visible in the password selection study.
+
+study 3:
+neuroticism and password length go together. significant but weak correlations here and there but generally poor model fits. 
+
+it background and password strength/length 
+older participants more likely to cope with passwords in different ways (PWM, paper, reuse), but not with memorization. its a natural thing - as you get older you will have had more chances to create accounts so the burden increases and you start looking for new ways to deal with it. 
+
+the longer the self-selected passwords the more likely they were forgotten at the end of the survey
+
+%TODO look at the numbers - when were there conclusive associations with personality traits and then draw inferences from the numbers. 
+
+%%%% ACTUAL 
+Finally, our data allows us to create initial blueprints of user-segmentation, that can be turned into \gls{persona} through future research to inform design decisions.
+
+brainiacs: extroverts,  w/o it background, younger, more open
+reusers: older w/o IT background
+paper pilots: introverts, female
+pw-managers: older, less open, it-background, male
+\todo{make this nice, but not too elaborate because I'd like to create a good version in the discussion that follows. }
+
+This first version of the taxonomy can already inform future research and design. In the following we can zoom out and factor in more insights from the previous study to refine the segmentation.
+
+% Which privacy and security mitigations are most likely to benefit from being tailored to individual traits?
+
+% How can knowledge of a user's individual differences be *abused*, and how might this be prevented
+as predictive models get better (machine learning instead of statistical approaches) the likelihood of exploiting the information increases 

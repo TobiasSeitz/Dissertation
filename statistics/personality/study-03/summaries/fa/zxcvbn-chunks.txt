@@ -1,0 +1,63 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+chunks ~ Factor2 + Factor3 + Factor4 + Factor5 + Factor7 + age + 
+    s(Factor1, k = 4) + s(Factor6, k = 4) + gender + it_background + 
+    occupation
+
+Parametric coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    1.753420   0.291744   6.010  1.2e-08 ***
+Factor2       -0.219161   0.075468  -2.904   0.0042 ** 
+Factor3       -0.001845   0.064810  -0.028   0.9773    
+Factor4       -0.093886   0.067185  -1.397   0.1642    
+Factor5       -0.001859   0.079149  -0.023   0.9813    
+Factor7        0.023059   0.084135   0.274   0.7844    
+age            0.014098   0.011712   1.204   0.2304    
+genderFemale  -0.090751   0.142973  -0.635   0.5265    
+it_background  0.180290   0.138467   1.302   0.1948    
+occupation    -0.068256   0.039370  -1.734   0.0849 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+             edf Ref.df     F p-value   
+s(Factor1) 2.612  2.894 3.841 0.00701 **
+s(Factor6) 1.427  1.731 0.781 0.55356   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.0939   Deviance explained = 16.2%
+-REML = 231.98  Scale est. = 0.67148   n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+  (Intercept)       Factor2       Factor3       Factor4       Factor5       Factor7 
+  0.000000000  -0.224499869  -0.002125093  -0.103716738  -0.001829873   0.020249240 
+          age  genderFemale it_background    occupation  s(Factor1).1  s(Factor1).2 
+  0.106303796  -0.052852716   0.101795841  -0.145312090  -0.432583587   0.165553470 
+ s(Factor1).3  s(Factor6).1  s(Factor6).2  s(Factor6).3 
+  0.362715713   0.014431972  -0.033358549   0.052889213 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 8 iterations.
+Gradient range [-5.292847e-08,1.401454e-08]
+(score 231.9822 & scale 0.6714843).
+Hessian positive definite, eigenvalue range [0.07823217,81.50859].
+Model rank =  16 / 16 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+             k'  edf k-index p-value
+s(Factor1) 3.00 2.61    1.14    0.96
+s(Factor6) 3.00 1.43    1.02    0.60
+NULL

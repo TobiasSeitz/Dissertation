@@ -1,0 +1,59 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+guesses_log10 ~ Openness + Conscientiousness + Extraversion + 
+    Agreeableness + s(Neuroticism, k = 4) + s(age, k = 4) + gender + 
+    it_background + occupation
+
+Parametric coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        8.36378    1.89238   4.420 1.79e-05 ***
+Openness          -0.05781    0.06813  -0.849   0.3974    
+Conscientiousness  0.04575    0.08261   0.554   0.5804    
+Extraversion       0.03652    0.06648   0.549   0.5835    
+Agreeableness      0.02144    0.06943   0.309   0.7579    
+genderFemale      -0.01172    0.47428  -0.025   0.9803    
+it_background      1.13439    0.46853   2.421   0.0166 *  
+occupation        -0.16857    0.13419  -1.256   0.2108    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf Ref.df     F p-value
+s(Neuroticism) 1.369   1.64 2.678   0.146
+s(age)         1.000   1.00 0.032   0.857
+
+R-sq.(adj) =  0.0155   Deviance explained = 6.85%
+-REML = 434.36  Scale est. = 7.9266    n = 175
+[1] "\nBETAs:"
+
+Call:
+gam(formula = nFormula, family = family, data = d, method = method, 
+    select = select)
+
+Standardized Coefficients::
+      (Intercept)          Openness Conscientiousness      Extraversion     Agreeableness 
+     0.000000e+00     -6.822077e-02      4.440080e-02      4.605345e-02      2.416703e-02 
+     genderFemale     it_background        occupation  s(Neuroticism).1  s(Neuroticism).2 
+    -2.071073e-03      1.943232e-01     -1.088788e-01     -1.467162e-02      3.293749e-02 
+ s(Neuroticism).3          s(age).1          s(age).2          s(age).3 
+     1.517468e-01     -1.291741e-05     -5.536268e-06      1.624121e-02 
+
+[1] "\nGAM.CHECK:"
+
+Method: REML   Optimizer: outer newton
+full convergence after 7 iterations.
+Gradient range [-4.651121e-05,7.060852e-05]
+(score 434.3575 & scale 7.92659).
+Hessian positive definite, eigenvalue range [4.649696e-05,82.50034].
+Model rank =  14 / 14 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                  k'   edf k-index p-value
+s(Neuroticism) 3.000 1.369   0.975    0.38
+s(age)         3.000 1.000   0.989    0.43
+NULL
