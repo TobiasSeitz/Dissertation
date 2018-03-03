@@ -1,4 +1,4 @@
-\chapter[Password Personality]{Understanding Password Selection Through the Lens of Personality Traits}\label{chap:pws_and_personality}
+\chapter[Password Personality]{Understanding Password Behaviors through the Lens of Personality Traits}\label{chap:pws_and_personality}
 
 %\section{Introduction}
 % general introduction
@@ -23,7 +23,7 @@ Those two taxonomies stem from analysis of user-selected passwords, i.e. a retro
 In a series of user studies we explored the associations between personality traits and passwords. If such associations exist, a new range of support systems opens that are tailored to a user's personality. Current one-fits-all approaches could be re-designed radically. The research was carried out in cooperation with three students. In each separate project we focused on a different stage of the password life-cycle. Timo Erdelt investigated personality as predictor for the usability of composition policies \cite{Erdelt2017BA}. Paul Huber explored correlations between strength perceptions and personality traits \cite{Huber2016BA}. Finally, Aline Neumann examined personality factors in password selection \cite{Neumann2017BA}. In total, 453 individuals participated in three separate online studies. In the following chapter, the projects are put into context and their findings are discussed on a bigger picture. 
 
 \subsubsection*{Research Objectives}
-Our primary goal was to find ways to predict password behavior from personality traits. At this point, the discourse about risky passwords included personality factors as explanatory variables. However, only few empirical studies had been carried out to challenge the assumptions. We aimed to provide such empirical data and a discussion of the implications on the design of password policies and password authentication systems. For instance, adjusting requirements of password policies depending on the user's personality promises to reduce frustration of password selection. Thus, our over-arching research question can be framed as ``\textit{Does personality influence user's mental models of password strength and selection strategies?}''.
+Our primary goal was to find ways to predict password behavior from personality traits. At this point, the discourse about risky passwords included personality factors as explanatory variables. However, only few empirical studies had been carried out to challenge the assumptions. We aimed to provide such empirical data and a discussion of the implications on the design of password policies and password authentication systems. For instance, adjusting requirements of password policies depending on the user's personality promises to reduce frustration of password selection. Thus, our over-arching research question can be framed as ``\textit{Does personality influence user's mental models of password strength and consequently selection and coping strategies?}''.
 
 %more related work: Groß \etal \cite{Gross2016CognitiveDepletion}
 %
@@ -69,6 +69,7 @@ In our work, we are interested in context factors of password strength originati
 
 Most frequently, the influence of these personality traits have been explored for privacy-concerns, where the openness trait was associated with privacy attitudes \cite{Egelman2015PredictingAttitudes,Minkus2014PersonalizationPrivacy}. Other inquiries have shown that personality traits like neuroticism \cite{Halevi2013PilotStudyPersonality} or openness \cite{Uebelacker2014SocialEngineering} might be associated with the response to phishing attacks. The likelihood of employees adhering to security policies is potentially influenced by the manifestation of agreeableness and conscientiousness \cite{Shropshire2006PersonalityITSec,Shropshire2015}. These investigations show that personality trait models are a considerable factor in security and privacy. Yet, our understanding of the influence of personality on password perception and consequently password selection is still low. Our work tries to improve our understanding about the origin of the differences in users' judgments of password strength. 
 %is linked to these aspects, because passwords protect privacy of users and sensitive data of companies. %However, how password behaviors are formed and how much of the  is explained by psychological factors is still underexplored
+%Malkin2017PersoanlizedSecurityMessaging
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%
@@ -111,9 +112,10 @@ Most frequently, the influence of these personality traits have been explored fo
 %In this section we interpret the results and hope to shed light on potential explanations for their origins. % and show the implications for password-authentication systems.
 
 %TODO more elaborately discuss the origin of the results.
+\input{tables/personality-associations-overview-v2}%tab:personality:associations-overview
 
 % Egelman says:
-\subsection{Segmenting Users: Password Personality}
+\subsection{Overarching Themes and User Segments}
 Egelman and Peer highlighted the importance of the the question \textit{which psychographic segments should be targeted [in security and privacy mitigations]?} While they focused on their newly developed SeBIS scale and other psychometric constructs, we are able to give new pointers for segmenting users based on their Big-Five traits in conjunction with demographic factors. To approach the segmentation, we can look at the overall influences of personality and demographic factors on different metrics. Table \ref{tab:personality:associations-overview} lists all significant marginal associations from all three studies. 
 
 % Neuroticism
@@ -127,7 +129,7 @@ Thus, targeting neuroticism with persuasive interventions during password creati
 The significant associations, and absence thereof, tell a conclusive story if we look at passphrases and mnemonic phrase-based passwords. Those types of passwords are strong and often not overly complex \cite{Keith2009PassphraseDesign,Kuo2006HumanSelectionMnemonic,Shay2012CorrectHorseBatteryStaple}. Passphrases, for instance, are often memorable. They also easily exceed length requirements. If they consist of uppercase and lowercase letters, and are separated with regular punctuation symbols, there is no need to add digits to meet a three-class requirement. All this can be seen in the study behavior of participants scoring high on openness, despite the absence of associations between openness and the type of created password in study 3. 
 
 % Conscientiousness
-\paragraph{Conscientiousness} Like openness, conscientiousness was a major factor in study 2. There was evidence that participants, who strongly show this trait, tend to believe a more password is better than a long password. We could explain this finding by looking at the attributes that are usually found with conscientious people: diligence and neatness. Following password rules requires these facets to ensure a strong outcome. The results in study 1 (less time taken to create a password) and study 3 (slight tendency to refrain from memorizing passwords) are harder to interpret. It is expectable that crafting a strong memorable password takes due diligence and more time, thus the shorter time spent by conscientious participants is counterintuitive. Perhaps it is due to the measurement approach in our study. We started taking the time as soon as the password field was focused and the timing ended when the field lost focus (``blur'' event). It is possible that conscientious participants took their time to reflect what they wanted to enter into the field, and only then started the task. However, we do not have any data to back this thought up.
+\paragraph{Conscientiousness} Like openness, conscientiousness was a major factor in study 2. There was evidence that participants, who strongly show this trait, tend to believe a more \textbf{complex} password is better than a long password. We could explain this finding by looking at the attributes that are usually found with conscientious people: diligence and neatness. Following password rules requires these facets to ensure a strong outcome. The results in study 1 (less time taken to create a password) and study 3 (slight tendency to refrain from memorizing passwords) are harder to interpret. It is expectable that crafting a strong memorable password takes due diligence and more time, thus the shorter time spent by conscientious participants is counterintuitive. Perhaps it is due to the measurement approach in our study. We started taking the time as soon as the password field was focused and the timing ended when the field lost focus (``blur'' event). It is possible that conscientious participants took their time to reflect what they wanted to enter into the field, and only then started the task. However, we do not have the data to support this argument.
 % story: ``I think a strong password needs to have digits and symbols, then it can be shorter. Dictionary words should not be used.''
 
 
@@ -135,28 +137,33 @@ The significant associations, and absence thereof, tell a conclusive story if we
 \paragraph{Agreeableness and Extraversion} Table \ref{tab:personality:associations-overview} shows that agreeableness only showed a conclusive result in study 1. A more demanding policy like 3class12 did not appeal to participants scoring high on agreeableness, while they did favor the emoji-policy much more. Cheerfulness, empathy and cooperation are often characteristics represented by this trait. 
 % story: ``hey that's cool, let me see which emoji I can choose to come up with something memorable that matches the constraints and context.'' 
 Participants might have favored cheerful emojis to cooperate on finding a suitable solution together. Thus, password selection could have been more fun and thus more pleasing for those participants. Since there was no sign of focusing on password strength, we hypothesize that memorability might be more important for them. 
+Regarding extraversion, we found that participants scoring high on this trait disliked a word-based policy and were more likely to memorize passwords than writing them down. This is probably the most difficult result to interpret, because extraversion is a more situationally dependent trait than the four others -- a phenomenon coined as ``ambiversion'' \cite{Grant2013Ambivert}. This could have become visible if our regression models had shown more curvilinear relationships, but those were not significantly more likely for extraversion than for other traits. We therefore refrain from further discussion and note that additional data would be necessary to evaluate the stability of this predictor. 
 
+\paragraph{Demographic Factors}
+From Table \ref{tab:personality:associations-overview}, it is evident that the associations with the chose metrics are more likely to be found with demographic variables. This was especially true for study three, where almost all outcomes were associated with having experience or education in a computer-science related field. This is an unsurprising finding, because this user group can better judge the implications of their behavior. Nevertheless, the additional factors help us segment user group in higher detail. 
 
 % Overall picture
+\subsubsection{Deriving Segments: Password Personas}
+% why do we do this / goals
+With the above themes and stories, we are able to derive a number of user segments that can be targeted by security mitigations. Segments can inform future research and design directions. For instance, they serve the generation of hypotheses and play a role in the creation of new psychographic constructs. The ``securing'' dimension of the \gls{SeBIS} might be enriched by user archetypes to explain attitudes and behaviors. Here, \glspl{persona} constitute a common design tool for segmentation. These fictional users can be targeted in the design of future persuasive interventions. Our personas stay a bit more abstract to account for the early stage of the research direction. Personas should be ``living'' templates that are updated based on new data \cite{Gothelf2013LeanUX}. 
 
-\subsubsection{Example Segments}
-
-Big-five password personas (see stories in comments above)
-
-what for? create new constructs or refine the passwords-dimension in SeBIS. might help explain certain attitudes and behavior. helps design nudges.
-
-
-
-\input{tables/personality-associations-overview-v2}%tab:personality:associations-overview
+\begin{figure}
+	\centering
+	\fcolorbox{dividergray}{white}{\includegraphics[width=0.7\linewidth]{personality/personas/Neurotic-Persona}}
+	\fcolorbox{dividergray}{white}{\includegraphics[width=0.7\linewidth]{personality/personas/Open-Persona}}
+	\fcolorbox{dividergray}{white}{\includegraphics[width=0.7\linewidth]{personality/personas/Conscientious-Persona}}
+	\fcolorbox{dividergray}{white}{\includegraphics[width=0.7\linewidth]{personality/personas/Agreeable-Persona}}
+	\caption{\label{fig:personality:personas} First version of Password Personas -- Refinement is part of future work.}
+\end{figure}
 
 % How can the segmentation be performed automatically without active user involvement?
 % 	difficult questions -- smartphones
 \subsection{Assessing Personality Traits in Password Studies}
-Studying passwords is challenging, because we often lack access to real-world testbeds. Thus, online studies are a reliable go-to method. However, the modification of independent variables in studies could be accompanied by introducing further covariates to explain effects. Only few such factors have been considered beyond demographic information. Psychometrics could be useful to further localize causality. We have shown that they have explanatory value if an omnibus test shows no significant differences. Thus, psychometrics should not be neglected to boost efficacy of security mitigations for different user segments \cite{Egelman2015AverageUser}. 
+In our studies, we explicitly measured personality through psychometric constructs. This was easy, because online studies have become a reliable go-to method to study passwords. However, in many cases, omnibus tests fail to reveal significant effects, but this might be due to confounding variables that blur causality. Only few such covariates have been considered beyond demographic information. Our studies highlight that personality is a promising candidate to consider: for instance, average password strength perceptions were distributed normally. However, using regression, the underlying associations became visible and were statistically significant. Thus, psychometrics should not be neglected to boost efficacy of security mitigations for different user segments \cite{Egelman2015AverageUser}. 
 
-However, including elaborate psychometric tests in addition to the core of the research question is probably unrealistic. In our studies we used 50 and 21-item constructs. The latter already showed reduced internal consistency. Thus, to keep studies short, prevent participant fatigue, and obtain reliable data, we propose to focus on the openness and neuroticism personality traits only once their influence has been quantified. These can be measured with only a couple of items (between 9 and 20), so they do not take more than five minutes to answer. 
+Still, extending surveys with elaborate psychometric constructs is probably unrealistic. In our studies we used 50 and 21-item constructs. The latter already showed slightly reduced internal consistency. Thus, to keep studies short, to prevent participant fatigue, and to obtain reliable data, we propose focusing on the \textbf{openness} and \textbf{neuroticism} personality traits. Their associations were most explicable by their attributes and provided a coherent picture. They can be measured with only a couple of items (between 9 and 20), so the corresponding study part is finished within a few minutes. Nevertheless, the specific choice of the traits should be backed up by confirmatory studies in the future, and may also depend on the research question.
 
-Still, adding even a few more items to a questionnaire might not always be possible due to study constraints like budget or timeliness of data elicitation. There is, however, a promising approach to quickly and inexpensively obtain personality data from study participants' past behavior. It is possible to infer personality facets from social media data, e.g. public interactions on Facebook \cite{Youyou2015Personality}. Youyou et al. found that such metrics can even outperform psychometric questionnaires. Stachl \etal also found conclusive associations between smartphone usage and personality traits \cite{Stachl2017PersonalitySmartphones}. We thus suggest requesting permission to read either smartphone or social network data as part of the study. Crowd-workers in a large-scale study by Bentley and Chen, for instance, showed little concern to install software on smartphones for research purposes \cite{Bentley2015Phonebook}. While we would not go so far as to read all contacts, call and message history, we believe a differentially private approach can replace personality tests. 
+Adding even a few more items to a questionnaire might be impossible due to study constraints like budget or timeliness of data elicitation. There is, however, a promising approach to quickly and inexpensively obtain personality data on all dimensions from a user's past behavior. It is possible to infer personality facets from \textbf{social media data}, e.g. public interactions on Facebook \cite{Youyou2015Personality}. Youyou et al. found that such metrics can even outperform psychometric questionnaires. Stachl \etal, as well as De Montjoye \etal found conclusive associations between \textbf{smartphone usage} and personality traits \cite{DeMontjoye2013, Stachl2017PersonalitySmartphones}. We thus suggest requesting permission to read either smartphone or social network data as part of the study. Crowd-workers in a large-scale study by Bentley and Chen, for instance, showed little concern to install software on smartphones for research purposes \cite{Bentley2015Phonebook}. While we would not go so far as to read all contacts, call and message history, we believe a differentially private approach can replace personality constructs. 
 
 \subsection{Design Implication: Suggestions}
 % strength suggestions
@@ -190,6 +197,9 @@ The contributions can help  inform the design of more usable password policies a
 \subsubsection{Future Work}
 A possible next step is to try and leverage information about personality traits to tailor password feedback to make it more effective. As pointed out by related work, some users overestimate the strength improvement of using digits in passwords \cite{Ur2016PerceptionsPassword}, which we generally confirmed with our study. However, not all participants were equally influenced by digits or different character classes inside passwords. Respecting the personality type in real-time feedback while enforcing policies could make the messages more effective and boost usability at the same time. Beyond password policies, personality traits can inform choice architectures. For example, the Choose-Your-Own-Authentication approach \cite{Forget2015CYOA} can benefit from informed default settings depending on personality trait characteristics. The collection and aggregation of the necessary information could be done on mobile phones \cite{DeMontjoye2013}. We consider this approach promising because it has a good chance to improve the user experience of authentication mechanisms and it is already possible to achieve the goal with off-the-shelf technology.
 
+
+
+%TODO constellations like myers-briggs personality
 
 
 \noindent

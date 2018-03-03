@@ -63,6 +63,10 @@ sink(file="descriptives.txt")
 print(describe(d100))
 sink(file=NULL)
 
+# look at normality tests.
+shapiro.test(d100$G_Overall)
+ks.test(d100$G_Overall, pnorm())
+
 # 1a. normalize
 pointsPerItem <- 7;
 gOverall <- 13;
