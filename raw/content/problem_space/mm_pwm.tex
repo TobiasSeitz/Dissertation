@@ -50,11 +50,15 @@ The recruiting and sampling methods are inherently limited. The novice user grou
 
 \subsection{Data Analysis and Results}
 % analysis approach
-Young proposed a design strategy to translate qualitative data into mental models \cite{Young2008}. The method is based on \textit{affinity diagramming}. The resulting clusters and themes from the diagram are then mapped to a hierarchical structure that consists of Mental Spaces, Task Towers, Tasks, and Particular Tasks. Here, we focused on those Mental Spaces and Task Towers that involve password managers. Table \ref{tab:mm_pwm:mental-model-table} shows the resulting model in this format. 
+Young proposed a design strategy to translate qualitative data into mental models \cite{Young2008}. The method is based on \textit{affinity diagramming}. The resulting clusters and themes from the diagram are then mapped to a hierarchical structure that consists of Mental Spaces, Task Towers, Tasks, and Particular Tasks. Here, we focused on those Mental Spaces and Task Towers that involve password managers. Table \ref{tab:mm_pwm:mental-model-table} shows the resulting model in this format. In the following, we report the results that notably contributed to the formation of the model, which is described in Section \ref{ref:mm_pwm:mm-description}.
 
 \input{tables/mental-models-pwm}% \ref{tab:mm_pwm:mental-model-table} %
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=\linewidth]{mm_pwm/mental-model-diagram}
+%	\caption{\label{fig:mm_pwm:mental-model-diagram} Mental model diagram}
+%\end{figure}
 
-In the following, we report the results that notably contributed to the formation of the model, which is described in Section \ref{ref:mm_pwm:mm-description}.
 
 \subsubsection{Selection and Coping Strategies}
 All interviewees reuse passwords to cope with the multitude of accounts. Participants often developed coping strategies without deliberation: they were unaware of how they cope with passwords until we specifically requested more details. Only then did they reflect and realize how they behave. One such revelation was that they categorize passwords in different ways. For instance, the context in which they created an account, e.g. the URL of the corresponding website, was factored into passwords and facilitated the decision-making process which password to choose from their portfolio (see Figure \ref{fig:mm_pwm:creation-strategies} A). Similarly, the perceived importance led to distinct categories, although the interviewees had not realized this. Furthermore, we also heard an interesting, deliberate strategy that seldom appears in the literature: two participants mentioned memorizing a list, or a list of letters that are then transformed into a new, quasi-unique password. This method is comparable to the Diceware technique (see \ref{sec:rw:passphrases}), but instead of rolling a dice, these participants algorithmically select the order of words/letters based on contextual cues (see Figure \ref{fig:mm_pwm:creation-strategies} B and C). Another participant said to have memorized a randomly generated password and reusing it many times. Finally, participants generally tried to justify their ``insecure'' behavior. Beside memory burden of new secrets, time pressure was mentioned as reason for password reuse. 
@@ -72,7 +76,7 @@ Password sharing with other users was the central advantage for four interviewee
 \end{figure}
 
 \subsubsection{Drawing Tasks}
-Participants were asked to sketch their thoughts whenever this was appropriate. We encouraged them to sketch as much as possible. All participants mentioned that it was challenging to communicate their understanding this way. Already for basic functionality and purpose of passwords, we asked to create sketches. This task was still relatively easy for all interviewees. Padlocks and keys were two of the most commonly drawn elements. It also helped to communicate individual elaborate selection strategies (see Figure \ref{fig:mm_pmw:creation-strategies}). However, the difficulty rapidly changed for the workings of a password manager.
+Participants were asked to sketch their thoughts whenever this was appropriate. We encouraged them to sketch as much as possible. All participants mentioned that it was challenging to communicate their understanding this way. Already for basic functionality and purpose of passwords, we asked to create sketches. This task was still relatively easy for all interviewees. Padlocks and keys were two of the most commonly drawn elements. It also helped to communicate individual elaborate selection strategies (see Figure \ref{fig:mm_pwm:creation-strategies}). However, the difficulty rapidly changed for the workings of a password manager.
 Here, especially \textit{novices} struggled with the task and could not proceed without further explanation, and their drawings were more vague than those of \textit{actives}. However, the latter is probably due to the different professional background and expertise in creating concepts. The drawn elements and metaphors differed among the two groups: 
 \paragraph{Novices} had a vague model of how such a password manager might work and found it especially difficult to sketch this. The benefits and system architecture of the software were unclear to them. One interesting drawing depicted a password manager as a virtual ``brain'' that acts as a central hub to make the user's life easier (Figure \ref{fig:mm_pwm:f_novice_sketch} B). Another participant, who reportedly used a Word document to keep track of his accounts, imagined a password manager to behave the same way (Figure \ref{fig:mm_pwm:f_novice_sketch} C). The only expected difference would be that accessing the list of passwords would be protected by a password, which is indicated by the keyhole and an arrow that points to it. This represents \textit{novices'} understanding on a more general level, as they explained a password manager as a special way to manage a \textit{secure list of passwords} that helps find the right ones. Five said that it facilitates logins by allowing them to \textbf{copy-and-paste} passwords from the manager into the webpage. 
 \begin{figure}
@@ -81,28 +85,50 @@ Here, especially \textit{novices} struggled with the task and could not proceed 
 	\caption{\label{fig:mm_pwm:f_novice_sketch}	Drawings to the question ``What does a password manager do, and how?'' from three \textit{novice} users. (A) only shows a profile on facebook. (B) emphasizes that the PWM is a central hub and acts as the user's ``brain'' for different entities. (C) shows a table-like structure that holds all username-password tuples.}
 \end{figure}
 
-\paragraph{Actives} Since all active users were also visual communicators, it was somewhat easier for them to sketch the workings of a password manager. They clearly focused on the interaction between users and the system and highlighted the benefits in their drawings. Having experienced the advantages, they strove to convey these visually and came up with more details (cf. Figure \ref{fig:mm_pwm:f_actives_sketch1}). 
+\paragraph{Actives} Since all active users were also visual communicators, it was somewhat easier for them to sketch the workings of a password manager. They clearly focused on the interaction between users and the system and highlighted the benefits in their drawings. Having experienced the advantages, they strove to convey these visually and came up with more details (cf. Figure \ref{fig:mm_pwm:f_actives_sketch1}). Instead of a password-table, we can see workflows that show the interplay between user, database and website. Common components are UI elements like input fields
+or buttons that link to other screens or entities. Only one interviewee from the \textit{active} group refrained from UI elements and instead sketched a flow-chart. 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\linewidth]{mm_pwm/f_users_sketch1}
-	\caption{\label{fig:mm_pwm:f_actives_sketch1}}
+	\includegraphics[width=0.9\linewidth]{mm_pwm/f_users_sketch4}
+	\caption{\label{fig:mm_pwm:f_actives_sketch1} Drawings to the question ``What does a password manager do, and how?'' from six \textit{active} users. Common components are UI elements that link to other entities, therefore the interplay between user, PWM and website is clearer.}
 \end{figure}
 
 \section{Mental Model}\label{ref:mm_pwm:mm-description}
+From the behavioral, attitudinal, and experiential data, we created a mental model schema in the style of Young \cite{Young2008}. We tried to stay close to the data as possible, but a few points are enhanced by knowledge from related work. We briefly elaborate on the mental spaces to allow the reader to delve into task-towers and tasks. 
+
+\paragraph{Password Creation and Selection}
+First, users have a variety of particular needs when they are challenged to create a password. This task tower describes both the constraints, prior experiences and strategies to accomplish the task. Our participants often mentioned highly individual selection strategies that allow for both secure and memorable secrets. From a support tool, they expected guidance and feedback. Password generators that simplify this task can aid here. 
+
+\paragraph{Log In}
+Most prominently, authentication still involves \textit{both} manual and automatic tasks. Interviewees expected to copy and paste passwords from the manager to their browser, or at least provide a way to retrieve password hints.  On the other hand, participants expected that support tools are deeply integrated into the browser by automatically filling password fields in a highly reliable manner. If possible, the solution should work across multiple devices. 
+
+\paragraph{Organize and Commit}
+The third mental space resembles the ``Commit to password'' and ``Live with password'' stages of the Password Life Cycle \cite{Stobert2014PasswordLifeCycle}. Each participant mentioned some way of organization strategy that allowed them to live without password managers to some degree. However, these were not always deliberate choices, but rather have formed over the years. Especially \textit{novice} users made sense of password managers by their capability of protecting passwords, i.e. encrypting a list of passwords rather than just storing them in a Word document. \textit{Active} users were already aware of the sharing capabilities and appreciate a simple process to reset passwords when they need to be invalidated for security reasons.
 
 \section{Opportunities and Challenges}
-\subsection{Correcting non-user's mental models}
+Having a fine-grained mental model of the tasks involved in password authentication lets us explore novel ways to support users in many of these tasks. In the following we highlight key opportunities to work on in the future. 
+
+\subsection{Correcting novices' mental models}
 - it does not only have to be a copy-paste architecture.
 - trust was not an issue because they were generally unaware of the existence of PWM.
+- picking up novices where they are: PWMs need to emphasize a list metaphor for non-users at first and then show more benefits
 
 \subsection{Improving Sense of Agency}
 - novices felt comfortable in their strategies -- give that sense of staying in control to them
 - actives realized weak behavior, but now feel more comfortable creating and managing the most important passwords on their own. 
+- PWM needs to reaussure users in that situation. 
 
 \subsection{Leveraging Context}
 - current pwms do not support many behaviors that users still do: reuse, word documents, paper notes, individual creation and memorization techniques, reuse strategies. 
--  
-%\subsection{Customization and Personalization} - maybe bring the personas to the table. 
+- onboarding process: usage at home or at work / customized/adaptive onboarding
+- better embedding in sign-up forms 
+
+\subsection{Customization and Personalization} - maybe bring the personas to the table. 
+- support users for personal algorithms. 
+- persona Elliot Elis benefits
+- don't fix the user, fix the system. 
+
 
 %\subsection{Limitations}
 
@@ -116,6 +142,8 @@ Here, especially \textit{novices} struggled with the task and could not proceed 
 		\section*{Take Aways}
 		\begin{itemize}[leftmargin=*]
 			\item The system architecture of a password manager is difficult to frame visually both for people who have never used one, and also for users. Active users created more visually rich sketches, but this was likely due to their professional background. 
+			\item The mental model of password authentication and managers is mostly divided into the mental spaces ``Select password'', ``Log in'', and ``Organize''. There seem to be discrepancies between current user behavior and current password managers. 
+			
 		\end{itemize}
 	}
 	\hspace{1cm}
