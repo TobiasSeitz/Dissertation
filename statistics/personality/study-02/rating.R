@@ -65,7 +65,7 @@ sink(file=NULL)
 
 # look at normality tests.
 shapiro.test(d100$G_Overall)
-ks.test(d100$G_Overall, pnorm())
+ks.test(d100$G_Overall,rnorm(100, mean = mean(d100$G_Overall)))
 
 # 1a. normalize
 pointsPerItem <- 7;
