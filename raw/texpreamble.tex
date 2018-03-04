@@ -54,9 +54,12 @@
 	\raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
 }
 \newcommand{\emoji}[2][ios]{\inlinegraphics{../latex-emoji/#1/#2}}%
-% this works: \newcommand{\emoji}[1]{\includegraphics[width=1em]{../latex-emoji/ios/#1}}%
+% this works on a more rudimentary level: \newcommand{\emoji}[1]{\includegraphics[width=1em]{../latex-emoji/ios/#1}}%
+
+\newcommand{\citep}[1]{\cite{#1}} %convenience for texmaker, but texstudio doesn't have this problem. 
 
 \graphicspath{{figures/}}
+
 
 
 
