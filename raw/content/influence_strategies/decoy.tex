@@ -22,7 +22,7 @@ Criticism: this is unrealistic because memory interference effects prevent that 
 Main topic: suggesting methods, feedback, modifications
 
 \subsection{The Decoy Effect}
-The decoy effect was discovered through research in consumer psychology. Buying a product often involves deciding between different alternatives. On a high level, products are easily comparable by their quality and price. These two dimensions build the foundation of the decoy effect. In one of the first experiments on ``asymmetric dominance'' effects, Huber \etal illustrate decision-making with a simple example to decide between different six-packs of beer\cite{Huber1982AsymetricallyDominated} (slightly adapted for simplicity): 
+The decoy effect was discovered through research in consumer psychology. Buying a product usually involves deciding between different alternatives. On a high level, products are easily comparable by their quality and price, so customers heavily rely on these two metrics. The two dimensions also build the foundation of the decoy effect. In one of the first experiments on ``asymmetric dominance'', Huber \etal illustrate decision-making processes with a simple example to decide between six-packs of beer that differ in price and quality \cite{Huber1982AsymetricallyDominated} (slightly adapted for simplicity): 
 \begin{table}[!h]
 \begin{tabular}{lrr}
 	\textbf{Option} & \textbf{Price} & \textbf{Quality rating}\\
@@ -31,7 +31,8 @@ The decoy effect was discovered through research in consumer psychology. Buying 
 \end{tabular}
 \end{table}
 
-While option (A) is cheaper, it is also lower in quality. Spending \$2 more, the buyer will get a higher-quality beer (B). Buyers may have a preference for either lower price, or higher quality. Imagine the vendor wants to sell more of (A) because margins are higher for that product. To achieve this, Huber \etal explored adding a third option:
+While option (A) is cheaper than (B), it is also lower in quality. Spending \$2 more, the buyer will get a higher-quality beer (B). With the information available at this point, it is hard to decide. 
+Buyers may have a general preference for either lower price, or higher quality if all other factors are excluded. Imagine the vendor wants to sell more of beer (A) because margins are higher for that product. To achieve this, Huber \etal explored different ways of adding a third option:
 \begin{table}[!h]
 \begin{tabular}{lrr}
 	\textbf{Option} & \textbf{Price} & \textbf{Quality rating}\\
@@ -39,51 +40,65 @@ While option (A) is cheaper, it is also lower in quality. Spending \$2 more, the
 	(B) & \$6 & 70 /100\\
 	(C) & \$4 & 40 /100 \\
 \end{tabular} 
-
 \end{table}
-Product (C) is as expensive as (A), but falls back in quality. Thus, buyers will get ``a better deal'' if they choose option (A) by comparison with (C). Options (B) and (C) are more difficult to compare, because both dimensions (price and quality) are higher in (B). Option (C) is thus called the \textit{decoy} that is \textit{dominated} by option (A) (\textit{target}) but not by option (B) (\textit{competitor}). 
 
-- terminology: competitor, target, decoy.
-- target is the item that we are trying to ``sell'' 
-- competitor, as the name suggests, is a competing, but slightly less favorable sell for the vendor
-- decoy: vendor does not intend to sell this, it acts as an unfavorable alternative that can be used as reference point / comparison.\\	
+Product (C) is as expensive as (A), but falls behind in quality. Thus, buyers will make a ``better deal'' if they choose option (A) by comparison with (C). Options (B) and (C) are more difficult to compare, because both dimensions (price and quality) are higher in (B) and make it appear like an outlier. Option (C) is thus called the \textbf{decoy} that is \textit{dominated} by option (A) (\textbf{target}). Option (B) (the \textbf{competitor}) also beats the decoy, but the comparability between the target and the decoy boosts the favorability of the target. This is exactly what Huber \etal found, and which was later confirmed numerous times in different decision-making scenarios \cite{Ariely1995ExplanationSubjectiveDominance}. Adding the decoy has the potential to reverse existing preferences, making it a powerful tool for marketing and sales. The decoy itself often serves the sole purpose of making another item stand out, thus the underlying persuasion principles are \textbf{salience} and \textbf{framing}. Constructing the dimensions in a certain way is referred to as \textit{choice architecture} \cite{Thaler2010ChoiceArchitecture}, and is an important persuasive design strategy. 
 
-\begin{figure}
+Huber \etal stated that there is a specific combination of attributes to position the decoy (see Figure \ref{fig:decoy:general-construction}). Depending on the target, the decoy acts as range increasing (R, R*), frequency increasing (F), or both (RF). By extending the range on the dimension on which the \textit{competitor} is superior, the fixed difference between all items on that dimension is weighed less. Figure \ref{fig:decoy:beer-construction} illustrates this type of decoy placement for the sixpack example. The range of the quality is clearer after the decoy is added: before the span was [50;70], and afterwards [40;70]. The superiority of the competitor appears less significant, hence the higher price can seem unjustified. 
+
+%- decoy: vendor does not intend to sell this, it acts as an unfavorable alternative that can be used as reference point / comparison.\\	
+
+\begin{figure}[t]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{figures/decoy/decoy-dimensions-general}
 		\caption{Decoy placement options \cite{Huber1982AsymetricallyDominated}}
+		\label{fig:decoy:general-construction} 
 	\end{subfigure}
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{figures/decoy/decoy-dimensions-beer}
 		\caption{Example choice architecture for sixpack of beers.}
+		\label{fig:decoy:beer-construction} 
 	\end{subfigure}
-	\caption{\label{fig:decoy:general-construction} 
+	\caption{
 		General choice architecture overview to generate asymmetric dominance. 
 		C = competitor, T = Target. The decoy can be placed at different positions in the spectrum, but needs to be dominated by the target (gray areay). Placement strategies for the decoy to increase the target's dominance: R = Range, R* = extreme range, F = frequency, RF = range and frequency.
 	} 
 \end{figure}
 
-- broader concept: framing, salience, anchoring. 
-- making choices, given a set of alternatives
-- using a decoy choice architecture to influence the preferred option 
-
-- terminology: competitor, target, decoy.
-- target is the item that we are trying to ``sell'' 
-- competitor, as the name suggests, is a competing, but slightly less favorable sell for the vendor
-- decoy: vendor does not intend to sell this, it acts as an unfavorable alternative that can be used as reference point / comparison.
+%- broader concept: framing, salience, anchoring. 
+%- making choices, given a set of alternatives
+%- using a decoy choice architecture to influence the preferred option 
 
 \subsubsection{Examples: Decoy Effects in UIs}
+Huber \etal's example has been adapted and used in the design of user interfaces. The vendor, i.e. a service provider, tries to steer users towards a particular direction that they see as favorable. For instance, location settings on an Android device show signs of a decoy pattern (see Figure \ref{fig:decoy:android-pattern}). From bottom to top, the ``device only'' mode activates the GPS module to determine the device's location. It is thus highly accurate outside of buildings, but does not work well inside. On the other hand, the ``battery saving mode'' works in both environments by using Google's online location services based on triangulation between network cells and surrounding WiFis. In urban areas and even inside buildings, it can achieve great accuracy, while it only roughly estimates locations in rural areas. The two accuracy-levels are thus comparable, but the ``battery saving mode'' does not require powering up additional antennae and modules, giving it a graspable advantage. The ``High accuracy'' mode combines both approaches and is thus the most battery consuming, but most versatile option. The ``battery saving'' can be seen as the target, because it provides the best trade-off in most situations. The ``device only'' mode is the decoy because it uses more battery, while the ``high accuracy'' mode is the competitor. Google requires the user to allow the collection of technical sensor data for the ``high accuracy'' and ``battery saving'' mode. Battery consumption is likely more important to users than location accuracy, which further suggests that the ``battery saving'' mode is indeed the targeted setting. 
+
+\begin{figure}[t]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/decoy/Android_Location_Decoy}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/decoy/decoy-dimensions-android}
+	\end{subfigure}
+	\caption{\label{fig:decoy:android-pattern}Location settings in Android show signs of a decoy pattern. The ``battery saving'' mode is targeted, because it does not activate the GPS module and can achieve comparable accuracy. Google benefits from collecting information on WiFi hotspots and network cells to improve their location service.} 
+\end{figure}
 
 
 \subsection{Choice Architecture in Security and Privacy}
 % make sure not to be too redundant. 
+\cite{Korff2014TooMuchChoice} \cite{Egelman2013ChoiceArchitecture}
+\cite{Renaud2017LessonsLearnedNudges}
+\cite{Wang2014PrivacyNudgesFacebook}
+\cite{Acquisti2017NudgesPrivacySecurity}
+\cite{Malkin2017PersoanlizedSecurityMessaging}
+\cite{Jameson2011PreferentialChoice}
+
 
 \section{Designing Decoy Options}
 % Briefly point to first exploration report to mention a design that failed. 
 General strategy (create logistic regression).
 
 \section{Quantitative Evaluation}
-\subsection{Methods}
+\subsection{Method}
 no CS students: just like in \cite{Wash2016UnderstandingPasswordChoices}
 
 live deployment. 
