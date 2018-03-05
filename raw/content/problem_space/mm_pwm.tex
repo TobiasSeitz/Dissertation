@@ -61,7 +61,7 @@ Young proposed a design strategy to translate qualitative data into mental model
 
 
 \subsubsection{Selection and Coping Strategies}
-All interviewees reuse passwords to cope with the multitude of accounts. Participants often developed coping strategies without deliberation: they were unaware of how they cope with passwords until we specifically requested more details. Only then did they reflect and realize how they behave. One such revelation was that they categorize passwords in different ways. For instance, the context in which they created an account, e.g. the URL of the corresponding website, was factored into passwords and facilitated the decision-making process which password to choose from their portfolio (see Figure \ref{fig:mm_pwm:creation-strategies} A). Similarly, the perceived importance led to distinct categories, although the interviewees had not realized this. Furthermore, we also heard an interesting, deliberate strategy that seldom appears in the literature: two participants mentioned memorizing a list, or a list of letters that are then transformed into a new, quasi-unique password. This method is comparable to the Diceware technique (see \ref{sec:rw:passphrases}), but instead of rolling a dice, these participants algorithmically select the order of words/letters based on contextual cues (see Figure \ref{fig:mm_pwm:creation-strategies} B and C). Another participant said to have memorized a randomly generated password and reusing it many times. Finally, participants generally tried to justify their ``insecure'' behavior. Beside memory burden of new secrets, time pressure was mentioned as reason for password reuse. 
+All interviewees reuse passwords to cope with the multitude of accounts. Participants often developed coping strategies without deliberation: they were unaware of how they cope with passwords until we specifically requested more details. Only then did they reflect and realize how they behave. One such revelation was that they categorize passwords in different ways. For instance, the context in which they created an account, e.g. the URL or policy of the corresponding website, was factored into passwords and facilitated the decision-making process which password to choose from their portfolio (see Figure \ref{fig:mm_pwm:creation-strategies} A). Similarly, the perceived importance led to distinct categories, although the interviewees had not realized this. Furthermore, we also heard an interesting, deliberate strategy that seldom appears in the literature: two participants mentioned memorizing a list, or a list of letters that are then transformed into a new, quasi-unique password. This method is comparable to the Diceware technique (see \ref{sec:rw:passphrases}), but instead of rolling a dice, these participants algorithmically select the order of words/letters based on contextual cues (see Figure \ref{fig:mm_pwm:creation-strategies} B and C). Another participant said to have memorized a randomly generated password and reusing it many times. Finally, participants generally tried to justify their ``insecure'' behavior. Beside memory burden of new secrets, time pressure was mentioned as reason for password reuse. 
 
 We also inquired situations when their strategies failed. The primary problem of having a multitude of accounts was the correct \textit{combination} of user-name and password, which is a common pitfall of knowledge-based authentication \cite{Stobert2014PasswordLifeCycle}. Not only did they forget passwords, but also user names, which is just as severe because web sites generally do not inform users which was the error source to thwart attacks. Participants reportedly use a trial-and-error to go through their portfolio and ultimately use self-serviced password resets as a convenient solution. Interviewees expected that websites offer this kind of fallback scheme, because two of them do this on a regular basis. 
 
@@ -107,25 +107,33 @@ Most prominently, authentication still involves \textit{both} manual and automat
 The third mental space resembles the ``Commit to password'' and ``Live with password'' stages of the Password Life Cycle \cite{Stobert2014PasswordLifeCycle}. Each participant mentioned some way of organization strategy that allowed them to live without password managers to some degree. However, these were not always deliberate choices, but rather have formed over the years. Especially \textit{novice} users made sense of password managers by their capability of protecting passwords, i.e. encrypting a list of passwords rather than just storing them in a Word document. \textit{Active} users were already aware of the sharing capabilities and appreciate a simple process to reset passwords when they need to be invalidated for security reasons.
 
 \section{Opportunities and Challenges}
-Having a fine-grained mental model of the tasks involved in password authentication lets us explore novel ways to support users in many of these tasks. In the following we highlight key opportunities to work on in the future. 
+Having fine-grained insights into the mental models of password authentication sub-tasks lets us explore novel ways to support users in many challenges. In the following, we highlight key opportunities for future work on password managers and password support in general. 
 
-\subsection{Correcting novices' mental models}
-- it does not only have to be a copy-paste architecture.
-- trust was not an issue because they were generally unaware of the existence of PWM.
-- picking up novices where they are: PWMs need to emphasize a list metaphor for non-users at first and then show more benefits
+\subsection{Leveraging and improving novices' mental models}
+There were two important preconceptions about password mangers on the \textit{novices} side: simple password lists and copy-paste interactions. Future password managers can leverage these models to persuasively communicate functionality. The value proposition should thus ensure that potential users understand that PWMs are \textit{not only} a secure list of user-names and passwords, but also help them \textit{select} passwords -- a benefit that \textit{actives} had realized in retrospect. The \textit{password list} metaphor is also useful to communicate automation features: explicitly showing new users that they do not have to search through the list, nor copy and paste passwords from the list to the website might help them understand the simplicity of the interaction paradigm. This can happen during an onboarding user journey, e.g. with an image showing the steps saved by the PWM (cf. Figure \ref{fig:mm_pwm:pwm-goms-comparison}).
 
-\subsection{Improving Sense of Agency}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{mm_pwm/pwm-goms-comparison}
+	\caption{\label{fig:mm_pwm:pwm-goms-comparison} Visualizing users' previous behavior might help communicate how the password manager can simplify authentication tasks.}
+\end{figure}
+
+%- trust was not an issue because they were generally unaware of the existence of PWM.
+
+\subsection{Increasing Sense of Agency}
 - novices felt comfortable in their strategies -- give that sense of staying in control to them
 - actives realized weak behavior, but now feel more comfortable creating and managing the most important passwords on their own. 
+- staying in control is important (automation vs. manual tasks)
 - PWM needs to reaussure users in that situation. 
 
 \subsection{Leveraging Context}
 - current pwms do not support many behaviors that users still do: reuse, word documents, paper notes, individual creation and memorization techniques, reuse strategies. 
 - onboarding process: usage at home or at work / customized/adaptive onboarding
 - better embedding in sign-up forms 
+- automatic password generation should consider password policy. --> see chapter \ref{chap:policies_reuse}
 
 \subsection{Customization and Personalization} - maybe bring the personas to the table. 
-- support users for personal algorithms. 
+- support users for personal algorithms.  
 - persona Elliot Elis benefits
 - don't fix the user, fix the system. 
 
@@ -143,7 +151,7 @@ Having a fine-grained mental model of the tasks involved in password authenticat
 		\begin{itemize}[leftmargin=*]
 			\item The system architecture of a password manager is difficult to frame visually both for people who have never used one, and also for users. Active users created more visually rich sketches, but this was likely due to their professional background. 
 			\item The mental model of password authentication and managers is mostly divided into the mental spaces ``Select password'', ``Log in'', and ``Organize''. There seem to be discrepancies between current user behavior and current password managers. 
-			
+			\item Password managers appear to be a ``black box'' for people who have never used one. They suspect that such tools are a slightly more secure version of text files to write down lists of username-password-combinations.
 		\end{itemize}
 	}
 	\hspace{1cm}
