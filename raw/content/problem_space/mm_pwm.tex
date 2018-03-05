@@ -1,10 +1,12 @@
 \chapter[Mental Models of Password Managers]{Mental Models of Password Managers}\label{chap:mental_models_pwm}
-
 An important spillover of our previous exploration is that password managers are more likely adopted the longer people had struggled with juggling passwords: Older participants in the third personality study were more likely to use a \gls{PWM}. We have already corroborated market surveys that indicate a generally low adoption rate of password management software. As discussed in Sections \ref{sec:rw:user-behavior} and \ref{sec:rw:pwm_generators}, it has been hypothesized that users do not fully trust third parties with their credentials, so there seems to be an urge to stay in charge. Consequently, most users still try to memorize their passwords. On the other hand, password managers do provide many usability and security benefits, but why do users fail to see them? To this end, we see a lack of understanding about how users make sense of password managers. Our goal was to understand users' mental models of password managers first and then identify opportunities to improve them, which could increase adoption rates. 
 %RQs
-We thus aimed to answer the following research questions: 1) How do users think a password manager works? 2) What are their reasons (not) to adopt one?
+We thus aimed to answer the following research questions: 
+\textbf{(1)} How do users think a password manager works? 
+\textbf{(2)} How does adopting a password manager change user attitudes and behaviors?
 
-To answer these questions, Martin Prinz and I explored attitudes and understandings in semi-structured qualitative user interviews. To get a more complete picture, we interviewed both people who already use a \gls{PWM} and also people who prefer other coping strategies. The outcome of this investigation has been published as an extended abstract at SOUPS 2017 \cite{Prinz2017MentalModel}.
+
+To answer these questions, Martin Prinz and I explored attitudes and understandings in semi-structured qualitative user interviews. To get a more complete picture, we interviewed both people who already use a \gls{PWM} and also people who prefer other coping strategies. Parts of the outcome of this investigation have been published as an extended abstract at SOUPS 2017 \cite{Prinz2017MentalModel}.
 
 \section{Background and Context}
 %%%
@@ -12,15 +14,13 @@ To answer these questions, Martin Prinz and I explored attitudes and understandi
 %%%
 
 % PWM have existed since xyz. -- not possible to point a specific origin. 
-Password managers can be either built into web browsers or act as a standalone solution that is independent of the password's purpose. Dedicated password managers have existed since the mid to late 1990s. Web Confidential\footurl{http://www.web-confidential.com/}{16.02.2018} was probably one of the first programs to facilitate password management, when it first surfaced in 1998. However, which of the browsers was first to add password storage capabilities cannot be easily traced back, but all major browsers added this feature in the early 2000s. Given the long history of this kind of user aide, adoption is still at only 12\% \cite{Olmstead2017AmerciansCybersecurity}. Even security experts disagree on the specific security benefits of different implementations\footurl{https://www.wired.com/2015/07/websites-please-stop-blocking-password-managers-2015/}{16.02.2018}. If the auto-fill feature is enabled, this can be used to create digital footprints for individuals\footurl{https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/}{16.02.2018}
+Password managers can be either built into web browsers or act as a standalone solution that is independent of the password's purpose. Dedicated password managers have existed since the mid to late 1990s. Web Confidential\footurl{http://www.web-confidential.com/}{16.02.2018} was probably one of the first programs to facilitate password management, when it first surfaced in 1998. However, which of the browsers was first to add password storage capabilities cannot be easily traced back, but all major browsers added this feature in the early 2000s. Given the long history of supporting authentication with software tools, adoption of password managers is still at only 12\% \cite{Olmstead2017AmerciansCybersecurity}. Even security experts disagree on the specific security benefits of different implementations\footurl{https://www.wired.com/2015/07/websites-please-stop-blocking-password-managers-2015/}{16.02.2018}. If the auto-fill feature is enabled, this can be used to create digital footprints for individuals\footurl{https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/}{16.02.2018}. Nevertheless, similar attack vectors could easily target regular password entry, and are not limited to auto-fill. 
 
 % different system architectures: built into browser, local software (dedicated programm and/or browser extension), distributed storage.
-There are different architectures for handling passwords: offline password managers keep a database of encrypted passwords locally on the user's machine, while online managers provide more mobility because passwords are held on a server or a distributed storage solution \cite{McCarney2012Tapas}. \textit{KeePass} and \textit{Password Safe} are notable representatives for the offline storage paradigm, while the cloud-based approach is dominated by third-party solutions like \textit{LastPass}, \textit{1Password}, and \textit{Dashlane}. Browser vendors have also transitioned to store passwords in the cloud, e.g. Apple Keychain for Safari, or Google Smartlock for Chrome. 
-
+There are different service architectures for handling passwords: \textit{offline} password managers keep a database of encrypted passwords locally on the user's machine, while \textit{online} managers provide more mobility because passwords are held on a server or a distributed storage solution \cite{McCarney2012Tapas}. \textit{KeePass} and \textit{Password Safe} are notable representatives for the offline storage paradigm, while the cloud-based approach is dominated by third-party solutions like \textit{LastPass}, \textit{1Password}, and \textit{Dashlane}. Browser vendors have also transitioned to store passwords in the cloud, e.g. Apple Keychain for Safari, or Google Smartlock for Chrome. On the one hand, this provides consistent user experiences across multiple devices. On the other hand, such architectures create lock-in effects and dependencies. Thus, online password managers typically provide browser-extensions to automatically fill username and password fields. This way, similar experiences are achievable by third party tools. 
 
 % pwms are not universally accepted as the best solution.
 % some websites block password managers (by disabling the ``paste'' event on their login form), because under some circumstances password managers can be used to track users. 
-
 
 %%%
 % user side:
@@ -28,14 +28,22 @@ There are different architectures for handling passwords: offline password manag
 % academic
 
 % briefly summarize experiments focused around mental models of password managers
-Don Norman chapter on mental models "Some observations on mental models": MM provide predictive and explanatory power for understanding an interaction \cite{Norman1982ObservationsMentalModels}
+\paragraph{Mental Models} 
+%motivation
+Norman suggests that exploring mental models provides predictive and explanatory power for understanding an interaction \cite{Norman1982ObservationsMentalModels}. Volkamer and Renaud meticulously described different aspects and definitions of mental models, which are too elaborate to discuss in this work \cite{Volkamer2013MentalModels}. As a takeaway, a mental model describes a user's sense-making of any system they interact with. Volkamer and Renaud highlight that mental models are not necessarily static, but can be shaped with different cues to internal feedback loops (see Figure \ref{fig:mm_pwm:mental-model-volkamer}). For our purposes, we use a simpler definition provided by Young: Mental models are ``collections of the root reasons why a person is doing something'' and ``represent what a person is trying to accomplish in larger context, no matter which tools are used''  \cite[p.11]{Young2008}. In our case, they describe the reasons for (not) using a password manager, as explained by current actions to cope with authentication tasks. 
 
-\cite{Kang2015MentalModelsDrawing} \cite{BravoLillo2011WarningsMentalModel}
-
-
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{mm_pwm/MentalModels-volkamer}
+	\caption{\label{fig:mm_pwm:mental-model-volkamer} Volkamer and Renaud see the formation of mental models as loop involving different plans, perceptions, system structures, and actions. Image from \cite{Volkamer2013MentalModels}}
+\end{figure}
+% what is different now? quant --> qual
+In chapter \ref{chap:pasdjo}, we took a quantitative approach to elicit data on the mental models. This was useful because we tried to understand \textit{what} contributed to password strength perceptions and by \textit{how much}. For password managers, related work on usage motivation is scarce, thus we strove to answer \textit{why} users perform certain actions and \textit{how} these could be supported by a password manager. Therefore, qualitative methods were more useful. 
+% how is this qual data elicited?
+Eliciting such data to understand mental models, Bravo-Lillo \etal relied on open-ended one-on-one interviews both with advanced and novice user groups \cite{BravoLillo2011WarningsMentalModel}. They highlight the usefulness of this approach to understand thought processes. Kang \etal relied on \textit{drawing tasks} to elicit additional data \cite{Kang2015MentalModelsDrawing}. Participants were asked to sketch what they thought happens to their personal data when they interact with different online services. During sketching, a \textit{concurrent think-aloud protocol} was used to avoid misunderstandings. Once the data has been collected, Young suggests the \textit{affinity diagramming} method to derive themes and identify opportunities for supporting tasks \cite{Young2008}. In this research project, we combined interviewing, drawing tasks, and affinity diagramming. 
 
 \section{User Interviews}
-Our main objective was to understand how users make sense of password support tools, in particular password managers. This would allow us to explore solutions that fit user expectations better. 
+Our main objective was to understand how users make sense of password support tools, in particular password managers. This would allow us to explore solutions that fit user expectations better.  
 
 \subsection{Method and Protocol}
 Focusing on attitudes and mental models requires a qualitative study method. We chose to conduct semi-structured, open-ended interviews. The sessions started with a thorough briefing about the study purpose and asking for permission to audio-record the conversation. The main questions were \textbf{(1)} \textit{Why do you need passwords?} and \textbf{(2)} \textit{What is your strategy to manage multiple accounts?}. From there, the study followed a more fine-grained follow-up questions to investigate the specifics of these two aspects. Moreover, Bravo-Lillo \etal showed the benefits of drawing tasks to find structural patterns in beliefs \cite{BravoLillo2011WarningsMentalModel}, so we also asked participants to \textbf{(3)} \textit{sketch how a password manager works}. This required that participants were aware of \glspl{PWM}. If they were not, they were told that it is a ``piece of software that stores a user's password'', which was expected to be vague enough to explore participants' expectations of this kind of software. The interviews took between five and 16 minutes. 
@@ -46,7 +54,7 @@ We first approached random passers-by on a popular street in Munich to obtain a 
 None of the interviewees in the first group had used a password manager before, so we call this participant group the \textit{novices}. Since the \gls{PWM} was part of the company policy, all interviewees in the second group had used one before, so we call them the \textit{actives}. The separation allowed us to detect a shift of expectations before and after adopting a password manager. 
 
 \subsubsection{Method Limitations}
-The recruiting and sampling methods are inherently limited. The novice user group was asked at a public spot, so it was difficult to provide enough context information and minimize distraction. On the plus side, we achieved diversity and the face-to-face set-up reassures trust, because it was clear that none of the information they gave us was going to be used to access their online accounts. \todo{XX} novices were unable to describe what a password manager was, before we gave them the above definition. Thus, their decision to refrain from using a \gls{PWM} was not made actively, but rather results from the lack of awareness. This limits the analysis of attitudes and self-reported behavior. Finally, the second user group has a homogeneous background: design and communication. All these limitations demand that the results not be generalized to a larger population. Instead, they should be seen as rough trends that help understand a first set of underlying mental models, rather than the entire spectrum thereof.
+The recruiting and sampling methods are inherently limited. The novice user group was asked at a public spot, so it was difficult to provide enough context information and minimize distraction. On the plus side, we achieved diversity and the face-to-face set-up reassures trust, because it was clear that none of the information they gave us was going to be used to access their online accounts. 5 of 6 \textit{novices} were unable to describe what a password manager was, before we gave them the above definition. Thus, their decision to refrain from using a \gls{PWM} was not made actively, but rather results from the lack of awareness. This limits the analysis of attitudes and self-reported behavior. Finally, the second user group has a homogeneous background: design and communication. All these limitations demand that the results not be generalized to a larger population. Instead, they should be seen as rough trends that help understand a first set of underlying mental models, rather than the entire spectrum thereof.
 
 \subsection{Data Analysis and Results}
 % analysis approach
@@ -112,35 +120,38 @@ Having fine-grained insights into the mental models of password authentication s
 \subsection{Leveraging and improving novices' mental models}
 There were two important preconceptions about password mangers on the \textit{novices} side: simple password lists and copy-paste interactions. Future password managers can leverage these models to persuasively communicate functionality. The value proposition should thus ensure that potential users understand that PWMs are \textit{not only} a secure list of user-names and passwords, but also help them \textit{select} passwords -- a benefit that \textit{actives} had realized in retrospect. The \textit{password list} metaphor is also useful to communicate automation features: explicitly showing new users that they do not have to search through the list, nor copy and paste passwords from the list to the website might help them understand the simplicity of the interaction paradigm. This can happen during an onboarding user journey, e.g. with an image showing the steps saved by the PWM (cf. Figure \ref{fig:mm_pwm:pwm-goms-comparison}).
 
-\begin{figure}
+\begin{figure}%TODO could make this a little bit nicer. 
 	\centering
 	\includegraphics[width=0.6\linewidth]{mm_pwm/pwm-goms-comparison}
-	\caption{\label{fig:mm_pwm:pwm-goms-comparison} Visualizing users' previous behavior might help communicate how the password manager can simplify authentication tasks.}
+	\caption{\label{fig:mm_pwm:pwm-goms-comparison} Visualizing users' previous behavior might help communicate how the password manager can simplify authentication tasks. This can create a better mental model of their workings.}
 \end{figure}
 
 %- trust was not an issue because they were generally unaware of the existence of PWM.
 
 \subsection{Increasing Sense of Agency}
-- novices felt comfortable in their strategies -- give that sense of staying in control to them
-- actives realized weak behavior, but now feel more comfortable creating and managing the most important passwords on their own. 
-- staying in control is important (automation vs. manual tasks)
-- PWM needs to reaussure users in that situation. 
+While automation simplifies processes and thus improves usability, staying in control of security-related interactions is important to users. \textit{Novices} were confident in their current behavior. \textit{Actives} had realized that their past behavior was sub-optimal, but they had gained confidence to create passwords and handle authentication for their most important accounts on their own. As a consequence, a password manager needs to stay flexible enough to respect user preferences for different account \textit{categories}, e.g. unimportant vs. important accounts. At the same time, reassuring users that their decision to handle such situations on their own is reasonable and can inspire trust in the system. A PWM could automatically detect when it is appropriate to offer help. Current managers only provide the opportunity to decide whether the password should be saved, maybe saved later, or never be saved for a particular site. Such decisions can be automated once enough training data has been provided by the user.
 
 \subsection{Leveraging Context}
-- current pwms do not support many behaviors that users still do: reuse, word documents, paper notes, individual creation and memorization techniques, reuse strategies. 
-- onboarding process: usage at home or at work / customized/adaptive onboarding
-- better embedding in sign-up forms 
-- automatic password generation should consider password policy. --> see chapter \ref{chap:policies_reuse}
+Context factors can be leveraged by PWMs to adapt to different situations. For example, usage-context informs future interactions. If the user sets up the system at work, this is an indicator about how passwords are going to be categorized, how often they will be reset, and how likely they are going to be shared with others. Adapting the interface to such scenarios can simplify interactions and forming mental models of the benefits. Moreover, automated generation of passwords is also context-dependent. As we have shown in chapter \ref{chap:policies_reuse}, password policies in the wild impose varying restrictions on the use of characters. To avoid user frustration arising from rejected passwords, e.g. because they contain forbidden characters, the generator can ensure the random password meets the website's composition policy. 
 
-\subsection{Customization and Personalization} - maybe bring the personas to the table. 
-- support users for personal algorithms.  
-- persona Elliot Elis benefits
-- don't fix the user, fix the system. 
+%- onboarding process: usage at home or at work / customized/adaptive onboarding
+%- better embedding in sign-up forms 
+%- automatic password generation should consider password policy. --> see chapter \ref{chap:policies_reuse}
 
+\subsection{Customization and Personalization}
+It is evident that current third-party and browser-built-in password managers form a standalone mechanism that works differently compared to how users normally cope with passwords. Our participants reused passwords with different strategies and relied on digital documents, paper notes, and highly individual password creation or memorization techniques. Beside the document-metaphor discussed above, the other strategies are not reproduced by password managers. However, a general philosophy in user-centered design is the aim to ``fix the system'' rather than to ``fix the user''. Therefore, the system should provide ways to support current strategies. For instance, it could help the user specify their creation technique: they might use a base-password that is modified depending on the context, the PWM could offer to generate passwords like this in future scenarios. While this approach would not necessarily improve security, it could save the user time and make authentication more usable. Besides, the user stays independent of the tool, because they can reproduce their system and log in on other devices even without the support. 
+
+%- current pwms do not support many behaviors that users still do: reuse, word documents, paper notes, individual creation and memorization techniques, reuse strategies. 
+% - maybe target persona elliot elis
 
 %\subsection{Limitations}
 
 \section{Conclusion}
+We explored the mental models of authentication tasks and password managers with a qualitative approach. Both participants experienced with password managers and inexperienced novices shared their insights, attitudes and behaviors during short interviews. Fourteen interviewees provided us detailed descriptions of their password selection and coping strategies, and how they make sense of supporting tools. 
+% how does this change the world?
+We contribute evidence that (a) individual coping strategies persist even after adopting a password manager for important accounts, (b) work environments serve as onboarding triggers even for private use, and (c) novices were mostly unaware of the functionality and benefits of password managers. 
+% larger vision.
+These findings show that the value proposition should be communicated concisely and compare the benefits against inefficient password practices. At the same time, new solutions should respect highly individual coping strategies to better match user behavior. Ultimately, this could increase adoption, and more importantly, retention rates. 
 
 
 \noindent
@@ -149,9 +160,10 @@ There were two important preconceptions about password mangers on the \textit{no
 	\parbox[c][12cm]{0.7\linewidth}{
 		\section*{Take Aways}
 		\begin{itemize}[leftmargin=*]
-			\item The system architecture of a password manager is difficult to frame visually both for people who have never used one, and also for users. Active users created more visually rich sketches, but this was likely due to their professional background. 
-			\item The mental model of password authentication and managers is mostly divided into the mental spaces ``Select password'', ``Log in'', and ``Organize''. There seem to be discrepancies between current user behavior and current password managers. 
+%			\item The system architecture of a password manager is difficult to frame visually both for people who have never used one, and also for users. Active users created more visually rich sketches, but this was likely due to their professional background. 
 			\item Password managers appear to be a ``black box'' for people who have never used one. They suspect that such tools are a slightly more secure version of text files to write down lists of username-password-combinations.
+			\item The mental model of password authentication and managers is mostly divided into the mental spaces ``Select password'', ``Log in'', and ``Organize''. There seem to be discrepancies between current user behavior and current password managers. 
+			\item Making password managers adapt to context and individuals seems a promising direction for future systems. 
 		\end{itemize}
 	}
 	\hspace{1cm}
