@@ -54,6 +54,7 @@ Huber \etal stated that there is a specific combination of attributes to positio
 %- decoy: vendor does not intend to sell this, it acts as an unfavorable alternative that can be used as reference point / comparison.\\	
 
 \begin{figure}[t]
+	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{figures/decoy/decoy-dimensions-general}
 		\caption{Decoy placement options \cite{Huber1982AsymetricallyDominated}}
@@ -78,6 +79,7 @@ Huber \etal stated that there is a specific combination of attributes to positio
 Huber \etal's example has been adapted and used in the design of user interfaces. The vendor, i.e. a service provider, tries to steer users towards a particular direction that they see as favorable. For instance, location settings on an Android device show signs of a decoy pattern (see Figure \ref{fig:decoy:android-pattern}). From bottom to top, the ``device only'' mode activates the GPS module to determine the device's location. It is thus highly accurate outside of buildings, but does not work well inside. On the other hand, the ``battery saving mode'' works in both environments by using Google's online location services based on triangulation between network cells and surrounding WiFis. In urban areas and even inside buildings, it can achieve great accuracy, while it only roughly estimates locations in rural areas. The two accuracy-levels are thus comparable, but the ``battery saving mode'' does not require powering up additional antennae and modules, giving it a graspable advantage. The ``High accuracy'' mode combines both approaches and is thus the most battery consuming, but most versatile option. The ``battery saving'' can be seen as the target, because it provides the best trade-off in most situations. The ``device only'' mode is the decoy because it uses more battery, while the ``high accuracy'' mode is the competitor. Google requires the user to allow the collection of technical sensor data for the ``high accuracy'' and ``battery saving'' mode. Battery consumption is likely more important to users than location accuracy, which further suggests that the ``battery saving'' mode is indeed the targeted setting. 
 
 \begin{figure}
+	\centering
 	\begin{subfigure}[!t]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{figures/decoy/Android_Location_Decoy}
 	\end{subfigure}
@@ -105,11 +107,14 @@ Regarding passwords, only few publications mention the use of choice architectur
 We aimed to craft a nudge that persuades users to create stronger passwords. Respecting the principle of the opportune moment, we opted for account creation contexts. To emulate a situation that is comparable to buying one out of several product alternatives, we show suggestions beneath the password field where the user enters their choice (see Figure \ref{fig:decoy:design-architecture-prolific}). We ended up with this design after identifying opportunities of strength feedback on the user's password and on the suggestions (i.e. feed-forward). To that end, we had created several prototypical choice architectures and rapidly evaluated them in the lab and online (see technical report \cite{Seitz2016DecoyEffectReport}). The final architecture implements the propositions in Huber \etal's framework (see Figure \ref{fig:decoy:dimensions-prolific}).
 
 \begin{figure}[t]
+	\centering
 	\begin{subfigure}[!t]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{figures/decoy/generator_prolific_3}\label{fig:decoy:screenshot-prolific}
+		\includegraphics[width=\textwidth]{figures/decoy/generator_prolific_3}
+		\caption{\label{fig:decoy:screenshot-prolific}}
 	\end{subfigure}
 	\begin{subfigure}[!t]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{figures/decoy/decoy-dimensions-prolific}\label{fig:decoy:dimensions-prolific}
+		\includegraphics[width=\textwidth]{figures/decoy/decoy-dimensions-prolific}
+		\caption{\label{fig:decoy:dimensions-prolific}}
 	\end{subfigure}
 	\caption{\label{fig:decoy:design-architecture-prolific}Choice architecture and decoy placement as evaluated in the online experiment. } 
 \end{figure}
@@ -143,33 +148,88 @@ We anticipated that the generated passwords are exceptionally unattractive in so
 \subsubsection{Procedure}
 The experiment consisted of two parts that were carried out on separate days. The initial step included the password selection task and usability assessment among other qualitative metrics. Participants were invited to return for the second part of the study three days later. This follow-up step included memorability assessment and further qualitative feedback to help us understand the data.
 
-The first part started with a thorough briefing about the collected data and asked for consent. The same web-page introduced the scenario for the task: Participants were asked to imagine creating a new password for their already existing email account. The page displayed the password fields and suggestions. Participants were randomly assigned to one of the four treatment groups, so the type and number of suggestions depended on this assignment. Once the password was successfully confirmed, participants were asked to fill out a brief questionnaire mostly consisting of 5-point scale items on attitudes and password behaviors. At the end of the first part, the web-page displayed a confirmation code that participants had to copy over to the prolific platform to mark the survey as done. 
+The first part started with a thorough briefing about the collected data and asked for consent. The same web-page introduced the scenario for the task: Participants were asked to imagine creating a new password for their already existing email account under a basic8 policy. The page displayed the password fields and suggestions. Participants were randomly assigned to one of the four treatment groups, so the type and number of suggestions depended on this assignment. Once the password was successfully confirmed, participants were asked to fill out a brief questionnaire mostly consisting of 5-point scale items on attitudes and password behaviors. At the end of the first part, the web-page displayed a confirmation code that participants had to copy over to the prolific platform to mark the survey as done. 
 
 Three days afterwards, we invited the participants to return and complete the second part. They were asked to provide the password they had remembered, but we did not validate 
 
 \subsubsection{Recruitment and Sample}
 Following best practices in password research, we leveraged crowd-sourcing tools to elicit the data. Recruitment took place through the research platform Prolific\footurl{https://prolific.ac}{06.03.2018}, which is comparable to Amazon's Mechanical Turk solution. Participants were screened for age (older than 18 years), and they had to be located in either the UK or in USA. The region restriction was introduced because Prolific has a larger user base in those countries. To ensure quality of the data, we required a past survey completion rate of at least 95\%. This is a common metric for the reliability of a crowd-worker \cite{Ross2010WhoAreTurkers}. 
 
-From the 106 respondents who started the experiment, we had to reject seven because the study completion code was wrong or missing, or because the questionnaire was insufficiently filled out or completion times were outliers ($> 3*SD$). The remaining 99 participants received invitations to return, which 97 people did. There were another fourteen incomplete responses or wrong study codes. Hence, the resulting N of our data set is $N = 84$ valid, complete responses in both parts. Group sizes were $n=18$ in Control, $n=24$ in Passphrase, $n=21$ in Mangled, and $n=20$ in Decoy. On average, participants were 30 years old ($SD=10$). 42\% were female. The majority (78\%) was employed, 12\% were students, 10\% were unemployed. Participants reportedly possessed nine online accounts that they regularly use ($SD=5.6$). 
+From the 106 respondents who started the experiment, we had to reject seven because the study completion code was wrong or missing, or because the questionnaire was insufficiently filled out or completion times were outliers ($> 3*SD$). The remaining 99 participants received invitations to return, which 97 people did. There were another fourteen incomplete responses or wrong study codes. Hence, the resulting N of our data set is $N = 83$ valid, complete responses in both parts. Group sizes were $n=18$ in Control, $n=24$ in Passphrase, $n=21$ in Mangled, and $n=20$ in Decoy. On average, participants were 30 years old ($SD=10$). 42\% were female. The majority (78\%) was employed, 12\% were students, 10\% were unemployed. Participants reportedly possessed nine online accounts that they regularly use ($SD=5.6$). 
 
 %no CS students: just like in \cite{Wash2016UnderstandingPasswordChoices}
 
 %live deployment. 
 %users could shuffle. 
 
-\subsection{Survey Results}
-Mostly focus on the contents of the paper here
--- General strategy (create logistic regression).
+\subsection{Results}
+Through statistical tests we found significant differences across the groups. Although the decoy effect did not work as intended, there were notable side-effects. In the following, we break down the findings. For non-parametric continuous data, we used Kruskal-Wallis and Mann-Whitney tests, whereas frequencies were analyzed with chi-squared tests. Significance levels were set to $\alpha = 0.05$, unless multiple comparisons required a Bonferroni correction. 
 
+\subsubsection{Efficacy of Suggestions} 
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{decoy/treatment-impact-edited}
+	\caption{\label{fig:decoy:treatment-impact-edited} Nudge efficacy in treatment groups (n=65)}
+\end{figure}
+Across all treatment groups, nine respondents out of 65 ($\approx$ 14\%) accepted a suggested password verbatim -- four in the Passphrase group, two in the Mangled group, and three in the Decoy group (two targets, one decoy). Suggestions were thus effective for one in ten participants. From the remaining 56 self-selected passwords, 18 (27.7\%) were weaker than the suggestions. In other words, the nudge was ineffective for roughly a third of participants judged by their choice to pick a password that was weaker than the suggestion. For the remaining 38 participants (58.4\%), the nudge could have influenced them to create passwords that as strong as the suggestions, but we lack data to investigate this. Figure \ref{fig:decoy:treatment-impact-edited} visualizes the efficacy of suggesting passwords.
+
+\subsubsection{Impact on Password Strength}
+Table \ref{tbl:decoy:zxcvbn-m-sd} lists descriptive statistics on password strength metrics. Taking the entire sample into account, omnibus tests did not show significant differences between the four groups. However, we plotted the confidence intervals of all metrics to examine the data visually. Here, it is visible that guess numbers did notably differ between the groups: the Passphrase treatment led to the strongest passwords overall (see Figure \ref{fig:decoy:ci-guesses-all}). If we remove the samples where a suggestion was accepted, the differences become smaller (see Figure \ref{fig:decoy:ci-guesses-own}). Since guess numbers are shown on a logarithmic scale, the difference appears might appear smaller than it actually is: guess numbers in the passphrases group were about 50 times higher than in the control and mangled groups. This is also visible in Figure \ref{fig:decoy:guess-number-plot}, where the percentage of cracked passwords is consistently smaller than in the other groups. Fitting a smoothed generalized additive model to the cracked percentages confirms that passwords are less likely to be cracked after any given number of guesses, if they were created in the Passphrase condition ($intercept=Control,B=-7.9\%, p<0.001$. \Rsqadj{0.99}). The rise in strength most likely is due to increased password length in the Passphrase group, see Figure \ref{fig:decoy:ci-length-own}.
+
+\input{tables/decoy-zxcvbn-metrics}
+
+%None of the participants' passwords was scored as ``very weak'' (0). 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[c]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/decoy/ci-guessesLog10-all}
+		\caption{\label{fig:decoy:ci-guesses-all} Confidence intervals of estimated guess-numbers (log 10) for all participants (N=83). On average, the Passphrase group created significantly stronger passwords than the Control and Mangled group.}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/decoy/ci-guessesLog10-own}
+		\caption{\label{fig:decoy:ci-guesses-own}
+			Confidence intervals of estimated guess-numbers (log 10) for self-selected passwords (N=74). Although the difference between the Passphrase group and the others is not as big as in the overall sample, the average guess numbers are still $\approx$ two orders of magnitude apart.}
+	\end{subfigure}
+	\caption{\label{fig:decoy:results-strenth} Arithmetic mean of guess numbers (log 10) and 95\% confidence intervals.} 
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{decoy/guess-number-plot}
+	\caption{\label{fig:decoy:guess-number-plot} Estimated guessability of user-selected passwords across the four conditions.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{decoy/ci-length-own}
+	\caption{\label{fig:decoy:ci-length-own} Average password length of self-selected passwords and 95\% confidence intervals}
+\end{figure}
 
 %\subsection{Live-Deployment Data}
 %Talk about a couple of findings of the Roskilde dataset. 
 % nah. there's no time for that now. 
 %TODO add screenshot from roskilde sign-up. 
 
+\subsubsection{Password Composition and Policy Adherence}
+\input{tables/decoy-policies}%tab:decoy:policies%
+It is possible to sort participants' self selected passwords into ``policy buckets'', i.e. the most stringent policy they would fulfill. This makes the effort to create a stronger password visible. Table \ref{tab:decoy:policies} shows the distribution of this analysis in commonly used policy taxonomy \cite{Shay2014CanLongPasswordsBeSecureAndUsable}. 
+A chi-squared test showed no significant differences across groups ($\chi^2(18)=16.93,p>0.5$). Yet, it is interesting that even though only a basic8 policy was enforced, all participants formed passwords with at least two character classes. The majority (78\%) even used three character classes. Participants in the Mangled condition were about twice as likely to adhere to one of the complex policies (comp8, 3class12, 3class16) than the Control group. On average, the length requirement was exceeded by $\approx 4$ characters. 
+
+\subsubsection{Memorability}
+Roughly 40\% ($n=34$) of participants succeeded to provide their password from the first part of the study. A chi-squared test on group differences was not significant ($\chi^2(3)=3.84,p>0.05$). Among the participants whose passwords matched three days later, 76\% ($n=26$) reported to have memorized it, while the rest had their browser store it (2), or put it into a digital file (5) or on paper (1). Participants who had opted for a suggestion were mostly unable to authenticate. A respondent in the Decoy group correctly entered the mangled password in the second part, reportedly from memory. %TODO Conclusion: accepting suggestions seems to be coupled with the assumption that passwords are not required to memorize: Accept suggestion = use password manager in the users mental model. Would change if suggestions need to be typed.
+
+\subsubsection{Qualitative Findings \& Feedback}
+A thematic co-analysis of the qualitative data collected at the end of both study parts, there were no observable differences, therefore we do not report group-specific details.  %Figure \ref{fig:prolific_likert_all} shows the the most relevant subjective ratings. 
+
+In the three treatment groups, we elicited data on the subjective perceptions of the suggestions. Participants were shown adjectives from which they could select multiple items and provide additional text. The most common reactions were ``neutral'' ($n=25$), ``surprised'' ($n=23$) and ``pleased'' ($n=11$). There was no observable tendency as to perceived security improvements for email accounts by the suggestions. 20 participants (24\%) might be annoyed if their main email provider implemented a sign-up form like the one in the study, but they did not clarify this further. 30 respondents (36\%) acknowledged that suggestions could facilitate email account creation. The main reason to decline the suggestions was the need for passwords with personal meanings (43\% agreement rate). 
+%new
+Besides, P81 said that ``the main reason I don't use generated passwords, is that if a hacker finds out how they're generated, they've basically figured everyone's passwords out. Then its only a matter of time before they brute force into accounts using the same method the system uses to generate them.'' This quote highlights the distrust regarding password generators, while at the same time assuming attackers are incapable of predicting human behavior.
+% memo
+Finally, there were interesting qualitative statements about the memorability of passwords (all \textit{sic}): ``sorry, i would have written it down if i knew there was a second part to the study. thats what i do for passwords that i will use again, until i memorize it, then i throw away the paper i write it on.'' (P33) ``I'm not sure if it was because I don't type this password I used here often or if it [is] because I used one of my lesser very weak passwords that I failed to remember it quickly. Regardless, I need a few better habits. '' (P26) ``I forgot my password as I didn't think I'd need it again. Had I known I would likely have tried harder to remember it.'' (P47). From these statements, we take away three important points: a) Some participants were unaware that they would need the password in the future, b) they rely on their own memorization techniques, and c) they feel guilty of bad password habits which echoes the results in Chapter \ref{chap:mm_pwm}. In summary, those factors had contributed to the low memorability rates of the study passwords. 
+
 \subsection{Limitations}
-No data on memorability
-zxcvbn as strength metric.
+There are a few important aspects to consider in the interpretability of our study findings. The sampling method, although state of the art, still targets users who are open-minded enough to participate in studies. Only those crowd-workers with a successful track record were screened in, thus the sample might not be representative for the entire population. However, rough trends can be seen in any case. In terms of sample size, we had initially hoped for a larger data set, but had to omit a significant proportion due to low quality of the data. This leads to a lack of statistical power, which forbids us to narrow down confidence intervals and thus find significant effects. The lack is aggravated by the fact that many study participants chose passwords that were much stronger than what is to be expected from real-world passwords \cite{Mazurek2013Measuring}. Such behavior reduces ecological validity and shrinks potential effect sizes induced by different nudges. Despite these limitations, it is astonishing to still detect notable differences across groups. Finally, we relied on the zxcvbn strength metric, as in many other studies throughout this thesis. We could have collected plain-text passwords and used a more robust approach like PGS \cite{Ur2015MeasuringRealWorldAccuracies}. However, this would have been too risky, because participants might have disclosed their real email passwords in the scenario, which we regard as unethical. Therefore, the zxcvbn metrics are one of the best solutions to work around this issue while providing sufficient robustness.
 
 \section{Discussion}
 
@@ -177,10 +237,14 @@ zxcvbn as strength metric.
 - users were still unaware of the two dimensions: usability and security. the ease of use was still too low to compete against their own passwords. 
 - the original experiments were within subjects. counterbalanced order. start out with three options --> two in the second part and vice versa. maybe this could have helped bring forward the desired nudging effect. 
 
+reject H2, support H1
+
 \subsection{Creativity Support}
 As we have seen in chapter \ref{chap:pasdjo}, users know fairly well what makes a strong password. Thus, we can explain the stronger influence of the passphrase in several ways. There might be a gap between password strength perception and selection that is due to \textit{creativity}. It might be easier for people to decide upon a stronger password if they actually see it. This, however, will not work, if the password is absolutely unrelated to the person because this increases memorization efforts. 
 
 Creativity is usually associated with the ``Openness'' personality trait (see chapter \ref{chap:pws_and_personality}). So we can suspect that people who show less of this trait might be more susceptible to a password suggestion. 
+
+accept suggestion --> need password manager.
 
 mental model influenced? -- look at qualitative data. 
 
@@ -205,7 +269,19 @@ which personas might be most most receptive to suggestions?
 
 The idea we put forward in \cite{Seitz2016DecoyEffect} (see Figure \ref{fig:decoy:expiremockup}) was very recently evaluated by Renaud and Zimmermann \cite{Renaud2018NudgingFolks}. They concluded that providing a graspable benefit is the key to effectively nudge users towards stronger passwords. 
 
-\section{Take-Aways}
+%Future Work
 
-
+\vspace*{2cm}\noindent
+\fbox{
+	\hspace{1cm}
+	\parbox[c][8cm]{0.7\linewidth}{
+		\section*{Take Aways}
+		\begin{itemize}[leftmargin=*]
+			\item Users can identify weak passwords, but overestimate the strength of mangled passwords.
+			\item Passphrases are seen as weak, but it is possible to influence users' mental models with persuasive design.
+			\item A game-based approach is feasible to collect data inexpensively.
+		\end{itemize}
+	}
+	\hspace{1cm}
+}
 

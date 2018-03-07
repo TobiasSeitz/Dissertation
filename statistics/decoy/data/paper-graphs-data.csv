@@ -1,0 +1,84 @@
+﻿id;group_id;group_sub;prolific_id;used_own_password;isTarget;usedPW;attemptsPW;pw_match;strategy;password_length;pw_length_corrected;digit;upper;lower;special;num_classes;policy_result;generic_policy;guesses;guesses_log10;sequence;calc_time;score;leet;substitution;attemptsStart;shuffle1;shuffle2
+1;A;A;55b1c05ffdf99b68190ce691;YES;false;own;2;NO;forgot;17;9;0;3;14;0;2;2class17;basic16;29006555392;10.46249616;3;3;4;NO;null;0;0;0
+2;A;A;5669fc987da0350012b39e9f;YES;false;own;1;YES;memorized;8;0;1;2;5;0;3;3class8;3class8;100000001;8.000000004;1;4;2;NO;null;0;0;0
+3;B;BD;55390680fdf99b230163b66d;YES;false;own;1;NO;forgot;9;1;3;1;5;0;3;3class9;3class8;1000000001;9;1;1;3;NO;null;0;0;0
+4;B;BT;56bd11f8d4e218000ba8dd28;YES;false;own;1;YES;memorized;10;2;3;1;5;1;4;4class10;comp8;5749600000;9.759637632;3;1;3;NO;null;0;0;0
+5;B;BD;55887b45fdf99b5a48cf2c1c;YES;false;own;1;NO;forgot;14;6;1;1;12;0;3;3class14;3class12;162950800;8.212056497;3;3;3;NO;null;4;0;0
+6;A;A;56a5577281a8ca000d3e4e15;YES;false;own;1;NO;forgot;14;6;0;1;13;0;2;2class14;basic12;196314400;8.292952157;3;1;3;NO;null;0;0;0
+8;C;C;55bede0dfdf99b6b67092299;YES;false;own;2;YES;memorized;11;3;4;1;6;0;3;3class11;3class8;3780624;6.577563487;2;1;2;YES;4 -> a;0;0;0
+10;A;A;55cf7e8b34e906000ee56498;YES;false;own;1;YES;external;11;3;2;1;8;0;3;3class11;3class8;62200000000;10.79379038;3;2;4;NO;null;0;0;0
+11;A;A;5589b65afdf99b118adfa595;YES;false;own;1;NO;forgot;9;1;2;2;5;0;3;3class9;3class8;6290400;6.798678263;2;1;2;NO;null;1;0;0
+12;B;BT;55e896085e4d360010cc2e8a;YES;false;own;1;YES;memorized;12;4;3;1;8;0;3;3class12;3class12;1E+12;12;1;7;4;NO;null;1;0;0
+13;C;C;5559ece3fdf99b6bb084b07e;YES;false;own;3;YES;memorized;12;4;2;1;9;0;3;3class12;3class12;37600784;7.5751969;2;0;2;YES;0 -> o;0;0;0
+15;A;A;55974502fdf99b5dfc68c8c4;YES;false;own;2;YES;cue;11;3;2;2;5;2;4;4class11;comp8;14154040000;10.15088042;3;2;4;NO;null;0;0;0
+16;B;BT;5424ac42fdf99b691fb38500;YES;false;own;1;YES;memorized;11;3;6;1;3;1;4;4class11;comp8;938596132;8.97247876;3;2;3;NO;null;0;0;0
+18;B;BT;5638309adc62e50005cb4e70;NO;true;target;1;NO;forgot;18;10;0;4;14;0;2;2class18;basic16;1.17144E+30;30.06872022;5;4;4;NO;null;0;0;0
+19;B;BT;558ad919fdf99b7c4d36e519;YES;false;own;1;NO;forgot;8;0;0;1;7;0;2;2class8;basic8;100000001;8.000000004;1;1;2;NO;null;0;0;0
+20;B;BT;559272f4fdf99b7e42e96932;YES;false;own;1;NO;forgot;12;4;4;3;3;2;4;4class12;comp8;1E+12;12;1;14;4;NO;null;0;0;0
+21;C;C;55f9df5f4f5140000e296836;YES;false;own;1;YES;memorized;10;2;2;1;6;0;3;3class10;3class8;408810000;8.611521511;2;0;3;NO;null;0;0;0
+22;B;BT;5588b9e5fdf99b7f40e7f428;YES;false;own;1;NO;forgot;21;13;0;1;20;0;2;2class21;basic16;54552176128;10.73681208;3;1;4;NO;null;0;0;0
+23;C;C;564b40c96b914e0012fd707d;YES;false;own;2;YES;memorized;9;1;0;1;8;0;2;2class9;basic8;1295240;6.112350248;2;1;2;NO;null;0;0;0
+24;B;BD;5484b112fdf99b07b28f234b;YES;false;own;1;NO;forgot;11;3;4;1;6;0;3;3class11;3class8;6319120;6.800656603;2;1;2;NO;null;0;0;0
+25;C;C;563fa227074be600115e9642;YES;false;own;1;NO;forgot;9;1;2;1;6;0;3;3class9;3class8;1929200;6.285377253;2;2;2;NO;null;0;0;0
+26;B;BD;56ab981f4483af000b4b4da3;YES;false;own;1;YES;memorized;10;2;2;1;5;2;4;4class10;comp8;10000000001;10;1;1;3;NO;null;0;0;0
+27;A;A;562587f0ed6e5a0005c80f95;YES;false;own;1;YES;memorized;9;1;4;1;4;0;3;3class9;3class8;1000000001;9;1;1;3;NO;null;0;0;0
+28;C;C;546e8bc6fdf99b2bc7ebd029;YES;false;own;1;YES;memorized;16;8;8;4;4;0;3;3class16;3class16;1E+16;16;1;3;4;NO;null;0;0;0
+29;B;BD;56521d78812a980012fe6620;YES;false;own;1;YES;memorized;9;1;5;2;2;0;3;3class9;3class8;342250000;8.534343457;2;2;3;NO;null;0;0;0
+30;B;BD;55ac3198fdf99b6de3b68b23;YES;false;own;1;YES;memorized;13;5;2;2;9;0;3;3class13;3class12;4967379280;9.696127321;2;4;3;YES;0 -> o;0;0;0
+32;C;C;568bc14f39a70e000c58023e;YES;false;own;1;NO;forgot;10;2;1;3;3;0;3;3class10;3class8;10000000001;10;1;1;3;NO;null;0;0;0
+35;B;BD;5601464e77f33b0012cb4130;YES;false;own;1;NO;forgot;8;0;2;1;5;0;3;3class8;3class8;1124200;6.050843581;2;1;2;NO;null;0;0;0
+37;B;BT;5642a744942576001166ecc7;YES;false;own;1;NO;forgot;16;8;4;1;10;0;3;3class16;3class16;1.0385E+12;12.01640547;4;19;4;NO;null;0;0;0
+38;B;BD;56bd0347d4e218000ca87e53;YES;false;own;2;NO;forgot;14;6;2;1;6;5;4;4class14;comp8;1391852800;9.143593307;3;13;3;NO;null;0;1;0
+39;A;A;56a15631e1e5a6000d8f91a8;YES;false;own;1;YES;memorized;11;3;4;3;3;0;3;3class11;3class8;1E+11;11;1;0;4;NO;null;0;0;0
+42;B;BT;569ac88daf9ad70006640a66;NO;true;target;1;NO;forgot;17;9;0;4;13;0;2;2class17;basic16;4.43563E+27;27.6469556;4;2;4;NO;null;0;0;0
+43;A;A;56afe8ab015998000dcd6a20;YES;false;own;1;NO;forgot;8;0;4;1;3;0;3;3class8;3class8;1130464;6.053256737;2;1;2;NO;null;1;0;0
+48;A;A;56aa1732402d62000b6f5313;YES;false;own;2;NO;external;10;2;1;1;8;0;3;3class10;3class8;85776;4.93336579;2;4;1;NO;null;0;0;0
+49;B;BT;55c11e44fdf99b545042e732;YES;false;own;1;NO;forgot;14;6;7;1;6;0;3;3class14;3class12;1.06075E+11;11.02561451;3;14;4;NO;null;0;0;0
+50;C;C;563edcfccbd4c60011dc92d2;YES;false;own;2;YES;browser;9;1;1;1;6;1;4;4class9;comp8;1970800;6.294642554;2;1;2;NO;null;0;0;0
+55;B;BT;5697ac41eaa915000b8d3378;YES;false;own;1;NO;forgot;11;3;3;1;7;0;3;3class11;3class8;2152400;6.332922983;2;12;2;NO;null;2;0;0
+56;B;BT;5699974f25d9e90006b08be4;NO;true;target;1;NO;forgot;19;11;0;4;15;0;2;2class19;basic16;2.97027E+26;26.47279656;3;5;4;NO;null;0;0;0
+57;B;BT;568462118f456f000c45df06;YES;false;own;1;NO;forgot;12;4;6;1;5;0;3;3class12;3class12;457120000;8.660030223;3;6;3;NO;null;0;0;0
+58;C;C;563e21e00980220005572d1c;YES;false;own;2;YES;memorized;11;3;4;1;6;0;3;3class11;3class8;5526200;6.742426599;2;16;2;NO;null;0;0;0
+60;B;BT;55885582fdf99b4021921fbd;YES;false;own;1;NO;forgot;10;2;1;1;7;0;3;3class10;3class8;2666824480;9.425994433;3;2;3;NO;null;0;0;0
+61;B;BT;55579cf5fdf99b02975747de;NO;true;target;1;NO;forgot;17;9;0;4;13;0;2;2class17;basic16;1.11843E+28;28.04860725;4;1;4;NO;null;0;0;0
+62;B;BT;55c0ff43fdf99b442189c6d3;YES;false;own;5;NO;forgot;13;5;0;2;11;0;2;2class13;basic12;748052800;8.873932253;3;2;3;NO;null;0;1;0
+63;B;BD;56aa6d98638440000c8b4eb0;YES;false;own;1;YES;memorized;16;8;3;2;11;0;3;3class16;3class16;345624400;8.538604395;3;3;3;NO;null;0;2;0
+64;B;BT;559cc7e3fdf99b66d8b28f88;YES;false;own;1;YES;memorized;18;10;0;9;9;0;2;2class18;basic16;1E+18;18;1;1;4;NO;null;0;0;0
+65;B;BD;569fe204926a1b0006df21d2;YES;false;own;1;NO;forgot;8;0;2;1;5;0;3;3class8;3class8;23918096;7.378726605;2;5;2;YES;0 -> o;0;0;0
+66;B;BT;56a6f5ac5ad8d9000596db67;YES;false;own;1;NO;forgot;20;12;4;9;7;0;3;3class20;3class16;1.00307E+12;12.00132951;4;1;4;NO;null;0;0;0
+67;C;C;568ad985316b10000c50afa0;YES;false;own;2;NO;forgot;11;3;1;1;9;0;3;3class11;3class8;104332900;8.018421279;3;1;3;NO;null;1;0;0
+68;C;C;555910e4fdf99b06175ee2af;YES;false;own;1;NO;forgot;15;7;0;2;13;0;2;2class15;basic12;1.13571E+12;12.05526577;4;1;4;NO;null;0;0;0
+70;A;A;55c237eefdf99b41c2f6481b;YES;false;own;4;NO;forgot;8;0;5;1;2;0;3;3class8;3class8;10010000;7.000434077;2;7;2;NO;null;0;0;0
+71;B;BD;546e3264fdf99b2bc7ebcfec;YES;false;own;1;YES;browser;10;2;0;2;8;0;2;2class10;basic8;5041192;6.702533238;2;2;2;NO;null;0;0;0
+72;B;BT;5596ef31fdf99b4a8bd2d3f1;YES;false;own;1;YES;memorized;10;2;2;1;7;0;3;3class10;3class8;415400;5.618466492;2;1;1;NO;null;0;0;0
+73;B;BT;56a175d2e1e5a6000b8f80f4;YES;false;own;1;NO;forgot;13;5;2;2;9;0;3;3class13;3class12;218195200;8.338845192;3;3;3;NO;null;0;0;0
+75;B;BD;56119a5b7ffc8a001281175a;YES;false;own;2;NO;other;17;9;2;1;11;0;3;3class17;3class16;2.86071E+13;13.45647444;3;1;4;NO;null;0;0;0
+77;B;BD;56a5433f1a76f2000d270103;YES;false;own;1;YES;external;12;4;4;1;7;0;3;3class12;3class12;15000;4.176091259;2;2;1;NO;null;0;0;0
+78;B;BT;5626ae21ddff3c000dbcd467;YES;false;own;1;YES;external;16;8;0;4;12;0;2;2class16;basic16;2.88773E+23;23.46055631;4;12;4;NO;null;0;7;0
+79;A;A;567894a489319e00116517a7;YES;false;own;1;NO;forgot;12;4;7;3;2;0;3;3class12;3class12;136010000;8.133570841;2;2;3;NO;null;0;0;0
+80;B;BD;54a7516dfdf99b7cd759d22b;NO;false;decoy;2;YES;external;12;4;3;2;6;1;4;4class12;comp8;379284400;8.578964981;2;4;3;YES;3 -> e;1;0;0
+81;C;C;5602e15de372c00011bd472d;NO;true;target;1;NO;forgot;19;11;0;4;15;0;2;2class19;basic16;4.98349E+26;26.69753377;3;4;4;NO;null;0;0;0
+82;B;BD;5654c59404212700124a1a4d;YES;false;own;1;NO;forgot;10;2;3;2;4;1;4;4class10;comp8;10000000001;10;1;1;3;NO;null;0;1;0
+85;C;C;55ff49bb77f33b0012cb35aa;YES;false;own;1;YES;external;12;4;7;2;2;1;4;4class12;comp8;1E+12;12;1;9;4;NO;null;0;0;0
+86;B;BT;55895734fdf99b6bd060170f;YES;false;own;1;NO;forgot;11;3;3;1;7;0;3;3class11;3class8;13450000;7.128722284;2;3;2;NO;null;0;0;0
+87;A;A;5484624dfdf99b07b28f22c9;YES;false;own;1;YES;memorized;9;1;0;2;7;0;2;2class9;basic8;914368;5.961121019;2;1;1;NO;null;0;0;0
+88;C;C;56ba7e4c30d6b30005f85189;NO;true;target;1;NO;forgot;16;8;0;4;12;0;2;2class16;basic16;1.96992E+14;14.29444881;3;1;4;NO;null;0;0;0
+89;A;A;55883ff3fdf99b4021921d42;YES;false;own;1;NO;forgot;12;4;3;1;7;0;3;3class12;3class12;1E+12;12;1;4;4;NO;null;0;0;0
+91;C;C;55b53384fdf99b2b69c82509;YES;false;own;1;NO;forgot;10;2;4;1;4;1;4;4class10;comp8;403443712;8.605782951;3;4;3;YES;3 -> e;0;0;0
+93;B;BD;5663772b1e460a0011633041;YES;false;own;1;YES;memorized;12;4;1;1;9;1;4;4class12;comp8;1E+12;12;1;1;4;NO;null;0;0;0
+94;C;C;56aac85210b779000bcb4c3c;NO;false;decoy;1;YES;memorized;11;3;2;2;5;2;4;4class11;comp8;274858000;8.439108382;2;2;3;YES;9 -> g,  @ -> a;0;0;0
+95;A;A;560194c9a66d100012d5c257;YES;false;own;1;YES;memorized;9;1;1;2;6;0;3;3class9;3class8;105834136;8.024625769;3;1;3;NO;null;0;0;0
+96;C;C;55a3f881fdf99b6e3e618245;YES;false;own;3;NO;forgot;12;4;2;2;7;0;3;3class12;3class12;1E+12;12;1;33;4;NO;null;1;0;0
+97;B;BT;566195cab018d1000f720698;YES;false;own;2;NO;forgot;16;8;2;1;11;1;4;4class16;comp8;1.41224E+11;11.14990728;3;3;4;NO;null;0;0;0
+98;A;A;56a935cc119265000c6e5be2;YES;false;own;1;NO;forgot;12;4;6;2;4;0;3;3class12;3class12;892000000;8.950364854;3;10;3;NO;null;0;0;0
+99;A;A;569cffa09e8363000c3087cd;YES;false;own;1;YES;memorized;22;14;2;3;15;2;4;4class22;comp8;6.19551E+14;14.79207687;4;6;4;NO;null;1;0;0
+100;C;C;55a82e91fdf99b058cb28250;YES;false;own;1;YES;memorized;13;5;2;1;9;0;3;3class13;3class12;1.13512E+12;12.05504178;3;3;4;NO;null;0;0;0
+102;A;A;55d234565bc5bc0005d90389;YES;false;own;1;YES;memorized;12;4;3;1;7;0;3;3class12;3class12;614273760;8.788361964;3;2;3;NO;null;0;0;0
+103;C;C;54b8ea6cfdf99b34ce2578c5;YES;false;own;2;NO;forgot;10;2;6;1;3;0;3;3class10;3class8;3997840;6.601825409;2;1;2;NO;null;0;0;0
+104;B;BD;56114aa67ffc8a000f81148d;YES;false;own;1;YES;memorized;11;3;3;1;6;0;3;3class11;3class8;333964720;8.52370059;3;3;3;NO;null;0;0;0
+105;B;BD;566ae5587da0350012b50b13;YES;false;own;1;NO;forgot;12;4;0;3;9;0;2;2class12;basic12;36322648000;10.5601775;3;1;4;NO;null;3;0;0
+106;B;BT;5592fd82fdf99b59a8fb1e61;YES;false;own;1;NO;forgot;8;0;2;1;5;0;3;3class8;3class8;100000001;8.000000004;1;2;2;NO;null;0;0;0
+107;C;C;55d1f3f2cc2b18000c0b9cda;YES;false;own;1;NO;forgot;12;4;4;1;6;1;4;4class12;comp8;42010000;7.623352682;2;9;2;NO;null;0;0;0
+110;B;BD;56c1ea880aab29000a7d564a;YES;false;own;1;NO;forgot;18;10;1;1;16;0;3;3class18;3class16;2.8201E+12;12.45026451;3;4;4;NO;null;0;5;0
+111;B;BD;55bcc0b3fdf99b1669a8c1d9;YES;false;own;3;NO;forgot;11;3;2;1;8;0;3;3class11;3class8;125230000;8.097708381;3;1;3;NO;null;1;0;0
+112;B;BD;562bc30a733ea00011162c34;NO;false;decoy;1;NO;forgot;11;3;3;2;5;1;4;4class11;comp8;213034000;8.328448922;2;2;3;YES;0 -> o, 1 -> i;0;0;0

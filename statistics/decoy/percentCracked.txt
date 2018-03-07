@@ -1,0 +1,51 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+percentCracked ~ s(guessNumber) + condition
+
+Parametric coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          55.4201     0.7186  77.117  < 2e-16 ***
+conditionPassphrase  -7.8591     1.0163  -7.733 1.34e-12 ***
+conditionMangled     -0.6062     1.0163  -0.596    0.552    
+conditionDecoy       -1.3311     1.0163  -1.310    0.192    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf Ref.df    F p-value    
+s(guessNumber) 8.025  8.747 1545  <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.988   Deviance explained = 98.9%
+GCV =  22.85  Scale est. = 21.175    n = 164
+[1] "\nBETAs:"
+
+Call:
+gam(formula = percentCracked ~ s(guessNumber) + condition, data = percentageFrame)
+
+Standardized Coefficients::
+        (Intercept) conditionPassphrase    conditionMangled      conditionDecoy    s(guessNumber).1    s(guessNumber).2 
+        0.000000000        -0.080763409        -0.006229483        -0.013678995        -1.106800878        -0.213028233 
+   s(guessNumber).3    s(guessNumber).4    s(guessNumber).5    s(guessNumber).6    s(guessNumber).7    s(guessNumber).8 
+        0.169140971        -0.061942903         0.098565691         0.013139591         0.094808312        -0.076119665 
+   s(guessNumber).9 
+       -0.042932819 
+
+[1] "\nGAM.CHECK:"
+
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 9 iterations.
+The RMS GCV score gradient at convergence was 0.0001059721 .
+The Hessian was positive definite.
+Model rank =  13 / 13 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                 k'  edf k-index p-value
+s(guessNumber) 9.00 8.02    1.12     0.9
+NULL
