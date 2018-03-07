@@ -84,4 +84,4 @@ percentageGAM <- gam(percentCracked ~ s(guessNumber) +condition,data=percentageF
 generatePDF(percentageGAM, controlVariables = c("guessNumber"), predictors = c("condition"))
 outputSummary(percentageGAM)
 
-gam(pw_length_corrected ~ group_id, data = d.own.all)
+summary(gam(pw_length_corrected ~ group_id, data = d.own.all))
