@@ -1,7 +1,19 @@
 \chapter[Password Selection and the Decoy Effect]{Password Selection and the Decoy Effect}\label{chap:decoy}
 
+As laid out in Part \ref{part:problem_space}, one dimension of the problem space is that users pick weak passwords. In many situations, e.g. for unimportant accounts, this is acceptable. However, with rising importance, the need for a stronger password becomes salient. In these situations, mental models of password strength (see Chapter \ref{chap:pasdjo}) play a vital role, because they influence the choice of the password. There is increasing evidence that mental models are often sub-par: many users overestimate the strength increase from adding digits and symbols, or substituting letters with them \cite{Seitz2017PASDJO, Ur2015PWCreationLab, Ur2016PerceptionsPassword}. Thus, our goal is to avoid risky situations originating from flawed mental models. In this research project, we try to steer users away from weak passwords by providing more secure alternatives. Since it is hard to compete against a user's preferred password choice, we try to leverage persuasive strategies from marketing to ``sell'' the stronger alternative. This strategy is the so-called decoy effect. Given a range of products, vendors use this tool to make the one item stand out that is best for them (and often for the client). A decoy choice architecture includes one item that is ``unattractive by design'' to make a superior option salient. In numerous studies, it successfully shifted prospective buyers' reference point and achieved the goal. Thus, we aimed to translate it to the decision-making problem of selecting passwords. In essence, we can craft password suggestions in such a way that one of the suggestions is more attractive as judged by its strength and usability benefits. 
+
+We thus aimed to answer the following research questions:
+
+\begin{itemize}
+	\item[\textbf{1)}] How can we translate the decoy choice architecture to password selection?	
+	\item[\textbf{2)}] Does the decoy effect make users select stronger passwords?
+	\item[\textbf{3)}] What are the opportunities and pitfalls in this approach?
+\end{itemize}
+	
+To that end, we conducted an online experiment where different groups of participants received specific password suggestions. This chapter reports on the design and evaluation of a novel persuasive strategy and discusses the implications for its future application areas. Beside myself, Stefanie Meitner, Emanuel von Zezschwitz, and Heinrich Hussmann contributed to the project, which was first published at EuroUSEC 2016 \cite{Seitz2016DecoyEffect}.
+
 % Motivation
-% users use weak passwords a
+% users use weak passwords 
 % users think l33t speak is more secure than other strategies (pasdjo finding)
 % but this is not necessarily the case, passphrases might be a better alternative
 % hard challenge: mental model of passphrases indicates users think they are too weak. 
@@ -10,21 +22,14 @@
 % RQ: in which way do suggestions influence self-selected passwords?
 
 
-
-%TODO Result summary. 
 \section{Background and Context}
+The project is positioned in a line of work that tries to nudge users towards strong passwords (see Section \ref{sec:rw:persuasive-interventions}). We approach this problem through two main components: suggestions and choice architecture. We briefly provide context on these two elements.  
+%Goal: influence / correct mental models of password strength, persuade users to consider alternative strategies. 
 
-Goal: influence / correct mental models of password strength, persuade users to consider alternative strategies. 
-
-Criticism: this is unrealistic because memory interference effects prevent that this works for more than one account. -- yes, but for important accounts, this might still be worthwhile and people can more easily write down three words instead of an 8 character random sequence that might include ambiguous characters (0 and O); Kuo et al also say that writing down is a perfectly valid strategy \cite{Kuo2006HumanSelectionMnemonic}. (\todo{look up more researchers who argue in favor of writign down, e.g \cite{Kothari2017PasswordLogbooks} })
+%Criticism: this is unrealistic because memory interference effects prevent that this works for more than one account. -- yes, but for important accounts, this might still be worthwhile and people can more easily write down three words instead of an 8 character random sequence that might include ambiguous characters (0 and O); Kuo et al also say that writing down is a perfectly valid strategy \cite{Kuo2006HumanSelectionMnemonic}. (\todo{look up more researchers who argue in favor of writign down, e.g \cite{Kothari2017PasswordLogbooks} })
 
 \subsection{Suggestions}
-Main topic: suggesting methods, feedback, modifications
-\cite{Ur2012HelpingUsersCreateBetterPasswords}
-\cite{Shay2012CorrectHorseBatteryStaple}
-\cite{Shay2014CanLongPasswordsBeSecureAndUsable}
-\cite{Forget2008ImprovingPasswordsThroughPersuasion}
-
+Suggesting passwords was at the heart of the first work on persuasion for stronger passwords \cite{Forget2008ImprovingPasswordsThroughPersuasion}. We can identify three common patterns here: (I) trying to get users to accept a suggested password verbatim\cite{Vance2013FearAppeals}; (II) suggesting alterations or insertions based on their own password \cite{Forget2008ImprovingPasswordsThroughPersuasion,Segreti2017AdaptivePolicies, Shay2015SpoonfulOfSugar}; or (III) suggesting a random password that serves as a basis for the user's password \cite{Huha2015UserReplaceablePasswords}. All password generators fall into the first category, because they encourage users to make sure the string is completely random. The second approach is the most common and most evaluated of the three, and has seen mixed results overall. Approach (III) seems promising in environments with critical security levels requiring more stringent policies. Moreover, suggestions are typically included real-time feedback where they can act as feed-\textit{forward} (opposed to feed\textit{back}) \cite{Ur2017DataDrivenPWMeter}. In summary, suggestions are an essential part of the persuasive toolkit and offer a wide range of new design opportunities.
 
 \subsection{The Decoy Effect}
 The decoy effect was discovered through research in consumer psychology. Buying a product usually involves deciding between different alternatives. On a high level, products are easily comparable by their quality and price, so customers heavily rely on these two metrics. The two dimensions also build the foundation of the decoy effect. In one of the first experiments on ``asymmetric dominance'', Huber \etal illustrate decision-making processes with a simple example to decide between six-packs of beer that differ in price and quality \cite{Huber1982AsymetricallyDominated} (slightly adapted for simplicity): 
@@ -267,8 +272,8 @@ Participants in our study indicated that their preferred way to handle passwords
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/decoy/expire_mockup}
-	\caption{\label{fig:decoy:expiremockup}Suggestion accompanied by enforced password expiration information.}
+	\includegraphics[width=0.5\linewidth]{figures/decoy/expire_mockup}
+	\caption{\label{fig:decoy:expiremockup}Suggestion accompanied by a graspable benefit.}
 \end{figure}
 
 \section{Conclusion}
@@ -277,15 +282,14 @@ We set out to nudge users towards a password than is stronger than the first cho
 %Future Work
 Although they decoy effect did not show, this does not mean it does not exist for passwords. It could simply mean that the direct adaptation of choice architectures in other fields is insufficient and needs more fine-tuning. In a different UI design, where the dimensions are more clearly framed for the users, the hypothesized preferential shift might be induced. A possible direction towards this is to step away from generating completely new passwords and instead nudge users towards a modified version that significantly increases strength. Ur \etal have already provided first positive results about suggesting password alterations. It would be interesting to find out if an additional alteration that is ``unattractive by design'' could boost adoption rates of the target suggestion. We see many opportunities to further explore persuasive password suggestions, especially if they remove usability pain points of trying to create a memorable yet strong secret. 
 
-
-\vspace*{2cm}\noindent
+%\vspace*{2cm}\noindent
 \fbox{
 	\hspace{1cm}
 	\parbox[c][8cm]{0.7\linewidth}{
 		\section*{Take Aways}
 		\begin{itemize}[leftmargin=*]
-			\item The decoy effect was \textbf{not} visible when participants received two suggestions. They proceeded with their own passwords. The most plausible explanation is the lack graspable usability benefits. 
-			\item Demonstrating that a strong password does not have to be overly complicated by suggesting and a passphrase, seems to make users select stronger passwords. Using feed-forward appears to encourage people to try to come up with a better secret. This needs to be confirmed in another study. 
+			\item The decoy effect was \textbf{not} visible when participants received two suggestions. They proceeded with their own passwords. The most plausible explanation is that the benefits of the target over the decoy were too vague. 
+			\item Demonstrating that strong passwords do not have to be overly complicated by suggesting and a passphrase seems made our participants select stronger passwords. Using feed-forward appears to encourage people to come up with a better secret. %However, this needs to be confirmed in another study. 
 		\end{itemize}
 	}
 	\hspace{1cm}
