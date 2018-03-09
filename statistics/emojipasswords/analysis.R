@@ -6,6 +6,8 @@ library(ggplot2)
 source('../util.R')
 
 df <- read.csv('./emoji-full-data.csv', sep=';', header = T)
+df.counts  <- read.csv('./emoji-selection-counts.csv', sep=';', header = T)
+df.counts <- renameColumn(df.counts, "X...emoji","emoji")
 
 # clean data.
 # recode such that sentiments are 1=negative 5=positive
@@ -95,6 +97,30 @@ wilcox.test(df.sentiment.before$df.emoji.would.easymemo,
 median(df$emoji.would.try)
 median(df$emoji.voluntary.usage)
 
+df.counts.long <- melt(df.counts, id.vars = c("emoji","utfEmoji","category"), measure.vars = c("controlCount","experimentalCount"))
+df.counts.long$variable <- as.character(df.counts.long$variable)
+df.counts.long$variable[df.counts.long$variable == 'controlCount'] <- "Control Group"
+df.counts.long$variable[df.counts.long$variable == 'experimentalCount'] <- "Experimental Group"
+
+### WHICH emoij was chosen and HOW OFTEN?
+(distributionHistogram <- ggplot(df.counts.long, 
+                                 aes(x=df.counts.long$emoji,y=value)) + 
+                          geom_histogram(stat="identity") +
+    scale_x_discrete(limits=df.counts$emoji) + # hack: the data is sorted (desc) so we used that info to discretely scale the x-axis.
+    labs(x="Emoji",y="Total Number of Occurances",fill="Study Group (Session 2)") +
+    theme(axis.text.x = element_blank())
+)
+(distributionHistogramV2 <- ggplot(df.counts.long, 
+                                 aes(x=df.counts.long$emoji,y=value)) + 
+    geom_histogram(stat="identity") +
+    scale_x_discrete(limits=df.counts$emoji) + # hack: the data is sorted (desc) so we used that info to discretely scale the x-axis.
+    labs(x="Emoji",y="Total Number of Occurances",fill="Study Group (Session 2)") +
+    theme(axis.text.x = element_blank())
+)
+savePlot(distributionHistogram, filename = "distribution-histogram.pdf", path="graphs")
+
+
+
 # plots by group # just testing
 
 ### emoji position
@@ -105,7 +131,7 @@ emojiPositions$variable <- as.character(emojiPositions$variable)
 emojiPositions$variable[emojiPositions$variable == 'position_emoji_1'] <- "First Emoji"
 emojiPositions$variable[emojiPositions$variable == 'position_emoji_2'] <- "Second Emoji"
 
-# histogram count.
+# histogram position count.
 (positionHistogram <- ggplot(emojiPositions, aes(x=value,fill=variable)) + 
     geom_histogram(stat="count", binwidth = 1) +
     theme(legend.position = "top") +

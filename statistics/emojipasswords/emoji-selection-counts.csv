@@ -1,23 +1,23 @@
-﻿emoji;count
-camel;5
-penguin;5
-cherry_blossom;3
-dog;3
-tea;3
-grin;3
-diamond_shape_with_a_dot_inside;3
-bird;2
-poultry_leg;2
-sweat_smile;2
-white_check_mark;2
-cyclone;2
-tropical_fish;1
-blush;1
-flushed;1
-smile;1
-headphones;1
-desktop_computer;1
-computer;1
-lower_left_fountain_pen;1
-heartpulse;1
-revolving_hearts;1
+﻿emoji;totalCount;controlCount;experimentalCount;utfEmoji;category
+camel;5;4;1;🐫;Animals & Nature
+penguin;5;3;2;🐧;Animals & Nature
+cherry_blossom;3;3;0;🌸;Animals & Nature
+dog;3;2;1;🐶;Animals & Nature
+tea;3;3;0;🍵;Food & Drink
+grin;3;2;1;😁;Smileys & People
+diamond_shape_with_a_dot_inside;3;1;2;💠;Symbols
+bird;2;1;1;🐦;Animals & Nature
+poultry_leg;2;0;2;🍗;Food & Drink
+sweat_smile;2;0;2;😅;Smileys & People
+white_check_mark;2;0;2;✅;Symbols
+cyclone;2;2;0;🌀;Symbols
+tropical_fish;1;1;0;🐠;Animals & Nature
+blush;1;0;1;😊;Smileys & People
+flushed;1;1;0;😳;Smileys & People
+smile;1;0;1;😄;Smileys & People
+headphones;1;0;1;🎧;Objects
+desktop_computer;1;0;1;🖥️;Objects
+computer;1;1;0;💻;Objects
+lower_left_fountain_pen;1;0;1;🖋️;Objects
+heartpulse;1;0;1;💗;Symbols
+revolving_hearts;1;1;0;💞;Symbols
