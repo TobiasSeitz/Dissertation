@@ -4,6 +4,13 @@
 library(mgcv)
 library(ggplot2)
 library(lm.beta)
+library(extrafont)
+
+# this can take a while!
+# font_import()
+# fonts()
+# fonttable()
+loadfonts()
 
 # this can take a while, so we don't do that by default.
 # font_import()
