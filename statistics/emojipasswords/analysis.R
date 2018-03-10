@@ -6,8 +6,10 @@ library(ggplot2)
 source('../util.R')
 
 df <- read.csv('./emoji-full-data.csv', sep=';', header = T)
+
 df.counts  <- read.csv('./emoji-selection-counts.csv', sep=';', header = T)
 df.counts <- renameColumn(df.counts, "X...emoji","emoji")
+
 
 # clean data.
 # recode such that sentiments are 1=negative 5=positive
@@ -111,17 +113,15 @@ df.counts.long$variable[df.counts.long$variable == 'experimentalCount'] <- "Expe
     theme(axis.text.x = element_blank())
 )
 (distributionHistogramV2 <- ggplot(df.counts.long, 
-                                 aes(x=df.counts.long$emoji,y=value)) + 
+                                 aes(x=df.counts.long$emoji,y=value,fill=category)) + 
     geom_histogram(stat="identity") +
     scale_x_discrete(limits=df.counts$emoji) + # hack: the data is sorted (desc) so we used that info to discretely scale the x-axis.
     labs(x="Emoji",y="Total Number of Occurances",fill="Study Group (Session 2)") +
-    theme(axis.text.x = element_blank())
+    theme(axis.text.x = element_blank()) +
+    theme(legend.position = "top")
 )
-savePlot(distributionHistogram, filename = "distribution-histogram.pdf", path="graphs")
 
-
-
-# plots by group # just testing
+savePlot(distributionHistogramV2, filename = "distribution-histogram-v2.pdf", path="graphs")
 
 ### emoji position
 
@@ -145,5 +145,7 @@ emojiPositions$variable[emojiPositions$variable == 'position_emoji_2'] <- "Secon
     theme(legend.position = "right") +
     labs(x="Position of Emoji in Password",y="Number of Occurences",fill="Emoji Selection Strategy")
 )
-savePlot(positionHistogram, filename = "position-histogram-by-strategy.pdf", path="graphs",height=4)
+savePlot(positionHistogram, filename = "position-histogram-by-strategy.pdf", path="graphs",height=3)
+
+### emoji errors
 
