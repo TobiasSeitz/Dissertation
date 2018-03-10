@@ -104,16 +104,16 @@ details <- function(){
       #geom_bar(data = post, stat = "identity") +
       geom_bar(stat = "identity",color="white") +
       geom_hline(yintercept=0,color="black") +
-      geom_text( size = 2, position = position_stack(vjust = 0.5), color="white") +
+      geom_text( size = 3, position = position_stack(vjust = 0.5), color="white") +
       #scale_x_discrete(limits=errorEmojiTicks) + # hack: the data is sorted (desc) so we used that info to discretely scale the x-axis.
       #scale_y_continuous(breaks=seq(0,11,1)) +
       facet_grid(group ~ category) +
       #   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
       theme(legend.position = "none") +
       theme(axis.text.x = element_blank()) +
-      labs(x="Category",y="Login Succuesses (positive) vs. Login Failures (negative)",color="Emoji")
+      labs(x="Category",y="Successful (positive) and unsuccessful (negative) login attempts",color="Emoji")
   )
   
-  savePlot(detailHistogram1, "detailed-by-emoji-1.pdf",height=5,path="graphs")
+  savePlot(detailHistogram1, "detailed-by-emoji-2.pdf",height=9,path="graphs")
 }
 
