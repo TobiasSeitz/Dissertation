@@ -1,10 +1,14 @@
 ##### TOBI:
 statistics/personality/**/*.pdf
+# to avoid data leaks because some pws look real: 
+statistics/modalities/saronStudyView.csv
 latex-emoji
+
 
 
 .RData
 **/*/.RData
+**/*/.Rhistory
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

@@ -1,27 +1,90 @@
-\chapter[Redesigning Verbal and Non-Verbal Password Feedback]{Redesigning Verbal and Non-Verbal Password Feedback}\label{chap:redesigning_feedback}
+\chapter[Co-Designing Persuasive Feedback] {Co-Designing Persuasive Feedback}\label{chap:feedback_modalities}
+% lingo: Narrative.
+
+% FOCUS: Involve users in finding ways to provide better/more helpful/more actionable feedback. 
+% learn from what they say explicitly, but also explicitly. 
+% underlying persuasive principle: \textit{social interaction} (team spirit) between the system and the users. (Forget et al).
+% weirich and sasse / Sasse and Felchais --> Socio-Technical System. 
+% participatory design methods, open questions, learning from feature requests.
+% opportunity: past studies focused on retrospection. We involve users in creating new solutions without a basic starting point. 
+
+% theoretically, magdalena's BA topic could be worth mentioning, too. 
+% GOALs.
+% 	Design nudges without letting users become aware of that. 
+% 	Evaluate 
+
+Goals: 
+RQs:
+Method: \textbf{Design research}.
+Practical Issues: see section on running password studies
+Ethical issues: collect plain text passwords? tried in bandwagon study, but there's some resentment. 
 
 
-%TODO Result summary. 
-\section{Background and Context}
+Storyline:
 
-\subsection{Research Questions}
+%(Intro: 1-2 pages)
+Problems:
+- nudging approaches have become stale
+- some solutions don't focus on the core goals like stronger passwords and/or less reuse
+- we found no formal requirement elicitation in 
+
+
+Goals:
+- what do users say they need? derive solutions and design lenses from that. 
+- explore solutions that go beyond password meters. (THATS AN OVERALL GOAL)
+- put the users first (very user-centric)
+
+
+% 10 + 10 method.
+% 
+
+what this chapter can realistically achieve: 
+verbal feedback: what is required. qualitative stuff (hint at suggestion trustworthiness, personalization)
+nudging: both verbally and visually; dimension: cognitive bias (bandwagon)
+
 \begin{itemize}
-	\item[RQ1] Which other feedback solutions are feasible to influence password selection?
-	\item[RQ2] What are the benefits of verbal and non-verbal feedback?
-	\item[RQ3] Does feedforward work better than feedback?
-	\item[RQ4] 
+	\item[RQ1] Which other feedback solutions/modalities are most feasible to influence password selection?
+	\item[RQ2] What are the pros and cons of verbal and non-verbal feedback?
+	\item[RQ3] Does feed-\textit{forward} work better than feedback?
 \end{itemize}
 
-\section{Related Work}
-mention work here that hadn't been addressed before, but this might go.
+This chapter reports on a qualitative survey and a design exploration. The project was a collaboration between myself and Caroline Olsienkiewicz, respectively Katharina Schwarz. 
 
-\section{Case Study: Work Passwords}
-\todo{BA von Caroline Olsienkewicz}
+\section{Background and Context}
 
-\subsection{Samples}
-mention screening procedure
-\subsection{Results}
+Design dimensions / aspects of persuasive authentication: PAF Forget \etal \cite{Forget2007PersuasionEducationSecurity}
 
+
+\section{Eliciting Requirements}
+Goal: find out what users would expect from password feedback and what they would suggest doing to improve password selection for other users. 
+ 
+lightweight and rapid iterations
+
+- Approach: Give users example of \textbf{verbal feedback} 
+\subsection{Method}
+- qualitative survey 
+	- what works (subjectively) and what doesn't? It's not like people don't know that a study is about password feedback. strength isn't the only dimension. qualitative rating / assessment / perceived helpfulness.
+- What do they miss? 
+- What feedback ideas do they come up with?
+- motivate focus on work environment.
+- usually no choice,
+- expiration policies
+- many password changes leads to creativity deprivation (we should get rid of expiration anyhow)
+- pick up the specific questions b/c they were good
+
+\subsubsection{Prototype}
+To ensure that participants have a shared understanding of password feedback, we created a small website featuring only a password field and textual feedback. The underlying strength estimation and feedback phrases were based on the zxcvbn library. Warnings and suggestions that come with zxcvbn were translated to German. 
+
+\subsubsection{Questionnaire}
+They survey questionnaire included 37 questions, many of which are quick single- and multiple-selection items to collect context information (e.g. demographics, semantic differentials, social desirability scale). This information would help us assess the value and relative importance of qualitative statements that followed. The core of the questionnaire is formed by eleven items about password feedback, six of which were open questions. Moreover, we inquired coping strategies at work and personal password behaviors to derive further requirements. During this part of the questionnaire, we added an \textit{instructional manipulation check}, i.e. an attention check, to filter out participants that were only trying to complete the survey as fast as possible to receive the incentive \cite{Oppenheimer2009InstructionalManipulationChecks}. This is a well-known issue with crowd-sourced survey data, and the attention checks can effectively reduce the risk of low-quality data. The items were randomized where necessary, but the overall structure was the same for all participants, i.e. there were no independent variables. 
+
+\subsubsection{Sample}
+We recruited participants via Prolific \footurl{https://prolific.ac}{06.03.2018} which provided similar crowd-sourcing features as Amazon's Mechanical Turk, but has a stronger focus on research surveys. Since \gls{mTurk} does not allow German users to sign up, Prolific is one of the best alternatives because of its large user panel. We screened for German language proficiency via Prolific's internal screening tool. The survey also required participants to be employed and using alphanumeric passwords in their work environment on a regular basis. 
+From the 87 users who started the survey, we had to eliminate 47 responses based on previously defined exclusion criteria: incomplete or mechanically translated, incomprehensible answers; failure to complete the instructional manipulation check \cite{Oppenheimer2009InstructionalManipulationChecks}; and fourth-quartile scores on the social desirability scale. The remaining 40 respondents had a diverse educational and professional background, but the largest part (n=15, 37.5\%) held positions in IT or online media. Sixteen were female (40\%) and 24 male (60\%). They were aged between 20 and 53 ($M=32, SD=7$). As an incentive, participants received 1.50€ for 10 minutes worth their time, which meets Prolific's guidelines. 
+
+\subsubsection{Analysis Approach}
+\subsection{Key Take-Aways}
+In the following, we focus on the main points that we identified through multiple coding stages and discussions. To keep the narrative coherent, we omit all corollary results that did not guide further research steps. These are reported in higher detail in C. Olsienkiewicz' thesis \cite{Olsienkiewicz2016BAThesis}. 
 \subsubsection{Feedback needs to be Personalized}
 not all feedback worked for everyone, and people wanted to know how they can improve their own password, and not just a random strategy
 
@@ -37,19 +100,116 @@ Once you start giving feedback (``strong'' or ``weak'') you need to explain how 
 show passwords --> corroborates findings from decoy study --> story line could arch over to decoy and use it as motivation (suggesting passwords). 
 
 
+
 \subsection{Limitations}
 self report (work password) 
+biased // to much priming. should have posed more open general questions in the beginning before launching the prototype website, but this way everyone had the same experience of the basic functionality of password feedback. 
 
-inconsistencies (removed if too weird))
+- pre study results:
+- too many password changes (see above)
+- like to be supported in more creative ways. (Ford issue -- people don't see the bigger picture).
 
-\section{Case Study: Participatory Design of a Password Meter}
-\todo{BA von Katharina Schwarz}
 
-\section{Case Study: Jumping on the Bandwagon}
-\todo{MA von Saron Mebratu}
-Mention that LastPass already has something like this now. -- find out when they introduced it (write them an email) 
 
+- Analysis steps: open / axial 1 / axial 2 / selective
+- Take Aways / Themes: (codebook Caroline is very helpful here).
+	- better personalization
+	- make strength easier to gauge (maybe. compare to others to justify bandwagon study)
+		- communicate risks realistically
+		- explain what happens when password is too weak
+			- challenge: users don't always want to hear this, it's unrealistic.
+			- positivity, reinforcement.
+			- intrinsic goal: motivate yourself! become enabled, empowered to act differently.
+	- user concerns regarding strength feedback:
+		- if everybody creates passwords based on this feedback, they become too similar and thus insecure?
+		- authoritative character
+		- no cynicism
+	- more creativity support to create stronger passwords (kind of verbatim:)
+		- suggestions
+		- formula to create a strong password. 
+		- show how to be creative 
+		- need to ``feel'' secure
+	- Visualization:
+		- PW Meter
+		- Character categories.
+	- interesting side results: 
+		- \textbf{people want their mental models confirmed ``it should show me that i need to use uppercase letters and symbols to boost strength''.} others: ``add more randomness'' (I guess of the suggestions), focus on length, suggest to use 1 uppercase letter, emphasize that symbols boost strength, 
+		
+\section{Participatory Design of Password Feedback}
+GOAL: design session to actually teach us more about the requirements, not necessarily about the solutions. The prototypical and conjoint solutions tell us about the expectations and needs of users regarding password feedback. 
+
+(condense to 4 pages)
+Second Step - Katharina: 
+- Involve users in the design of a novel feedback solution
+	- participatory design session
+	- different groups
+- Designs:
+	- rewards: beautify page / positive reinforcement from friends (weird suggestions but okay)
+	- analogies: time to crack --> goal: better risk assessment for non-experts.
+	- playfulness: bubbles / vault / slotmachine to make random character replacements more exciting / represent strength contribution of different elements in some way (fruit salad)
+- interesting aspects:
+	- a lot of the concepts are visualizable with little text.
+	- missing: background information.
+	
+(lessons learned and take-aways: 2-3 pages)
+- how did this approach help us now?
+- what did we learn?
+- why should we look elsewhere?
+- put solutions / needs into ``design space grid'':
+
+
+
+\subsection{Process Reflection}
+What did people say about being involved? What are the opportunities and drawbacks that they saw?
+	
 \section{Discussion}
 
-\section{Take-Aways}
+\subsection{Requirements}
+Feedback should:
 
+
+
+\subsection{Current Frameworks and Feedback Systems}
+How do the requirements reflect the persuasive authentication framework?
+
+Do password meters and other solutions fulfill the requirements?
+Where is potential to improve?
+
+
+
+\section{Conclusion}
+
+
+
+--> both verbal and visual feedback need to be combined
+the requirements should somehow be related to what's to come in the decoy chapter. E.g. the suggestive and 
+
+trustworthiness of suggestions / feedback was challenged by first participants.
+
+
+
+
+--> empowerment... TODO.
+
+
+\vspace*{1cm}\noindent
+\fbox{
+	\hspace{1cm}
+	\parbox[c][8cm]{0.7\linewidth}{
+		\section*{Take Aways}
+		\begin{itemize}[leftmargin=*]
+			\item General requirement elicitation showed that users want to have their mental models confirmed with password feedback. They become skeptical if the feedback shows unexpected strength results.
+			\item 
+		\end{itemize}
+	}
+	\hspace{1cm}
+}
+
+
+%Kicked out: (Third Step: Hard to justify co-creation):
+%\section{Case Study: Jumping on the Bandwagon}
+%focus: design rationale and short qualitative evaluation. 
+%aim: gauge general feasibility, quantify effects on small scale. 
+%\todo{MA von Saron Mebratu}
+%Mention that LastPass already has something like this now. -- find out when they introduced it (write them an email) 
+%--> nudging via bias seems interesting, but bandwagon is countered with reactance.
