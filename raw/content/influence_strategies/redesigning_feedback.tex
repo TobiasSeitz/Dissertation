@@ -83,16 +83,17 @@ We opted for an online survey to inform our requirement elicitation for the abov
 %- pick up the specific questions b/c they were good
 
 \subsubsection{Prototype}
-To ensure that participants have a shared understanding of password feedback mechanisms, we created a small website featuring only a password field and textual feedback beneath. The underlying strength estimation and feedback phrases were based on the zxcvbn library. Warnings and suggestions that come with zxcvbn were translated to German and shown as the users typed inside the password field. The 26 warnings included statements like ``Names and surnames by themselves are easy to guess'' or ``Avoid repeated words and characters''. We tried to simplify the page as much as possible to minimize priming effects, although this was hard to achieve. In particular, we did not show any form of visual feedback to explore whether this is a need that participants mentioned often. Instead, we showed password score in the form ``strength: 2/5''.  The task was to create a password that would fulfill the composition policy of the participant's employer. We did not log the passwords whatsoever, since this was not the focus of this study. 
+To ensure that participants have a shared understanding of password feedback mechanisms, we created a small website featuring only a password field and textual feedback beneath. The underlying strength estimation and feedback phrases were based on the zxcvbn library. Warnings and suggestions that come with zxcvbn were translated to German and shown as the users typed inside the password field. The 26 warnings included statements like ``Names and surnames by themselves are easy to guess'' or ``Avoid repeated words and characters''. We tried to simplify the page as much as possible to minimize priming effects, although this was hard to achieve. In particular, we did not show any form of visual feedback to explore whether this is a need that participants mentioned often. Instead, we showed password score in the form ``strength: 2/5''.  The page introduced the scenario (old password at work has expired) and asked participants to create a new password that would fulfill the composition policy of the participant's current employer. The composition policy, however, was not enforced. We did not log the passwords whatsoever, since this was not the focus of this study. This was disclosed to participants and they could decide to drop out of the study if they were still uncomfortable with providing a new password.  
 
 \subsubsection{Questionnaire}
 They survey questionnaire included 37 questions, many of which are quick single- and multiple-selection items to collect context information (e.g. demographics, semantic differentials, social desirability scale). This information would help us assess the value and relative importance of qualitative statements that followed. The core of the questionnaire is formed by eleven items about password feedback, six of which were open questions, e.g. what would need to be changed to make the feedback more comprehensible and how password creation could be facilitated. Moreover, we inquired coping strategies at work and personal password behaviors to derive further requirements. During this part of the questionnaire, we added an \textit{instructional manipulation check}, i.e. an attention check, to filter out participants that were only trying to complete the survey as fast as possible to receive the incentive \cite{Oppenheimer2009InstructionalManipulationChecks}. This is a well-known issue with crowd-sourced survey data, and the attention checks can effectively reduce the risk of low-quality data. The items were randomized where necessary, but the overall structure was the same for all participants, i.e. there were no independent variables. 
 
 \subsubsection{Sample}
 We recruited participants via Prolific \footurl{https://prolific.ac}{06.03.2018} which provided similar crowd-sourcing features as Amazon's Mechanical Turk, but has a stronger focus on research surveys. Since \gls{mTurk} does not allow German users to sign up, Prolific is one of the best alternatives because of its large user panel. We screened for German language proficiency via Prolific's internal screening tool. The survey also required participants to be employed and using alphanumeric passwords in their work environment on a regular basis. 
-From the 87 users who started the survey, we had to eliminate 47 responses based on previously defined exclusion criteria: incomplete or mechanically translated, incomprehensible answers; failure to complete the instructional manipulation check \cite{Oppenheimer2009InstructionalManipulationChecks}; and fourth-quartile scores on the social desirability scale. The remaining 40 respondents had a diverse educational and professional background, but the largest part (n=15, 37.5\%) held positions in IT or online media. Sixteen were female (40\%) and 24 male (60\%). They were aged between 20 and 53 ($M=32, SD=7$). As an incentive, participants received 1.50€ for 10 minutes worth their time, which meets Prolific's guidelines. 
+From the 87 users who started the survey, we had to eliminate 47 responses based on previously defined exclusion criteria: incomplete or mechanically translated, incomprehensible answers; failure to complete the instructional manipulation check \cite{Oppenheimer2009InstructionalManipulationChecks}; and fourth-quartile scores on the social desirability scale. The remaining 40 respondents had a diverse educational and professional background, but the largest part (n=15, 37.5\%) held positions in IT or online media. Sixteen were female (40\%) and 24 male (60\%). They were aged between 20 and 53 ($M=32, SD=7$). As an incentive, participants received 1.50€ for approximately 15 minutes worth their time, which meets Prolific's guidelines. 
 
 \subsubsection{Analysis Approach}
+We performed structured, iterative thematic analysis of the qualitative data. This approach is inspired by Grounded  Theory and useful for exploring sentiment and mental models early in the design process \cite{Strauss1990}. 
 \subsection{Key Take-Aways}
 In the following, we focus on the main points that we identified through multiple coding stages and discussions. To keep the narrative coherent, we omit all corollary results that did not guide further research steps. These are reported in higher detail in C. Olsienkiewicz' thesis \cite{Olsienkiewicz2016BAThesis}. 
 \subsubsection{Feedback needs to be Personalized}
@@ -110,40 +111,41 @@ Once you start giving feedback (``strong'' or ``weak'') you need to explain how 
 show passwords --> corroborates findings from decoy study --> story line could arch over to decoy and use it as motivation (suggesting passwords). 
 
 
-
 \subsection{Limitations}
-self report (work password) 
-biased // to much priming. should have posed more open general questions in the beginning before launching the prototype website, but this way everyone had the same experience of the basic functionality of password feedback. 
+The insights should be implemented with the study's limitations in mind. First, we were surprised that so many English-speaking users from the Prolific panel were able to make it through the platform's screening process. Thus, we had to discard many responses where we were unsure about the participant's language skills. Ideally, we should have introduced a small passage of prose to which the participants answers 2-3 comprehension questions. However, we failed to anticipate this until the data was in and also did not plan the budget for the study accordingly. For the remaining participants, however, we ensured the qualitative responses were solid. 
 
-- pre study results:
-- too many password changes (see above)
-- like to be supported in more creative ways. (Ford issue -- people don't see the bigger picture).
+Also, it would have been feasible to be able to ask follow up questions, which was a caveat of the online study method. The sample we would have been able to recruit for in-person interviews, however, would not have been diverse enough, so we were limited in the range of methods. The number of open questions and the resulting answers were still enough to perform in-depth analyses. %Since we aimed to move the project forward quickly and iteratively, we also 
 
+%self report (work password) 
+%biased // to much priming. should have posed more open general questions in the beginning before launching the prototype website, but this way everyone had the same experience of the basic functionality of password feedback. 
 
-
-- Analysis steps: open / axial 1 / axial 2 / selective
-- Take Aways / Themes: (codebook Caroline is very helpful here).
-	- better personalization
-	- make strength easier to gauge (maybe. compare to others to justify bandwagon study)
-		- communicate risks realistically
-		- explain what happens when password is too weak
-			- challenge: users don't always want to hear this, it's unrealistic.
-			- positivity, reinforcement.
-			- intrinsic goal: motivate yourself! become enabled, empowered to act differently.
-	- user concerns regarding strength feedback:
-		- if everybody creates passwords based on this feedback, they become too similar and thus insecure?
-		- authoritative character
-		- no cynicism
-	- more creativity support to create stronger passwords (kind of verbatim:)
-		- suggestions
-		- formula to create a strong password. 
-		- show how to be creative 
-		- need to ``feel'' secure
-	- Visualization:
-		- PW Meter
-		- Character categories.
-	- interesting side results: 
-		- \textbf{people want their mental models confirmed ``it should show me that i need to use uppercase letters and symbols to boost strength''.} others: ``add more randomness'' (I guess of the suggestions), focus on length, suggest to use 1 uppercase letter, emphasize that symbols boost strength, 
+%- pre study results:
+%- too many password changes (see above)
+%- like to be supported in more creative ways. (Ford issue -- people don't see the bigger picture).
+%
+%- Analysis steps: open / axial 1 / axial 2 / selective
+%- Take Aways / Themes: (codebook Caroline is very helpful here).
+%	- better personalization
+%	- make strength easier to gauge (maybe. compare to others to justify bandwagon study)
+%		- communicate risks realistically
+%		- explain what happens when password is too weak
+%			- challenge: users don't always want to hear this, it's unrealistic.
+%			- positivity, reinforcement.
+%			- intrinsic goal: motivate yourself! become enabled, empowered to act differently.
+%	- user concerns regarding strength feedback:
+%		- if everybody creates passwords based on this feedback, they become too similar and thus insecure?
+%		- authoritative character
+%		- no cynicism
+%	- more creativity support to create stronger passwords (kind of verbatim:)
+%		- suggestions
+%		- formula to create a strong password. 
+%		- show how to be creative 
+%		- need to ``feel'' secure
+%	- Visualization:
+%		- PW Meter
+%		- Character categories.
+%	- interesting side results: 
+%		- \textbf{people want their mental models confirmed ``it should show me that i need to use uppercase letters and symbols to boost strength''.} others: ``add more randomness'' (I guess of the suggestions), focus on length, suggest to use 1 uppercase letter, emphasize that symbols boost strength, 
 		
 \section{Participatory Design of Password Feedback}
 GOAL: design session to actually teach us more about the requirements, not necessarily about the solutions. The prototypical and conjoint solutions tell us about the expectations and needs of users regarding password feedback. 
@@ -175,9 +177,12 @@ What did people say about being involved? What are the opportunities and drawbac
 \section{Discussion}
 
 \subsection{Requirements}
-Feedback should:
+The feedback needs to...
 
+% in the form of user stories
+The user needs to...
 
+-- things ``wear off'' over time --> habituation effects of password feedback --> surprise is an important element. 
 
 \subsection{Current Frameworks and Feedback Systems}
 How do the requirements reflect the persuasive authentication framework?
