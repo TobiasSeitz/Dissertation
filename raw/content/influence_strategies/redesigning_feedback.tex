@@ -1,4 +1,4 @@
-\chapter[Co-Designing Persuasive Feedback] {Co-Designing Persuasive Feedback}\label{chap:feedback_modalities}
+\chapter[Co-Designing Persuasive Feedback] {Co-Designing Persuasive \\ Feedback}\label{chap:feedback_modalities}
 % lingo: Narrative.
 
 % FOCUS: Involve users in finding ways to provide better/more helpful/more actionable feedback. 
@@ -56,27 +56,37 @@ Design dimensions / aspects of persuasive authentication: PAF Forget \etal \cite
 
 
 \section{Eliciting Requirements}
-Goal: find out what users would expect from password feedback and what they would suggest doing to improve password selection for other users. 
+After the literature review (see Part \ref{part:related_work}), there were still open questions about user \textbf{expectations} regarding password strength feedback. Most studies went ahead to test new solutions quantitatively and rarely focused on the intrinsic needs to derive requirements for feedback. In other words, users were often involved very late in the design process, although an earlier involvement could have led to different design decisions. Our goal in the first step of the co-designing process was gathering early insights to learn about the requirements of persuasive interventions in the realm of password authentication. 
+%
+To narrow down the focus of the requirements, it was important to consider a realistic use-case where the burden of password authentication is relatively high. From related work, we know that password changes are more frequent in work environments, because expiration-policies are still common there \cite{Inglesant2010TrueCostOfUnusablePolicies}. Frequent password changes lead to weaker practices, which might be mitigated by effective password feedback. To find out how we might improve such feedback, we used a lightweight, rapid survey with a large portion of open questions. In the following, we briefly describe the method and findings. 
+%Goal: find out what users would expect from password feedback and what they would suggest doing to improve password selection for other users. 
  
-lightweight and rapid iterations
+%lightweight and rapid iterations
 
-- Approach: Give users example of \textbf{verbal feedback} 
+%- Approach: Give users example of \textbf{verbal feedback} 
 \subsection{Method}
-- qualitative survey 
-	- what works (subjectively) and what doesn't? It's not like people don't know that a study is about password feedback. strength isn't the only dimension. qualitative rating / assessment / perceived helpfulness.
-- What do they miss? 
-- What feedback ideas do they come up with?
-- motivate focus on work environment.
-- usually no choice,
-- expiration policies
-- many password changes leads to creativity deprivation (we should get rid of expiration anyhow)
-- pick up the specific questions b/c they were good
+We opted for an online survey to inform our requirement elicitation for the above described reasons and straightforward data collection. Our questionnaire was centered around the following core research questions:
+\begin{itemize}
+	\item What so users \textbf{need} from password feedback?
+	\item What do they \textbf{miss} in current solutions / interventions?
+	\item How would they \textbf{improve} existing feedback?
+\end{itemize}
+
+%- qualitative survey 
+%	- what works (subjectively) and what doesn't? It's not like people don't know that a study is about password feedback. strength isn't the only dimension. qualitative rating / assessment / perceived helpfulness.
+%- What do they miss? 
+%- What feedback ideas do they come up with?
+%- motivate focus on work environment.
+%- usually no choice,
+%- expiration policies
+%- many password changes leads to creativity deprivation (we should get rid of expiration anyhow)
+%- pick up the specific questions b/c they were good
 
 \subsubsection{Prototype}
-To ensure that participants have a shared understanding of password feedback, we created a small website featuring only a password field and textual feedback. The underlying strength estimation and feedback phrases were based on the zxcvbn library. Warnings and suggestions that come with zxcvbn were translated to German. 
+To ensure that participants have a shared understanding of password feedback mechanisms, we created a small website featuring only a password field and textual feedback beneath. The underlying strength estimation and feedback phrases were based on the zxcvbn library. Warnings and suggestions that come with zxcvbn were translated to German and shown as the users typed inside the password field. The 26 warnings included statements like ``Names and surnames by themselves are easy to guess'' or ``Avoid repeated words and characters''. We tried to simplify the page as much as possible to minimize priming effects, although this was hard to achieve. In particular, we did not show any form of visual feedback to explore whether this is a need that participants mentioned often. Instead, we showed password score in the form ``strength: 2/5''.  The task was to create a password that would fulfill the composition policy of the participant's employer. We did not log the passwords whatsoever, since this was not the focus of this study. 
 
 \subsubsection{Questionnaire}
-They survey questionnaire included 37 questions, many of which are quick single- and multiple-selection items to collect context information (e.g. demographics, semantic differentials, social desirability scale). This information would help us assess the value and relative importance of qualitative statements that followed. The core of the questionnaire is formed by eleven items about password feedback, six of which were open questions. Moreover, we inquired coping strategies at work and personal password behaviors to derive further requirements. During this part of the questionnaire, we added an \textit{instructional manipulation check}, i.e. an attention check, to filter out participants that were only trying to complete the survey as fast as possible to receive the incentive \cite{Oppenheimer2009InstructionalManipulationChecks}. This is a well-known issue with crowd-sourced survey data, and the attention checks can effectively reduce the risk of low-quality data. The items were randomized where necessary, but the overall structure was the same for all participants, i.e. there were no independent variables. 
+They survey questionnaire included 37 questions, many of which are quick single- and multiple-selection items to collect context information (e.g. demographics, semantic differentials, social desirability scale). This information would help us assess the value and relative importance of qualitative statements that followed. The core of the questionnaire is formed by eleven items about password feedback, six of which were open questions, e.g. what would need to be changed to make the feedback more comprehensible and how password creation could be facilitated. Moreover, we inquired coping strategies at work and personal password behaviors to derive further requirements. During this part of the questionnaire, we added an \textit{instructional manipulation check}, i.e. an attention check, to filter out participants that were only trying to complete the survey as fast as possible to receive the incentive \cite{Oppenheimer2009InstructionalManipulationChecks}. This is a well-known issue with crowd-sourced survey data, and the attention checks can effectively reduce the risk of low-quality data. The items were randomized where necessary, but the overall structure was the same for all participants, i.e. there were no independent variables. 
 
 \subsubsection{Sample}
 We recruited participants via Prolific \footurl{https://prolific.ac}{06.03.2018} which provided similar crowd-sourcing features as Amazon's Mechanical Turk, but has a stronger focus on research surveys. Since \gls{mTurk} does not allow German users to sign up, Prolific is one of the best alternatives because of its large user panel. We screened for German language proficiency via Prolific's internal screening tool. The survey also required participants to be employed and using alphanumeric passwords in their work environment on a regular basis. 
