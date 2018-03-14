@@ -15,9 +15,9 @@ We used participatory design approach to learn new requirements for persuasive f
 \subsubsection{Procedure of the Co-Design Session}
 %Brainstorming Session, 60 minutes, different exercises, keep tempo high.
 % 1
-The 60-minute co-design session started with a briefing about the goals and informed consent to record the session on video. Afterwards, we sensitized participants for the topic with two \textit{ball-bearing exercises}. For this, participants were divided into two groups and those faced each other in a circle. Each person interviewed another on a specific question of password behavior for one minute, until the outer circle moved to the next interviewer until they were talked to all people from the inner circle. In the first round, interviewers were given questions on personal password selection and coping strategies. The second round focused on recommendations to different user groups. The interviewers then summarized their insights and shared them with the group. The exercise was helpful to learn other people's password strategies and broaden the participants' horizon. In summary, participants showed typical selection strategies based on word-digit-symbol patterns and would recommend personal, memorable events as starting points for password selection.
+The 60-minute co-design session started with a briefing about the goals and informed consent to record the session on video. Afterwards, we sensitized participants for the topic with two \textit{ball-bearing exercises}. For this, participants were divided into two groups and those faced each other in a circle. Each person interviewed another on a specific question of password behavior for one minute, until the outer circle moved to the next interviewer until they were talked to all people from the inner circle. In the first round, interviewers were given questions on personal password selection and coping strategies. The second round focused on recommendations to different user groups. The interviewers then summarized their insights and shared them with the group. The exercise was helpful to learn other people's password strategies and broaden the participants' horizon. They said it was interesting to reflect about obstacles in acting more securely. In summary, participants showed typical selection strategies based on word-digit-symbol patterns and would recommend personal, memorable events as starting points for password selection.
 
-What followed was a straightforward brainstorming exercises in two groups. The question they tried to answer was ``How would a registration form of an email provider need to be designed to help you create a secure password?'' After five minutes, half of each group moved to the other group. In total, participants produced 17 distinct ideas and presented them on a whiteboard. Everyone received two votes for their favorite ideas. Participants then formed groups of two or three to create paper prototypes for the three ideas that had the most votes. The facilitator made sure to explain the process and the expected fidelity of the outcome. Once the prototypes were ready, the groups presented them to the entire crowd.
+What followed were straightforward brainstorming exercises in two groups. The question they tried to answer was ``How would a registration form of an email provider need to be designed to help you create a secure password?'' The facilitator encouraged participants to think out of the box and contribute unusual ideas. After five minutes, half of each group moved to the other group. In total, participants produced 17 distinct ideas and presented them on a whiteboard. Everyone received two votes for their favorite ideas. Participants then formed groups of two or three to create paper prototypes for the three ideas that had the most votes. The facilitator made sure to explain the process and the expected fidelity of the outcome. Once the prototypes were ready, the groups presented them to the entire crowd.
 
 \paragraph{Participants}
 We recruited seven participants through postings in public groups on social networks. Six of them were female. Three were studying philology, while one each were studying pedagogy, media informatics and business studies. The only male participant was an employed product designer. The average age was 23, ranging from 19 to 29. As an incentive, we offered a 10€ shopping voucher that was handed out after the brainstorming session. We had tried to recruit a more diverse sample, but we did not receive other such responses. 
@@ -27,28 +27,65 @@ Based on the participants' paper prototypes, we designed ten variations of each 
 Afterwards, we discussed the feasibility of each solution and identified six candidates that were presented to the study participants. Their feedback informed the decision on the final prototype. After it was implemented with standard web-technologies, participants provided a final round of qualitative feedback and a reflection on the process. Participation thus occurred in each step of the design process. 
 
 \subsection{Concepts and Prototype}
-From the 30 designs, six made it to the final stage of the selection process. 
-- Designs:
-- rewards: beautify page / positive reinforcement from friends (weird suggestions but okay)
-- analogies and requirements feedback: time to crack --> goal: better risk assessment for non-experts. / represent strength contribution of different elements in some way (fruit salad) / vault 
-- playfulness: bubbles / vault / slotmachine to make random character replacements more exciting / 
+The paper prototypes of the brainstorming session showed three central components: \textbf{rewards}, \textbf{analogies and compliance}, and \textbf{playfulness}. After the 10 plus 10 method, we had six candidates that made it to the final feedback round, two of each category. Please note that we tried to stay as close to the participants' original ideas as possible and maintained concepts that were unrealistic. 
+\paragraph{Rewards} The ``beautify'' concept removed all color from the website and faded it back in as the entered password increases in strength. The ``friends'' concept would provide a password meter that uses picture of the user's friends instead of color to reward stronger passwords and add a personal touch. 
+\paragraph{Analogies and Compliance}
+Concepts in this category tried to nudge users by making strength more graspable and salient. The ``songs'' concept shows the number of songs that one can listen to until an attacker would have cracked the password. The ``fruits'' concept (see Figure \ref{fig:co-design:fruitsalad}) draws from a healthy-eating analogy and represents each character type with a fruit. If a password only contains lowercase letters, the lack of complexity is immediately visible. While the user types, fruits are ``plucked'' from a character patch and moved to the password field.
+\paragraph{Playfulness} The ``slotmachine'' idea lets the user enter a password and when they pull the lever of a virtual slotmachine, it displays four random characters that would make the password stronger. The ``bubbles'' concept lets the user burst bubbles floating on the screen (see Figure \ref{fig:co-design:bubbles-concept}). Inside each bubble, there is either a letter, digit, or symbol. The user can click on them directly to transfer the corresponding character to the password field, or burst bubbles by typing on the keyboard. The longer the password, the fewer bubbles remain. Also, less common character classes are shown in bigger bubbles to persuade users to burst those and hereby increase complexity. 
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[!t]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/co-design/fruitsalad-1}
+		\caption{\label{fig:co-design:fruitsalad} Fruitsalad: Each character class is represented by a fruit and the user sees a lack of diversity, e.g. if their password only contains lowercase letters.}
+	\end{subfigure}
+	\begin{subfigure}[!t]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/co-design/bubbles-1}
+		\caption{\label{fig:co-design:bubbles-concept}Bubbles: Floating bubbles on the screen that the user pops as they type the password. Symbols are placed in bigger bubbles to be more salient.}
+	\end{subfigure}
+	\caption{\label{fig:co-design:concepts}Two out of the six concepts that made it to the final feedback iteration.} 
+\end{figure}
+
+
+%- Designs:
+%- rewards: beautify page / positive reinforcement from friends (weird suggestions but okay)
+%- analogies and requirements feedback: time to crack --> goal: better risk assessment for non-experts. / represent strength contribution of different elements in some way (fruit salad) / vault 
+%- playfulness: bubbles / vault / slotmachine to make random character replacements more exciting / 
 \subsubsection{``Bubbles'' Prototype}
+Participants provided feedback on the six concepts and generally considered the ``bubbles'' concept the best solution to motivate themselves to add more symbols or digits and also make the password longer to watch more bubbles burst. Therefore, we implemented it as an HTML5-based prototype. To add a more game-like feel, we put a score on each character class, and show the currently achieved total score in the GUI. The bubbles move on the screen slowly enough to trace them and their bursts. 
 
-\subsection{Learnings}
+Five of the participants provided a final round of feedback. On the positive side, they felt it intriguing to burst the bubbles. They understood the purpose of the bubbles and the different sizes and colors right away or after typing the first character. Two participants mentioned that it fosters creativity. All said that a system like this would catch their eye and might impact their selection behavior. They also mentioned a number of improvements. For instance, two participants fount the page chaotic and wanted it simplified. The scoring was not transparent either, and three said the bursting animation should be more obtrusive. 
 
-- interesting aspects:
-	- a lot of the concepts are visualizable with little text. (emphasize: ``show'' and ``help'')
-	- missing: background information. (thus ``explain'' was not visible anymore)
-	- empower: not really visible
-	
-% fruit salad 
+\begin{figure}
+	\centering
+	\begin{subfigure}[!t]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/co-design/bubbles-proto-1}
+		\caption{\label{fig:co-design:bubbles-proto-1}}
+	\end{subfigure}
+	\begin{subfigure}[!t]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/co-design/bubbles-proto-2}
+		\caption{\label{fig:co-design:bubbles-proto-2}}
+	\end{subfigure}
+	\caption{\label{fig:co-design:bubbles-proto} We made the ``bubbles'' concept into an interactive prototype and gathered a final round of feedback on the outcome and the process.} 
+\end{figure}
 
 \subsection{Process Reflection}
 What did people say about being involved? What are the opportunities and drawbacks that they saw?
+was there something like shared ownership?
+- people said it was fun to participate!
+- they said it is nice that the final prototype shows elements of their idea generation phase. 
+- three said, they would have loved to be involved even more.
+- they particularly liked to think about designing for a problem and topic that they had never given too much thought. 
+- one participant said they disliked that many ideas were too far fetched and unrealistic. 
 
+\subsection{Learnings about Persuasive Password Interventions}
+Discussions among participants and their continuous feedback throughout the design process helped us identify more user needs. We heard that the group had not given the topic much thought before joining the brainstorming session. Many of their ideas went beyond typical password meters, which we highly encouraged. In particular, the concepts show a tendency to visual elements (beautify, pictures, bubbles, fruits) to catch the user's attention. This corresponds to the \textit{show} theme of the requirement-elicitation. The \textit{help} theme was visible especially in the compliance-centered concepts: The ``fruit-salad'' helps people easily identify a potential lack of character diversity. 
+While the ``songs'' analogy is a kind of \textit{explanation} of password strength because it gives background information, the ideas did not contain many attempts to explain any more details. Perhaps, participants equated strength with complexity, which their ideas made salient. Finally, the ``bubbles'' concept aimed to boost creativity and thus showed elements of the \textit{help} and \textit{empower} themes. 
 
-
+%- interesting aspects:
+%- a lot of the concepts are visualizable with little text. (emphasize: ``show'' and ``help'')
+%- missing: background information. (thus ``explain'' was not visible anymore)
+%- empower: not really visible
 %kicked out content / structure
 % 2
 %Ball-bearning exercise
