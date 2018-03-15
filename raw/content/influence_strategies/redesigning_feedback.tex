@@ -1,5 +1,7 @@
-\chapter[Co-Designing Persuasive Feedback] {Co-Designing Persuasive \\ Feedback}\label{chap:feedback_modalities}
-% lingo: Narrative.
+\chapter[Exploring Needs in Persuasive Feedback] {Exploring Needs in\\ Persuasive Feedback}\label{chap:feedback_modalities}
+% previously: co-designing persuasive feedback 
+% User-Centered Persuasive \\ Feedback
+% lingo: Narrative; ramification.
 
 % FOCUS: Involve users in finding ways to provide better/more helpful/more actionable feedback. 
 % learn from what they say explicitly, but also explicitly. 
@@ -28,7 +30,6 @@ Problems:
 - some solutions don't focus on the core goals like stronger passwords and/or less reuse
 - we found no formal requirement elicitation in 
 
-
 Goals:
 - what do users say they need? derive solutions and design lenses from that. 
 - explore solutions that go beyond password meters. (THATS AN OVERALL GOAL)
@@ -36,18 +37,26 @@ Goals:
 - learn from their design solutions (co-design) to inform future design decisions.
 
 
-% 10 + 10 method.
-% 
 
 what this chapter can realistically achieve: 
 verbal feedback: what is required. qualitative stuff (hint at suggestion trustworthiness, personalization)
 nudging: both verbally and visually; dimension: cognitive bias (bandwagon)
+
+
 
 \begin{itemize}
 	\item[RQ1] Which other feedback solutions/modalities are most feasible to influence password selection?
 	\item[RQ2] What are the pros and cons of verbal and non-verbal feedback?
 	\item[RQ3] Does feed-\textit{forward} work better than feedback?
 \end{itemize}
+
+
+%lightweight and rapid iterations
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{figures/co-design/exploration-overview}
+	\caption{\label{fig:co-design:exploration-overview} Characteristics of user needs and how they show (adapted from  \cite{Sanders2002ParticipatoryDesign}). We explored explicit and observable needs with an online survey, and used a participatory design approach to learn from what users \textit{make}.}
+\end{figure}
 
 This chapter reports on a requirements- and design-exploration for password feedback, where we aimed to involve users early in the design process. The project was a collaboration between myself and Caroline Olsienkiewicz, respectively Katharina Schwarz. 
 
@@ -70,17 +79,34 @@ Design dimensions / aspects of persuasive authentication: PAF Forget \etal \cite
 
 %(lessons learned and take-aways: 2-3 pages)	
 \section{Discussion}
-
+The insights from two rapid methods allow us to derive requirements for persuasive password support. Also, we relate the themes to existing frameworks. 
 
 \subsection{Requirements}
+Although the first study was focused on explicit and observable needs, qualitative analysis even brought about more profound needs. Similarly, the second study also helped us understand explicit user needs. Therefore, it was hard to classify the needs, because they were very nuanced. Nonetheless, we show the central characteristics of the requirements in Table \ref{tab:co-design:requirements}.
 
-The feedback needs to...
+\begin{table}[htbp]
+\begin{tabular}{rp{10cm}ll}
+	\# & Requirement & Type & Study \\\hline
+	\multicolumn{4}{l}{\textbf{The persuasive tactic needs to ...}} \\\hline
+	(1) & Visually indicate current issues & Explicit & S1 \& S2 \\
+	(2) & Offer specific help to diversify passwords & Explicit & S1 \& S2  \\		
+	(3) & Be personal & Explicit & S1  \\
+	(4) & Stay realistic & Observable & S1 \& S2  \\
+	(5) & Provide background information, especially if feedback discounts mental model 
+	& Explicit/Observable & S1 \\
+	(6) & Empower users to act differently & Tacit & S1 \& S2  \\
+	(7) & Be straight-forward and streamlined & Tacit & S1  \\
+	(8) & Catch Attention, be engaging, foster curiosity & Latent & S2  \\	
+	(9) & Open eyes and broaden horizons, e.g. through making unknown coping strategies salient & Latent & S2  \\
+	(10) & Avoid habituation effects through surprise and delight & Latent & S2  \\\hline
+\end{tabular}
+\caption{\label{tab:co-design:requirements} High-level requirements to satisfy different levels of user needs in persuasive password feedback. }
+\end{table}
+\vspace*{0.5cm}
 
 % in the form of user stories
-The user needs to...
+%The user needs to...
 % ... sort of a mantra.
-
--- things ``wear off'' over time --> habituation effects of password feedback --> surprise is an important element. 
 
 \subsection{Current Frameworks and Feedback Systems}
 How do the requirements reflect the persuasive authentication framework?
@@ -96,7 +122,12 @@ Where is potential to improve?
 - put solutions / needs into SEHE grid.
 
 \section{Conclusion}
-The overarching themes in Study 1 are interestingly just what makes a \textbf{good teacher}: show how it's done and the consequences of actions, explain background info in more depth (which is filtered out anyhow), help students achieve what the teacher showed, and empower them by giving new possibilities to apply knowledge. So this superbly reflects Weirich and Sasse's AND Forget \etal's notion that persuasion is a tool to \textit{educate and teach}. Where is the nudging part?
+The overarching themes in Study 1 are interestingly just what makes a \textbf{good teacher}: show how it's done and the consequences of actions, explain background info in more depth (which is filtered out anyhow), help students achieve what the teacher showed, and empower them by giving new possibilities to apply knowledge. So this superbly reflects Weirich and Sasse's AND Forget \etal's notion that persuasion is a tool to \textit{educate and teach}. 
+Even in study 2, the final concept is based on a constructivistic teaching paradigm: self-guided exploration and curiosity.
+
+isn't this trivial?
+
+%Where is the nudging part? 
 
 --> both verbal and visual feedback need to be combined
 the requirements should somehow be related to what's to come in the decoy chapter. E.g. the suggestive and 
