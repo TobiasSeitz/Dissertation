@@ -1,6 +1,8 @@
 \chapter[Exploring Needs in Persuasive Feedback] {Exploring Needs in\\ Persuasive Feedback}\label{chap:feedback_modalities}
-% previously: co-designing persuasive feedback 
-% User-Centered Persuasive \\ Feedback
+% previous titles: 
+% 	co-designing persuasive feedback 
+% 	User-Centered Persuasive \\ Feedback
+
 % lingo: Narrative; ramification.
 
 % FOCUS: Involve users in finding ways to provide better/more helpful/more actionable feedback. 
@@ -37,16 +39,13 @@ Goals:
 - learn from their design solutions (co-design) to inform future design decisions.
 
 
-
 what this chapter can realistically achieve: 
 verbal feedback: what is required. qualitative stuff (hint at suggestion trustworthiness, personalization)
 nudging: both verbally and visually; dimension: cognitive bias (bandwagon)
 
-
-
 \begin{itemize}
-	\item[RQ1] Which other feedback solutions/modalities are most feasible to influence password selection?
-	\item[RQ2] What are the pros and cons of verbal and non-verbal feedback?
+	\item[RQ1] How can we design password feedback in novel ways? Which alternative feedback solutions might be feasible to influence password selection?
+	\item[RQ2] What individual roles do verbal and non-verbal feedback play?
 	\item[RQ3] Does feed-\textit{forward} work better than feedback?
 \end{itemize}
 
@@ -79,70 +78,47 @@ Design dimensions / aspects of persuasive authentication: PAF Forget \etal \cite
 
 %(lessons learned and take-aways: 2-3 pages)	
 \section{Discussion}
-The insights from two rapid methods allow us to derive requirements for persuasive password support. Also, we relate the themes to existing frameworks. 
+The insights from two rapid methods allow us to derive requirements for persuasive password support, which we put into the context of existing frameworks. 
 
 \subsection{Requirements}
 Although the first study was focused on explicit and observable needs, qualitative analysis even brought about more profound needs. Similarly, the second study also helped us understand explicit user needs. Therefore, it was hard to classify the needs, because they were very nuanced. Nonetheless, we show the central characteristics of the requirements in Table \ref{tab:co-design:requirements}.
 
-\begin{table}[htbp]
-\begin{tabular}{rp{10cm}ll}
-	\# & Requirement & Type & Study \\\hline
-	\multicolumn{4}{l}{\textbf{The persuasive tactic needs to ...}} \\\hline
-	(1) & Visually indicate current issues & Explicit & S1 \& S2 \\
-	(2) & Offer specific help to diversify passwords & Explicit & S1 \& S2  \\		
-	(3) & Be personal & Explicit & S1  \\
-	(4) & Stay realistic & Observable & S1 \& S2  \\
-	(5) & Provide background information, especially if feedback discounts mental model 
-	& Explicit/Observable & S1 \\
-	(6) & Empower users to act differently & Tacit & S1 \& S2  \\
-	(7) & Be straight-forward and streamlined & Tacit & S1  \\
-	(8) & Catch Attention, be engaging, foster curiosity & Latent & S2  \\	
-	(9) & Open eyes and broaden horizons, e.g. through making unknown coping strategies salient & Latent & S2  \\
-	(10) & Avoid habituation effects through surprise and delight & Latent & S2  \\\hline
-\end{tabular}
-\caption{\label{tab:co-design:requirements} High-level requirements to satisfy different levels of user needs in persuasive password feedback. }
-\end{table}
-\vspace*{0.5cm}
-
+%%%%%%%%%%%%%%%%%%%%%%%
+% REQUIREMENTS TABLE
+%%%%%%%%%%%%%%%%%%%%%%%
+\input{tables/persuasive-requirements} %tab:co-design:requirements
+% might also do it in this form:
 % in the form of user stories
 %The user needs to...
 % ... sort of a mantra.
 
-\subsection{Current Frameworks and Feedback Systems}
-How do the requirements reflect the persuasive authentication framework?
+\paragraph{Opportunities} Password meters and real-time feedback are the de facto paragon of persuasion in the wild.  Most commonly, they fulfill requirements (1), (2), (4), and (5). For instance, Google's password meter visually encodes password strength with color and bar-size, suggests not using a pet's name, offers extensive background information with a clear call-to-action, and does not jeopardize trustworthiness with extravagant design. On the other hand, it does not necessarily empower users to break habits, is not personalized (what if the user does not have a pet?), and does not account for other ``obvious'' strategies. Academia has produced alternative designs that fulfill requirements (7), (8), and (9), although unusual concepts (like in \cite{Ur2012HowDoesYourPasswordMeasureUp}) were rarely adopted in practice. Empowerment, personalization, and breaking habituation effects have been underexplored, and thus might be worthwhile opportunities for future studies.
 
-Do password meters and other solutions fulfill the requirements?
-Where is potential to improve?
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{figures/co-design/google-pw-meter}
+	\caption{\label{fig:co-design:google-pw-meter} Google's Password Selection Support UI (March 2018)}
+\end{figure}
 
-\subsection{Learnings}
-
-- how did this approach help us now?
-- what did we learn?
-- why should we look elsewhere?
-- put solutions / needs into SEHE grid.
+\subsection{Relation to Current Frameworks}
+Most of the themes and requirements show strong links to various persuasion frameworks. In the first study, the qualitative analysis resulted in four essential themes: show, explain, help, empower. Interestingly, there are parallels to \textbf{teaching}. Teachers \textit{show} something new, and then \textit{explain} it in more detail. They \textit{help} students understand it. Often students can then exercise and explore ways to apply their knowledge, i.e. the process \textit{empowers} students to achieve something they could not do before. Forget \etal, who contributed one of the early works on persuasion in cybersecurity, promoted their \acrlong{PAF} as a tool to \textbf{educate} users. All the elements of our qualitative analysis are thus visible in their framework. The requirements in Table \ref{tab:co-design:requirements} represent the themes on a more fine-grained level. Only requirements (8) and (10) are hard to put into the PAF, hence they extend the framework.  
+Requirement (8) states that a password support tool should be noticeable and foster curiosity. Generating curiosity can be done in numerous ways, but in this context it relates to Cialdini's \textit{scarcity} principle. The number of ``good'' passwords is much smaller than the number of ``bad'' ones, thus they are a scarce resource. The requirement states that users should realize this and become motivated to access the limited resource. %At the same, time it needs to be easy enough (requirement (7)) and users need to be capable to achieve the goal, which reflects 
+%TODO streamline, try to find sub-headings to identify weak structure.
 
 \section{Conclusion}
-The overarching themes in Study 1 are interestingly just what makes a \textbf{good teacher}: show how it's done and the consequences of actions, explain background info in more depth (which is filtered out anyhow), help students achieve what the teacher showed, and empower them by giving new possibilities to apply knowledge. So this superbly reflects Weirich and Sasse's AND Forget \etal's notion that persuasion is a tool to \textit{educate and teach}. 
-Even in study 2, the final concept is based on a constructivistic teaching paradigm: self-guided exploration and curiosity.
-
-isn't this trivial?
-
-%Where is the nudging part? 
-
---> both verbal and visual feedback need to be combined
-the requirements should somehow be related to what's to come in the decoy chapter. E.g. the suggestive and 
-
-trustworthiness of suggestions / feedback was challenged by first participants.
-
-
-all in all, participants in the survey were somewhat too optimistic compared to quantitative / empirical results.
-
-The way people designed interventions shows their mental models and lets us inform our own design decisions. We are not the users and simply ``knowing it better'' won't get us very far. We have to pick people up where they are to have a chance in designing effective nudges. 
-
---> empowerment... TODO.
-
-hard to explain problem space / pw strength to users so briefly. tension. when and for whom. 
-
+% goal: understand and externalize the requirements / design space of persuasive interventions
+Our goal was to understand the requirements of persuasive password support, especially user needs and expectations. 
+% triangulation of methods was feasible and let us derive such requirements
+We triangulated methods to rapidly derive feasible requirement that guide future designs of interventions. 
+% while survey exhibited explicit idealistic needs, the participatory approach was much more suitable to identify latent needs.
+The survey yielded explicit and idealistic needs, like having one's own mental model confirmed by the feedback system. On the other hand, the participatory approach of the second study helped us identify latent needs that would not be detectable in a survey. The results, however, fit together well and solidify the overarching themes ``show'', ``explain'', ``help'', ``empower''. 
+% requirements indicate that only verbal or only visual nudging methods are insufficient, they need to be combined
+% ur etal recently confirmed this.
+Here, we found that participants' expectations of password feedback were nuanced and can thus only be met by combining both verbal and visual support. Feedback was not the only component, because participants showed a need for more guidance in the form of feed\textit{forward}.
+% most of the requirements and needs were more or less predictable and already visible in other frameworks, but this specific list helps shaping future desing ideas
+The requirements might have been partially predictable even without conducting user research, but tacit and latent needs are uncommonly discussed in related research. Especially the thinking processes and participants' design approaches in the participatory sessions revealed much of what they envisioned in a successful intervention.
+% large opportunitites in personalization, empowerment, and breaking habituation. 
+Applying the requirements to gauge existing solutions, we identified opportunities for future work in personalization, empowerment, and preventing habituation effects from the same kind of intervention. These are addressed in the following chapters. 
 
 \vspace*{1cm}\noindent
 \fbox{
@@ -150,8 +126,9 @@ hard to explain problem space / pw strength to users so briefly. tension. when a
 	\parbox[c][8cm]{0.7\linewidth}{
 		\section*{Take Aways}
 		\begin{itemize}[leftmargin=*]
-			\item General requirement elicitation showed that users want to have their mental models confirmed with password feedback. They become skeptical if the feedback shows unexpected strength results.
-			\item Users have three essential needs regarding password support and feedback systems: \textbf{Show} the behavior and consequences visually, \textit{Explain} things that break mental models, \textbf{Help} resolve conundrums and achieve better behavior. %Sounds trivial, but it's important we confirmed it%
+			\item Triangulation of study methods helped us identify different levels of user needs. Especially the tacit latent needs are harder to elicit, but participatory design methods were feasible to enhance survey data.
+			\item As an explicit need, participants wanted to have their mental models confirmed with password feedback. They become skeptical if the feedback shows unexpected strength results.
+			\item Users have three essential needs regarding password support and feedback systems: \textbf{Show} the behavior and consequences visually, \textbf{Explain} things that contradict usual mental models, \textbf{Help} resolve conundrums and achieve better behavior. %Sounds trivial, but it's important we confirmed it%
 		\end{itemize}
 	}
 	\hspace{1cm}
@@ -165,3 +142,32 @@ hard to explain problem space / pw strength to users so briefly. tension. when a
 %\todo{MA von Saron Mebratu}
 %Mention that LastPass already has something like this now. -- find out when they introduced it (write them an email) 
 %--> nudging via bias seems interesting, but bandwagon is countered with reactance.
+
+%The overarching themes in Study 1 are interestingly just what makes a \textbf{good teacher}: show how it's done and the consequences of actions, explain background info in more depth (which is filtered out anyhow), help students achieve what the teacher showed, and empower them by giving new possibilities to apply knowledge. So this superbly reflects Weirich and Sasse's AND Forget \etal's notion that persuasion is a tool to \textit{educate and teach}. 
+%Even in study 2, the final concept is based on a constructivistic teaching paradigm: self-guided exploration and curiosity.
+
+%PAF (teach/learn)
+%SDT (motivation)
+%Six Weapons (nudging)
+
+%\subsection{Learnings}
+%
+%- how did this approach help us now?
+%- what did we learn?
+%- why should we look elsewhere?
+%- put solutions / needs into SEHE grid.
+
+%all in all, participants in the survey were somewhat too optimistic compared to quantitative / empirical results.
+
+%the requirements should somehow be related to what's to come in the decoy chapter. E.g. the suggestive and trustworthiness of suggestions / feedback was challenged by first participants.
+
+
+
+%The way people designed interventions shows their mental models and lets us inform our own design decisions. We are not the users and simply ``knowing it better'' won't get us very far. We have to pick people up where they are to have a chance in designing effective nudges. 
+
+%--> empowerment... TODO.
+%hard to explain problem space / pw strength to users so briefly. tension. when and for whom. 
+
+
+% why isn't this trivial?
+% where is the nudging part? 
