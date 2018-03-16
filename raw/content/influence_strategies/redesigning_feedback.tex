@@ -19,7 +19,7 @@
 % 	Design nudges without letting users become aware of that. 
 % 	Evaluate 
 
-The overall goal of this thesis is to support users in how they interact with passwords. As a sub-goal, we wanted to help those users who want to handle password management on their own, i.e. without a password manager. We set out to achieve this goal by studying the design space of password feedback mechanisms like password meters. There have been many design proposals already and numerous evaluations. However, the design-space appears rather narrow if we only look at existing solutions, and many have not achieved the envisioned level of support. Therefore, we posit that the design-space needs to be opened up and show more width. To get there, looking at the requirements of password feedback is a necessary first step. Previous solutions have seldom reported a structured requirement elicitation based on user research. Thus, before designing and implementing support strategies outside of the usual spectrum we aimed to first understand the needs and expectations that users may have about password feedback. We tried to learn from their feature requests and their own proposals to be able to inform future design decisions. In particular, we posed the following broad research questions:
+The overall goal of this thesis is to support users in how they interact with passwords. As a sub-goal, we wanted to help those users who want to handle password management on their own, i.e. without a password manager. We set out to achieve this goal by studying the design space of password feedback mechanisms like password meters. There have been many design proposals and numerous evaluations already. However, the design space appears rather narrow if we only look at existing solutions, and many have not supported users well enough. Therefore, we posit that the design space needs to be opened up in more breadth. To get there, studying the requirements of password feedback is a necessary first step. Previous solutions have seldom reported a structured requirement elicitation based on user research. Thus, before designing and implementing support strategies outside of the usual spectrum we aimed to first understand the needs and expectations that users may have about password feedback. We tried to learn from feature requests and co-designed proposals as a starting point for generating feasible ideas about actionable password feedback. In particular, we posed the following broad research questions:
 
 \begin{itemize}
 	\item[RQ1] What do users \textit{expect} from password support tools during account creation (explicit) and what do they really \textit{need} (implicit)?
@@ -27,41 +27,42 @@ The overall goal of this thesis is to support users in how they interact with pa
 	\item[RQ3] How can we leverage the interplay between feed-\textit{forward} and feedback?
 \end{itemize}
 
-%Goals: Help users create passwords that they can handle without a PWM (see previous chapter \ref{chap:mm_pwm}),
-%RQs: how can we leverage persuasive design strategies for that? Are PW meters the right (and only) way?
-%Method: \textbf{Design research about requirements and ``other ways'' to help users through improved feedback}.
-%Practical Issues: see section on running password studies
-%Ethical issues: collect plain text passwords? tried in bandwagon study, but there's some resentment. 
+% what this chapter can realistically achieve: 
+% verbal feedback: what is required. qualitative stuff (hint at suggestion trustworthiness, personalization)
+% nudging: both verbally and visually; dimension: cognitive bias (bandwagon)
 
-
-%Storyline:
-%
-%%(Intro: 1-2 pages)
-%Problems:
-%- nudging approaches have become stale
-%- some solutions don't focus on the core goals like stronger passwords and/or less reuse
-%- we found no formal requirement elicitation in the literature.
-%
-%Goals:
-%- what do users say they need? derive solutions and design lenses from that. 
-%- explore solutions that go beyond password meters. (THATS AN OVERALL GOAL)
-%- put the users first and early (very user-centric)
-%- learn from their design solutions (co-design) to inform future design decisions.
-%
-%
-%what this chapter can realistically achieve: 
-%verbal feedback: what is required. qualitative stuff (hint at suggestion trustworthiness, personalization)
-%nudging: both verbally and visually; dimension: cognitive bias (bandwagon)
-
-
-%lightweight and rapid iterations
-
-This chapter reports on a requirements- and design-exploration for password feedback, where we aimed to involve users early in the design process. The project was a collaboration between myself and Caroline Olsienkiewicz, respectively Katharina Schwarz. 
+This chapter reports on a requirements- and design-exploration for password feedback, where we aimed to involve users early in the design process. The project was a collaboration between myself and Caroline Olsienkiewicz, respectively Katharina Schwarz.
 
 \section{Background and Context}
+% central purpose of this section: show a few examples of feedback approaches and highlight that they might have failed because they largely ignored user needs
 
-% very briefly.
-Design dimensions / aspects of persuasive authentication: PAF Forget \etal \cite{Forget2007PersuasionEducationSecurity}, see mindmap
+% persuasive design dimensions.
+% forget:
+% Design dimensions / aspects of persuasive authentication: PAF Forget \etal 
+% other frameworks: Cialdini's six weapons, bogg bmat
+The design space of persuasive interventions in authentication was put into a framework by Forget \etal \cite{Forget2007PersuasionEducationSecurity}. They established high-level strategies to steer users away from risky actions. However, while their \acrlong{PAF} described how hypothetical design solutions could be categorized, it did not tell us much about the specific user needs in feedback systems. The same goes for more generic persuasive models like Cialdini's ``six weapons'' \cite{Cialdini2007Influence}, or Fogg's Behavior Model \cite{Fogg2009BehavioralModel}. The latter provides hints to user requirements in system design, but those are not specific enough for password authentication.
+
+% ``requirements'' re feedback/support from related work:
+% a usability requirement we can take away: avoid frustrating users even more. \m/ (ó.ò) \m/
+% ur: stringent password meters generate frustration
+% shay: real time feedback reduces user frustration
+% egelman
+On the other hand, there exists a wide range of designs for persuasive password support that have been empirically evaluated, too. For instance, Ur \etal studied feedback with numerous solutions \cite{Ur2012HelpingUsersCreateBetterPasswords,Ur2012HowDoesYourPasswordMeasureUp, Ur2017DataDrivenPWMeter}. Egelman \etal also tried explored novel designs for password meters \cite{Egelman2013DoesMyPasswordGoUpToEleven}. Moreover, Shay \etal continued Forget's exploration of real-time feedback and suggestions \cite{Forget2008ImprovingPasswordsThroughPersuasion, Shay2015SpoonfulOfSugar}. Beyond real time feedback and meters, Komanduri \etal \cite{Komanduri2014Telepathwords} and Yee \cite{Yee2006Passpet} showed an approach to make predictability of passwords graspable. All these publications report on \textit{solutions} and corresponding usability evaluations, but they often do not talk about the user \textit{needs} they address. 
+
+Thus, our project focused on eliciting these needs and provide a holistic view on password feedback and support systems. Ultimately, understanding the needs might help us broaden the design space further and find more effective and actionable password support. To get there, we chose a ``put the user first'' lens and conducted two studies that focused on different levels of user needs (see Figure \ref{fig:co-design:exploration-overview}). In the first study (Section \ref{sec:codesign:part1}) we wanted to learn explicit and observable needs, i.e. the things that users \textit{say} they need or that can be understood by \textit{observing} how they interact with a solution. 
+The second study (Section \ref{sec:codesign:part2}) was more involved with tacit and latent needs. These are hard to observe and require more engagement with users, to understand what they actually know and feel when they interact with a password support system. 
+% beyond colorful bars: see section \ref{sec:rw:beyond-colorful-bars}
+% komanduri: telepathwords
+% Yee time-to-crack
+% fear appeal
+
+% conclusion: interesting approaches, but only retrospective analysis of what didn't work. We want to be \textit{proactive} and \textit{learn from users}, instead of learning by frustrating them.
+
+
+
+% geting a holistic view on user needs
+% co-design, identify different levels of needs --> \ref{fig:co-design:exploration-overview}
+% lightweight and rapid iterations
 
 \begin{figure}
 	\centering
@@ -125,7 +126,9 @@ The requirements might have been partially predictable even without conducting u
 % large opportunitites in personalization, empowerment, and breaking habituation. 
 Applying the requirements to gauge existing solutions, we identified opportunities for future work in personalization, empowerment, and preventing habituation effects from the same kind of intervention. These are addressed in the following chapters. 
 
-%\vspace*{1cm}\noindent
+%TODO important question: support by wizards / insertion were disliked by participants (Shay Spoonful) - but users in our study said that they might like sth. like this -- so maybe the design was not mature enough and not designed with user needs in mind. 
+
+\vspace*{1cm}\noindent
 \fbox{
 	\hspace{1cm}
 	\parbox[c][12cm]{0.7\linewidth}{
