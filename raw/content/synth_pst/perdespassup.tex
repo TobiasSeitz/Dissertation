@@ -122,7 +122,7 @@ In chapter \ref{chap:mm_pwm}, we have already presented an exploration of the me
 %
 %%%%%%%%%%%%%%
 \input{tables/pwm-comparison-v2}
-
+%TODO maybe show how the elicitation was structured. (observe, measure, ask, understand, learns)
 Relying on data from previous chapters, related work, and another small-scale empirical evaluation, we can frame the status quo like this:
 
 
@@ -141,16 +141,65 @@ Relying on data from previous chapters, related work, and another small-scale em
 \vspace*{1em}
 
 \subsection{Phase 2: Design Lens}
-Wit the status quo as starting point, we can now pick the focus areas in which to support users with password managers. Particularly, we identified that current PWMs try to ``fix the user'' by giving negative feedback on reused passwords as part of ``overall security scores''. Thus, there is an opportunity, to ``fix the system'' and better support users in strategic reuse. Hence, the system can be seen as a ``Password \textbf{Reuse} Manager'' (PWRM). We can address the following cues to figure out \textit{what} to support: Inconsistent reuse should be counteracted by the PWRM, while consistent reuse is acceptable. The PWRM can offer default categories to reduce complexity and aid in the decision whether to reuse or generate a new password. If a new password is recommendable, the PWRM can guide selection, memorization, and policy fulfillment. If the users realize the benefits, this can reinforce their choice to adopt a password manager in the first place. It is evident that a password manager is capable of addressing multiple support strategies at once, because it is able to interact with the user at multiple touch points of password authentication. 
+Wit the status quo as starting point, we can now pick the focus areas in which to support users with password managers. Particularly, we identified that current PWMs try to ``fix the user'' by giving negative feedback on reused passwords as part of ``overall security scores''. Thus, there is an opportunity, to ``fix the system'' and better support users in strategic reuse. Hence, the system can be seen as a ``Password \textbf{Reuse} Manager'' (PWRM). 
+
+\subsubsection{First Stage}
+We can address the following cues to figure out \textit{what} to support: Inconsistent reuse should be \textbf{counteracted} by the PWRM, while consistent reuse is acceptable. The PWRM can offer default categories to \textbf{reduce} complexity and aid in the decision whether to reuse or generate a new password. If a new password is recommendable, the PWRM can \textbf{guide} selection, memorization, and policy fulfillment. If the users realize the benefits, this can \textbf{reinforce} their choice to adopt a password manager in the first place. It is evident that a password manager is capable of addressing multiple support strategies at once (counteract, resolve, guide, and reinforce), because it is able to interact with the user at multiple touch points of password authentication. At this point changing the users' mental models is not the PWRMs responsibility. 
+
+\subsubsection{Second Stage}
+In the second stage of the Design Lens, we try to create a concrete implementation of the support strategies. 
+\paragraph{Define.} The outcome is defined as: A password manager that better represents the user's current coping strategies and therefore facilitates adoption. The design should be iteratively improved until all common coping strategies are supported (Roadmap). 
+
+\paragraph{Choose.} We can choose nudges for each support strategy. Counteracting inconsistent reuse should be done fairly obtrusively, because this kind of behavior generates the greatest risk, respectively the highest amount of effort in recovering from an attack. The ``commitment and consistency'' principle by Cialdini is perhaps the most promising candidate \cite{Cialdini2007Influence}. Resolving uncertainty and complexity can be addressed with \textit{suggestive} nudges, that facilitate decision-making. The ``salience'' effect falls into this category \cite{Coventry2014SCENEBehavioralNudges}. Similarly, users can be guided by simplifying the password selection process (simplification principle \cite{Forget2007PersuasionEducationSecurity}). Finally, using a password manager can be reinforced simply by offering the service for free and providing a good user experience. 
+
+In our case, we target users who prefer reusing passwords but also appreciate help in this task. Thus, the target user group consists of novices who have developed their own reuse strategies and prefer maintaining these, but in a simpler way. The ``Eliot Elis'' persona from Chapter \ref{chap:pws_and_personality} represents this user group well. Therefore, the strategy should fulfill the ``show'' and ``help'' need dimensions: Showing problems with inconsistencies and helping with finding alternatives are the foremost requirements we can address with the PWRM. At the same time, the PWRM should \textit{empower} the users to maintain their strategy, and decide not to store certain passwords, but only the user-names or a hint. 
+
+\paragraph{Consider.}
+If the users stick to the PWRM, habituation is actually beneficial, because they learn how to leverage the tool to work for them. In terms of constraints, the PWRM is a piece of software that would need to pass security audits in company environments. Giving a lot of feedback and interventions might be perceived as authoritative and thus users could resent these strategies. At the same time, the mere presence of the above mentioned nudges might not overcome inertia, so the efficacy needs to be evaluated in multiple steps. 
+
+\paragraph{Design} 
+In the design phase, we iteratively flesh out the specific information architecture and visuals of the PWRM. In multiple design sessions and evaluations we moved from a paper prototype to click-dummies and a working prototype. Figure \ref{fig:pwrm:conceptfinal} shows the central page of the PWRM. The user can put passwords into categories that share the same password. However, they may decide not to save passwords but only a hint for a specific category (see Figure \ref{fig:pwrm:hintboxes}). This aims to avoid that the user worries about the security of the PWRM -- they can simply put the accounts that they do not want managed into one category. In that case, the PWRM still supports them by helping them recall the password, because the category acts as a hint. 
+
+\begin{figure}[hp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/pwrm/concept_final}
+	\caption{Different stages of the design iterations. The main page of the PWRM groups reused passwords into different categories, which makes it easy to indicate that a password has been reused too often.}
+	\label{fig:pwrm:conceptfinal}
+\end{figure}
+
+\begin{figure}[hp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/pwrm/hintboxes}
+	\caption{The PWRM mitigates trust issues by allowing the user to store password hints or categories instead of the passwords themselves.}
+	\label{fig:pwrm:hintboxes}
+\end{figure}
+
+It is also possible to flag passwords as ``unique'', i.e. that they do not belong to a group of accounts that share the same password. Figure \ref{fig:pwrm:entry-unique} shows the page that also visually indicates the strength of the passwords. 
+
+\begin{figure}[hp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/pwrm/entry-unique}
+	\caption{The PWRM holds a separate page of unique passwords. For the user, this reduces uncertainty about the security state of different accounts.}
+	\label{fig:pwrm:entry-unique}
+\end{figure}
 
 
-
+\begin{figure}[hp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/pwrm/extension-popus}
+	\caption{The PWRM browser extension allows the user to automatically save passwords to different categories.}
+	\label{fig:pwrm:extension-popus}
+\end{figure}
 
 \section{Summary}
 % I avoided the term holistic, because it might give a false impression that the pre-configured factors are exhaustive. There might be more latent variables that need to be included in future explorations. 
 
 % What does it achieve?
-% Where can you use it?
+% I showed how to use the P4P framework to answer research questions posed as future work in another paper - and even create a solution based on them. 
+% pretty heavy and elaborate design exercise. A smaller example would be the design of the bandwagon meter. 
+
+
+% Where else can you use it?
 % how is this different to PAF and other design process tools. 
 
 
