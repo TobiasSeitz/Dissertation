@@ -111,10 +111,9 @@ One of the missing puzzle pieces are the specific categories that form reuse str
 Unsurprisingly, most respondents reported that they reuse passwords either directly or with modifications (77.2\%). The remainder relied on a password manager to generate new random passwords. Mangling strategies were predictable (swapping letters for digits, varying appended symbols, and capitalizing letters). More importantly, a thematic analysis of the statements about reuse strategies revealed the following nine themes: Account type (e.g. email accounts), importance (e.g. very important, ``throw-away''), strength (e.g. one or two strong and a few weak passwords that are used depending on the perceived threat), time of creation (e.g. the year), frequency of reuse (e.g. a go-to password and a few less frequently typed ones), purpose (e.g. all accounts that were created for a project), base-password plus mangling algorithm, policy-driven (e.g. if the go-to password is rejected, a more complex password is reused), or generating completely new one depending on certain cues. These themes form the status quo of password reuse in this design exercise.  
 %Moreover, we found that participants relied on associations between the password and its purpose.  
 
+
 \subsubsection{Password Managers} 
 Other respondents mentioned using password managers, but there are different types of managers: they can be classified as either \textit{retrieval-based} or \textit{generative}. Retrieval-based password managers store the user's passwords securely and allow, e.g., to automatically fill out log-in forms on behalf of the user. Once a password is in the user's manager, they can choose to never type it again. Most commercial solutions work this way. On the downside, users do not ``practice'' their password as much and might not remember it in situations where the password manager is unavailable or too risky to use, e.g. at public computer at an airport. The generative password manager approach solves this problem, because no passwords are stored \cite{McCarney2012Tapas}: it provides the user with an algorithm to re-produce unique passwords (e.g. PwdHash\footurl{https://pwdhash.github.io/website/}{23.03.2018})  %Halderman \etal presented Password Multiplier that uses a master password and hash functions to generate unique passwords for different sites \cite{Halderman2005ConvenientPWM}. Users only need access to the Password Multiplier browser extension and their credentials to log in from any place. Chiasson \etal, however, found both usability and security problems with the system \cite{Chiasson2006PasswordManagers}. Maqbali and Mitchell later formalized this approach and sketched a new idea for pseudorandom passwords they called ``AutoPass''\cite{Maqbali2016PasswordGenerators}. It takes the master password, first part of the URL and optionally a digital object (e.g. a file, website, email address \cite{Biddle2011DigitalObjectsPWs}) to resolve some issues pointed out by Chiasson \etal. Stobert and Biddle developed another generative password manager called VersiPass, which is closely related to our approach \cite{Stobert2014PWMThatDoesntRemember}. It works similar to Password Multiplier, but is based on graphical authentication as master password (PCCP \cite{Chiasson2008PCCP}). Moreover, accounts are categorized by purpose.
-
-In chapter \ref{chap:mm_pwm}, we have already presented an exploration of the mental models of password managers. The most important take-away was that only those who have started using one actually know the benefits, while non-users see password managers as a black box. In chapter \ref{chap:pws_and_personality}, we found that using a password manager was associated with demographic factors and some personality traits: Older participants and those with an IT background were more likely to rely on one, while people scoring high on ``openness'' were slightly less likely. To understand the status quo, we can compare real-world PWMs by their features (see Table \ref{tbl:pwrm:pwm_comparison}). Additional factors were shown in a recent c't article\footurl{https://heise.de/-3992417}{22.03.2018}. 
 
 %%%%%%%%%%%%%%
 %
@@ -122,7 +121,11 @@ In chapter \ref{chap:mm_pwm}, we have already presented an exploration of the me
 %
 %%%%%%%%%%%%%%
 \input{tables/pwm-comparison-v2}
-%TODO maybe show how the elicitation was structured. (observe, measure, ask, understand, learns)
+
+In chapter \ref{chap:mm_pwm}, we have already presented an exploration of the mental models of password managers. The most important take-away was that only those who have started using one actually know the benefits, while non-users see password managers as a black box. In chapter \ref{chap:pws_and_personality}, we found that using a password manager was associated with demographic factors and some personality traits: Older participants and those with an IT background were more likely to rely on one, while people scoring high on ``openness'' were slightly less likely. To understand the status quo, we can compare real-world PWMs by their features (see Table \ref{tbl:pwrm:pwm_comparison}). Additional factors were shown in a recent c't article\footurl{https://heise.de/-3992417}{22.03.2018}. 
+
+
+%TODO maybe show how the elicitation was structured. (observe, measure, ask, understand, learn)
 Relying on data from previous chapters, related work, and an additional small-scale empirical evaluation, we can frame the status quo like this:
 
 
@@ -131,74 +134,67 @@ Relying on data from previous chapters, related work, and an additional small-sc
 \fbox{
 	\hspace{0.03\linewidth}
 	\centering
-	\parbox[c][12cm]{0.9\linewidth}{
+	\parbox[c][12.5cm]{0.9\linewidth}{
 		\subsubsection*{Status Quo of Password Reuse and Password Managers}
 		% users need support, because:
-		\textbf{Mental Models.} Users have very vague mental models about password managers. \textbf{Coping Strategies.} Although more people are starting to rely on password managers, the foremost coping strategy is reuse. Here, users often categorize accounts with varying granularity. \textbf{Goals.} Reusing facilitates recall. Some strategies also try to mitigate security risks by strategically reusing passwords. Current password managers try to steer users away from reuse altogether. \textbf{Needs.} Users need to be able to recall their most important passwords, while the rest could be handled by a password manager. \textbf{Background.} Older users appear to be more likely to reuse passwords, but also more willing to use a password manager. Having an IT background also often goes along with using PWMs to be able to handle a multitude of strong, more random passwords. \textbf{Context.} If users encounter PWMs at work, they are likely to continue using it in private. \textbf{Tasks.} Password managers can follow either a generative or a retrieval-based approach which differ in the tasks that the user has to complete. Retrieval-based managers require less cognitive effort. Strategically reusing passwords might include a deliberate strategy, but often is developed intuitively. \textbf{Challenges.} Users are challenged with picking the ``right'' password manager, switching from one manager to another, and learning how to use them best. Reuse does not challenge users strongly, but recalling the correct category is sometimes troublesome. \textbf{Risks.} Reusing a password too often increases the risk of the ``domino effect'' if one account is successfully attacked. Forgetting the master-password of a password manager, e.g. after a long period of inactivity, can lock users out of all their online accounts at once. 
+		\textbf{Mental Models.} Users have very vague mental models about password managers. \textbf{Coping Strategies.} Although more people are starting to rely on password managers, the foremost coping strategy is reuse. Here, users often categorize accounts with varying granularity. We have identified nine distinct reuse strategies \textbf{Goals.} Reusing facilitates recall. Some strategies also try to mitigate security risks by strategically reusing passwords. Current password managers try to steer users away from reuse altogether. \textbf{Needs.} Users need to be able to recall their most important passwords, while the rest could be handled by a password manager. \textbf{Background.} Older users appear to be more likely to reuse passwords, but also more willing to use a password manager. Having an IT background also often goes along with using PWMs to be able to handle a multitude of strong, more random passwords. \textbf{Context.} If users encounter PWMs at work, they are likely to continue using it in private. \textbf{Tasks.} Password managers can follow either a generative or a retrieval-based approach which differ in the tasks that the user has to complete. Retrieval-based managers require less cognitive effort. Strategically reusing passwords might include a deliberate strategy, but often is developed intuitively. \textbf{Challenges.} Users are challenged with picking the ``right'' password manager, switching from one manager to another, and learning how to use them best. Reuse does not challenge users strongly, but recalling the correct category is sometimes troublesome. \textbf{Risks.} Reusing a password too often increases the risk of the ``domino effect'' if one account is successfully attacked. Forgetting the master-password of a password manager, e.g. after a long period of inactivity, can lock users out of all their online accounts at once. 
 	}
 	\hspace{0.03\linewidth}
 }
 \vspace*{1em}
 
 \subsection{Phase 2: Design Lens}
-Wit the status quo as starting point, we can now pick the focus areas in which to support users with password managers. Particularly, we identified that current PWMs try to ``fix the user'' by giving negative feedback on reused passwords as part of ``overall security scores''. Thus, there is an opportunity, to ``fix the system'' and better support users in strategic reuse. Hence, the system can be seen as a ``Password \textbf{Reuse} Manager'' (PWRM). 
+With the status quo as starting point, we put on the design lens and pick the focus areas in which to support users with password managers. Particularly, we identified that current PWMs try to ``fix the user'' by giving negative feedback on reused passwords in case they analyze all saved credentials and display a security score. Thus, there is an opportunity to ``fix the system'' and better support users in strategic reuse. Hence, the system can be seen as a ``Password \textbf{Reuse} Manager'' (PWRM). 
 
 \subsubsection{First Stage}
-We can address the following cues to figure out \textit{what} to support: Inconsistent reuse should be \textbf{counteracted} by the PWRM, while consistent reuse is acceptable. The PWRM can offer default categories to \textbf{reduce} complexity and aid in the decision whether to reuse or generate a new password. If a new password is recommendable, the PWRM can \textbf{guide} selection, memorization, and policy fulfillment. If the users realize the benefits, this can \textbf{reinforce} their choice to adopt a password manager in the first place. It is evident that a password manager is capable of addressing multiple support strategies at once (counteract, resolve, guide, and reinforce), because it is able to interact with the user at multiple touch points of password authentication. At this point changing the users' mental models is not the PWRMs responsibility. 
+We can address the following cues to figure out \textit{what} to support: Inconsistent reuse should be \textbf{counteracted} by the PWRM, while consistent reuse is acceptable. The PWRM can offer default categories to \textbf{reduce} complexity and aid in the decision whether to reuse or generate a new password. If a new password is recommendable, the PWRM can \textbf{guide} selection, memorization, and policy fulfillment. If the users realize the benefits, this can \textbf{reinforce} their choice to adopt a password manager in the first place. It is evident that a password manager is capable of addressing multiple support strategies at once (counteract, resolve, guide, and reinforce), because it is able to interact with the user at multiple touch points of password authentication. At this point, changing the users' mental models is not the PWRMs responsibility, but it might happen along the way. 
 
 \subsubsection{Second Stage}
 In the second stage of the Design Lens, we try to create a concrete implementation of the support strategies. 
-\paragraph{Define.} The outcome is defined as: A password manager that better represents the user's current coping strategies and therefore facilitates adoption. The design should be iteratively improved until all common coping strategies are supported (Roadmap). 
+\paragraph{Define.} The envisioned outcome is a password manager that better represents the user's current coping strategies and therefore facilitates adoption. The design should be iteratively improved until all common coping strategies are supported (Roadmap). 
 
-\paragraph{Choose.} We can choose nudges for each support strategy. Counteracting inconsistent reuse should be done fairly obtrusively, because this kind of behavior generates the greatest risk, respectively the highest amount of effort in recovering from an attack. The ``commitment and consistency'' principle by Cialdini is perhaps the most promising candidate \cite{Cialdini2007Influence}. Resolving uncertainty and complexity can be addressed with \textit{suggestive} nudges, that facilitate decision-making. The ``salience'' effect falls into this category \cite{Coventry2014SCENEBehavioralNudges}. Similarly, users can be guided by simplifying the password selection process (simplification principle \cite{Forget2007PersuasionEducationSecurity}). Finally, using a password manager can be reinforced simply by offering the service for free and providing a good user experience. 
+\paragraph{Choose.} We can choose nudges for each support strategy. Counteracting inconsistent reuse should be done fairly obtrusively, because this kind of behavior generates the greatest risk, respectively the highest amount of effort in recovering from an attack. The ``commitment and consistency'' principle by Cialdini is perhaps the most promising candidate \cite{Cialdini2007Influence}. Resolving uncertainty and complexity can be addressed with \textit{suggestive} nudges, that facilitate decision-making. The ``salience'' effect falls into this category \cite{Coventry2014SCENEBehavioralNudges}. Also, having good \textit{default} categories is a powerful nudge \cite{Cranor2008FrameworkReasoning}. Similarly, users can be guided by simplifying the password selection process (simplification principle \cite{Forget2007PersuasionEducationSecurity}). Finally, using a password manager can be reinforced simply by offering the service for free and providing a good user experience. 
 
-In our case, we target users who prefer reusing passwords but also appreciate help in this task. Thus, the target user group consists of novices who have developed their own reuse strategies and prefer maintaining these, but in a simpler way. The ``Eliot Elis'' persona from Chapter \ref{chap:pws_and_personality} represents this user group well. Therefore, the strategy should fulfill the ``show'' and ``help'' need dimensions: Showing problems with inconsistencies and helping with finding alternatives are the foremost requirements we can address with the PWRM. At the same time, the PWRM should \textit{empower} the users to maintain their strategy, and decide not to store certain passwords, but only the user-names or a hint. 
+In our case, we target users who prefer reusing passwords but also appreciate help in this task. Thus, the target user group consists of novices who have developed their own reuse strategies and prefer maintaining these, but in a simpler way. The ``Eliot Elis'' persona from Chapter \ref{chap:pws_and_personality} represents this user group well. Therefore, the strategy should fulfill the ``show'' and ``help'' need dimensions: Showing problems with inconsistencies and helping with finding alternatives are the foremost requirements we can address with the PWRM. At the same time, the PWRM should \textit{empower} users to maintain their strategy, and decide not to store certain passwords, but only the user-names or a hint. 
 
 \paragraph{Consider.}
 If the users stick to the PWRM, habituation is actually beneficial, because they learn how to leverage the tool to work for them. In terms of constraints, the PWRM is a piece of software that would need to pass security audits in company environments. Giving a lot of feedback and interventions might be perceived as authoritative and thus users could resent these strategies. At the same time, the mere presence of the above mentioned nudges might not overcome inertia, so the efficacy needs to be evaluated in multiple steps. 
 
-\paragraph{Design} 
-In the design phase, we iteratively flesh out the specific information architecture and visuals of the PWRM. In multiple design sessions and evaluations we moved from a paper prototype to click-dummies and a working prototype. Figure \ref{fig:pwrm:conceptfinal} shows the central page of the PWRM. The user can put passwords into categories that share the same password. However, they may decide not to save passwords but only a hint for a specific category (see Figure \ref{fig:pwrm:hintboxes}). This aims to avoid that the user worries about the security of the PWRM -- they can simply put the accounts that they do not want managed into one category. In that case, the PWRM still supports them by helping them recall the password, because the category acts as a hint. 
+\paragraph{Design.} 
+In the design phase, we iteratively flesh out the specific information architecture and visuals of the PWRM. In multiple design sessions and evaluations we moved from a paper prototype to clickable wireframes, to a working prototype in the form of a browser extension. Figure \ref{fig:pwrm:conceptfinal} shows the central page of the PWRM browser extension. The user can put passwords into categories that share the same password. During onboarding, a few default categories based on past reuse strategies are automatically created. They user may also decide to save only a hint for a specific category (see Figure \ref{fig:pwrm:hintboxes}). This aims to avoid that the user worries about the security of the PWRM -- they can simply put the accounts that they do not want managed into one category. In that case, the PWRM still supports them by helping them recall the password, because the category acts as a hint. 
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{figures/pwrm/concept_final}
-	\caption{Different stages of the design iterations. Left: wireframing stage. Right: The main page of the PWRM groups reused passwords into different categories, which makes it easy to indicate that a password has been reused too often.}
+	\caption{Different stages of the design iterations. Left: wireframing stage. Right: The main page of the PWRM groups reused passwords into different categories, which makes it easy to indicate that a password has been reused too often. Nudges: \textbf{simplification} (through organization), \textbf{defaults} (default categories during onboarding)}
 	\label{fig:pwrm:conceptfinal}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.9\linewidth]{figures/pwrm/hintboxes}
-	\caption{The PWRM mitigates trust issues by allowing the user to store password hints or categories instead of the passwords themselves.}
+	\includegraphics[width=\linewidth]{figures/pwrm/hintboxes}
+	\caption{The PWRM mitigates trust issues by allowing the user to store password hints or categories instead of the passwords themselves. Nudges: \textbf{consistency} (stay within the category), \textbf{salience} (suggesting categories, visual framing)}
 	\label{fig:pwrm:hintboxes}
 \end{figure}
 
-It is also possible to flag passwords as ``unique'', i.e. that they do not belong to a group of accounts that share the same password. Figure \ref{fig:pwrm:entry-unique} shows the page that also visually indicates the strength of the passwords. 
+It is also possible to flag passwords as ``unique'', i.e. that they do not belong to a group of accounts that share the same password. Figure \ref{fig:pwrm:entry-unique} shows the page that also visually indicates the strength of the passwords. The PWRM browser extension detects ``submit'' events from forms that contain password fields. It opens a small pop-up window to let the user store the password (see Figure \ref{fig:pwrm:extension-popus}). Here, they can decide whether it should be put into one of the reuse-categories or become a ``unique'' password, that is not shared with other accounts. Further features and design decisions are indicated in the captions of Figures \ref{fig:pwrm:conceptfinal}, \ref{fig:pwrm:hintboxes}, \ref{fig:pwrm:entry-unique}, and \ref{fig:pwrm:extension-popus}.
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{figures/pwrm/entry-unique}
-	\caption{The PWRM holds a separate page of unique passwords. For the user, this reduces uncertainty about the security state of different accounts.}
+	\caption{The PWRM holds a separate page of unique passwords. For the user, this reduces uncertainty about the security state of different accounts. Nudges: \textbf{commitment} (user should not reuse these passwords.)}
 	\label{fig:pwrm:entry-unique}
 \end{figure}
-
-The PWRM browser extension detects ``submit'' events from forms that contain password fields. It opens a small pop-up window to let the user store the password (see Figure \ref{fig:pwrm:extension-popus}). Here, they can decide whether it should be put into one of the reuse-categories or become a ``unique'' password, that is not shared with other accounts.
-
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.9\linewidth]{figures/pwrm/extension-popus}
-	\caption{The PWRM browser extension allows the user to save passwords to different categories.}
+	\caption{The PWRM browser extension allows the user to save passwords to different categories. Nudges: Defaults, simplification}
 	\label{fig:pwrm:extension-popus}
 \end{figure}
 
 
 \paragraph{Evaluate.} 
-We iteratively evaluated the concept and the design. Table \ref{tab:pwrm:evaluations} shows the four evaluation methods at different stages of the process. Participants found that the categorization feature of the paper prototype was still too complex, although they liked the idea of grouping accounts by passwords. In the second evaluation, the need for more explanation about the potential risks of password reuse became evident. The first usability test with a preliminary implementation of the browser extension showed that participants were able to fulfill all tasks. However, they desired more automation features to speed up the interactions. Finally, we created a beta version of the PWRM extension and recruited 12 participants to test it for ten days. After the ten days it was clear that the participants only rarely opened their browser, so we could not conclusively evaluate the solution. The qualitative feedback indicated that participants were browsing the web on their mobiles and also used other browsers during that time. Hence, as a caveat, the effects of the nudges and the impact on the password life cycle would only become visible in a longitudinal, larger scale study, with more careful screening. Unfortunately, this was outside of the scope of this design exercise, and we need to leave this to future work. 
-% 5 people in paper-prototyping stage / wizard of oz study
-% 7 students in click-dummy stage / wireframes
-% 6 people usability test with extension (stage 1) / 4m 2f
-% 18 participants in a field study over two weeks. 
+We iteratively evaluated the concept and the design in a user-centered approach. Table \ref{tab:pwrm:evaluations} shows the four evaluation methods at different stages of the process. In a first wizard-of-oz study, participants found that the categorization feature of the paper prototype was still too complex, although they liked the idea of grouping accounts by passwords. In the second evaluation, the need for more explanation about the potential risks of password reuse became evident. The first usability test with a preliminary implementation of the browser extension showed that participants were able to fulfill all tasks. However, they desired more automation features to speed up the interactions. Finally, we created a beta version of the PWRM extension and recruited 12 participants to test it for ten days. After the ten days, it was clear that the participants only rarely opened the browser with the extension, so we could not conclusively evaluate the solution. The qualitative feedback indicated that participants were browsing the web on their mobiles and also used other browsers during that time. Hence, as a caveat, the effects of the nudges and the impact on the password life cycle would only become visible in a longitudinal, larger scale study, with more careful screening. Unfortunately, this was outside of the scope of this design exercise, and we need to leave this to future work. 
 
 \begin{table}
 	\begin{tabular}{llrp{9cm}}
@@ -212,26 +208,17 @@ We iteratively evaluated the concept and the design. Table \ref{tab:pwrm:evaluat
 \end{table}
 
 \section{Summary}
-% I avoided the term holistic, because it might give a false impression that the pre-configured factors are exhaustive. There might be more latent variables that need to be included in future explorations. 
+This chapter contributes ``P4P'' - a framework for persuasive design for password support. Its elements are based on numerous research studies both from related and original work. Other persuasion frameworks for authentication, e.g. the Persuasive Authentication Framework \cite{Forget2007PersuasionEducationSecurity}, focused on the design space, whereas P4P tries to structure the investigation of the problem (the \textit{why}), design-heuristics (the \textit{what}), and the implementation process (the \textit{how}). So, although it might be seen as an approach to provide a ``holistic'' view on password support design, I intentionally avoided this term. The elements exhaust much of the research and design space, but there might be other latent factors or different configurations that need more attention in future explorations. Nevertheless, depending on the amount of status-quo information, the structure of the framework allows researchers and designers to start at a later point and follow a structured process. I showed how to use the P4P framework to tackle research questions and explore new opportunities in password support: It led to the creation of a ``Password Reuse Manager'' that is now under an open-source license to facilitate distributed development\footurl{https://github.com/mimuc/pwrm/}{23.03.2018}. The design exercise encompassed a multitude of strategies, but the framework is also applicable for smaller tasks, e.g. the design of password meters. In the future, P4P can help derive novel solutions outside the current design space of password support. 
 
-% What does it achieve?
-% I showed how to use the P4P framework to answer research questions posed as future work in another paper - and even create a solution based on them. 
-
-% pretty heavy and elaborate design exercise. A smaller example would be the design of the bandwagon meter. 
-
-
-% Where else can you use it?
-% how is this different to PAF and other design process tools. 
-
-
-\vspace*{1cm}
+\vspace*{1.5cm}
 \noindent
 \fbox{
 	\hspace{1cm}
-	\parbox[c][12cm]{0.7\linewidth}{
+	\parbox[c][7cm]{0.7\linewidth}{
 		\section*{Take Aways}
 		\begin{itemize}[leftmargin=*]
-			\item The Persuasive Design for Password Support (P4P) framework structures exploration and design of new nudging solutions. 
+			\item The Persuasive Design for Password Support (P4P) framework structures exploration and design of new solutions to support users in any password-related task.
+			\item It can be applied to big design projects (like a full-blown password manager in our case), but also to smaller aspects (like the design of password meters, help pages, onboarding wizards etc.)
 		\end{itemize}
 	}
 	\hspace{1cm}
