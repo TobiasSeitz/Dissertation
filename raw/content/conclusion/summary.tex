@@ -1,22 +1,104 @@
 \chapter[Summary]{Summary}\label{chap:summary}
+This thesis analyzed a multitude of aspects that need to be considered when we try to support users in password authentication with persuasive design. Hereby, the following research questions were addressed:
 
-\section{Reprise} %TODO choose different name.
-give a walkthrough through all take-aways. that should do and create 1-2 pages. 
-
-\section{Gained Knowledge}
 \begin{itemize}
-\item Emoji authentication on the web - we're not there yet. 
+	\item[\textbf{RQ1}] What is the role of psychological factors and mental models for password selection and coping strategies?
+	\item[\textbf{RQ2}] How can password authentication be simplified for users? 
+	\item[\textbf{RQ3}] How can we design persuasive strategies to support users in any password-related tasks?
 \end{itemize}
 
-\section{Classification and Dimensions}
-here we talk about in which way the projects contributed to the PCT and in which way
+Since password authentication has been under investigation for several decades, we first delimited the landscape of related work in Part \ref{part:related_work}. This helped us partially answer all three research questions and identify open questions that had still been underexplored (see Chapter \ref{chap:rw:summary}). We then reported on a number of empirical experiments and explorative research studies to investigate both human factors and environmental constraints of password authentication. \textit{RQ1} was mainly investigated with online studies in the wild and with survey methods. We explored the mental models of password strength by innovating a research method to inexpensively collect data in the wild. Moreover, we conducted multiple surveys to explore associations between personality and attitudes and behaviors in authentication. We tried to answer \textit{RQ2} with mixed methods, both on the qualitative and the quantitative side. Here, we explored the needs users have in persuasive feedback with a survey and participatory design approach, and derived a solution based on the Decoy effect and emojis inside text-based passwords. Finally, to answer \textit{RQ3}, we discussed a framework to guide the design of persuasive strategies, which we then also applied to create a novel password-manager. The following sections discuss the central insights and show how they are connected.
+
+\subsubsection{Psychological Factors and Mental Models in Authentication}
+% related work mostly _describes_ behaviors and coping strategies, but not the mental models behind them.
+% real world password authentication often sees it as a small hurdle, but not worthy of in-depth ux design.
+In Chapter \ref{chap:rw:user_perspective}, we found that most related work \textit{describes} coping strategies. Only sometimes the contributing factors like educational background, psychographics, or mental models that foster certain coping strategies are addressed. Few password alternatives, as presented in Chapter \ref{chap:rw:passwords}, are mature enough to allow investigation of human factors outside the lab, and there is even less insight into the mental models involved. 
+%At the same time, real-world authentication systems also often neglects such human factors, which aggravates security issues.
+
+% PASDJO
+We filled this gap in several ways. First, we investigated the mental models of password strength, because these are believed to be highly influential on actual password choice. For these purposes, we innovated on research methods to understand latent password strength perceptions: \textit{PASDJO}, the password game, helped in showing that passphrases are often underestimated by users, although \gls{NIST} has started to propagate them in favor of complexity (see Chapter \ref{chap:pasdjo}). The long-standing belief that strong passwords must include a wide range of characters was clearly visible in the data collected during one year of public deployment. However, users were by and large capable of estimating password strength. This constitutes evidence that users are most likely aware of their actions when they select strong and weak passwords for different purposes. At the same time, password strength is often a secondary risk factor, if users reuse passwords too carelessly. 
+% Policy Audit
+To that end, we audited the composition policies of the 83 most visited web-sites in Germany (see Chapter \ref{chap:policies_reuse}). We were able to show that it is easy for users to reuse a single password on most sites, if it is nine or ten characters long and consists of lower- and uppercase letters and digits. Hence, this finding is another indicator that password policies have contributed to the mental model that character diversity is absolutely required to form a strong password -- and that reuse is less critical, because it is not prevented. 
+
+% PERSONALITY
+Real-world constraints like policies thus shape mental models and coping strategies. On the other hand, there is a spectrum of password coping strategies that cannot be explained by environmental factors alone. We hypothesized that a user's personality might play a role in password selection and coping behavior. In three studies (see Chapter \ref{chap:pws_and_personality}), we examined how personality might be associated with different password tasks. We found that personality was a weak, but non-negligible factor in predicting how different user groups deal with policies, perceive strength, or choose passwords. The data allowed us to create user segments in the form of personas that can be used in the development of authentication schemes and support strategies. 
+% PWMs
+As a side effect, we observed that people with a background in an IT-related field were more likely to adopt a password manager. Looking at the generally low adoption rates of such software, we explored how users perceive passwords managers in Chapter \ref{chap:mental_models_pwm}. We contributed the notion that users appreciate this kind of tool once they were first exposed to the technology, e.g. at work. If they had never used a password manager before, they were unable to anticipate how it might help them. We further advanced the description of mental models of password authentication by distinguishing separate mental spaces. Interestingly, these were currently not fully matched by real-world password managers. 
+
+% summary
+In summary, we have to respect different dimensions of factors that contribute to mental models. Environmental constraints like password policies probably have the largest influence. Much traditional advice on how to form ``good passwords'' has led to a skewed mental model of password strength. Second, professional and educational factors are associated in how well users deal with password tasks. Finally, personality also contributes to the shaping of mental models, but warrants further research in this direction. %Current user interfaces, e.g. web sites, do not seem to take mental models into account when they try to simplify the task. 
+
+\subsubsection{Simplification Strategies}
+% users still struggle and here, many attempts have been made to make things simpler for them.
+% pick up 1-3 strategies from related work
+
+% currently, one of the most important simplification strategies assumes that password policies are in place and users struggle to meet the requirements
+% therefore all sorts of websites provide feedback and password meters, but the needs about this feedback were underexplroed
+% we filled this gap and provide a list of requirements to design feedback and -forward mechanisms that should simplify the task
+
+% also we explored two persuasive strategies to address these user needs.
+% the first was based on feedback and feedforward and tried to leverage the decoy effect
+% method
+% results
+% although it didn't really show, we still found the benefits of providing suggestions and feedback and feedforward
+
+% we also tried to SIMPLIFY memorizing passwords by allowing the selection of emojis
+% we explored the constraints, user attitudes and behaviors
+% method
+% results
+% summary: empowerment: maybe, but people were still reserved at this point which is understandable given the challenges they faced. we need to work them out because sites already support emojis.
+
+% summary: it's hard to simplify but not impossible. probably the most influential aspect is the interplay between policy, feedback and feedforward. 
+
+
+\subsubsection{Guiding Persuasive Designs}
 
 
 
+
+%\section{Contributions} %TODO choose different name.
+%give a walkthrough through all take-aways. that should do and create 1-2 pages. 
+%
+%\subsection{Theoretical Contributions}
+%- framework for the design of password support strategies.
+%
+%\subsection{Methodological Contributions}
+%- measuring passwords in the wild in an ethical way. (meta zxcvbn)
+%- novel solution to measure password strength perception. (PASDJO)
+%
+%\subsection{Empirical Contributions}
+%- the decoy effect and password suggestions
+%- personality and passwords
+%- mental models password managers
+%
+%\section{Implications}
+%% how has this thesis advanced science? / the amount of the world's knowledge.
+%\begin{itemize}
+%\item Emoji authentication on the web - we're not there yet. 
+%\end{itemize}
+
+\subsubsection{Conclusion}
+% so -- what did we learn? how has the world changed?
+you need to know the psychological aspects if you try to derive persuasive strategies. there's no way around it. 
+
+
+\section{Limitations}
+
+\subsection{Study Designs}
+
+\subsection{Generalizability}
+
+\subsection{Real-World Measurements}
+
+\subsection{Nudging Ethics and Risks}
+
+
+%\section{Classification and Dimensions}
+%here we talk about in which way the projects contributed to the Framework? and in which way
 
 
 \section{Lessons Learned}
-What would I do differently the next time I take on a PhD project?
+What would I do differently, if I had to do it all over again?
 
 
 

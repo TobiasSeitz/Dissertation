@@ -1,11 +1,9 @@
 %!TEX root = ../../diss.tex
-
 \chapter[Introduction]{Introduction}\label{chap:intro}
 
-\section{Motivation}
+\section{Passwords - The Good and The Bad}
 %% MANY PEOPLE USE THE INTERNET
-Around 3.5 Billion people are using the Internet by mid-2017, i.e. about half of the world population\footnote{\url{http://www.internetworldstats.com/stats.htm}, \access{08.11.2017}}, and more than half of the households are connected to the Internet\footnote{ITU, ``Households with Internet access at home'' \url{https://de.statista.com/statistik/daten/studie/187116/umfrage/anteil-der-haushalte-mit-internetzugang/}, \access{08.11.2017}}.
-
+Around 3.5 Billion people are using the Internet by mid-2017, i.e. about half of the world's population\footnote{\url{http://www.internetworldstats.com/stats.htm}, \access{08.11.2017}}, and more than half of the households are connected to the Internet\footnote{ITU, ``Households with Internet access at home'' \url{https://de.statista.com/statistik/daten/studie/187116/umfrage/anteil-der-haushalte-mit-internetzugang/}, \access{08.11.2017}}.	
 %% SERVICES ARE CENTRAL TO THE INTERNET
 %% MANIPULATING DATA NEEDS AUTHENTICATION
 A central aspect of using the Internet is accessing the services it provides: From reading news to sharing pictures on social networks, sending emails, and doing online banking. Most of these services store data about individual users. This does not necessarily require that users interact with the data themselves. Third parties like insurance agencies, airlines, governments use the Internet to run their affairs sometimes without direct user involvement. In any case, access to sensitive data needs to be protected or else vicious attackers can exploit it. 
@@ -40,18 +38,17 @@ if you log into 3 services every day and it takes 5 seconds to type in your user
 
 Password reset requests make up 10\% - 30\% of help desk calls and ``in a nonautomated support model, password reset costs range from \$51 (best case) to \$147 (worst case) for the labor alone. (Gartner study in 2002\footnote{\url{http://passwordresearch.com/stats/study76.html}}, \la{18.12.2017}).
 
-
 point out how much money the big players spend on driving progress in this domain (Google Smart Lock) FaceID etc. 
 
 \subsection{The Costs of Weak and Strong Passwords}
 
-if accounts get compromised too easily, the personal data can be exploited. Most obvious and trending example these days: Bitcoin wallets. If you have a weak password there, you can lose a lot of money very quickly.
+if accounts get compromised too easily, the personal data can be exploited. Most obvious and trending example these days: Bitcoin wallets. If you have a weak password there, you can lose a lot of money very quickly. And it seems that many of the online wallets only have very bad password policies\footurl{https://blog.dashlane.com/cryptocurrency-exchange-password-power-rankings-2018/}{24.03.2018}
 
 identity theft and consecutive social engineering more often than stealing money from banks. ``The Federal Trade Commission (FTC) estimates the average identity theft victim invests more than 200 hours and spends a total of 18 months resolving the issue with credit reporting agencies''\footurl{https://www.businesswire.com/news/home/20151006006149/en/Latest-Data-Breach-Spotlights-Identity-Restoration}{11.01.2018}
 
 ``Money is the most obvious loss, but time, frustration and reputation are also at stake.'' \cite{Herley2012PersistenceOfPasswords}
 
-\todo{look at reports and compile some statistics} e.g. \cite{CSID2012PasswordHabits} 
+\todo{look at reports and compile some statistics} e.g. \cite{CSID2012PasswordHabits}  
 
 not immediately visible but important: in an enterprise environment, if employees forget passwords they often turn to the helpdesk. Handling this superfluous business costs money. 
 
@@ -63,12 +60,10 @@ An attack can cause emotional distress \cite{Shay2014ReligiousAunt}
 
 On the other hand, if users pick a strong password that they cannot remember, this is problematic for businesses, too: users who cannot remember their password might leave the online-shopping funnel and shop at another site\footurl{http://www.inforum.com/business/4288092-when-customers-forget-their-passwords-business-suffers}{18.12.2017}.
 
-\section{Research Objectives}\label{sec:intro:researchobjectives}
+\section{Problem Statement and Research Questions}\label{sec:intro:researchobjectives}
 
 Challenges à la Gerber \etal \cite{Gerber2018HumanFactorsSecurity}
 
-
-\subsection{Problem Statement}
 investigating user interfaces that no one ``enjoys'', yet everybody needs to use them. Stobert even goes as far as to say ``Everyone hates passwords'' \cite{Stobert2014Agony}. So much so that the ``countless attempts and near-universal desire to replace them''  \cite{Herley2012PersistenceOfPasswords} has produced a plethora of papers in this field.
 
 most security and HCI researchers agree that authentication is an unsolved problem and there have been attempts to formally show that it is unsolved \cite{Bonneau2012ReplacePasswords, Bonneau2015ImperfectAuthentication, Herley2012PersistenceOfPasswords}. 
@@ -76,17 +71,29 @@ most security and HCI researchers agree that authentication is an unsolved probl
 
 Coping strategies encompass: password selection, memorization, externalization (writing down), using support tools -- a holistic view on the issue. 
 
+\subsection{Opportunities}
 
-\subsection{Better Understanding of Password Usability}
-how do we make passwords more usable for mainstream users (not experts). what du users already know, what do they do and how can we design for that. 
+\subsubsection{Better Understanding of Password Usability}
+how do we make passwords more usable for mainstream users (not experts). what do users already know, what do they do and how can we design for that. 
 
-\subsection{Making Users' Lives a Little Easier}
+Psychological factors and mental models -- how big is their influence? If we have a better understanding of them (beyond what's already known), we may be able to derive better support strategies.
+
+\subsubsection{Making Users' Lives a Little Easier}
 supporting them carefully without drastic interventions or mitigations. small steps to slowly adapt behavior over time. 
 
 Many people argue that way, e.g. \cite{Herley2012PersistenceOfPasswords}
 
+\subsection{Research Questions}
+% related work, and own work
+% none of these questions are purely new, but they are still ill-defined or not satisfactorily answered.
+\begin{itemize}
+	\item[RQ1] What is the role of psychological factors and mental models for password selection and coping strategies?
+	\item[RQ2] How can password authentication be simplified for users? 
+	\item[RQ3] How can we leverage persuasive design strategies to support users in any password-related tasks?
+\end{itemize}
 
-\subsection{Non-Objectives}\label{sec:intro:non_objectives}
+
+\subsubsection{Non-Objectives}\label{sec:intro:non_objectives}
 
 \begin{itemize}
 	\item While we present a framework to make users' dealings with passwords easier and secure for them, this thesis does not provide a definite one-size-fits-all solution to select and manage passwords. As Yang \etal put it: ``If a strategy is widely used, then attackers may develop strategy-specific methods which can efficiently guess the passwords.'' -- this increases the problem space 
@@ -94,13 +101,14 @@ Many people argue that way, e.g. \cite{Herley2012PersistenceOfPasswords}
 \end{itemize}
 
 
-\section{Main Research Contributions and Insights}\label{sec:intro:contributions}
+\section{Main Contributions}\label{sec:intro:contributions}
 
 \subsection{Insights into the Psychology of Passwords}
 - user perceptions of password strength (Chapter \ref{chap:pasdjo})
 - personality and password selection are moderately associated
 - it is difficult to measure the effects, but we show how to get there. (Chapter \ref{chap:pws_and_personality})
-- interdisciplinary approach -- literature survey also from behavioral economics, 
+- mental models 
+- interdisciplinary approach -- literature survey also from behavioral economics
 
 \subsection{Designing With Password Coping Strategies In Mind}
 - we audited the top 83 websites that offer public authentication in germany and found that their password policies (at the time) did not prevent password reuse. Chapter \ref{chap:policies_reuse}
@@ -111,9 +119,9 @@ Many people argue that way, e.g. \cite{Herley2012PersistenceOfPasswords}
 % - if users face a password nudge every time the effects can wear off 
 % - we should apply nudges if we think the account is important. important accounts contain large datasets of personal or financial information which make them valuable targets for attackers.
 
-\subsection{A Framework for Holistic Password Support}
-- we propose a framework that guides service providers (\gls{SP})in making users dealings with passwords easier (the password support toolkit)
-- we designed and evaluated a password manager that follows the design principles and recommendations of the password support toolkit. 
+\subsection{A Framework to Structure the Design of Persuasive password support}
+- we propose a framework that guides \glspl{SP} 
+- as a design exercise, we address two existing coping strategies: Password reuse and password managers, to create a novel solution that brings the benefits of PWMs to the reuse strategy. 
 
 %\begin{description}
 %	\item[Perception of Password Strength] Over the past decade, users received many hints and advice to construct strong passwords. Their understanding of a secure password has changed and is sometimes wrong. We show that this is the case in section @TODO REF SEC
@@ -124,8 +132,8 @@ Many people argue that way, e.g. \cite{Herley2012PersistenceOfPasswords}
 %\end{description}
 
 
-\section{Thesis Overview}
-\textbf{Part I: Background and Related Work}
+\section{Thesis Structure}
+\textbf{Part I: Foundations of Usable Authentication}
 \textit{Chapter 2:}
 Foundations and general background on passwords
 Do we still need passwords?
@@ -133,19 +141,27 @@ Do we still need passwords?
 Keeping the human in the loop, Usability Challenges, how users cope with password-based authentication
 \textit{Chapter 4:}
 
+\textbf{Part II: Evaluating the Problem}
 \textit{Chapter 5:}
 
 \textit{Chapter 6:}
 
 \textit{Chapter 7:}
 
+\textit{Chapter 8:}
 
+\textbf{Part III: Persuasive Design Strategies}
+\textit{Chapter 9:}
+\textit{Chapter 10:}
+\textit{Chapter 11:}
+\textbf{Part IV: Synthesis}
+\textit{Chapter 12:}
+\textit{Chapter 13:}
+\textit{Chapter 14:}
+\textit{Chapter 15:}
 \section{Remarks}
 \begin{itemize}
 \item \textbf{Singular They}\footurl{https://en.wikipedia.org/wiki/Singular_they}{06.01.2018} Throughout this dissertation pronouns are used in the plural even when speaking about an individual, e.g. ``the user'' is mostly referred to as ``they'' instead of ``he'' or ``she'', to avoid discrimination of certain demographic groups. 
 \item As is common in HCI literature, the author also utilizes ``We'' instead of ``I'' to acknowledge the work of any collaborators. In later more opinionated parts, the explicit usage of ``I'' intends to communicate the subjective nature of thoughts and interpretations.
 \item Throughout the thesis, footnotes are excessively used to link to web content. Publications in scientific archives appear in the list of references at the end of the thesis.
 \end{itemize}
-
-
-
