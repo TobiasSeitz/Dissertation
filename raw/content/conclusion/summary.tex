@@ -69,7 +69,7 @@ The above summary allows us give recommendations on service design and research 
 	
 	\item \textbf{Prepare for more requests of password replacement schemes}. More and more people are willing to use biometrics as primary authentication method\footurl{https://www-03.ibm.com/press/us/en/pressrelease/53646.wss}{26.03.2018}. They will expect this technology from products. However, companies often market biometrics as panacea for usable and secure authentication, and fail to make users aware of the ramifications. Therefore, passwords are going to be met with resistance and we need to reassure users that passwords have irrefutable benefits. 
 		
-	\item \textbf{Extend the method space}. We note a strong tendency towards studies facilitated through \gls{mTurk}. While the methodology is robust for eliciting quantitative data, the results are only one side of the truth. MTurk studies answer \textit{what works best}, but often fail to explain \textit{why} things work best. Therefore, resurrecting mixed-methods approaches that address qualitative aspects is recommendable for future USEC research. 
+	\item \textbf{Extend the method space}. \label{recommendation:method_space}We note a strong tendency towards studies facilitated through \gls{mTurk}. While the methodology is robust for eliciting quantitative data, the results are only one side of the truth. MTurk studies answer \textit{what works best}, but often fail to explain \textit{why} things work best. Therefore, resurrecting mixed-methods approaches that address qualitative aspects is recommendable for future USEC research. 
 	
 	\item \textbf{Stay realistic}. Nudges wear off over time, so we have to constantly create new persuasive strategies. Then again, users quickly resent paternalistic guidance and also prefer things to stay as they are. We have to acknowledge that there is only so much we can do. Persuasive support strategies will not work for all users in the same way, but if they reach even a small target group and make their lives a little easier, I believe that they are impactful enough. %Habituation has never really been a topic in password persuasion.
 	
@@ -87,49 +87,53 @@ The above summary allows us give recommendations on service design and research 
 \subsubsection{Conclusion}
 This thesis has presented a new perspective on a well-known and perhaps unsolvable problem: coping with passwords is hard and annoying for most of us. Nonetheless, reducing the frustration component is a highly desirable goal. Hence, we contributed new insights into the factors that shape coping strategies (mental models, personality) and how to design for the users' implicit and explicit needs (a structured process to fine-tune the mixture of feedback, feedforward, and empowering technology). 
 
-%Our findings can improve service design and guide future research. 
-
-%The spectrum of problems is nuanced and solutions appear somehow gridlocked. We know much about the technical side and what people do to live with the password burden. What we do not know to its full extent is how exactly coping strategies form and how to support them best. What are the preconditions? Why do not all users behave the same way? How can we leverage that in designs? With the projects reported in this thesis, I aimed to tackle these aspects with ideas off the beaten path. Some of them came with a certain risk as to their feasibility and how to evaluate them. 
-
-% How is PASDJO useful?
-% How is the policy data set useful?
-% How is the personality data useful?
-% How is the Bubbles / Needs exploration useful?
-% How is the emoji-passwords project useful? 
-% How is the PWRM useful?
-% Where do we go from here?
-
-% so -- what did we learn? how has the world changed?
-% you need to know the psychological aspects if you try to derive persuasive strategies. there's no way around it. 
-% there are many solutions off the beaten path 
-% very foundational, strategic, explorative character, risky research questions. 
-% what does this mean for XYZ
-% how does this change the world?
-% thoughts. 
 
 
 \section{Limitations}
+The findings should not be interpreted without context. Their main limitations arise from the way data was collected and consequently how the findings apply to other contexts. In the following, I will briefly discuss these aspects and shed light on potential risks of advancing science with persuasion. 
 
 \subsection{Generalizability}
-% lab studies: mostly germans
-% in the wild: also rather narrow geographic regions (Germany, UK, US)
+Although we tried to minimize sampling bias, we cannot fully rule it out in any of the reported studies. In total, the nine empirical user studies elicited data from 813 people. The surveys were geographically restricted to Germany, the UK, and the USA, because a) the recruitment tools included the largest user panels in these areas and b) we were only capable to create questions in German and English. Similarly, we only recruited participants from the Munich area for interviews and lab studies. So although we were careful to control for other demographic factors, the sample were rather homogeneous. Also, 813 participants cannot be representative for the entire population of Internet users, so we have to be very careful not to draw specific conclusions about different demographic groups. Future studies will have to address solidify the findings for different contexts and user groups. On the upside, geographic factors have not been a major influence on password-related problems and solutions \cite{Violettas2014PasswordsAvoidGreece, Wang2015ChinesePWs}. 
 
-\subsection{Study Designs}
+% pasdjo: no demographics, motives to play the game are not the same as selecting passwords, probably technical audience, played on special occasions, sampling bias
+% personality: sample size too small to narrow down confidence intervals. / other statistical models possible. 
+
+% choice of zxcvbn strength estimation.
+
+% often very small effect sizes
+
+\subsection{Study Designs and Analysis Methods}
 % did the best we could, but there might have been other option
-% not a
+% between groups vs. within groups
+% clear text passwords
+% Without IVs
+Since most of the studies had an exploratory character, there was little room for confirmatory methods. This means that we mostly relied on correlations and associations between different dependent variables. This has the disadvantage that the sample size would need to be very large to minimize confidence intervals and detect latent effects. We did not always achieve optimal levels of statistical power, which is a caveat that needs to be addressed in further research. Nevertheless, the findings help to inform future hypotheses and to run confirmatory studies based on those. 
+% with IVs
+In case an independent variable was required to study a phenomenon, we carefully weighed the study settings. For the decoy and the emoji-passwords study (Chapters \ref{chap:decoy} and \ref{chap:emojipasswords}), we resorted to a between-groups design that usually requires a larger sample size to achieve high statistical power, while we used a within-groups design two of the personality studies (Chapter \ref{chap:pws_and_personality}). The latter allows for better understanding of individual preferences and is a suitable method for smaller sample sizes. Exploratory studies make it challenging to anticipate the outcome in either setting and it could have been feasible to take the opposite approach. Since we were able to answer our research questions satisfactorily, the choice of our methods was plausible, but future studies might need to reconsider them. 
 
+% zxcvbn
+Moreover, we refrained from collecting plain-text passwords for ethical reasons. While other researchers save passwords in clear text, they also need to provide a higher standard of protective mechanisms, like locking access to the data and analyzing it off-line. Since we did not the resources for such procedures, we found it more reasonable to hash passwords if they needed to be stored. This limits the available depth of post-hoc analyses, which is a caveat. At the same time, the consistent usage of the zxcvbn estimator provided sufficient and reliable details about passwords for the analyses we required. We did, however, have to modify it in order to strip it from sensitive information. 
 
 \subsection{Real-World Measurements}
+Apart from the log analysis of \textit{PASDJO}, we could not collect data \textit{in the wild}. The concepts we evaluated in Part \ref{part:design_space} were not yet mature enough to warrant production-level deployment of the nudges. We tried to increase ecological validity by following established practices in password research (cf. Section \ref{sec:rw:methodology}). While these attempts let us assume that participants immersed themselves in the tasks, there is always a small gap between study and real-world contexts. Therefore, we have to leave deployments of our concepts, e.g. emoji-passwords or feedforward techniques, to future work. Moreover, coming back to recommendation \ref{recommendation:method_space}, we might be able to assess the ecological validity of the existing data through ethnographic methods, e.g. diary studies or contextual inquiry.
 
-\subsection{Nudging Ethics and Risks}
+% ecological validity not optimal
+% we deployed feedforward in the wild, but too little sign-ups to draw conclusions 
 
+\subsection{Ethics and Risks}
+Studying the users' psyche, like cognitive biases and personality, to aid the design of persuasive interventions bears certain ethical risks. Often, we investigate unconscious phenomena, for instance, how the decoy effect influences users' decision-making. Therefore, we need to always consider how findings in this area might be exploited. There was a recent episode of questionable analysis of personality profiles: Cambridge Analytica, a British political consulting firm, accessed Millions of Facebook users' data without their consent to target political campaigns based on their personality and other factors\footurl{https://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-trump-campaign.html}{27.03.2018}. Although studying users' personality to support them in password authentication appears less critical than politically motivated manipulation techniques, we still have to weigh the benefits against the risks. For instance, if future research corroborates our findings about the associations between personality and password selection, this might allow adversaries to target attacks more efficiently. Thus, the P4P framework includes this important aspect in the hope of seeing more discussions of ethical risks in the future. 
 
+%users beyond demographics and explicit 
+% nudging is always opinionated
 
+% personality study: grain of salt. Cambridge Analytica accessed FB profiles to create personality profiles such that they can better target certain groups with persuasive messaging. 
 
-\section{Lessons Learned}
-What would I do differently, if I had to do it all over again?
+%\section{Lessons Learned}
+%What would I do differently, if I had to do it all over again?
 
+% 1) work together with other universities to leverage a) different samples b) tools like PGS
 
+% 2) partner up with companies who run a/b tests of concepts in the wild / on production level. 
 
 % KICKED OUT:
 
@@ -164,3 +168,22 @@ What would I do differently, if I had to do it all over again?
 %\item Emoji authentication on the web - we're not there yet. 
 %\end{itemize}
 
+%Our findings can improve service design and guide future research. 
+
+%The spectrum of problems is nuanced and solutions appear somehow gridlocked. We know much about the technical side and what people do to live with the password burden. What we do not know to its full extent is how exactly coping strategies form and how to support them best. What are the preconditions? Why do not all users behave the same way? How can we leverage that in designs? With the projects reported in this thesis, I aimed to tackle these aspects with ideas off the beaten path. Some of them came with a certain risk as to their feasibility and how to evaluate them. 
+
+% How is PASDJO useful?
+% How is the policy data set useful?
+% How is the personality data useful?
+% How is the Bubbles / Needs exploration useful?
+% How is the emoji-passwords project useful? 
+% How is the PWRM useful?
+% Where do we go from here?
+
+% so -- what did we learn? how has the world changed?
+% you need to know the psychological aspects if you try to derive persuasive strategies. there's no way around it. 
+% there are many solutions off the beaten path 
+% very foundational, strategic, explorative character, risky research questions. 
+% what does this mean for XYZ
+% how does this change the world?
+% thoughts. 
