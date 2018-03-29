@@ -24,7 +24,7 @@ Personalization is a current big trend in user experience design and persuasive 
 Tackling this challenge is possible with several focus areas, where the P4P framework can guide design decisions. For instance, we could advance algorithms to detect re-used passwords more reliably at registration. Khern-am-nuai \etal have showed an initial proof-of-concept that keystroke dynamics provide useful features \cite{Khern-am-nuai2017Journal}, but the analysis was done post-hoc. Machine-learning can potentially enable reuse detection already at enrollment and allow us to tailor feedback more appropriately. For instance, we can design a solution that makes alternatives to password reuse more salient, in case reuse generates considerable risks (process depicted in Figure \ref{fig:summary:flow-chart}). Similar approaches are conceivable with different personality profiles. However, here it is much more likely to tailor personalize support strategies during password \textit{reset}, because the service potentially possesses more data about the user at that point. 
 %TODO: argumentation ist noch nicht ganz geradlinig. 
 
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{figures/summary/flow-chart}
 	\caption{Personalized intervention for password reuse. The keystrokes inside a password field are analyzed by a machine learning model. If the password is unique, do not intervene. If the password is reused, but there are no signs for overlaps between categories, we can accept the password, too. However, if the password is reused across different categories, we use the show-explain-help paradigm to empower users to make an informed decision. In any case, the password is accepted to avoid being too restrictive. }
@@ -41,35 +41,57 @@ Tackling this challenge is possible with several focus areas, where the P4P fram
 
 
 \subsection{Contextualizing Password Feedback}
+Beyond personalization, which can be described as context-sensitive adaptation to the user, we should also consider tailoring password feedback to the system's context. For instance, we can create themed password meters to avoid habituation effects \cite{Ur2012HelpingUsersCreateBetterPasswords}. Kroeze and Olivier proposed using an evolving Pokemon as metaphor for the ``evolution state'' of the password \cite{Kroeze2012GamifyingAuthentication}. This kind of meter should probably be deployed on a game-related service, or directly for the registration page of Pokemon Go. As part of a design study, I created a themed password meter that matches the deployment context: Figure \ref{fig:summary:context-meter} shows a password meter that was originally created for a music-festival app. It is based on the \textit{share-explain-help} paradigm and is only one of many design options for this context. For instance, we could also choose a personalized social nudge and say ``\textit{only Justin Bieber fans use passwords like this}'' -- this could trigger in-/out-group biases and motivate some users to act differently. Optimally, such feedback systems are evaluated in situ, but to make it easier, we can use a cover story first, e.g. by creating a mock-website and recruit participants for usability tests thereof. Moreover, to assess the advantages of contextualized feedback, there should be a control group with neutral feedback.  
 
-like \cite{Kroeze2012GamifyingAuthentication} Pokémon Go could use an evolving Pokemon as password strength feedback. 
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{\linewidth}
+	\includegraphics[width=\linewidth]{figures/summary/context-meter-01}
+	\caption{\label{fig:summary:context-meter-01}Contextualized feedback and feedforward for a weak password.}
+	\end{subfigure}
+	\begin{subfigure}[t]{\linewidth}
+	\includegraphics[width=\linewidth]{figures/summary/context-meter-04}
+	\caption{\label{fig:summary:context-meter-04}When the password is sufficiently strong, provide reinforcing feedback.}
+	\end{subfigure}
+	\caption{\label{fig:summary:context-meter}A password meter for users of music festival app that uses context-related imagery to convey password strength. It is designed to drive curiosity. Feedback and feedforward follow the \textit{show-explain-help} paradigm.}
+\end{figure}
 
-``wuerstel meter'' as an example that we implemented.
+%\subsection{What do other people do? Clichés and biased views of password selection strategies}
+%people are biased to think that their password strategy is unique, i.e. they do not realize that other users behave similarly. it would be interesting to study the revelation process - ask people on the street how they think that others create their passwords for different categories. independent variables: who creates a password, for what context?
+%
+%social patterns helpful: Instead of saying a password is better than 90\% of other \textit{users} we could frame it as ``this password lowers your chance of being attacked by XX percent'' or ``this password is better than 90\% of passwords used on the internet''. issues: it's kind of hard to really be truthful here. deceptive in some ways and that's not something we want. 
 
-minimizes habituation effects as mentioned by Ur \etal \cite{Ur2012HelpingUsersCreateBetterPasswords}.
+\subsection{Solving Password Breach Aftermath}
+% problem: password breaches every once in a while
+Database breaches containing passwords occur frequently with different levels of severity depending on security standards at the affected service. 
+% interesting problem: users cannot do anything about it but they are affected strongly.
+Users face an immediate risk, but might be unaware of the situation, so they do not take swift measures to protect their account. 
+% existing solutions: service providers invalidate accounts on their platforms, PWMs provide breach alarms. 
+To mitigate this, service providers invalidate affected user accounts after breaches are detected. This is necessary to reestablish a secure overall system state where attackers cannot impersonate users on the platform. Usually, service providers inform users upon this countermeasure and prompt them to reset their passwords via email campaigns \cite{Huh2017TooBusy}. 
+% existing solutions fall short because they fail to tell users which other accounts are affected (through reused credentials..)
+While these countermeasures are unavoidable, they fall short of addressing the domino effect of reused passwords \cite{Ives2004DominoEffectReuse}. Many users do not understand the ramifications of a password breach and might only reset the password on the affected site. All other sites that share the same credentials remain at risk. 
+% my idea: SPs should constantly monitor password leaks at third party websites to invalidate accounts that were affected on a third party.
+I propose that service providers constantly monitor password leaks not only on their own, but also on third party websites. They can then invalidate accounts that share credentials with affected third parties. The implementation should be straightforward with the aid of breach data freely available from different sources, e.g. \url{https://haveibeenpwned.com/Passwords}. NIST's updated Electronic Authentication Guideline from August 2017 also includes a similar remark\footurl{https://pages.nist.gov/800-63-3/sp800-63b.html\#memsecretver}{29.03.2018}. 
+% risks: users could be confused, emails may look like phising
+% alternative: blacklist feature for password policy ``We are sorry, but this username-password combination appeared in a recent password leak at site XYZ''. 
 
-\subsection{What do other people do? Clichés and biased views of password selection strategies}
-people are biased to think that their password strategy is unique, i.e. they do not realize that other users behave similarly. it would be interesting to study the revelation process - ask people on the street how they think that others create their passwords for different categories. independent variables: who creates a password, for what context?
+%if a data leak is made public, sites can use the leaked passwords to audit the users on their sites. if they find that passwords have been compromised, they should decide (depending on a matching user name) if the password on their site should be invalidated and the user prompted to update it.
+%
+%kind of resembles a post-hoc blacklist.  
+%
+%catch: carefully craft Password Reset Emails \cite{Kim2017TooBusy}
+%
+%risks: users could be confused, looks like a phishing attack (why was my account hacked?)
+%
+%feature for password meters to determine stringency: 
+%there could be a framework that uses \url{https://haveibeenpwned.com/API/v2} to adjust stringency 
+%
+%from \cite{Bishop1995ProactivePasswordChecking}: ``Many sites have responded to this threat with a reactive solution -- they scan their own password files and advise those users whose passwords they are able to crack. The problem with this solution is that while the local site is testing its security, the password file is still vulnerable from the outside. The other problems, of course, are that the testing is very time-consuming and only reports on those passwords it is able to crack. It does nothing to address user passwords which fall outside of the specific test cases (e.g., it is possible for a user to use as a password the letters ``query'' if this combination is not in the in-house test dictionary, it will not be detected, but there is nothing to stop an outside cracker from having a more sophisticated dictionary!).''
 
-social patterns helpful: Instead of saying a password is better than 90\% of other \textit{users} we could frame it as ``this password lowers your chance of being attacked by XX percent'' or ``this password is better than 90\% of passwords used on the internet''. issues: it's kind of hard to really be truthful here. deceptive in some ways and that's not something we want. 
-
-\subsection{Password Audits After Third Party Breaches}
-
-if a data leak is made public, sites can use the leaked passwords to audit the users on their sites. if they find that passwords have been compromised, they should decide (depending on a matching user name) if the password on their site should be invalidated and the user prompted to update it.
-
-kind of resembles a post-hoc blacklist.  
-
-catch: carefully craft Password Reset Emails \cite{Kim2017TooBusy}
-
-risks: users could be confused, looks like a phishing attack (why was my account hacked?)
-
-feature for password meters to determine stringency: 
-there could be a framework that uses \url{https://haveibeenpwned.com/API/v2} to adjust stringency 
-
-from \cite{Bishop1995ProactivePasswordChecking}: ``Many sites have responded to this threat with a reactive solution -- they scan their own password files and advise those users whose passwords they are able to crack. The problem with this solution is that while the local site is testing its security, the password file is still vulnerable from the outside. The other problems, of course, are that the testing is very time-consuming and only reports on those passwords it is able to crack. It does nothing to address user passwords which fall outside of the specific test cases (e.g., it is possible for a user to use as a password the letters ``query'' if this combination is not in the in-house test dictionary, it will not be detected, but there is nothing to stop an outside cracker from having a more sophisticated dictionary!).''
-
-\subsection{Helping to Make Sense of a Breach}
+%\subsection{Helping to Make Sense of a Breach}
 how does user behavior change after a breach? not much says Huh \etal \cite{Huh2017TooBusy}. But it would be interesting to correlate other factors with altered behavior: do different personality traits influence how a user ``cleans up the mess'' after a breach?
+
+\subsection{Re-locating Password Feedback} people look down on their hands while typing password - not on screen where the feedback and suggestions are displayed and change in real time. solution: use touch-bar to display password meter.
 
 
 \section{Final Thoughts}
