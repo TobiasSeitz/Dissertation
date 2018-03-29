@@ -71,8 +71,84 @@ To mitigate this, service providers invalidate affected user accounts after brea
 % existing solutions fall short because they fail to tell users which other accounts are affected (through reused credentials..)
 While these countermeasures are unavoidable, they fall short of addressing the domino effect of reused passwords \cite{Ives2004DominoEffectReuse}. Many users do not understand the ramifications of a password breach and might only reset the password on the affected site. All other sites that share the same credentials remain at risk. 
 % my idea: SPs should constantly monitor password leaks at third party websites to invalidate accounts that were affected on a third party.
-I propose that service providers constantly monitor password leaks not only on their own, but also on third party websites. They can then invalidate accounts that share credentials with affected third parties. The implementation should be straightforward with the aid of breach data freely available from different sources, e.g. \url{https://haveibeenpwned.com/Passwords}. NIST's updated Electronic Authentication Guideline from August 2017 also includes a similar remark\footurl{https://pages.nist.gov/800-63-3/sp800-63b.html\#memsecretver}{29.03.2018}. 
+I propose that service providers constantly monitor password leaks both on their own and on third party websites. In other words, while they might use a blacklist during account creation, there is usually no check-up mechanism that takes the updated risk-level into account. During this routine check-up, accounts that share credentials with affected third parties can be invalidated. The implementation should be straightforward with the aid of breach data freely available from different sources, e.g. \url{https://haveibeenpwned.com/Passwords}. 
+%NIST's updated Electronic Authentication Guideline from August 2017 also includes a similar remark\footurl{https://pages.nist.gov/800-63-3/sp800-63b.html\#memsecretver}{29.03.2018}. 
 % risks: users could be confused, emails may look like phising
+However, there are a few issues that we need to solve in the future. First, freely available password lists rarely contain user-names to avoid targeted attacks. Second, if accounts are invalidated because a check-up has found a breached set of credentials, users might misunderstand the reasons for the account lock-down. Phishing attacks often use ``your account was locked down for security reasons'' as a hook to obtain users' real credentials. Sending out emails with reset prompts is thus especially dangerous because they may raise suspicion, and it is hard for novice users to verify if the prompt is legitimate.
+
+Finally, it would be interesting to study how user behavior changes after a breach. So far, there have been attempts to collect initial data \cite{Huh2017TooBusy}, but there is far more that we have not measured, yet. For instance, it will be interesting to find out if personality traits are associated with user behavior after a breach. While it would be fair to assume that \textit{conscientious} users change their passwords more quickly and consistently, we did not necessarily see these behaviors in our own studies. Thus, there might be many opportunities for surprising insights.
+
+\subsection{Re-locating Password Feedback} 
+% final idea
+% Password feedback in the wild can fail if people simply do not notice it:
+A final problem to address in future work is the fact that many users simply do not \textit{notice} password feedback and therefore cannot re-assess their choice. 
+% problem: most people look down on their hands when typing on regular desktop keyboards (not on mobile)
+Many users look down on their hands when typing passwords on regular hardware keyboards, because they do have not mastered touch typing. During password entry, on-screen feedback is then out of sight. 
+% interesting problem: it might explain why so many persuasive interventions do not unfold their full potential. 
+This could explain why password meters have smaller impact on password selection in the wild: while study participants might take care to follow all on-screen instructions in an online experiment, users are often less focused on the screen in real-world tasks. 
+% idea: relocate pw feedback closer to the hands.
+Therefore, we study the impact of password feedback if it is relocated closer to the hands. 
+% use touch bar to indicate feedback. 
+The Touch Bar of current generations of the Apple MacBook Pro models is a visual output close to the hardware keys. It could be leveraged as display for both visual and textual password strength feedback \todo{craft a picture that visualizes the idea. take photo from hands at touchbar and trace the contours to make a mock-up}. To the best of my knowledge, this has not been investigated, but might be a feasible solution. 
+
+%TODO maybe talk about mobile because we're in mobile first world. 
+
+% risks: habituation (fewer variations possible)
+% other situations that require relocation: on-screen keyboards might hide strength meters. figure
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.5\linewidth]{figures/summary/osk-google-account}
+%	\caption{\label{fig:osk-google-account} Password feedback is often hidden on mobiles while on-screen keyboards are open.}
+%\end{figure}
+
+
+\section{Final Thoughts}
+%\begin{figure}[htpb]
+%	\centering
+%	\includegraphics[width=0.3\linewidth]{shaming/nakedsecurity-sophos}
+%	\includegraphics[width=0.3\linewidth]{shaming/nytimes}
+%	\includegraphics[width=0.3\linewidth]{shaming/trusted-reviews}
+%	% i've got another screenshot from the register -- ironically there's no password meter on their site.
+%\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{figures/summary/shaming-news}
+	\caption{\label{fig:summary:shaming-news} The media are constantly shaming users for their ``bad passwords'', arguably as clickbait. However, this also acts as reinforcement because of the implicit normative message these headlines convey \cite{Cialdini2003CraftingNormativeMessages}. }
+\end{figure}
+I believe that users are not the weakest link in the authentication chain. There are always security mitigations on the system side that can take responsibility away from users. For instance, if all services had infinite resources to invest into penetration tests and alike, the need for exceptionally strong passwords vanishes. And although some user behavior is arguably risky, people should not be blamed for faulty systems that permit risks. Commentaries on the web and other media do the rest when they name and shame users for weak password behavior (see Figure \ref{fig:summary:shaming-news}). Perhaps, their intentions are good, but the subtext is different: Plenty of users are doing the same, so why would any one user act differently than the rest? This is maladroit framing of normative messages at best \cite{Cialdini2003CraftingNormativeMessages}.
+
+% Future scenario
+We have to face the truth: passwords annoy users. Most of us will not grief, if passwords become obsolete tomorrow. Probably, in the future, we will be able to make machines intelligent enough to independently decide whether a user should be granted access or not, all without explicit authentication. PCs and mobiles will automatically lock when the user is not in the vicinity. Natural interactions will enable us to tell virtual assistants to temporarily grant access to devices, e.g. by saying \textit{``Alexa, my daughter can use my iPad while we are driving to Italy, but make sure that she can only browse safe websites''}, all without the hassle of sharing PINs or enrolling biometric features. Naturally, a few drawbacks will remain, because perfect security cannot be guaranteed, and this will raise trust issues. People want to stay in charge and although passwords appear to be an inferior technology, they can achieve a higher level of perceived control. Thus, there will be not only a need but also a \textit{demand} for knowledge-based authentication in the future. Drawing on an analogy, passwords are perhaps the vinyl records in a world of ubiquitous music streaming: They are a bit clunky, impractical, and can be damaged through careless handling. On the other hand, experts still recommend them despite being an obsolete technology. People treasure them for years, often become collectors and try to find the rare, unique gems of long-lost quality. Once attacks on password alternatives like multimodal biometrics become commonplace, there might be a time when passwords see a revival like vinyl. 
+
+
+%Apart from trust issues, users will then not need to worry about forgetting credentials or putting effort into creating strong passwords. 
+% Passwords are bad. Let's hope passwords vanish at some point if passwords become obsolete tomorrow, many of us will not grief - and a few take-away messages from this thesis will be applicable to other authentication mechanisms too. Probably, in the nwe will be able to make machines intelligent enough to decide if a user should be granted access or not. But this also brings new problems.
+% Maybe passwords are the vinyl records of usable security - everyone agrees that it's kind of an obsolete technology , they're a bit clunky, but there's something to them that ensures they don't disappear.
+
+
+
+%\begin{itemize}
+% \item  the media should stop shaming the users 
+% \item  it's okay to forget passwords! reference to the article Franziska shared with me (SZ,  01.12.2017 ``Die Kunst zu vergessen'' \footurl{http://www.sueddeutsche.de/wissen/neurowissenschaft-die-kunst-zu-vergessen-1.3772438}{02.01.2018}.)
+% \item 	ad networks for webpages can undermine any attempt to secure one's account. Too many websites show ads that can run harmful scripts. yes, adblockers do prevent this, but not everyone has one installed (especially novice users don't). Frightening research on this: \footurl{https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/}{02.01.2018}
+%\end{itemize}
+%
+%It's interesting that often the same idea pops up every other year. so although there are no replication studies, evaluating the same idea multiple times with different setups and specifics, kind of goes in that direction. 
+
+%TODO: take the ``pws are not going away'' section and put it here?
+
+
+%TODO I have more thann 100 ``takeaways'' from papers. This could be a funny ``sermon'' too (Luther's 100 theses);
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% KICKED OUT
+%%%
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % alternative: blacklist feature for password policy ``We are sorry, but this username-password combination appeared in a recent password leak at site XYZ''. 
 
 %if a data leak is made public, sites can use the leaked passwords to audit the users on their sites. if they find that passwords have been compromised, they should decide (depending on a matching user name) if the password on their site should be invalidated and the user prompted to update it.
@@ -89,35 +165,4 @@ I propose that service providers constantly monitor password leaks not only on t
 %from \cite{Bishop1995ProactivePasswordChecking}: ``Many sites have responded to this threat with a reactive solution -- they scan their own password files and advise those users whose passwords they are able to crack. The problem with this solution is that while the local site is testing its security, the password file is still vulnerable from the outside. The other problems, of course, are that the testing is very time-consuming and only reports on those passwords it is able to crack. It does nothing to address user passwords which fall outside of the specific test cases (e.g., it is possible for a user to use as a password the letters ``query'' if this combination is not in the in-house test dictionary, it will not be detected, but there is nothing to stop an outside cracker from having a more sophisticated dictionary!).''
 
 %\subsection{Helping to Make Sense of a Breach}
-how does user behavior change after a breach? not much says Huh \etal \cite{Huh2017TooBusy}. But it would be interesting to correlate other factors with altered behavior: do different personality traits influence how a user ``cleans up the mess'' after a breach?
-
-\subsection{Re-locating Password Feedback} people look down on their hands while typing password - not on screen where the feedback and suggestions are displayed and change in real time. solution: use touch-bar to display password meter.
-
-
-\section{Final Thoughts}
-Lorem Epson. 
-
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.3\linewidth]{shaming/nakedsecurity-sophos}
-	\includegraphics[width=0.3\linewidth]{shaming/nytimes}
-	\includegraphics[width=0.3\linewidth]{shaming/trusted-reviews}
-\end{figure}
-
-Key thoughts
-
-\begin{itemize}
-\item Passwords are bad. Let's hope passwords vanish at some point. Make machines intelligent enough to decide if a user should be granted access or not. But this brings new problems.
-\item Maybe passwords are the vinyl records of usable security - everyone agrees that it's kind of an obsolete technology but there's something to it that ensure they don't disappear. %TODO come up with a better analogy.
- \item  if passwords become obsolete tomorrow, many of us will not grief. 
- \item  the media should stop shaming the users 
- \item  it's okay to forget passwords! reference to the article Franziska shared with me (SZ,  01.12.2017 ``Die Kunst zu vergessen'' \footurl{http://www.sueddeutsche.de/wissen/neurowissenschaft-die-kunst-zu-vergessen-1.3772438}{02.01.2018}.)
- \item 	ad networks for webpages can undermine any attempt to secure one's account. Too many websites show ads that can run harmful scripts. yes, adblockers do prevent this, but not everyone has one installed (especially novice users don't). Frightening research on this: \footurl{https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/}{02.01.2018}
-\end{itemize}
-
-It's interesting that often the same idea pops up every other year. so although there are no replication studies, evaluating the same idea multiple times with different setups and specifics, kind of goes in that direction. 
-
-%TODO: take the ``pws are not going away'' section and put it here?
-
-
-%TODO I have more thann 100 ``takeaways'' from papers. This could be a funny ``sermon'' too (Luther's 100 theses);
+%how does user behavior change after a breach? not much says Huh \etal \cite{Huh2017TooBusy}. But it would be interesting to correlate other factors with altered behavior: do different personality traits influence how a user ``cleans up the mess'' after a breach?
