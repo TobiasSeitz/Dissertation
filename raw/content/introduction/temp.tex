@@ -1,0 +1,131 @@
+\section{Passwords - The Good and The Bad}
+%% MANY PEOPLE USE THE INTERNET
+Around 3.5 Billion people are using the Internet by mid-2017, i.e. about half of the world's population\footnote{\url{http://www.internetworldstats.com/stats.htm}, \access{08.11.2017}}, and more than half of the households are connected to the Internet\footnote{ITU, ``Households with Internet access at home'' \url{https://de.statista.com/statistik/daten/studie/187116/umfrage/anteil-der-haushalte-mit-internetzugang/}, \access{08.11.2017}}.	
+%% SERVICES ARE CENTRAL TO THE INTERNET
+%% MANIPULATING DATA NEEDS AUTHENTICATION
+A central aspect of using the Internet is accessing the services it provides: From reading news to sharing pictures on social networks, sending emails, and doing online banking. Most of these services store data about individual users. This does not necessarily require that users interact with the data themselves. Third parties like insurance agencies, airlines, governments use the Internet to run their affairs sometimes without direct user involvement. In any case, access to sensitive data needs to be protected or else vicious attackers can exploit it. 
+
+%However, if users can access and manipulate their private data, this usually comes along with an authentication mechanism. 
+%% CONSUMER CENTRIC SERVICES ALL USE PASSWORDS
+Most consumer-oriented services ask their users to register with them to access the full spectrum of the services, because in many cases access to resources is a privilege. Determining if someone can use a resource, e.g. watching a movie, requires authentication before they are authorized. User-registration is the prerequisite before any such authentication can take place, and it is a widely adopted paradigm in the online world today. For instance, from the 100 most-visited web sites in Germany, 83 offer online registration \cite{Seitz2017PoliciesReuse}, and the remaining 17 offer offline registration (e.g. banks or insurance companies, which may be required by law to perform ID checks). All of these services rely on password-based authentication. It is possible to use many of these sites without an account. Watching videos on YouTube is perfectly possible without logging in, but the full feature set is only available after the user authenticates. Thus, it is a natural to assume that users have multiple accounts. 
+
+%% THE PERVASIVENESS OF PASSWORDS MEANS PERVASIVE PROBLEMS FOR ALL OF US
+Moreover, the fact that so many websites rely on password-based authentication means that probably every single Internet user has interacted or will interact with a log-in form that prompts them for a username and password. It is a critical interaction as common as an Internet search. It requires careful interaction design to achieve both high usability and high security, which inherently generates tensions: Bad usability can lead to lower security and vice versa, but it a perfectly secure system is often unusable. 
+
+\todo{argue about using the systems on a daily basis} e.g. ``The majority of people who use computers enter a password at least once a day; prior estimates [12, 30] suggest that computer users undertake be- tween 8 and 23 password entry events every day!'' from \cite{Wash2016UnderstandingPasswordChoices}.
+
+%% SHOW THAT MAKING EVEN A SMALL CONTRIBUTION CAN HAVE A HUGE IMPACT DUE TO THE WIDESPREAD DEPLOYMENT OF PASSWORDS
+``supporting passwords better is a vast opportunity for improvement.'' \cite{Herley2012PersistenceOfPasswords}
+
+%% HIGH LEVEL SUMMARY OF THE PROBLEM SPACE
+
+
+%% HIGH LEVEL SUMMARY OF TH DESIGN SPACE
+There is only so much one can do about the design and implementation of password authentication. 
+
+in an ideal world, security teams succeed to prevent breaches. Then attacks can only focus on users. 
+Fixing the User vs Fixing the System. Fixing the system: \cite{Schmidt2013Pitfalls}
+
+%% THE DEATH PASSWORDS IS NOT AROUND THE CORNER
+Password based authentication has been proclaimed to become obsolete. Some said this will happen ``over time'' (Bill Gates, 2004\footnote{\url{http://news.cnet.com/2100-1029-5164733.html}}), ``by the end of the year 2016'' \footnote{\url{https://www.theguardian.com/technology/2016/may/24/google-passwords-androidB}}. Not a month goes by without a new online article announcing that users will not need passwords anymore in the near future. In fact, the ``death of passwords'' has been declared imminent for decades \cite{Herley2012PersistenceOfPasswords, Bonneau2012ReplacePasswords}. It is perhaps not preposterous to ask whether this is really going to happen in the near future or far future. 
+
+
+\subsection{Authentication Costs Time and Money}
+if you log into 3 services every day and it takes 5 seconds to type in your user name and password (\ar) you use up XX hours per year just to overcome this barriers. This is bad and we should reduce this effort. 
+
+Password reset requests make up 10\% - 30\% of help desk calls and ``in a nonautomated support model, password reset costs range from \$51 (best case) to \$147 (worst case) for the labor alone. (Gartner study in 2002\footnote{\url{http://passwordresearch.com/stats/study76.html}}, \la{18.12.2017}).
+
+point out how much money the big players spend on driving progress in this domain (Google Smart Lock) FaceID etc. 
+
+\subsection{The Costs of Weak and Strong Passwords}
+
+if accounts get compromised too easily, the personal data can be exploited. Most obvious and trending example these days: Bitcoin wallets. If you have a weak password there, you can lose a lot of money very quickly. And it seems that many of the online wallets only have very bad password policies\footurl{https://blog.dashlane.com/cryptocurrency-exchange-password-power-rankings-2018/}{24.03.2018}
+
+identity theft and consecutive social engineering more often than stealing money from banks. ``The Federal Trade Commission (FTC) estimates the average identity theft victim invests more than 200 hours and spends a total of 18 months resolving the issue with credit reporting agencies''\footurl{https://www.businesswire.com/news/home/20151006006149/en/Latest-Data-Breach-Spotlights-Identity-Restoration}{11.01.2018}
+
+``Money is the most obvious loss, but time, frustration and reputation are also at stake.'' \cite{Herley2012PersistenceOfPasswords}
+
+
+
+not immediately visible but important: in an enterprise environment, if employees forget passwords they often turn to the helpdesk. Handling this superfluous business costs money. 
+
+Breachlevelindex.com \footnote{\label{foot:rw:breachlevelindex}\url{http://breachlevelindex.com/}}
+
+Cybercrime is real and getting worse \cite{BKA2016Bundeslagebild}.
+
+An attack can cause emotional distress \cite{Shay2014ReligiousAunt}
+
+On the other hand, if users pick a strong password that they cannot remember, this is problematic for businesses, too: users who cannot remember their password might leave the online-shopping funnel and shop at another site\footurl{http://www.inforum.com/business/4288092-when-customers-forget-their-passwords-business-suffers}{18.12.2017}.
+
+\todo{look at reports and compile some statistics} e.g. \cite{CSID2012PasswordHabits}  
+
+\section{Problem Statement and Research Questions}\label{sec:intro:researchobjectives}
+
+Challenges à la Gerber \etal \cite{Gerber2018HumanFactorsSecurity}
+
+investigating user interfaces that no one ``enjoys'', yet everybody needs to use them. Stobert even goes as far as to say ``Everyone hates passwords'' \cite{Stobert2014Agony}. So much so that the ``countless attempts and near-universal desire to replace them''  \cite{Herley2012PersistenceOfPasswords} has produced a plethora of papers in this field.
+
+most security and HCI researchers agree that authentication is an unsolved problem and there have been attempts to formally show that it is unsolved \cite{Bonneau2012ReplacePasswords, Bonneau2015ImperfectAuthentication, Herley2012PersistenceOfPasswords}. 
+
+
+Coping strategies encompass: password selection, memorization, externalization (writing down), using support tools -- a holistic view on the issue. 
+
+\subsection{Opportunities}
+
+\subsubsection{Better Understanding of Password Usability}
+how do we make passwords more usable for mainstream users (not experts). what do users already know, what do they do and how can we design for that. 
+
+Psychological factors and mental models -- how big is their influence? If we have a better understanding of them (beyond what's already known), we may be able to derive better support strategies.
+
+\subsubsection{Making Users' Lives a Little Easier}
+supporting them carefully without drastic interventions or mitigations. small steps to slowly adapt behavior over time. 
+
+Many people argue that way, e.g. \cite{Herley2012PersistenceOfPasswords}
+
+\subsection{Research Questions}
+% related work, and own work
+% none of these questions are purely new, but they are still ill-defined or not satisfactorily answered.
+\begin{itemize}
+	\item[RQ1] What is the role of psychological factors and mental models for password selection and coping strategies?
+	\item[RQ2] How can password authentication be simplified for users? 
+	\item[RQ3] How can we leverage persuasive design strategies to support users in any password-related tasks?
+\end{itemize}
+
+
+\subsubsection{Non-Objectives}\label{sec:intro:non_objectives}
+
+\begin{itemize}
+	\item While we present a framework to make users' dealings with passwords easier and secure for them, this thesis does not provide a definite one-size-fits-all solution to select and manage passwords. As Yang \etal put it: ``If a strategy is widely used, then attackers may develop strategy-specific methods which can efficiently guess the passwords.'' -- this increases the problem space 
+	\item The thesis talks about password strength and security aspects. However, we do not aim to advance password security from a technical perspective, e.g. by proposing new encryption algorithms. The focus lies on understanding and supporting humans. 
+\end{itemize}
+
+
+\section{Main Contributions}\label{sec:intro:contributions}
+
+\subsection{Insights into the Psychology of Passwords}
+- user perceptions of password strength (Chapter \ref{chap:pasdjo})
+- personality and password selection are moderately associated
+- it is difficult to measure the effects, but we show how to get there. (Chapter \ref{chap:pws_and_personality})
+- mental models 
+- interdisciplinary approach -- literature survey also from behavioral economics
+
+\subsection{Designing With Password Coping Strategies In Mind}
+- we audited the top 83 websites that offer public authentication in germany and found that their password policies (at the time) did not prevent password reuse. Chapter \ref{chap:policies_reuse}
+- we investigated users mental models of password managers and found that they are for the largest part a black box and are not trusted. \ref{chap:mental_models_mm}
+- empower users to create stronger passwords: with emojis. 
+
+%\subsection{When and Why to Apply Nudges}
+% - if users face a password nudge every time the effects can wear off 
+% - we should apply nudges if we think the account is important. important accounts contain large datasets of personal or financial information which make them valuable targets for attackers.
+
+\subsection{A Framework to Structure the Design of Persuasive password support}
+- we propose a framework that guides \glspl{SP} 
+- as a design exercise, we address two existing coping strategies: Password reuse and password managers, to create a novel solution that brings the benefits of PWMs to the reuse strategy. 
+
+%\begin{description}
+%	\item[Perception of Password Strength] Over the past decade, users received many hints and advice to construct strong passwords. Their understanding of a secure password has changed and is sometimes wrong. We show that this is the case in section @TODO REF SEC
+%	
+%	\item[Password Composition Policies] As many web sites require or allow some kind of registration, their operators implement different password composition policies. We show that the criteria are manifold and largely inconsistent. Consequently, users approach enrollment with their preferred password, and are forced to apply heuristics to modify the password, depending on the policy in use. 
+%	
+%	\item[Password Value] We present a framework to assess the value a user associates with a specific password. The users might not realize that they re-use the password for accounts with different values. Knowledge about a password's value is important to design persuasive strategies to protect it, e.g. by discouraging its usage on low value accounts. (See PST).
+%\end{description}
