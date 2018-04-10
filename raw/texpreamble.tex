@@ -152,4 +152,23 @@
 \titlespacing*{\subsection}{0pt}{0.75cm}{0.5ex}
 \titlespacing*{\subsubsection}{0pt}{0.75cm}{0.5ex}
 
+
+% Footnote style.
+\makeatletter
+\renewcommand{\@makefntext}[1]{%
+	\setlength{\parindent}{0pt}%
+	\begin{list}{}{\setlength{\labelwidth}{1em}%
+			\setlength{\leftmargin}{\labelwidth}%
+			\setlength{\labelsep}{3pt}%
+			\setlength{\itemsep}{0pt}%
+			\setlength{\parsep}{0pt}%
+			\setlength{\topsep}{0pt}%
+			%   \setlength{\rightmargin}{0.2\textwidth}%
+			\footnotesize}%
+		\item[\@makefnmark\hfil]#1%
+	\end{list}%
+}
+\makeatother
+
+
 \raggedbottom
