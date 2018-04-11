@@ -1,0 +1,120 @@
+\section{Thesis Structure}
+This dissertation encompasses four major parts that unravel the different aspects of persuasive password support. I chose to structure the content with fourteen self-contained chapters. Although they do follow a narrative, it is possible to read them in any order by following the provided cross-references for the necessary background information. Part \ref{part:related_work} is an exhaustive overview over the related work that serves as the basis for all the discussions in later parts. In Part \ref{part:problem_space}, I report on empirical research on exploring the various context factors of password selection and coping strategies. Part \ref{part:design_space} then shows how these factors helped to craft novel persuasive design strategies. Lastly, Part \ref{part:synthesis_conclusion} establishes a research and design framework, and concludes with a reflection on the gained insights and future work. In the following, I highlight the contents of the individual chapters with the questions they try to answer.
+
+% can be up to two pages.
+%\textbf{Chapter \ref{chap:intro}:} %Foundations and general background on passwords
+
+\subsubsection{Part \ref{part:related_work}: Foundations of Usable Authentication}
+
+\paragraph{Chapter \ref{chap:rw:passwords}: Foundations} %Foundations and general background on passwords
+This chapter provides an overview of password-based authentication from a system-perspective. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item How has password authentication evolved over time?
+	\item What benefits, drawbacks, and threats do passwords entail?
+	\item What is a strong, what is a weak password?
+	\item Why do we still need passwords when there are more advanced schemes?
+\end{itemize}
+%How have we come to this place?
+%What are the risks of using passwords?
+%What is a strong, what is a weak password?
+%Why do we still need passwords when we have all these other authentication schemes?
+
+\paragraph{Chapter \ref{chap:rw:user_perspective}: Human Factors} % User side
+I describe the method space to study passwords, before discussing findings about users' password practices. The chapter also highlights the central approaches that have been implemented to mitigate security risks on the user side. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item How do we conduct valid research on passwords with humans and ethics in mind?
+	\item How do users cope with passwords? What makes their practices particularly risky?
+	\item What can we do to steer people away from risky behavior? 
+\end{itemize}
+
+\paragraph{Chapter \ref{chap:rw:summary}: Related Work Summary} This chapter describes the status quo of password authentication and highlights ill-defined aspects that warrant further research.
+%Summary of related work and derivation of open questions.
+%\begin{itemize}[leftmargin=*,itemsep=-5pt]
+%	\item What are the primary issues that have been previously identified?
+%	\item What are the ill-defined aspects that warrant further research?
+%\end{itemize}
+
+
+\subsubsection{Part II: Exploring the Context Factors}
+\paragraph{Chapter \ref{chap:pasdjo}: Mental Models of Password Strength} %Mental models of password strength (PASDJO)
+We present a novel approach to study the perception of password strength: PASDJO, the password game. A longitudinal field study aimed to quantify common misconceptions about the benefits of password complexity, which are an underlying context factor for password practices. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item How well can users gauge password strength? 
+	\item Do we have to update our views on users' capabilities?
+	\item Is a game suitable to collect the necessary data?
+	\item How effective is the game to educate users?
+\end{itemize}
+
+\paragraph{Chapter \ref{chap:policies_reuse}: Policies and Reuse} %An audit of password policies in terms of reusability
+This chapter reports on a thorough audit of the password policies of the most-visited websites in Germany. It explains  external context factors that shape password reuse in the real world.
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item How consistent are password policies in the wild?
+	\item Is it possible to find a password that meets all requirements at once?
+\end{itemize}
+
+
+\paragraph{Chapter \ref{chap:pws_and_personality}: Personality in Password Practices} % Password personality
+This chapter presents three empirical studies about the role of personality traits in password practices. In particular, we shed light on the psychometric context factors for the usability of policies, mental models of password strength, and password selection behavior.
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item Is personality associated with password practices, attitudes, and behaviors?
+	\item How well can we model such associations?
+	\item What are the specific implications on the design of personalized password support?
+\end{itemize}
+%Does personality have any association with password related behavior, attitudes, and mental models?
+
+\paragraph{Chapter \ref{chap:mental_models_pwm}: Mental Models of Password Managers} %Mental Models of password managers (small scale)
+We present a qualitative user study eliciting the users' motivations to either adopt or dismiss password managers. A fine-grained mental model is established to depict biases as context factors.
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item Why are people (not) using password managers?
+	\item How do they make sense of their functionality?
+\end{itemize}
+
+%What kinds of risks are involved?
+\subsubsection{Part III: Persuasive Design Strategies}
+\paragraph{Chapter \ref{chap:feedback_modalities}: Feedback Requirements} %Exploring needs in persuasive feedback (enriching understanding of mental models)
+This chapter presents two studies on users' explicit and implicit expectations around password feedback. We derive a paradigm for persuasive password support. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item What are users' needs in persuasive feedback?
+	\item How would they design a feedback system?
+\end{itemize}
+
+\paragraph{Chapter \ref{chap:decoy}: The Decoy Effect} %Decoy effect
+We carefully craft a choice-architecture for password support and explore a marketing phenomenon as nudging strategy. The chapter reports on an online study and highlights the interconnection between feedback and feedforward. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item Does the decoy effect work to make stronger passwords more attractive?
+	\item How effective is feed-forward in combination with feedback?
+\end{itemize}
+
+\paragraph{Chapter \ref{chap:emojipasswords}: Emoji-passwords} %Empowerment through emojis. 
+This chapter presents emoji-passwords as an approach to simplify memorization in persuasive ways. We investigate different facets of usability and report on a mixed-methods study. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item How usable are emoji-passwords?
+	\item What are the risks and potentials of emoji-passwords?
+	\item How do platform-dependent differences affect memorability?
+\end{itemize}
+
+
+\subsubsection{Part IV: Synthesis}
+\paragraph{Chapter \ref{chap:perdespassup}: P4P Framework} %P4P
+This chapter synthesizes the insights from the first three parts to establish a new framework for the design of persuasive password support. Through a design exercise, I show how it can be applied to develop a novel password manager. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item How can we design persuasive password support in a structured way?
+	\item How do we practically apply the framework?
+\end{itemize}
+
+\paragraph{Chapter \ref{chap:summary}: Summary} %Summary
+In this chapter, I reflect on the presented research and draw conclusions. The contributions are summarized, and contrasted by the limitations of the methodology. I provide eight meta recommendations for future design work. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item What have we learned?
+	\item What are the implications and limitations?
+	\item Where do we need to consider in the future?
+\end{itemize}
+
+\paragraph{Chapter \ref{chap:the_end}: The End} %The End
+In the final chapter of this thesis I present open research topics and show their potentials. The dissertation concludes with a reflection of the role of password-authentication in the present and the future. 
+Questions answered: \vspace*{-5pt} \begin{itemize}[leftmargin=*,itemsep=-5pt]
+	\item What research topics have been opened up by this thesis?
+	\item What needs to change still to make users' authentication practices easier?
+\end{itemize}
+%What will the future bring?
+%What needs to change to make users' lives easier, to reach them more effectively, and to ease the transition into a password-less world?
