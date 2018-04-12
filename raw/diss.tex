@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper,twoside]{book}
+\include{packages}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+
+\definecolor{platinum}{HTML}{E5E4E2}
+\colorlet{diagrambg}{platinum}
+
+\makeindex
+
+\geometry{a4paper,twoside,inner=97pt,outer=110pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=2pt,bindingoffset=8mm} % for some weird reason oddsidemargin is originally -108pt
+
+
+\include{texpreamble-original} % load additional stuff
+\raggedbottom % test vertical justification switch off
+
+\include{glossary}
+\makeglossaries
+\begin{document}
+\frontmatter
+%________________________________________
+
+{%
+	\pagestyle{empty}%
+	\addtolength{\oddsidemargin}{11mm}
+	\addtolength{\evensidemargin}{11mm}
+	\addtolength{\topmargin}{11mm}
+	
+	
+	\newgeometry{inner=30pt,outer=30pt,top=30pt}
+	\noindent\begin{minipage}{188mm} % 210-11-11
+		
+		
+		
+		\begin{picture}(0,0)%
+		\put(258.7,-858.8){\includegraphics[width=140mm]{figures/general/lmu-siegel-grey.pdf}} % LMU signet
+		\end{picture}
+		
+		\setlength{\fboxsep}{0mm}%
+		\pagestyle{empty}%
+		\noindent
+		
+		\vspace*{23mm}
+		
+		
+		\begin{center}
+			\vspace*{20mm}
+			\rule{\textwidth}{0.5pt}
+			\vskip 5mm
+			\fontsize{28}{34}\rmfamily\scshape\mytitle
+			\par
+			\rule{\textwidth}{0.5pt}
+			\vskip 20mm
+			\huge \textbf{Dissertation}\\ 
+			\vspace*{5mm}
+			\normalfont\Large an der Fakultät für Mathematik, Informatik und Statistik\\
+			der Ludwig-Maximilians-Universität München\\
+			\vspace*{10mm}
+			vorgelegt von\\
+			\vspace*{10mm}
+			{\huge\scshape\textbf{\myname}}\\
+			\vspace*{2mm}
+			M.Sc. Medieninformatik\\ 
+			\vspace*{20mm}
+			\normalfont\Large München, den 25.04.2018 
+		\end{center}
+	\end{minipage}
+	
+	\clearpage
+	
+}
+
+\pagestyle{fancy}%
+\restoregeometry
+
+{	
+	%\newgeometry{a4paper,twoside,inner=97pt,outer=110pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=2pt,bindingoffset=8mm}
+	% Page Header
+	\renewcommand{\chaptermark}[1]{%
+		\markboth{\thechapter~~#1}{}}
+	
+	\allsectionsfont{\normalfont\LARGE\bfseries\scshape\rmfamily}
+	
+	\begin{picture}(0,0)%
+	\put(181.7,-773.8){\includegraphics[width=140mm]{figures/general/lmu-siegel-grey.pdf}} % LMU signet
+	\end{picture}
+	
+	\vspace*{80mm}
+	{\large\noindent
+		\centering{
+			\begin{tabular}{ll}
+				\large{Erstgutachter:}	& \large{Prof.\ Dr.\ Heinrich Hußmann}\\[1ex]
+				\large{Zweitgutachter:} & \large{Prof.\ Dr.\ Konstantin Beznosov}\\[1ex]
+			\end{tabular} 
+		}\\
+	}
+	\vspace*{50mm}
+	\begin{center}
+		{\large\noindent
+			Tag der mündlichen Prüfung: 06.07.2108 (voraussichtlich)}
+	\end{center}
+	
+}
+\pagestyle{fancy}%
+\cleardoublepage
+
+\setlength{\parindent}{0pt} % Have spaces between paragraphs
+\setlength{\parskip}{7pt plus 2pt minus 1pt}
+
+  
+\input{content/abstract}\cleardoublepage % load abstract
+
+
+%\input{tex/00_preface}\cleardoublepage % load preface
+
+%________________________________________
+% TOCLAYOUT
+\makeatletter
+	\setlength{\cftbeforepartskip}{7ex}
+	\setlength{\cftbeforechapskip}{5.5ex}
+	\setlength{\cftbeforesecskip}{0.75ex}
+	\setlength{\cftbeforesubsecskip}{0.1ex}
+	\setlength{\cftbeforetoctitleskip}{-5mm}
+	\setlength{\cftbeforeloftitleskip}{-5mm}
+	\setlength{\cftbeforelottitleskip}{-5mm}
+	\renewcommand{\cfttoctitlefont}{
+	  \LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftloftitlefont}{
+	  \LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftlottitlefont}{
+	  \LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftpartfont}{
+	  \fontsize{14}{18}\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftchapfont}{
+	  \fontsize{13}{17}\usefont{OT1}{ptm}{b}{n}\selectfont
+	}	% Done with the TOC layout
+	
+  \setcounter{tocdepth}{2}
+  % LATEX
+  \pdfbookmark[1]{Table of Contents}{table}
+  \markboth{Table of Contents}{Table of Contents}
+  % ENDLATEX
+  \settocname{Table of Contents\\}
+  \setcounter{tocdepth}{1}
+  \tableofcontents
+	%\cleardoublepage	
+	%\listoffigures	
+	%\cleardoublepage
+	%\listoftables
+\makeatother
+%____________________________________________________________
+
+\mainmatter
+
+% ################################################### MAIN PART
+
+\input{content/introduction/intro}
+
+\part{FOUNDATIONS OF USABLE AUTHENTICATION}
+\label{part:related_work}
+
+\input{content/passwords/passwords}
+\input{content/passwords/coping-strategies}
+\input{content/passwords/pw-summary}
+
+\part{EXPLORING THE CONTEXT FACTORS}
+\label{part:problem_space}
+\input{content/problem_space/pasdjo} %published
+\input{content/problem_space/policies_reuse} %published
+\input{content/influence_strategies/pws_and_personality} %mostly new 
+\input{content/problem_space/mm_pwm} %published
+
+% DESIGN SPACE
+\part{PERSUASIVE DESIGN STRATEGIES}
+\label{part:design_space}
+\input{content/influence_strategies/redesigning_feedback}
+\input{content/influence_strategies/decoy} %published
+\input{content/influence_strategies/emojipasswords} %published
+
+\part{SYNTHESIS}
+\label{part:synthesis_conclusion}
+\input{content/synth_pst/perdespassup}
+\input{content/conclusion/summary}
+\input{content/conclusion/reflection}
+
+
+% ################################################### MAIN PART
+
+%____________________________________________________________
+\cleardoublepage
+
+%____________________________________________________________
+
+\backmatter
+
+%____________________________________________________________
+
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+
+
+%\bibliographystyle{abbrv}
+\bibliographystyle{SIGCHI-Reference-Format}
+%\bibliographystyle{apalike-doi}
+%\bibliographystyle{acm-sigchi-modern}
+
+%\bibliographystyle{bibstyles/ACM-Reference-Format}
+\bibliography{library}
+
+
+\cleardoublepage
+\phantomsection
+%\addcontentsline{toc}{chapter}{Index}
+%\printindex
+\printindex
+\glsaddall
+\printglossaries
+
+%TODO \input{tex/00_declaration} % load declaration
+
+\end{document}

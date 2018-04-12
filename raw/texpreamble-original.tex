@@ -1,0 +1,611 @@
+\newcommand{\mytitle}{Supporting Users in Password Authentication with Persuasive Design}
+\newcommand{\mysubtitle}{}
+\newcommand{\myname}{Tobias Seitz}
+\newcommand{\ie}{i.e.,\ }
+\newcommand{\eg}{e.g.,\ }
+
+
+\definecolor{pinkaccent}{HTML}{F50057}
+\definecolor{darkindigo}{HTML}{303F9F}
+\definecolor{lightblue}{HTML}{c5cae9}
+\definecolor{primaryblue}{HTML}{3f51b5}
+\definecolor{bluegray}{HTML}{607d8b}
+\definecolor{secondarygray}{HTML}{757575}
+\definecolor{dividergray}{HTML}{bdbdbd}
+
+
+
+%Stats
+\newcommand{\statslt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$<$~#3}
+\newcommand{\stats}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$=$~#3}
+\newcommand{\statsgt}[3]{\textit{F\textsubscript{#1}}~$=$~#2, \textit{p}~$>$~#3}
+\newcommand{\pval}[1]{\textit{p}~$=$~#1}
+\newcommand{\pvallt}[1]{\textit{p}~$<$~#1}
+\newcommand{\pvalgt}[1]{\textit{p}~$>$~#1}
+\newcommand{\mean}[2]{\textit{m}~$=$~#1, \textit{sd}~$=$~#2}
+\newcommand{\meant}[2]{\textit{m}$=$#1 \textit{sd}$=$#2}
+\newcommand{\meanonly}[1]{\textit{m}~$=$~#1}
+\newcommand{\median}[1]{\textit{median}~$=$~#1}
+\newcommand{\average}{average:\xspace}
+\newcommand{\Rsqadj}[1]{$R_{adj}^2$~$=$~#1}
+%tables and figures
+\newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
+\newunicodechar{✓}{\ding{51}}
+\newunicodechar{✘}{\ding{56}}
+\newunicodechar{↗}{\ding{246}}
+\newunicodechar{↘}{\ding{244}}
+
+% emojis
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+\newcommand*\inlinegraphics[1]{%
+	\settototalheight\myheight{Xygp}%
+	\settodepth\mydepth{Xygp}%
+	\raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
+}
+\newcommand{\emoji}[2][ios]{\inlinegraphics{../latex-emoji/#1/#2}}%
+% this works on a more rudimentary level: \newcommand{\emoji}[1]{\includegraphics[width=1em]{../latex-emoji/ios/#1}}%
+
+\newcommand{\citep}[1]{\cite{#1}} %convenience for texmaker, but texstudio doesn't have this problem. 
+
+\graphicspath{{figures/}}
+
+%SHORTCUTS
+\label{Shortcuts}
+\usepackage{xspace}
+\newcommand{\percent}{\%\xspace}
+\newcommand{\seefig}{see Figure\xspace}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\access}[1]{\textit{(last accessed #1)}}
+\newcommand{\la}[1]{\textit{(last accessed #1)}}
+\newcommand{\lastaccess}[1]{\textit{(last accessed #1)}}
+\newcommand{\footurl}[2]{\footnote{\url{#1} \lastaccess{#2}}}
+%alternative approach: try if time:
+%\newcommand{\footurl}[2]{
+%	\bibitem{#1}~, \url{http://en.wikipedia.org/wiki/Business_logic_layer}, #2.
+%	\cite{#1}
+%}
+
+
+\newcommand{\etal}{et al.\xspace}
+\newcommand{\todo}[1]{\textcolor{pinkaccent}{\textbf{@TODO} {#1}}}
+\newcommand{\ar}{\textcolor{pinkaccent}{\textbf{@ref}}}
+\newcommand{\vspc}{\vspace*{2cm}}
+
+\usepackage[light]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+
+\renewcommand{\floatpagefraction}{.8}% this avoids putting larger images onto separate pages.
+
+% Footnote style.
+\makeatletter
+\renewcommand{\@makefntext}[1]{%
+	\setlength{\parindent}{0pt}%
+	\begin{list}{}{\setlength{\labelwidth}{1em}%
+			\setlength{\leftmargin}{\labelwidth}%
+			\setlength{\labelsep}{3pt}%
+			\setlength{\itemsep}{0pt}%
+			\setlength{\parsep}{0pt}%
+			\setlength{\topsep}{0pt}%
+			%   \setlength{\rightmargin}{0.2\textwidth}%
+			\footnotesize}%
+		\item[\@makefnmark\hfil]#1%
+	\end{list}%
+}
+\makeatother
+
+%%% SARAH's original:
+
+% TEST :: BEGIN ========
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+%\interlinepenalty=5000
+% TEST :: END ==========
+
+% Quotes
+\label{Quotes}
+\newcommand{\sciencequote}[3]{
+	\vskip 5pt
+	\begin{flushright}
+		\begin{minipage}{#3\textwidth}
+			\begin{flushright}
+				\fontsize{14}{16}\rmfamily\textit{#1}
+			\end{flushright}
+		\end{minipage}
+		\vskip 4pt
+		\begin{minipage}{#3\textwidth}
+			\begin{flushright}
+				\fontsize{12}{14}\rmfamily\textbf{-- #2 --}
+			\end{flushright}
+		\end{minipage}
+	\end{flushright}
+	\vskip 30pt
+}
+
+
+\makeatletter
+\renewenvironment{theindex}
+{\if@twocolumn
+	\@restonecolfalse
+	\else
+	\@restonecoltrue
+	\fi
+	\setlength{\columnseprule}{0pt}
+	\setlength{\columnsep}{20pt}
+	\begin{multicols}{2}[\chapter*{\indexname}]
+		\markboth{\MakeUppercase\indexname}%
+		{\MakeUppercase\indexname}%
+		\thispagestyle{plain}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{0pt plus 0.3pt}
+		\relax
+		\let\item\@idxitem}%
+	{\end{multicols}\if@restonecol\onecolumn\else\clearpage\fi}
+\makeatother
+
+\AtBeginDocument{%
+	\definecolor{gray}{rgb}{0.8,0.8,0.8}
+	\definecolor{darkgray}{RGB}{102,102,102}
+}% end \AtBeginDocument
+
+\newcommand{\clearemptydoublepage}{%
+	\ifthenelse{\boolean{@twoside}}{\newpage{\pagestyle{empty}\cleardoublepage}}%
+	{\clearpage}}
+
+\ifpdf
+
+  \definecolor{darkred}{rgb}{.25,0,0}
+  \definecolor{darkgreen}{rgb}{0,.2,0}
+  \definecolor{darkmagenta}{rgb}{.2,0,.2}
+  \definecolor{darkcyan}{rgb}{0,.15,.15}
+  \definecolor{headings}{rgb}{0,0,.3}
+  
+  \definecolor{darkgray}{rgb}{.4,.4,.4}
+  \definecolor{lightgray}{rgb}{.85,.85,.85}
+  
+  % plainpages=false to avoid warnings about duplicate page labels
+  \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref}
+	\pdfcompresslevel=9
+	\pdfimageresolution=300
+  % temporarily disable \\
+  \renewcommand{\\}{}
+  \pdfinfo{
+    /Author(\myname)
+    /Title(\mytitle)
+    /Subject(Dissertation of \myname)
+    }
+    \hypersetup {
+    pdfpagemode = {UseOutlines}, % prevents the automatic announcement of bookmarks
+    pdftitle = {\mytitle},
+    pdfsubject = {Dissertation of \myname},
+    pdfauthor = {\myname},
+    pdfdisplaydoctitle = true
+  }
+\else
+  \usepackage[draft]{hyperref}
+\fi
+
+% Look for images in subdirectory
+%\graphicspath{{./images/}} = OLD
+
+% Sections etc with different font settings
+%\renewcommand{\sfdefault}{hls} % Lucida Bright font for sans serif
+%\renewcommand{\sfdefault}{phv} % Helvetica font for sans serif
+%\renewcommand{\sfdefault}{fvs} % Bera sans
+%\usepackage[scaled=0.85]{berasans}
+%\renewcommand{\sfdefault}{cmbr} % Computer Modern bright
+\renewcommand{\sfdefault}{qhv} % Bera sans
+\allsectionsfont{\textbf\sfdefault}
+%\iffalse
+\makeatletter
+
+% Chapter Head
+\label{Chapter Head}
+\def\@makechapterhead#1{%
+\thispagestyle{empty}
+  \vspace*{-70\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+      	%	\par\vspace*{\fill}
+	      	\par\vspace*{120\p@}
+      		\IfSubStringInString{: }{#1}{%
+			\begin{flushright}
+			\fontsize{50}{40}\fontfamily{qhv}\textbf{\thechapter }\par\nobreak
+			\vspace{10pt}
+			\fontsize{20}{80}\fontfamily{qhv}\textbf{\BeforeSubString{: }{#1}}\par\nobreak
+			%\fontsize{22}{26}\mdseries\textrm{-- \BehindSubString{: }{#1} --}\par\nobreak
+			\fontsize{20}{80}\fontfamily{qhv}\textbf{\BehindSubString{: }{#1}}\par\nobreak
+			  \end{flushright}
+		}{
+				
+				\begin{flushright}
+				\fontsize{50}{40}\fontfamily{qhv}\textbf{\thechapter }\par\nobreak
+				\vspace{10pt}
+				\fontsize{20}{80}\fontfamily{qhv}\textbf{#1}\par\nobreak
+			     \end{flushright}
+				\par\nobreak
+        }
+      \fi
+  
+        \vskip 30\p@
+    %\vskip 40\p@
+    
+  }}
+  
+% Synopsis
+\label{Chapter Synopsis}  
+\newcommand{\shortsynopsis}[1]{		
+%		\rule{\linewidth}{1pt}
+%		\textit{\textbf{Synopsis.}}
+		{\itshape #1}
+%		\rule{\linewidth}{1pt}
+		\newpage
+}
+
+%Subsections
+\label{Subsections}
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\fontfamily{qhv}\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+									%{\normalfont\Large\mdseries\rmfamily}
+                                     {\fontfamily{qhv}\large\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-1.75ex\@plus -1ex \@minus -.2ex}%
+                                     {0.1ex \@plus .1ex}%
+                                     {\fontfamily{qhv}\normalsize\bfseries}}
+                                     %{\normalfont\large\itshape\rmfamily}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {1.75ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\fontfamily{qhv}\small\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+                                       {3.25ex \@plus1ex \@minus .2ex}%
+                                       {-1em}%
+                                      {\normalfont\normalsize\sffamily}}
+                                      
+                                      
+%Table Font Size
+\let\oldtabular\tabular
+\renewcommand{\tabular}{\small\oldtabular}                                      
+                                                                     
+                                      
+% Part Head
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    \markboth{}{}%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \textcolor{gray}{\fontsize{240}{288}\mdseries\textrm{\thepart}}%
+       \par
+     \fi
+     \centering \normalfont
+     \fontsize{30}{36}\mdseries\scshape\textrm{#2}\par}%
+    \@endpart}
+\def\@spart#1{%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont \Huge \bfseries \SS@parttitlefont {#1}\par}%
+    \@endpart}
+
+%\fi
+
+
+% Bold captions
+\makeatletter
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \vskip2mm
+  \bfseries% added
+  \centering% added
+  \sbox\@tempboxa{#1: #2}%
+%  \ifdim \wd\@tempboxa >\hsize
+	\ifdim \wd\@tempboxa >0.95\textwidth
+	  \begin{minipage}{0.95\textwidth}
+    	\bfseries\small{#1:} \normalfont\small #2\par
+    \end{minipage}
+  \else
+    \global \@minipagefalse
+    %\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+    \bfseries\small{#1:} \normalfont\small #2\par
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother
+% END LATEX
+
+% Make margins smaller
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.25in}
+\addtolength{\textheight}{.5in}
+
+% Avoid lots of overfull \vbox messages with fancyhdr
+\addtolength{\headheight}{3pt}
+\pagestyle{fancy}
+\sloppy
+
+%\setlength{\abovecaptionskip}{.5ex}
+\setlength{\abovecaptionskip}{1ex}
+\setlength{\belowcaptionskip}{1ex}
+%\setlength{\textfloatsep}{3ex}
+%\renewcommand{\baselinestretch}{0.971}
+% http://people.cs.uu.nl/piet/floats/node1.html
+\renewcommand{\textfraction}{.15}
+\renewcommand{\topfraction}{.8}     % vorher: .7
+\renewcommand{\bottomfraction}{.8}  % vorher: .3
+\renewcommand{\floatpagefraction}{.75}
+
+
+% BEGIN LATEX
+%% itemize mit kleinerem bullet
+%\renewenvironment{itemize}{%
+%  \begin{list}{\raisebox{.3ex}{\scriptsize$\bullet$}}{}%
+%}{%
+%  \end{list}%
+%}
+%% END LATEX
+%
+%% itemize mit kleinerem bullet und kleinerem Zeilenabstand
+%\newenvironment{itemizex}{%
+%  \begin{list}{\raisebox{.3ex}{\scriptsize$\bullet$}}%
+%              {\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}}%
+%}{%
+%  \end{list}%
+%}
+%HEVEA \renewenvironment{itemizex}{\begin{itemize}}{\end{itemize}}
+%HEVEA \renewcommand{\hfill}{ }
+
+% enumerate with smaller parskip
+%\newenvironment{enumeratex}{%
+%  \begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}%
+%}{%
+%  \end{enumerate}%
+%}
+
+% enumerate with \item[somearg] - somearg is shown instead of the number
+%\newenvironment{enumeratewithlabel}{\begin{enumerate}}{\end{enumerate}}
+% HEVEA \renewenvironment{enumeratewithlabel}{\begin{description}}{\end{description}}
+
+% description with smaller parskip
+%\newenvironment{descriptionx}{%
+%  \begin{description}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}%
+%}{%
+%  \end{description}%
+%}
+
+\newenvironment{chapterdescription}[1]{%
+	%\setlength{\parskip}{-2pt plus 2pt minus 1pt}%
+	%\setlength{\parskip}{3pt}%
+	\vskip 2pt
+	\leftskip=8mm
+	\rightskip=\leftskip
+	%\begin{center}%
+		%\begin{minipage}{0.85\textwidth}%
+		%\begin{minipage}{150mm}%
+			%\noindent
+			\textbf{#1:}%
+}{%
+		%\end{minipage}%
+	%\end{center}%
+	\vskip 2pt
+	\par
+	\leftskip=0mm
+	\rightskip=\leftskip
+	%\setlength{\parskip}{7pt}
+	%\setlength{\parskip}{7pt plus 2pt minus 1pt}
+}
+
+\newenvironment{contribution}{%
+	\begin{center}
+		\setlength{\arrayrulewidth}{5pt}
+		\renewcommand{\arraystretch}{1.0}
+		\arrayrulecolor{gray}
+		\begin{tabular}{ | m{0.85\textwidth} }
+			%\textsc{\textbf{Contribution Statement:}}
+			\textbf{Contribution Statement:}
+}{%
+		\end{tabular}
+		\setlength{\arrayrulewidth}{1pt}
+		\renewcommand{\arraystretch}{0.0}
+		\arrayrulecolor{black}
+	\end{center}
+}
+
+\newenvironment{definition}[1]{%
+	\begin{center}
+		\setlength{\arrayrulewidth}{1pt}
+		%\renewcommand{\arraystretch}{2.0}
+		\arrayrulecolor{darkgray}
+		\begin{tabular}{ | m{0.85\textwidth} | }
+			\hline%
+			\rowcolor{lightgray}\textbf{#1:}
+}{%
+			\\
+			\hline%
+		\end{tabular}
+		\setlength{\arrayrulewidth}{1pt}
+		%\renewcommand{\arraystretch}{0.0}
+		\arrayrulecolor{black}
+	\end{center}
+}
+
+\newenvironment{indented}[1]{%
+	\leftskip=#1
+	\rightskip=\leftskip
+}{%
+	\par
+	\leftskip=0mm
+	\rightskip=\leftskip
+}
+
+
+% -- Summary ---------------------------------------------------------------
+% Creates a nicely indented summary paragraph
+% Always starts with the word summary printed bold
+\newcommand{\summary}[1]{
+	\vspace{2mm}
+	%\hspace*{5mm}
+	\begin{center}
+		\begin{minipage}{0.85\linewidth}
+				\textbf{Summary:} #1
+		\end{minipage}
+	\end{center}
+}	
+% -- Summary ---------------------------------------------------------------
+
+
+% \includegraphics of png/jpeg files, hevea-aware
+\newcommand{\includepng}[2][]{\includegraphics[#1]{#2.png}\\}
+% HEVEA \renewcommand{\includepng}[2][]{\imgsrc{#2.png}\\}
+\newcommand{\includejpeg}[2][]{\includegraphics[#1]{#2.jpeg}\\}
+% HEVEA \renewcommand{\includejpeg}[2][]{\imgsrc{#2.jpeg}\\}
+\newcommand{\includepngx}[2][]{\includegraphics[#1]{#2.png}} % no newline
+% HEVEA \renewcommand{\includepngx}[2][]{\imgsrc{#2.png}\\}
+\newcommand{\includepdfpng}[2][]{\includegraphics[#1]{#2.pdf}\\} % PDF for LaTeX
+% HEVEA \renewcommand{\includepng}[2][]{\imgsrc{#2.png}\\} % PNG for HEVEA
+
+% Definition of page heading
+\label{Page Heading}
+%\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{ #1}}
+\newcommand{\phstyle}{\fontfamily{qhv}\fontsize{10}{14}\bfseries}
+%\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
+%\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+\fancyhf{}
+%EXAMPLE: \lhead[lh-even]{lh-odd}
+\lhead[\phstyle]{}
+\lfoot[\fancyplain{}\phstyle\thepage]{}
+\rfoot[]{\fancyplain{}\phstyle\thepage}
+\rhead[]{\fancyplain{}\phstyle\leftmark}
+\cfoot{\fancyplain{}}
+
+
+\author{\myname\\\small tobias.seitz@ifi.lmu.de}
+\title{\mytitle\\
+	\mysubtitle\\}
+\date{\today}
+
+
+%--Inline Comments-------------------------------------------------------------
+\newcommand{\inlinecomment}[3]{
+	\begin{center}
+    \fbox{
+      \begin{minipage}{.85\linewidth}
+        \textcolor{#1} {{\textbf #2:} \textsf{#3}}
+      \end{minipage}
+      }
+  \end{center}	
+}
+%--Inline Comments-------------------------------------------------------------
+
+%--Personalized Comments-------------------------------------------------------
+%\newcommand{\patrick}[1]{\inlinecomment{red}{Patrick}{#1}}
+%\newcommand{\tico}[1]{\inlinecomment{green}{Tico}{#1}}
+\newcommand{\comment}[1]{\inlinecomment{red}{\textbf{COMMENT}}{#1}}
+\newcommand{\story}[1]{\inlinecomment{blue}{\textbf{STORY}}{#1}}
+%--Personalized Comments-------------------------------------------------------
+
+\newcommand{\TCop}{\textsuperscript{\textcopyright}}
+
+%--Chapter
+%\newcommand\Chapter[2]{
+% \chapter[#1: {\itshape#2}]{#1\\[1pt]\Large\itshape#2}
+%}
+%\titlespacing*{\chapter}
+%{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+%--Summary----------------------------------------------------------------------
+
+\newcommand{\summarize}[1]{
+	\vspace{2mm}
+	%\hspace*{5mm}
+	%\begin{center}
+	\begin{flushright}
+		\begin{minipage}{0.85\linewidth}
+			\begin{flushright}	
+				\color{darkgray}\fontsize{16}{16}\textbf{-- Summary --\\} \fontsize{14}{16}\rmfamily\textit{#1}
+			\end{flushright}
+		\end{minipage}
+	\end{flushright}
+	%\end{center}
+}
+
+%--Synopsis---------------------------------------------------------------------
+
+\newcommand{\synopsis}[1]{
+%\textcolor{darkgray}{\hrule }
+\hrule
+\vspace{0.5cm}
+
+	\section*{Synopsis}		
+	\textit{#1}
+
+\vspace{0.7cm}
+\hrule
+
+%\vspace{1cm}
+
+\clearpage
+}
+
+
+
+\newcommand{\introstory}[1]{
+	\noindent\makebox[\textwidth][c]{
+		\begin{minipage}{.93\textwidth}
+			\textit{#1}
+		\end{minipage}
+	}
+}
+
+\newcommand{\researchquestion}[2]{
+	\vspace{0.5cm}
+	\noindent\makebox[\textwidth][c]{
+		\begin{minipage}{.9\textwidth}
+			\textbf{#1}\\
+					
+			\textbf{#2}			
+		\end{minipage}
+	}
+}
+
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\makeatletter
+\newcommand*{\compress}{\@minipagetrue}
+\makeatother
+
+%ANECDOTE
+\label{Anecdote}
+\newcommand{\anecdote}[2]{
+\par
+\begingroup
+\leftskip2em
+\rightskip\leftskip
+\textit{#1 }
+\begin{flushright}
+\rightskip2em
+\textit{#2}
+\end{flushright}
+
+\par
+\endgroup
+
+}

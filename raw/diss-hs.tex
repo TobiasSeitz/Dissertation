@@ -1,0 +1,375 @@
+\documentclass[12pt,a4paper,twoside]{book}
+%\documentclass{sigchi}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc} % writing of äöüß possible, instead of "a"o"u"s
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx} % font times-roman for math. Formulas, bullets, etc.
+\usepackage{fancyhdr} % chapternames at top of page
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{sectsty}
+\usepackage[ngerman,english]{babel}
+\selectlanguage{english}
+\usepackage{makeidx} % allows for an index
+\usepackage{subfigure} % enable subfigures
+\usepackage[nottoc,notindex]{tocbibind} % include bib in toc
+\usepackage[subfigure]{tocloft}
+\usepackage{ifthen} % allow sophisticated control structures
+\usepackage{substr} % allows substring detection
+
+%\newcommand*{\shiftright}[2]{%
+%	\settowidth{}{#2}%
+%	\makebox[]{\hspace*{#1}#2}%
+%}
+
+\usepackage{array}
+
+\usepackage[numbers]{natbib}
+\usepackage{bibentry}
+%\usepackage{etoolbox}
+%\makeatletter
+%\let\ORIG@BR@c@bibitem\BR@c@bibitem
+%\apptocmd\ORIG@BR@c@bibitem{\endgroup}{}{}
+%\def\BR@c@bibitem{\begingroup\catcode`\%=12 \ORIG@BR@c@bibitem}
+%\makeatother
+\nobibliography* 
+
+\usepackage[hang,splitrule]{footmisc} % avoid hanging footnotes
+\usepackage{titlesec}
+\usepackage{geometry}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+\usepackage{subscript}
+\usepackage{rotating}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\usepackage{caption}
+%\usepackage{wrapfig, floatrow}
+%\usepackage{tikz} 
+\usepackage{wrapfig}
+
+
+\usepackage[toc,page]{appendix}
+
+%\usepackage{enumitem}
+\usepackage[shortlabels]{enumitem}
+\usepackage{marvosym}
+\usepackage{amsmath}
+\usepackage{amsfonts}   
+\usepackage[usenames,dvipsnames,table]{xcolor}
+%\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{csquotes}
+\usepackage[final]{pdfpages}
+\usepackage{pdflscape}
+\usepackage{capt-of}% or use the larger `caption` package
+
+
+%\newcommand{\mytodo}[1]{\textit{\textcolor{Blue}{\textbf{[#1]}}}}
+%\usepackage{todonotes}
+
+%Blindtext
+\usepackage{blindtext}
+
+%TIKZ
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.12}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows, decorations.pathmorphing, decorations.markings, backgrounds, positioning, fit, petri}
+
+%CITE
+%\usepackage{cite}
+
+%EURO
+\usepackage[gen]{eurosym}
+
+%WRAPFIG
+\usepackage{wrapfig}
+
+%COLORS
+\label{Color Definition}
+\usepackage{xcolor}
+\definecolor{platinum}{HTML}{E5E4E2}
+\colorlet{diagrambg}{platinum}
+
+%MDFRAME
+\usepackage{mdframed}
+
+%CSVSIMPLE
+\usepackage{csvsimple}
+
+%SYMBOLS
+\usepackage{pifont}
+\usepackage{enumitem}
+\makeindex
+
+%MORE CITATION STYLES
+%\usepackage[round,sort,comma]{natbib}
+
+
+
+%\usepackage[backend=bibtex,style=numeric]{biblatex} 
+%\addbibresource{bibliography}
+
+
+%\usepackage{multibib}
+%\newcites{cont}{Contributing Publications}
+%\bibliographystylecont{SIGCHI-Reference-Format}
+
+
+%outer=110pt
+\geometry{a4paper,twoside,inner=97pt,outer=110pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=2pt,bindingoffset=8mm} % for some weird reason oddsidemargin is originally -108pt
+%\geometry{a4paper,twoside,inner=97pt,outer=160pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=24pt,bindingoffset=8mm}
+%\geometry{a4paper,twoside,inner=90pt,outer=160pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=24pt,bindingoffset=8mm} 
+
+
+\usepackage{marginnote}
+
+
+
+\include{texpreamble} % load additional stuff
+
+\usepackage{makecell}
+
+
+\frenchspacing
+
+
+
+
+\raggedbottom % test vertical justification switch off
+
+\begin{document}
+	\frontmatter
+	%________________________________________
+	
+	{%
+		\pagestyle{empty}%
+		%\setlength{\textwidth}{188mm}
+		%\setlength{\oddsidemargin}{-1in}
+		%\setlength{\evensidemargin}{-1in}
+		%\setlength{\topmargin}{-1.5in}
+		%\setlength{\unitlength}{1mm}
+		\addtolength{\oddsidemargin}{11mm}
+		\addtolength{\evensidemargin}{11mm}
+		\addtolength{\topmargin}{11mm}
+		
+		
+		\newgeometry{inner=30pt,outer=30pt,top=30pt}
+		\noindent\begin{minipage}{188mm} % 210-11-11
+			
+			
+			
+			\begin{picture}(0,0)%
+			\put(258.7,-858.8){\includegraphics[width=140mm]{img/general/lmu-siegel-grey.pdf}} % LMU signet
+			\end{picture}
+			
+			\setlength{\fboxsep}{0mm}%
+			\pagestyle{empty}%
+			\noindent
+			
+			\vspace*{23mm}
+			
+			
+			\begin{center}
+				\vspace*{20mm}
+				\rule{\textwidth}{0.5pt}
+				\vskip 5mm
+				%\fontsize{28}{34}\rmfamily\scshape\mytitle
+				\fontsize{22}{28}\rmfamily\scshape\mytitle
+			%	\fontsize{15}{18}\rmfamily\scshape\mysubtitle
+				\par
+				\vskip 15pt
+				\begin{center}
+					\begin{minipage}{0.65\textwidth}
+						\begin{center}
+							\normalfont\LARGE\rmfamily\mysubtitle
+						\end{center}
+					\end{minipage}
+				\end{center}
+				\rule{\textwidth}{0.5pt}
+				\vskip 20mm
+				\huge \textbf{Dissertation}\\ 
+				\vspace*{5mm}
+				\normalfont\Large an der Fakultät für Mathematik, Informatik und Statistik\\
+				der Ludwig-Maximilians-Universität München\\
+				\vspace*{10mm}
+				vorgelegt von\\
+				\vspace*{10mm}
+				{\huge\scshape\textbf{\myname}}\\
+				\vspace*{2mm}
+				M.Sc. Human-Computer Interaction\\ 
+				%\vspace*{2mm}
+				%\normalfont\Large geboren am 25. September 1980 in Berlin\\
+				\vspace*{20mm}
+				\normalfont\Large München, den x.x x % date when the professors agreed on your thesis topic
+			\end{center}
+		\end{minipage}
+		
+		\clearpage
+		
+	}
+	\pagestyle{fancy}%
+	
+	{
+		%\newgeometry{a4paper,twoside,inner=97pt,outer=110pt,top=118pt,textheight=592pt,marginpar=68pt,marginparsep=2pt,bindingoffset=8mm}
+		
+		% Page Header
+		\renewcommand{\chaptermark}[1]{%
+			\markboth{\thechapter~~#1}{}}
+		
+		\allsectionsfont{\normalfont\LARGE\bfseries\scshape\rmfamily}
+		
+		\begin{picture}(0,0)%
+		%\put(90,278){\includegraphics[width=140mm]{../../Figures/General/lmu-siegel-grey.pdf}} % LMU signet
+		\put(181.7,-773.8){\includegraphics[width=140mm]{img/general/lmu-siegel-grey.pdf}} % LMU signet
+		\end{picture}
+		
+		\vspace*{80mm}
+		{\large\noindent
+			\centering{
+				\begin{tabular}{ll}
+					\large{Erstgutachter:}	& \large{Prof.\ Dr.\ Andreas Butz}\\[1ex]
+					\large{Zweitgutachter:} & \large{Prof.\ Dr.\ Sarah Diefenbach}\\[1ex]
+					\large{Drittgutachter:} & \large{Prof.\ Phd\ Elizabeth Mynatt}\\
+				\end{tabular} 
+			}\\
+		}
+		\vspace*{50mm}
+		\begin{center}
+			{\large\noindent
+				Tag der mündlichen Prüfung: x.x 2018}
+		\end{center}
+		
+	}
+	
+	
+	
+	
+	
+	\cleardoublepage
+	
+	\setlength{\parindent}{0pt} % Have spaces between paragraphs
+	\setlength{\parskip}{7pt plus 2pt minus 1pt}
+	
+	\input{parts/00_abstract} % load abstract
+	\cleardoublepage
+	
+	\input{parts/00_preface} % load preface
+	\cleardoublepage
+	
+	%________________________________________
+	\makeatletter
+	\setlength{\cftbeforepartskip}{7ex}
+	\setlength{\cftbeforechapskip}{5.5ex}
+	\setlength{\cftbeforesecskip}{0.75ex}
+	\setlength{\cftbeforesubsecskip}{0.1ex}
+	\setlength{\cftbeforetoctitleskip}{-5mm}
+	\setlength{\cftbeforeloftitleskip}{-5mm}
+	\setlength{\cftbeforelottitleskip}{-5mm}
+	\renewcommand{\cfttoctitlefont}{
+		\LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftloftitlefont}{
+		\LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftlottitlefont}{
+		\LARGE\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftpartfont}{
+		\fontsize{14}{18}\usefont{OT1}{ptm}{b}{sc}\selectfont
+	}
+	\renewcommand{\cftchapfont}{
+		\fontsize{13}{17}\usefont{OT1}{ptm}{b}{n}\selectfont
+	}	% Done with the TOC layout
+	
+	\setcounter{tocdepth}{2}
+	% LATEX
+	\pdfbookmark[1]{Table of Contents}{table}
+	\markboth{Table of Contents}{Table of Contents}
+	% ENDLATEX
+	\settocname{Table of Contents\\}
+	\tableofcontents
+	\cleardoublepage	
+	\makeatother
+	%____________________________________________________________
+	
+	\mainmatter
+	
+	% ################################################### MAIN PART
+	
+%	\input{parts/abstract}
+	\input{parts/01_introduction/01_introduction}
+	
+	\input{parts/02_publications/02_publications}
+	
+	\input{parts/03_conclusion/03_conclusion}
+%	\input{parts/sources}
+%	\input{parts/applications}
+%	
+%	\input{parts/tools}
+%	
+%	
+%	\input{parts/discussion}
+%	
+%	\input{parts/conclusion}
+	
+	%\part{"TBA"}
+	%\input{parts/part}
+		\pagebreak
+		\listoffigures	
+	\pagebreak
+	\listoftables
+	\pagebreak
+		
+	%____________________________________________________________
+	
+	% REFERENCES FORMAT
+	% References must be the same font size as other body text.
+	
+%		\bibliographystyle{acm-sigchi}
+%	\bibliographystyle{SIGCHI-Reference-Format}
+%	\bibliographystyle{acm-sigchi-modern}
+	\bibliographystyle{apalike-doi}
+%\bibliographystyle{plain}
+	\bibliography{bibliography}
+	%\printbibliography
+	
+
+	\begin{appendices}
+	\input{parts/04_appendix}
+\end{appendices}
+	
+	% ################################################### MAIN PART
+	
+	%____________________________________________________________
+%	\cleardoublepage
+	
+%	\pagebreak
+	%____________________________________________________________
+
+	\backmatter
+
+
+	\cleardoublepage
+\phantomsection
+%\addcontentsline{toc}{chapter}{Index}
+%\printindex
+
+%	\pagebreak
+\input{parts/00_declaration} % load declaration
+
+
+\end{document}

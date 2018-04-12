@@ -1,0 +1,436 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Creator: dvips(k) 5.996 Copyright 2016 Radical Eye Software
+%%Title: diss.idv
+%%CreationDate: Thu Apr 12 09:44:55 2018
+%%BoundingBox: 71 250 511 690
+%%EndComments
+%DVIPSWebPage: (www.radicaleye.com)
+%DVIPSCommandLine: dvips -E -q -Ppdf -f diss.idv -pp 21
+%DVIPSParameters: dpi=8000
+%DVIPSSource:  TeX output 2018.04.12:0943
+%%BeginProcSet: tex.pro 0 0
+%!
+/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
+N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72
+mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0
+0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{
+landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize
+mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[
+matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round
+exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{
+statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]
+N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin
+/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array
+/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2
+array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N
+df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A
+definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get
+}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}
+B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr
+1 add N}if}B/CharBuilder{save 3 1 roll S A/base get 2 index get S
+/BitMaps get S get/Cd X pop/ctr 0 N Cdx 0 Cx Cy Ch sub Cx Cw add Cy
+setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx sub Cy .1 sub]{Ci}imagemask
+restore}B/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn
+/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put
+}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{
+bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A
+mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{
+SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{
+userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X
+1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4
+index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N
+/dir 0 def/dyy{/dir 0 def}B/dyt{/dir 1 def}B/dty{/dir 2 def}B/dtt{/dir 3
+def}B/p{dir 2 eq{-90 rotate show 90 rotate}{dir 3 eq{-90 rotate show 90
+rotate}{show}ifelse}ifelse}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0
+N/Ry 0 N/V{}B/RV/v{/Ry X/Rx X V}B statusdict begin/product where{pop
+false[(Display)(NeXT)(LaserWriter 16/600)]{A length product length le{A
+length product exch 0 exch getinterval eq{pop true exit}if}{pop}ifelse}
+forall}{false}ifelse end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{
+BDot}imagemask grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat
+{BDot}imagemask grestore}}ifelse B/QV{gsave newpath transform round exch
+round exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0
+rlineto fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B
+/M{S p delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}
+B/g{0 M}B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p
+-3 w}B/n{p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{
+0 S rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: alt-rule.pro 0 0
+%!
+% Patch by TVZ
+% Makes dvips files draw rules with stroke rather than fill.
+% Makes narrow rules more predictable at low resolutions
+% after distilling to PDF.
+% May have unknown consequences for very thick rules.
+% Tested only with dvips 5.85(k).
+TeXDict begin
+/QV {
+  gsave newpath /ruleY X /ruleX X
+  Rx Ry gt
+  { ruleX ruleY Ry 2 div sub moveto Rx 0 rlineto Ry }
+  { ruleX Rx 2 div add ruleY moveto 0 Ry neg rlineto Rx }
+  ifelse
+  setlinewidth 0 setlinecap stroke grestore
+} bind def
+end
+
+%%EndProcSet
+%%BeginProcSet: special.pro 0 0
+%!
+TeXDict begin/SDict 200 dict N SDict begin/@SpecialDefaults{/hs 612 N
+/vs 792 N/ho 0 N/vo 0 N/hsc 1 N/vsc 1 N/ang 0 N/CLIP 0 N/rwiSeen false N
+/rhiSeen false N/letter{}N/note{}N/a4{}N/legal{}N}B/@scaleunit 100 N
+/@hscale{@scaleunit div/hsc X}B/@vscale{@scaleunit div/vsc X}B/@hsize{
+/hs X/CLIP 1 N}B/@vsize{/vs X/CLIP 1 N}B/@clip{/CLIP 2 N}B/@hoffset{/ho
+X}B/@voffset{/vo X}B/@angle{/ang X}B/@rwi{10 div/rwi X/rwiSeen true N}B
+/@rhi{10 div/rhi X/rhiSeen true N}B/@llx{/llx X}B/@lly{/lly X}B/@urx{
+/urx X}B/@ury{/ury X}B/magscale true def end/@MacSetUp{userdict/md known
+{userdict/md get type/dicttype eq{userdict begin md length 10 add md
+maxlength ge{/md md dup length 20 add dict copy def}if end md begin
+/letter{}N/note{}N/legal{}N/od{txpose 1 0 mtx defaultmatrix dtransform S
+atan/pa X newpath clippath mark{transform{itransform moveto}}{transform{
+itransform lineto}}{6 -2 roll transform 6 -2 roll transform 6 -2 roll
+transform{itransform 6 2 roll itransform 6 2 roll itransform 6 2 roll
+curveto}}{{closepath}}pathforall newpath counttomark array astore/gc xdf
+pop ct 39 0 put 10 fz 0 fs 2 F/|______Courier fnt invertflag{PaintBlack}
+if}N/txpose{pxs pys scale ppr aload pop por{noflips{pop S neg S TR pop 1
+-1 scale}if xflip yflip and{pop S neg S TR 180 rotate 1 -1 scale ppr 3
+get ppr 1 get neg sub neg ppr 2 get ppr 0 get neg sub neg TR}if xflip
+yflip not and{pop S neg S TR pop 180 rotate ppr 3 get ppr 1 get neg sub
+neg 0 TR}if yflip xflip not and{ppr 1 get neg ppr 0 get neg TR}if}{
+noflips{TR pop pop 270 rotate 1 -1 scale}if xflip yflip and{TR pop pop
+90 rotate 1 -1 scale ppr 3 get ppr 1 get neg sub neg ppr 2 get ppr 0 get
+neg sub neg TR}if xflip yflip not and{TR pop pop 90 rotate ppr 3 get ppr
+1 get neg sub neg 0 TR}if yflip xflip not and{TR pop pop 270 rotate ppr
+2 get ppr 0 get neg sub neg 0 S TR}if}ifelse scaleby96{ppr aload pop 4
+-1 roll add 2 div 3 1 roll add 2 div 2 copy TR .96 dup scale neg S neg S
+TR}if}N/cp{pop pop showpage pm restore}N end}if}if}N/normalscale{
+Resolution 72 div VResolution 72 div neg scale magscale{DVImag dup scale
+}if 0 setgray}N/@beginspecial{SDict begin/SpecialSave save N gsave
+normalscale currentpoint TR @SpecialDefaults count/ocount X/dcount
+countdictstack N}N/@setspecial{CLIP 1 eq{newpath 0 0 moveto hs 0 rlineto
+0 vs rlineto hs neg 0 rlineto closepath clip}if ho vo TR hsc vsc scale
+ang rotate rwiSeen{rwi urx llx sub div rhiSeen{rhi ury lly sub div}{dup}
+ifelse scale llx neg lly neg TR}{rhiSeen{rhi ury lly sub div dup scale
+llx neg lly neg TR}if}ifelse CLIP 2 eq{newpath llx lly moveto urx lly
+lineto urx ury lineto llx ury lineto closepath clip}if/showpage{}N
+/erasepage{}N/setpagedevice{pop}N/copypage{}N newpath}N/@endspecial{
+count ocount sub{pop}repeat countdictstack dcount sub{end}repeat
+grestore SpecialSave restore end}N/@defspecial{SDict begin}N
+/@fedspecial{end}B/li{lineto}B/rl{rlineto}B/rc{rcurveto}B/np{/SaveX
+currentpoint/SaveY X N 1 setlinecap newpath}N/st{stroke SaveX SaveY
+moveto}N/fil{fill SaveX SaveY moveto}N/ellipse{/endangle X/startangle X
+/yrad X/xrad X/savematrix matrix currentmatrix N TR xrad yrad scale 0 0
+1 startangle endangle arc savematrix setmatrix}N end
+
+%%EndProcSet
+%%BeginProcSet: color.pro 0 0
+%!
+TeXDict begin/setcmykcolor where{pop}{/setcmykcolor{dup 10 eq{pop
+setrgbcolor}{1 sub 4 1 roll 3{3 index add neg dup 0 lt{pop 0}if 3 1 roll
+}repeat setrgbcolor pop}ifelse}B}ifelse/TeXcolorcmyk{setcmykcolor}def
+/TeXcolorrgb{setrgbcolor}def/TeXcolorgrey{setgray}def/TeXcolorgray{
+setgray}def/TeXcolorhsb{sethsbcolor}def/currentcmykcolor where{pop}{
+/currentcmykcolor{currentrgbcolor 10}B}ifelse/DC{exch dup userdict exch
+known{pop pop}{X}ifelse}B/GreenYellow{0.15 0 0.69 0 setcmykcolor}DC
+/Yellow{0 0 1 0 setcmykcolor}DC/Goldenrod{0 0.10 0.84 0 setcmykcolor}DC
+/Dandelion{0 0.29 0.84 0 setcmykcolor}DC/Apricot{0 0.32 0.52 0
+setcmykcolor}DC/Peach{0 0.50 0.70 0 setcmykcolor}DC/Melon{0 0.46 0.50 0
+setcmykcolor}DC/YellowOrange{0 0.42 1 0 setcmykcolor}DC/Orange{0 0.61
+0.87 0 setcmykcolor}DC/BurntOrange{0 0.51 1 0 setcmykcolor}DC
+/Bittersweet{0 0.75 1 0.24 setcmykcolor}DC/RedOrange{0 0.77 0.87 0
+setcmykcolor}DC/Mahogany{0 0.85 0.87 0.35 setcmykcolor}DC/Maroon{0 0.87
+0.68 0.32 setcmykcolor}DC/BrickRed{0 0.89 0.94 0.28 setcmykcolor}DC/Red{
+0 1 1 0 setcmykcolor}DC/OrangeRed{0 1 0.50 0 setcmykcolor}DC/RubineRed{
+0 1 0.13 0 setcmykcolor}DC/WildStrawberry{0 0.96 0.39 0 setcmykcolor}DC
+/Salmon{0 0.53 0.38 0 setcmykcolor}DC/CarnationPink{0 0.63 0 0
+setcmykcolor}DC/Magenta{0 1 0 0 setcmykcolor}DC/VioletRed{0 0.81 0 0
+setcmykcolor}DC/Rhodamine{0 0.82 0 0 setcmykcolor}DC/Mulberry{0.34 0.90
+0 0.02 setcmykcolor}DC/RedViolet{0.07 0.90 0 0.34 setcmykcolor}DC
+/Fuchsia{0.47 0.91 0 0.08 setcmykcolor}DC/Lavender{0 0.48 0 0
+setcmykcolor}DC/Thistle{0.12 0.59 0 0 setcmykcolor}DC/Orchid{0.32 0.64 0
+0 setcmykcolor}DC/DarkOrchid{0.40 0.80 0.20 0 setcmykcolor}DC/Purple{
+0.45 0.86 0 0 setcmykcolor}DC/Plum{0.50 1 0 0 setcmykcolor}DC/Violet{
+0.79 0.88 0 0 setcmykcolor}DC/RoyalPurple{0.75 0.90 0 0 setcmykcolor}DC
+/BlueViolet{0.86 0.91 0 0.04 setcmykcolor}DC/Periwinkle{0.57 0.55 0 0
+setcmykcolor}DC/CadetBlue{0.62 0.57 0.23 0 setcmykcolor}DC
+/CornflowerBlue{0.65 0.13 0 0 setcmykcolor}DC/MidnightBlue{0.98 0.13 0
+0.43 setcmykcolor}DC/NavyBlue{0.94 0.54 0 0 setcmykcolor}DC/RoyalBlue{1
+0.50 0 0 setcmykcolor}DC/Blue{1 1 0 0 setcmykcolor}DC/Cerulean{0.94 0.11
+0 0 setcmykcolor}DC/Cyan{1 0 0 0 setcmykcolor}DC/ProcessBlue{0.96 0 0 0
+setcmykcolor}DC/SkyBlue{0.62 0 0.12 0 setcmykcolor}DC/Turquoise{0.85 0
+0.20 0 setcmykcolor}DC/TealBlue{0.86 0 0.34 0.02 setcmykcolor}DC
+/Aquamarine{0.82 0 0.30 0 setcmykcolor}DC/BlueGreen{0.85 0 0.33 0
+setcmykcolor}DC/Emerald{1 0 0.50 0 setcmykcolor}DC/JungleGreen{0.99 0
+0.52 0 setcmykcolor}DC/SeaGreen{0.69 0 0.50 0 setcmykcolor}DC/Green{1 0
+1 0 setcmykcolor}DC/ForestGreen{0.91 0 0.88 0.12 setcmykcolor}DC
+/PineGreen{0.92 0 0.59 0.25 setcmykcolor}DC/LimeGreen{0.50 0 1 0
+setcmykcolor}DC/YellowGreen{0.44 0 0.74 0 setcmykcolor}DC/SpringGreen{
+0.26 0 0.76 0 setcmykcolor}DC/OliveGreen{0.64 0 0.95 0.40 setcmykcolor}
+DC/RawSienna{0 0.72 1 0.45 setcmykcolor}DC/Sepia{0 0.83 1 0.70
+setcmykcolor}DC/Brown{0 0.81 1 0.60 setcmykcolor}DC/Tan{0.14 0.42 0.56 0
+setcmykcolor}DC/Gray{0 0 0 0.50 setcmykcolor}DC/Black{0 0 0 1
+setcmykcolor}DC/White{0 0 0 0 setcmykcolor}DC end
+
+%%EndProcSet
+TeXDict begin 40258437 52099154 1000 8000 8000 (diss.idv)
+@start end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 8000dpi
+TeXDict begin
+ end
+%%EndSetup
+TeXDict begin 21 0 bop 0 TeXcolorgray 0 52116 a @beginspecial
+0 @llx 0 @lly 72 @urx 72 @ury 4383 @rwi @setspecial
+%%BeginDocument: figures/policies/length-max-violin.pdf
+%PDF-1.5
+%Çì¢
+5 0 obj
+<</Length 6 0 R/Filter /FlateDecode>>
+stream
+xœí\M¯m·mß_q†7ƒÜˆúÖ´F' ±ŠZÃiZ¼—"q‹öç—\‹äŞ7š¢ãÃ—:Ú’(‰KÔ¥?¾Ê‡¼ŠıóÿÿğõíW¿]¯ùIÿw^?üô&/û÷Óx³Ÿ×©å%½—×Ÿ~|ûİ›”õú/Íó­ş÷oøä›ïü“ï¾ùõÏ?ùîío»~È9õÕJ·?^kíö’²E3¼şşõ‡¨¹|œ*{×Ïÿ°æüoÅhÓÆGÓ–mÙÏZU·şxv~ù5S¤éõõEÛ9öü·,”oö^³Ô[–H¹eÙ[»èÊã	÷,}Ÿ{c<áeò9nYjíõS{=áe÷ş1?i„[–¶Ïşè·,pËÒw‘OyÂ=ËõãŞ1p×ˆ'Æ
+AÖµ§å‰ämıc®H¹×Ùîš™tûqµ{ƒMúÔ”¶uòßJgÂ=Kkç“BpÏ2{ÑwËÂ„{–ÓåSçzÂ}ˆFoŸ‡ˆ	÷!’>>õ¿'Üûbù¤‘'ÜÛ’Vm]5–`âjÎ®S¯ˆ¦Í×gÃ(Œ¹aš²–Nª1'r©|¿µ†”Qjú-ó1©Æï­bìÆ,ñ{Ÿ¬e¯Å~³öŒ±WSVg=câMQ;²Ç`}_Ş4ıCğUó¯¦¨nÃÌ@ÿ®®™v[2»k7L×9 YßŞª¹\³¾¼Æ¹]³>Y"ş½—¸^½{{Vu½´Oé®W¯‘2\/	‚ZÖt½4¯çÙ®—Î9O9ªWÛ^ó.®Y[h×®®W‹¾Úøe´áºíáºi
+k5«ƒnjY^ê2©E	ÇµkM¥S\³£ªOÍš¸İæši
+[}ºkÖŠ—zfhV¼g©f:R^ÆvÍ4…õH)M'û¨Û‡XŠ@7M›™”‰¬TJ·9?êÊÆÈ&HYõƒ	ÍW _L`•ZçÇDÛ("u,ZUSaFù²ÙÂ+á°…È^…í[Ñ¾Z£}^]µaFª#Ú7ıƒÉö¡ìºÙ¶_Ÿîú»~­°}ø¶ÕúáİÉ¶µÆşæ¼P\µ•ÃÁÊÚ„26b@ ÈA•v &x½@!›¬£ÂÌ‘Ş NN,u NÎ;é*5hßÔÑyêõ÷
+uMPFB-{oLV*“SÅqÁŒ¼©Ãm>µ3 ì0Foİ b^½ºU´ˆS ŒZ<Å
+UtÂQìPÄÑBæ€*	'2'TQ«ğÚç†2=Û7ÍÎş\ÊŒ“pU(£Xçš/ùğÆ¬UFöÜÂÂj êİ±”i*ê©}†QÂV+¿ã´ì
+…f¶a7¨¤sÄ‡zw¨4{~2¡’NÙøÄ|úÜŞptluñ&Z÷*Qà¡u¯œ]‡ö½Ru
+…Z+ü9j­¬òĞÂWvüÙPÌÔGB-´ğ¸T-|L×B+ßÍk©¥C±=2Ç°b]¬eBµg-„ÓØj>ÖŠPì´h”N(V…Àp¦xBÃ	h«2¡Ø9^$ÀaÉ"¶Nz++Àa–­¬ ˆY&„f_ğ¨Ci*ÍX\+Àa
+ ƒY„÷a0L	Ã®
+À0eDs€aJLm ‡)±ÎÕÖM¡©ó.>8Ìšµ4 Ä¬=?@Ìšµt@ÄLÄ¯]¬„¬£&fË::`b6Ú|í ‰Ù²†˜íª 1}ùÕn‚Z¹Z×˜08ğnÇâ 	^ HÅãD#}ä€ŠÙc‘ª˜ššÀò&æ«P1G¬Íu*fºE•Mƒ@U' Â ¯*æØY$ bjçG‘€Š9%Š\ ‹9‰Œu*¬/r5¨4Ã%©Paè½´ súé„ÒVxku,æªQåXÌ•“w,æÊÙ ‹¹|`6 Bu ˜˜j"ü
+ ¡ 1·+s êşA(¢9¼Öh˜;­ğ æ>™C¡aıh°tÍ a—h˜'zO{ Š.%­ f~+€ıÚ;KMÍÔY%&E+€†Uj	pX%°»•cŠ­Øİà`ëŸ¨¯¢Õ®Âîlê¨°3;àaIÉì€‡%5Âeo” "–t*àaI8Ô­–Ä”iğ°t”½Ê
+xX@Ş*àÁ&_”± T•,ğ°j@`ÓÎ´j+Ú mÖ?Ó R±n
+Ğ°KZ8¬–ÒÀaÕ€ùÆ=×jÂºs„Z-†¿uÀÃj±’·xX-&vë ˆÕh¯­V›Qi<˜	Jµœ~ìûlÔ DØv$ «£…ÜH¬Ş  V‚S ‡Õsrb!Õ„œ'à°zà‰‚6R‹ÀÃ|µ	hXØ…µ	XXpzÚœPcÊ´©°Fİ$¬;Í¶ 	¶©òX€„e^k^€„5Ü’ ağÛ,¬tŠÔß…2#çØ8X‚7jÖL[Û€ˆ5sÒm@„œèîPl†£“ÄJÀÜ
+Ç„,ğ`îš¼k† 8Tš A…è’h°]%¾>†‹S;†™êÃ
+gHç+ÔYáò÷B`X1,ºÂBÅõ¬†ôĞzéPhÅ(õB`Hàî…À°ø5AaÅu!0¤C×…À°bşw!0¬ØTu!0¬è]ò©Tì“ºÖÎ†Ú+aÅzÔ«Ã­QWÇ*İ1ì½vXz¯‡M¯WBÃÎn«„†]³JBÃ€ìĞ°ÂÂÄî°Nio†İ!vø_½67½$ì@{…ªƒß:á`«K´Pç`ï…cÔ	
+{dq…=!và  X[>;&u…\fû 0Ü›–ÜÍ³>—8‰Wv¸™ŸˆW•“Xp5j×!š=—ë8p©¼ˆW§,â€sË–@ÈMƒîncH|J¬ÁAñ]Ä‚–²ˆ;ĞX»y}›h°c5Ñ¥ f™×±[Ì2ôÔ&"ìğú&"ì€/İrS±œØ›ˆû¥~ˆ¤á©a8ŞèÓæİÒãA@¬®MÄúı,¨´.Ñ!ÆaG„èØQzƒÅ!9Èâˆ½ 3ˆP³ĞõæFqD‹BD˜CæN‘ˆ0W&æÌTK·x1È?Äf
+–‰$N‰İÁ©J<˜±?µÆbä5TbÂEœVbÂÅ›VâBÒ¦£rõp•õ:‘a8{KG[ÌÑˆİU˜ùå„B=@Fº
+±6Œæ®!R7Bô|sG'.´ğFoáûxwâBë^Q¡„n.C»¸fÂDò‡cwé $*ŠˆÚ t¨’;Ñ1Óz‚ƒÄª4BrRN„dÏN„ä›ˆ’£7	edÃvV:	%›5}/Áå~LÀƒm¼ÿ–ï$‚æîêöåHæà^bïÌ1l{3ñçŒ‘k°H1ììßh˜+l“b¸luJ½Ÿ¶ÑéŒ
+x˜se	¤f,dc ló	7‰†‘
+>*%õ5‰†tÇi¶›ÎYvH3ô™	¤zšÄYÜ‘—,’4CºÜ:¶P«ÅhÏb4C‹Í&B­djg!ÍPf8ÌşÁ,$dg cPpşPH4Hì$¦ˆ‘9ü“C‰>Ğ©F2(&Ÿ–ÒÁ?ñWr‘çÊP0OŞ›+ÆEnüV#ºYÉE&]6+`AgGWÉF®p(f4Œô!g%™'M³c¡hs&’>yÈsl6X¿±&Ş FrHæ ,ÜÎršñ¹©™
+°p1Á:ÒäŠÃ¥œĞ âÚÈD&W>; bÔ™9ÈDÖ°ÖÙ—ş.1ít«µ$°lêÂf•J,Rs  l·æ2ÈC‚Ÿ›à`¸+5À>±şpè'<”9 æEq€‡Îa€#³¼ıĞ`{IÏNëÕ“8S¡¡¯,ºï¦Á‚V—ë¥¹©Ó“
+à`˜í
+/€ƒuœ·A‘^ÅX¼æ8ô 4ÀAÊL 8ô‹ğ\€‡Ş>´UP«§inÀCo9õ¶ÂC÷İöÜ ;·ˆcÀ	µòÔdn€CÇ¢¸	•jVw =)…ZmŸÄ4€¡_³à tS}p ºí‰= †^Ò¼€ÁVÏ(Ğ`“˜µ¬"ö{´aÀCKÂh•nJµ¨«K)ÕNÏ&BN€¨Nù“ØZE!ÂèW6J—5S¬%'®Ÿ)ÖÒÛ]˜h;8ï%€	İ@ç¡*`ÂÜo¸ &táØoánèâ¥V–_+”Z-s (ÚBQµC¡6¿*@¢Í“Ù$Z2”ê4@!l´Õ¥€2sB 84 Õj †6\Ô7¹Û_
+ÀĞ’XÚDÃÍ[è3KxáÌJL•ê*A…¤t5üÔF-(‘|ÅRëQ1Ü”Õ
+-WKõİ ÈˆÙ¯&eF¬TêùA¡äD<ALÑz}Y®"M¾jTÉBV¼AæÕ^ÈíRG¬"õ…<®îPyÜú
+r®Ti}¬«§M¾Bl#]¯‘Ry°n£ÊİË*ÔCçm¿& NQ{Ì•¼8}T.×ì’&›-áÔ«¢_sSŒqÌ©«İXÌl•Ú5åU~I›/½rY•Ø¢Ù.³—]ŠŸ3ÌV¥ÂvÒªu+³ıW˜½ÊÓeàÎ™Ç*WÖFdQ¹°5<R¿pIª	\*·¹
+ÇÚë‚>©êIÔUş;¦‰Êñ½ wñÒu™^;±YÌ÷¸·ØÀõÙ¥ÚòsA¿Êó#×•f/*ßV©}_‹J^W%©8ÈeËÎú¯UM¥ñ‘‹Û}[Åø¦u-šb[¿q­ªbNX»–]±	v[•¥ê
+sbÑV©QG®é*ÿºR‚ºè¨ÔX7•=7=
+qx¥Ã¡’—mşˆJ…cGwEd{oÒ—A¼zŸÎØt§ûBK—åzÒ]R5›/¥ûo)ºZb t­hé2«ÿNK—qØzs*û<¢»'‚8µôE:­î¢H7oRe¡&t7ÕûŞìú£‚0µW:¬*‹ÿNk×‰JMÍÕU‰¨ã°ÊÅ¥½‹,d¢½[
+]iÚ»Õ½q[Kw]åÆÖ˜' ÔFG_ì4š~>v*ûˆs› räÇ>BÊæ¯´vnáDìh	y¹A£w¹Ã¡µ—åÄ
+ÊníÜI™Ë¿§µÛúA¦µ—Éu[,±n;01€ÂF’[4•¥ûNŠ©oò „Í-wb'û”ÍÚíd­½´é2í½4jî»P•¹Êù&U×`¶Îw±bGwÜÄÒæIû.XŒÇâ–6¯
+zé´ù‚£2ßd‹
+‚œà.\Œ—¿mÓU¦dönqSü–ön!ÜÁÃŞÏI‹ÁÉ]ƒsç\¤Fûœ‹t€İ[“tP³?Éš:‡a‡œQ ÿ8/î,ÈYÉa‘'9‹”¬ŞÆîÏr.ş€LÌÉçjNn%É±“H€ùŸÙ3öÒ#sè¸×é\Y¦3’ë!uF¶’<Õ-‰+`ÀÉèCçºŒõBÉ…äÙ2›–Á–	NOF‰ŒÛÁIsq'÷5ÎÕ<ös&ïäFLßièg²€Çw=ÎŒzpñ´äPÈ4Z<? œÜ;Wy*‰O ÁÉ(6ç:OMZ’L¨_yÛÈ•ÜH9›zj’‡ä[n6Uìƒd²È×ZhbP¼@„“ñ%ÎùÙ™ L°¨£ˆf(¨[A-É+I>Ì³ÑnúÀP¹>’d<¹í“Q2Î}Û³ódÇOnöÀ¹¨v ƒ&¼’w?É83òTŞ¹{äó`Ã)y4Fşß"Âb<ãÀ '–µ" /~q’iò3
+à£Œ
+Ø};á8å:á 8”ë„ƒàPz‘
+:”g,&æ­ç)Œ%ÌûÍÉ¸?Å9É™ú9%Ä9á¡´<ç!<»ñ$É2™_¹ï§P÷"g'
+¸P£íŸNÁn
+á9Ù­©<E»)Ãs¶›º<‰»uOêNîüı,êŸ®.·“@	ç9¡%x	<I´õxÎˆ¾ŸDŞæ Ï*}†ğó6xÎQÄyjs0N‰jâ'©'yq?k½MkÆ¤DpZk†§µÄ‚hëç½'ÃUüDøfiâXÇ^âXcâhGgâh¸âhp†'"Äa8½@â0Ü‡áy¦X€yDY
+ò¬ŒgóÇ}E?»¿ ÎO÷O[øùÿqÇÃã€™şÑ ><Âà\!5Œ?0\ŠèD( ¨=şarGÈ¡ÆœCüÃ…ıa«CÄG°÷ø
+[L\F`œzöãœÇpØÚô)Êãd³ÇØêQÄ„ví‘$ê~5±Òã4b+¨·Â¢UNá{4Ëñ0At¹cƒ±şF/™à.Cøicg‘à.CÆ1Zç$ûéñ<'ï-x´ÏÉS;:lèÑBß÷x$?ôX£32^„ÑHæéD4ábdÜã™Î·Ãˆ'¸O^!cdL£¦ŒˆØ,BF²TyuœóÈ¬3³YŒİ:3B‰=ºKà—G~™?¥.fÎHÆy£.®@ÆYp_£.ÖŒF¸Xô˜<¾ÍÙ(`±2ÔŠñq'ÏÎ<‚îdä‹ÇØ™WáÇ(¼“a,ˆÒ;yRï1|'ƒP<ÊÏ¼sWq€g§m2RğàĞãÏÎ€)F¤}=ÑviHÀğ@ge<'ã8íhHå‘Ç÷±šxÄäIr•¶eñXRF\Úæ•™*yd5#6môÊ`N•¸ÛöXO1·q¡À
+•—ÿ>|¿´ıw …î½ŠÿNfÁ´âïÀ	•›ÿNf¡ãbyµ¯¸?‰W•ÈÜy,vÀfŒ¬êL†Ñƒh±g\¯Œ²U™ûcÂÅ“a»‡ºø]ãÛF£>ÆùbÏŠò,æä¢<Æ	cËòÈ,”Ã…Ú4rDÆí9”Æe1‚=1œY@¡Ç8KéäŠ<»qÔ=œYèd­<ˆ»wäïÎ-²K„İ>òwç†ñ2Œ[åáù[pnÏÃÀUŞÜÂŒÒu™d|<Ê\JÄ;3]e/½9·0½ôæÜ‚‡áy¤;˜ô\svaEù…Ú,/¿:»°Èx´½Ê^~uva‘÷X}01Ìva“	ñ(°6Ìíì#œyK ÷ ĞÓâìÂ&»å·T&Oç×¤äMg9Y¿È †+¨7T&?í!À@¡<’IRâ¯RˆøÅ
+pŠÎ]û5•;û½8§XÈëùEäÂü¦‡èá:ÖqNÑÙO¿+"ÖDşî¼¢Zs}åmpoüİyE™ş;­_°È-*›f~ßÌï¿€U¬œ±~WFŒ®GYÛYEó’^yÛFeJÎ)ÚÅ±WŞÖÁu4üÎË<"~â·}ÀA¢t^saû+ï©L>Ë¯Ãä÷Î*62¬~!Iì°õO°ŠóÏ¯2‰8{æwD:‘Æ/C%ƒêw¥T®¬W©Ä¶ü”iıÒ½5¼ˆF–2­_-ü"—Êdşı¦Wò¹~LlµDûxWLdøÈØ52±ƒèÆ[f`‡¡;/¡	'~ŞRSÙûWØD×¿ã¶™ßÓúMFëxCNåéùiıªÅ+oØ	ù¼‚§2W
+¿£™ù»ëB®wü ñkÚ¾nn^y;Ğ$ÖÌëƒÑ2Ş/T™Œ«_>„Ìü´}“y½±9ïsš·ÁÃó{Ú¾L²~72Ê?OHÙmú<qûNÙí;ó»}O®`~™óª¿¸}OÔnWA¯¶·m3ñ«¤™Ûm{’—÷«¨-\VE‚Uv–÷»•W]sXâ6,ÆÍú:.Ì"9üN-Feø†	VCÜÊÍ™c—vsZÅŞœwqíÓºg»û‡1±­Â¸YKÀië¡Y¼®[É°œÎP¨SÃ¸Û«ãÙn(ÔW™z…İOd%Šƒ3şÊÓ¹PÇA"nh_ç0aä%}¼t”<Y	uÚÃ"šGh¹BÁîP¨qu‰Kè Mß¡P° =jf^q×=QÙ®Â²I†B•'q™OæŒ
+UÕ¡P%ÕêõÃ«¶ô8k“÷ú¿ØS¯oß°©×ÙëçØ»ÏS ÏS ÏS ÏS ryÏS ÏS _§ § § ¾<O¼¾<O<O¼¾<O<O¼¾<O<O<O¼¾<O<O<O<O<O<O°äç) $<O<O<O0áy
+àãy
+ày
+ày
+ày
+ày
+ày
+àËóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀóÀ—ç)€ç)€/ÏS ÏS ÏS ÏS ÏS ÏS ÏS ÏS öçóÀÿÿ)€ß¿}÷ö›·òúöíW¿=¯o¾ûk¯€È.ûµ;··_ßÜU3å‹–ø+Ç`ªVõˆŞ¯™Ò’åûí½r˜tÿUW£Û¯&İ…Ï)÷
+˜ğ)n!uï@Â§<¶µ{&|ÊcÛï~ÏÃ„{:àÕ^y<á§Ù¿+å	ŸúÄò»^pÏccğÃOo¶ÉTï¦¾~şÇO?üáíÚ%/ûçÿûáëëo¾×oUÔ}nş_ßÛkÈ¡y>¦íù(ãõı×·x/¿ø%<ğ!ïò‹_jÑ¶ÿ>H¶Së:Şë_Nn)ù½ÿåÌãgÉªg}ŸŸ“‡m,Ö~ß–l½²ûŸ·ïş·B•EóDÅ‹uâïrııßûö·ß«ÍDÿ¢oşJWZÇ)ŒßûÒâ=NéÈÚ¦ùwVî_¦*ñO¬r´şşßö§î†wYïÿjëÕmÍûWû{è&ñœ÷ÿt…Ôä™îÅ¼~¡v³Lï¿FruŸg÷bşù–şãíï?¡	:mN½ùï·,¿»’™£Œ5ß¿a¥êº÷÷ßßrS½ºçZ,\§í^j#Ïø»˜ïşşW‘?şù§êì7iï?]Ùs~óö?µÁendstream
+endobj
+6 0 obj
+6847
+endobj
+4 0 obj
+<</Type/Page/MediaBox [0 0 792 144]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ColorSpace 12 0 R
+/ExtGState 13 0 R
+/Font 14 0 R
+>>
+/Contents 5 0 R
+>>
+endobj
+3 0 obj
+<< /Type /Pages /Kids [
+4 0 R
+] /Count 1
+>>
+endobj
+1 0 obj
+<</Type /Catalog /Pages 3 0 R
+/Metadata 16 0 R
+>>
+endobj
+7 0 obj
+<</Type/ExtGState
+/BM/Normal
+/OPM 1
+/TK true>>endobj
+8 0 obj
+<</N 3/Length 3144>>stream
+  HLino  mntrRGB XYZ Î  	  1  acspMSFT    IEC sRGB              öÖ     Ó-HP                                                 cprt  P   3desc  „   lwtpt  ğ   bkpt     rXYZ     gXYZ  ,   bXYZ  @   dmnd  T   pdmdd  Ä   ˆvued  L   †view  Ô   $lumi  ø   meas     $tech  0   rTRC  <  gTRC  <  bTRC  <  text    Copyright (c) 1998 Hewlett-Packard Company  desc       sRGB IEC61966-2.1           sRGB IEC61966-2.1                                                  XYZ       óQ    ÌXYZ                 XYZ       o¢  8õ  XYZ       b™  ·…  ÚXYZ       $   „  ¶Ïdesc       IEC http://www.iec.ch           IEC http://www.iec.ch                                              desc       .IEC 61966-2.1 Default RGB colour space - sRGB           .IEC 61966-2.1 Default RGB colour space - sRGB                      desc       ,Reference Viewing Condition in IEC61966-2.1           ,Reference Viewing Condition in IEC61966-2.1                          view     ¤ş _. Ï íÌ  \   XYZ      L	V P   Wçmeas                            sig     CRT curv           
+     # ( - 2 7 ; @ E J O T Y ^ c h m r w |  † ‹  • š Ÿ ¤ © ® ² · ¼ Á Æ Ë Ğ Õ Û à å ë ğ ö û
+%+28>ELRY`gnu|ƒ‹’š¡©±¹ÁÉÑÙáéòú&/8AKT]gqz„˜¢¬¶ÁËÕàëõ !-8COZfr~Š–¢®ºÇÓàìù -;HUcq~Œš¨¶ÄÓáğş
++:IXgw†–¦µÅÕåö'7HYj{Œ¯ÀÑãõ+=Oat†™¬¿Òåø2FZn‚–ª¾Òçû		%	:	O	d	y		¤	º	Ï	å	û
+
+'
+=
+T
+j
+
+˜
+®
+Å
+Ü
+ó"9Qi€˜°Èáù*C\u§ÀÙó
+
+
+&
+@
+Z
+t
+
+©
+Ã
+Ş
+ø.Id›¶Òî	%A^z–³Ïì	&Ca~›¹×õ1OmŒªÉè&Ed„£Ãã#Ccƒ¤Åå'Ij‹­Îğ4Vx›½à&Il²ÖúAe‰®Ò÷@eŠ¯Õú Ek‘·İ*QwÅì;cŠ²Ú*R{£ÌõGp™Ãì@j”¾é>i”¿ê  A l ˜ Ä ğ!!H!u!¡!Î!û"'"U"‚"¯"İ#
+#8#f#”#Â#ğ$$M$|$«$Ú%	%8%h%—%Ç%÷&'&W&‡&·&è''I'z'«'Ü(
+(?(q(¢(Ô))8)k))Ğ**5*h*›*Ï++6+i++Ñ,,9,n,¢,×--A-v-«-á..L.‚.·.î/$/Z/‘/Ç/ş050l0¤0Û11J1‚1º1ò2*2c2›2Ô3
+3F33¸3ñ4+4e44Ø55M5‡5Â5ı676r6®6é7$7`7œ7×88P8Œ8È99B99¼9ù:6:t:²:ï;-;k;ª;è<'<e<¤<ã="=a=¡=à> >`> >à?!?a?¢?â@#@d@¦@çA)AjA¬AîB0BrBµB÷C:C}CÀDDGDŠDÎEEUEšEŞF"FgF«FğG5G{GÀHHKH‘H×IIcI©IğJ7J}JÄKKSKšKâL*LrLºMMJM“MÜN%NnN·O OIO“OİP'PqP»QQPQ›QæR1R|RÇSS_SªSöTBTTÛU(UuUÂVV\V©V÷WDW’WàX/X}XËYYiY¸ZZVZ¦Zõ[E[•[å\5\†\Ö]']x]É^^l^½__a_³``W`ª`üaOa¢aõbIbœbğcCc—cëd@d”dée=e’eçf=f’fèg=g“géh?h–hìiCišiñjHjŸj÷kOk§kÿlWl¯mm`m¹nnknÄooxoÑp+p†pàq:q•qğrKr¦ss]s¸ttptÌu(u…uáv>v›vøwVw³xxnxÌy*y‰yçzFz¥{{c{Â|!||á}A}¡~~b~Â#„å€G€¨
+kÍ‚0‚’‚ôƒWƒº„„€„ã…G…«††r†×‡;‡ŸˆˆiˆÎ‰3‰™‰şŠdŠÊ‹0‹–‹üŒcŒÊ1˜ÿfÎ6nÖ‘?‘¨’’z’ã“M“¶” ”Š”ô•_•É–4–Ÿ—
+—u—à˜L˜¸™$™™üšhšÕ›B›¯œœ‰œ÷dÒ@®ŸŸ‹Ÿú i Ø¡G¡¶¢&¢–££v£æ¤V¤Ç¥8¥©¦¦‹¦ı§n§à¨R¨Ä©7©©ªª««u«é¬\¬Ğ­D­¸®-®¡¯¯‹° °u°ê±`±Ö²K²Â³8³®´%´œµµŠ¶¶y¶ğ·h·à¸Y¸Ñ¹J¹Âº;ºµ».»§¼!¼›½½¾
+¾„¾ÿ¿z¿õÀpÀìÁgÁãÂ_ÂÛÃXÃÔÄQÄÎÅKÅÈÆFÆÃÇAÇ¿È=È¼É:É¹Ê8Ê·Ë6Ë¶Ì5ÌµÍ5ÍµÎ6Î¶Ï7Ï¸Ğ9ĞºÑ<Ñ¾Ò?ÒÁÓDÓÆÔIÔËÕNÕÑÖUÖØ×\×àØdØèÙlÙñÚvÚûÛ€ÜÜŠİİ–ŞŞ¢ß)ß¯à6à½áDáÌâSâÛãcãëäsäüå„æ
+æ–çç©è2è¼éFéĞê[êåëpëûì†ííœî(î´ï@ïÌğXğåñrñÿòŒóó§ô4ôÂõPõŞömöû÷Šøø¨ù8ùÇúWúçûwüü˜ı)ıºşKşÜÿmÿÿ
+endstream
+endobj
+9 0 obj
+[/ICCBased
+8 0 R]endobj
+12 0 obj
+<</R9
+9 0 R>>
+endobj
+13 0 obj
+<</R7
+7 0 R>>
+endobj
+14 0 obj
+<</R10
+10 0 R>>
+endobj
+10 0 obj
+<</BaseFont/QOBUVR+Helvetica/FontDescriptor 11 0 R/Type/Font
+/FirstChar 32/LastChar 120/Widths[
+278 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+556 556 556 556 556 556 556 0 556 0 0 0 0 0 0 0
+0 0 0 722 0 0 0 0 0 0 0 0 0 833 722 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 556 556 500 0 556 278 0 556 222 0 0 0 833 0 556
+0 0 333 500 278 556 0 0 500]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+11 0 obj
+<</Type/FontDescriptor/FontName/QOBUVR+Helvetica/FontBBox[0 -23 762 741]/Flags 131104
+/Ascent 741
+/CapHeight 741
+/Descent -23
+/ItalicAngle 0
+/StemV 114
+/MissingWidth 278
+/XHeight 539
+/CharSet(/C/M/N/a/b/c/e/eight/f/five/four/h/i/m/o/one/r/s/six/space/t/three/two/u/x/zero)/FontFile3 15 0 R>>
+endobj
+15 0 obj
+<</Filter/FlateDecode
+/Subtype/Type1C/Length 2156>>stream
+xœUU	TW­²éªŠA:%*ÚÕƒËADAEE­¬
+„M6²ØìÄn@hQÜÆ%n|Å £‚ â’ÄuDq‰
+$ˆ´ŒvÛDÇÉ+Îïœ™’™3çÔ©ó—úÿ½wï}·HÂlA’äXßdUn²&=Q9<›ÉÛüÔ1ü4Ò
+å‰‘¹™›ÕMe­ YBäxp@ˆHÒ=2Ñ33+/;=5M#³‹]5{Î‡ÿ­,pšï,KÈû}Gæ•œ“š!›%r“U™YêäMPº:a},L™‘#…&§®W)³ÿo‘ ˆ)™Ù9šõÊ	‰AÉ)iéj§ù:/Z,s!ˆbF„D$áAD„1p$|áGøA„%aEHˆÏ–˜HX$1™°ª&Ì„íâ-N’ÇÄùfÌ;Ñ‘JT&úÙÌÎ,Í¬Ğìx…X)¾KÉ©Lê½Œ–Ó·à¼ß¤éæºÉ=4éEpŠ¯a±İB[ì…½
+Óa6Ø½ù+ÀÑìÀÈÙ·-r<OX)wœÚ
+Üíîã,†R4/ù—d}ŸhÈGl8;j±3š>WEûy¦NGx,Âæµ3Ú¼î®ü!«|w"˜9Ô®¨é[2ÔÁénˆÁ3Ö
+¶­w6eœãÎdUg,à5*ç7–ï)·jï–÷ZK´ó¬©¢NÑ`u»è}Ì+ZâT¸uWÁ›”°vµ#	é§-ø}£EŞÔÃN½ˆ÷ç-ØüŠ{xœĞâó û¥W“`‚šÓn¼·µ2¥LŠşÊ#.ùÈÉ\é¶£»î©eRÅx\ÛJ˜†˜Ôûø½6şÚôSÜ²Š?gœDµ“®k{Z“^(µ€óšNŞ¾|¥A‰ß"˜á‚gx)¾7É¨ˆšŒÇ'¨–vĞÜ·=bRw”Ör€_ÓÃDtF
+×gõXÅº]Ö’|îD¾Â7Ò’²0og?ååGRv1ÙÑÎÃş!•xu£†3
+íŒÇèqŞ©›¼ª‡#:¡İ¹/Úƒ˜ŒÍGOsğ€îS4bV´>)Uš“µC½ÓK•|wé¬1Ï¯dFqëéüÔ¼mŠxì–¼½k·­SÅ"ãğ$ø_Oš*›[¥#NkšÑqt¸°º„Á³@Á¢Ì]›²5éª„ÍÑˆñO>ßt§¦Úx„{Sv¬¸ú#€>B	7 Š/8(Ka+Š­ Tì@'.Å¸\ÜOÁdˆk+ †ëĞ†—óZ—[5ëà¶ŞZÓ<¤fUw=¥%
+A—›2:m@j1x€|ñGÌy~™’ÄÁYfá
+¶ï¾+¶ÄŸº:-íñ0şnÏî¿
+8/Ğ¿Ş³{omÿvÃÙÔ†€³‚l°öÀnFØ‚å‹.ø¬”[Bm]²Fé…Çğ.˜ ÖÍÚ;®'x”
+j†Ê‡¼ËÉ._bñiAÉƒØ†!5fiœöëx¬/ÆBÊ(H4Xh‘ÑCÏ
+¼Ô š"T´ĞÔG™,ù>ñ¬á
+?Îd |ÛÀ¹›äKa‹zv×o©K½ìöl!×Ys±»cw£-Ø¹®
+¨
+!WOLª/ŠDqU™×7œûú\şm¦°-h}Ô‹˜W­~s9A™Âµ6¤AçaAœÎ/©‹'×•¡üÒvzcñöA“òØøÜoE‡)FÇÇè‡µ%œí!;tP¤uŒğ¡ƒ«ô/-¯«OïÚR.­Ê+ÍF)ş·—Ñ†€;3İã4_DKámÙ#Jühõ¤×Eg-é{!¸‹©BGIŞ©Í–ØöR#¨
+AÒÊ­:„î†¬áÇZr±ã·IK>¿ó íáÅd_)şuxaxú &ÉoxÊO£ßFÜí­Ì
+‰–ªZ”U
+ÄHœ¼QÌºø æÙoí¡Õ’×ŒPkAõPë‡‚3R¢c5[3øëA˜`ÿRpµ­ ]ÿ÷˜ï¤)!Õ¾ˆq3ë¿é€ÃplìÜÙób~‚Hˆ¼ÙßÏàBB™Ae|!k*4E­¤U˜Ü°OİÄŒ §ç¯
+4.5Šø"=kú„úæŞ…Zı­ÁæI?7ßêDzÔšsGY§¬ıò¸ÍG¾ª¤ ìäíñû=UTğlYeåµ¿nBLÏıĞåa_­HåWa»%k|wa§É¼j´_øgİV<gô1ZKÚahÙÃTmx 1~ñ‚ğHÇ91õvs‚ƒ…–¦[[£èH\lÖ[=L1¦5.>ËI^=9ómÃ÷SÀÂµÛàéËİğœ}RUp­¸êğÉòºëUw£½·<*O´™ËÙ¡Ú˜ÏŒTö/Hè è9‹å|aË¯ñ§q—)T<†Û/XœMA6<¤
+z-8êI~™ H–@‚iiš(şu¥á/ÇZÓßêo;3$p<¦®'WHºleifÅºË?¨z„¤§şìA6ï•¸MÀUC´êGQ€ÚGå¿÷Ã%áö=‚p6³¼È
+y§(¿ˆ÷ÙàŒ0+ü‡¯¸p)ô¡Jğ>°&ÍïÃïğ¬UÉ\¸·¼{¢kIR0‚—,b_5…8,öw]Øö£áşıp3Æ¼ğr´VµF#ä/kÉ oÃÂvŞ¨ºˆ2`æÜ-XåB7,ò«LíŒ“J>¸&%†¸MÁæÃ@ö“X©d ½Hl]ZÇ`³]õñ>~Ññî+V_ÚV½‹“|Àf†ûa.‹CÂßÕéZ[KÓTòG!´,¼’ÒíûôjqÉ¡’¢¢â‡ÌÍ¯:(J0GÿÅ†uß
+endstream
+endobj
+16 0 obj
+<</Type/Metadata
+/Subtype/XML/Length 1336>>stream
+<?xpacket begin='ï»¿' id='W5M0MpCehiHzreSzNTczkc9d'?>
+<?adobe-xap-filters esc="CRLF"?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+<rdf:Description rdf:about='uuid:dfc830fb-3b78-11f3-0000-966a9a5af60d' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 9.19'/>
+<rdf:Description rdf:about='uuid:dfc830fb-3b78-11f3-0000-966a9a5af60d' xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2018-01-27T13:19:30+01:00</xmp:ModifyDate>
+<xmp:CreateDate>2018-01-27T13:19:30+01:00</xmp:CreateDate>
+<xmp:CreatorTool>R</xmp:CreatorTool></rdf:Description>
+<rdf:Description rdf:about='uuid:dfc830fb-3b78-11f3-0000-966a9a5af60d' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:dfc830fb-3b78-11f3-0000-966a9a5af60d'/>
+<rdf:Description rdf:about='uuid:dfc830fb-3b78-11f3-0000-966a9a5af60d' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>R Graphics Output</rdf:li></rdf:Alt></dc:title></rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+                                                                        
+                                                                        
+<?xpacket end='w'?>
+endstream
+endobj
+2 0 obj
+<</Producer(GPL Ghostscript 9.19)
+/CreationDate(D:20180127131930+01'00')
+/ModDate(D:20180127131930+01'00')
+/Creator(R)
+/Title(R Graphics Output)>>endobj
+xref
+0 17
+0000000000 65535 f 
+0000007181 00000 n 
+0000014975 00000 n 
+0000007122 00000 n 
+0000006952 00000 n 
+0000000015 00000 n 
+0000006932 00000 n 
+0000007246 00000 n 
+0000007307 00000 n 
+0000010504 00000 n 
+0000010628 00000 n 
+0000011013 00000 n 
+0000010536 00000 n 
+0000010566 00000 n 
+0000010596 00000 n 
+0000011321 00000 n 
+0000013562 00000 n 
+trailer
+<< /Size 17 /Root 1 0 R /Info 2 0 R
+/ID [<FE54FBB4F786567EE25118939B842BA6><FE54FBB4F786567EE25118939B842BA6>]
+>>
+startxref
+15136
+%%EOF
+
+%%EndDocument
+ @endspecial eop end
+%%Trailer
+
+userdict /end-hook known{end-hook}if
+%%EOF
