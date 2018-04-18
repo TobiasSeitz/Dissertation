@@ -5,21 +5,23 @@ csData <- read.table("rw/creation-strategies.csv",header=T,sep=";")
 
 csData <- renameColumn(csData, "X...Techniques","Techniques")
 
-labels <- c("Letters and Digits", 
-            "UPPER and lower case letters",
-            "Symbols",
-            "Avoid dictionary words and names",
-            "Character substitutions",
-            "Mnemonic phrase / acronym of a phrase",
-            "Spelling words backwards",
-            "Password genrated by software",
+labels <- c(
+            "None of the above",
             "Other technique",
-            "None of the above"
+            "Password genrated by software",
+            "Spelling words backwards",
+            "Mnemonic phrase / acronym of a phrase",
+            "Character substitutions",
+            "Avoid dictionary words and names",
+            "Symbols",
+            "UPPER and lower case letters",
+            "Letters and Digits"
             )
 
 (
   strategyPlot <- ggplot(csData,aes(Techniques,Percentage)) +
     geom_bar(stat = "identity") +
+    scale_x_discrete(limits = labels) +
     geom_text(aes(y=Percentage + 2, label = paste0(Percentage,"%"), vjust=0.5)) +
     labs(x="Password Selection Techniques") +
     coord_flip() +
