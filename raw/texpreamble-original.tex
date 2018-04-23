@@ -168,11 +168,15 @@
   \definecolor{darkgray}{rgb}{.4,.4,.4}
   \definecolor{lightgray}{rgb}{.85,.85,.85}
   
+  %%% ONLINE VERSION:
   % plainpages=false to avoid warnings about duplicate page labels
-  \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref}
-	\pdfcompresslevel=9
-	\pdfimageresolution=300
-  % temporarily disable \\
+%  \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref}
+%	\pdfcompresslevel=9
+%	\pdfimageresolution=150
+  %%% PRINT VERSION:
+  \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+  \pdfcompresslevel=9
+  \pdfimageresolution=300
   \renewcommand{\\}{}
   \pdfinfo{
     /Author(\myname)
@@ -185,7 +189,7 @@
     pdfsubject = {Dissertation of \myname},
     pdfauthor = {\myname},
     pdfdisplaydoctitle = true
-  }
+  	}
 \else
   \usepackage[draft]{hyperref}
 \fi
