@@ -17,7 +17,9 @@
 \include{texpreamble-original} % load additional stuff
 \raggedbottom % test vertical justification switch off
 %\addcontentsline{toc}{chapter}{Index}
-\usepackage{glossaries}%needs to come after! hyperref so we do it here. 
+\usepackage[nopostdot,style=long,nonumberlist,toc]{glossaries}%needs to come after! hyperref so we do it here. 
+\setlength{\glsdescwidth}{0.7\textwidth}
+\setlength{\glspagelistwidth}{0.3\textwidth}
 \include{glossary}
 \makeglossaries
 \begin{document}
@@ -34,8 +36,6 @@
 	\newgeometry{inner=30pt,outer=30pt,top=30pt}
 	\noindent\begin{minipage}{188mm} % 210-11-11
 		
-		
-		
 		\begin{picture}(0,0)%
 		\put(258.7,-858.8){\includegraphics[width=140mm]{figures/general/lmu-siegel-grey.pdf}} % LMU signet
 		\end{picture}
@@ -45,8 +45,7 @@
 		\noindent
 		
 		\vspace*{23mm}
-		
-		
+
 		\begin{center}
 			\vspace*{20mm}
 			\rule{\textwidth}{0.5pt}
@@ -208,12 +207,9 @@
 % References must be the same font size as other body text.
 
 
-%\bibliographystyle{abbrv}
-\bibliographystyle{SIGCHI-Reference-Format}
-%\bibliographystyle{apalike-doi}
-%\bibliographystyle{acm-sigchi-modern}
 
-%\bibliographystyle{bibstyles/ACM-Reference-Format}
+\bibliographystyle{SIGCHI-Reference-Format}
+
 \bibliography{library}
 
 
@@ -226,10 +222,12 @@
 %\printindex
 \printindex
 \glsaddall
-\addcontentsline{toc}{chapter}{Glossary}
+
+\small
 \printglossaries
 
 \cleardoublepage
+\normalsize
 \input{content/declaration} % load declaration
 
 \end{document}
