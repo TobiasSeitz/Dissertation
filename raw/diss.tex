@@ -16,7 +16,8 @@
 
 \include{texpreamble-original} % load additional stuff
 \raggedbottom % test vertical justification switch off
-
+%\addcontentsline{toc}{chapter}{Index}
+\usepackage{glossaries}%needs to come after! hyperref so we do it here. 
 \include{glossary}
 \makeglossaries
 \begin{document}
@@ -217,7 +218,7 @@
 
 
 \cleardoublepage
-\addcontentsline{toc}{chapter}{Appendix}
+%\addcontentsline{toc}{chapter}{Appendix}
 \input{content/appendix}
 
 \phantomsection
@@ -225,6 +226,7 @@
 %\printindex
 \printindex
 \glsaddall
+\addcontentsline{toc}{chapter}{Glossary}
 \printglossaries
 
 \cleardoublepage
