@@ -1,9 +1,9 @@
 #! /bin/bash
 
 cd /Users/Tobi/Dissertation
-git checkout auto
+git checkout revision
 git add . 
 git commit -m "auto commit `date`"
 git push origin --all
 git push drive --all
-git push lrz --all
+#git push lrz --all
