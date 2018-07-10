@@ -65,6 +65,7 @@ savePlot(ciGuessesAll, "graphs/ci-guessesLog10-all.pdf", width=5, height=3)
 (ciGuessesOwn <- plotCI(d.own.all, dependentVariable = "guesses_log10", groupVariable = "group_id", xAxisTitle = "Guesses (log10)", minValue = 1, maxValue = 17, step=2))
 savePlot(ciGuessesOwn, "graphs/ci-guessesLog10-own.pdf", width=5, height=3)
 
+##### length of own passwords plot
 (ciLengthOwn <- plotCI(d.own.all, dependentVariable = "password_length", groupVariable = "group_id", xAxisTitle = "Password Length", minValue = 8, maxValue = 16, step=1))
 savePlot(ciLengthOwn, "graphs/ci-length-own.pdf", width=10, height=3)
 

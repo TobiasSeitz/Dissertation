@@ -1,4 +1,7 @@
 # nudge efficacy.
+library(ggplot2)
+library(scales)
+library(extrafont)
 
 d = read.csv("./data/paper-graphs-data.csv",header=T,sep=";"); # final set of 83 participants
 conditions <- c("Control","Passphrase", "Mangled", "Decoy");
@@ -19,20 +22,24 @@ counts <- rbind(counts, data.frame(dummycol="y",
                                    behavior="ineffective (own password, weak score)",
                                    count=length(d.treatment$score[d.treatment$score < 3  & d.treatment$used_own_password == "YES"])))
 counts <- rbind(counts, data.frame(dummycol="y",
-                                   behavior="on-par (own password, on-par score)",
+                                   behavior="on par (own password, on par score)",
                                    count=length(d.treatment$score[d.treatment$score > 2 & d.treatment$used_own_password == "YES"])))
 counts <- rbind(counts, data.frame(dummycol="y",
                                    behavior="effective (suggestion accepted)",
                                    count=length(d.treatment$score[d.treatment$used_own_password == "NO"])))
 
 
-proportionTreatmentEffectivenessPlot <- ggplot(data=counts, aes(x=dummycol,y=count,fill=behavior)) + 
+(proportionTreatmentEffectivenessPlot <- ggplot(data=counts, aes(x=dummycol,y=count,fill=behavior)) + 
   geom_bar(stat="identity",position = "fill") +
   scale_y_continuous(labels = percent_format()) +
   coord_flip() +
   labs(y = "Proportion of Treatment Groups") +
-  guides(colour = guide_legend(reverse=T)) +
+  guides(fill = guide_legend(reverse=T, title="Nudge Efficacy")) +
+  theme(legend.position="bottom") + 
   theme(axis.text.y = element_blank(),axis.title.y = element_blank()) +
-  theme(axis.ticks.y = element_blank())
+  theme(axis.ticks.y = element_blank()) +
+    theme(text = element_text(family="Roboto"))
+)
 
-savePlot(proportionTreatmentEffectivenessPlot, "treatment-impact.pdf",path="graphs", height=1)
+
+savePlot(proportionTreatmentEffectivenessPlot, "treatment-impact-v2.pdf",path="graphs", height=2.5)
