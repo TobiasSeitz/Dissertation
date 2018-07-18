@@ -123,7 +123,7 @@ For overall strength rating, most covariates revealed linear associations (Table
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{personality/rating-b5-predictors-G_Overall}
+	\includegraphics[width=\linewidth]{personality/png/rating-b5-predictors-G_Overall}
 	\caption{\label{fig:personality:study2:rating-b5-predictors-G_Overall}Visualization of generalized additive models for overall strength perceptions (i.e. tendency to judge a password stronger) with Big-Five traits as covariates. There is a significant negative association for openness: participants scoring higher on the openness trait judged password strength lower.}
 \end{figure}
 
@@ -132,7 +132,7 @@ For overall strength rating, most covariates revealed linear associations (Table
 Although the IPIP scale showed good internal consistency, we can try to break down the contributing factors. Usually, a \textit{Principal Component Analysis} (PCA) reduces the number of factors, but does not have to. In our case, we would expect five distinct factors from the 50 items, but a PCA revealed that there might be \textbf{ten} for our data set. We thus extracted those factors with a standard factor analysis using varimax rotation and used these factors as predictors instead of the big-five trait scores. The resulting model explained a larger portion of the deviance (20.1\% vs. 14.7\%) for overall assessment, but the R-square value remained constant. Coefficients for Factor 3 were biggest ($B=-2.16, \beta=-0.21$), and all items of the openness sub-scale loaded onto it. To a much smaller degree, conscientiousness, agreeableness, and extraversion items also formed this factor. As a consequence, marginal effects, i.e. caused by only one personality trait, can be ruled out -- it is a combination of trait scores that explains associations in our model. However, only a confirmatory study with a larger sample size can deliver final answers as to the specific trait combinations. As of now, we hypothesize that participants showing particular constellations of openness, conscientiousness and extraversion scores rated all passwords lower than other participants.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{personality/rating-fa-predictors-G_Overall}
+	\includegraphics[width=\linewidth]{personality/png/rating-fa-predictors-G_Overall}
 	\caption{\label{fig:personality:study2:rating-fa-predictors-G_Overall}A principal component analysis suggested there might be 10 explanatory factors in our dataset for the personality construct, which we then extracted using varimax rotation. Factor 3, which was mostly loaded with \textit{openness} items, Factor 9 (mostly \textit{conscientiousness}), and Factor 10 (mostly \textit{extraversion}) were associated with lower ratings.}
 \end{figure}
 
@@ -157,10 +157,10 @@ Personality traits on the other side, although statistically significant, were w
 \begin{figure}[htbp]
 	\centering
 	\begin{subfigure}[t]{\linewidth}
-		\includegraphics[width=\textwidth]{personality/rating-manual-mixed-v9-predictors}
+		\includegraphics[width=\textwidth]{personality/png/rating-manual-mixed-v9-predictors}
 	\end{subfigure}
 	\begin{subfigure}[b]{\linewidth}
-	\includegraphics[width=\textwidth]{personality/rating-manual-mixed-v9-b5}
+	\includegraphics[width=\textwidth]{personality/png/rating-manual-mixed-v9-b5}
 	\end{subfigure}
 	\caption{\label{fig:personality:study2:rating-mixed-model} Top: Longer passwords were perceived as stronger. Correlations turned negative if, substitutions were factored into the model. Bottom: Personality traits showed very small associations.}
 \end{figure}
