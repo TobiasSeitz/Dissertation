@@ -1,1 +1,549 @@
 \expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{\rmfamily  \bfseries  \scshape  {Abstract}}}{7}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{\rmfamily  \bfseries  \scshape  {Zusammenfassung}}}{9}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{Disclaimer}}{11}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Personal Contribution Statement}}{11}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Acknowledgments}}{13}\relax 
+\doTocEntry\toclikechapter{}{\csname a:TocLink\endcsname{2}{x2-6000}{QQ2-2-6}{Table of Contents\\}}{21}\relax 
+\doTocEntry\tocchapter{1}{\csname a:TocLink\endcsname{3}{x3-70001}{QQ2-3-7}{Introduction}}{3}\relax 
+\doTocEntry\tocsection{1.1}{\csname a:TocLink\endcsname{3}{x3-80001.1}{QQ2-3-8}{The State of the World}}{3}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-90001.1}{QQ2-3-9}{Education}}{4}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-100001.1}{QQ2-3-10}{Enforcement}}{4}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-110001.1}{QQ2-3-11}{Assistance}}{4}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-120001.1}{QQ2-3-12}{Persuasion}}{5}\relax 
+\doTocEntry\tocsection{1.2}{\csname a:TocLink\endcsname{3}{x3-130001.2}{QQ2-3-13}{Problem Statement and Research Objectives}}{5}\relax 
+\doTocEntry\tocsubsection{1.2.1}{\csname a:TocLink\endcsname{3}{x3-140001.2.1}{QQ2-3-14}{Balancing the Costs}}{5}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-150001.2.1}{QQ2-3-15}{Maintaining Usable Password Practices}}{6}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-160001.2.1}{QQ2-3-16}{Striving for Stronger Password Practices}}{7}\relax 
+\doTocEntry\tocsubsection{1.2.2}{\csname a:TocLink\endcsname{3}{x3-170001.2.2}{QQ2-3-17}{The Challenge: Improving an Innately Annoying Interaction}}{7}\relax 
+\doTocEntry\tocsubsection{1.2.3}{\csname a:TocLink\endcsname{3}{x3-180001.2.3}{QQ2-3-18}{Research Questions}}{8}\relax 
+\doTocEntry\tocsection{1.3}{\csname a:TocLink\endcsname{3}{x3-190001.3}{QQ2-3-19}{Main Contributions}}{8}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-200001.3}{QQ2-3-20}{Insights into Context Factors of Password Practices}}{9}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-210001.3}{QQ2-3-21}{Investigation of Persuasive Strategies}}{9}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-220001.3}{QQ2-3-22}{A Structured Process for the Persuasive Design of Password Support}}{9}\relax 
+\doTocEntry\tocsection{1.4}{\csname a:TocLink\endcsname{3}{x3-230001.4}{QQ2-3-23}{Thesis Structure}}{10}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-240001.4}{QQ2-3-24}{Part \o:ref {part:related_work}: Foundations of Usable Authentication}}{10}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-250001.4}{QQ2-3-25}{Chapter \o:ref {chap:rw:passwords}: Foundations}}{10}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-260001.4}{QQ2-3-26}{Chapter \o:ref {chap:rw:user_perspective}: Human Factors}}{11}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-270001.4}{QQ2-3-27}{Chapter \o:ref {chap:rw:summary}: Related Work Summary}}{11}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-280001.4}{QQ2-3-28}{Part II: Exploring the Context Factors}}{11}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-290001.4}{QQ2-3-29}{Chapter \o:ref {chap:pasdjo}: Mental Models of Password Strength}}{11}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-300001.4}{QQ2-3-30}{Chapter \o:ref {chap:policies_reuse}: Policies and Reuse}}{12}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-310001.4}{QQ2-3-31}{Chapter \o:ref {chap:pws_and_personality}: Personality in Password Practices}}{12}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-320001.4}{QQ2-3-32}{Chapter \o:ref {chap:mental_models_pwm}: Mental Models of Password Managers}}{12}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-330001.4}{QQ2-3-33}{Part III: Persuasive Design Strategies}}{13}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-340001.4}{QQ2-3-34}{Chapter \o:ref {chap:feedback_modalities}: Feedback Requirements}}{13}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-350001.4}{QQ2-3-35}{Chapter \o:ref {chap:decoy}: The Decoy Effect}}{13}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-360001.4}{QQ2-3-36}{Chapter \o:ref {chap:emojipasswords}: Emoji-passwords}}{14}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{3}{x3-370001.4}{QQ2-3-37}{Part IV: Synthesis}}{14}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-380001.4}{QQ2-3-38}{Chapter \o:ref {chap:perdespassup}: P4P Framework}}{14}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-390001.4}{QQ2-3-39}{Chapter \o:ref {chap:summary}: Summary}}{14}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-400001.4}{QQ2-3-40}{Chapter \o:ref {chap:the_end}: The End}}{15}\relax 
+\doTocEntry\tocsection{1.5}{\csname a:TocLink\endcsname{3}{x3-410001.5}{QQ2-3-41}{Style Choices}}{15}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-420001.5}{QQ2-3-42}{Singular They:}}{15}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-430001.5}{QQ2-3-43}{Plurals:}}{15}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{3}{x3-440001.5}{QQ2-3-44}{Footnotes:}}{15}\relax 
+\doTocEntry\tocpart{I}{\csname a:TocLink\endcsname{7}{x7-45000I}{QQ2-7-45}{FOUNDATIONS OF USABLE AUTHENTICATION}}{19}\relax 
+\doTocEntry\tocchapter{2}{\csname a:TocLink\endcsname{8}{x8-460002}{QQ2-8-46}{Foundations}}{21}\relax 
+\doTocEntry\tocsection{2.1}{\csname a:TocLink\endcsname{8}{x8-470002.1}{QQ2-8-47}{A Brief History of Passwords}}{21}\relax 
+\doTocEntry\toclot{2.1}{\csname a:TocLink\endcsname{8}{x8-47005r1}{}{\ignorespaces Benefits and Drawbacks for different stakeholders in a password-based authentication. SPs = service providers.}}{table}\relax 
+\doTocEntry\tocsection{2.2}{\csname a:TocLink\endcsname{8}{x8-480002.2}{QQ2-8-49}{Attacks on Passwords}}{26}\relax 
+\doTocEntry\toclof{2.1}{\csname a:TocLink\endcsname{8}{x8-48001r1}{}{\ignorespaces   Overview of attacks and high-level mitigations. Image courtesy of the National Cyber Security Centre, UK \url {https://www.ncsc.gov.uk/guidance/password-collection} \la {21.12.2017} }}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-490002.2}{QQ2-8-51}{Online Guessing}}{29}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-500002.2}{QQ2-8-52}{Stealing / Offline Guessing}}{30}\relax 
+\doTocEntry\toclof{2.2}{\csname a:TocLink\endcsname{8}{x8-50008r2}{}{\ignorespaces  Actual phishing websites targeting Facebook and Paypal (online and accessible on 21.12.2017). The URLs contain ``fb'' (short for Facebook) and keywords like ``secure'' ``paypal'' which contribute to falsely trusting the authenticity of the sites.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-510002.2}{QQ2-8-54}{Phishing / Social Engineering}}{35}\relax 
+\doTocEntry\toclof{2.3}{\csname a:TocLink\endcsname{8}{x8-51004r3}{}{\ignorespaces Chrome v63's warning on a phishing website. The user is urged to leave the site but still has the chance to visit it by clicking on ``Details''.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-520002.2}{QQ2-8-56}{Malware and Eavesdropping}}{39}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-530002.2}{QQ2-8-57}{Observation}}{39}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-540002.2}{QQ2-8-58}{Other attacks}}{40}\relax 
+\doTocEntry\toclot{2.2}{\csname a:TocLink\endcsname{8}{x8-54002r2}{}{\ignorespaces Threats on passwords and potential countermeasures for users and service providers (SP). Other stakeholders are left out of this analysis.}}{table}\relax 
+\doTocEntry\tocsection{2.3}{\csname a:TocLink\endcsname{8}{x8-550002.3}{QQ2-8-60}{What is Password Strength? Metrics and Statistics}}{44}\relax 
+\doTocEntry\tocsubsection{2.3.1}{\csname a:TocLink\endcsname{8}{x8-560002.3.1}{QQ2-8-61}{Entropy}}{45}\relax 
+\doTocEntry\tocsubsection{2.3.2}{\csname a:TocLink\endcsname{8}{x8-570002.3.2}{QQ2-8-62}{Guess Numbers: Markov Models, PCFGs, and Neural Networks}}{46}\relax 
+\doTocEntry\tocsubsection{2.3.3}{\csname a:TocLink\endcsname{8}{x8-580002.3.3}{QQ2-8-63}{The zxcvbn Approach: Lightweight, Robust, Simple}}{48}\relax 
+\doTocEntry\tocsubsection{2.3.4}{\csname a:TocLink\endcsname{8}{x8-590002.3.4}{QQ2-8-64}{Other strength proxies}}{51}\relax 
+\doTocEntry\tocsection{2.4}{\csname a:TocLink\endcsname{8}{x8-600002.4}{QQ2-8-65}{What is a ``Bad'' Password?}}{51}\relax 
+\doTocEntry\tocsection{2.5}{\csname a:TocLink\endcsname{8}{x8-610002.5}{QQ2-8-66}{Authentication beyond Passwords}}{53}\relax 
+\doTocEntry\tocsubsection{2.5.1}{\csname a:TocLink\endcsname{8}{x8-620002.5.1}{QQ2-8-67}{Graphical Passwords \& Visual Authentication Methods}}{54}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-630002.5.1}{QQ2-8-68}{Searchmetric Systems}}{54}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{8}{x8-63004r1}{}{\ignorespaces D\IeC {\'e}j\IeC {\`a} Vu \cite  {Dhamija2000DejaVu}\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{8}{x8-63005r2}{}{\ignorespaces EmojiAuth / Pictopass \cite  {Golla2017EmojiAuth, Kraus2017Emoji}\relax }}{subfigure}\relax 
+\doTocEntry\toclof{c}{\csname a:TocLink\endcsname{8}{x8-63006r3}{}{\ignorespaces PassFaces by RealUser\relax }}{subfigure}\relax 
+\doTocEntry\toclof{d}{\csname a:TocLink\endcsname{8}{x8-63007r4}{}{\ignorespaces VIP 3 \cite  {DeAngeli2005PictureThousandWords}\relax }}{subfigure}\relax 
+\doTocEntry\toclof{e}{\csname a:TocLink\endcsname{8}{x8-63008r5}{}{\ignorespaces Use Your Illusion \cite  {Hayashi2008UseYourIllusion}\relax }}{subfigure}\relax 
+\doTocEntry\toclof{2.5}{\csname a:TocLink\endcsname{8}{x8-63009r5}{}{\ignorespaces  A selection of searchmetric graphical authentication schemes. The user authenticates by \textit  {searching} their enrolled sequence of images.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-640002.5.1}{QQ2-8-75}{Locimetric Systems}}{59}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-650002.5.1}{QQ2-8-76}{Drawmetric Systems}}{59}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{8}{x8-65001r1}{}{\ignorespaces Draw A Secret \cite  {Jermyn1999DrawASecret}\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{8}{x8-65002r2}{}{\ignorespaces  Android pattern unlock (image: Mike Dent)\relax }}{subfigure}\relax 
+\doTocEntry\toclof{2.7}{\csname a:TocLink\endcsname{8}{x8-65003r7}{}{\ignorespaces  Iconic drawmetric systems. The user's password is a shape that they need to draw to authenticate.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-660002.5.1}{QQ2-8-80}{Summary and Future Directions}}{63}\relax 
+\doTocEntry\tocsubsection{2.5.2}{\csname a:TocLink\endcsname{8}{x8-670002.5.2}{QQ2-8-81}{Biometrics and Multimodal Authentication}}{64}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{8}{x8-680002.5.2}{QQ2-8-82}{Explicit Biometrics}}{64}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{8}{x8-690002.5.2}{QQ2-8-83}{Implicit Biometrics}}{67}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{8}{x8-700002.5.2}{QQ2-8-84}{Summary and Outlook}}{68}\relax 
+\doTocEntry\toclot{2.3}{\csname a:TocLink\endcsname{8}{x8-70002r3}{}{\ignorespaces Comparison of different biometric authentication methods. Adapted from \cite  {Stockinger2011ImplicitAuthentication}}}{table}\relax 
+\doTocEntry\tocsubsection{2.5.3}{\csname a:TocLink\endcsname{8}{x8-710002.5.3}{QQ2-8-86}{Multi-Factor, Token-based and Federated Authentication}}{72}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-720002.5.3}{QQ2-8-87}{Two-Factor Authentication}}{72}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-730002.5.3}{QQ2-8-88}{Hardware Tokens and Proxies}}{73}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{8}{x8-73003r1}{}{\ignorespaces The RSA SecurID token displays a one-time-password every 30 to 60 seconds\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{8}{x8-73004r2}{}{\ignorespaces YubiKey uses NFC to authenticate users.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{2.9}{\csname a:TocLink\endcsname{8}{x8-73005r9}{}{\ignorespaces  Commercially available hardware tokens. The RSA SecurID is more business-oriented, while the YubiKeys can be used with consumer products like Gmail, Facebook, and Dropbox, too.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{8}{x8-740002.5.3}{QQ2-8-92}{Federated Single Sign-On}}{77}\relax 
+\doTocEntry\tocsubsection{2.5.4}{\csname a:TocLink\endcsname{8}{x8-750002.5.4}{QQ2-8-93}{Passwords are Here to Stay}}{78}\relax 
+\doTocEntry\tocchapter{3}{\csname a:TocLink\endcsname{53}{x53-760003}{QQ2-53-94}{Passwords -- A User Perspective}}{81}\relax 
+\doTocEntry\tocsection{3.1}{\csname a:TocLink\endcsname{53}{x53-770003.1}{QQ2-53-95}{Methodology: Running Password Studies}}{81}\relax 
+\doTocEntry\tocsubsection{3.1.1}{\csname a:TocLink\endcsname{53}{x53-780003.1.1}{QQ2-53-96}{General Considerations for User Studies as Data Source}}{82}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-790003.1.1}{QQ2-53-97}{Password Creation Tasks}}{82}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-800003.1.1}{QQ2-53-98}{Retrospective Self Report}}{84}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-810003.1.1}{QQ2-53-99}{Principles}}{85}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-820003.1.1}{QQ2-53-100}{Primary Task}}{85}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-830003.1.1}{QQ2-53-101}{Realistic Risk}}{85}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-840003.1.1}{QQ2-53-102}{No Priming}}{85}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-850003.1.1}{QQ2-53-103}{Double Blind Experiments}}{85}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-860003.1.1}{QQ2-53-104}{Context Definition}}{85}\relax 
+\doTocEntry\tocsubsection{3.1.2}{\csname a:TocLink\endcsname{53}{x53-870003.1.2}{QQ2-53-105}{Analyzing Password Leaks and (Semi-)Public Data}}{86}\relax 
+\doTocEntry\toclot{3.1}{\csname a:TocLink\endcsname{53}{x53-87002r1}{}{\ignorespaces  Example password leaks of the past five years (data source: \url  {https://haveibeenpwned.com/PwnedWebsites}). Some of the data served security researchers to analyze user behavior and create more effective strength estimation algorithms. *multiple leaks from different years}}{table}\relax 
+\doTocEntry\tocsubsection{3.1.3}{\csname a:TocLink\endcsname{53}{x53-880003.1.3}{QQ2-53-107}{User Study Methods in Password Research}}{89}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-890003.1.3}{QQ2-53-108}{Laboratory studies}}{89}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-900003.1.3}{QQ2-53-109}{Field-Studies}}{89}\relax 
+\doTocEntry\tocsubsection{3.1.4}{\csname a:TocLink\endcsname{53}{x53-910003.1.4}{QQ2-53-110}{The Bottom Line: Emerging Good Practices and Tools}}{92}\relax 
+\doTocEntry\tocsection{3.2}{\csname a:TocLink\endcsname{53}{x53-920003.2}{QQ2-53-111}{Password Coping Strategies and Risky Behaviors}}{93}\relax 
+\doTocEntry\toclof{3.1}{\csname a:TocLink\endcsname{53}{x53-92001r1}{}{\ignorespaces  Stobert and Biddle's ``Password Life Cycle'' \cite  {Stobert2014PasswordLifeCycle} models typical stages of password behavior.}}{figure}\relax 
+\doTocEntry\tocsubsection{3.2.1}{\csname a:TocLink\endcsname{53}{x53-930003.2.1}{QQ2-53-113}{Weak Passwords}}{97}\relax 
+\doTocEntry\toclof{3.2}{\csname a:TocLink\endcsname{53}{x53-93002r2}{}{\ignorespaces  Password selection techniques \cite  {Kaspersky2016ConsumerSecurityReport} }}{figure}\relax 
+\doTocEntry\tocsubsection{3.2.2}{\csname a:TocLink\endcsname{53}{x53-940003.2.2}{QQ2-53-115}{Password Reuse}}{101}\relax 
+\doTocEntry\tocsubsection{3.2.3}{\csname a:TocLink\endcsname{53}{x53-950003.2.3}{QQ2-53-116}{External Storage}}{103}\relax 
+\doTocEntry\tocsubsection{3.2.4}{\csname a:TocLink\endcsname{53}{x53-960003.2.4}{QQ2-53-117}{Fallback Methods}}{104}\relax 
+\doTocEntry\tocsubsection{3.2.5}{\csname a:TocLink\endcsname{53}{x53-970003.2.5}{QQ2-53-118}{Account Sharing}}{105}\relax 
+\doTocEntry\tocsubsection{3.2.6}{\csname a:TocLink\endcsname{53}{x53-980003.2.6}{QQ2-53-119}{Summary}}{105}\relax 
+\doTocEntry\tocsection{3.3}{\csname a:TocLink\endcsname{53}{x53-990003.3}{QQ2-53-120}{Guiding and Aiding Users}}{106}\relax 
+\doTocEntry\tocsubsection{3.3.1}{\csname a:TocLink\endcsname{53}{x53-1000003.3.1}{QQ2-53-121}{Password Composition Policies}}{106}\relax 
+\doTocEntry\toclof{3.3}{\csname a:TocLink\endcsname{53}{x53-100001r3}{}{\ignorespaces  Guess number graph for passwords created under different password composition policies. A higher percentage of cracked passwords (larger y-values) indicates that passwords were weaker. In this case, passwords adhering to a basic12 policy were the weakest, while 3class16 produced the strongest passwords.}}{figure}\relax 
+\doTocEntry\toclot{3.2}{\csname a:TocLink\endcsname{53}{x53-100002r2}{}{\ignorespaces  Example policies from CMU taxonomy. }}{table}\relax 
+\doTocEntry\tocsubsection{3.3.2}{\csname a:TocLink\endcsname{53}{x53-1010003.3.2}{QQ2-53-124}{User Education and Guidelines}}{114}\relax 
+\doTocEntry\tocsubsection{3.3.3}{\csname a:TocLink\endcsname{53}{x53-1020003.3.3}{QQ2-53-125}{Password Selection Algorithms \& Memorization Techniques}}{116}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-1030003.3.3}{QQ2-53-126}{Mnemonics and Training}}{116}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{53}{x53-1040003.3.3}{QQ2-53-127}{Passphrases}}{117}\relax 
+\doTocEntry\tocsubsection{3.3.4}{\csname a:TocLink\endcsname{53}{x53-1050003.3.4}{QQ2-53-128}{Password Managers and Generators}}{117}\relax 
+\doTocEntry\toclof{3.4}{\csname a:TocLink\endcsname{53}{x53-105001r4}{}{\ignorespaces  On macOS, the Keychain application manages passwords for the user. If a new entry is manually created by the user, the password assistant can be used to generate different kinds of passwords: Random (image on the left), letters and numbers, numbers only, memorable (image on the right), and FIPS-181 compliant}}{figure}\relax 
+\doTocEntry\tocsection{3.4}{\csname a:TocLink\endcsname{53}{x53-1060003.4}{QQ2-53-130}{Persuasive Interventions}}{122}\relax 
+\doTocEntry\tocsubsection{3.4.1}{\csname a:TocLink\endcsname{53}{x53-1070003.4.1}{QQ2-53-131}{Background}}{122}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1080003.4.1}{QQ2-53-132}{Terminology in Persuasion and Behavioral Economics}}{123}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1090003.4.1}{QQ2-53-133}{Cognitive Illusions, Biases, and Heuristics}}{123}\relax 
+\doTocEntry\toclof{3.5}{\csname a:TocLink\endcsname{53}{x53-109003r5}{}{\ignorespaces Categorization and visualization of cognitive biases. CC-BY-SA Buster Benson, John Manoogian III}}{figure}\relax 
+\doTocEntry\tocsubsection{3.4.2}{\csname a:TocLink\endcsname{53}{x53-1100003.4.2}{QQ2-53-135}{Persuasive Design Patterns in Usable Security and Privacy}}{128}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1110003.4.2}{QQ2-53-136}{General Frameworks}}{129}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1120003.4.2}{QQ2-53-137}{The Persuasive Authentication Framework (PAF) by Forget et al.\xspace  }}{130}\relax 
+\doTocEntry\toclof{3.6}{\csname a:TocLink\endcsname{53}{x53-112001r6}{}{\ignorespaces  Elements of the persuasive authentication framework \cite  {Forget2007PersuasionEducationSecurity}}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1130003.4.2}{QQ2-53-139}{Dark Patterns}}{135}\relax 
+\doTocEntry\tocsubsection{3.4.3}{\csname a:TocLink\endcsname{53}{x53-1140003.4.3}{QQ2-53-140}{Password Meters: Persuasion at Play}}{136}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1150003.4.3}{QQ2-53-141}{Effective or not?}}{137}\relax 
+\doTocEntry\toclof{3.7}{\csname a:TocLink\endcsname{53}{x53-115001r7}{}{\ignorespaces  Ur et al.\xspace  's data driven password meter. In combines textual and visual strength feedback, explanations, and personalized suggestions.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1160003.4.3}{QQ2-53-143}{Beyond colorful bars}}{140}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{53}{x53-1170003.4.3}{QQ2-53-144}{Light and Shadow}}{141}\relax 
+\doTocEntry\tocsubsection{3.4.4}{\csname a:TocLink\endcsname{53}{x53-1180003.4.4}{QQ2-53-145}{Summary}}{141}\relax 
+\doTocEntry\tocchapter{4}{\csname a:TocLink\endcsname{72}{x72-1190004}{QQ2-72-146}{Related Work Summary}}{145}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{72}{x72-1200004}{QQ2-72-147}{Main Take-Aways}}{145}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{72}{x72-1210004}{QQ2-72-148}{Open Questions}}{146}\relax 
+\doTocEntry\tocpart{II}{\csname a:TocLink\endcsname{73}{x73-122000II}{QQ2-73-149}{EXPLORING THE CONTEXT FACTORS}}{153}\relax 
+\doTocEntry\tocchapter{5}{\csname a:TocLink\endcsname{74}{x74-1230005}{QQ2-74-150}{Mental Models of Password Strength}}{155}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{74}{x74-1240005}{QQ2-74-151}{Publication Statement}}{156}\relax 
+\doTocEntry\tocsection{5.1}{\csname a:TocLink\endcsname{74}{x74-1250005.1}{QQ2-74-152}{Background and Context}}{156}\relax 
+\doTocEntry\tocsection{5.2}{\csname a:TocLink\endcsname{74}{x74-1260005.2}{QQ2-74-153}{Approach: PASDJO - The Password Game}}{157}\relax 
+\doTocEntry\toclof{5.1}{\csname a:TocLink\endcsname{74}{x74-126002r1}{}{\ignorespaces  Screenshot of PASDJO during gameplay. The user clicks the stars to rate the password. One star = weak, five stars = strong. }}{figure}\relax 
+\doTocEntry\tocsubsection{5.2.1}{\csname a:TocLink\endcsname{74}{x74-1270005.2.1}{QQ2-74-155}{Game Mechanics and Design Elements}}{161}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1280005.2.1}{QQ2-74-156}{Scoring and Metrics}}{161}\relax 
+\doTocEntry\toclof{5.2}{\csname a:TocLink\endcsname{74}{x74-128002r2}{}{\ignorespaces Feedback screen. The player can review their performance after the time is up. Each assessment is contrasted with zxcvbn's score.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1290005.2.1}{QQ2-74-158}{Persuasive Design Elements}}{166}\relax 
+\doTocEntry\tocsubsection{5.2.2}{\csname a:TocLink\endcsname{74}{x74-1300005.2.2}{QQ2-74-159}{Password Generation and Study Conditions}}{166}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1310005.2.2}{QQ2-74-160}{Common passwords: }}{166}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1320005.2.2}{QQ2-74-161}{Mangled passwords: }}{167}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1330005.2.2}{QQ2-74-162}{Random passwords: }}{167}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1340005.2.2}{QQ2-74-163}{Passphrases: }}{167}\relax 
+\doTocEntry\tocsubsection{5.2.3}{\csname a:TocLink\endcsname{74}{x74-1350005.2.3}{QQ2-74-164}{Benefits and Shortcomings of the Game-based Approach}}{168}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1360005.2.3}{QQ2-74-165}{Benefits of the Game-based Approach}}{168}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1370005.2.3}{QQ2-74-166}{Drawbacks of the Game-based Approach}}{169}\relax 
+\doTocEntry\tocsubsection{5.2.4}{\csname a:TocLink\endcsname{74}{x74-1380005.2.4}{QQ2-74-167}{Implementation}}{169}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{74}{x74-138004r1}{}{\ignorespaces Welcome screen for anonymous users. The game is briefly explained and the users can try the rating interface (stars).\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{74}{x74-138005r2}{}{\ignorespaces Users can browse through past games. The updated version visualizes the scores in a line chart (not displayed).\relax }}{subfigure}\relax 
+\doTocEntry\toclof{5.4}{\csname a:TocLink\endcsname{74}{x74-138006r4}{}{\ignorespaces Key screens in the user interface.}}{figure}\relax 
+\doTocEntry\tocsection{5.3}{\csname a:TocLink\endcsname{74}{x74-1390005.3}{QQ2-74-171}{Log Analysis}}{173}\relax 
+\doTocEntry\tocsubsection{5.3.1}{\csname a:TocLink\endcsname{74}{x74-1400005.3.1}{QQ2-74-172}{First Sample}}{174}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1410005.3.1}{QQ2-74-173}{Score Distribution}}{174}\relax 
+\doTocEntry\toclof{5.5}{\csname a:TocLink\endcsname{74}{x74-141001r5}{}{\ignorespaces  Distribution of zxcvbn scores for N=5915 passwords collected in the first four months of deployment (1 = weak, 5 = strong). Random passwords were the most stable condition with consistent score of 4. Mangled passwords show a range of 1 to 5, but passphrases were least predictable.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1420005.3.1}{QQ2-74-175}{``First Game'' Statistics}}{177}\relax 
+\doTocEntry\toclof{5.6}{\csname a:TocLink\endcsname{74}{x74-142001r6}{}{\ignorespaces  Average user ratings in each of the four conditions, plotted alongside mean zxcvbn scores. Users' estimations were least accurate for passphrases, which they had rated 1.4 points lower than zxcvbn. (N=111) }}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1430005.3.1}{QQ2-74-177}{Score Development}}{180}\relax 
+\doTocEntry\toclof{5.7}{\csname a:TocLink\endcsname{74}{x74-143001r7}{}{\ignorespaces  Achieved percentage (accuracy) evolution depending on the number of games played. Each dot represents a full game of a user, the size of the dot indicates how many passwords were rated in that particular game. Although a linear model works, we used a locally weighted polynomial regression (LOESS) to fit a line through the data points. Users clearly become better the more they play.}}{figure}\relax 
+\doTocEntry\tocsubsection{5.3.2}{\csname a:TocLink\endcsname{74}{x74-1440005.3.2}{QQ2-74-179}{Extended Sample and Results}}{183}\relax 
+\doTocEntry\toclof{5.8}{\csname a:TocLink\endcsname{74}{x74-144001r8}{}{\ignorespaces  The game was played on 90 distinct days (days with 0 games are not shown in the graph). There were four major drivers for the adoption (see annotations), that indicate that the sample mostly consists of students, their peers, and other academics.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1450005.3.2}{QQ2-74-181}{Version 2}}{186}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1460005.3.2}{QQ2-74-182}{New Condition: Predictable}}{186}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1470005.3.2}{QQ2-74-183}{Tuning Password Generation}}{186}\relax 
+\doTocEntry\toclof{5.9}{\csname a:TocLink\endcsname{74}{x74-147001r9}{}{\ignorespaces Zxcvbn scores in version 2. The scores within the conditions had become much more diverse, which should make it more difficult for players to judge individual passwords.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1480005.3.2}{QQ2-74-185}{Scoring and Feedback}}{190}\relax 
+\doTocEntry\toclof{5.10}{\csname a:TocLink\endcsname{74}{x74-148001r10}{}{\ignorespaces Updated feedback in version 2 informs the player about the password category and provides pointers to the origin of the objective rating. }}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{74}{x74-1490005.3.2}{QQ2-74-187}{Leaderboard and History}}{193}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1500005.3.2}{QQ2-74-188}{Score Development}}{193}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{74}{x74-150001r1}{}{\ignorespaces Performance of v1 players (Dec 2016 - Nov 2017)\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{74}{x74-150002r2}{}{\ignorespaces Performance of v2 players (Nov 2017 - Jan 2018)\relax }}{subfigure}\relax 
+\doTocEntry\toclof{5.12}{\csname a:TocLink\endcsname{74}{x74-150003r12}{}{\ignorespaces  Performance development during the first 13 months of public deployment (\o:ref {fig:pasdjo:1y-progress}). In November 2017 version 2 was released, which roughly shows a similar learning curve.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1510005.3.2}{QQ2-74-192}{Strength Perception in the First Game}}{196}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{74}{x74-151001r1}{}{\ignorespaces Deviations of user ratings of v1 players (N=181)\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{74}{x74-151002r2}{}{\ignorespaces Deviations of user ratings of v2 players.(N=52)\relax }}{subfigure}\relax 
+\doTocEntry\toclof{5.14}{\csname a:TocLink\endcsname{74}{x74-151003r14}{}{\ignorespaces  Users' average ratings, for PASDJO version 1 on the left and version 2 on the right. The version switch appears to boost accuracy for common and random passwords, but not for mangled passwords and passphrases.}}{figure}\relax 
+\doTocEntry\tocsection{5.4}{\csname a:TocLink\endcsname{74}{x74-1520005.4}{QQ2-74-196}{Discussion}}{199}\relax 
+\doTocEntry\tocsubsection{5.4.1}{\csname a:TocLink\endcsname{74}{x74-1530005.4.1}{QQ2-74-197}{Players' Overall Performance}}{199}\relax 
+\doTocEntry\tocsubsection{5.4.2}{\csname a:TocLink\endcsname{74}{x74-1540005.4.2}{QQ2-74-198}{Strength Perception vs. Selection}}{199}\relax 
+\doTocEntry\tocsubsection{5.4.3}{\csname a:TocLink\endcsname{74}{x74-1550005.4.3}{QQ2-74-199}{Intuition or Deliberation?}}{200}\relax 
+\doTocEntry\tocsubsection{5.4.4}{\csname a:TocLink\endcsname{74}{x74-1560005.4.4}{QQ2-74-200}{Changing users' mental models with PASDJO}}{201}\relax 
+\doTocEntry\tocsubsection{5.4.5}{\csname a:TocLink\endcsname{74}{x74-1570005.4.5}{QQ2-74-201}{Limitations}}{201}\relax 
+\doTocEntry\tocsection{5.5}{\csname a:TocLink\endcsname{74}{x74-1580005.5}{QQ2-74-202}{Summary}}{202}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{74}{x74-1590005.5}{QQ2-74-203}{Future Work}}{203}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{74}{x74-1600005.5}{QQ2-74-204}{Take Aways}}{204}\relax 
+\doTocEntry\tocchapter{6}{\csname a:TocLink\endcsname{83}{x83-1610006}{QQ2-83-205}{Password Policies and Reuse}}{207}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{83}{x83-1620006}{QQ2-83-206}{Publication Statement}}{207}\relax 
+\doTocEntry\tocsection{6.1}{\csname a:TocLink\endcsname{83}{x83-1630006.1}{QQ2-83-207}{Background and Context}}{207}\relax 
+\doTocEntry\tocsection{6.2}{\csname a:TocLink\endcsname{83}{x83-1640006.2}{QQ2-83-208}{Method: Reverse-Engineering Password Policies}}{209}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{83}{x83-1650006.2}{QQ2-83-209}{First Stage: Identification of Suitable Passwords}}{209}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{83}{x83-1660006.2}{QQ2-83-210}{Second Stage: Re-Evaluation with Extended Test Set}}{210}\relax 
+\doTocEntry\tocsection{6.3}{\csname a:TocLink\endcsname{83}{x83-1670006.3}{QQ2-83-211}{Results}}{210}\relax 
+\doTocEntry\tocsubsection{6.3.1}{\csname a:TocLink\endcsname{83}{x83-1680006.3.1}{QQ2-83-212}{Complexity}}{210}\relax 
+\doTocEntry\toclof{6.1}{\csname a:TocLink\endcsname{83}{x83-168002r1}{}{\ignorespaces Distribution of minimum complexity of the policies. Most sites only require a given length.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{83}{x83-1690006.3.1}{QQ2-83-214}{Length requirements}}{214}\relax 
+\doTocEntry\toclof{6.2}{\csname a:TocLink\endcsname{83}{x83-169002r2}{}{\ignorespaces Density distribution of password length rules. We excluded maximum lengths beyond 245 characters, which explains the hard cut-off in the bottom plot.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{83}{x83-1700006.3.1}{QQ2-83-216}{Character Sets}}{217}\relax 
+\doTocEntry\toclot{6.1}{\csname a:TocLink\endcsname{83}{x83-170001r1}{}{\ignorespaces  Many websites only allow ASCII characters. This table shows the sites that restrict the ASCII set even further. Some sites are mutually exclusive regarding the usage of certain symbols only by looking at a small subset of the tested sites, e.g. netflix.com and t-online.de. The full rules can be found in Appendix \o:ref {tab:appendix:policies} }}{table}\relax 
+\doTocEntry\tocsection{6.4}{\csname a:TocLink\endcsname{83}{x83-1710006.4}{QQ2-83-218}{Discussion and Implications}}{220}\relax 
+\doTocEntry\tocsubsection{6.4.1}{\csname a:TocLink\endcsname{83}{x83-1720006.4.1}{QQ2-83-219}{Policies are Mostly Homogenous}}{220}\relax 
+\doTocEntry\tocsubsection{6.4.2}{\csname a:TocLink\endcsname{83}{x83-1730006.4.2}{QQ2-83-220}{Policies do not Prevent Password-reuse}}{220}\relax 
+\doTocEntry\tocsubsection{6.4.3}{\csname a:TocLink\endcsname{83}{x83-1740006.4.3}{QQ2-83-221}{Smarter Password Generation}}{221}\relax 
+\doTocEntry\toclof{6.3}{\csname a:TocLink\endcsname{83}{x83-174002r3}{}{\ignorespaces We built a small web app to demonstrate how contextual policy information can be used to a) generate suitable passwords and b) find out which web sites accept a given password.}}{figure}\relax 
+\doTocEntry\tocsubsection{6.4.4}{\csname a:TocLink\endcsname{83}{x83-1750006.4.4}{QQ2-83-223}{Limitations}}{225}\relax 
+\doTocEntry\tocsection{6.5}{\csname a:TocLink\endcsname{83}{x83-1760006.5}{QQ2-83-224}{Conclusion and Future Work}}{225}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{83}{x83-1770006.5}{QQ2-83-225}{Take Aways}}{226}\relax 
+\doTocEntry\tocchapter{7}{\csname a:TocLink\endcsname{88}{x88-1780007}{QQ2-88-226}{Password Personality}}{229}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1790007}{QQ2-88-227}{Research Objectives}}{230}\relax 
+\doTocEntry\tocsection{7.1}{\csname a:TocLink\endcsname{88}{x88-1800007.1}{QQ2-88-228}{Background and Related Work}}{230}\relax 
+\doTocEntry\tocsubsection{7.1.1}{\csname a:TocLink\endcsname{88}{x88-1810007.1.1}{QQ2-88-229}{Sociodemographic and Cognitive Factors}}{230}\relax 
+\doTocEntry\tocsubsection{7.1.2}{\csname a:TocLink\endcsname{88}{x88-1820007.1.2}{QQ2-88-230}{Personality Factors in Cyber Security}}{231}\relax 
+\doTocEntry\tocsection{7.2}{\csname a:TocLink\endcsname{88}{x88-1830007.2}{QQ2-88-231}{Study 1: Policies}}{232}\relax 
+\doTocEntry\tocsubsection{7.2.1}{\csname a:TocLink\endcsname{88}{x88-1840007.2.1}{QQ2-88-232}{Method}}{232}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1850007.2.1}{QQ2-88-233}{Structure and Tasks}}{232}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1860007.2.1}{QQ2-88-234}{Recruiting and Demographic Background}}{233}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1870007.2.1}{QQ2-88-235}{Statistical Analyses}}{234}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1880007.2.1}{QQ2-88-236}{Method Limitations}}{235}\relax 
+\doTocEntry\tocsubsection{7.2.2}{\csname a:TocLink\endcsname{88}{x88-1890007.2.2}{QQ2-88-237}{Results}}{235}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{88}{x88-189001r1}{}{\ignorespaces \relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{88}{x88-189002r2}{}{\ignorespaces \relax }}{subfigure}\relax 
+\doTocEntry\toclof{7.2}{\csname a:TocLink\endcsname{88}{x88-189003r2}{}{\ignorespaces Confidence Intervals for a) Difficulty to create and b) time to create passwords in each condition. The traditional policy (3class12) was the easiest and fastest overall, but not on a statistically significant level (also visible in the charts due to the overlapping confidence intervals)}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1900007.2.2}{QQ2-88-241}{Descriptives and Independent Variables}}{238}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1910007.2.2}{QQ2-88-242}{Creation Difficulty Models}}{238}\relax 
+\doTocEntry\toclot{7.1}{\csname a:TocLink\endcsname{88}{x88-191001r1}{}{\ignorespaces Additive regression models for the difficulty to create passwords under the three policies.}}{table}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-1920007.2.2}{QQ2-88-244}{Control Variables}}{241}\relax 
+\doTocEntry\toclof{7.3}{\csname a:TocLink\endcsname{88}{x88-192001r3}{}{\ignorespaces Associations between predictors and \textbf  {difficulty} to create a password under the emoji12 policy. Charts visualize the functions derived from the Generalized Additive Models (GAMs). Neuroticism was significantly negatively associated with difficulty (highlighted in blue), i.e. it was easier to create emoji-passwords if participants scored high on neuroticism.}}{figure}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{88}{x88-1930007.2.2}{QQ2-88-246}{How to Read Smoothed Regression Plots}}{244}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-1940007.2.2}{QQ2-88-247}{Personality Traits}}{244}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1950007.2.2}{QQ2-88-248}{Policy Preference}}{245}\relax 
+\doTocEntry\toclot{7.2}{\csname a:TocLink\endcsname{88}{x88-195001r2}{}{\ignorespaces  Distribution of binary rankings of the three available policies. Evidently, 3class12 was ranked best in most cases. }}{table}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-1960007.2.2}{QQ2-88-250}{Time to Create Passwords}}{248}\relax 
+\doTocEntry\toclof{7.4}{\csname a:TocLink\endcsname{88}{x88-196001r4}{}{\ignorespaces Associations between personality traits and time to create a 3class12 password. All traits could be modeled as linear predictors.}}{figure}\relax 
+\doTocEntry\toclof{7.5}{\csname a:TocLink\endcsname{88}{x88-196002r5}{}{\ignorespaces Associations between control variables and time to create a 2word12 password. Especially the task number and gender were showed strong associations.}}{figure}\relax 
+\doTocEntry\tocsubsection{7.2.3}{\csname a:TocLink\endcsname{88}{x88-1970007.2.3}{QQ2-88-253}{Finding Summary}}{254}\relax 
+\doTocEntry\tocsection{7.3}{\csname a:TocLink\endcsname{88}{x88-1980007.3}{QQ2-88-254}{Study 2: Strength Perceptions}}{254}\relax 
+\doTocEntry\tocsubsection{7.3.1}{\csname a:TocLink\endcsname{88}{x88-1990007.3.1}{QQ2-88-255}{Structure}}{255}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2000007.3.1}{QQ2-88-256}{Meta Password}}{255}\relax 
+\doTocEntry\toclot{7.3}{\csname a:TocLink\endcsname{88}{x88-200001r3}{}{\ignorespaces Set of passwords that we divided into different length and strength categories (as measured with zxcvbn). Features: U = uppercase, D = digits, S = symbols}}{table}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2010007.3.1}{QQ2-88-258}{Standalone Strength Rating}}{259}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2020007.3.1}{QQ2-88-259}{Comparison}}{259}\relax 
+\doTocEntry\toclof{7.6}{\csname a:TocLink\endcsname{88}{x88-202001r6}{}{\ignorespaces  Simplified item of the comparison task. The passwords differ in length, strength, and the usage of uppercase letters and digits. Here would have scored the importance of length and digits with +2 while the importance of strength and uppercase letters was scored with -2.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2030007.3.1}{QQ2-88-261}{SeBIS}}{262}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2040007.3.1}{QQ2-88-262}{Big Five}}{262}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2050007.3.1}{QQ2-88-263}{GDMS}}{263}\relax 
+\doTocEntry\tocsubsection{7.3.2}{\csname a:TocLink\endcsname{88}{x88-2060007.3.2}{QQ2-88-264}{Quantitative Analysis}}{263}\relax 
+\doTocEntry\tocsubsection{7.3.3}{\csname a:TocLink\endcsname{88}{x88-2070007.3.3}{QQ2-88-265}{Qualitative Analysis}}{264}\relax 
+\doTocEntry\tocsubsection{7.3.4}{\csname a:TocLink\endcsname{88}{x88-2080007.3.4}{QQ2-88-266}{Recruitment}}{264}\relax 
+\doTocEntry\tocsubsection{7.3.5}{\csname a:TocLink\endcsname{88}{x88-2090007.3.5}{QQ2-88-267}{Ethical Considerations}}{265}\relax 
+\doTocEntry\tocsubsection{7.3.6}{\csname a:TocLink\endcsname{88}{x88-2100007.3.6}{QQ2-88-268}{Limitations}}{265}\relax 
+\doTocEntry\tocsubsection{7.3.7}{\csname a:TocLink\endcsname{88}{x88-2110007.3.7}{QQ2-88-269}{Results}}{266}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2120007.3.7}{QQ2-88-270}{Participants}}{266}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2130007.3.7}{QQ2-88-271}{Ratings Descriptives}}{267}\relax 
+\doTocEntry\toclof{7.7}{\csname a:TocLink\endcsname{88}{x88-213001r7}{}{\ignorespaces Participants' average assessments of different password topologies, e.g. G\_Uppercase groups all passwords that contained uppercase letters.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2140007.3.7}{QQ2-88-273}{Standalone Strength Rating}}{270}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2150007.3.7}{QQ2-88-274}{Model 1: Big-Five Scores with minimal REML smoothing}}{270}\relax 
+\doTocEntry\toclof{7.8}{\csname a:TocLink\endcsname{88}{x88-215001r8}{}{\ignorespaces Visualization of generalized additive models for overall strength perceptions (i.e. tendency to judge a password stronger) with Big-Five traits as covariates. There is a significant negative association for openness: participants scoring higher on the openness trait judged password strength lower.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2160007.3.7}{QQ2-88-276}{Model 2: Extracted Factors as Predictors}}{273}\relax 
+\doTocEntry\toclof{7.9}{\csname a:TocLink\endcsname{88}{x88-216001r9}{}{\ignorespaces A principal component analysis suggested there might be 10 explanatory factors in our dataset for the personality construct, which we then extracted using varimax rotation. Factor 3, which was mostly loaded with \textit  {openness} items, Factor 9 (mostly \textit  {conscientiousness}), and Factor 10 (mostly \textit  {extraversion}) were associated with lower ratings.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2170007.3.7}{QQ2-88-278}{Model 3: Mixed Model -- Password Characteristics and Big Five Traits}}{276}\relax 
+\doTocEntry\toclof{7.10}{\csname a:TocLink\endcsname{88}{x88-217001r10}{}{\ignorespaces Participants' subjective strength assessments of the 13 passwords in the study. Broad interquartile ranges for indicate that participants largely disagreed on the strength.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2180007.3.7}{QQ2-88-280}{Conclusion}}{279}\relax 
+\doTocEntry\toclof{7.12}{\csname a:TocLink\endcsname{88}{x88-218001r12}{}{\ignorespaces  Top: Longer passwords were perceived as stronger. Correlations turned negative if, substitutions were factored into the model. Bottom: Personality traits showed very small associations.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2190007.3.7}{QQ2-88-282}{Standalone ratings modeled with Meta password}}{282}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2200007.3.7}{QQ2-88-283}{Comparisons Between Two Passwords}}{282}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2210007.3.7}{QQ2-88-284}{Qualitative Findings}}{282}\relax 
+\doTocEntry\tocsubsection{7.3.8}{\csname a:TocLink\endcsname{88}{x88-2220007.3.8}{QQ2-88-285}{Finding Summary}}{283}\relax 
+\doTocEntry\tocsection{7.4}{\csname a:TocLink\endcsname{88}{x88-2230007.4}{QQ2-88-286}{Study 3: Password Selection and Coping}}{283}\relax 
+\doTocEntry\tocsubsection{7.4.1}{\csname a:TocLink\endcsname{88}{x88-2240007.4.1}{QQ2-88-287}{Procedure and Tools}}{284}\relax 
+\doTocEntry\tocsubsection{7.4.2}{\csname a:TocLink\endcsname{88}{x88-2250007.4.2}{QQ2-88-288}{Recruitment and Sample}}{285}\relax 
+\doTocEntry\tocsubsection{7.4.3}{\csname a:TocLink\endcsname{88}{x88-2260007.4.3}{QQ2-88-289}{Limitations}}{285}\relax 
+\doTocEntry\tocsubsection{7.4.4}{\csname a:TocLink\endcsname{88}{x88-2270007.4.4}{QQ2-88-290}{Results}}{286}\relax 
+\doTocEntry\toclof{7.13}{\csname a:TocLink\endcsname{88}{x88-227001r13}{}{\ignorespaces  Zxcvbn metrics for user selected passwords.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2280007.4.4}{QQ2-88-292}{Password Composition}}{289}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2290007.4.4}{QQ2-88-293}{Password Categories}}{289}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2300007.4.4}{QQ2-88-294}{Password Management Strategies}}{290}\relax 
+\doTocEntry\toclof{7.14}{\csname a:TocLink\endcsname{88}{x88-230001r14}{}{\ignorespaces Age and Openness model plots for all coping tested coping strategies. Openness and Age show inverse associations regarding password managers and memorization.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2310007.4.4}{QQ2-88-296}{Memorability}}{293}\relax 
+\doTocEntry\tocsubsection{7.4.5}{\csname a:TocLink\endcsname{88}{x88-2320007.4.5}{QQ2-88-297}{Summary and Interpretation}}{293}\relax 
+\doTocEntry\tocsection{7.5}{\csname a:TocLink\endcsname{88}{x88-2330007.5}{QQ2-88-298}{Discussion and Implications}}{294}\relax 
+\doTocEntry\toclot{7.4}{\csname a:TocLink\endcsname{88}{x88-233001r4}{}{\ignorespaces  Overview of significant associations between Big-Five traits, control factors, and different metrics across three studies. Arrows indicate direction of the associations, colors also highlight significance levels (red/ocher: $p$ < 0.05/0.1 negative assoc., greens: $p$ < 0.001/0.01/0.05/0.1 positive assoc.) Openness and Conscientiousness are the most important factors from the Big-Five model, and having an IT background was an indispensable control factor. }}{table}\relax 
+\doTocEntry\tocsubsection{7.5.1}{\csname a:TocLink\endcsname{88}{x88-2340007.5.1}{QQ2-88-300}{Overarching Themes and User Segments}}{297}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2350007.5.1}{QQ2-88-301}{Neuroticism}}{297}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2360007.5.1}{QQ2-88-302}{Openness}}{297}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2370007.5.1}{QQ2-88-303}{Conscientiousness}}{298}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2380007.5.1}{QQ2-88-304}{Agreeableness and Extraversion}}{298}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{88}{x88-2390007.5.1}{QQ2-88-305}{Demographic Factors}}{299}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2400007.5.1}{QQ2-88-306}{Deriving Segments: Password Personas}}{299}\relax 
+\doTocEntry\toclof{7.15}{\csname a:TocLink\endcsname{88}{x88-240001r15}{}{\ignorespaces  Password Personas. These fictional user profiles can inform design choices for password support strategies. Refining the details needs further research on password personality.}}{figure}\relax 
+\doTocEntry\tocsubsection{7.5.2}{\csname a:TocLink\endcsname{88}{x88-2410007.5.2}{QQ2-88-308}{Designing Feedback and Suggestions}}{302}\relax 
+\doTocEntry\tocsubsection{7.5.3}{\csname a:TocLink\endcsname{88}{x88-2420007.5.3}{QQ2-88-309}{Assessing Personality Traits in Password Studies}}{303}\relax 
+\doTocEntry\tocsubsection{7.5.4}{\csname a:TocLink\endcsname{88}{x88-2430007.5.4}{QQ2-88-310}{Statistical Models}}{304}\relax 
+\doTocEntry\tocsection{7.6}{\csname a:TocLink\endcsname{88}{x88-2440007.6}{QQ2-88-311}{Conclusion and Future Work}}{304}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{88}{x88-2450007.6}{QQ2-88-312}{Future Work}}{305}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{88}{x88-2460007.6}{QQ2-88-313}{Take Aways}}{306}\relax 
+\doTocEntry\tocchapter{8}{\csname a:TocLink\endcsname{98}{x98-2470008}{QQ2-98-314}{Mental Models of Password Managers}}{309}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{98}{x98-2480008}{QQ2-98-315}{Publication Statement}}{309}\relax 
+\doTocEntry\tocsection{8.1}{\csname a:TocLink\endcsname{98}{x98-2490008.1}{QQ2-98-316}{Background and Context}}{309}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{98}{x98-2500008.1}{QQ2-98-317}{Mental Models}}{311}\relax 
+\doTocEntry\toclof{8.1}{\csname a:TocLink\endcsname{98}{x98-250001r1}{}{\ignorespaces  Volkamer and Renaud see the formation of mental models as loop involving different plans, perceptions, system structures, and actions. Image from \cite  {Volkamer2013MentalModels}}}{figure}\relax 
+\doTocEntry\tocsection{8.2}{\csname a:TocLink\endcsname{98}{x98-2510008.2}{QQ2-98-319}{User Interviews}}{314}\relax 
+\doTocEntry\tocsubsection{8.2.1}{\csname a:TocLink\endcsname{98}{x98-2520008.2.1}{QQ2-98-320}{Method and Protocol}}{314}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{98}{x98-2530008.2.1}{QQ2-98-321}{Recruitment and Sample}}{315}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{98}{x98-2540008.2.1}{QQ2-98-322}{Method Limitations}}{315}\relax 
+\doTocEntry\tocsubsection{8.2.2}{\csname a:TocLink\endcsname{98}{x98-2550008.2.2}{QQ2-98-323}{Data Analysis and Results}}{316}\relax 
+\doTocEntry\toclot{8.1}{\csname a:TocLink\endcsname{98}{x98-255001r1}{}{\ignorespaces  Mental Model of Authentication and Password Management, adapted from Martin Prinz \cite  {Prinz2017Thesis}}}{table}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{98}{x98-2560008.2.2}{QQ2-98-325}{Selection and Coping Strategies}}{319}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{98}{x98-2570008.2.2}{QQ2-98-326}{Password Manager Impact}}{319}\relax 
+\doTocEntry\toclof{8.2}{\csname a:TocLink\endcsname{98}{x98-257001r2}{}{\ignorespaces  Participants were asked to visualize their methods to create passwords, if they had a specific strategy. (A) participant who categorizes and remembers passwords by the time they were created (context factors). (B) participant uses words and cued positions to recall the constellation. (C) participant who uses a fixed set of characters and algorithm to ``calculate'' the correct constellation.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{98}{x98-2580008.2.2}{QQ2-98-328}{Drawing Tasks}}{323}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{98}{x98-2590008.2.2}{QQ2-98-329}{Novices}}{323}\relax 
+\doTocEntry\toclof{8.3}{\csname a:TocLink\endcsname{98}{x98-259001r3}{}{\ignorespaces  Drawings to the question ``What does a password manager do, and how?'' from three \textit  {novice} users. (A) only shows a profile on facebook. (B) emphasizes that the PWM is a central hub and acts as the user's ``brain'' for different entities. (C) shows a table-like structure that holds all username-password tuples.}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{98}{x98-2600008.2.2}{QQ2-98-331}{Actives}}{326}\relax 
+\doTocEntry\toclof{8.4}{\csname a:TocLink\endcsname{98}{x98-260001r4}{}{\ignorespaces  Drawings to the question ``What does a password manager do, and how?'' from six \textit  {active} users. Common components are UI elements that link to other entities, therefore the interplay between user, PWM and website is clearer.}}{figure}\relax 
+\doTocEntry\tocsection{8.3}{\csname a:TocLink\endcsname{98}{x98-2610008.3}{QQ2-98-333}{Mental Model}}{329}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{98}{x98-2620008.3}{QQ2-98-334}{Password Creation and Selection}}{329}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{98}{x98-2630008.3}{QQ2-98-335}{Log In}}{329}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{98}{x98-2640008.3}{QQ2-98-336}{Organize and Commit}}{329}\relax 
+\doTocEntry\tocsection{8.4}{\csname a:TocLink\endcsname{98}{x98-2650008.4}{QQ2-98-337}{Opportunities and Challenges}}{330}\relax 
+\doTocEntry\tocsubsection{8.4.1}{\csname a:TocLink\endcsname{98}{x98-2660008.4.1}{QQ2-98-338}{Leveraging and improving novices' mental models}}{330}\relax 
+\doTocEntry\toclof{8.5}{\csname a:TocLink\endcsname{98}{x98-266001r5}{}{\ignorespaces  Visualizing users' previous behavior might help communicate how the password manager can simplify authentication tasks. This can create a better mental model of their workings.}}{figure}\relax 
+\doTocEntry\tocsubsection{8.4.2}{\csname a:TocLink\endcsname{98}{x98-2670008.4.2}{QQ2-98-340}{Increasing Sense of Agency}}{333}\relax 
+\doTocEntry\tocsubsection{8.4.3}{\csname a:TocLink\endcsname{98}{x98-2680008.4.3}{QQ2-98-341}{Leveraging Context}}{333}\relax 
+\doTocEntry\tocsubsection{8.4.4}{\csname a:TocLink\endcsname{98}{x98-2690008.4.4}{QQ2-98-342}{Customization and Personalization}}{334}\relax 
+\doTocEntry\tocsection{8.5}{\csname a:TocLink\endcsname{98}{x98-2700008.5}{QQ2-98-343}{Conclusion}}{334}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{98}{x98-2710008.5}{QQ2-98-344}{Take Aways}}{335}\relax 
+\doTocEntry\tocpart{III}{\csname a:TocLink\endcsname{102}{x102-272000III}{QQ2-102-345}{PERSUASIVE DESIGN STRATEGIES}}{341}\relax 
+\doTocEntry\tocchapter{9}{\csname a:TocLink\endcsname{103}{x103-2730009}{QQ2-103-346}{Exploring Needs in Persuasive Feedback}}{343}\relax 
+\doTocEntry\tocsection{9.1}{\csname a:TocLink\endcsname{103}{x103-2740009.1}{QQ2-103-347}{Background and Context}}{343}\relax 
+\doTocEntry\toclof{9.1}{\csname a:TocLink\endcsname{103}{x103-274001r1}{}{\ignorespaces  Characteristics of user needs and how they show (adapted from \cite  {Sanders2002ParticipatoryDesign}). We explored explicit and observable needs with an online survey, and used a participatory design approach to learn from what users \textit  {make}.}}{figure}\relax 
+\doTocEntry\tocsection{9.2}{\csname a:TocLink\endcsname{103}{x103-2750009.2}{QQ2-103-349}{Explicit and Observable Needs}}{347}\relax 
+\doTocEntry\tocsubsection{9.2.1}{\csname a:TocLink\endcsname{103}{x103-2760009.2.1}{QQ2-103-350}{Method}}{347}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2770009.2.1}{QQ2-103-351}{Prototype}}{348}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2780009.2.1}{QQ2-103-352}{Questionnaire}}{348}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2790009.2.1}{QQ2-103-353}{Sample}}{349}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2800009.2.1}{QQ2-103-354}{Analysis Approach}}{349}\relax 
+\doTocEntry\tocsubsection{9.2.2}{\csname a:TocLink\endcsname{103}{x103-2810009.2.2}{QQ2-103-355}{Overall Results and Central Themes}}{350}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2820009.2.2}{QQ2-103-356}{Show}}{350}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2830009.2.2}{QQ2-103-357}{Explain}}{350}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2840009.2.2}{QQ2-103-358}{Help}}{351}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2850009.2.2}{QQ2-103-359}{Empower}}{352}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2860009.2.2}{QQ2-103-360}{Limitations}}{352}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2870009.2.2}{QQ2-103-361}{Intermediate Summary}}{353}\relax 
+\doTocEntry\tocsection{9.3}{\csname a:TocLink\endcsname{103}{x103-2880009.3}{QQ2-103-362}{Tacit and Latent Needs}}{353}\relax 
+\doTocEntry\tocsubsection{9.3.1}{\csname a:TocLink\endcsname{103}{x103-2890009.3.1}{QQ2-103-363}{Method}}{353}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2900009.3.1}{QQ2-103-364}{Procedure of the Co-Design Session}}{354}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{103}{x103-2910009.3.1}{QQ2-103-365}{Participants}}{354}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2920009.3.1}{QQ2-103-366}{10 plus 10 Method and Iterative Improvement}}{355}\relax 
+\doTocEntry\tocsubsection{9.3.2}{\csname a:TocLink\endcsname{103}{x103-2930009.3.2}{QQ2-103-367}{Concepts and Prototype}}{355}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{103}{x103-2940009.3.2}{QQ2-103-368}{Rewards}}{355}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{103}{x103-2950009.3.2}{QQ2-103-369}{Analogies and Compliance}}{355}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{103}{x103-2960009.3.2}{QQ2-103-370}{Playfulness}}{356}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{103}{x103-296001r1}{}{\ignorespaces  Fruitsalad: Each character class is represented by a fruit and the user sees a lack of diversity, e.g. if their password only contains lowercase letters.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{103}{x103-296002r2}{}{\ignorespaces Bubbles: Floating bubbles on the screen that the user pops as they type the password. Symbols are placed in bigger bubbles to be more salient.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{9.3}{\csname a:TocLink\endcsname{103}{x103-296003r3}{}{\ignorespaces Two out of the six concepts that made it to the final feedback iteration.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{103}{x103-2970009.3.2}{QQ2-103-374}{``Bubbles'' Prototype}}{359}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{103}{x103-297001r1}{}{\ignorespaces \relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{103}{x103-297002r2}{}{\ignorespaces \relax }}{subfigure}\relax 
+\doTocEntry\toclof{9.5}{\csname a:TocLink\endcsname{103}{x103-297003r5}{}{\ignorespaces  We made the ``bubbles'' concept into an interactive prototype and gathered a final round of feedback on the outcome and the process.}}{figure}\relax 
+\doTocEntry\tocsubsection{9.3.3}{\csname a:TocLink\endcsname{103}{x103-2980009.3.3}{QQ2-103-378}{Process Reflection}}{362}\relax 
+\doTocEntry\tocsubsection{9.3.4}{\csname a:TocLink\endcsname{103}{x103-2990009.3.4}{QQ2-103-379}{Lessons about Persuasive Password Interventions}}{362}\relax 
+\doTocEntry\tocsection{9.4}{\csname a:TocLink\endcsname{103}{x103-3000009.4}{QQ2-103-380}{Discussion}}{362}\relax 
+\doTocEntry\tocsubsection{9.4.1}{\csname a:TocLink\endcsname{103}{x103-3010009.4.1}{QQ2-103-381}{Requirements}}{363}\relax 
+\doTocEntry\toclot{9.1}{\csname a:TocLink\endcsname{103}{x103-301001r1}{}{\ignorespaces  High-level requirements to satisfy different levels of user needs in persuasive password feedback. }}{table}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{103}{x103-3020009.4.1}{QQ2-103-383}{Opportunities}}{366}\relax 
+\doTocEntry\toclof{9.6}{\csname a:TocLink\endcsname{103}{x103-302001r6}{}{\ignorespaces  Google's Password Selection Support UI (March 2018)}}{figure}\relax 
+\doTocEntry\tocsubsection{9.4.2}{\csname a:TocLink\endcsname{103}{x103-3030009.4.2}{QQ2-103-385}{Relation to Current Frameworks}}{369}\relax 
+\doTocEntry\tocsection{9.5}{\csname a:TocLink\endcsname{103}{x103-3040009.5}{QQ2-103-386}{Conclusion}}{369}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{103}{x103-3050009.5}{QQ2-103-387}{Take Aways}}{370}\relax 
+\doTocEntry\tocchapter{10}{\csname a:TocLink\endcsname{106}{x106-30600010}{QQ2-106-388}{Password Selection and the Decoy Effect}}{373}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{106}{x106-30700010}{QQ2-106-389}{Publication Statement}}{374}\relax 
+\doTocEntry\tocsection{10.1}{\csname a:TocLink\endcsname{106}{x106-30800010.1}{QQ2-106-390}{Background and Context}}{374}\relax 
+\doTocEntry\tocsubsection{10.1.1}{\csname a:TocLink\endcsname{106}{x106-30900010.1.1}{QQ2-106-391}{Suggestions}}{374}\relax 
+\doTocEntry\tocsubsection{10.1.2}{\csname a:TocLink\endcsname{106}{x106-31000010.1.2}{QQ2-106-392}{The Decoy Effect}}{375}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{106}{x106-310001r1}{}{\ignorespaces Decoy placement options \cite  {Huber1982AsymetricallyDominated}\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{106}{x106-310002r2}{}{\ignorespaces Example choice architecture for sixpack of beers.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{10.2}{\csname a:TocLink\endcsname{106}{x106-310003r2}{}{\ignorespaces  General choice architecture overview to generate asymmetric dominance. C = competitor, T = Target. The decoy can be placed at different positions in the spectrum but needs to be dominated by the target (gray area). Placement strategies for the decoy to increase the target's dominance: R = Range, R* = extreme range, F = frequency, RF = range and frequency. }}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-31100010.1.2}{QQ2-106-396}{Example: Decoy Effects in the Real World}}{384}\relax 
+\doTocEntry\toclof{10.4}{\csname a:TocLink\endcsname{106}{x106-311001r4}{}{\ignorespaces Location settings in Android show signs of a decoy pattern. The ``battery saving'' mode is targeted because it does not activate the GPS module and can achieve comparable accuracy. Google benefits from collecting information on WiFi hotspots and network cells to improve their location service.}}{figure}\relax 
+\doTocEntry\tocsubsection{10.1.3}{\csname a:TocLink\endcsname{106}{x106-31200010.1.3}{QQ2-106-398}{Choice Architecture in Security and Privacy}}{387}\relax 
+\doTocEntry\tocsection{10.2}{\csname a:TocLink\endcsname{106}{x106-31300010.2}{QQ2-106-399}{Designing Password Choice Architecture}}{387}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{106}{x106-313001r1}{}{\ignorespaces \relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{106}{x106-313002r2}{}{\ignorespaces \relax }}{subfigure}\relax 
+\doTocEntry\toclof{10.6}{\csname a:TocLink\endcsname{106}{x106-313003r6}{}{\ignorespaces Choice architecture and decoy placement as evaluated in the online experiment. }}{figure}\relax 
+\doTocEntry\tocsection{10.3}{\csname a:TocLink\endcsname{106}{x106-31400010.3}{QQ2-106-403}{Quantitative Evaluation}}{391}\relax 
+\doTocEntry\tocsubsection{10.3.1}{\csname a:TocLink\endcsname{106}{x106-31500010.3.1}{QQ2-106-404}{Method}}{392}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-31600010.3.1}{QQ2-106-405}{Prototype}}{393}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-31700010.3.1}{QQ2-106-406}{Procedure}}{393}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-31800010.3.1}{QQ2-106-407}{Recruitment and Sample}}{394}\relax 
+\doTocEntry\tocsubsection{10.3.2}{\csname a:TocLink\endcsname{106}{x106-31900010.3.2}{QQ2-106-408}{Results}}{395}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-32000010.3.2}{QQ2-106-409}{Efficacy of Suggestions}}{395}\relax 
+\doTocEntry\toclof{10.7}{\csname a:TocLink\endcsname{106}{x106-320001r7}{}{\ignorespaces  Nudge efficacy in treatment groups (n=65)}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-32100010.3.2}{QQ2-106-411}{Impact on Password Strength}}{398}\relax 
+\doTocEntry\toclot{10.1}{\csname a:TocLink\endcsname{106}{x106-321001r1}{}{\ignorespaces Summaries of password metrics from the online experiment. Arranged by group (columns) and metric (rows)}}{table}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{106}{x106-321002r1}{}{\ignorespaces  Confidence intervals of estimated guess-numbers (log 10) for all participants (N=83). On average, the Passphrase group created significantly stronger passwords than the Control and Mangled group.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{106}{x106-321003r2}{}{\ignorespaces  Confidence intervals of estimated guess-numbers (log 10) for self-selected passwords (N=74). Although the difference between the Passphrase group and the others is not as big as in the overall sample, the average guess numbers are still $\approx $ two orders of magnitude apart.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{10.9}{\csname a:TocLink\endcsname{106}{x106-321004r9}{}{\ignorespaces  Arithmetic mean of guess numbers (log 10) and 95\% confidence intervals.}}{figure}\relax 
+\doTocEntry\toclof{10.10}{\csname a:TocLink\endcsname{106}{x106-321005r10}{}{\ignorespaces  Estimated guessability of user-selected passwords across the four conditions.}}{figure}\relax 
+\doTocEntry\toclof{10.11}{\csname a:TocLink\endcsname{106}{x106-321006r11}{}{\ignorespaces  Average password length of self-selected passwords and 95\% confidence intervals}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-32200010.3.2}{QQ2-106-418}{Password Composition and Policy Adherence}}{410}\relax 
+\doTocEntry\toclot{10.2}{\csname a:TocLink\endcsname{106}{x106-322001r2}{}{\ignorespaces Policy fulfillment of submitted passwords. Most participants used at least three character classes.}}{table}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-32300010.3.2}{QQ2-106-420}{Memorability}}{413}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{106}{x106-32400010.3.2}{QQ2-106-421}{Qualitative Findings \& Feedback}}{413}\relax 
+\doTocEntry\tocsubsection{10.3.3}{\csname a:TocLink\endcsname{106}{x106-32500010.3.3}{QQ2-106-422}{Limitations}}{414}\relax 
+\doTocEntry\tocsection{10.4}{\csname a:TocLink\endcsname{106}{x106-32600010.4}{QQ2-106-423}{Discussion}}{415}\relax 
+\doTocEntry\tocsubsection{10.4.1}{\csname a:TocLink\endcsname{106}{x106-32700010.4.1}{QQ2-106-424}{The Ineffectiveness of the Decoy Effect}}{415}\relax 
+\doTocEntry\tocsubsection{10.4.2}{\csname a:TocLink\endcsname{106}{x106-32800010.4.2}{QQ2-106-425}{Framing the Goal Effectively}}{416}\relax 
+\doTocEntry\tocsubsection{10.4.3}{\csname a:TocLink\endcsname{106}{x106-32900010.4.3}{QQ2-106-426}{Application Areas and Prospective Designs}}{416}\relax 
+\doTocEntry\toclof{10.12}{\csname a:TocLink\endcsname{106}{x106-329001r12}{}{\ignorespaces Suggestion accompanied by a graspable benefit.}}{figure}\relax 
+\doTocEntry\tocsection{10.5}{\csname a:TocLink\endcsname{106}{x106-33000010.5}{QQ2-106-428}{Conclusion}}{420}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{106}{x106-33100010.5}{QQ2-106-429}{Take Aways}}{421}\relax 
+\doTocEntry\tocchapter{11}{\csname a:TocLink\endcsname{110}{x110-33200011}{QQ2-110-430}{Extending the Password Space with Emojis}}{423}\relax 
+\doTocEntry\toclof{11.1}{\csname a:TocLink\endcsname{110}{x110-332004r1}{}{\ignorespaces   Although the ``bird'' emoji is encoded with the same unicode character (U+1F426), its visual representation differs strongly across platforms and vendors. This has specific ramifications on the use of emojis inside passwords, which we address in this project. }}{figure}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{110}{x110-33300011}{QQ2-110-432}{Publication Statement}}{427}\relax 
+\doTocEntry\tocsection{11.1}{\csname a:TocLink\endcsname{110}{x110-33400011.1}{QQ2-110-433}{Background and Context}}{428}\relax 
+\doTocEntry\tocsubsection{11.1.1}{\csname a:TocLink\endcsname{110}{x110-33500011.1.1}{QQ2-110-434}{Emojis}}{428}\relax 
+\doTocEntry\tocsubsection{11.1.2}{\csname a:TocLink\endcsname{110}{x110-33600011.1.2}{QQ2-110-435}{Emojis in Authentication}}{428}\relax 
+\doTocEntry\tocsubsection{11.1.3}{\csname a:TocLink\endcsname{110}{x110-33700011.1.3}{QQ2-110-436}{Research Opportunities}}{429}\relax 
+\doTocEntry\tocsection{11.2}{\csname a:TocLink\endcsname{110}{x110-33800011.2}{QQ2-110-437}{User Study}}{430}\relax 
+\doTocEntry\tocsubsection{11.2.1}{\csname a:TocLink\endcsname{110}{x110-33900011.2.1}{QQ2-110-438}{Prototype}}{430}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{110}{x110-339001r1}{}{\ignorespaces Two-step point-and-click interface in WhatsApp.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{110}{x110-339002r2}{}{\ignorespaces  Telegram shows the picker after the user hovers the emoji button. Moreover, recently used emojis are shown beneath the text-field.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{11.3}{\csname a:TocLink\endcsname{110}{x110-339003r3}{}{\ignorespaces  Examples for point-and-click interfaces (``emoji picker''). \textit  {Progressive disclosure} is used to access the list of available emojis: The user first needs to interact with a control element (emoji button) or start typing a special character (mostly ``:''), before an emoji can be selected by clicking or auto-completion of the shortcode. The emoji is then inserted into the text field. }}{figure}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{110}{x110-339008r1}{}{\ignorespaces  The picker shows the short-code of the emoji for future use.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{110}{x110-339009r2}{}{\ignorespaces  The user can guess the shortcode. Slack offers matching emojis.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{11.5}{\csname a:TocLink\endcsname{110}{x110-339010r5}{}{\ignorespaces  Slack allows the user to utilize both a point-and-click interface and shortcodes to enter emoijs. }}{figure}\relax 
+\doTocEntry\tocsubsection{11.2.2}{\csname a:TocLink\endcsname{110}{x110-34000011.2.2}{QQ2-110-445}{Password Selection in the Lab}}{437}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-34100011.2.2}{QQ2-110-446}{Metrics}}{437}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-34200011.2.2}{QQ2-110-447}{Procedure}}{437}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{110}{x110-342001r1}{}{\ignorespaces  Point and click interface. It is opened by clicking on the \emoji {1F913} button. The order of emojis is randomized. Upon selecting an emoji, it automatically closes.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{110}{x110-342002r2}{}{\ignorespaces  Screenshot of the user study. The selected password needed to be re-created. Additionally, participants need to tick a check-box to confirm that they had memorized their password.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{11.7}{\csname a:TocLink\endcsname{110}{x110-342003r7}{}{\ignorespaces  Prototype as used in the study.}}{figure}\relax 
+\doTocEntry\tocsubsection{11.2.3}{\csname a:TocLink\endcsname{110}{x110-34300011.2.3}{QQ2-110-451}{Unmoderated Remote Memorability Study}}{441}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-34400011.2.3}{QQ2-110-452}{Independent Variable}}{441}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-34500011.2.3}{QQ2-110-453}{Dependent Variables}}{441}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-34600011.2.3}{QQ2-110-454}{Procedure}}{441}\relax 
+\doTocEntry\tocsubsection{11.2.4}{\csname a:TocLink\endcsname{110}{x110-34700011.2.4}{QQ2-110-455}{Recruiting and Demography}}{442}\relax 
+\doTocEntry\tocsection{11.3}{\csname a:TocLink\endcsname{110}{x110-34800011.3}{QQ2-110-456}{Results}}{442}\relax 
+\doTocEntry\tocsubsection{11.3.1}{\csname a:TocLink\endcsname{110}{x110-34900011.3.1}{QQ2-110-457}{Sentiment}}{442}\relax 
+\doTocEntry\tocsubsection{11.3.2}{\csname a:TocLink\endcsname{110}{x110-35000011.3.2}{QQ2-110-458}{Emoji Selection}}{443}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-35100011.3.2}{QQ2-110-459}{Statistics}}{443}\relax 
+\doTocEntry\toclof{11.8}{\csname a:TocLink\endcsname{110}{x110-351001r8}{}{\ignorespaces  Histogram of the chosen emojis and their categories. Patterns emerge already in our sample with 40 participants, which hints at potential security problems.}}{figure}\relax 
+\doTocEntry\toclof{11.9}{\csname a:TocLink\endcsname{110}{x110-351002r9}{}{\ignorespaces  Histogram of absolute positions of emojis inside passwords. The prefix (1:, 2:) denotes the total number of emojis in the corresponding password. Most participants either started or finished their password with the emoji.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-35200011.3.2}{QQ2-110-462}{Self-Reported Selection Strategies}}{449}\relax 
+\doTocEntry\tocsubsection{11.3.3}{\csname a:TocLink\endcsname{110}{x110-35300011.3.3}{QQ2-110-463}{Input Methods}}{450}\relax 
+\doTocEntry\tocsubsection{11.3.4}{\csname a:TocLink\endcsname{110}{x110-35400011.3.4}{QQ2-110-464}{Memorability and Recognition}}{451}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-35500011.3.4}{QQ2-110-465}{Success Rates}}{451}\relax 
+\doTocEntry\toclof{11.10}{\csname a:TocLink\endcsname{110}{x110-355001r10}{}{\ignorespaces   Detailed overview of the emojis inside passwords. Columns represent emoji category. The top half shows the control group's attempts while the bottom depicts the experimental group who had to log in with a different emoji style. Successful logins appear on the positive side of the y-axis, and erroneous login attempts on the negative side. Smileys \& People are error prone in the experimental group. Symbols generally led to more errors. }}{figure}\relax 
+\doTocEntry\toclof{11.11}{\csname a:TocLink\endcsname{110}{x110-355002r11}{}{\ignorespaces   Effective emoji-set of the experimental group. Error-prone emojis are highlighted with a pink outline. We can see that these differ strongly from the iOS version from session 1. We take this as evidence for the usability problems caused by fragmentation. }}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{110}{x110-35600011.3.4}{QQ2-110-468}{Textual Feedback}}{457}\relax 
+\doTocEntry\tocsubsection{11.3.5}{\csname a:TocLink\endcsname{110}{x110-35700011.3.5}{QQ2-110-469}{Memorization Techniques}}{457}\relax 
+\doTocEntry\tocsubsection{11.3.6}{\csname a:TocLink\endcsname{110}{x110-35800011.3.6}{QQ2-110-470}{Interpretation Task}}{457}\relax 
+\doTocEntry\tocsubsection{11.3.7}{\csname a:TocLink\endcsname{110}{x110-35900011.3.7}{QQ2-110-471}{Limitations}}{458}\relax 
+\doTocEntry\tocsection{11.4}{\csname a:TocLink\endcsname{110}{x110-36000011.4}{QQ2-110-472}{Discussion}}{459}\relax 
+\doTocEntry\tocsubsection{11.4.1}{\csname a:TocLink\endcsname{110}{x110-36100011.4.1}{QQ2-110-473}{Selection Strategies and Their Implications}}{459}\relax 
+\doTocEntry\tocsubsection{11.4.2}{\csname a:TocLink\endcsname{110}{x110-36200011.4.2}{QQ2-110-474}{Factors in Good UX of Emoji Passwords}}{459}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{110}{x110-36300011.4.2}{QQ2-110-475}{Freedom to choose}}{459}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{110}{x110-36400011.4.2}{QQ2-110-476}{Learning Curve}}{460}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{110}{x110-36500011.4.2}{QQ2-110-477}{Pragmatic Constraints for Passwords}}{460}\relax 
+\doTocEntry\toclof{11.12}{\csname a:TocLink\endcsname{110}{x110-365001r12}{}{\ignorespaces  Screenshots of entering emojis on WhatsApp. While the software provides a set of emojis that is consistent across all platforms supported by WhatsApp (left), users can still turn to the native software keyboard of their OS (right). In this case, the renderings, number, and order are inconsistent. }}{figure}\relax 
+\doTocEntry\tocsection{11.5}{\csname a:TocLink\endcsname{110}{x110-36600011.5}{QQ2-110-479}{Conclusion}}{464}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{110}{x110-36700011.5}{QQ2-110-480}{Future Work}}{465}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{110}{x110-36800011.5}{QQ2-110-481}{Take Aways}}{466}\relax 
+\doTocEntry\tocpart{IV}{\csname a:TocLink\endcsname{121}{x121-369000IV}{QQ2-121-482}{SYNTHESIS}}{471}\relax 
+\doTocEntry\tocchapter{12}{\csname a:TocLink\endcsname{122}{x122-37000012}{QQ2-122-483}{Persuasive Design for Password Support (P4P)}}{473}\relax 
+\doTocEntry\toclof{12.1}{\csname a:TocLink\endcsname{122}{x122-370001r1}{}{\ignorespaces  Persuasive Design for Password Support (P4P) is a specialized design framework for strategic intervention development.}}{figure}\relax 
+\doTocEntry\tocsection{12.1}{\csname a:TocLink\endcsname{122}{x122-37100012.1}{QQ2-122-485}{Research Lens}}{476}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-37200012.1}{QQ2-122-486}{Status Quo}}{476}\relax 
+\doTocEntry\tocsection{12.2}{\csname a:TocLink\endcsname{122}{x122-37300012.2}{QQ2-122-487}{Design Lens}}{477}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-37400012.2}{QQ2-122-488}{Cues to Pick the Right Support Strategy}}{477}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-37500012.2}{QQ2-122-489}{Implementation Process}}{478}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-37600012.2}{QQ2-122-490}{Outcome}}{479}\relax 
+\doTocEntry\tocsection{12.3}{\csname a:TocLink\endcsname{122}{x122-37700012.3}{QQ2-122-491}{A Design Exercise with the P4P Framework}}{479}\relax 
+\doTocEntry\tocsubsection{12.3.1}{\csname a:TocLink\endcsname{122}{x122-37800012.3.1}{QQ2-122-492}{Phase 1: Research Lens}}{480}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-37900012.3.1}{QQ2-122-493}{Users: Mental models and Strategies}}{480}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-38000012.3.1}{QQ2-122-494}{Password Managers}}{480}\relax 
+\doTocEntry\toclot{12.1}{\csname a:TocLink\endcsname{122}{x122-380002r1}{}{\ignorespaces  Popular password managers: Comparison of features beyond password storage and retrieval. {\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 51} = available ({\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 51}) = available with restrictions, ({\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 56}) = with workaround, {\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 56} = not available}}{table}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{122}{x122-38100012.3.1}{QQ2-122-496}{Status Quo of Password Reuse and Password Managers}}{485}\relax 
+\doTocEntry\tocsubsection{12.3.2}{\csname a:TocLink\endcsname{122}{x122-38200012.3.2}{QQ2-122-497}{Phase 2: Design Lens}}{485}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-38300012.3.2}{QQ2-122-498}{First Stage}}{486}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{122}{x122-38400012.3.2}{QQ2-122-499}{Second Stage}}{486}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{122}{x122-38500012.3.2}{QQ2-122-500}{Define.}}{486}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{122}{x122-38600012.3.2}{QQ2-122-501}{Choose.}}{486}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{122}{x122-38700012.3.2}{QQ2-122-502}{Consider.}}{487}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{122}{x122-38800012.3.2}{QQ2-122-503}{Design.}}{487}\relax 
+\doTocEntry\toclof{12.2}{\csname a:TocLink\endcsname{122}{x122-388001r2}{}{\ignorespaces Different stages of the design iterations. Left: wireframing stage. Right: The main page of the PWRM groups reused passwords into different categories, which makes it easy to indicate that a password has been reused too often. Nudges: \textbf  {simplification} (through organization), \textbf  {defaults} (default categories during onboarding)}}{figure}\relax 
+\doTocEntry\toclof{12.3}{\csname a:TocLink\endcsname{122}{x122-388002r3}{}{\ignorespaces The PWRM mitigates trust issues by allowing the user to store password hints or categories instead of the passwords themselves. Nudges: \textbf  {consistency} (stay within the category), \textbf  {salience} (suggesting categories, visual framing)}}{figure}\relax 
+\doTocEntry\toclof{12.4}{\csname a:TocLink\endcsname{122}{x122-388003r4}{}{\ignorespaces The PWRM holds a separate page of unique passwords. For the user, this reduces uncertainty about the security state of different accounts. Nudges: \textbf  {commitment} (user should not reuse these passwords.)}}{figure}\relax 
+\doTocEntry\toclof{12.5}{\csname a:TocLink\endcsname{122}{x122-388004r5}{}{\ignorespaces The PWRM browser extension allows the user to save passwords to different categories. Nudges: Defaults, simplification}}{figure}\relax 
+\doTocEntry\tocparagraph{}{\csname a:TocLink\endcsname{122}{x122-38900012.3.2}{QQ2-122-508}{Evaluate.}}{499}\relax 
+\doTocEntry\toclot{12.2}{\csname a:TocLink\endcsname{122}{x122-389001r2}{}{\ignorespaces  Evaluation iterations of the concept. }}{table}\relax 
+\doTocEntry\tocsection{12.4}{\csname a:TocLink\endcsname{122}{x122-39000012.4}{QQ2-122-510}{Summary}}{502}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{122}{x122-39100012.4}{QQ2-122-511}{Take Aways}}{503}\relax 
+\doTocEntry\tocchapter{13}{\csname a:TocLink\endcsname{126}{x126-39200013}{QQ2-126-512}{Summary}}{505}\relax 
+\doTocEntry\tocsection{13.1}{\csname a:TocLink\endcsname{126}{x126-39300013.1}{QQ2-126-513}{Central Contributions and Insights}}{505}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{126}{x126-39400013.1}{QQ2-126-514}{Psychological Factors and Mental Models in Authentication}}{506}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{126}{x126-39500013.1}{QQ2-126-515}{Simplification Strategies}}{507}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{126}{x126-39600013.1}{QQ2-126-516}{Guiding Persuasive Designs}}{508}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{126}{x126-39700013.1}{QQ2-126-517}{Eight Recommendations for the Future}}{509}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{126}{x126-39800013.1}{QQ2-126-518}{Conclusion}}{511}\relax 
+\doTocEntry\tocsection{13.2}{\csname a:TocLink\endcsname{126}{x126-39900013.2}{QQ2-126-519}{Limitations}}{511}\relax 
+\doTocEntry\tocsubsection{13.2.1}{\csname a:TocLink\endcsname{126}{x126-40000013.2.1}{QQ2-126-520}{Generalizability}}{511}\relax 
+\doTocEntry\tocsubsection{13.2.2}{\csname a:TocLink\endcsname{126}{x126-40100013.2.2}{QQ2-126-521}{Study Designs and Analysis Methods}}{512}\relax 
+\doTocEntry\tocsubsection{13.2.3}{\csname a:TocLink\endcsname{126}{x126-40200013.2.3}{QQ2-126-522}{Real-World Measurements}}{513}\relax 
+\doTocEntry\tocsubsection{13.2.4}{\csname a:TocLink\endcsname{126}{x126-40300013.2.4}{QQ2-126-523}{Ethics and Risks}}{513}\relax 
+\doTocEntry\tocchapter{14}{\csname a:TocLink\endcsname{129}{x129-40400014}{QQ2-129-524}{The End - Ideas and Final Remarks}}{517}\relax 
+\doTocEntry\tocsection{14.1}{\csname a:TocLink\endcsname{129}{x129-40500014.1}{QQ2-129-525}{Ideas for Future Work}}{517}\relax 
+\doTocEntry\tocsubsection{14.1.1}{\csname a:TocLink\endcsname{129}{x129-40600014.1.1}{QQ2-129-526}{Follow-Up Studies}}{517}\relax 
+\doTocEntry\tocsubsection{14.1.2}{\csname a:TocLink\endcsname{129}{x129-40700014.1.2}{QQ2-129-527}{Personalizing Password Policies}}{518}\relax 
+\doTocEntry\toclof{14.1}{\csname a:TocLink\endcsname{129}{x129-407002r1}{}{\ignorespaces Personalized intervention for password reuse. The keystrokes inside a password field are analyzed by a machine learning model. If the password is unique, do not intervene. If the password is reused, but there are no signs for overlaps between categories, we can accept the password, too. However, if the password is reused across different categories, we use the show-explain-help paradigm to empower users to make an informed decision. In any case, the password is accepted to avoid being too restrictive. }}{figure}\relax 
+\doTocEntry\tocsubsection{14.1.3}{\csname a:TocLink\endcsname{129}{x129-40800014.1.3}{QQ2-129-529}{Contextualizing Password Feedback}}{522}\relax 
+\doTocEntry\toclof{a}{\csname a:TocLink\endcsname{129}{x129-408001r1}{}{\ignorespaces Contextualized feedback and feedforward for a weak password.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{b}{\csname a:TocLink\endcsname{129}{x129-408002r2}{}{\ignorespaces When the password is sufficiently strong, provide reinforcing feedback.\relax }}{subfigure}\relax 
+\doTocEntry\toclof{14.3}{\csname a:TocLink\endcsname{129}{x129-408003r3}{}{\ignorespaces A password meter for users of music festival app that uses context-related imagery to convey password strength. It is designed to drive curiosity. Feedback and feedforward follow the \textit  {show-explain-help} paradigm.}}{figure}\relax 
+\doTocEntry\tocsubsection{14.1.4}{\csname a:TocLink\endcsname{129}{x129-40900014.1.4}{QQ2-129-533}{Solving Password Breach Aftermath}}{525}\relax 
+\doTocEntry\tocsubsection{14.1.5}{\csname a:TocLink\endcsname{129}{x129-41000014.1.5}{QQ2-129-534}{Re-locating Password Feedback}}{526}\relax 
+\doTocEntry\tocsection{14.2}{\csname a:TocLink\endcsname{129}{x129-41100014.2}{QQ2-129-535}{Final Thoughts}}{526}\relax 
+\doTocEntry\toclof{14.4}{\csname a:TocLink\endcsname{129}{x129-411001r4}{}{\ignorespaces  Some media are constantly shaming users for their ``bad passwords'', arguably as clickbait. However, the reports also act as reinforcement because of the implicit normative message these headlines convey \cite  {Cialdini2003CraftingNormativeMessages}: Many other people behave the same way, so it is fairly normal.}}{figure}\relax 
+\doTocEntry\toclikechapter{}{\csname a:TocLink\endcsname{132}{x132-41200014.2}{QQ2-132-537}{Bibliography}}{535}\relax 
+\doTocEntry\tocchapter{}{\csname a:TocLink\endcsname{132}{Q1-132-538}{}{Bibliography}}{535}\relax 
+\doTocEntry\tocchapter{}{\csname a:TocLink\endcsname{133}{x133-41300014.2}{QQ2-133-539}{Appendix}}{601}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{133}{x133-41400014.2}{QQ2-133-540}{Policy Audit}}{601}\relax 
+\doTocEntry\toclof{.5}{\csname a:TocLink\endcsname{133}{x133-414001r5}{}{\ignorespaces  List of 46 passwords used to reverse-engineer password policies.}}{figure}\relax 
+\doTocEntry\toclot{}{\csname a:TocLink\endcsname{133}{x133-414003}{}{\numberline {.1}{\ignorespaces  Reverse-Engineered Password Policies. \textbf  {Head Row:} TLD = top level domain. <> = supports unicode UTF8/16, C = complexity, \emoji {1F4D6} = utilizes dictionary checks. \textbf  {Content:} L = lower case letters, U = upper case letters, D = digits, S = symbols, {\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 51} = allowed/yes, ! = mandatory,({\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 56}) = restricted usage, {\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 56} = forbidden/no.\relax }}}{605}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{133}{x133-41500014.2}{QQ2-133-543}{Password Personality}}{606}\relax 
+\doTocEntry\toclot{.2}{\csname a:TocLink\endcsname{133}{x133-415001r2}{}{\ignorespaces GAM summary of difficulty to create a password in Personality study 1.}}{table}\relax 
+\doTocEntry\toclot{.3}{\csname a:TocLink\endcsname{133}{x133-415002r3}{}{\ignorespaces General Additive Models for \textbf  {Time to Create} passwords in first personality study.}}{table}\relax 
+\doTocEntry\toclot{.4}{\csname a:TocLink\endcsname{133}{x133-415003r4}{}{\ignorespaces GAM fit for ``overall strength ratings'' with Big-Five trait scores as covariates. Conscientiousness was smoothed, because it shows a non-linear association with overall strength ratings.}}{table}\relax 
+\doTocEntry\tocchapter{}{\csname a:TocLink\endcsname{133}{Q1-133-547}{}{Glossary}}{617}\relax 
+\doTocEntry\toclikechapter{}{\csname a:TocLink\endcsname{134}{x134-41600014.2}{QQ2-134-548}{Glossary}}{619}\relax 

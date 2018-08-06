@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>8 Mental Models of Password Managers</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 8</span><br /><a 
+ id="x98-2470008"></a>Mental Models of Password Managers</h2>
+<!--l. 3--><p class="noindent" >An important spillover of our previous exploration is that password managers are more likely
+adopted the longer people had struggled with passwords: Older participants in the third personality
+study (Section <a 
+href="dissch7.html#x88-2230007.4">7.4<!--tex4ht:ref: sec:personality:study3 --></a>) were more likely to use a <a 
+href="dissli3.html#glo:PWM">PWM</a>. We have already corroborated market surveys
+that indicate a generally low adoption rate of password management software. As discussed in
+Sections <a 
+href="dissch3.html#x53-920003.2">3.2<!--tex4ht:ref: sec:rw:user-behavior --></a> and <a 
+href="dissch3.html#x53-1050003.3.4">3.3.4<!--tex4ht:ref: sec:rw:pwm_generators --></a>, it has been hypothesized that users do not fully trust third parties with their
+credentials, so there seems to be an urge to stay in charge. Consequently, most users still
+try to memorize their passwords. On the other hand, password managers do provide
+many usability and security benefits, but why do users fail to see them? To this end,
+we see a lack of understanding about how users make sense of password managers.
+Our goal was to understand users’ mental models of password managers first and then
+identify opportunities to improve them, which could increase adoption rates. We thus
+aimed to answer the following research questions: <span 
+class="ptmb8t-x-x-120">(1) </span>How do users think a password
+manager works? <span 
+class="ptmb8t-x-x-120">(2) </span>How does adopting a password manager change user attitudes and
+behaviors?
+</p><!--l. 10--><p class="noindent" >To answer these questions, Martin Prinz and I explored attitudes and understandings in
+semi-structured qualitative user interviews. To get a more complete picture, we interviewed both
+people who already use a <a 
+href="dissli3.html#glo:PWM">PWM</a> and also people who prefer other coping strategies.
+</p>
+<div class="fbox">  <h4 class="likesubsectionHead"><a 
+ id="x98-2480008"></a>Publication Statement</h4>
+  <!--l. 23--><p class="noindent" >Parts of the outcome of this investigation have been published as an extended abstract at
+  SOUPS 2017 <span class="cite">[<a 
+href="dissli2.html#XPrinz2017MentalModel">257</a>]</span>. For the most part, the chapter picks up the content of that paper
+  and puts it into the larger context of this thesis. There are two significant additions:
+  </p>
+    <ul class="itemize1">
+    <li class="itemize">The chapter includes the detailed structure of the mental model
+    </li>
+    <li class="itemize">The chapter elaborates on the design of a value proposition for password managers
+    that takes users’ mental models into account.</li></ul>                                       </div>
+<!--l. 27--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">8.1    </span> <a 
+ id="x98-2490008.1"></a>Background and Context</h3>
+<!--l. 33--><p class="noindent" >Password managers can be either built into web browsers or act as a standalone solution that is independent
+of the password’s purpose. Dedicated password managers have existed since the mid to late 1990s. Web
+                                                                                    
+
+                                                                                    
+Confidential<span class="footnote-mark"><a 
+href="diss99.html#fn1x29"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x98-249001f1"></a>
+was probably one of the first programs to facilitate password management, when it first surfaced in
+1998. Which of the browsers was first to add password storage capabilities cannot be easily traced
+back, but all major browsers added this feature in the early 2000s. Given the long history of
+supporting authentication with software tools, adoption of password managers is still at only
+12% <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span>. Even security experts disagree on the specific security benefits of different
+implementations<span class="footnote-mark"><a 
+href="diss100.html#fn2x29"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x98-249002f2"></a>.
+If the auto-fill feature is enabled, this can be used to create digital footprints for
+individuals<span class="footnote-mark"><a 
+href="diss101.html#fn3x29"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x98-249003f3"></a>.
+Nevertheless, similar attack vectors could easily target regular password entry, and are not limited
+to auto-fill.
+</p><!--l. 36--><p class="noindent" >There are different service architectures for handling passwords: <span 
+class="ptmri8t-x-x-120">offline </span>password managers keep a
+database of encrypted passwords locally on the user’s machine, while <span 
+class="ptmri8t-x-x-120">online </span>managers
+provide more portability because passwords are held on a server or a distributed storage
+solution <span class="cite">[<a 
+href="dissli2.html#XMcCarney2012Tapas">228</a>]</span>. <span 
+class="ptmri8t-x-x-120">KeePass </span>and <span 
+class="ptmri8t-x-x-120">Password Safe </span>are notable representatives for the offline
+storage paradigm, while the cloud-based approach is dominated by third-party solutions
+like <span 
+class="ptmri8t-x-x-120">LastPass</span>, <span 
+class="ptmri8t-x-x-120">1Password</span>, and <span 
+class="ptmri8t-x-x-120">Dashlane</span>. Browser vendors have also transitioned to
+store passwords in the cloud, e.g. Apple Keychain for Safari, or Google Smartlock for
+Chrome. On the one hand, this provides consistent user experiences across multiple devices.
+On the other hand, such architectures create lock-in effects and dependencies on the
+browser. To remove those drawbacks, third party tools typically provide browser-extensions
+to automatically fill username and password fields. This way, they can create similar
+experiences as built-in PWMs, but the user remains locked into one solution most of the
+                                                                                    
+
+                                                                                    
+time.
+</p>
+<!--l. 47--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x98-2500008.1"></a><span 
+class="ptmb8t-x-x-120">Mental Models</span></span>
+Norman suggests that exploring mental models provides predictive and explanatory power for
+understanding an interaction <span class="cite">[<a 
+href="dissli2.html#XNorman1982ObservationsMentalModels">244</a>]</span>. Volkamer and Renaud meticulously described different aspects
+and definitions of mental models, which are too elaborate to discuss in this work <span class="cite">[<a 
+href="dissli2.html#XVolkamer2013MentalModels">352</a>]</span>. As a
+takeaway, a mental model describes a user’s sense-making of any system they interact with.
+Volkamer and Renaud highlight that mental models are not necessarily static, but can be shaped
+with different cues to internal feedback loops (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). For our purposes, we use a simpler
+definition provided by Young: Mental models are “collections of the root reasons why a person is
+doing something” and “represent what a person is trying to accomplish in larger context, no
+matter which tools are used” <span class="cite">[<a 
+href="dissli2.html#XYoung2008">385</a>, p.11]</span>. In our case, they describe the reasons for (not)
+using a password manager, as explained by current actions to cope with authentication
+tasks.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x98-250001r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 53--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 8.1: </span><span  
+class="content"> Volkamer and Renaud see the formation of mental models as loop involving
+different plans, perceptions, system structures, and actions. Image from <span class="cite">[<a 
+href="dissli2.html#XVolkamer2013MentalModels">352</a>]</span></span></div><!--tex4ht:label?: x98-250001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 57--><p class="noindent" >In Chapter <a 
+href="dissch5.html#x74-1230005">5<!--tex4ht:ref: chap:pasdjo --></a>, we took a quantitative approach to elicit data on the mental models. This was useful
+because we tried to understand <span 
+class="ptmri8t-x-x-120">what </span>contributed to password strength perceptions and by <span 
+class="ptmri8t-x-x-120">how</span>
+<span 
+class="ptmri8t-x-x-120">much</span>. For password managers, related work on usage motivation is scarce, thus we strove to
+answer <span 
+class="ptmri8t-x-x-120">why </span>users perform certain actions and <span 
+class="ptmri8t-x-x-120">how </span>these could be supported by a password
+manager. Therefore, qualitative methods were more useful. Eliciting such data to understand mental
+models, Bravo-Lillo et al. relied on open-ended one-on-one interviews both with advanced and
+novice user groups <span class="cite">[<a 
+href="dissli2.html#XBravoLillo2011WarningsMentalModel">39</a>]</span>. They highlight the usefulness of this approach to understand thought
+processes. Kang et al. relied on <span 
+class="ptmri8t-x-x-120">drawing tasks </span>to elicit additional data <span class="cite">[<a 
+href="dissli2.html#XKang2015MentalModelsDrawing">185</a>]</span>. Participants were
+asked to sketch what they thought happens to their personal data when they interact with
+different online services. During sketching, a <span 
+class="ptmri8t-x-x-120">concurrent think-aloud protocol </span>was used to
+avoid misunderstandings. Once the data has been collected, Young suggests the <span 
+class="ptmri8t-x-x-120">affinity</span>
+<span 
+class="ptmri8t-x-x-120">diagramming </span>method to derive themes and identify opportunities for supporting tasks
+<span class="cite">[<a 
+href="dissli2.html#XYoung2008">385</a>]</span>. In this research project, we combined interviewing, drawing tasks, and affinity
+diagramming.
+</p>
+<h3 class="sectionHead"><span class="titlemark">8.2    </span> <a 
+ id="x98-2510008.2"></a>User Interviews</h3>
+<!--l. 62--><p class="noindent" >Our main objective was to understand how users make sense of password support tools, in
+particular password managers. This would allow us to explore solutions that fit user expectations
+better.
+</p><!--l. 64--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">8.2.1    </span> <a 
+ id="x98-2520008.2.1"></a>Method and Protocol</h4>
+<!--l. 65--><p class="noindent" >We chose to conduct semi-structured open-ended interviews for the reasons mentioned above. The
+sessions started with a thorough briefing about the study purpose and asking for permission to
+audio-record the conversation. The main questions were <span 
+class="ptmb8t-x-x-120">(1) </span><span 
+class="ptmri8t-x-x-120">Why do you need passwords? </span>and <span 
+class="ptmb8t-x-x-120">(2)</span>
+<span 
+class="ptmri8t-x-x-120">What is your strategy to manage multiple accounts?</span>. From there, the study followed up with more
+fine-grained questions to investigate the specifics of these two aspects. Moreover, Bravo-Lillo et al.
+showed the benefits of drawing tasks to find structural patterns in beliefs <span class="cite">[<a 
+href="dissli2.html#XBravoLillo2011WarningsMentalModel">39</a>]</span>, so we also asked
+participants to <span 
+class="ptmb8t-x-x-120">(3) </span><span 
+class="ptmri8t-x-x-120">sketch how a password manager works</span>. This required that participants were
+aware of <a 
+href="dissli3.html#glo:PWM">PWMs</a>. If they were not, they were told that it is a “piece of software that stores
+a user’s password”, which was expected to be vague enough to explore participants’
+unbiased expectations of this kind of software. The interviews took between five and 16
+minutes.
+                                                                                    
+
+                                                                                    
+</p><!--l. 67--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x98-2530008.2.1"></a>Recruitment and Sample</h5>
+<!--l. 68--><p class="noindent" >We first approached random passers-by on a popular street in Munich to obtain a diverse sample of
+participants. Six interviewees were recruited this way. However, these first six interviews showed
+that participants were unable to provide sufficient detail in answers to allow thorough analysis later.
+Thus, we changed the recruiting method and approached employees of a design agency with which
+we had collaborated in the past. We also knew that the agency’s policy required employees to
+utilize password managers. Moreover, the user group was more likely capable of visually
+expressing mental constructs, allowing for the envisioned analyses. Eight additional
+participants were interviewed in this sample, giving a total of N=14 (6 male, 8 female).
+They worked as experience designers and concept developers, and did not have formal
+training in computer science or engineering. The age of all interviewees ranged from 20 to
+41.
+</p><!--l. 70--><p class="noindent" >None of the interviewees in the first group had used a password manager before, so we call
+this participant group the <span 
+class="ptmri8t-x-x-120">novices</span>. Since the <a 
+href="dissli3.html#glo:PWM">PWM</a> was part of the company policy, all
+interviewees in the second group had used one before, so we call them the <span 
+class="ptmri8t-x-x-120">actives</span>. The
+separation allowed us to detect a shift of expectations before and after adopting a password
+manager.
+</p><!--l. 72--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x98-2540008.2.1"></a>Method Limitations</h5>
+<!--l. 73--><p class="noindent" >The recruiting and sampling methods are inherently limited. The novice user group was asked at a
+public spot, so it was difficult to provide enough contextual information and minimize distraction.
+On the plus side, we achieved diversity and the face-to-face set-up reassures trust, because it was
+clear that none of the information they gave us was going to be used to access their online accounts.
+5 of 6 <span 
+class="ptmri8t-x-x-120">novices </span>were unable to describe what a password manager was, before we gave them the
+above definition. Thus, their decision to refrain from using a <a 
+href="dissli3.html#glo:PWM">PWM</a> was not made actively, but
+rather results from the lack of awareness. This limits the analysis of attitudes and self-reported
+behavior. Finally, the second user group has a homogeneous background: design and
+communication. Moreover, they were all using the same password manager due to the policy at
+their company. Finally, the size of the sample might have been too small to achieve
+theoretical saturation, i.e. additional participants might have brought up aspects that were not
+covered at all by the existing sample. All these limitations demand that the results not be
+generalized to a larger population. Instead, they should be seen as rough trends that
+help understand a first set of underlying mental models, rather than the entire spectrum
+                                                                                    
+
+                                                                                    
+thereof.
+</p><!--l. 77--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">8.2.2    </span> <a 
+ id="x98-2550008.2.2"></a>Data Analysis and Results</h4>
+<!--l. 79--><p class="noindent" >Young proposed a design strategy to translate qualitative data into mental models <span class="cite">[<a 
+href="dissli2.html#XYoung2008">385</a>]</span>. The
+method is based on <span 
+class="ptmri8t-x-x-120">affinity diagramming</span>. The resulting clusters and themes from the diagram are
+then mapped to a hierarchical structure that consists of Mental Spaces, Task Towers, Tasks, and
+Particular Tasks. Here, we focused on those Mental Spaces and Task Towers that involve password
+managers. Table <span 
+class="ptmb8t-x-x-120">??</span> shows the resulting model in this format. In the following, we report the results
+that notably contributed to the formation of the model, which is described in Section
+<a 
+href="#x98-2610008.3">8.3<!--tex4ht:ref: ref:mm_pwm:mm-description --></a>.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 1--><p class="noindent" ><a 
+ id="x98-255001r1"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+<div class="tabular">
+ <table id="TBL-13" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-13-1g"><col 
+id="TBL-13-1" /></colgroup><colgroup id="TBL-13-2g"><col 
+id="TBL-13-2" /></colgroup><colgroup id="TBL-13-3g"><col 
+id="TBL-13-3" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-13-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-1-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Mental Space             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-1-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Task Tower                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-1-3"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Tasks                                                             </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-2-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Creation &#x0026; Selection    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-2-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Influential Factors                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-2-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Personal &#x0026; Historical                                    </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-3-1"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-3-2"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-3-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Policies &#x0026; Rules</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-4-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-4-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-4-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Algorithmic Strategies                                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-5-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-5-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-5-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Account Context                                           </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-6-1"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-6-2"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-6-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Memorization</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-7-1"  
+class="td11"></td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-8-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-8-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Support Tools                       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-8-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Generate &#x0026; Memorize                                   </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-9-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-9-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-9-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Use given Password                                      </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-10-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-10-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-10-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Generate &#x0026; Digitally Store                           </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-11-1"  
+class="td11"></td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-12-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-12-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-12-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Personal Algorithms            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-12-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Passphrases                                                   </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-13-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-13-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-13-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-13-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Reuse Word Blocks                                       </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-14-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-14-1"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-14-2"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-14-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Base-Password with Modifications</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-15-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-15-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-15-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-15-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Website Influence                                          </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-16-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-16-1"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-16-2"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-16-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Use Reduced Alphabet</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-17-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-17-1"  
+class="td11"></td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-18-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-18-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-18-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Handle Failures                    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-18-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Trial and Error                                               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-19-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-19-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-19-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-19-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Lookup Password                                          </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-20-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-20-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-20-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-20-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Show Entered Password in Plain Text           </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-21-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-21-1"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-21-2"  
+class="td11"> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-21-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Reset Password</span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-22-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-22-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Log-In                           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-22-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Manual Tasks                       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-22-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Copy &#x0026; Paste password                                </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-23-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-23-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-23-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-23-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Lookup hints and cues                                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-24-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-24-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-24-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-24-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Recall from memory                                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-25-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-25-1"  
+class="td11"></td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-26-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-26-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-26-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Simplify                               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-26-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Stay logged-in                                               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-27-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-27-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-27-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-27-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Cross-device support                                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-28-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-28-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-28-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-28-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Autofill forms                                                </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-29-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-29-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-29-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-29-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Rely on manager                                           </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-30-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-30-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Organize and Commit  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-30-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Share Passwords                  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-30-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Secure sharing with colleagues or friends    </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-31-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-31-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-31-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-31-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Write down password                                    </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-32-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-32-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-32-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-32-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Reset after sharing                                         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-33-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-33-1"  
+class="td11">
+</td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-34-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-34-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-34-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Use Aid                                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-34-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Password Manager                                        </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-35-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-35-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-35-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-35-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Word/Digital Document                                </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-36-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-36-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-36-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-36-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Handwritten Notes                                        </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-37-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-37-1"  
+class="td11">
+</td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-38-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-38-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-38-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Memorize Passwords           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-38-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Algorithmic                                                   </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-39-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-39-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-39-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-39-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Website Cues                                                 </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-40-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-40-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-40-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-40-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Mental Drawer                                              </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-41-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-41-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-41-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-41-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Base Password and Modifications                 </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-42-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-42-1"  
+class="td11">
+</td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-43-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-43-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-43-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Protect Passwords                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-43-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Modify Passwords                                         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-44-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-44-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-44-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-44-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Unlock access with Master Password           </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-45-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-45-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-45-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-45-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Hide or Encrypt File/Notes                           </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-46-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-46-1"  
+class="td11">
+</td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-47-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-47-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-47-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Automation                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-47-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Reset Multiple Passwords                             </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-48-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-48-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-48-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-48-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Autosave Credentials                                    </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-49-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-49-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-49-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-49-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Autofill Username and Password                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-50-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-50-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-50-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-50-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Warnings when websites are compromised  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-51-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-51-1"  
+class="td11">
+</td></tr><tr 
+class="cline"><td></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-52-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-52-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-52-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Build Password Categories  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-52-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Security                                                         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-53-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-53-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-53-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-53-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Importance                                                    </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-54-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-54-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-54-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-54-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Frequency                                                      </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-55-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-55-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-55-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-55-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Policies &#x0026; Rules                                            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-56-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-56-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-56-2"  
+class="td11">                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-13-56-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Mental Drawer                                              </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-13-57-"><td  style="white-space:nowrap; text-align:left;" id="TBL-13-57-1"  
+class="td11">                   </td></tr></table>
+<!--l. 55--><p class="noindent" ></div>
+ </p><div class="caption" 
+><span class="id">Table 8.1:  </span><span  
+class="content">  Mental  Model  of  Authentication  and  Password  Management,  adapted  from
+Martin Prinz <span class="cite">[<a 
+href="dissli2.html#XPrinz2017Thesis">256</a>]</span></span></div><!--tex4ht:label?: x98-255001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<h5 class="subsubsectionHead"><a 
+ id="x98-2560008.2.2"></a>Selection and Coping Strategies</h5>
+<!--l. 90--><p class="noindent" >All interviewees reuse passwords to cope with the multitude of accounts. Participants often
+developed coping strategies without deliberation: they were unaware of how they cope with
+passwords until we specifically requested more details. Only then did they reflect and
+realize how they behave. One such revelation was that they categorize passwords in
+different ways. For instance, the context in which they created an account, e.g. the URL or
+policy of the corresponding website, was factored into passwords and facilitated the
+decision-making process which password to pick from their portfolio (see Figure <span 
+class="ptmb8t-x-x-120">??</span> A). Similarly,
+the perceived importance led to distinct categories, although the interviewees had not
+realized this. Participants generally tried to justify their “insecure” behavior. Beside
+memory burden of new secrets, time pressure was mentioned as reason for password
+reuse.
+</p><!--l. 92--><p class="noindent" >Furthermore, we also heard an interesting, deliberate strategy that seldom appears in
+the literature: two participants mentioned memorizing a list, or a list of letters that are
+then transformed into a new, quasi-unique password. This method is comparable to the
+Diceware technique (details in Section <a 
+href="dissch3.html#x53-1040003.3.3">3.3.3<!--tex4ht:ref: sec:rw:passphrases --></a>). Instead of rolling a die to generate a random
+number by which to look up a word from a list, those participants algorithmically select
+the order of words/letters based on contextual cues (see Figure <span 
+class="ptmb8t-x-x-120">??</span> B and C). Another
+participant said to have memorized a randomly generated password and reusing it many
+times.
+</p><!--l. 94--><p class="noindent" >We also inquired situations when their strategies failed. The primary problem of having a multitude
+of accounts was the correct <span 
+class="ptmri8t-x-x-120">combination </span>of user-name and password, which is a common pitfall of
+knowledge-based authentication <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. Not only did they forget passwords, but also user names,
+which is just as severe because web sites generally do not inform users which was the error source
+to thwart attacks. Participants reportedly use a trial-and-error approach to go through their portfolio
+and ultimately use self-serviced password resets as a convenient solution. Interviewees expected
+that websites offer this kind of fallback scheme, because two of them do this on a regular
+basis.
+</p><!--l. 96--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x98-2570008.2.2"></a>Password Manager Impact</h5>
+<!--l. 97--><p class="noindent" >Overall, the <span 
+class="ptmri8t-x-x-120">novices </span>and <span 
+class="ptmri8t-x-x-120">actives </span>did not behave differently in their selection and coping strategies at
+first sight. However, we found that <span 
+class="ptmri8t-x-x-120">actives </span>did in fact change some habits when they
+                                                                                    
+
+                                                                                    
+had started using a password manager. First, although they were initially exposed to
+<a 
+href="dissli3.html#glo:PWM">PWMs</a> at work, <span 
+class="ptmri8t-x-x-120">actives </span>started using them in private shortly afterwards. This interaction
+and experience with the tool led to their migrating passwords into the manager step
+by step. One participant mentioned that it helps him stay organized where there was
+“chaos” before (see Figure <span 
+class="ptmb8t-x-x-120">??</span> C). Others were somewhat ashamed of their weak practices
+before using this kind of software. Password sharing with other users was the central
+advantage for four interviewees, especially at work. It facilitates secure collaboration with
+colleagues and clients. Participants do not memorize these passwords, because they often use
+built-in password generators. They realized that shared passwords are short-lived because
+colleagues leave or contracts with clients end, upon which passwords are invalidated. One
+interviewee fully embraced generated passwords even for private purposes and only memorizes
+his master password. Interestingly, however, for their most important accounts, most
+<span 
+class="ptmri8t-x-x-120">actives </span>kept on manually crafting passwords and refrained from putting them into the
+<a 
+href="dissli3.html#glo:PWM">PWM</a>. Having used the tool and become aware of their own weak behavior in the past,
+they had gained confidence in selecting stronger passwords. This gain of mastery left
+them with a positive experience of password managers. As a contrast, <span 
+class="ptmri8t-x-x-120">novices </span>were all
+comfortable with how they managed their passwords and did not show that sense of
+insecurity.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x98-257001r2"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 102--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 8.2: </span><span  
+class="content"> Participants were asked to visualize their methods to create passwords, if they
+had a specific strategy. (A) participant who categorizes and remembers passwords by the
+time they were created (context factors). (B) participant uses words and cued positions to
+recall the constellation. (C) participant who uses a fixed set of characters and algorithm to
+“calculate” the correct constellation.</span></div><!--tex4ht:label?: x98-257001r2 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h5 class="subsubsectionHead"><a 
+ id="x98-2580008.2.2"></a>Drawing Tasks</h5>
+<!--l. 107--><p class="noindent" >Participants were asked to sketch their thoughts whenever this was appropriate. We encouraged
+them to sketch as much as possible. All participants mentioned that it was challenging to
+communicate their understanding this way. Already for basic functionality and purpose of
+passwords, we asked to create sketches. This task was still relatively easy for all interviewees.
+Padlocks and keys were two of the most commonly drawn elements. It also helped to communicate
+individual elaborate selection strategies (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). However, the difficulty rapidly
+changed for the workings of a password manager. Here, especially <span 
+class="ptmri8t-x-x-120">novices </span>struggled
+with the task and could not proceed without further explanation, telling us that it is hard
+to frame an unfamiliar concept with a sketch. Their drawings were more vague than
+those of <span 
+class="ptmri8t-x-x-120">actives</span>, which might also be due to the different professional background and
+expertise in creating concepts. The drawn elements and metaphors differed among the two
+groups:
+</p>
+<!--l. 109--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x98-2590008.2.2"></a><span 
+class="ptmb8t-x-x-120">Novices</span></span>
+had a vague model of how such a password manager might work and found it especially
+difficult to sketch this. The benefits and system architecture of the software were unclear to
+them. One interesting drawing depicted a password manager as a virtual “brain” that acts
+as a central hub to make the user’s life easier (Figure <span 
+class="ptmb8t-x-x-120">??</span> B). Another participant, who
+reportedly used a Word document to keep track of his accounts, imagined a password
+manager to behave the same way (Figure <span 
+class="ptmb8t-x-x-120">??</span> C). The only expected difference would be that
+accessing the list of passwords would be protected by a password, which is indicated by
+the keyhole and an arrow that points to it. This represents <span 
+class="ptmri8t-x-x-120">novices’ </span>understanding on a
+more general level, as they explained a password manager as a special way to manage a
+<span 
+class="ptmri8t-x-x-120">secure list of passwords </span>that helps find the right ones. Five said that it facilitates logins
+by allowing them to <span 
+class="ptmb8t-x-x-120">copy-and-paste </span>passwords from the manager into the webpage.
+</p><hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x98-259001r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 112--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 8.3: </span><span  
+class="content"> Drawings to the question “What does a password manager do, and how?” from
+three <span 
+class="ptmri8t-x-x-120">novice </span>users. (A) only shows a profile on facebook. (B) emphasizes that the PWM
+is a central hub and acts as the user’s “brain” for different entities. (C) shows a table-like
+structure that holds all username-password tuples.</span></div><!--tex4ht:label?: x98-259001r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 116--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x98-2600008.2.2"></a><span 
+class="ptmb8t-x-x-120">Actives</span></span>
+Since all active users were also visual communicators, it was somewhat easier for them to
+sketch the workings of a password manager. They clearly focused on the interaction
+between users and the system and highlighted the benefits in their drawings. Having
+experienced the advantages, they strove to convey these visually and came up with more
+details (cf. Figure <span 
+class="ptmb8t-x-x-120">??</span>). Instead of a password-table, we can see workflows that show the
+interplay between user, database and website. Common components are UI elements
+like input fields or buttons that link to other screens or entities. Only one interviewee
+from the <span 
+class="ptmri8t-x-x-120">active </span>group refrained from UI elements and instead sketched a flow-chart.
+</p><hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x98-260001r4"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 120--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 8.4: </span><span  
+class="content"> Drawings to the question “What does a password manager do, and how?” from
+six <span 
+class="ptmri8t-x-x-120">active </span>users. Common components are UI elements that link to other entities, therefore
+the interplay between user, PWM and website is clearer.</span></div><!--tex4ht:label?: x98-260001r4 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h3 class="sectionHead"><span class="titlemark">8.3    </span> <a 
+ id="x98-2610008.3"></a>Mental Model</h3>
+<!--l. 126--><p class="noindent" >From the behavioral, attitudinal, and experiential data, we created a mental model schema in the
+style of Young <span class="cite">[<a 
+href="dissli2.html#XYoung2008">385</a>]</span> (see Table <span 
+class="ptmb8t-x-x-120">??</span>). We tried to stay close to the data as possible, but a few points
+are enhanced by knowledge from related work. We briefly elaborate on the mental spaces to allow
+the reader to delve into task-towers and tasks.
+</p>
+<!--l. 128--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x98-2620008.3"></a><span 
+class="ptmb8t-x-x-120">Password Creation and Selection</span></span>
+First, users have a variety of particular needs when they are challenged to create a password. This
+task tower describes both the constraints, prior experiences and strategies to accomplish the task.
+Our participants often mentioned highly individual selection strategies that allow for both secure
+and memorable secrets. From a support tool, they expected guidance and feedback. Password
+generators that simplify this task can aid here.
+</p>
+<!--l. 131--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x98-2630008.3"></a><span 
+class="ptmb8t-x-x-120">Log In</span></span>
+Most prominently, authentication still involves <span 
+class="ptmri8t-x-x-120">both </span>manual and automatic tasks. Interviewees
+expected to copy and paste passwords from the manager to their browser, or at least
+provide a way to retrieve password hints. On the other hand, participants expected that
+support tools are deeply integrated into the browser by automatically filling password
+fields in a highly reliable manner. If possible, the solution should work across multiple
+devices.
+</p>
+<!--l. 134--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x98-2640008.3"></a><span 
+class="ptmb8t-x-x-120">Organize and Commit</span></span>
+The third mental space resembles the “Commit to password” and “Live with password” stages of
+the Password Life Cycle <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. Each participant mentioned some way of organization strategy that
+allowed them to live without password managers to some degree. However, these were not always
+deliberate choices, but rather have formed over the years. Especially <span 
+class="ptmri8t-x-x-120">novice </span>users made sense of
+password managers by their capability of protecting passwords, i.e. encrypting a list of passwords
+rather than just storing them in a Word document. <span 
+class="ptmri8t-x-x-120">Active </span>users were already aware of the sharing
+capabilities and appreciate a simple process to reset passwords when they need to be invalidated for
+                                                                                    
+
+                                                                                    
+security reasons.
+</p><!--l. 137--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">8.4    </span> <a 
+ id="x98-2650008.4"></a>Opportunities and Challenges</h3>
+<!--l. 138--><p class="noindent" >Having fine-grained insights into the mental models of password authentication sub-tasks lets us
+explore novel ways to support users in many challenges through simplification. In the following, we
+highlight key opportunities for future work on password managers and persuasive password support
+in general.
+</p><!--l. 140--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">8.4.1    </span> <a 
+ id="x98-2660008.4.1"></a>Leveraging and improving novices’ mental models</h4>
+<!--l. 141--><p class="noindent" >There were two important preconceptions about password mangers on the <span 
+class="ptmri8t-x-x-120">novices </span>side: simple
+password lists and copy-paste interactions. Future password managers can leverage these models to
+persuasively communicate functionality. The value proposition should thus ensure that potential
+users understand that PWMs are <span 
+class="ptmri8t-x-x-120">not only </span>a secure list of user-names and passwords, but also help
+them <span 
+class="ptmri8t-x-x-120">select </span>passwords – a benefit that <span 
+class="ptmri8t-x-x-120">actives </span>had realized in retrospect. The <span 
+class="ptmri8t-x-x-120">password list</span>
+metaphor is also useful to communicate automation features: explicitly showing new users that they
+do not have to search through the list, nor copy and paste passwords from the list to the website
+might help them understand the simplicity of the interaction paradigm. This can happen during an
+onboarding user journey, e.g. with an image showing the steps saved by the PWM (cf. Figure
+<span 
+class="ptmb8t-x-x-120">??</span>).
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x98-266001r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 145--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 8.5:  </span><span  
+class="content">  Visualizing  users’  previous  behavior  might  help  communicate  how  the
+password manager can simplify authentication tasks. This can create a better mental model
+of their workings.</span></div><!--tex4ht:label?: x98-266001r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">8.4.2    </span> <a 
+ id="x98-2670008.4.2"></a>Increasing Sense of Agency</h4>
+<!--l. 152--><p class="noindent" >While automation simplifies processes and thus improves usability, staying in control of
+security-related interactions is important to users. <span 
+class="ptmri8t-x-x-120">Novices </span>were confident in their current
+behavior. <span 
+class="ptmri8t-x-x-120">Actives </span>had realized that their past behavior was sub-optimal, but they had
+gained confidence to create passwords and handle authentication for their most important
+accounts on their own. As a consequence, a password manager needs to stay flexible
+enough to respect user preferences for different account <span 
+class="ptmri8t-x-x-120">categories</span>, e.g. unimportant
+vs. important accounts. A PWM could learn which types of websites the user prefers
+to handle on their own and refrain from asking to store the credentials at similar sites
+in the future. Moreover, reassuring users that handling such situations on their own is
+reasonable can inspire trust in the system. A PWM could automatically detect when it is
+appropriate to offer help. Current managers only provide the opportunity to decide whether the
+password should be saved, maybe saved later, or never be saved for a particular site.
+Such decisions can be automated once enough training data has been provided by the
+user.
+</p><!--l. 154--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">8.4.3    </span> <a 
+ id="x98-2680008.4.3"></a>Leveraging Context</h4>
+<!--l. 155--><p class="noindent" >Context factors can be leveraged by PWMs to adapt to different situations. For example,
+usage-context informs future interactions. If the user sets up the system at work, this is an indicator
+about how passwords are going to be categorized, how often they will be reset, and how likely they
+are going to be shared with others. Adapting the interface to such scenarios can simplify
+interactions and the formation of mental models of the benefits. Moreover, automated
+generation of passwords is also context-dependent. As we have shown in Chapter <a 
+href="dissch6.html#x83-1610006">6<!--tex4ht:ref: chap:policies_reuse --></a>,
+password policies in the wild impose varying restrictions on the use of characters. To avoid
+user frustration arising from rejected passwords, e.g. because they contain forbidden
+characters, the generator can ensure the random password meets the website’s composition
+policy.
+</p><!--l. 161--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h4 class="subsectionHead"><span class="titlemark">8.4.4    </span> <a 
+ id="x98-2690008.4.4"></a>Customization and Personalization</h4>
+<!--l. 162--><p class="noindent" >It is evident that current password managers work fundamentally differently compared to how users
+normally cope with passwords. Our participants reused passwords with different strategies and
+relied on digital documents, paper notes, and highly individual password creation or memorization
+techniques. Beside the document-metaphor discussed above, the other strategies are not reproduced
+by password managers. However, a general philosophy in user-centered design is the aim to “fix the
+system” rather than to “fix the user” and acknowledge that people prefer maintaining existing
+strategies, e.g., to make ensure being able to log in even without assistance. A PWM
+can hence make a user’s creation experience more convenient by leveraging existing
+strategies. For instance, it could let the user specify a creation technique: if they usually
+modify a base-password depending on the context, the PWM could offer to generate
+passwords like this in future scenarios, i.e., automate the modification strategy. While
+this approach would not necessarily improve security, it could save the user time and
+remove critical pain points. Besides, the user stays independent of the tool, because they
+can reproduce their personal system and authenticate on other devices even without the
+support.
+</p><!--l. 169--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">8.5    </span> <a 
+ id="x98-2700008.5"></a>Conclusion</h3>
+<!--l. 170--><p class="noindent" >To understand additional psychological context factors of persuasive password support, we
+explored the mental models of authentication tasks and password managers with a qualitative
+approach. Both participants experienced with password managers and inexperienced novices shared
+their insights, attitudes and behaviors during short interviews. Fourteen interviewees provided us
+detailed descriptions of their password selection and coping strategies, and how they make sense of
+supporting tools. We contribute evidence that (a) individual coping strategies persist even after
+adopting a password manager for important accounts, (b) work environments serve as onboarding
+triggers even for private use (RQ2), and (c) novices were mostly unaware of functionality and the
+ramifications of adopting password managers (RQ1). These findings show that the value
+proposition should be communicated concisely. One potential solution could compare the
+benefits of using a PWM to inefficient and insecure password practices. At the same
+time, future solutions should respect highly individual coping strategies to match user
+behavior better. Ultimately, this could increase adoption and, more importantly, retention
+                                                                                    
+
+                                                                                    
+rates.
+</p><!--l. 177--><p class="noindent" ><span class="fbox">             </p>
+          <h3 class="likesectionHead"><a 
+ id="x98-2710008.5"></a>Take Aways</h3>
+              <ul class="itemize1">
+              <li class="itemize">Password  managers  appear  to  be  a  “black  box”  for  people
+              who have never used one. They suspect that such tools are a
+              slightly more secure version of text files to write down lists of
+              username-password-combinations.
+              </li>
+              <li class="itemize">The mental model of password authentication and managers is
+              mostly divided into the mental spaces “Select password”, “Log
+              in”, and “Organize”. There seem to be discrepancies between
+              current user behavior and current password managers.
+              </li>
+              <li class="itemize">Making password managers adapt to context and individuals
+              seems a promising direction for future systems.</li></ul>                                </span>
+                                                                                    
+
+                                                                                    
+<!--l. 182--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

@@ -1,0 +1,2718 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>3 Passwords – A User Perspective</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 3</span><br /><a 
+ id="x53-760003"></a>Passwords – A User Perspective</h2>
+<!--l. 4--><p class="noindent" ></p><div class="minipage"><span 
+class="ptmri8t-x-x-120">“his thoughts were so full of the great riches he should possess, that he</span>
+<span 
+class="ptmri8t-x-x-120">could not think of the word to make it open, but instead of ‘Sesame,’ said,</span>
+<span 
+class="ptmri8t-x-x-120">‘Open, Barley!’ and was much amazed to find that the door remained fast</span>
+<span 
+class="ptmri8t-x-x-120">shut. He named several sorts of grain, but still the door would not open,</span>
+<span 
+class="ptmri8t-x-x-120">and the more he endeavoured to remember the word ‘Simsim,’ the more his</span>
+<span 
+class="ptmri8t-x-x-120">memory was confounded, and he had as much forgotten it as if he had</span>
+<span 
+class="ptmri8t-x-x-120">never heard it mentioned.”</span>
+                                                               <div class="flushright" 
+>
+<!--l. 13--><p class="noindent" >
+ – Kasim’s predicament in <span 
+class="ptmri8t-x-x-120">Ali Baba and the Forty Thieves</span></p></div>                              </div>
+<!--l. 29--><p class="noindent" >Morris and Thompson were already concerned with user behavior regarding passwords in 1979
+<span class="cite">[<a 
+href="dissli2.html#XMorris1979PasswordSecurity">237</a>]</span>. They identified that users choose predictable passwords and that this can be leveraged for
+attacks. So, they suggested enforcing a certain minimum password length (six characters). At the
+time, the users were mostly professionals who received training to operate computers and could
+thus also have been trained to pick less predictable passwords <span class="cite">[<a 
+href="dissli2.html#XMaguire2012YouOnlyLiveTwice">218</a>]</span>. But as computers were
+introduced to a larger audience, more people were exposed to password authentication. Naturally,
+this also induced a growing number of attacks, and it is increasingly difficult for users to defend
+themselves against them (see. Section <a 
+href="dissch2.html#x8-480002.2">2.2<!--tex4ht:ref: sec:rw:attack_vectors --></a>). Nowadays, password policies are in place that
+require not only a typical minimum of eight characters, but also mandate mixed-case
+letters, digits and special symbols to start with. The HCI community noticed the users’
+struggle in the 1990s and that we can – and should – design authentication systems with
+usability in mind. Perhaps, one of the breaking points where a new school of thought
+turned up in the literature was a paper by Adams and Sasse in 1999 <span class="cite">[<a 
+href="dissli2.html#XAdams1999UsersEnemy">3</a>]</span>. The central and
+novel theme in there was a shift from <span 
+class="ptmri8t-x-x-120">fixing </span>the user to <span 
+class="ptmri8t-x-x-120">acknowledging </span>user behavior
+and designing for it. The paper managed to see over 1500 citations as of writing this
+thesis.
+</p><!--l. 31--><p class="noindent" >This chapter looks at the literature that mostly came after this seminal work. It discusses the users’
+problems, solutions, feelings, and opinions about using passwords. An essential goal is to give the
+reader an empathetic perspective and provide background information to understand why it is
+challenging to come up with viable solutions to make users’ lives less frustrating. To get there, we
+first take a brief look at conducting user research with passwords. Hereafter we disseminate
+common coping strategies and solutions.
+</p>
+<h3 class="sectionHead"><span class="titlemark">3.1    </span> <a 
+ id="x53-770003.1"></a>Methodology: Running Password Studies</h3>
+<!--l. 41--><p class="noindent" >Before we report on insights about user behavior regarding passwords, we take a look into running
+                                                                                    
+
+                                                                                    
+studies that focus on passwords. There are two central aspects that make collecting data particularly
+challenging: acting ethically and maintaining high ecological validity of the data. In fact, these two
+goals create an area of tension that demands a critical selection of methods. Komanduri et al. note
+that “ideally, password studies would be conducted by collecting data on real passwords created by
+real users of a deployed system” <span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>]</span>. But this would mean that researchers obtain
+access to the user accounts that were under investigation. This is ethically questionable
+<span class="cite">[<a 
+href="dissli2.html#XEgelman2012ItsNotStealing">92</a>]</span>. Maybe the researchers themselves are benevolent, but the data is precious and thus
+could bring attackers to the scene. Since absolute security can barely be guaranteed, it
+is best to avoid that users disclose their actual credentials during a user study to the
+researchers.
+</p><!--l. 43--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.1.1    </span> <a 
+ id="x53-780003.1.1"></a>General Considerations for User Studies as Data Source</h4>
+<!--l. 44--><p class="noindent" >If we cannot collect the users’ real password in its original form, what is the best way to measure,
+e.g., cause and effect of novel interventions? There are several alternatives.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-790003.1.1"></a>Password Creation Tasks</h5>
+<!--l. 46--><p class="noindent" >First, one asks participants to create a new password during the user study and stores these
+passwords as part of the dataset. This approach resolves the issue of real-world password
+disclosure, but introduces a number of problems. Studies should be ethical and thus transparent for
+the most part. Hence, the study topic should be known to the participants. However, if participants
+know that their passwords are studied, this could induce protective reactions to prevent giving hints
+about their real passwords. In that case, the participants’ selection strategy does not
+resemble their real-world behavior much and thus the ecological validity of the data is low
+<span class="cite">[<a 
+href="dissli2.html#XShay2012CorrectHorseBatteryStaple">297</a>]</span>. Although it appears trivial, Fahl et al. suggest that in this scenario, asking the
+participants whether they had acted like they normally would is a suitable indicator that helps
+in weighting the data <span class="cite">[<a 
+href="dissli2.html#XFahl2013EcologicalValidityPasswordStudy">103</a>]</span>. It is also recommendable to give users a specific scenario
+that allows them to immerse themselves in the task. Komanduri et al. argue that having
+participants create passwords for fictional email accounts leads to more authentic behavior
+<span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>]</span>. Some users, however, are less protective and provide one of their real passwords
+regardless of the instruction (e.g. 26.5% in Fahl et al.’s study <span class="cite">[<a 
+href="dissli2.html#XFahl2013EcologicalValidityPasswordStudy">103</a>]</span>). The result is the
+same as if the purpose of the study was concealed through an act of deception, which is
+occasionally done in psychology studies (for a discussion see <span class="cite">[<a 
+href="dissli2.html#XTai2012Deception">326</a>]</span>). For example, it can suffice
+to tell participants a convincing <span 
+class="ptmri8t-x-x-120">cover story</span>, e.g. that the purpose of the study is to do
+a usability test of a social networking site, which also happens to involve an account
+setup process (see <span class="cite">[<a 
+href="dissli2.html#XFurnell2017GuidanceCompliance">129</a>]</span>). The data would be ecologically valid because the cover story
+                                                                                    
+
+                                                                                    
+removes observer-expectancy and other biases, but users might still pick a password that is
+not representative for their usual practices. Thus, for the researchers, it is extremely
+difficult to tell “real” passwords and “new” passwords apart. Phishing or man in the middle
+attacks are sometimes carried out to collect realistic passwords. Haque et al. conducted a
+laboratory study where they told participants a cover story to create new accounts for
+popular websites <span class="cite">[<a 
+href="dissli2.html#XHaque2014Hierarchy">154</a>]</span>. The websites, however, were re-created by the researchers and
+stored the passwords on their own servers instead of performing actual registrations.
+Egelman et al. used a proxy server to intercept traffic between the users and a real online
+portal <span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>]</span>. They also altered the websites to communicate their cover story that the
+password had expired. This, however, creates an ethical conundrum, if the dataset is
+published along with the paper. To allow others to verify that research is valid, reliable,
+and generalizable, a published dataset is desirable, but in Egelman et al. or Haque et
+al.’s studies this would put real user accounts at risk. Legal constraints like the EU’s
+General Data Protection Regulation (GDPR) can prevent publishing data as well. Much
+in the same vein, sharing research about successfully attacking passwords produces
+a similar dilemma. For instance, one can put forward new cracking approaches (e.g.
+<span class="cite">[<a 
+href="dissli2.html#XMarechal2008AdvancesPWCracking">222</a>, <a 
+href="dissli2.html#XNarayanan2005FastDictionaryAttacks">239</a>, <a 
+href="dissli2.html#XSchmidt2013Pitfalls">281</a>, <a 
+href="dissli2.html#XWeir2009PCFG">366</a>]</span>) that potentially affect common strength metrics (see Section <a 
+href="dissch2.html#x8-550002.3">2.3<!--tex4ht:ref: sec:rw:pw_strength_metrics --></a>) – but
+attackers also benefit from this kind of knowledge. From an HCI perspective, one can
+also unfold how users select passwords, which allows optimizing cracking efficiency
+<span class="cite">[<a 
+href="dissli2.html#XWeir2010MetricsPolicies">365</a>, <a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>.
+</p><!--l. 58--><p class="noindent" >There are several methods to avoid acting unethically in studies where users are required
+to create passwords. First of all, studies involving human subjects are assessed by an
+<a 
+href="dissli3.html#glo:IRB">Institutional Review Board (IRB)</a>, especially in the United States. This is done to ensure
+an ethical study design that is unlikely to cause participants any harm. The <a 
+href="dissli3.html#glo:IRB">IRB</a> might
+mandate a thorough debriefing of participants and meticulous documentation of the
+experiment. In Europe, however, password studies are less commonly evaluated by an IRB
+(or authors fail to mention the process in their papers – often there are remarks that
+universities do not have such institutions like in <span class="cite">[<a 
+href="dissli2.html#XFahl2013EcologicalValidityPasswordStudy">103</a>]</span>). Secondly, one can refrain from
+releasing the data set, even if user names are removed. In fact, almost all publications on
+passwords collected during a user study omit publishing the corresponding data set. Only the
+abstract analysis is published and this is a widely-accepted standard practice, despite the
+questionable reliability. A rather novel approach that reduces the likelihood of made-up data
+relies on the idea of publishing differentially private data sets. Here, algorithmically
+generated noise, which is indistinguishable from the orignal data, is added to the data set to
+preserve privacy of users. For password frequency lists, passwords could be mangled and
+extended by generated passwords that resemble real ones. Adversaries lack information
+whether the data is usable as signal or noise. This way, Blocki et al. managed to release a
+private frequency list of passwords at Yahoo that Bonneau had already anonymously
+analyzed <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>]</span>. Moreover, instead of collecting newly generated passwords in plain text, it is
+possible to store a hashed version. For instance, Wash et al. had participants install a
+browser extension that logged all form submits that included a password field <span class="cite">[<a 
+href="dissli2.html#XWash2016UnderstandingPasswordChoices">363</a>]</span>. To
+study reused passwords, they hashed and sent them over a secure connection to their
+servers. As long as a slow hash function and a strong salt are used, this approach is
+                                                                                    
+
+                                                                                    
+uncritical. However, it merely allows observing if the hashes match on several sites.
+Finally, as a last option to collect password data, researchers can log meta-data about
+passwords. For instance, Von Zezschwitz et al. used a “meta password” that described the
+participants’ actual passwords <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2013SurvivalShortest">354</a>]</span>, but which was insufficient to reconstruct the original. This
+description can include the number of characters, upper-/lowercase letters, digits, and
+even proactive strength estimations. To collect the data, participants in von Zezschwitz
+et al.’s study were provided with an offline password analysis tool. They entered their
+password into that and copy-pasted the result of the analysis into the questionnaire form. If
+one does not want to examine the full range of a password’s qualities, this approach is
+absolutely feasible. Florêncio and Herley used a similar approach for the large-scale data
+collection with around 500,000 participants to avoid running into privacy issues <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007LargeScaleStudyPasswordHabits">111</a>]</span>. The
+information transmitted to the logging server was pseudonymized and contained only meta
+features. The only downside is that one cannot run further analyses on the passwords
+after the data is collected, which might be necessary, e.g., if a new strength metric is
+established.
+</p><!--l. 72--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-800003.1.1"></a>Retrospective Self Report</h5>
+<!--l. 73--><p class="noindent" >If one wants to refrain from having users create a new password, one can study their past behavior
+in different ways. In its simplest form, participants are simply asked to describe how they
+create passwords. Stobert &#x0026; Biddle did this extensively to create the Password Life
+Cycle model <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span> (see Section <a 
+href="#x53-920003.2">3.2<!--tex4ht:ref: sec:rw:user-behavior --></a>). Ur et al. used interviews to find out what users
+do to make their passwords stronger <span class="cite">[<a 
+href="dissli2.html#XUr2015PWCreationLab">345</a>]</span>. Das et al. found out through retrospective
+interviews that social contacts have a strong impact on users’ security decisions <span class="cite">[<a 
+href="dissli2.html#XDas2014EffectSocialInfluenceSecuritySensitivity">68</a>]</span>. Most
+commonly, however, typical online surveys feature a number of questions about personal
+behavior and attitudes, e.g. <span class="cite">[<a 
+href="dissli2.html#XAdams1997MakingPWsSecureAndUsable">4</a>, <a 
+href="dissli2.html#XGaw2006PasswordManagement">133</a>, <a 
+href="dissli2.html#XKuo2006HumanSelectionMnemonic">206</a>, <a 
+href="dissli2.html#XRiley2006WhatUsersKnowWhatTheyDo">269</a>, <a 
+href="dissli2.html#XShay2010EncounteringPasswordRequirements">298</a>]</span>. Questions about passwords are
+easy to implement in a survey and respondents can always choose how much they want
+to share. However, one has to stay aware that social desirability lowers the reliability
+of the data: since news articles also do their part in shaming users for picking “bad”
+passwords (see Chapter <a 
+href="dissch14.html#x129-40400014">14<!--tex4ht:ref: chap:the_end --></a>), people may respond dishonestly about their password behavior.
+Many people are uncomfortable admitting their password is as simple as 12345. Another
+problem results from fading memories. Since most users have more than one password, it
+might be difficult for them to recall the correct past behavior and their motivation for it.
+Not only password studies suffer from this bias, but any study involving self report in
+general.
+</p><!--l. 75--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h5 class="subsubsectionHead"><a 
+ id="x53-810003.1.1"></a>Principles</h5>
+<!--l. 76--><p class="noindent" >From user research in <a 
+href="dissli3.html#glo:USEC">Usable Security and Privacy (USEC)</a> of the past decades, Krol et al. derive a
+set of general principles that researchers ought to consider when conducting experiments in security
+and privacy <span class="cite">[<a 
+href="dissli2.html#XKrol2016ExperimentDesign">205</a>]</span>. We can integrate password studies in there:
+</p>
+<!--l. 78--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-820003.1.1"></a><span 
+class="ptmb8t-x-x-120">Primary Task</span></span>
+Creating a password should not be the sole task in the study. Instead, participants should achieve a
+primary task by authenticating with passwords, e.g. using a new system for a period of time <span class="cite">[<a 
+href="dissli2.html#XBrostoff2000PassfacesEvaluation">41</a>]</span>.
+The reasoning behind this principle is that security tasks are secondary tasks and this constraint
+needs to be reflected in the experiment. However, re-focusing on a separate primary task is not
+always possible, e.g. in surveys.
+</p>
+<!--l. 80--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-830003.1.1"></a><span 
+class="ptmb8t-x-x-120">Realistic Risk</span></span>
+Users should be able to realistically estimate the risk for secure interactions. As mentioned above,
+Komanduri et al. suggest carefully selecting real-world scenarios to achieve this <span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>]</span>.
+</p>
+<!--l. 82--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-840003.1.1"></a><span 
+class="ptmb8t-x-x-120">No Priming</span></span>
+Whenever human behavior is studied, experiments should avoid influencing and biasing
+participants with certain information. This avoids unnatural behavior.
+</p>
+<!--l. 84--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-850003.1.1"></a><span 
+class="ptmb8t-x-x-120">Double Blind Experiments</span></span>
+If possible, the person carrying out the actual experiment should not be involved in the planning
+and design of the study. Moreover, the participants should not know the details of the
+study, either. On the experimenter side, unconscious bias and influence is mitigated, and
+participants also do not know the “treatment” they receive (if any). Although this is a
+desirable goal, there is little evidence that experiments typically follow this principle.
+</p>
+<!--l. 86--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-860003.1.1"></a><span 
+class="ptmb8t-x-x-120">Context Definition</span></span>
+To increase internal validity, it is necessary to define the terms <span 
+class="ptmri8t-x-x-120">threat model</span>, <span 
+class="ptmri8t-x-x-120">security</span>, <span 
+class="ptmri8t-x-x-120">privacy</span>,
+<span 
+class="ptmri8t-x-x-120">usability</span>, depending on which are relevant for the study. A precise definition avoids
+misunderstanding and improves transparency, credibility, and trustworthiness of the
+experiment.<br 
+class="newline" />
+</p><!--l. 88--><p class="noindent" >These principles can serve as a rough quality assessment of presented research, although in many
+instances, not all principles will be fully addressed.
+                                                                                    
+
+                                                                                    
+</p><!--l. 92--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.1.2    </span> <a 
+ id="x53-870003.1.2"></a>Analyzing Password Leaks and (Semi-)Public Data</h4>
+<!--l. 94--><p class="noindent" >Instead of users creating new passwords, it is possible to make inferences about their behavior from
+already existing data (for an overview see Table <span 
+class="ptmb8t-x-x-120">??</span>). Password frequency lists are readily available on the
+Internet<span class="footnote-mark"><a 
+href="diss54.html#fn1x13"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x53-87001f1"></a>.
+The sources can often be traced back to illegal attacks, which makes the use of such data somewhat
+questionable. However, it is a widely accepted method to contrast real-world practices and study
+behavior. The data set that has probably been studied the most originates from a breach at
+RockYou, a software development firm specialized at games for social networks. In 2009, an
+attacker used an SQL injection to download around 32 Million plain-text passwords.
+For instance, Veras et al. visualized semantic properties of passwords in this dataset
+and highlight the high occurrence of dates in there <span class="cite">[<a 
+href="dissli2.html#XVeras2012VisualizingSemanticsPasswords">349</a>]</span>. Wheeler relied on it to build
+the zxcvbn password strength estimation system <span class="cite">[<a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>. More often, though, these data
+sets serve as training data for password guessability benchmarks. Weir et al. took the
+RockYou passwords to train their <a 
+href="dissli3.html#glo:PCFG">PCFG</a> which served as a demonstration that entropy is
+not a feasible strength metric for user-chosen passwords. Afterwards, it was integrated
+into the training set of <a 
+href="dissli3.html#glo:PGS">PGS</a>. <a 
+href="dissli3.html#glo:PGS">PGS</a> is mostly used to gauge passwords collected through
+a user study, e.g. under different policies <span class="cite">[<a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies">295</a>]</span> or interventions <span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>. In conclusion,
+publicly leaked data sets can often serve as ground truth for studies that aim to provide new
+insights.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 4--><p class="noindent" ><a 
+ id="x53-87002r1"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+    <div class="caption" 
+><span class="id">Table 3.1:      </span><span  
+class="content">      Example      password      leaks      of      the      past      five      years
+(data source: <a 
+href="https://haveibeenpwned.com/PwnedWebsites" class="url" ><span 
+class="ectt-1200">https://haveibeenpwned.com/PwnedWebsites</span></a>). Some of the data served
+security researchers to analyze user behavior and create more effective strength estimation
+algorithms. *multiple leaks from different years</span></div><!--tex4ht:label?: x53-87002r1 -->
+<div class="tabular"> <table id="TBL-5" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-5-1g"><col 
+id="TBL-5-1" /><col 
+id="TBL-5-2" /><col 
+id="TBL-5-3" /><col 
+id="TBL-5-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-5-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-1-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Data Source  </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-5-1-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109"># PWs  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-1-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Year</span></div>  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-1-4"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Usage Examples</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-2-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">MySpace         </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-5-2-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">360 M  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-2-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">2008*  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-5-2-4"  
+class="td11"> <!--l. 11--><p class="noindent" ><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XDeCarnedeCarnavalet2015PasswordMeters"><span 
+class="ptmr8t-x-x-109">73</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XDas2014TangledWeb"><span 
+class="ptmr8t-x-x-109">67</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XDellAmico2010PasswordStrength"><span 
+class="ptmr8t-x-x-109">81</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XLi2017PersonalInformation"><span 
+class="ptmr8t-x-x-109">209</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XMazurek2013Measuring"><span 
+class="ptmr8t-x-x-109">226</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies"><span 
+class="ptmr8t-x-x-109">295</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp"><span 
+class="ptmr8t-x-x-109">343</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XVeras2014SemanticPatterns"><span 
+class="ptmr8t-x-x-109">348</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XWheeler2016zxcvbn"><span 
+class="ptmr8t-x-x-109">369</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XWeir2009PCFG"><span 
+class="ptmr8t-x-x-109">366</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>                                 </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-3-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">RockYou         </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-5-3-2"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">32 M  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-3-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">2009    </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-5-3-4"  
+class="td11"> <!--l. 12--><p class="noindent" ><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XBailey2014StatisticsReuse"><span 
+class="ptmr8t-x-x-109">17</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XBlocki2016DifferentiallyPrivate"><span 
+class="ptmr8t-x-x-109">26</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XBojinov2010KamouflagePWM"><span 
+class="ptmr8t-x-x-109">30</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XBonneau2012LinguisticProperties"><span 
+class="ptmr8t-x-x-109">37</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XDeCarnedeCarnavalet2015PasswordMeters"><span 
+class="ptmr8t-x-x-109">73</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XDellamico2015MonteCarlo"><span 
+class="ptmr8t-x-x-109">82</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XKhern-am-nuai2017ContextBasedMeter"><span 
+class="ptmr8t-x-x-109">194</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven"><span 
+class="ptmr8t-x-x-109">99</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XJakobsson2013BenefitsUnderstandingPWs"><span 
+class="ptmr8t-x-x-109">177</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople"><span 
+class="ptmr8t-x-x-109">200</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XMelicher2016NeuralNetworks"><span 
+class="ptmr8t-x-x-109">233</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies"><span 
+class="ptmr8t-x-x-109">295</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XVeras2014SemanticPatterns"><span 
+class="ptmr8t-x-x-109">348</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XWang2015EmperorsPolicies"><span 
+class="ptmr8t-x-x-109">361</span></a><span 
+class="ptmr8t-x-x-109">,</span>
+  <span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XWeir2010MetricsPolicies"><span 
+class="ptmr8t-x-x-109">365</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>                                                                                                           </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-4-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Dropbox          </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-5-4-2"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">68 M  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-4-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">2012    </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-5-4-4"  
+class="td11"> <!--l. 13--><p class="noindent" ><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XBlock2017EconomicsOfflineCracking"><span 
+class="ptmr8t-x-x-109">27</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XFurnell2017GuidanceCompliance"><span 
+class="ptmr8t-x-x-109">129</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XPaiva2017Passfault"><span 
+class="ptmr8t-x-x-109">250</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>                                                                                            </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-5-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Yahoo              </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-5-5-2"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">0.5 M  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-5-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">2012*  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-5-5-4"  
+class="td11"> <!--l. 15--><p class="noindent" ><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XBlock2017EconomicsOfflineCracking"><span 
+class="ptmr8t-x-x-109">27</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XDas2014TangledWeb"><span 
+class="ptmr8t-x-x-109">67</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XGuo2017LPSE"><span 
+class="ptmr8t-x-x-109">145</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XHuha2015UserReplaceablePasswords"><span 
+class="ptmr8t-x-x-109">170</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XKhern-am-nuai2017ContextBasedMeter"><span 
+class="ptmr8t-x-x-109">194</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XMazurek2013Measuring"><span 
+class="ptmr8t-x-x-109">226</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies"><span 
+class="ptmr8t-x-x-109">295</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XUr2015MeasuringRealWorldAccuracies"><span 
+class="ptmr8t-x-x-109">346</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XWang2015ChinesePWs"><span 
+class="ptmr8t-x-x-109">359</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XWheeler2016zxcvbn"><span 
+class="ptmr8t-x-x-109">369</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>                               </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-6-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">LinkedIn         </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-5-6-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">164 M  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-6-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">2016*  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-5-6-4"  
+class="td11"> <!--l. 16--><p class="noindent" ><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XDeCarnedeCarnavalet2015PasswordMeters"><span 
+class="ptmr8t-x-x-109">73</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide"><span 
+class="ptmr8t-x-x-109">115</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XJaeger2016AnalysisOfLeaks"><span 
+class="ptmr8t-x-x-109">175</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XKomanduri2016Dissertation"><span 
+class="ptmr8t-x-x-109">198</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XLlewellyn-jones2016CrackingPwdHash"><span 
+class="ptmr8t-x-x-109">213</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XVeras2014SemanticPatterns"><span 
+class="ptmr8t-x-x-109">348</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>                                                                 </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-7-1"  
+class="td11">             </td></tr></table></div>
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<h4 class="subsectionHead"><span class="titlemark">3.1.3    </span> <a 
+ id="x53-880003.1.3"></a>User Study Methods in Password Research</h4>
+<!--l. 103--><p class="noindent" >Research in <a 
+href="dissli3.html#glo:USEC">USEC</a> takes advantage of the toolbelt of <a 
+href="dissli3.html#glo:HCI">HCI</a> research in general. In the following, the
+most common methods for password studies are portrayed.
+</p>
+<!--l. 104--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-890003.1.3"></a><span 
+class="ptmb8t-x-x-120">Laboratory studies</span></span>
+To gain the greatest control over experimental parameters, laboratory studies are the
+go-to method. Both qualitative and quantitative studies are carried out in the lab,
+with a slight surplus of qualitative studies. Among the most common methods, one
+finds (semi-)structured interviews (<span class="cite">[<a 
+href="dissli2.html#XAdams1997MakingPWsSecureAndUsable">4</a>, <a 
+href="dissli2.html#XGaw2006PasswordManagement">133</a>, <a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>, <a 
+href="dissli2.html#XUr2015PWCreationLab">345</a>, <a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>]</span>) and usability testing
+(<span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>, <a 
+href="dissli2.html#XForget2007HelpingUsers">123</a>, <a 
+href="dissli2.html#XForget2015CYOA">125</a>, <a 
+href="dissli2.html#XGross2016CognitiveDepletion">142</a>, <a 
+href="dissli2.html#XImran2015PWsAdultsChildren">171</a>, <a 
+href="dissli2.html#XMcCarney2012Tapas">228</a>, <a 
+href="dissli2.html#XMcevoy2016ContextualizingMnemonicPhrase">230</a>, <a 
+href="dissli2.html#XRuoti2015AuthenticationMelee">272</a>, <a 
+href="dissli2.html#XYang2014EntryAffectsPasswordSecurity">382</a>, <a 
+href="dissli2.html#XVonZezschwitz2014HoneyIShrunkTheKeys">355</a>]</span>). Password memorability can be studied in
+the lab (<span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>, <a 
+href="dissli2.html#XFahl2013EcologicalValidityPasswordStudy">103</a>, <a 
+href="dissli2.html#XForget2008MemorabilityPersuasivePasswords">122</a>, <a 
+href="dissli2.html#XMcevoy2016ContextualizingMnemonicPhrase">230</a>, <a 
+href="dissli2.html#XYan2004PasswordMemorabilitySecurity">380</a>]</span>). Studying short-term recall usually follows a mental-rotation
+task (e.g. <span class="cite">[<a 
+href="dissli2.html#XKraus2017Emoji">203</a>, <a 
+href="dissli2.html#XYang2014EntryAffectsPasswordSecurity">382</a>]</span>). Long-term memorability studies in the lab are less common, because they
+require participants to return to the lab, which may be too bothersome for many. However, this may
+be the only option to evaluate alternative authentication schemes that are not yet mature enough to
+be distributed.
+</p><!--l. 108--><p class="noindent" >Although technically it is not a “lab” environment, café studies sometimes are closely related to lab
+studies. Von Zezschwitz et al. collected qualitative and quantitative data on participants’ past
+password behavior by inviting customers in a café to join them for a free coffee <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2013SurvivalShortest">354</a>]</span>. The
+experimenter has almost as much control as in a lab to answer certain research questions. Only the
+surroundings may distract somewhat. Other methods like participatory design / co-creation
+(<span class="cite">[<a 
+href="dissli2.html#XCoventry2014SCENEBehavioralNudges">61</a>, <a 
+href="dissli2.html#XRead2009UnderMyPillow">262</a>]</span>) and focus groups (<span class="cite">[<a 
+href="dissli2.html#XEargle2015YouCanDoBetter">90</a>, <a 
+href="dissli2.html#XHang2015Dissertation">151</a>, <a 
+href="dissli2.html#XHarbach2016HardLockLife">155</a>, <a 
+href="dissli2.html#XSingh2007PasswordSharing">308</a>]</span>) are possible, but less frequently reported
+than interviews and usability tests. A common drawback of lab studies lies in the high
+costs, time consumption to carry them out, smaller sample sizes, and reduced ecological
+validity.
+</p>
+<!--l. 110--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-900003.1.3"></a><span 
+class="ptmb8t-x-x-120">Field-Studies</span></span>
+Field studies for password research come in many flavors. <span 
+class="ptmb8t-x-x-120">Online surveys </span>are among the most
+common methods used in the field (<span class="cite">[<a 
+href="dissli2.html#XGaw2005ReuseRecycle">132</a>, <a 
+href="dissli2.html#XHalevi2013PilotStudyPersonality">148</a>, <a 
+href="dissli2.html#XHaque2014Hierarchy">154</a>, <a 
+href="dissli2.html#XHuh2017TooBusy">169</a>, <a 
+href="dissli2.html#XKuo2006HumanSelectionMnemonic">206</a>, <a 
+href="dissli2.html#XMazurek2013Measuring">226</a>, <a 
+href="dissli2.html#XRiley2006WhatUsersKnowWhatTheyDo">269</a>, <a 
+href="dissli2.html#XViolettas2014PasswordsAvoidGreece">351</a>]</span>), due to their
+lower cost and comparatively easy implementation. Other advantages like increased sample
+size and more diversity in the data speak in favor of online surveys. Survey tools like
+surveymonkey.com come in handy, but usually lack seamless integration of interactive
+prototypes. If a prototype should be evaluated through a survey, however, one has to
+                                                                                    
+
+                                                                                    
+either implement the entire survey structure or redirect participants from the survey
+platform to the prototype and back. Surveys are also the weapon of choice if there is
+an opportune moment that is worth studying. Mazurek et al. took the opportunity to
+distribute online questionnaires after a new password policy was introduced at <a 
+href="dissli3.html#glo:CMU">CMU</a>
+<span class="cite">[<a 
+href="dissli2.html#XMazurek2013Measuring">226</a>]</span>. Fahl et al. profited from a similar situation at Leibniz-University Hannover, and
+Renaud et al. could even distribute surveys on the same topic across multiple years in
+this way <span class="cite">[<a 
+href="dissli2.html#XRenaud2017LessonsLearnedNudges">267</a>]</span>. Interestingly, there does not seem to be a special, standardized survey
+construct to measure the usability, respectively user experience, of password systems. Other
+<a 
+href="dissli3.html#glo:HCI">Human-Computer Interaction (HCI)</a> sub-fields more frequently use, for example, the NASA-TLX,
+<a 
+href="dissli3.html#glo:PANAS">Positive Affect and Negative Affect Scale (PANAS)</a> or AttrakDiff constructs to establish
+comparability with other studies. Notable exceptions were reported by Kraus et al., who
+used AttrakDiff to evaluate emoji-based authentication <span class="cite">[<a 
+href="dissli2.html#XKraus2017Emoji">203</a>]</span>. The NASA-TLX was
+used by Fraune et al., <span class="cite">[<a 
+href="dissli2.html#XFraune2013UserCreatedPictures">128</a>]</span>, Sherman et al. <span class="cite">[<a 
+href="dissli2.html#XSherman2014UserGeneratedGesturesAuth">302</a>]</span>, and Yang et al. <span class="cite">[<a 
+href="dissli2.html#XYang2014EntryAffectsPasswordSecurity">382</a>]</span>. Lately, the
+<a 
+href="dissli3.html#glo:SeBIS">Security Behavior Intentions Scale (SeBIS)</a> gains more attention, because it serves as
+a self-assessment that can help the interpretation of actions taken during a user study
+<span class="cite">[<a 
+href="dissli2.html#XEgelman2015SeBIS">97</a>, <a 
+href="dissli2.html#XEgelman2016BehaviorEverFollows">94</a>, <a 
+href="dissli2.html#XWash2016UnderstandingPasswordChoices">363</a>, <a 
+href="dissli2.html#XWash2017SelfReport">364</a>]</span>.
+</p><!--l. 116--><p class="noindent" >A special kind of online studies that has been extensively used and propagated by <a 
+href="dissli3.html#glo:CMU">CMU</a>
+researchers leverage <span 
+class="ptmb8t-x-x-120">crowd-sourcing </span>platforms like the Amazon Mechanical Turk
+(<a 
+href="dissli3.html#glo:mTurk">mTurk</a>)<span class="footnote-mark"><a 
+href="diss55.html#fn2x13"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x53-90001f2"></a>.
+Survey respondents are recruited by paying each one a small amount of money for a valid response.
+This way, increasing the sample size is straight-forward, if many users have already signed up on
+the platform and are eligible for the <a 
+href="dissli3.html#glo:HIT">Human Intelligence Task</a> (<a 
+href="dissli3.html#glo:HIT">HIT</a>). Workers (known as “turkers”)
+form an increasingly diverse population <span class="cite">[<a 
+href="dissli2.html#XRoss2010WhoAreTurkers">271</a>]</span>, which is another benefit. In password research, for
+instance, Kelley et al.’s high-impact work on password guessability collected around 12000
+passwords using <a 
+href="dissli3.html#glo:mTurk">mTurk</a> <span class="cite">[<a 
+href="dissli2.html#XKelley20012GuessAgain">191</a>]</span>. Ur et al. had participants rate the strength and memorability of a
+given set of passwords, which allowed them to identify certain misconceptions <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. Mazurek et
+al. compared features of passwords created by turkers to real passwords of students and staff at
+their university <span class="cite">[<a 
+href="dissli2.html#XMazurek2013Measuring">226</a>]</span>. They take the large similarities of the two data sets as evidence
+that passwords created during an mTurk study are a reliable and valid data source, so
+there is no urgent need to analyze passwords of a deployed system. Shay wrote a PhD
+thesis specifically about evaluating password policies with crowd-sourced data <span class="cite">[<a 
+href="dissli2.html#XShay2015UsablePoliciesMTurk">293</a>]</span>. In
+many cases, e.g. <span class="cite">[<a 
+href="dissli2.html#XShay2014CanLongPasswordsBeSecureAndUsable">299</a>, <a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies">295</a>, <a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>, the primary task is to create a fictional account or
+merely a password under certain constraints, which apparently violates Krol et al.’s
+study principles <span class="cite">[<a 
+href="dissli2.html#XKrol2016ExperimentDesign">205</a>]</span>. It is especially interesting that most studies are announced as
+some kind of password study, probably mandated by <a 
+href="dissli3.html#glo:IRB">IRBs</a> . But Mazurek et al.’s work
+demonstrates that this limitation is bearable. Moreover, studying the long-term memorability of
+                                                                                    
+
+                                                                                    
+passwords is facilitated, because participants can be invited to return through an internal,
+anonymous messaging system. It is also possible to create more complex study designs with
+mTurk, e.g. if multiple device types should be used by the turkers to create passwords
+<span class="cite">[<a 
+href="dissli2.html#XMelicher2016UsabilityMobileTextPasswords">232</a>]</span>. Despite the wide range of advantages, there are shortcomings of crowd-sourced
+approaches as with any study method. First, turkers are incentivized to complete as many
+HITs as possible on the platform to earn money. Thus, completing a survey by providing
+quick answers without reading the questions could lead to unreliable data. Instructional
+Manipulation Checks (IMCs) and attention check questions (ACQs) can mitigate this
+problem <span class="cite">[<a 
+href="dissli2.html#XOppenheimer2009InstructionalManipulationChecks">249</a>, <a 
+href="dissli2.html#XPeer2017BeyondTheTurk">253</a>]</span>. Turkers are only paid if the commissioner accepts the HIT as valid,
+thus IMCs and attention checks are useful indicators here. Moreover, as of now, the
+mTurk platform can only be used in certain countries, e.g. the USA or UK. European
+alternatives exist, but are not yet par in terms of user base, response times, and feature set
+<span class="cite">[<a 
+href="dissli2.html#XPeer2017BeyondTheTurk">253</a>]</span>.
+</p><!--l. 125--><p class="noindent" >Aside from surveys, <span 
+class="ptmb8t-x-x-120">diary studies </span>about passwords have proven feasible in the past.
+Inglesant and Sasse found out through a diary study that employees struggle with frequent
+password changes, which might not have become evident using other study means <span class="cite">[<a 
+href="dissli2.html#XInglesant2010TrueCostOfUnusablePolicies">172</a>]</span>.
+Hayashi and Hong used this method to analyze password re-use across different computers,
+services, and organizations <span class="cite">[<a 
+href="dissli2.html#XHayashi2011DiaryStudyPWs">159</a>]</span>. Since password authentication is a secondary task,
+keeping a diary of authentication events helps participants provide reliable behavioral data.
+However, it requires much effort to continuously stay aware of one’s actions and log them.
+To avoid that participants forget logging and other self-reporting bias <span class="cite">[<a 
+href="dissli2.html#XWash2017SelfReport">364</a>]</span>, it can be
+worthwhile to ask them small questions in situ. This method, known as <a 
+href="dissli3.html#glo:ESM"><span 
+class="ptmb8t-x-x-120">Experience</span>
+<span 
+class="ptmb8t-x-x-120">Sampling Method (ESM)</span></a>, requests short responses either in predefined intervals or
+when the system detects a relevant event. ESM has not seen much attention in password
+studies on the web (Lyastani et al. provide one exception <span class="cite">[<a 
+href="dissli2.html#XLyastani2017ImpactPWMPasswordStrength">217</a>]</span>), but mobile authentication
+has been studied with this method <span class="cite">[<a 
+href="dissli2.html#XHarbach2016HardLockLife">155</a>]</span>. Users carry their personal mobile with them
+almost all the time, so there is a high chance of successfully receiving the experience
+sample. ESM was also found useful for studies about security warnings in browsers
+<span class="cite">[<a 
+href="dissli2.html#XAkhawe2013AliceInWarningland">8</a>, <a 
+href="dissli2.html#XFelt2016RethinkingConnectionSecurityIndicators">106</a>]</span>.
+</p><!--l. 128--><p class="noindent" >Perhaps, ESM is underused for password studies because it can be substituted well with different,
+less costly methods. It is possible to automatically detect relevant events and survey the
+participants before and/or after the <span 
+class="ptmb8t-x-x-120">automatic data collection</span>. Florêncio and Herley
+conducted one of the largest studies to date on password habits with this method <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007LargeScaleStudyPasswordHabits">111</a>]</span>. Their
+intention was to find out among other things A) how often people type passwords, B) how
+many sites share a password C) how many distinct passwords a user has, and D) how the
+strong the passwords are. Working at Microsoft, they were granted to utilize the Windows
+Live Toolbar for Internet Explorer to collect in-the-wild data from up to 500,000 users
+during three months of running the collection. They conceived the method of protected
+password lists (PPL) to avoid intruding into people’s privacy – a kind of meta description of
+passwords which is sent to the logging server instead of the original password. It was thus not
+possible to trace the incoming data back to a specific user. However, there are a number of
+limitations this method. The authors point out that the anonymity of the incoming data-stream
+                                                                                    
+
+                                                                                    
+might have resulted in over-counting of entries. Also, it was not measured how long the
+actual password entries takes. If users only used regular dictionary words without any
+modification as their passwords, the key logging module of the toolbar would have recorded
+a password reuse event (PRE) every time the user entered that word – also in regular
+online communication. Nevertheless, the fact that users are typically focused on their
+primary tasks, background logging helps to collect unbiased data with high ecological
+validity.
+</p><!--l. 131--><p class="noindent" >A final option to study passwords in the field is to collect and analyze them in an already
+deployed system (<span 
+class="ptmb8t-x-x-120">in-situ evaluation</span>), which would be the ideal data source, according to
+Komanduri et al. <span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>]</span>. Brostoff and Sasse utilized a coursework system to evaluate
+Passfaces as alternative to passwords <span class="cite">[<a 
+href="dissli2.html#XBrostoff2000PassfacesEvaluation">41</a>]</span>. Similarly, Renaud et al. used a coursework tool to
+evaluate the effectiveness of different password nudges <span class="cite">[<a 
+href="dissli2.html#XRenaud2017LessonsLearnedNudges">267</a>]</span>. Mazurek et al. gained
+access to passwords of their University’s <a 
+href="dissli3.html#glo:SSO">Single-Sign On (SSO)</a> and were able to break
+down differences in password selection behavior by departments. As one of the few
+exceptions from the industry, Bonneau analyzed a private password data set at Yahoo <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>]</span> and
+Amazon <span class="cite">[<a 
+href="dissli2.html#XBonneau2012LinguisticProperties">37</a>]</span>. The data is highly ecologically valid and diverse if it originates from a real
+product or service. However, if interventions are implemented as part of a password
+experiment, this might have negative consequences for both the <a 
+href="dissli3.html#glo:SP">service provider</a> and the users.
+For instance, in an A/B setting one intervention to influence password selection might
+in fact lead to weaker passwords and put users at risk. Each user is a critical potential
+source of revenue for <a 
+href="dissli3.html#glo:SP">service providers</a>, so tampering with the sign-up procedure might
+lead to higher bounce rates and consequently financial damage. High stakes like this
+make it difficult for researchers to convince stakeholders to cooperate on a study. In
+conclusion, it is unsurprising to see only rare instances of password studies carried out
+with deployed systems in public environments, although the insights gained might be
+invaluable.
+</p><!--l. 137--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.1.4    </span> <a 
+ id="x53-910003.1.4"></a>The Bottom Line: Emerging Good Practices and Tools</h4>
+<!--l. 138--><p class="noindent" >Using one of the study methods above is the first step to get closer to answering the research
+methods. However, to get the full picture of the studied phenomenon, a <span 
+class="ptmb8t-x-x-120">triangulated </span>approach
+appears to be the only option. For example, Wash et al. combined a survey with log analyses to
+study password reuse and self-report issues <span class="cite">[<a 
+href="dissli2.html#XWash2016UnderstandingPasswordChoices">363</a>]</span>. A multi-tiered approach like in Von Zezschwitz
+et al.’s study helps to identify themes first (formative stage) and quantify them later (summative
+stage) <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2014HoneyIShrunkTheKeys">355</a>]</span>. Similarly, Huh et al. were able to refine their concept of system-initiated
+user-replaceable passwords through triangulation <span class="cite">[<a 
+href="dissli2.html#XHuha2015UserReplaceablePasswords">170</a>]</span>. Adams and Sasse conducted qualitative
+interviews to follow up web survey results <span class="cite">[<a 
+href="dissli2.html#XAdams1999UsersEnemy">3</a>]</span>. If constraints allow for only one method, it is
+recommendable to consider how to collect both quantitative and qualitative data points. For
+                                                                                    
+
+                                                                                    
+instance, in online surveys that evaluate a novel password intervention, it is always feasible to
+collect quantitative metrics (e.g. usability and password strength) and qualitative data
+(reasoning, explanations, feedback) to put study results into context <span class="cite">[<a 
+href="dissli2.html#XAdams1999UsersEnemy">3</a>]</span>. Those eager to find
+additional starting points for <a 
+href="dissli3.html#glo:USEC">USEC</a> experiments probably find essential aspects in Krol
+et al.’s principles for experimental design <span class="cite">[<a 
+href="dissli2.html#XKrol2016ExperimentDesign">205</a>]</span>. The methods described above can be
+drawn on to fulfill those principles, which we try to achieve in Part <a 
+href="disspa2.html#x73-122000II">II<!--tex4ht:ref: part:problem_space --></a> and <a 
+href="disspa3.html#x102-272000III">III<!--tex4ht:ref: part:design_space --></a> of this
+thesis.
+</p><!--l. 151--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">3.2    </span> <a 
+ id="x53-920003.2"></a>Password Coping Strategies and Risky Behaviors</h3>
+<!--l. 153--><p class="noindent" >Passwords are the cornerstone of <span 
+class="ptmri8t-x-x-120">knowledge-based </span>authentication. And although “knowledge” can
+be stored inside and retrieved from computers, it is still a human capability to learn things and
+hereafter “know” them. So, humans are a large factor in the equation of knowledge-based
+authentication. Their actions and behavior to gain knowledge on passwords deserve to be studied in
+detail.
+</p><!--l. 156--><p class="noindent" >Some cybersecurity researchers started blaming system failures and vulnerabilities on users. For
+instance, Feldmeier et al. stated in 1990: “The main weakness in any password system is that users
+often choose easily guessable passwords: English words, names, trivial extensions to English
+words, etc., because they are easy to remember” <span class="cite">[<a 
+href="dissli2.html#XFeldmeier1990UnixPasswordSecurity">104</a>]</span>. It quickly became a dictum that users
+were the “weakest link” in the figurative authentication chain <span class="cite">[<a 
+href="dissli2.html#XSasse2001WeakestLink">276</a>]</span>. However, since the
+late 1990s, <a 
+href="dissli3.html#glo:HCI">HCI</a> advocates that systems take into account user capabilities and not the
+other way around <span class="cite">[<a 
+href="dissli2.html#XSasse2005UsableSecurityPosition">277</a>]</span>. Adams and Sasse postulated in 1999 that <a 
+href="dissli3.html#glo:SP">service providers</a>
+acknowledge that “users are not the enemy”, which is one of the most influential position
+papers on the topic <span class="cite">[<a 
+href="dissli2.html#XAdams1999UsersEnemy">3</a>]</span>. In that paper, they provide four central challenges in password
+authentication that users face: 1) Users have to deal with multiple passwords, 2) users do not
+intuitively create strong passwords 3) password procedures and work practices might
+conflict and 4) users develop a sub-par understanding of organizational security issues.
+Those challenges are often too hard to come by in everyday password authentication
+<span class="cite">[<a 
+href="dissli2.html#XDourish2004UserStrategiesEveryday">87</a>]</span>. As a consequence, users develop coping strategies to reduce their task load. This
+early framework has since been fed with numerous research studies and is still valid
+today.
+</p><!--l. 163--><p class="noindent" >Stobert and Biddle formalized user challenges and behavior in the “Password Life Cycle” (see
+Figure <span 
+class="ptmb8t-x-x-120">??</span>), which they arrived at through qualitative interviews and coding the participants’
+responses <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. It starts out with the challenge to <span 
+class="ptmb8t-x-x-120">choose a password</span>. Coping strategies at this
+point revolve around reducing effort, e.g. to memorize the password. Including personal or
+personally meaningful information comes natural to users. Others include pointers to the time they
+created it, or word-associations about the website-content. Mnemonics are found with some users,
+especially those aiming to secure their account. In essence, however, users often memorize their
+                                                                                    
+
+                                                                                    
+<span 
+class="ptmri8t-x-x-120">coping strategy</span>, to recall their password. Consistent strategies reduce the effort effectively. Even if
+complex policies mandate a change to the first-choice password, users have a go-to strategy to deal
+with this situation, e.g. by appending a preferred symbol. When people create passwords, the
+most common action is to <span 
+class="ptmb8t-x-x-120">reuse an old password</span>. This is not always possible, so users
+need to maintain and <span 
+class="ptmb8t-x-x-120">commit to </span>a number of passwords. Hayashi et al. observed in a
+diary study that users categorize accounts <span class="cite">[<a 
+href="dissli2.html#XHayashi2011DiaryStudyPWs">159</a>]</span> in different ways. There is also a mix of
+different password retrieval methods at the commitment stage. A survey in 2017 from
+Pew Research Center with N=926 participants found that the vast majority commits
+to their passwords by memorizing them in their heads (preferred strategy for 65% of
+the respondents) or by noting down the password (49% do this, and it is the preferred
+strategy for 18%) <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span>. Some respondents also either saved passwords in their browser
+(18%) or used a dedicated password manager (12%), but this appears to be a negligible
+go-to strategy (5% of the respondents). Once the user has committed to a password,
+they <span 
+class="ptmb8t-x-x-120">live with it</span>, even if it produces difficulties in certain situations. For instance, the
+question “when is it time to change the password?” falls into that stage of the cycle. Finally,
+if passwords are not actively used on a regular basis, or were recently changed, it is
+very foreseeable that users <span 
+class="ptmb8t-x-x-120">forget their passwords</span>. The password reset mechanism
+helps users cope with this situation. The two options at this point are either to create a
+completely new password (which increases the likelihood of forgetting it), or to reuse
+one (which potentially reduces the number of unique passwords). Then the cycle starts
+over. In the following we shed light on the actions and consequences at the different
+stages.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-92001r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 178--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.1: </span><span  
+class="content"> Stobert and Biddle’s “Password Life Cycle” <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span> models typical stages of
+password behavior.</span></div><!--tex4ht:label?: x53-92001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">3.2.1    </span> <a 
+ id="x53-930003.2.1"></a>Weak Passwords</h4>
+<!--l. 193--><p class="noindent" >Why do users select weak passwords? First of all, selecting a strong password is hard for
+most people. Picking up the definition of a strong password (“something that is easy to
+remember, but difficult to guess” <span class="cite">[<a 
+href="dissli2.html#XBishop1995ProactivePasswordChecking">25</a>]</span>), users do not struggle with the first part of the
+sentence, but the latter. Users do not intuitively know what makes a password <span 
+class="ptmri8t-x-x-120">difficult to</span>
+<span 
+class="ptmri8t-x-x-120">guess </span><span class="cite">[<a 
+href="dissli2.html#XJakobsson2013BenefitsUnderstandingPWs">177</a>]</span>, and not even security researchers have reached ultimate consensus on that
+matter.
+</p><!--l. 198--><p class="noindent" >Let us look at the first part: something that is easy to remember. Numerous studies have
+looked at what people do to make their passwords easy to remember. For instance,
+personal information is very memorable (“<span 
+class="ectt-1200">TobiasSeitz</span>”), as is that of close ones
+(“<span 
+class="ectt-1200">LenaSeitz</span>”) and pets (“<span 
+class="ectt-1200">Fonsi&#x0026;Alois</span>”) <span class="cite">[<a 
+href="dissli2.html#XBrown2004GeneratingPWs">42</a>, <a 
+href="dissli2.html#XLi2017PersonalInformation">209</a>]</span>. Veras et al. found that dates
+are very commonly found in passwords <span class="cite">[<a 
+href="dissli2.html#XVeras2012VisualizingSemanticsPasswords">349</a>]</span>. Looking at the top 25 most-used
+passwords<span class="footnote-mark"><a 
+href="diss56.html#fn3x13"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x53-93001f3"></a>,
+a list published after each public data leak, we can easily spot more patterns. One group consists of
+“keyboard patterns” (qwerty, qazwsx) and “number sequences” (12345, 123456, 1234567489,
+1234567, 123123). The remainder fall into the “likings” (football, monkey, iloveyou, starwars,
+dragon) and “password thematic” (Password, letmein, admin, welcome, login, passw0rd, master,
+hello, trustno1) categories. Figure <span 
+class="ptmb8t-x-x-120">??</span> shows additional selection techniques. All of these
+passwords are particularly easy to remember, which was quantified by Chiasson et al.
+<span class="cite">[<a 
+href="dissli2.html#XChiasson2009InterferencesGraphical">52</a>]</span>, but extremely predictable. However, they are often still allowed at many websites
+<span class="cite">[<a 
+href="dissli2.html#XSeitz2017PoliciesReuse">288</a>]</span>. Interestingly, such password lists differ marginally across countries <span class="cite">[<a 
+href="dissli2.html#XViolettas2014PasswordsAvoidGreece">351</a>, <a 
+href="dissli2.html#XWang2015ChinesePWs">359</a>]</span>.
+Consequently, users’ <span 
+class="ptmb8t-x-x-120">desire to create memorable passwords </span>naturally leads to more obvious
+selections.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-93002r2"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 204--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.2: </span><span  
+class="content"> Password selection techniques <span class="cite">[<a 
+href="dissli2.html#XKaspersky2016ConsumerSecurityReport">186</a>]</span> </span></div><!--tex4ht:label?: x53-93002r2 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 209--><p class="noindent" >Another reason for the prevalence of weak passwords lies in incorrect <span 
+class="ptmri8t-x-x-120">mental models</span>. Mental
+models are descriptions of how humans make sense of functions and system states <span class="cite">[<a 
+href="dissli2.html#XVolkamer2013MentalModels">352</a>]</span>. Some
+users who aim to create stronger passwords still fail because their strategies to accomplish the task
+are predictable. Gaw et al. found that mangling is predictable <span class="cite">[<a 
+href="dissli2.html#XGaw2005ReuseRecycle">132</a>]</span>. Ur et al. pointed out that users
+understand a great deal of password security, but their modification behavior of existing passwords
+is sub-par <span class="cite">[<a 
+href="dissli2.html#XUr2015PWCreationLab">345</a>]</span>. Moreover, they provide evidence that users succeed to identify strong passwords,
+but certain characteristics are misleading <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. For instance, including digits yielded significantly
+higher subjective strength ratings, but does not always effectively improve strength. What is more is
+that participants in their study showed a skewed understanding of password attacks.
+For instance, 34% of respondents thought that a strong password needs to withstand at
+least 50 guesses by an attacker. Therefore, trying to fend off a dictionary attack might
+be futile if users do not know that attackers attempt to crack the password trillions of
+times. Ur et al. conclude that feedback should thus inform users about attack scenarios
+which helps them assess the risk more realistically. Although it is sometimes argued
+that passphrases, i.e. a combination of multiple dictionary words, are often as secure as
+passwords from a richer character set <span class="cite">[<a 
+href="dissli2.html#XShay2012CorrectHorseBatteryStaple">297</a>]</span>, users fail to create strong passphrases, too.
+Bonneau studied the linguistic properties of passphrases at Amazon and noted that an
+attacker could easily model user behavior to effectively crack passphrases <span class="cite">[<a 
+href="dissli2.html#XBonneau2012LinguisticProperties">37</a>]</span>. So, in
+other words, the mental model “passphrase = secure” is also wrong and problematic.
+Finally, mental models also play a role for risk assessment in organizations. In many
+cases, employees underestimate the security threat that companies face day to day, which
+leads to insecure password practices <span class="cite">[<a 
+href="dissli2.html#XAdams1999UsersEnemy">3</a>, <a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>]</span>. To summarize this point, users fail to
+create strong passwords, because in many cases <span 
+class="ptmb8t-x-x-120">erroneous mental models </span>stand in the
+way.
+</p><!--l. 214--><p class="noindent" >What reports and news articles on password security often call “laziness” and “stupidity” <span class="cite">[<a 
+href="dissli2.html#XVolkamer2013MentalModels">352</a>]</span>
+may in fact be the rational rejection of password security. Riley pointed out that users are well
+aware of “better” behavior, but they often ignore it by choice <span class="cite">[<a 
+href="dissli2.html#XRiley2006WhatUsersKnowWhatTheyDo">269</a>]</span>. Florêncio et al. argue that this
+behavior is absolutely rational, because some accounts do not require strong protection and it
+would be impossible for users to follow all security advice given by experts <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>, <a 
+href="dissli2.html#XReeder2017SimpleSteps">264</a>]</span>. A case
+example of an account that may be valuable for some, but not for others is LinkedIn.
+The social-media platform which is focused on business connections suffered a severe
+data breach in 2012, but only became aware of a much larger leakage in 2016. Many
+hashed passwords had leaked and thus the affected users were prompted to reset their
+passwords. Huh et al. investigated the reasons (not) to reset the password and in many
+instances, people said that they do not use the service very often, did not want to, or were not
+really concerned about the risks <span class="cite">[<a 
+href="dissli2.html#XHuh2017TooBusy">169</a>]</span>. Ur et al.’s results also indicate that users do know
+in theory what makes a strong password <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. A survey commissioned by LastPass
+reported that one group of users often do not care about their accounts if they are not
+meaningful to them <span class="cite">[<a 
+href="dissli2.html#XLastPass2016PersonalitiesGetUsHacked">208</a>]</span>, while the other group is overly careful, but there does not
+appear to be a “just fine” area of behavior. The first group may believe that stronger
+passwords do not accomplish protection anyhow <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007DoStrongWebPasswords">114</a>]</span>. Herley and Pieters argue that it is also
+                                                                                    
+
+                                                                                    
+difficult to objectively falsify claims about security precautions, which would help to
+debunk unjustified security advice <span class="cite">[<a 
+href="dissli2.html#XHerley2015Counterfactuals">164</a>]</span>. So, in essence, users choose weak passwords
+because they think <span 
+class="ptmb8t-x-x-120">the account is unimportant </span>and therefore it is fine to ignore security
+advice.
+</p><!--l. 218--><p class="noindent" >Lastly, the literature lists a few other reasons that lead to weak passwords. Groß et al. looked at the
+association between cognitive depletion and selection behavior <span class="cite">[<a 
+href="dissli2.html#XGross2016EffectCognitiveEffort">143</a>]</span>. They reach the conclusion
+that if cognitively challenging tasks precede password selection, the resulting passwords tend to get
+weaker. Von Zezschwitz et al. point out that a user’s first passwords are created probably in teenage
+years when security precautions might be much less evident to people <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2013SurvivalShortest">354</a>]</span>. For important
+accounts, these early passwords are modified, but still persist for many years after they were first
+committed to. Mobile phones are another factor that steadily gains more importance. Under
+lab conditions, Yang et al. found that participants included more lowercase letters in
+passwords, if they created them on a smartphone <span class="cite">[<a 
+href="dissli2.html#XYang2014EntryAffectsPasswordSecurity">382</a>]</span>. Von Zezschwitz et al. corroborate the
+findings and argue that passwords created on smartphones are much less diverse than their
+desktop-counterparts, because they are shorter and contain mostly lowercase letters <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2014HoneyIShrunkTheKeys">355</a>]</span>.
+Two years later, Melicher et al. studied the interoperability of passwords on different
+platforms <span class="cite">[<a 
+href="dissli2.html#XMelicher2016UsabilityMobileTextPasswords">232</a>]</span>. Interestingly, the passwords created on mobiles were only marginally
+weaker than those created on a desktop, but had more potential to lead to user frustration,
+especially if requirements were too bothersome. The individual keyboard on a mobile
+influences frustration levels, too <span class="cite">[<a 
+href="dissli2.html#XHaque2014PsychometricsStrongPassword">153</a>]</span>. In summary, contextual factors like cognitive
+depletion and the device used during password creation have a notable impact on password
+strength.
+</p><!--l. 226--><p class="noindent" >We thus identify four main themes from related work that cause weak passwords: 1) Weak
+passwords are more memorable. 2) Hard-to-change mental models prevent the creation of stronger
+passwords. 3) In many situations, users rationally reject the effort to create a strong password. 4)
+Contextual factors notably influence selection strategies. In the following, we dissect another
+coping strategy, which is potentially even riskier than selecting weak passwords: password
+reuse.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.2.2    </span> <a 
+ id="x53-940003.2.2"></a>Password Reuse</h4>
+<!--l. 230--><p class="noindent" >The primary reason for password reuse is the mere fact that users create new accounts on a regular
+basis, and it is logical to make sure to be able to log in later by choosing a secret they already know.
+“Password overload” essentially frames the problem <span class="cite">[<a 
+href="dissli2.html#XYang2016MnemonicSentenceBased">381</a>]</span>. “Memory interference” postulates reuse
+as a coping strategy <span class="cite">[<a 
+href="dissli2.html#XChiasson2009InterferencesGraphical">52</a>]</span>. In 2007, Florêncio and Herley conducted a large-scale study that
+empirically showed the challenges and coping strategies regarding this overload <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007LargeScaleStudyPasswordHabits">111</a>]</span>: Users of
+the Windows Live Toolbar had 6.5 distinct passwords, each of which was used for 3.9 different
+websites. During the data collection period, users logged into 25 accounts on a regular
+basis, and typed around 8 passwords per day. Although keeping track of the multitude of
+                                                                                    
+
+                                                                                    
+username-password combinations is a tough challenge, most users still rely on their memory
+instead of other tools <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span>. Users realize the challenge is hard, but Woods et al. argue that
+users underestimate their capabilities when it comes to memorizing passwords <span class="cite">[<a 
+href="dissli2.html#XWoods2018TooManyPasswords">377</a>]</span>.
+Consequently, many people do not try to create a richer portfolio of passwords than the numbers
+from the 2007 study showed. More recent numbers show that between 39% <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span> and
+76% <span class="cite">[<a 
+href="dissli2.html#XCSID2012PasswordHabits">64</a>]</span> of users rely on reuse as coping strategy. Since social desirability bias could
+lead to dishonest survey responses, the “dark figure” might even be higher, because, as
+Inglesant and Sasse put it, “<span 
+class="ptmri8t-x-x-120">Users see ‘good’ passwords (that are memorable and conform to</span>
+<span 
+class="ptmri8t-x-x-120">the policy) as a ‘resource’, which they continue to use for new applications even if the</span>
+<span 
+class="ptmri8t-x-x-120">original use is no longer allowed.</span>” <span class="cite">[<a 
+href="dissli2.html#XInglesant2010TrueCostOfUnusablePolicies">172</a>]</span>. What is more is that the user name is part of the
+authentication process, and users pick different aliases, pseudonyms, emails for different accounts
+<span class="cite">[<a 
+href="dissli2.html#XHayashi2011DiaryStudyPWs">159</a>]</span>.
+</p><!--l. 232--><p class="noindent" >All this is consequential for the overall online security of an individual. The more a user relies
+on reuse passwords, the more severe phishing attacks and data breaches become. The
+metaphorical “Domino Effect” describes the situation after a breach: When an attacker obtains a
+password from one user’s account, all the other accounts might fall with it <span class="cite">[<a 
+href="dissli2.html#XIves2004DominoEffectReuse">173</a>]</span>. It is
+enough to know even only one low-value password to crack a large part of high-value
+passwords via predictable mangling rules <span class="cite">[<a 
+href="dissli2.html#XDas2014TangledWeb">67</a>, <a 
+href="dissli2.html#XHaque2014Hierarchy">154</a>]</span>. Still, password reuse is difficult
+to mitigate, so Ives argues to look into understanding the specific approaches better
+<span class="cite">[<a 
+href="dissli2.html#XIves2004DominoEffectReuse">173</a>]</span>.
+</p><!--l. 236--><p class="noindent" >One such approach is to categorize passwords by different criteria. Here, we can borrow the
+“Mental Accounting” theory from Behavioral Economics to describe users’ risk assessments
+<span class="cite">[<a 
+href="dissli2.html#XStockinger2015TowardsBE">320</a>, <a 
+href="dissli2.html#XThaler2004">330</a>]</span>. Users put their passwords into mental accounts that help them recall them
+later. Wash et al. argues that frequently entered credentials are reused more likely than
+seldom used ones <span class="cite">[<a 
+href="dissli2.html#XWash2016UnderstandingPasswordChoices">363</a>]</span>. However, interviewees in Stobert and Biddle’s study reported the
+opposite behavior <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. Florêncio and Herley noticed that strong passwords (in terms of
+entropy) are less frequently reused than weak passwords <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007LargeScaleStudyPasswordHabits">111</a>]</span>. Here again, Wash et
+al. observed the opposite: participants in their study prioritized stronger passwords as
+reuse candidates <span class="cite">[<a 
+href="dissli2.html#XWash2016UnderstandingPasswordChoices">363</a>]</span>. If the latter is true, then this is another indicator for problematic
+mental models regarding risk assessment: users try to follow security advice and prefer
+strength over uniqueness which is typically also advised. Nonetheless, strategies (or at least
+results) appear to fluctuate throughout the years. Many users cluster their secrets regarding
+the usage purpose <span class="cite">[<a 
+href="dissli2.html#XHaque2014Hierarchy">154</a>]</span>, e.g. banking, social media, communication, shopping, etc.
+<span class="cite">[<a 
+href="dissli2.html#XNotoatmodjo2007ExploringWeakestLink">245</a>, <a 
+href="dissli2.html#XStobert2014PWMThatDoesntRemember">315</a>]</span>. Bailey et al. argue that users do not really respect the usage purpose, but the
+value, importance, and meaningfulness of the account <span class="cite">[<a 
+href="dissli2.html#XBailey2014StatisticsReuse">17</a>]</span>. In that sense, users do not
+appear to care if the password ought to protect financial information if the website does
+not mean much to them. Radke et al. found users in their diary study tended to create
+unique passwords for important accounts, and reuse passwords for less important ones
+<span class="cite">[<a 
+href="dissli2.html#XRadke2013WhoDecides">260</a>]</span>. Still, probably all users have a “go-to password” that is tried first for an account
+whose value is uncertain in the beginning <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. If password requirements disallow the
+preferred choice, the go-to password might not work anymore. Typically, users either pick
+another password from their portfolio in that situation, or they mangle their first choice
+                                                                                    
+
+                                                                                    
+until all requirements are met. As we show in Chapter <a 
+href="dissch6.html#x83-1610006">6<!--tex4ht:ref: chap:policies_reuse --></a>, neither strategy is necessary if
+the go-to-password already shows certain features. But in case the policy mandates a
+change, Gaw and Felten have laid out that user-chosen mangling strategies are predictable,
+too <span class="cite">[<a 
+href="dissli2.html#XGaw2006PasswordManagement">133</a>]</span>. Besides, policies might not be the only reason for password modifications.
+Over time, users sometimes are exposed to new security advice or other realizations that
+their previous password strategy is generally considered weak <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2013SurvivalShortest">354</a>]</span>. Taking the current
+(already memorized) credentials, and applying the recommendations to them is an obvious
+choice.
+</p><!--l. 247--><p class="noindent" >Florêncio et al. described reuse, categorization, memorable passwords, and mangling as “finite
+effort” <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>]</span>. They meticulously lay out that these strategies are not only common, but inevitable
+and necessary. Even experts in cybersecurity show similar patterns <span class="cite">[<a 
+href="dissli2.html#XLoutfi2015PasswordsOtherSideOfTheFence">216</a>, <a 
+href="dissli2.html#XStobert2015ExpertPassword">317</a>]</span>. The major
+difference between mainstream users and experts is that the latter are more articulate and
+considerate about their coping strategies.
+</p><!--l. 252--><p class="noindent" >In conclusion, we can hang on to the idea that password reuse is a necessary coping strategy.
+Zhang-Kennedy et al. motivate that it is not even “bad” or “risky” per se <span class="cite">[<a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span>. The
+challenge is to do it “right”. However, motivating users to alter this particular aspect is
+comparable to motivating a smoker to quit their guilty pleasure: Abandoning reuse does not
+show a visible immediate pay-off (nor does quitting smoking). In many cases, it does
+not cause harm, even though 16% of US-Americans have experiences someone else
+taking over their accounts <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span> (a similar percentage of active smokers develop lung
+cancer<span class="footnote-mark"><a 
+href="diss57.html#fn4x13"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x53-94001f4"></a>).
+</p><!--l. 255--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.2.3    </span> <a 
+ id="x53-950003.2.3"></a>External Storage</h4>
+<!--l. 257--><p class="noindent" >To avoid memory interference, many users resort to writing down their passwords. In its simplest
+form, a sheet of paper that holds user name and password suffices. Roughly half the users
+reportedly do this <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span>. Many users also use a dedicated note-book that keeps their passwords
+in one place <span class="cite">[<a 
+href="dissli2.html#XKothari2017PasswordLogbooks">202</a>]</span>. Interestingly, some manufacturers offer “password-logbooks” to
+help users organize their credentials. Kothari et al. collected customer reviews about the
+ten most reviewed logbooks and analyzed their content to derive a mental model of
+password security <span class="cite">[<a 
+href="dissli2.html#XKothari2017PasswordLogbooks">202</a>]</span>. They were surprised how many people apparently use one of
+                                                                                    
+
+                                                                                    
+those logbooks and what their motivations are. For instance, customers often loved the
+inconspicuousness of the books and gave them away as presents. Age-related memorability
+challenges were also a central theme. Many people acknowledged the security risks but were
+unsure if a piece of software would be more secure than the book. Password logbooks
+can become a single point-of-failure. Digital files on the computer are often almost as
+accessible to local attackers (friends / spouses). In the workplace, writing passwords down on
+sticky notes <span class="cite">[<a 
+href="dissli2.html#XConklin2004PWAuthenticationSystemPerspective">59</a>]</span> leaves the credentials wide open to anyone passing by and enforcing
+different behavior is difficult. Nevertheless, Herley and Van Oorschot generally advocate
+writing down as coping strategy, as long as the notes are stored in a fairly secure location
+<span class="cite">[<a 
+href="dissli2.html#XHerley2012PersistenceOfPasswords">165</a>]</span>.
+</p><!--l. 260--><p class="noindent" >Using a <a 
+href="dissli3.html#glo:PWM">password manager</a> (<a 
+href="dissli3.html#glo:PWM">PWM</a>) is a more sophisticated way of “externalizing” passwords. In
+essence, a password manager is a digital representation of the “logbooks” described above, but
+comes with many helpful extra features, like easy access, encryption with a master password etc. A
+plethora of services and tools exist in different flavors (e.g. built into browsers, third party
+programs, browser extensions, free vs. premium, cloud-based vs. local). Notable representatives
+include LastPass (freemium/subscription), 1Password (premium/subscription), KeePassX (free,
+one-off payment for apps), and Dashlane (freemium/subscription). Arias-Cabarcos et al. evaluated
+popular PWMs and suggest that Dashlane provides the the most feasible usability/security trade-off
+<span class="cite">[<a 
+href="dissli2.html#XAriasCabarcos2016ComparingPWM">12</a>]</span>. However, surveys have often revealed the low adoption rate of password managers <span class="cite">[<a 
+href="dissli2.html#XOlmstead2017AmerciansCybersecurity">247</a>]</span>,
+mostly because users feel secure enough with their current management habits, or due to financial
+hurdles and distrust <span class="cite">[<a 
+href="dissli2.html#XCSID2012PasswordHabits">64</a>, <a 
+href="dissli2.html#XFagan2017UsersConsiderationsPWMs">102</a>]</span>.
+</p><!--l. 263--><p class="noindent" >Lyastani et al. recently investigated the impact of using a PWM on password strength and reuse
+<span class="cite">[<a 
+href="dissli2.html#XLyastani2017ImpactPWMPasswordStrength">217</a>]</span>. Those <a 
+href="dissli3.html#glo:PWM">PWMs</a> which included a generator had a positive effect on overall password strength
+and diversity in the large sample studied in-situ. But existing user strategies thwarted a boost in
+security, e.g. if a built-in <a 
+href="dissli3.html#glo:PWM">PWM</a> is solely used to store reused passwords. Users often
+benefit from automatically filled login-forms and do not have to type their passwords
+anymore, which is a huge usability plus. Autofill moreover mitigates most phishing attacks,
+because the <a 
+href="dissli3.html#glo:PWM">PWM</a> verifies the domain before filling the password field. As with analog
+notepads, PWMs are a single point of failure, especially in case the master password is
+weak. This is one of the few instances in which a strong password is recommended
+without restrictions. Password managers constitute a honey pot for attackers, who, e.g.,
+exploit security vulnerabilities of the software to gain access to user passwords <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ReplacePasswords">34</a>]</span>. The
+situation is aggravated if passwords are synced to the manufacturer’s cloud storage,
+although this is recommended by Yee to enable seamless availability <span class="cite">[<a 
+href="dissli2.html#XYee2006Passpet">384</a>]</span>. To summarize,
+password managers are a feasible solution for many users, but adoption rates are still fairly
+low.
+</p><!--l. 265--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.2.4    </span> <a 
+ id="x53-960003.2.4"></a>Fallback Methods</h4>
+                                                                                    
+
+                                                                                    
+<!--l. 266--><p class="noindent" >Coping with a forgotten password shows more particularities of user behavior. If offered by <a 
+href="dissli3.html#glo:SP">service
+providers</a>, the easiest way to handle the situation is to obtain a password reset link via email and
+create a new password. In the past, password resets had been responsible for a large portion of
+helpdesk calls <span class="cite">[<a 
+href="dissli2.html#XSasse2001WeakestLink">276</a>]</span>, but self-service procedures have successfully mitigated the issue. Users tend
+to reuse passwords or mangle an old password when they forget and reset their credentials <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. In
+some cases, however, password reset links are replaced by personal knowledge questions <span class="cite">[<a 
+href="dissli2.html#XBonneau2015SecretsLies">33</a>]</span>.
+These often present a great risk to user accounts because of the statistical probability
+involved (e.g. “what was the make of your first car” has a predictable distribution), or
+the information is discoverable on social networks (e.g. “what is your city of birth”).
+Consequently, a strong primary password can be dominated by a weak fallback question and
+voids user efforts to secure their account. Perhaps the only strategy to maximize security
+within this scheme is to provide bogus answers to secret questions to fend-off statistical
+attacks<span class="footnote-mark"><a 
+href="diss58.html#fn5x13"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x53-96001f5"></a>.
+</p><!--l. 268--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.2.5    </span> <a 
+ id="x53-970003.2.5"></a>Account Sharing</h4>
+<!--l. 269--><p class="noindent" >Users often share their accounts, e.g. with close-ones, relatives, or co-workers <span class="cite">[<a 
+href="dissli2.html#XKaye2011PasswordSharing">188</a>, <a 
+href="dissli2.html#XShay2010EncounteringPasswordRequirements">298</a>]</span>. Security
+advice generally discourages sharing passwords because it increases the likelihood of leaked
+credentials. However, Singh et al. point out that this behavior is absolutely intentional, and does not
+originate from lack of understanding of the risks involved <span class="cite">[<a 
+href="dissli2.html#XSingh2007PasswordSharing">308</a>]</span>. Password managers also integrate
+sharing features to give others quick and easy access to a set of passwords <span class="cite">[<a 
+href="dissli2.html#XLi2014EmperorsNewPWM">210</a>]</span>. Account sharing
+plays a role in the overall security strategy, but personal passwords are usually less influenced by
+sharing considerations.
+</p><!--l. 271--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.2.6    </span> <a 
+ id="x53-980003.2.6"></a>Summary</h4>
+<!--l. 272--><p class="noindent" >We can identify themes in coping strategies at each stage of the Password Life Cycle <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. Coping
+is a natural reaction to “impossible demands” arising from Password overload <span class="cite">[<a 
+href="dissli2.html#XSasse2005UsableSecurityPosition">277</a>]</span>. All strategies
+                                                                                    
+
+                                                                                    
+can be justified from an economic point of view <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>]</span>, although each of them generates
+security risks of varying severity. Password reuse is arguably the most severe problem,
+followed by selecting too obvious and weak passwords. It is critical to be consistent
+with one’s own reuse strategy and pick strong passwords in a select number of cases,
+e.g. master passwords for <a 
+href="dissli3.html#glo:PWM">PWMs</a> or central hubs like email accounts. In the following,
+we discuss how research has tried to influence risky behavior and support users in safe
+behaviors.
+</p><!--l. 279--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">3.3    </span> <a 
+ id="x53-990003.3"></a>Guiding and Aiding Users</h3>
+<!--l. 280--><p class="noindent" >Since secure behavior does not come natural to users, there have been many attempts to make it
+more accessible to them and relieve the tensions between usability and security at the same time.
+Although systems can be changed in many ways, it is difficult to change the user. If the user needs
+to be kept in the loop, e.g. because constraints dictate so, we need to support them well and make
+careful decisions about how to support them <span class="cite">[<a 
+href="dissli2.html#XCranor2008FrameworkReasoning">62</a>]</span>. In the following, we highlight approaches
+not only to make systems more usable, but also to influence user behavior regarding
+passwords.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.3.1    </span> <a 
+ id="x53-1000003.3.1"></a>Password Composition Policies</h4>
+<!--l. 285--><p class="noindent" >In terms of guiding users, combating weak passwords has received the most attention from research
+and practice. The idea of enforcing certain password requriments dates back to the 1970s, i.e. the
+early days of cybersecurity. Morris and Thompson acknowledged password authentication is
+inherently flawed in terms of usability. They suggested to make users either choose longer
+passwords, or systematically assign passwords to them to <span class="cite">[<a 
+href="dissli2.html#XMorris1979PasswordSecurity">237</a>]</span>. At the time, guessing attacks were
+not as powerful as they are today and it was obvious to shift responsibility to users <span class="cite">[<a 
+href="dissli2.html#XFeldmeier1990UnixPasswordSecurity">104</a>]</span>. When the
+Electronic Authentication guideline was published by <a 
+href="dissli3.html#glo:NIST">NIST</a>, password composition policies
+became the de-facto standard in attempting to make users select stronger passwords.
+The NIST guideline suggested passwords be at least eight characters long, include at
+least one upper case letter, one lower case letter, one digit, and one special symbol <span class="cite">[<a 
+href="dissli2.html#XBurr2004NISTEntropy">47</a>]</span>.
+Moreover, passwords may not be taken from a dictionary with common words and not be
+permutations of the username. By looking at entropy estimates, it was argued that the
+resulting passwords would achieve at least 30 bits of entropy. Interestingly, this was
+not the only specification for policies. The guideline specifically says that passwords
+could also be graded with some other metric and be rejected based on their estimated
+entropy. At the time, there was not much evidence that user-selected passwords created
+                                                                                    
+
+                                                                                    
+under the NIST-policy were in fact strong, which set off a number of research studies,
+and made password composition policies one of the most studied topics in password
+security.
+</p><!--l. 288--><p class="noindent" >Proctor et al. found in 2002 that certain “proactive password restrictions” lead to stronger
+passwords <span class="cite">[<a 
+href="dissli2.html#XProctor2002ImprovingAuthenticationProactivePasswordRestrictions">258</a>]</span>. In two laboratory experiments, they had participants create a new password for
+a university account. The policies differed in the required minimum length (five and
+eight) and complexity requirements like upper-/lowercase letters and digits. Requiring
+more complexity was comparable to increasing the minimum required length in terms
+of successfully cracked passwords. Interestingly, they concluded “Perhaps the most
+important message of this study is that restrictions on user-generated passwords may not
+accomplish their intended goals.” Proctor et al.’s early hypothesis that strict policies are more
+or less ineffective is particularly surprising because in the fifteen years that followed,
+many research papers were written about such restrictions and many of them ultimately
+came to similar conclusions. In the following, some of the most influential works are
+summarized.
+</p><!--l. 291--><p class="noindent" >Inglesant and Sasse report on a diary study of password policies in corporate contexts <span class="cite">[<a 
+href="dissli2.html#XInglesant2010TrueCostOfUnusablePolicies">172</a>]</span>. They
+reached the disillusioning conclusion that password policies reduce employees’ productivity. Once
+the participants found a password that fulfilled the company’s policy, they used it as a resource to
+turn to when creating additional accounts. Similarly, Komanduri et al. found that users
+barely go beyond the minimum requirements of policies <span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>]</span>, but some policies yield
+better results than others. Weir et al. categorize policies into “explicit” and “implicit”
+policies <span class="cite">[<a 
+href="dissli2.html#XWeir2010MetricsPolicies">365</a>]</span>. Explicit policies have predefined rules about the password structure like
+the NIST guideline, which is explicitly based on <a 
+href="dissli3.html#glo:LUDS">lowercase, uppercase, digits, symbols
+(LUDS)</a> <span class="cite">[<a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>. On the other hand, implicit policies focus on strength estimation and
+are somewhat more volatile and intransparent to the users. For instance, if the policy
+uses a blacklist of forbidden words, the list is usually not displayed to users up front.
+The blacklist only becomes visible after the first attempt is made. Moreover, Weir et al.
+used subsets of the RockYou data set that fulfilled the NIST policy. Here, they provided
+early pointers that many of the seemingly complex passwords can be easily cracked,
+too.
+</p><!--l. 294--><p class="noindent" >Thus, the logical next step was to find replacements for the NIST policy with better usability and
+security. First attempts to find it were of theoretical nature. Blocki et al. modeled an “optimal”
+policy as algorithmically solvable challenge <span class="cite">[<a 
+href="dissli2.html#XBlocki2013OptimizingPasswordPolicies">28</a>]</span>, which had been proposed by Shay <span class="cite">[<a 
+href="dissli2.html#XShay2009PolicySimulation">294</a>]</span>.
+However, while theoretically sound, empirical evidence was necessary to quantify the effects on
+user behavior.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-100001r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 300--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.3:  </span><span  
+class="content">  Guess  number  graph  for  passwords  created  under  different  password
+composition policies. A higher percentage of cracked passwords (larger y-values) indicates
+that passwords were weaker. In this case, passwords adhering to a basic12 policy were the
+weakest, while 3class16 produced the strongest passwords.</span></div><!--tex4ht:label?: x53-100001r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 303--><p class="noindent" >During the last few years, Shay et al. have established a taxonomy for policies <span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>, <a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies">295</a>, <a 
+href="dissli2.html#XShay2014CanLongPasswordsBeSecureAndUsable">299</a>]</span>:
+Basic policies that only mandate a certain length (e.g. basic12), character-class centric policies that
+require between 2 and 4 different character classes and a given length (e.g. 3class12), policies
+requiring phrase-like syntax and a given length (e.g. 2word16), and complex policies that have
+more than 4 specific requirements (comp8). Table <span 
+class="ptmb8t-x-x-120">??</span> illustrates the specific differences as
+found in the taxonomy. In multiple studies they compared the guessability of passwords
+under different variants. They found that a 3class16 policy produced the least guessable
+passwords, while basic12 yielded the highest cracking success rates. For a limited attacker,
+who can make up to <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">6</span> guesses, basic16 and basic20 performed poorly, but they fared
+well at the cut-off threshold of <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">14</span>. The NIST-policy (comp8) performed well up to
+<span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">6</span> guesses, but almost as many passwords had been cracked after <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">14</span> guesses as for
+the basic12 policy. This refutes the postulation that character diversity automatically
+leads to stronger passwords when users select them. Shay et al. point out that 28% of
+participants in the comp8 condition only fulfilled the criteria by adding an exclamation mark
+“!” at the end, which was later corroborated by Ur et al. <span class="cite">[<a 
+href="dissli2.html#XUr2015PWCreationLab">345</a>]</span>. So, as hypothesized,
+policies significantly influence the strength of user-generated passwords. In terms of
+usability, there are signficant differences, too. Shay et al. examined typical usability
+metrics and participants’ subjective assessments. Basic12 passwords were the easiest to
+create, fastest to type and easiest to remember. Interestingly, the 3class12 policy was
+comparable in all dimensions. All in all, basic16, 3class12, and 2word16 seem like the
+“winners” in terms of security and usability, but 2word16 passwords have high beta
+guess rates <span class="cite">[<a 
+href="dissli2.html#XShay2014CanLongPasswordsBeSecureAndUsable">299</a>]</span>. To combat this, Shay et al. suggest blacklisting specific sub-strings
+<span class="cite">[<a 
+href="dissli2.html#XShay2016DesigningPasswordPolicies">295</a>]</span>.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 2--><p class="noindent" ><a 
+ id="x53-100002r2"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+ <div class="caption" 
+><span class="id">Table 3.2: </span><span  
+class="content"> Example policies from CMU taxonomy. </span></div><!--tex4ht:label?: x53-100002r2 -->
+<div class="tabular"> <table id="TBL-6" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-6-1g"><col 
+id="TBL-6-1" /><col 
+id="TBL-6-2" /><col 
+id="TBL-6-3" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-6-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-6-1-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Policy                </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-1-2"  
+class="td11"> <!--l. 6--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">The password needs to ...</span>                                     </p></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-1-3"  
+class="td11"> <!--l. 6--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Example passwords</span>          </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-6-2-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">basic8 (1class8)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-2-2"  
+class="td11"> <!--l. 7--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">be at least 8 characters long</span>                                    </p></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-2-3"  
+class="td11"> <!--l. 7--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">password</span>
+  <span 
+class="ptmr8t-x-x-109">monkey123</span>
+  <span 
+class="ptmr8t-x-x-109">qwerasdf</span>                             </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-6-3-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">3class12              </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-3-2"  
+class="td11"> <!--l. 8--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">be at least 12 characters long and include three</span>
+  <span 
+class="ptmr8t-x-x-109">different character classes (upper, lower, digits,</span>
+  <span 
+class="ptmr8t-x-x-109">symbol)</span>                                                                   </p></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-3-3"  
+class="td11"> <!--l. 8--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Password1234</span>
+  <span 
+class="ptmr8t-x-x-109">2MonkeysBite</span>
+  <span 
+class="ptmr8t-x-x-109">NfJidl2kdils</span>                        </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-6-4-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">2word16              </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-4-2"  
+class="td11"> <!--l. 9--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">be  at  least  16  characters  long  and  include  at</span>
+  <span 
+class="ptmr8t-x-x-109">least two letter sequences that are separated by a</span>
+  <span 
+class="ptmr8t-x-x-109">non-letter sequence.</span>                                                </p></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-4-3"  
+class="td11"> <!--l. 9--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">password.unlocks</span>
+  <span 
+class="ptmr8t-x-x-109">1-Monkey-Bites</span>
+  <span 
+class="ptmr8t-x-x-109">qwer.asdf.zxcvb.1234</span>         </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-6-5-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">comp8                 </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-5-2"  
+class="td11"> <!--l. 10--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">bet  at  least  8  characters  long,  include  at  least</span>
+  <span 
+class="ptmr8t-x-x-109">one character from each character class, and not</span>
+  <span 
+class="ptmr8t-x-x-109">include a dictionary word</span>                                       </p></td><td  style="white-space:wrap; text-align:left;" id="TBL-6-5-3"  
+class="td11"> <!--l. 10--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">P@ssw0rd</span>
+  <span 
+class="ptmr8t-x-x-109">!M0nkey1</span>
+  <span 
+class="ptmr8t-x-x-109">LGtjj{Rd;w1u/</span>                   </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-6-6-1"  
+class="td11">               </td></tr></table></div>
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<!--l. 314--><p class="noindent" >Both in the industry and public institutions, password expiration policies are commonplace
+<span class="cite">[<a 
+href="dissli2.html#XInglesant2010TrueCostOfUnusablePolicies">172</a>, <a 
+href="dissli2.html#XChiasson2015QuantifyingExpiration">53</a>]</span>. Forcing users to reset their users in predefined intervals was argued to mitigate threats
+arising from data breaches. If password leaks go unnoticed, at least the credentials expire at
+regular points. For users, an expiration policy drastically increases password overload and
+memory interference, for which the typical coping strategies (see Section <a 
+href="#x53-920003.2">3.2<!--tex4ht:ref: sec:rw:user-behavior --></a>) prevail: an
+expired “password1” quickly is reset to “password2” and so forth <span class="cite">[<a 
+href="dissli2.html#XZhang2010PasswordExpiration">388</a>]</span>. Thus, it has been
+argued that expiration is ineffective and causes users too much effort without graspable
+security benefits. Chiasson et al. set out to quantify the benefits of expiration and their
+mathematical model strongly indicated that the benefits are “marginal at best” <span class="cite">[<a 
+href="dissli2.html#XChiasson2015QuantifyingExpiration">53</a>]</span>. If
+expiration is not enforced, security experts often advise users to manually change their
+password often. Zhang-Kennedy et al. reframe this rule to “change your password well”
+<span class="cite">[<a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span>, i.e. users ought to change it once they suspect (or find out) a service had been
+compromised.
+</p><!--l. 319--><p class="noindent" >Looking at real-world policies, Wang et al. also found inconsistencies, i.e. not all web sites
+requiring the same password characteristics <span class="cite">[<a 
+href="dissli2.html#XWang2015EmperorsPolicies">361</a>]</span>. Users can get confused if multiple sites mandate
+different features for “security reasons”, because they might wonder who is right. Florêncio
+and Herley compared policies of high-traffic websites and public institutions, mostly
+universities <span class="cite">[<a 
+href="dissli2.html#XFlorencio2010WhereDoPoliciesComeFrom">112</a>]</span>. Surprisingly, the most influential companies enforced some of the
+loosest policies. The researchers argue that decisions in these companies are not only
+influenced by security officers (who evangelize password strength and expiration) but also
+by user experience experts (who point out the usability issues). In public institutions,
+security advisors outnumber human-factors experts, which is why policies represent
+an “overshoot” of security there, imposing considerable nuisance at marginal security
+benefits.
+</p><!--l. 322--><p class="noindent" >To summarize, policies have the power to influence password behavior. However, this influence
+arises from coercion and thus risks reduced usability. Users often cope by picking the easiest
+possible password that still fulfills the rules. This is why Florêncio et al. argue that we should not
+try to fix the user, but to fix the system first (in this case the password policies) <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>]</span>. Especially,
+<a 
+href="dissli3.html#glo:SP">service providers</a> should be careful not to impose strict requirements and nonsensical
+policies<span class="footnote-mark"><a 
+href="diss59.html#fn6x13"><sup class="textsuperscript">6</sup></a></span><a 
+ id="x53-100003f6"></a>.
+However, if <a 
+href="dissli3.html#glo:SP">service providers</a> feel the need to move to a stricter policy (and expire passwords at the
+time of policy change), Shay et al. at least provide evidence that users feel better protected afterwards,
+                                                                                    
+
+                                                                                    
+even though their password changes are well predictable <span class="cite">[<a 
+href="dissli2.html#XShay2010EncounteringPasswordRequirements">298</a>]</span>. Finally, <a 
+href="dissli3.html#glo:NIST">NIST</a> recently recognized
+that errors were made in the Electronic Authentication guideline and released an updated
+version<span class="footnote-mark"><a 
+href="diss60.html#fn7x13"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x53-100004f7"></a>.
+William Burr, who was the lead author of the original policy recommendation,
+was recently quoted to regret his contribution. He told the Wall Street Journal “<span 
+class="ptmri8t-x-x-120">It</span>
+<span 
+class="ptmri8t-x-x-120">just drives people bananas and they don’t pick good passwords no matter what you</span>
+<span 
+class="ptmri8t-x-x-120">do</span>”<span class="footnote-mark"><a 
+href="diss61.html#fn8x13"><sup class="textsuperscript">8</sup></a></span><a 
+ id="x53-100005f8"></a>.
+Shay et al.’s results, however, somewhat relieve Burr from his remorse, because some policies do
+help people pick “good passwords”.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.3.2    </span> <a 
+ id="x53-1010003.3.2"></a>User Education and Guidelines</h4>
+<!--l. 329--><p class="noindent" >Policies can be considered a means to “enforce recommendations”. Giving advice
+to users to educate them about password security is a softer approach. A Google
+search for “password recommendations” yields <span 
+class="zptmcm7y-x-x-120">≈ </span>113,000,000 results, some very
+brief<span class="footnote-mark"><a 
+href="diss62.html#fn9x13"><sup class="textsuperscript">9</sup></a></span><a 
+ id="x53-101001f9"></a>, others very elaborate
+                                                                                    
+
+                                                                                    
+and authoritative<span class="footnote-mark"><a 
+href="diss63.html#fn10x13"><sup class="textsuperscript">10</sup></a></span><a 
+ id="x53-101002f10"></a>.
+We summarized common advice and the characteristics of “bad passwords” in Section <a 
+href="dissch2.html#x8-600002.4">2.4<!--tex4ht:ref: sec:rw:whats_a_bad_pw --></a>. The
+original <a 
+href="dissli3.html#glo:NIST">NIST</a> guideline also read more like a “how to” than a dictum for policies, although it was
+translated into policies after all. Sasse et al. expressed doubts about the effectiveness of user
+education, because it “will only work if users are motivated” <span class="cite">[<a 
+href="dissli2.html#XSasse2001WeakestLink">276</a>]</span>. We know by now that
+security is a secondary goal, and thus it is unlikely that people are motivated to educate
+themselves about it. Therefore, we have to focus on the restriction “<span 
+class="ptmb8t-x-x-120">if </span>users are motivated” and
+present advice effectively in this opportune moment. Security can become the primary
+task, or on-par with the primary task. For instance, the moment users adopt a password
+manager and have to set-up their master password, they not only want to simplify password
+management, but also ensure that their central hub is safeguarded against attacks. Some
+web-accounts are of great value and users are potentially open to receive support to secure
+those.
+</p><!--l. 335--><p class="noindent" >We can identify four central problems with password advice. 1) There is no consensus about
+adequate password strength, because it always depends on the attack model. Thus, any
+guideline should differentiate between threat models and brief the users about them.
+However, this is rarely done in practice and most advice is opinionated <span class="cite">[<a 
+href="dissli2.html#XHerley2015Counterfactuals">164</a>]</span>. Besides,
+password advice becomes outdated if new threat models prevail. 2) Reading a guide does not
+necessarily translate into action. Herley says users are rational in rejecting advice if it
+entails too much effort <span class="cite">[<a 
+href="dissli2.html#XHerley2009SoLongThanksExternalities">162</a>]</span>. Forget et al. empirically showed that advice can lead to
+insecure behavior, too <span class="cite">[<a 
+href="dissli2.html#XForget2007HelpingUsers">123</a>]</span>. 3) Users misread password advice. Ur et al. argue that users
+misconstrue a statement like “adding digits, upper-case letters, lower-case letters and
+symbols add to the strength of the passwords” to “<span 
+class="ptmri8t-x-x-120">all </span>passwords with digits, upper and
+lower case letters, and symbols are strong” <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. Heterogeneous composition policies,
+and feedback can influence mental models, too. Forget et al. argue that one needs to
+understand users’ mental models of authentication first, before they can be effectively
+instructed <span class="cite">[<a 
+href="dissli2.html#XForget2007HelpingUsers">123</a>]</span>. 4) Lastly, if password advice achieves to change user behavior on a larger
+scale, password guessing attacks will be modeled around the recommendations, too
+<span class="cite">[<a 
+href="dissli2.html#XHerley2012PersistenceOfPasswords">165</a>]</span>. Thus, in the long run, advice needs to be revised because attacks become too
+efficient.
+</p><!--l. 348--><p class="noindent" >To conclude, one needs to stay realistic about what can be achieved with password advice <span class="cite">[<a 
+href="dissli2.html#XFlorencio2016CommACM">117</a>]</span>.
+Zhang-Kennedy et al. provide one such realistic view on advice <span class="cite">[<a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span>. They revised the “character
+diversity” recommendation and suggest not using common passwords, predictable substitutions, or
+dictionary words. However, we still face the problem of communicating to users what “common”
+passwords and “predictable substitutions” are. Zhang-Kennedy et al. propose users should come up
+                                                                                    
+
+                                                                                    
+with original mnemonics, which is a special kind of advice discussed in the following
+section.
+</p><!--l. 353--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.3.3    </span> <a 
+ id="x53-1020003.3.3"></a>Password Selection Algorithms &#x0026; Memorization Techniques</h4>
+<!--l. 354--><p class="noindent" >Many researchers have proposed techniques and algorithms to help users create memorable and
+strong passwords. We have already discussed Haskett’s PassAlgorithms <span class="cite">[<a 
+href="dissli2.html#XHaskett1984PassAlgorithms">157</a>]</span>, where the user
+remembered how to respond to a challenge rather than a static password. Let us take a look at more
+such approaches.
+</p>
+<!--l. 356--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-1030003.3.3"></a><span 
+class="ptmb8t-x-x-120">Mnemonics and Training</span></span>
+Barton and Barton were likely the first to propose mangling strategies in this context <span class="cite">[<a 
+href="dissli2.html#XBarton1984Mangling">18</a>]</span>. For
+instance, they suggested to use sentence-based mnemonics and mentally connect passwords to
+different cities. For instance, a sentence like “I love Paris in the Springtime” would translate into
+“IlPitS”. This work was seminal and some of its techniques persist in password recommendations
+today. Yan et al. empirically showed that there are benefits in terms of memorability and security of
+the resulting passwords <span class="cite">[<a 
+href="dissli2.html#XYan2004PasswordMemorabilitySecurity">380</a>]</span>. However, Forget et al. observed that telling participants to generate
+phrase-based passwords can be misinterpreted and more guidance is necessary to achieve benefits
+<span class="cite">[<a 
+href="dissli2.html#XForget2007HelpingUsers">123</a>]</span>. Maqbali <span class="cite">[<a 
+href="dissli2.html#XMaqbali2016PasswordGenerators">220</a>]</span> and McEvoy <span class="cite">[<a 
+href="dissli2.html#XMcevoy2016ContextualizingMnemonicPhrase">230</a>]</span> recommend using contextual or site-specific cues on
+websites as mnemonics.
+</p><!--l. 359--><p class="noindent" >Memorization by repetitive training has also been suggested. Bonneau and Schechter put forward a
+solution that is supposed to help users memorize “56 bit secrets” (for comparison, the original
+NIST guideline demanded 30 bit) <span class="cite">[<a 
+href="dissli2.html#XBonneau2014ReliableStorage56Bits">36</a>]</span>. Users first pick a self-selected password. Their system
+then displays a random code (or words) for each user at login-time which needs to be
+typed correctly into a separate field. The code becomes part of the password and was
+displayed with increasing delays. But participants could skip the delay by entering the code
+from memory. After a median of 36 log-ins 96% of participants had memorized a 56 bit
+secret. Despite the high success rates, it is questionable if this type of support is in the
+users’ interest, especially if it is deployed by more than one service. In a similar vein,
+Kroeze and Olivier proposed using gamification to make the training more enjoyable
+<span class="cite">[<a 
+href="dissli2.html#XKroeze2012GamifyingAuthentication">204</a>]</span>.
+</p><!--l. 362--><p class="noindent" >In terms of the security flaws, mnemonic passwords are predictably based on common phrases from
+movies, literature, songs, etc., but still stronger than regular passwords <span class="cite">[<a 
+href="dissli2.html#XKuo2006HumanSelectionMnemonic">206</a>]</span>. Nevertheless, Yang et
+al. demonstrate that even mnemonic phrase-based passwords can be attacked easily <span class="cite">[<a 
+href="dissli2.html#XYang2016MnemonicSentenceBased">381</a>]</span>. Thus,
+like Zhang-Kennedy, they highlight the importance of original, personal phrases and show how
+                                                                                    
+
+                                                                                    
+users can be instructed effectively.
+</p>
+<!--l. 366--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x53-1040003.3.3"></a><span 
+class="ptmb8t-x-x-120">Passphrases</span></span>
+Another technique proposed to create strong, memorable passwords is to create passphrases. Rather
+than creating an acronym of a phrase, we understand them as a combination of words, e.g. the
+paragon “<span 
+class="ectt-1200">CorrectHorseBatteryStaple</span>”. Passphrases are usually longer than traditional
+pass<span 
+class="ptmri8t-x-x-120">words </span>and thus increase password strength. Paradoxically, passphrases sometimes exceed
+character limits for passwords on certain websites <span class="cite">[<a 
+href="dissli2.html#XCarnavalet2014AnalyzingPWStrengthMeters">48</a>]</span>. The PGP system embraces the strength
+benefits and uses passphrases to encrypt private keys on the clients. Keith et al. showed that
+passphrases are more memorable than more complex passwords, especially if they include
+punctuation symbols <span class="cite">[<a 
+href="dissli2.html#XKeith2009PassphraseDesign">189</a>]</span>. However, participants in their study made significantly more errors,
+which is the biggest usability caveat of long passphrases. On devices where text-entry is
+cumbersome (e.g. on mobiles or smart TVs), refraining from masking entry can mitigate this
+problem <span class="cite">[<a 
+href="dissli2.html#XMelicher2016UsabilityMobileTextPasswords">232</a>]</span>.
+</p><!--l. 369--><p class="noindent" >Moreover, Bonneau showed that user-selected passphrases are predictable <span class="cite">[<a 
+href="dissli2.html#XBonneau2012LinguisticProperties">37</a>]</span>. To mitigate
+predictable word combinations, system-assigned passphrases have been evaluated. Shay et al.
+conclude that this boosts strength, but users dislike them <span class="cite">[<a 
+href="dissli2.html#XShay2012CorrectHorseBatteryStaple">297</a>]</span>. Similarly, passphrase-centric
+policies (e.g. 2word16) lead to passwords with high guess numbers, but users struggle to create
+them <span class="cite">[<a 
+href="dissli2.html#XShay2014CanLongPasswordsBeSecureAndUsable">299</a>]</span>. The Diceware approach is often mentioned as a means to randomize word
+selection<span class="footnote-mark"><a 
+href="diss64.html#fn11x13"><sup class="textsuperscript">11</sup></a></span><a 
+ id="x53-104001f11"></a>.
+The user rolls a die five times and notes down the resulting numbers. Afterwards, they look up the
+word with the corresponding number from the Diceware wordlist. The process should be repeated
+at least twice to create a passphrase. Unfortunately, the process requires some dedication, time, and
+a dice. Nonetheless, passphrases usually do not require a change to the provider’s system, which
+makes them a viable, memorable and secure option, e.g. if they are mostly entered with a physical
+keyboard.
+</p><!--l. 376--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.3.4    </span> <a 
+ id="x53-1050003.3.4"></a>Password Managers and Generators</h4>
+                                                                                    
+
+                                                                                    
+<!--l. 379--><p class="noindent" >Many of the problems around password security originate from the predictability of user choices
+and preferences. Therefore, systems that remove much of the decision-making process seem to
+remove weak passwords. Password generators can create (pseudo-) random strong passwords for
+the users and thus the element of human bias vanishes. There are two paradigms to generate
+passwords for users: easily memorable passwords, or passwords requiring external storage (see
+Section <a 
+href="#x53-950003.2.3">3.2.3<!--tex4ht:ref: sec:rw:external-storage --></a>). </p><hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-105001r4"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 384--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.4: </span><span  
+class="content"> On macOS, the Keychain application manages passwords for the user. If a
+new entry is manually created by the user, the password assistant can be used to generate
+different kinds of passwords: Random (image on the left), letters and numbers, numbers
+only, memorable (image on the right), and FIPS-181 compliant</span></div><!--tex4ht:label?: x53-105001r4 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 389--><p class="noindent" >In the first paradigm, the generator creates pseudo-random strings resembling user-selected
+passwords. <span 
+class="ptmb8t-x-x-120">Pronounceable </span>password generators do not yield random characters but random
+phonetic segments <span class="cite">[<a 
+href="dissli2.html#XGasser1975RandomWordPronouncable">131</a>]</span>. This allows users to repeat passwords in their head or saying them aloud
+to memorize them. However, generating passwords that are consistently pronounceable is
+challenging <span class="cite">[<a 
+href="dissli2.html#XWhite2014IsntThatFabulous">370</a>, <a 
+href="dissli2.html#XGoldberg2015UnspeakablePasswords">135</a>]</span>. Passphrases can also be generated in the same way <span class="cite">[<a 
+href="dissli2.html#XKurzban1985Passphrases">207</a>]</span>. Generators
+implementing the second paradigm yield truly random character strings taken from an alphabet
+large enough to mitigate most guessing attacks (see example in Figure <span 
+class="ptmb8t-x-x-120">??</span>). Huh et al.
+propose letting users replace a certain number of characters to create a more memorable
+version of the random password <span class="cite">[<a 
+href="dissli2.html#XHuha2015UserReplaceablePasswords">170</a>]</span>. However, memorization of random strings is
+still exceptionally arduous for most users, as is typing them. Therefore, such passwords
+need to be either be written down or stored inside a <a 
+href="dissli3.html#glo:PWMg">password manager</a>. Most password
+managers (see Section <a 
+href="#x53-950003.2.3">3.2.3<!--tex4ht:ref: sec:rw:external-storage --></a>), offer to generate passwords. Moreover, the Safari browser
+suggests a randomly generated password to users and stores it into Apple’s cloud storage
+Keychain. Relying on a <a 
+href="dissli3.html#glo:PWMg">password manager</a> gives users a number of usability benefits
+<span class="cite">[<a 
+href="dissli2.html#XYee2006Passpet">384</a>]</span>. As mentioned above, auto-fill reduces interaction times and recall problems. If
+passwords are generated on the fly, the effort to create passwords is removed. It is easy to
+generate unique passwords for each account and thwart phishing attacks, so the <a 
+href="dissli3.html#glo:PWM">PWM</a>
+scales with the number of accounts. Some <a 
+href="dissli3.html#glo:PWM">PWMs</a> give the users feedback to assess their
+overall protection level. On the downside, users become dependent on the <a 
+href="dissli3.html#glo:PWM">PWM</a>, which
+makes it difficult to roam and use other devices. Even if users do not generate passwords,
+they lose muscle memory with auto-fill, so it is cognitively more challenging to log in
+manually.
+</p><!--l. 398--><p class="noindent" >HCI researchers have tried to solve these problems. Stobert and Biddle proposed VersiPass <span class="cite">[<a 
+href="dissli2.html#XStobert2014PWMThatDoesntRemember">315</a>]</span>. It
+uses graphical authentication and hints to avoid losing muscle memory, but it has not been
+empirically evaluated. Tapas is a decentralized password manager based on two-factor
+authentication, which was well received in two user studies <span class="cite">[<a 
+href="dissli2.html#XMcCarney2013PWMThesis">227</a>, <a 
+href="dissli2.html#XMcCarney2012Tapas">228</a>]</span>. Yee’s PassPet is a browser
+extension that lets users pick a “pet name” (label) for each website they have signed up for <span class="cite">[<a 
+href="dissli2.html#XYee2006Passpet">384</a>]</span>.
+The label is part of the password hashing and aims to increase both the security and memorability
+of the scheme, similar to the Password Multiplier system by Halderman et al. <span class="cite">[<a 
+href="dissli2.html#XHalderman2005ConvenientPWM">147</a>]</span>.
+Fagan et al. investigated the reasons for (not) adopting a <a 
+href="dissli3.html#glo:PWMg">password manager</a> <span class="cite">[<a 
+href="dissli2.html#XFagan2017UsersConsiderationsPWMs">102</a>]</span>. They
+found that users more prominently appreciate usability benefits. Those who do not use a
+<a 
+href="dissli3.html#glo:PWM">PWM</a> distrusted the security, potentially due to a sub-par mental model. We can also
+hypothesize that many users want to stay independent and not give away control to a third
+party.
+</p><!--l. 401--><p class="noindent" >In summary, password managers aid users in password selection, and scaling the increasing number
+of accounts. Generated passwords are mostly a go-to method for more proficient, security-aware
+users who actively seek to strengthen their passwords as much as possible. While the academic
+research community has not been able to create <a 
+href="dissli3.html#glo:PWM">PWM</a> solutions with widespread adoption, many
+commercial solutions exist. However, the adoption rates indicate that current systems have not been
+fully adapted to the masses.
+                                                                                    
+
+                                                                                    
+</p>
+<h3 class="sectionHead"><span class="titlemark">3.4    </span> <a 
+ id="x53-1060003.4"></a>Persuasive Interventions</h3>
+<!--l. 413--><p class="noindent" >Persuading users to behave differently is the last line of defense we shall discuss in this part. Using
+technology to persuade users can be traced back to Fogg’s seminal work on “captology”, which was
+later recoined under the umbrella term <span 
+class="ptmri8t-x-x-120">persuasive technology </span><span class="cite">[<a 
+href="dissli2.html#XFogg2002Persuasive">120</a>]</span>. He defines it as “<span 
+class="ptmri8t-x-x-120">interactive</span>
+<span 
+class="ptmri8t-x-x-120">computing system designed to change people’s attitudes or behaviors</span>”. Persuasion itself is seen as
+“an attempt to change attitudes or behaviors or both (without using coercion or deception)”. The
+latter part further distinguishes persuasion from manipulation, where people are not aware of the
+manipulator’s intentions. Password composition policies exert authority and coerce users to follow
+the rules. The need for autonomy as part of the Self-Determination Theory <span class="cite">[<a 
+href="dissli2.html#XRyan2000SelfDeterminationTheory">273</a>]</span> is thus
+undermined by policies. User education is voluntary and often misses its goal because users
+seldom decide to educate themselves on password security. Therefore, persuasion could
+fill the gap of providing transparent education by making alternative behavior more
+salient <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. In the context of this thesis, we thus understand persuasive technology as an
+<span 
+class="ptmri8t-x-x-120">enabling </span>technology that adequately supports users while respecting their preferences.
+Persuasion in HCI has become an essential topic with numerous papers published at top-tier
+conferences. Hekler already highlighted the rising interest already in 2013 <span class="cite">[<a 
+href="dissli2.html#XHekler2013TheoreticalGap">160</a>]</span>. What is more,
+persuasion is one of the central topics among the top-5 most cited CHI-papers of the past five
+years<span class="footnote-mark"><a 
+href="diss65.html#fn12x13"><sup class="textsuperscript">12</sup></a></span><a 
+ id="x53-106001f12"></a>.
+Consequently, we regard it as highly promising direction for password research.
+</p><!--l. 415--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.4.1    </span> <a 
+ id="x53-1070003.4.1"></a>Background</h4>
+<!--l. 416--><p class="noindent" >In the following, we explore how to use persuasion to create “soft paternalistic interventions that
+nudge users toward more beneficial choices” <span class="cite">[<a 
+href="dissli2.html#XAcquisti2017NudgesPrivacySecurity">1</a>]</span>.
+</p><!--l. 419--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h5 class="subsubsectionHead"><a 
+ id="x53-1080003.4.1"></a>Terminology in Persuasion and Behavioral Economics</h5>
+<!--l. 420--><p class="noindent" >In the design of persuasive technology, we often encounter the concept of “nudging” people, i.e.
+figuratively giving them a small push to act in a certain way <span class="cite">[<a 
+href="dissli2.html#XThaler2008Nudge">332</a>]</span>. The “choice architect” decides
+on the direction of the push <span class="cite">[<a 
+href="dissli2.html#XThaler2010ChoiceArchitecture">333</a>]</span>. For instance, by setting clever <span 
+class="ptmri8t-x-x-120">defaults</span>, people are relieved of
+making an active decision and can just accept the default. Nudging strategies as part of “soft
+paternalism” or “libertarian paternalism” stem from the field of behavioral economics, which
+studies “how individual, social, cognitive, and emotional biases influence economic decisions” <span class="cite">[<a 
+href="dissli2.html#XAcquisti2008DigitalPrivacy">2</a>]</span>.
+In other words, behavioral economists embrace the idea that people sometimes act irrationally
+when making economic decisions. For example, people are significantly more likely
+to purchase a glass of jam, if there are only six options instead of 24 – the so-called
+“choice paradox” <span class="cite">[<a 
+href="dissli2.html#XIyengar2000WhenChoiceIsDemotivating">174</a>]</span>. As we have seen in Section <a 
+href="#x53-920003.2">3.2<!--tex4ht:ref: sec:rw:user-behavior --></a>, password coping strategies
+ultimately involve such economic decisions: Given a risk, one needs to assess the severity,
+likelihood, costs of mitigating the risk, and the effectiveness of the protective measure <span class="cite">[<a 
+href="dissli2.html#XSchneier2008PsychologySecurity">283</a>]</span>.
+Thus, theories from behavioral economics are a useful resource that can explain user
+behavior.
+</p><!--l. 423--><p class="noindent" >Referring to the dual process theory, Kahneman argues that many sub-optimal decisions originate
+from System 1 which is responsible for intuitive and automatic thinking processes <span class="cite">[<a 
+href="dissli2.html#XKahnemann2002">184</a>]</span>. System 2,
+on the other hand, is the rational and effortful part in our thinking processes. He explains that
+most of our thinking is carried out by System 1, because it would be impossible to put
+the same amount of effort into every decision that we make (e.g. it is unnecessary to
+weigh the pro’s and con’s in answering “should I brush my teeth today?”). In password
+selection, both systems are involved, but depending on the context, one or the other is
+primarily responsible for the decision. For instance, users who have formed the habit to
+reuse one password for all accounts will do the same for the next account they create,
+thus the automatic System 1 is at play. However, if the composition policy forces the
+user to modify their password, the cognitive challenge rises and activates System 2.
+Persuasive technology aims to either facilitate decision-making (i.e. supporting System 1), or
+block automatic processes to help the user adopt a different behavior (i.e. activating
+System 2). For instance, intentionally introducing delays during password authentication
+<span class="cite">[<a 
+href="dissli2.html#XMalkin2013Waiting">219</a>]</span> or in browser warnings <span class="cite">[<a 
+href="dissli2.html#XEgelman2010PleaseContinueToHold">95</a>]</span> lead to users spending more time on the task and
+act more securely, probably because the interruption was enough to activate System
+2.
+</p><!--l. 427--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-1090003.4.1"></a>Cognitive Illusions, Biases, and Heuristics</h5>
+<!--l. 428--><p class="noindent" >Irrational decision-making, according to behavioral economics, shows patterns around <span 
+class="ptmri8t-x-x-120">cognitive</span>
+<span 
+class="ptmri8t-x-x-120">illusions </span>(also “cognitive distortions”) and <span 
+class="ptmri8t-x-x-120">biases </span><span class="cite">[<a 
+href="dissli2.html#XLockton2012CognitiveBiases">214</a>]</span>. Acquisiti et al. describe them as
+“systematic, and therefore predictable deviations from rational choice theory” <span class="cite">[<a 
+href="dissli2.html#XAcquisti2017NudgesPrivacySecurity">1</a>]</span>. The resulting
+behavior is neither erratic, nor irrational, but may strongly influence judgment under uncertainty
+                                                                                    
+
+                                                                                    
+<span class="cite">[<a 
+href="dissli2.html#XTversky1974HeuristicsBiases">338</a>]</span>. To still be able to make decisions under uncertainty, people utilize <span 
+class="ptmri8t-x-x-120">heuristics</span>, or mental
+shortcuts in decision-making. <span 
+class="ptmri8t-x-x-120">Bounded rationality </span>explains the use of heuristics with the
+impracticality of assessing all possible options and outcomes. In other words, heuristics allow
+making good decisions under the circumstances <span class="cite">[<a 
+href="dissli2.html#XKahneman2003MapsOfBoundedRationality">182</a>]</span>. Thus, like biases, heuristics are not
+necessarily bad, but even necessary to get through life <span class="cite">[<a 
+href="dissli2.html#XCialdini2007Influence">57</a>]</span>. The lack of certainty is prevalent in
+decisions in cybersecurity, especially for mainstream users. For example, it is hard for users to
+assess the risk of threats online, and make a decision on the required protection level.
+Therefore, heuristics in this domain have been investigated to better understand user behavior.
+The list of cognitive fallacies is long, Wikipedia mentions 109 decision-making biases
+alone<span class="footnote-mark"><a 
+href="diss66.html#fn13x13"><sup class="textsuperscript">13</sup></a></span><a 
+ id="x53-109001f13"></a>
+(see Figure <span 
+class="ptmb8t-x-x-120">??</span>). Let us discuss notable examples that directly relate to
+cybersecurity<span class="footnote-mark"><a 
+href="diss67.html#fn14x13"><sup class="textsuperscript">14</sup></a></span><a 
+ id="x53-109002f14"></a>.
+To stay on topic, we explain the theories with “password phenomena”, although the scenarios have
+not necessarily been empirically substantiated.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-109003r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 436--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.5: </span><span  
+class="content">Categorization and visualization of cognitive biases. CC-BY-SA Buster Benson,
+John Manoogian III</span></div><!--tex4ht:label?: x53-109003r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 441--><p class="noindent" >The <span 
+class="ptmb8t-x-x-120">sunk costs </span>fallacy describes the situation when people have made an investment under
+uncertainty in the past and continue to stand by it, even if circumstances have changed and it would
+be better to abandon the commitment <span class="cite">[<a 
+href="dissli2.html#XThaler2004MentalAccounting">331</a>]</span>: Imagine someone bought a (nonrefundable) ticket to
+watch a movie at a theater. They dislike it from the start and after 25 minutes, they feel the movie is
+not going to get better. Due to the sunk costs of the ticket and unrecoverable effort to go to the
+theater, it is likely that they stick around instead of simply leaving the show. Herley et al. hint a
+similar scenario for replacing password authentication <span class="cite">[<a 
+href="dissli2.html#XHerley2012PersistenceOfPasswords">165</a>]</span>. In their point of view,
+<a 
+href="dissli3.html#glo:SP">service providers</a> have invested into passwords and are now reluctant to move away to
+alternative schemes, although they might improve system security (see Section <a 
+href="dissch2.html#x8-610002.5">2.5<!--tex4ht:ref: sec:rw:authentication_without_pws --></a>).
+Similarly, users who have committed to a password and reused it many times, might
+see the time spent as sunk cost. Thus, they do not switch to a more secure alternative
+even if they know there are plenty. Arguably, the <span 
+class="ptmb8t-x-x-120">Status Quo bias </span>plays a role in both
+examples, too: people tend to favor a pre-existing state of affairs over potentially uncertain
+changes.
+</p><!--l. 444--><p class="noindent" >The <span 
+class="ptmb8t-x-x-120">availability heuristic </span>is observed when people over- or underestimate the likelihood of
+events after being exposed to salient information. For instance, users might estimate the
+likelihood of being hacked as higher after someone in their social circle reports such an
+incident: the possibility has become more salient and available, thus future occurrences
+are seen as more probable. Das et al. partially confirmed such behavior through user
+interviews <span class="cite">[<a 
+href="dissli2.html#XDas2014EffectSocialInfluenceSecuritySensitivity">68</a>]</span>. Certainly, <span 
+class="ptmb8t-x-x-120">recency illusions </span>amplify the availability heuristic, i.e. a
+user who just found out about the “hacking threat” might think that this threat had just
+emerged.
+</p><!--l. 447--><p class="noindent" >The <span 
+class="ptmb8t-x-x-120">anchoring </span>bias creates reference points (or baselines) for decisions, especially comparisons
+<span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. After a password breach, media reports typically mention some of the most-used
+passwords. A news article can anchor the reader on the strength of obvious passwords
+like 12345. In many cases, their own password(s) seem much stronger by comparison,
+but might not be seen as strong if assessed separately. Similarly, if many people show
+insecure password behavior, this may reinforce an individual’s practices through the
+<span 
+class="ptmb8t-x-x-120">bandwagon effect</span>: “if so many people behave insecurely, why would I act differently?”
+<span class="cite">[<a 
+href="dissli2.html#XAdams2015MindlessComputing">5</a>]</span>.
+</p><!--l. 450--><p class="noindent" >People can also be biased by the way information is presented, which is known as <span 
+class="ptmb8t-x-x-120">framing effect</span>
+<span class="cite">[<a 
+href="dissli2.html#XVerendel2008ProspectTheorySecurity">350</a>]</span>. The wording is key here and can generate <span 
+class="ptmb8t-x-x-120">preference reversal </span>and other inconsistencies
+<span class="cite">[<a 
+href="dissli2.html#XHuber1982AsymetricallyDominated">167</a>]</span>. For password authentication, framing can be found in educating users about passwords.
+Zakaria et al. <span class="cite">[<a 
+href="dissli2.html#XZakaria2013DesigningEffectiveSecurityMessages">387</a>]</span> suggest instructing users through real-world security comparisons. Framing
+consequences for users around losses may trigger <span 
+class="ptmb8t-x-x-120">loss aversion </span>– a tendency to perceive losses as
+more valuable than equivalent gains <span class="cite">[<a 
+href="dissli2.html#XAriely2005LossesGains">13</a>]</span>. Garg and Camp argue that security is currently framed as
+a <span 
+class="ptmri8t-x-x-120">definite </span>loss for end users, while “the risk of not investing in security is a <span 
+class="ptmri8t-x-x-120">probable</span>”, thus
+uncertain loss <span class="cite">[<a 
+href="dissli2.html#XGarg2013HeuristicsAndBiases">130</a>]</span>. Cialidini shows the importance of crafting <span 
+class="ptmri8t-x-x-120">normative </span>messages, that refrain
+from emphasizing that a socially unacceptable behavior is still widespread <span class="cite">[<a 
+href="dissli2.html#XCialdini2003CraftingNormativeMessages">56</a>]</span>. For instance, a
+normative message after a policy rejects the user’s first-chosen password might explain: “The
+                                                                                    
+
+                                                                                    
+password is weak, because it is easily guessable for hackers” (emphasis on the adversary)
+rather than “..., because it is something many people would choose” (emphasis on the
+social in-group). If normative messages are framed badly, this can lead to the <span 
+class="ptmb8t-x-x-120">backfire</span>
+<span 
+class="ptmb8t-x-x-120">effect</span>, i.e. people behaving in the opposite way as intended. Thus, Weirich and Sasse see
+framing the attacker effectively as important opportunity for persuasive password education
+<span class="cite">[<a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>, <a 
+href="dissli2.html#XWeirich2005PersuasivePasswordSecurity">367</a>]</span>.
+</p><!--l. 453--><p class="noindent" >As a final example of behavioral biases, it has been observed that people’s motivation increases as
+they get closer to finishing a task. Hull coined this behavior the “<span 
+class="ptmb8t-x-x-120">goal-gradient hypothesis</span>” <span class="cite">[<a 
+href="dissli2.html#XKivetz2006GoalGradient">195</a>]</span>.
+Behavioral economists have found it to induce irrational behavior: Kivetz et al. handed out two
+different designs of “coffee cards”, that customers can fill up with each purchase <span class="cite">[<a 
+href="dissli2.html#XKivetz2006GoalGradient">195</a>]</span>. Once the
+card is full, they can redeem it for a free coffee. One of the designs had ten stamp-fields, while the
+other had twelve fields, two of which were already stamped. So, in both cases, customers
+received a free coffee after ten purchases. Surprisingly, more cards with twelve fields were
+redeemed after the trial period. People (wrongly) thought to be closer to goal, and thus
+were more motivated to achieve it. This “goal distance model” is sometimes used by
+password meters, i.e. a visualization of password strength (we discuss them in great detail
+in Section <a 
+href="#x53-1140003.4.3">3.4.3<!--tex4ht:ref: sec:rw:password-meters --></a>). Password strength visualization can give the user a “head start” to
+motivate them to fill up the entire bar and achieve a “strong password”, i.e. a full loyalty
+card.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.4.2    </span> <a 
+ id="x53-1100003.4.2"></a>Persuasive Design Patterns in Usable Security and Privacy</h4>
+<!--l. 468--><p class="noindent" >Phenomena involving biases and heuristics are often directly translated into a
+persuasive strategy. It is interesting that apparently the lines are blurred between the
+two concepts. Anders Toxboe collected a number of persuasive design patterns on his
+website<span class="footnote-mark"><a 
+href="diss68.html#fn15x13"><sup class="textsuperscript">15</sup></a></span><a 
+ id="x53-110001f15"></a>,
+which highlights this blend of psychology and persuasion. There is, however, no such list for
+patterns specifically for interventions in usable security and privacy. Therefore, we start
+with the discussion of general frameworks and put them into the context of security and
+passwords.
+</p><!--l. 470--><p class="noindent" >
+                                                                                    
+
+                                                                                    
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-1110003.4.2"></a>General Frameworks</h5>
+<!--l. 471--><p class="noindent" ><a 
+href="dissli3.html#glo:PD">Persuasive Design (PD)</a> has been tried to formalize in several frameworks. Fogg’s Behavior
+Model posits that three elements must converge to achieve a target <span 
+class="ptmb8t-x-x-120">B</span>ehavior: <span 
+class="ptmb8t-x-x-120">m</span>otivation,
+<span 
+class="ptmb8t-x-x-120">a</span>bility, and <span 
+class="ptmb8t-x-x-120">t</span>riggers (B=mat) <span class="cite">[<a 
+href="dissli2.html#XFogg2009BehavioralModel">119</a>]</span>. For passwords, this implies that people need to be
+motivated to protect themselves, at the same time they need to know how to achieve
+protection and be exposed to a trigger. Triggers work best when presented at the <span 
+class="ptmri8t-x-x-120">opportune</span>
+<span 
+class="ptmri8t-x-x-120">moment </span>(or kairos) <span class="cite">[<a 
+href="dissli2.html#XLockton2010DesignWithIntent">215</a>]</span>. Lockton et al. proposed the “Design with Intent” framework as a
+toolkit for persuasive interventions <span class="cite">[<a 
+href="dissli2.html#XLockton2010DesignWithIntent">215</a>]</span>. Jameson et al. show how to pick strategies from
+various toolkits to create a persuasive choice architecture <span class="cite">[<a 
+href="dissli2.html#XJameson2011PreferentialChoice">179</a>]</span>. Cialdini’s generic “<span 
+class="ptmb8t-x-x-120">six</span>
+<span 
+class="ptmb8t-x-x-120">weapons of influence</span>” have been used in the design of persuasive technology <span class="cite">[<a 
+href="dissli2.html#XCialdini2007Influence">57</a>]</span>. He
+lists authority, scarcity, liking, social proof, commitment &#x0026; consistency, and reciprocity
+as the principles of persuasion. Let us walk through their potential usage in password
+authentication. The authority principle says that people are likely to follow the instructions of an
+authority, which explains why the <a 
+href="dissli3.html#glo:NIST">NIST</a> guidelines have been widely adopted despite their
+downsides. Scarcity drives motivation to act quickly to avoid losing an opportunity (see loss
+aversion), and framing effects are used to communicate the scarcity of a resource. For
+instance, the “419 scam” tactic in phishing emails frames time as a scarce resource: “your
+account has been intruded, if you don’t log in now, you lose access to it permanently”
+<span class="cite">[<a 
+href="dissli2.html#XStajano2011Principles">312</a>]</span>. In this case, persuasion is used for malicious purposes. People prefer to comply
+if they <span 
+class="ptmri8t-x-x-120">like </span>their counterpart. In theory, this would make password requirements less
+bothersome if used on a website that users like, or in a more aesthetically pleasing way.
+Although there is no empirical evidence that the principle works for registration forms
+specifically, other HCI research points in this direction <span class="cite">[<a 
+href="dissli2.html#XFogg2001WhatMakesSitesCredible">121</a>, <a 
+href="dissli2.html#XTractinsky2000WhatIsBeautiful">336</a>]</span>. The social proof
+strategy makes other people’s behavior more <span 
+class="ptmri8t-x-x-120">available </span>because in decision-making people
+tend to copy others’ decisions. For instance, it might help to point out that millions of
+users are already using a password manager in a news article about a new password
+leak. We can also apply Fogg’s behavior model here: Reading about a password leak
+<span 
+class="ptmri8t-x-x-120">motivates </span>users to protect themselves, the social proof strategy acts as a <span 
+class="ptmri8t-x-x-120">trigger</span>, and
+mentioning the ease-of-use of password managers gives users confidence about their
+ability to adopt a <a 
+href="dissli3.html#glo:PWM">PWM</a>. The commitment &#x0026; consistency principle is an immediate part of
+the Password Life Cycle <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span>. People try to be consistent with their past behavior and
+their past values. Thus, a small step towards breaking an insecure habit might, in fact,
+induce more secure behavior afterward. If a policy forced a user to stop using a common
+password, the effort to commit to the new password might spread over to other accounts,
+too. Stobert found that cybersecurity experts show higher signs of consistency <span class="cite">[<a 
+href="dissli2.html#XStobert2015ExpertPassword">317</a>]</span>.
+Thus, if a persuasive strategy achieves that users commit to a new password selection
+scheme, their behavior might become more consistent and thus be elevated to the expert
+level. Finally, reciprocity describes the desire to return a favor. To use it as a persuasive
+design strategy, one has to do something favorable for the users first. Thus, offering
+users to store their passwords in a secure place and automatically logging them in is a
+good foundation to ask them later to turn on 2-factor authentication to help secure their
+                                                                                    
+
+                                                                                    
+account.
+</p><!--l. 488--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-1120003.4.2"></a>The Persuasive Authentication Framework (PAF) by Forget et al.</h5>
+<!--l. 489--><p class="noindent" >Forget et al. embraced persuasion as technique to help users act more securely in password
+authentication <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. In 2007, they put forward the <a 
+href="dissli3.html#glo:PAF">Persuasive Authentication Framework (PAF)</a>
+(see Figure <span 
+class="ptmb8t-x-x-120">??</span>), which breaks down the dimensions of persuasive design specifically for password
+support systems. In the following, we describe it on a high level and illustrate its components with
+results from empirical studies.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-112001r6"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 493--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.6: </span><span  
+class="content"> Elements of the persuasive authentication framework <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span></span></div><!--tex4ht:label?: x53-112001r6 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 498--><p class="noindent" >The <span 
+class="ptmb8t-x-x-120">simplification </span>principle posits to reduce the number of tasks to achieve an overall goal. Thus,
+the hypothetical distance between the start state and the goal is shorter, and goal-gradient effects
+become visible. Password managers usually simplify authentication by reducing the best-case
+interaction from “recall-enter-submit” to “submit”. Fagan et al. showed that simplification is the
+primary reason to adopt a password manager <span class="cite">[<a 
+href="dissli2.html#XFagan2017UsersConsiderationsPWMs">102</a>]</span>. But even without a <a 
+href="dissli3.html#glo:PWM">PWM</a>, both the “recall” and
+the “enter” sub-tasks can be simplified. Recall is facilitated with consistent personal password
+strategies. Entering is easier, if the primary password is replaced by a less complex one-time
+password.
+</p><!--l. 501--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Personalization</span>, as understood in the <a 
+href="dissli3.html#glo:PAF">PAF</a>, encompasses tailoring the experience to an individual
+user, or to suggest actions. A recently emerged design pattern spreads out the log-in process across
+two separate steps for username and password, rather than having the two input fields visible at
+once. After submitting the username, the page is <span 
+class="ptmri8t-x-x-120">tailored </span>to the user by showing them their profile
+picture and/or another piece of non-critical personal information. At the same time, this establishes
+a light-weight trusted path <span class="cite">[<a 
+href="dissli2.html#XYe2005TrustedPaths">383</a>]</span>. Wilkinson et al. suggest personalizing privacy by design by
+giving users different levels of control to depending on their privacy profile <span class="cite">[<a 
+href="dissli2.html#XWilkinson2017UserTailoredPBD">376</a>]</span>. Besides, this is
+a good example of the paternalism in persuasive interventions, because the designer
+suggests what option is “better” for the individual user. Similarly, it is conceivable to
+personalize password policies depending on the user’s “password profile” (I elaborate on
+this idea in Section <a 
+href="dissch14.html#x129-40700014.1.2">14.1.2<!--tex4ht:ref: sec:pst:personalizing-policies --></a>). Moreover, personality constructs have been investigated
+to tailor user experiences, which perhaps exceeds the original proposition in the <a 
+href="dissli3.html#glo:PAF">PAF</a>.
+Recently, Egelman and Peer advocated the use of psychometric cues to contextualize
+privacy or security messaging, which they call the “next frontier in privacy and security
+research” <span class="cite">[<a 
+href="dissli2.html#XEgelman2015AverageUser">98</a>]</span>. Jeske et al. investigated user profiles for the susceptibility to security nudges
+<span class="cite">[<a 
+href="dissli2.html#XJeske2014NudgingWhomHow">181</a>]</span>. In their experiment, they used <span 
+class="ptmri8t-x-x-120">salience </span>to steer users away from insecure wireless
+networks. They found that participants with low impulse control were more susceptible to
+nudges. The finding can be interpreted that nudges directed at System 1 seem more
+effective. There is also preliminary evidence that susceptibility to phishing, i.e. a social
+nudge, is also related to personality <span class="cite">[<a 
+href="dissli2.html#XHalevi2013PilotStudyPersonality">148</a>]</span>. It stands to reason that password selection
+is related to personality, too (see Chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>). If this were the case, a new spectrum of
+personalization strategies arises. Haque et al. have already proposed a psychometric construct to
+identify such associations <span class="cite">[<a 
+href="dissli2.html#XHaque2014PsychometricsStrongPassword">153</a>]</span>. Forget et al. list <span 
+class="ptmb8t-x-x-120">suggestion </span>as part of the personalization
+dimension, because suggestions might be based on a personal context factors. They provided
+a number of cases studies on suggestive password alterations <span class="cite">[<a 
+href="dissli2.html#XForget2008MemorabilityPersuasivePasswords">122</a>, <a 
+href="dissli2.html#XForget2008ImprovingPasswordsThroughPersuasion">126</a>, <a 
+href="dissli2.html#XForget2008PersuasionStrongerPasswords">127</a>]</span>. The
+“persuasive text passwords” (PTP) system takes a user’s password and either randomly inserts
+characters or replaces existing characters to increase strength. The high resemblance
+to the original password is supposed to maintain memorability <span class="cite">[<a 
+href="dissli2.html#XForget2008MemorabilityPersuasivePasswords">122</a>]</span>. Shay et al. later
+re-evaluated this personalization approach in an <a 
+href="dissli3.html#glo:mTurk">mTurk</a> study, which yielded mixed results
+<span class="cite">[<a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>]</span>.
+</p><!--l. 509--><p class="noindent" >Arguably, looking over users’ shoulder while they authenticate increases the chances that they comply
+to security policies, given that users are aware of being observed. <span 
+class="ptmb8t-x-x-120">Monitoring</span>, however, can entail
+reduced user experience (cf. need for autonomy <span class="cite">[<a 
+href="dissli2.html#XRyan2000SelfDeterminationTheory">273</a>]</span>). Nevertheless, if used adequately, it can
+                                                                                    
+
+                                                                                    
+serve as <span 
+class="ptmri8t-x-x-120">authoritative </span>strategy (cf. Cialdini’s six weapons of influence <span class="cite">[<a 
+href="dissli2.html#XCialdini2007Influence">57</a>]</span>). Google’s password
+alert<span class="footnote-mark"><a 
+href="diss69.html#fn16x13"><sup class="textsuperscript">16</sup></a></span><a 
+ id="x53-112002f16"></a>
+is a moderate approach to secure users’ Google accounts. It is a browser extension that alerts the
+user if they type the password of their Google account on unrelated web pages. Hence, the idea is to
+make sure users use a unique password for their Google account, which is a central hub for
+various services. To work properly, the browser extension needs to access every keystroke.
+Some users might distrust it because, although it is open source, it is hard for them to tell
+if their private data is collected. Prospect theory tells us that in this judgment under
+uncertainty, losing private data is attributed a higher value than the potential security
+gain. A less privacy-invasive design element that might help in relieving uncertainty
+is <span 
+class="ptmri8t-x-x-120">self-monitoring</span>. Self-monitoring through <span 
+class="ptmri8t-x-x-120">feedback-loops </span>– another design pattern
+<span class="cite">[<a 
+href="dissli2.html#XLidwell2003UniversalPrinciplesOfDesign">211</a>]</span> – allows users to reflect on their past actions and derive alternatives to attain their
+goal. Some <a 
+href="dissli3.html#glo:PWM">PWMs</a> create a “security score” for each user and persuade them to improve
+it.
+</p><!--l. 513--><p class="noindent" >Users rarely develop habits to act securely. Thus, Forget et al. argue to use various
+forms of reinforcement to persuade people to develop such habits. Rewarding users
+for secure password behavior serves to <span 
+class="ptmb8t-x-x-120">condition </span>them. Google Drive, for instance,
+offered users more cloud storage quota if they completed a two-minute security
+check-up<span class="footnote-mark"><a 
+href="diss70.html#fn17x13"><sup class="textsuperscript">17</sup></a></span><a 
+ id="x53-112003f17"></a>.
+Positive feedback during password selection can condition users, too. Other rewards, e.g. longer
+session expiration or faster system response, have not seen significant uptake.
+</p><!--l. 516--><p class="noindent" >Lastly, the <a 
+href="dissli3.html#glo:PAF">PAF</a> includes <span 
+class="ptmb8t-x-x-120">social interactions </span>as persuasive design strategy. Forget et
+al. posit that authentication systems mimick, e.g., the users’ language to convey “team
+spirit” <span class="cite">[<a 
+href="dissli2.html#XForget2008PersuasionStrongerPasswords">127</a>]</span>. Weirich and Sasse <span class="cite">[<a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>]</span>, respectively Sasse and Flechais <span class="cite">[<a 
+href="dissli2.html#XSasse2005UsableSecurityPosition">277</a>]</span>, similarly
+describe authentication as <span 
+class="ptmri8t-x-x-120">socio-technical system </span>that follows a social protocol. DiGioia
+and Dourish formulated the <span 
+class="ptmri8t-x-x-120">social navigation </span>pattern <span class="cite">[<a 
+href="dissli2.html#XDiGioia2005SocialNavigationUsableSecurity">86</a>]</span>. To perceive the system as
+capable communication partner, signs of previous interactions inspire trust. Egelman et al.
+tried to nudge users during password selection through the <span 
+class="ptmri8t-x-x-120">social proof  </span>strategy <span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>]</span>. A
+visualization informed the study participants how well their password fared compared to other
+users, e.g. “your password is stronger than that of 85% of our users”. They did not find
+                                                                                    
+
+                                                                                    
+evidence that this persuasive strategy influenced people, but maybe the approach could
+have been more focused on the <span 
+class="ptmri8t-x-x-120">proof  </span>aspect, rather than <span 
+class="ptmri8t-x-x-120">competition</span>. The normative
+message can be read as “other people’s passwords are bad, but many people act this way”.
+This could actually evoke backfire effects through social proof: although users see their
+password is stronger, they believe that the social norm is to pick weaker passwords,
+which makes them conform to the social norm. In fact, Weirich and Sasse have provided
+empirical evidence for such behavior <span class="cite">[<a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>]</span>. Social interactions are perhaps one of the most
+powerful design elements to persuade users: Das et al. reported that radical behavior
+changes often occurred due to social processes <span class="cite">[<a 
+href="dissli2.html#XDas2014EffectSocialInfluenceSecuritySensitivity">68</a>]</span>. They argue that it is critical for
+users to observe experts in their social circle to raise their awareness and motivation for
+cybersecurity. Thus, persuasive design could make expert behavior of known peers more
+visible
+</p><!--l. 519--><p class="noindent" >In a number of ways, some ideas from the <a 
+href="dissli3.html#glo:PAF">Persuasive Authentication Framework</a> were rather
+optimistic. From today’s point of view they appear questionable (e.g. conditioning users like
+animals). Much evidence from the ten years that followed its publication shows that persuasion
+does not always work as intended, so maybe a few suggestions were a bit naive. Renaud et al.
+evaluated eight nudges that were supposed to make students create stronger passwords <span class="cite">[<a 
+href="dissli2.html#XRenaud2017LessonsLearnedNudges">267</a>]</span>. They
+reached the disheartening conclusion that none of them work. Nevertheless, certain aspects have
+caught on and are actively used, like Google’s Password Alert which is a direct implementation of
+Forget et al.’s ideas. We can conclude that the <a 
+href="dissli3.html#glo:PAF">PAF</a> has matured over time, with certain
+components receiving more weight through empirical evidence, and others becoming
+obsolete. Thus, a revision could incorporate our newly gained understanding of persuasive
+authentication.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-1130003.4.2"></a>Dark Patterns</h5>
+<!--l. 523--><p class="noindent" >At the outset of this chapter, we discussed ethics as critical factor in password studies. Using
+persuasion inherently becomes ethically problematic if the intention of the influencer is concealed,
+either by poor design or by choice. Persuasive techniques are used to manipulate, too. Many social
+engineering scams on malicious websites use persuasion techniques. Muscanell et al. investigated
+the misuse of Cialdini’s weapons of influence in cyber scams <span class="cite">[<a 
+href="dissli2.html#XMuscanell2014WeaponsMisused">238</a>]</span>. They found that scammers
+exploit all of them in social engineering attacks. Muscanell et al. also propose mitigation strategies,
+but do not lay them out in detail. Attacks that take advantage of “scarcity” as persuasive strategy
+often rely on <span 
+class="ptmri8t-x-x-120">fear appeals</span>, e.g. “Your computer is infected, download this software <span 
+class="ptmri8t-x-x-120">now </span>to
+remove all threats”. Xu et al. proposed using similar fear appeals to nudge users towards
+anti-spyware measures <span class="cite">[<a 
+href="dissli2.html#XXu2007FearAppeals">379</a>]</span>, and Vance et al. utilized the “time to crack” as fear appeal during
+password selection <span class="cite">[<a 
+href="dissli2.html#XVance2013FearAppeals">347</a>]</span>. There are a number of such “dark patterns”, which Nodder
+dismantles in his book “Evil by Design” <span class="cite">[<a 
+href="dissli2.html#XNodder2013EvilByDesign">243</a>]</span>. Some of them are relatively benign, others
+are highly manipulative. DarkPatterns.org summarizes them briefly, e.g. <span 
+class="ptmri8t-x-x-120">misdirection </span>-
+where the design aims to focus the user’s attention on a decoy to plant something on
+                                                                                    
+
+                                                                                    
+them<span class="footnote-mark"><a 
+href="diss71.html#fn18x13"><sup class="textsuperscript">18</sup></a></span><a 
+ id="x53-113001f18"></a>.
+However, Sasse strongly urges to resist them in the design of password persuasion because they
+wear off over time and often exaggerate the risks <span class="cite">[<a 
+href="dissli2.html#XSasse2015ScaringBullying">275</a>]</span>. Hence, dark patterns most likely turn out
+counterproductive.
+</p><!--l. 532--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.4.3    </span> <a 
+ id="x53-1140003.4.3"></a>Password Meters: Persuasion at Play</h4>
+<!--l. 533--><p class="noindent" >The most prominent and widespread persuasive strategy directed at passwords are <a 
+href="dissli3.html#glo:PSM">password
+strength meters (PSMs)</a>. Most commonly, they proactively estimate the strength of a password at
+entry time and visualize it. Often, verbal feedback accompanies the visualization. They have been
+used on a multitude of websites, in password managers, and as standalone tools. When
+they are used on a website or in a <a 
+href="dissli3.html#glo:PWM">PWM</a>, there are a number of persuasive patterns at
+play:
+</p><!--l. 535--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Feedback </span>and <span 
+class="ptmb8t-x-x-120">self monitoring</span>: Users are enabled to make an informed decision regarding the
+security of the password. <span 
+class="ptmb8t-x-x-120">Kairos</span>: Meters are presented at the opportune moment of protecting an
+account. <span 
+class="ptmb8t-x-x-120">Goal-gradient effect</span>: The closer users get to a password that is deemed strong the more
+motivated they become to achieve the strong rating. <span 
+class="ptmb8t-x-x-120">Simplification</span>: A visual strength bar is
+universally understandable. <span 
+class="ptmb8t-x-x-120">Personalization</span>: The dynamic visualization is user-dependent.
+<span 
+class="ptmb8t-x-x-120">Suggestion</span>: Some meters suggest alterations if they detect weak passwords. <span 
+class="ptmb8t-x-x-120">Reinforcement</span>:
+positive feedback about the user’s password can reinforce secure behavior. <span 
+class="ptmb8t-x-x-120">Authority</span>: If the service
+provider is a trustworthy entity, their feedback is more likely to influence the selection. <span 
+class="ptmb8t-x-x-120">Social</span>
+<span 
+class="ptmb8t-x-x-120">interaction</span>: Verbal feedback can speak the user’s own language and open a dialog. <span 
+class="ptmb8t-x-x-120">Loss</span>
+<span 
+class="ptmb8t-x-x-120">aversion </span>and <span 
+class="ptmb8t-x-x-120">scarcity</span>: The strength estimation is only shown during password entry – an
+opportunity to learn about one’s own abilities which should not be missed. <span 
+class="ptmb8t-x-x-120">Availability</span>
+and <span 
+class="ptmb8t-x-x-120">salience</span>: The strength estimation makes weaknesses more salient and threats more
+available. <span 
+class="ptmb8t-x-x-120">Framing</span>: verbal feedback and color coding allow framing the strength in a subtle
+manner.
+</p><!--l. 549--><p class="noindent" >Balancing all those strategies in a particular design has received much attention in HCI and security
+research. It is hard to trace back their origins, but proactive password checks have been part of
+policies since the late 1980s <span class="cite">[<a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>. Bishop and Klein developed the <span 
+class="ectt-1200">pwcheck </span>command-line tool
+that was used to give terminal-users feedback on their password selection <span class="cite">[<a 
+href="dissli2.html#XBishop1995ProactivePasswordChecking">25</a>]</span>. A core challenge
+is the strength estimation proxy. Websites cannot implement a full-fledged cracking
+                                                                                    
+
+                                                                                    
+infrastructure just for the sake of password feedback. Thus, proxies and estimators are the go-to
+method.
+</p><!--l. 552--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-1150003.4.3"></a>Effective or not?</h5>
+<!--l. 553--><p class="noindent" >A number of studies have been conducted on the effectiveness of password meters. Ur et al.
+explored 14 different designs, respectively settings, of password meters <span class="cite">[<a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp">343</a>]</span>: different variations
+of the “bar” visualization, different stringency parameters, suggestions, and nudges. They were able
+to identify significant differences in passwords strength depending on the meter. Very stringent
+meters led to stronger passwords. Any kind of visual meter resulted in longer passwords, so
+text-only feedback is less persuasive. Many participants in their <a 
+href="dissli3.html#glo:mTurk">mTurk</a> study added another
+character at the end to receive a higher rating from the meter. Qualitative feedback and usability
+ratings showed that the stringent meters were unpleasant for many participants, reducing their
+persuasive power. Egelman et al. investigated context factors in the effectiveness of meters <span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>]</span>.
+They found that password meters seemed to have a greater positive effect on strength, if they
+were displayed on a site with higher perceived value. Participants in that study did not
+“need” the password meter, but receiving feedback on highly values websites made
+their importance more available. At the same time they concluded, that the design of the
+meter plays an insignificant role and that social nudges do not affect strength either.
+Moreover, both Ur et al.’s and Egelman et al.’s study showed that memorability was not
+affected by the meters, which is a positive finding. The meter with the highest reported
+effects was recently presented by Ur et al. <span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>. After carefully evaluating the design
+space for rhetorical framing of strength feedback <span class="cite">[<a 
+href="dissli2.html#XEargle2015YouCanDoBetter">90</a>]</span>, they isolated the components of
+password meters and compared their effectiveness. They found that textual feedback
+is recommendable to create more persuasive meters. The underlying policy also has
+an effect on the persuasiveness of the meter. Their final design (see Figure <span 
+class="ptmb8t-x-x-120">??</span>) uses
+a number of persuasive elements: A visual bar to simplify communicating password
+strength; text feedback about the strength; explanations about the scoring with clear calls
+to action (tunneling strategy); and lastly, a personalized suggestion of an alternative
+password.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x53-115001r7"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 558--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 3.7: </span><span  
+class="content"> Ur et al.’s data driven password meter. In combines textual and visual strength
+feedback, explanations, and personalized suggestions.</span></div><!--tex4ht:label?: x53-115001r7 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h5 class="subsubsectionHead"><a 
+ id="x53-1160003.4.3"></a>Beyond colorful bars</h5>
+<!--l. 566--><p class="noindent" >Visualizing strength is not the only way to design a password meter. Komanduri et al. crafted a sly
+prototype to tell users that their passwords are predictable: their <span 
+class="ptmri8t-x-x-120">Telepathwords </span>system predicts the
+next character the user is about to type <span class="cite">[<a 
+href="dissli2.html#XKomanduri2014Telepathwords">199</a>]</span>. The rationale of the system is that users do not
+mindlessly enter a weak password anymore, i.e. that the feedback should activate System 2 thinking
+processes. Furthermore, realizing that the next character can be automatically guessed might evoke
+fear appeal and steer people away from predictable passwords. Komanduri et al. evaluated
+Telepathwords with an <a 
+href="dissli3.html#glo:mTurk">mTurk</a>-study using a role-playing scenario. They found that password
+created in the Telepathwords groups outperformed traditional password policies in regard to
+strength and memorability. However, participants were significantly more annoyed by
+Telepathwords, perhaps because of the inconvenient truth and fear appeal. Communicating
+password strength with background information is another technique to persuade users. For
+example, Yee et al. displayed the estimated <span 
+class="ptmri8t-x-x-120">time-to-crack </span>when users selected a master password
+for the PassPet <a 
+href="dissli3.html#glo:PWMg">password manager</a> <span class="cite">[<a 
+href="dissli2.html#XYee2006Passpet">384</a>]</span>. For users, it is a better call-to-action than a numeric
+score like “3/5”. Vance et al. found that such fear-appeal strategies persuade users to
+read password advice and modify weak passwords <span class="cite">[<a 
+href="dissli2.html#XVance2013FearAppeals">347</a>]</span>. Khern-am-nuai et al. also
+measured the persuasiveness of context-based warning messages as part of the password
+meter <span class="cite">[<a 
+href="dissli2.html#XKhern-am-nuai2017ContextBasedMeter">194</a>]</span>. They found that participants in their <a 
+href="dissli3.html#glo:mTurk">mTurk</a>-study made significantly more
+changes to their initial choice when a warning was present, e.g. “Weak. We estimate
+that the password you chose is among the 30,000 weakest passwords”. However, the
+study suffered from a few important limitations (e.g. removing all data from users who
+were unable to log-in after 30 to 60 minutes). Kroeze and Olivier proposed evolving
+a Pokemon figure as users type to visualize the growth in strength <span class="cite">[<a 
+href="dissli2.html#XKroeze2012GamifyingAuthentication">204</a>]</span>. Furnell and
+Esmael evaluated feedback through emojis and found positive effects on the length of
+user-selected passwords <span class="cite">[<a 
+href="dissli2.html#XFurnell2017GuidanceCompliance">129</a>]</span>. Afjan et al. allowed users to interactively explore the
+visualization they had received from the password meter <span class="cite">[<a 
+href="dissli2.html#XAljaffan2017PasswordSecurityVisualizer">11</a>]</span>. Ur et al. report that an animated
+dancing bunny that speeds up with increasing strength was unable to nudge users more
+effectively than less exciting meters <span class="cite">[<a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp">343</a>]</span>. Shay et al. tried to help users select a stronger
+password through a wizard that explained mnemonic phrase-based passwords <span class="cite">[<a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>]</span>.
+Besides, they compared this strategy to the insertion approach we saw in Forget et al.’s
+persuasive text passwords (PTP) <span class="cite">[<a 
+href="dissli2.html#XForget2008ImprovingPasswordsThroughPersuasion">126</a>]</span>. Both approaches were generally disliked by the
+participants.
+</p><!--l. 574--><p class="noindent" >Apart from pure strength visualization and persuasive messages, real-time feedback can accompany
+a password policy. The user sees a list of requirements and as they enter their password, they get
+feedback on the aspects that have already been fulfilled, which was originally proposed by
+Proctor et al. <span class="cite">[<a 
+href="dissli2.html#XProctor2002ImprovingAuthenticationProactivePasswordRestrictions">258</a>]</span>. Although we know by now that the resulting passwords are not
+necessarily strong, Shay et al. found that this kind of checklist can reduce user frustration with
+policies in general <span class="cite">[<a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>]</span>. Feedback is crucial if the policy utilizes blacklists to ban too
+easily guessed passwords <span class="cite">[<a 
+href="dissli2.html#XShay2014CanLongPasswordsBeSecureAndUsable">299</a>]</span>. Habib et al. evaluated Ur et al.’s data driven password
+                                                                                    
+
+                                                                                    
+meter for situations where blacklists are present <span class="cite">[<a 
+href="dissli2.html#XHabib2017Blacklists">146</a>]</span>. They found that text feedback
+mitigates insecure selection especially for those users who intended to use a blacklisted
+password.
+</p><!--l. 577--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x53-1170003.4.3"></a>Light and Shadow</h5>
+<!--l. 578--><p class="noindent" >Evidence about the effectiveness of password meters is mixed, but Ur et al.’s strategy might be one
+of the most persuasive ones, because it combines many techniques that have proven successful in
+different areas of persuasion <span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>. So, in certain contexts, password meters can definitely nudge
+users towards more secure behavior.
+</p><!--l. 580--><p class="noindent" >However, where there is light, there is also shadow. Meters influence users’ mental models of
+password strength in similar ways as policies. However, as with policies, it is nearly impossible to
+reach consensus on all parameters of pro-active measures and metrics for all contexts. De
+Carné de Carnavalet and Mannan showed that the estimation algorithms in real-world
+password meters largely differ, which is a result of the natural constraints of pro-active
+checks <span class="cite">[<a 
+href="dissli2.html#XDeCarnedeCarnavalet2015PasswordMeters">73</a>]</span>. Such inconsistencies, which were also observed by Ur et al. <span class="cite">[<a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp">343</a>]</span>, have big
+potential to confuse users: if their password is rated “strong” on one site, and “weak”
+on another, a lot of explanation is going to be necessary to let the users find out why
+the ratings differ. Persuasive interventions probably fail at that moment. The authors
+suggest zxcvbn as the most robust password meter for websites and the KeePass meter
+as an alternative for offline tools. Others have addressed the shortcomings of industry
+password meters. Wang et al. developed <span 
+class="ptmri8t-x-x-120">fuzzyPSM </span>based on an optimized version of
+<a 
+href="dissli3.html#glo:PCFG">PCFG</a> <span class="cite">[<a 
+href="dissli2.html#XWang2016fuzzyPWM">360</a>]</span>. Melicher et al. implemented their neural network strength estimation in
+password meters, too <span class="cite">[<a 
+href="dissli2.html#XMelicher2016NeuralNetworks">233</a>]</span>. Tupsamudre et al. demonstrated that a sudden surge of n-gram
+scores can be used to proactively detect modifications of common passwords <span class="cite">[<a 
+href="dissli2.html#XTupsamudre2016MarkovStrength">337</a>]</span>.
+Improvements will continue to surface, but in recent years we can at least observe a trend towards
+more homogeneous strength estimation due to the gained knowledge about guessing
+attacks.
+</p><!--l. 584--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">3.4.4    </span> <a 
+ id="x53-1180003.4.4"></a>Summary</h4>
+<!--l. 585--><p class="noindent" >Persuasive interventions help to shape user behavior and facilitate decision-making processes.
+Many influence strategies have been empirically shown to persuade people across a variety of
+domains <span class="cite">[<a 
+href="dissli2.html#XHamari2014DoPersuasiveTechnologies">150</a>]</span>. Thus, I believe in its feasibility for the design of secure and systems. Naturally, not
+all interventions work in the same ways for all users. Still, persuasive technology asserts the claim
+                                                                                    
+
+                                                                                    
+to be in the users “best interest” and wants to enable them to make “better” decisions. Thus, before
+any intervention, we have to be sure to do the right thing, if changing user behavior and attitudes is
+the ultimate goal. I follow Acquisiti et al.’s definition, and find that good decisions “minimize
+adverse outcomes or are less likely to be regretted” <span class="cite">[<a 
+href="dissli2.html#XAcquisti2017NudgesPrivacySecurity">1</a>]</span>. With this goal in mind, we can set out to
+better understand the constraints and create novel persuasive strategies which are the focus of this
+thesis.
+                                                                                    
+
+                                                                                    
+</p>
+<!--l. 3--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

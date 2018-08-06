@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>12 Persuasive Design for Password Support</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 3--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 12</span><br /><a 
+ id="x122-37000012"></a>Persuasive Design for Password Support</h2>
+<!--l. 4--><p class="noindent" >Having reviewed the literature (Part <a 
+href="disspa1.html#x7-45000I">I<!--tex4ht:ref: part:related_work --></a>), and explored both contextual factors (Part <a 
+href="disspa2.html#x73-122000II">II<!--tex4ht:ref: part:problem_space --></a>) and novel
+designs (Part <a 
+href="disspa3.html#x102-272000III">III<!--tex4ht:ref: part:design_space --></a>), we can now take a step back and synthesize common streams, results, and lessons
+learned. As a result, this chapter presents a new framework for researchers and designers
+to find and evaluate persuasive strategies that support users in any task that involves
+passwords. We can find numerous research papers that evaluate a specific aspect without
+much context information or covariates. For instance, many types of password meters
+have been designed and evaluated, but most focused on measuring impact in the form of
+resulting password strength and usability metrics alone. However, aspects like user’s
+preexisting mental models of password strength or the deployment environment were often
+untouched. At the same time, it is important to focus on the users and choose the support
+strategy that works best for them under a given configuration of environmental variables.
+Moreover, we find that many persuasive strategies stay below their potentials <span class="cite">[<a 
+href="dissli2.html#XRenaud2017LessonsLearnedNudges">267</a>]</span>, or show
+unexpected effects (see Chapter <a 
+href="dissch10.html#x106-30600010">10<!--tex4ht:ref: chap:decoy --></a>). Therefore, I establish a design process to avoid past
+shortcomings in nudging effects and to aid strategic decision-making for persuasive
+design.
+</p><!--l. 13--><p class="noindent" >The <span 
+class="ptmb8t-x-x-120">Persuasive Design for Password Support </span>(<span 
+class="ptmb8t-x-x-120">P4P</span>) framework broadens the view on
+exploring and designing support systems (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). It is divided into two “lenses” for
+the task. The “research lens” covers the ever-changing, heterogeneous environmental
+factors in usable password authentication and how to elicit them. It helps explain <span 
+class="ptmri8t-x-x-120">why</span>
+users act in certain ways and can provide pointers as to <span 
+class="ptmri8t-x-x-120">why </span>we should try to change the
+current state. The “design lens” assesses the status quo of password authentication and
+helps find solutions of different obtrusiveness levels (first stage), i.e. <span 
+class="ptmri8t-x-x-120">what </span>should be the
+focus of a new persuasive strategy. The second stage defines a user-centered process to
+implement once the required level of support has been decided. It aids in finding out <span 
+class="ptmri8t-x-x-120">how </span>the
+persuasive strategy should look. In the following, I explain these elements and show a
+design exercise where I apply the framework to create a novel approach for a password
+manager.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x122-370001r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 24--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 12.1:  </span><span  
+class="content">  Persuasive  Design  for  Password  Support  (P4P)  is  a  specialized  design
+framework for strategic intervention development.</span></div><!--tex4ht:label?: x122-370001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h3 class="sectionHead"><span class="titlemark">12.1    </span> <a 
+ id="x122-37100012.1"></a>Research Lens</h3>
+<!--l. 35--><p class="noindent" >The first step to create a novel persuasive support strategy is to elicit a number of factors that
+are involved in usable password authentication. Some of them have been addressed in
+previous research, e.g. coping strategies, while others are a direct consequence of the
+findings presented in this thesis (e.g. mental models or personality). Researchers can try to
+answer the following questions to obtain an overview of the status quo of risky and secure
+factors:
+</p><!--l. 41--><p class="noindent" > <!--tex4ht:inline--></p><div class="tabular"> <table id="TBL-19" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-19-1g"><col 
+id="TBL-19-1" /><col 
+id="TBL-19-2" /></colgroup><tr 
+class="hline"><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-1-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-1-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Question</span>                                                                                                                                    </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-1-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">P4P Element         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-2-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-2-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What are current mental models, e.g. of password strength or support tools?</span>                           </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-2-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Mental Models      </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-3-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-3-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">How do different user groups cope with passwords?</span>                                                                  </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-3-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Coping Strategies  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-4-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-4-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What are users primarily trying to achieve when they authenticate?</span>                                          </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-4-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Goals                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-5-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-5-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What are the dimensions of user needs in this context, also in regard to support?</span>                     </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-5-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Needs                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-6-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-6-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">How does demographic background impact password attitudes and behavior?</span>                         </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-6-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Background           </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-7-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-7-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">How much is personality visible in attitudes and behavior regarding authentication?</span>               </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-7-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Personality             </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-8-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-8-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What is the broader context of the authentication task, e.g. personal vs. work environment?</span>   </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-8-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Context                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-9-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-9-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What (sub-)tasks does the user need to perform to reach their goals?</span>                                        </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-9-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Tasks                      </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-10-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-10-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What are the challenges that different users face in the task?</span>                                                     </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-10-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Challenges             </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-11-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-11-1"  
+class="td11"> <!--l. 57--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">What risks are there if the user acts insufficiently secure?</span>                                                         </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-19-11-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Risks                      </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-12-"><td  style="white-space:wrap; text-align:left;" id="TBL-19-12-1"  
+class="td11">                                                                         </td></tr></table>                  </div>
+<!--l. 60--><p class="noindent" >Some of these questions already hint at the dynamics of certain factors. For instance, users’ mental
+models about threats might adapt over time, e.g. after falling prey to a phishing scam. Adoption
+rates of password managers are also volatile and the percentage of people relying on them
+certainly affects the type of novel support strategies one can implement. Although many
+questions and aspects can be answered by desk research methods, the dynamic evolution of
+the factors requires ongoing elicitation. Thus, traditional empirical research methods
+can be used to <span 
+class="ptmb8t-x-x-120">observe </span>behavior and problems, <span 
+class="ptmb8t-x-x-120">measure </span>interactions, explicitly <span 
+class="ptmb8t-x-x-120">ask</span>
+users about certain aspects, <span 
+class="ptmb8t-x-x-120">immerse </span>in the context of different user groups, and <span 
+class="ptmb8t-x-x-120">learn</span>
+from all these activities. The result of this exploration is a detailed picture of the status
+quo.
+</p><!--l. 67--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-37200012.1"></a>Status Quo</h5>
+<!--l. 69--><p class="noindent" >The status quo is a snapshot of the levels and relative importance of the factors that contribute to
+usable password authentication. Although the data elicitation should be generalizable and objective,
+the judgment of the result is not. It is up to researchers to collaboratively assess the risk level of a
+certain user group in various contexts. Here, the framework posits that some aspects that have
+                                                                                    
+
+                                                                                    
+traditionally been considered “risky” behavior need to be seen in a different light as attacks and
+countermeasures evolve. This follows the argumentation of Florêncio, Herley, Bonneau, and Van
+Oorshot among others <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ReplacePasswords">34</a>, <a 
+href="dissli2.html#XFlorencio2016CommACM">117</a>, <a 
+href="dissli2.html#XHerley2012PersistenceOfPasswords">165</a>, <a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span>. For instance, not all passwords need to withstand
+offline attacks. Therefore, it is unnecessary to nudge users to create passwords that would
+withstand them, because the usability drawbacks are unbearable for many users in most
+situations. The status quo thus informs the level of intervention in the subsequent design
+phase.
+</p><!--l. 71--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">12.2    </span> <a 
+ id="x122-37300012.2"></a>Design Lens</h3>
+<!--l. 73--><p class="noindent" >The second half of the framework consist of two distinct stages: 1) Identifying the right level of
+support and 2) creating novel persuasive solutions. The first stage is strongly influenced by the
+results of the status-quo analysis, while the second deals with the specific questions during the
+implementation of a persuasive strategy.
+</p><!--l. 75--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-37400012.2"></a>Cues to Pick the Right Support Strategy</h5>
+<!--l. 75--><p class="noindent" >The interventions in Figure <span 
+class="ptmb8t-x-x-120">??</span> are ordered by their level of justifiable obtrusiveness. On the left,
+very risky behavior should be tried to <span 
+class="ptmb8t-x-x-120">counteract</span>. The risk-level assessment is context dependent
+and can be read from the status quo analysis, where context is one dimension. We can read the
+elements like “if X then Y” in vertical direction. In particular, the framework follows this
+pattern:
+</p><!--l. 78--><p class="noindent" ><span class="fbox">       If <span 
+class="ptmri8t-x-x-120">&#x003C;user group&#x003E;</span>, who are <span 
+class="ptmri8t-x-x-120">&#x003C;list of factors&#x003E;</span>, do <span 
+class="ptmri8t-x-x-120">&#x003C;specific action&#x003E;</span>, then this can be
+     seen as <span 
+class="ptmri8t-x-x-120">&#x003C;risky or secure&#x003E; </span>and justifies <span 
+class="ptmri8t-x-x-120">&#x003C;intervention level&#x003E;</span>.                                        </span>
+</p><!--l. 89--><p class="noindent" >For example, the framework suggests that if <span 
+class="ptmri8t-x-x-120">users of online web-services </span>show <span 
+class="ptmri8t-x-x-120">clear patterns of</span>
+<span 
+class="ptmri8t-x-x-120">inconsistent reuse</span>, i.e. reusing a password from a high-value account on a low-value website,
+then this is <span 
+class="ptmri8t-x-x-120">risky </span>behavior and should be <span 
+class="ptmb8t-x-x-120">counteracted </span>with obtrusive strategies. The
+same goes for mismatches of account value and password strength. Other aspects can be
+<span 
+class="ptmb8t-x-x-120">resolved </span>with less user-involvement and obtrusion. For instance, if status quo analysis
+shows that current password policies in companies are too complex, they should thus be
+                                                                                    
+
+                                                                                    
+replaced by simpler versions. Decisions under uncertainty, e.g. when a user needs to
+assess how valuable an account is, can be resolved with different persuasive patterns,
+too. Users can be <span 
+class="ptmb8t-x-x-120">guided </span>in password selection, memorization, and reset tasks, as well
+as fulfilling a given policy. Moreover, it might be reasonable to <span 
+class="ptmb8t-x-x-120">correct </span>users’ mental
+models of password strength, respectively threats, to empower them to behave more
+consistently in the long term. Finally, there are a number of aspects that are generally beneficial
+in terms of security, e.g. using strong and unique passwords, activating multi-factor
+authentication (MFA), or relying on support tools like password managers. If these are
+part of the status quo for a given user group, there is no need to change that behavior
+for the time being. Rather, a support strategy should then positively <span 
+class="ptmb8t-x-x-120">reinforce </span>these
+actions.
+</p><!--l. 91--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-37500012.2"></a>Implementation Process</h5>
+<!--l. 91--><p class="noindent" >Once the correct level of support has been identified, the P4P framework helps with implementing
+it. First, it is feasible to <span 
+class="ptmb8t-x-x-120">define </span>the envisioned outcome of the strategy, e.g. “stronger passwords” or
+“changing novices’ mental models of password managers”. Moreover, the general context and
+roadmap for the implementations are defined at this point. Afterwards, the designer <span 
+class="ptmb8t-x-x-120">chooses </span>a
+number of parameters for the strategies. Most notably, the nudging strategy to achieve the target
+outcome should be chosen and matched to the required level of user support. At the same time, the
+target user group should be narrowed down, e.g. with <a 
+href="dissli3.html#glo:persona">personas</a> as shown in Section
+<a 
+href="dissch7.html#x88-2400007.5.1">7.5.1<!--tex4ht:ref: sec:personality:personas --></a>. The different dimensions of user needs are already addressed at this stage, i.e.
+“show”, “explain”, “help”, “empower”, because they guide subsequent design stages.
+When the parameters have been fixed, it is important to <span 
+class="ptmb8t-x-x-120">consider </span>a number of pitfalls in
+persuasion strategies. For instance, how quickly would users become <span 
+class="ptmri8t-x-x-120">habituated </span>to the nudge
+and how can one counteract that? What are the <span 
+class="ptmri8t-x-x-120">constraints </span>in different contexts, e.g.
+deploying the strategy at a company versus a consumer-oriented website for mobile
+devices? Users also often <span 
+class="ptmri8t-x-x-120">resent </span>attempts to be persuaded, thus the design needs to be more
+empathetic and ethical at the same time. Moreover, people prefer sticking to current behaviors
+although they theoretically want to act differently. This discrepancy results in a certain
+level of <span 
+class="ptmri8t-x-x-120">inertia </span>that a persuasive strategy needs to overcome to be effective. The list of
+considerations is not exhaustive but covers the most important aspects. If these limtations are
+too strong, it might be necessary to return to the previous step in the process to resolve
+them.
+</p><!--l. 93--><p class="noindent" >Once there is reason to assume that the overall nudging strategy might be feasible, it needs to be
+substantiated with different <span 
+class="ptmb8t-x-x-120">designs</span>. Here, password interventions have four degrees of freedom:
+<span 
+class="ptmri8t-x-x-120">visual </span>or <span 
+class="ptmri8t-x-x-120">verbal </span>nudges (e.g. in password meters), and feedforward or feedback techniques (e.g.
+password suggestions vs. strength assessment of the current password). It is important to consider
+different versions of the nudge in each of these dimensions to better exhaust the design space.
+                                                                                    
+
+                                                                                    
+Moreover, it allows for more nuanced options to <span 
+class="ptmb8t-x-x-120">evaluate </span>the overall strategy. Typically,
+the <span 
+class="ptmri8t-x-x-120">effect </span>or impact of the nudge are compared to a control group, or between different
+configurations, e.g. the resulting password strength with various feedback mechanisms. The
+<span 
+class="ptmri8t-x-x-120">usability </span>and <span 
+class="ptmri8t-x-x-120">subjective perception </span>can be evaluated both quantitatively and qualitatively.
+Finally, it should be investigated how the nudge impacts the <span 
+class="ptmri8t-x-x-120">password life cycle </span>as a
+whole.
+</p><!--l. 95--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-37600012.2"></a>Outcome</h5>
+<!--l. 96--><p class="noindent" >When the process has been completed in full, we are able to judge the feasibility of the strategy
+and may or may not recommend adopting it. If it is adopted, the status quo is likely to
+change after a given amount of time. This warrants exploring further opportunities and
+updating the factors in the “research lens”. Thus, the framework needs to be seen as an
+iterative process, but it is flexible enough to take shortcuts and start at a later stage. In
+the following, I discuss an application of the P4P Framework to shed more light on its
+feasibility.
+</p><!--l. 102--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">12.3    </span> <a 
+ id="x122-37700012.3"></a>A Design Exercise with the P4P Framework</h3>
+<!--l. 103--><p class="noindent" >Dealing with a multitude accounts, users mostly resort to password reuse. Although some reuse
+behavior involves considerable risk, Florêncio et al. indicated that it is a necessary strategy if users
+refrain from using password managers <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>]</span>. Consequently, Zhang-Kennedy et al. updated
+common recommendations on reuse <span class="cite">[<a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span>. In essence, they recommend to “<span 
+class="ptmbi8t-x-x-120">strategically </span>reuse
+passwords”. Moreover, Wash et al. stated that “defining <span 
+class="ptmb8t-x-x-120">appropriate categories </span>of websites for
+re-use of passwords of varying strengths is an open area of research;” <span class="cite">[<a 
+href="dissli2.html#XWash2016UnderstandingPasswordChoices">363</a>]</span>. We used this as a
+starting point for a design exercise with the P4P framework. The section is partially based on a
+Bachelor thesis by Magdalena Siferlinger <span class="cite">[<a 
+href="dissli2.html#XSiferlinger2017BAThesis">306</a>]</span> and a Master thesis by Martin Prinz
+<span class="cite">[<a 
+href="dissli2.html#XPrinz2017Thesis">256</a>]</span>. I provided the ideas, supervised both students, and guided them through their
+projects.
+</p><!--l. 105--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h4 class="subsectionHead"><span class="titlemark">12.3.1    </span> <a 
+ id="x122-37800012.3.1"></a>Phase 1: Research Lens</h4>
+<!--l. 106--><p class="noindent" >The goal of the first phase to get a full picture of the status quo. This involves desk research, as well
+as empirical research methods.
+</p><!--l. 108--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-37900012.3.1"></a>Users: Mental models and Strategies</h5>
+<!--l. 109--><p class="noindent" >One of the missing puzzle pieces are the specific categories that form reuse strategies. Although
+related work mentioned distinct exemplary categories, we wanted to narrow down the theoretical
+space. For this purpose, we planned and executed a mixed-method study to elicit re-use strategies.
+35 people completed an online survey that was distributed on social networks. Five passers-by were
+interviewed in a public location in Munich. The questionnaire was identical in both methods, but
+the interviews allowed us to ask follow-up questions. Apart from demographics, we mainly
+inquired the number of accounts, password coping and reuse strategies, and the biggest
+challenges that respondents face in them. To elicit selection strategies, we provided four
+scenarios that involved creating accounts for email, social networking, banking, and a news
+page.
+</p><!--l. 111--><p class="noindent" >Unsurprisingly, most respondents reported that they reuse passwords either directly or with
+modifications (77.2%). The remainder relied on a password manager to generate new random
+passwords. Mangling strategies were predictable (swapping letters for digits, varying
+appended symbols, and capitalizing letters). More importantly, a thematic analysis of the
+statements about reuse strategies revealed the following nine themes: Account type (e.g.
+email accounts), importance (e.g. very important, “throw-away”), strength (e.g. one or
+two strong and a few weak passwords that are used depending on the perceived threat),
+time of creation (e.g. the year), frequency of reuse (e.g. a go-to password and a few
+less frequently typed ones), purpose (e.g. all accounts that were created for a project),
+base-password plus mangling algorithm, policy-driven (e.g. if the go-to password is rejected, a
+more complex password is reused), or generating completely new one depending on
+certain cues. These themes contribute to the status quo of password reuse in this design
+exercise.
+</p><!--l. 115--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-38000012.3.1"></a>Password Managers</h5>
+<!--l. 116--><p class="noindent" >Other respondents mentioned using password managers, but there are different types of managers:
+they can be classified as either <span 
+class="ptmri8t-x-x-120">retrieval-based </span>or <span 
+class="ptmri8t-x-x-120">generative</span>. Retrieval-based password managers
+store the user’s passwords securely and allow, e.g., to automatically fill out log-in forms on behalf
+                                                                                    
+
+                                                                                    
+of the user. Once a password is in the user’s manager, they can choose to never type it again.
+Most commercial solutions work this way. On the downside, users do not “practice”
+their password as much and might not remember it in situations where the password
+manager is unavailable or too risky to use, e.g. at public computer at an airport. The
+generative password manager approach solves this problem, because no passwords are
+stored <span class="cite">[<a 
+href="dissli2.html#XMcCarney2012Tapas">228</a>]</span>: it provides the user with an algorithm to re-produce unique passwords (e.g.
+PwdHash<span class="footnote-mark"><a 
+href="diss123.html#fn1x51"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x122-380001f1"></a>)
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 2--><p class="noindent" ><a 
+ id="x122-380002r1"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+ <div class="caption" 
+><span class="id">Table 12.1: </span><span  
+class="content"> Popular password managers: Comparison of features beyond password storage
+and retrieval. <span 
+class="pzdr-x-x-120">✓ </span>= available (<span 
+class="pzdr-x-x-120">✓</span>) = available with restrictions, (<span 
+class="pzdr-x-x-120">✘</span>) = with workaround, <span 
+class="pzdr-x-x-120">✘ </span>=
+not available</span></div><!--tex4ht:label?: x122-380002r1 -->
+ <!--tex4ht:inline--><div class="tabular"> <table id="TBL-20" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-20-1g"><col 
+id="TBL-20-1" /><col 
+id="TBL-20-2" /><col 
+id="TBL-20-3" /><col 
+id="TBL-20-4" /><col 
+id="TBL-20-5" /><col 
+id="TBL-20-6" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-20-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-1-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Category</span></div>                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-1-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Feature                                                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-1-3"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Dashlane  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-1-4"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">LastPass  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-1-5"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">1Password  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-1-6"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">KeePassX  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-2-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Automation</span></div>                 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-2-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">form-detection                                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-2-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-2-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-2-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-2-6"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✘</span><span 
+class="ptmr8t-x-x-109">)              </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-3-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-3-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">autofill passwords                                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-3-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-3-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-3-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-3-6"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✘</span><span 
+class="ptmr8t-x-x-109">)              </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-4-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-4-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">autofill personal info                            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-4-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-4-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-4-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-4-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-5-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-5-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">autofill payment info                           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-5-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-5-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-5-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-5-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-6-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-6-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">facilitate password reset                      </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-6-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-6-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-6-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-6-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-7-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-7-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-7-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">auto-update password reset                 </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-7-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-7-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-7-5"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-7-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-8-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Organization</span></div>               </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-8-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">grouping / tags / folders                       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-8-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-8-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-8-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-8-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-9-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-9-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-9-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">default groups                                      </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-9-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-9-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-9-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-9-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-10-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-10-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-10-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">memorization support                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-10-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-10-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-10-5"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-10-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-11-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-11-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-11-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">password hints                                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-11-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-11-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-11-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-11-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-12-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-12-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-12-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">cross device synchronization               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-12-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-12-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-12-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-12-6"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✘</span><span 
+class="ptmr8t-x-x-109">)              </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-13-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-13-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-13-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">personal info wallet                             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-13-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-13-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-13-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-13-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-14-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-14-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Security Audit</span></div>             </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-14-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">strength feedback (ad hoc / in client)  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-14-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-14-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-14-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-14-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-15-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-15-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-15-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">overall score                                        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-15-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-15-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-15-5"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-15-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-16-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-16-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-16-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">ad hoc guidance                                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-16-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-16-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-16-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-16-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-17-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-17-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-17-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">security alert                                        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-17-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-17-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-17-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-17-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-18-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-18-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-18-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">negative feedback on reuse                  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-18-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-18-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-18-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-18-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-19-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-19-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-19-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">warn about inconsistent reuse             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-19-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✘</span><span 
+class="ptmr8t-x-x-109">)             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-19-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-19-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-19-6"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✘</span><span 
+class="ptmr8t-x-x-109">)              </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-20-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-20-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Password Generation</span></div>  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-20-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">ad hoc random password                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-20-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-20-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-20-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-20-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-21-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-21-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-21-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">context aware (policy constraints)       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-21-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-21-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-21-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-21-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-22-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-22-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Integrations</span></div>                 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-22-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Desktop                                                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-22-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-22-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-22-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-22-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-23-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-23-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-23-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Browser                                               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-23-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-23-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-23-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-23-6"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)             </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-24-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-24-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-24-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Smartphone                                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-24-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-24-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-24-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-24-6"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)             </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-25-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-25-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Collaboration</span></div>              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-25-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Grant others access                              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-25-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-25-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-25-5"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(</span><span 
+class="pzdr-x-x-109">✓</span><span 
+class="ptmr8t-x-x-109">)               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-25-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-26-"><td  style="white-space:nowrap; text-align:left;" id="TBL-20-26-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Pricing</span></div>                         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-26-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Free Version                                         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-26-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-26-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-26-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-26-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-27-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-27-1"  
+class="td11">                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-27-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Open Source                                        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-27-3"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-27-4"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-27-5"  
+class="td11"> <span 
+class="pzdr-x-x-109">✘                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-20-27-6"  
+class="td11"> <span 
+class="pzdr-x-x-109">✓               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-20-28-"><td  style="white-space:nowrap; text-align:right;" id="TBL-20-28-1"  
+class="td11">                   </td></tr></table>                                                                                 </div>
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<!--l. 125--><p class="noindent" >In Chapter <a 
+href="dissch8.html#x98-2470008">8<!--tex4ht:ref: chap:mental_models_pwm --></a>, we have already presented an exploration of the mental models of password
+managers. The most important take-away was that only those who have started using one
+actually know the benefits, while non-users see password managers as a black box. In
+chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>, we found that using a password manager was associated with demographic
+factors and some personality traits: Older participants and those with an IT background
+were more likely to rely on one, while people scoring high on “openness” were slightly
+less likely. To understand the status quo, we can compare real-world PWMs by their
+features (see Table <span 
+class="ptmb8t-x-x-120">??</span>). Additional aspects were part of a recent coverage in the c’t
+magazine<span class="footnote-mark"><a 
+href="diss124.html#fn2x51"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x122-380003f2"></a>.
+</p><!--l. 129--><p class="noindent" >Relying on data from previous chapters, related work, and an additional small-scale empirical
+                                                                                    
+
+                                                                                    
+evaluation, we can frame the status quo like this:
+</p><!--l. 133--><p class="noindent" ><span class="fbox">       </p>
+     <h5 class="likesubsubsectionHead"><a 
+ id="x122-38100012.3.1"></a>Status Quo of Password Reuse and Password Managers</h5>
+     <!--l. 143--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Mental Models. </span>Users have very vague mental models about password managers.
+     <span 
+class="ptmb8t-x-x-120">Coping Strategies. </span>Although more people are starting to rely on password managers, the
+     foremost coping strategy is reuse. Here, users often categorize accounts with varying
+     granularity. We have identified nine distinct reuse strategies. <span 
+class="ptmb8t-x-x-120">Goals. </span>Reusing facilitates
+     recall. Some users are aware of the security risks of reuse and try to mitigate
+     them by strategically reusing passwords. Current password managers try to
+     steer users away from reuse altogether. <span 
+class="ptmb8t-x-x-120">Needs. </span>Users need to be able to recall
+     their most important passwords, while the rest could be handled by a password
+     manager. <span 
+class="ptmb8t-x-x-120">Background. </span>Older users appear to be more likely to reuse passwords,
+     but also more willing to use a password manager. Having an IT background
+     also often goes along with using PWMs to be able to handle a multitude of
+     strong, more random passwords. <span 
+class="ptmb8t-x-x-120">Context. </span>If users encounter PWMs at work,
+     they are likely to continue using it in private. <span 
+class="ptmb8t-x-x-120">Tasks. </span>Password managers can
+     follow either a generative or a retrieval-based approach which differ in the tasks
+     that the user has to complete. Retrieval-based managers require less cognitive
+     effort. Strategically reusing passwords might include a deliberate strategy, but
+     is more likely developed intuitively. <span 
+class="ptmb8t-x-x-120">Challenges. </span>Users are challenged with
+     picking the “right” password manager, switching from one manager to another,
+     and learning how to use them best. Reuse does not challenge users strongly,
+     but recalling the correct category is sometimes troublesome. <span 
+class="ptmb8t-x-x-120">Risks. </span>Reusing a
+     password too often increases the risk of the “domino effect” if one account is
+     successfully attacked. Forgetting the master-password of a password manager, e.g. after
+     a long period of inactivity, can lock users out of all their online accounts at
+     once.                                                                                                                                </span>
+</p><!--l. 146--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">12.3.2    </span> <a 
+ id="x122-38200012.3.2"></a>Phase 2: Design Lens</h4>
+<!--l. 147--><p class="noindent" >With the status quo as starting point, we put on the design lens and pick the focus areas in which to
+support users with password managers. Particularly, we identified that current PWMs try to “fix the
+user” by giving negative feedback on reused passwords in case they analyze all saved
+credentials and display a security score. Thus, there is an opportunity to “fix the system” and
+better support users in strategic reuse. Hence, our idea is a “Password <span 
+class="ptmb8t-x-x-120">Reuse </span>Manager”
+(PWRM).
+                                                                                    
+
+                                                                                    
+</p><!--l. 149--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-38300012.3.2"></a>First Stage</h5>
+<!--l. 150--><p class="noindent" >We can address the following cues to figure out <span 
+class="ptmri8t-x-x-120">what </span>to support: Inconsistent reuse should be
+<span 
+class="ptmb8t-x-x-120">counteracted </span>by the PWRM, while consistent reuse is acceptable. The PWRM can offer default
+categories to <span 
+class="ptmb8t-x-x-120">reduce </span>complexity and aid in the decision whether to reuse or generate a new
+password. If a new password is recommendable, the PWRM can <span 
+class="ptmb8t-x-x-120">guide </span>selection, memorization,
+and policy fulfillment. If the users realize the benefits, this can <span 
+class="ptmb8t-x-x-120">reinforce </span>their choice to adopt a
+password manager in the first place. It is evident that a password manager is capable of addressing
+multiple support strategies at once (counteract, resolve, guide, and reinforce), because it is able to
+interact with the user at multiple touch points of password authentication. At this point, changing
+the users’ mental models is not the PWRMs responsibility, but it might happen along the
+way.
+</p><!--l. 152--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x122-38400012.3.2"></a>Second Stage</h5>
+<!--l. 153--><p class="noindent" >In the second stage of the Design Lens, we try to create a concrete implementation of the support
+strategies.
+</p>
+<!--l. 154--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x122-38500012.3.2"></a><span 
+class="ptmb8t-x-x-120">Define.</span></span>
+The envisioned outcome is a password manager that better represents the user’s current coping
+strategies and therefore facilitates adoption. The design should be iteratively improved until all
+common coping strategies are supported (Roadmap).
+</p>
+<!--l. 156--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x122-38600012.3.2"></a><span 
+class="ptmb8t-x-x-120">Choose.</span></span>
+We can choose nudges for each support strategy. Counteracting inconsistent reuse should be done
+fairly obtrusively, because this kind of behavior generates the greatest risk, respectively the highest
+amount of effort in recovering from an attack. The “commitment and consistency” principle
+by Cialdini is perhaps the most promising candidate <span class="cite">[<a 
+href="dissli2.html#XCialdini2007Influence">57</a>]</span>. Resolving uncertainty and
+complexity can be addressed with <span 
+class="ptmri8t-x-x-120">suggestive </span>nudges, that facilitate decision-making.
+The “salience” effect falls into this category <span class="cite">[<a 
+href="dissli2.html#XCoventry2014SCENEBehavioralNudges">61</a>]</span>. Also, having good <span 
+class="ptmri8t-x-x-120">default </span>categories
+is a powerful nudge <span class="cite">[<a 
+href="dissli2.html#XCranor2008FrameworkReasoning">62</a>]</span>. Similarly, users can be guided by simplifying the password
+selection process (simplification principle <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>). Finally, using a password manager
+can be reinforced by offering the service for free and providing a good user experience
+overall.
+                                                                                    
+
+                                                                                    
+</p><!--l. 158--><p class="noindent" >In our case, we target users who prefer reusing passwords but also appreciate help in this task.
+Thus, the target user group consists of novices who have developed their own reuse strategies and
+prefer maintaining these, but in a simpler way. The “Eliot Elis” persona from Chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a> represents
+this user group well. Therefore, the strategy should fulfill the “show” and “help” dimensions of user
+needs: Showing problems with inconsistencies and helping with finding alternatives are the
+foremost requirements we can address with the PWRM. At the same time, the PWRM should
+<span 
+class="ptmri8t-x-x-120">empower </span>users to maintain their strategy, and to decide not to store certain passwords but only the
+user-names or a hint.
+</p>
+<!--l. 160--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x122-38700012.3.2"></a><span 
+class="ptmb8t-x-x-120">Consider.</span></span>
+If the users stick to the PWRM, habituation is actually beneficial, because they learn how to
+leverage the tool to work for them. In terms of constraints, the PWRM is a piece of
+software that would need to pass security audits in company environments. Giving a lot of
+feedback and interventions might be perceived as authoritative and thus users could
+resent these strategies. At the same time, the mere presence of the above mentioned
+nudges might not overcome inertia, so the efficacy needs to be evaluated in multiple
+steps.
+</p>
+<!--l. 163--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x122-38800012.3.2"></a><span 
+class="ptmb8t-x-x-120">Design.</span></span>
+In the design phase, we iteratively flesh out the specific information architecture and
+visuals of the PWRM. In multiple design sessions and evaluations we moved from a
+paper prototype to clickable wireframes, to a working prototype in the form of a browser
+extension. Figure <a 
+href="#x122-388001r2">12.2<!--tex4ht:ref: fig:pwrm:conceptfinal --></a> shows the central page of the PWRM browser extension. The user can
+put passwords into categories that share the same password. During onboarding, a few
+default categories based on past reuse strategies are automatically created. They user may
+also decide to save only a hint for a specific category (see Figure <a 
+href="#x122-388002r3">12.3<!--tex4ht:ref: fig:pwrm:hintboxes --></a>). This aims to
+avoid that the user worries about the security of the PWRM – they can simply put the
+accounts that they do not want managed into one category. In that case, the PWRM
+still supports them by helping them recall the password, because the category acts as a
+hint.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x122-388001r2"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 168--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 12.2: </span><span  
+class="content">Different stages of the design iterations. Left: wireframing stage. Right: The
+main page of the PWRM groups reused passwords into different categories, which makes it
+easy to indicate that a password has been reused too often. Nudges: <span 
+class="ptmb8t-x-x-120">simplification </span>(through
+organization), <span 
+class="ptmb8t-x-x-120">defaults </span>(default categories during onboarding)</span></div><!--tex4ht:label?: x122-388001r2 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x122-388002r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 175--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 12.3: </span><span  
+class="content">The PWRM mitigates trust issues by allowing the user to store password hints
+or  categories  instead  of  the  passwords  themselves.  Nudges:  <span 
+class="ptmb8t-x-x-120">consistency  </span>(stay  within  the
+category), <span 
+class="ptmb8t-x-x-120">salience </span>(suggesting categories, visual framing)</span></div><!--tex4ht:label?: x122-388002r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 180--><p class="noindent" >It is also possible to flag passwords as “unique”, i.e. that they do not belong to a group of accounts
+that share the same password. Figure <a 
+href="#x122-388003r4">12.4<!--tex4ht:ref: fig:pwrm:entry-unique --></a> shows the page that also visually indicates the strength
+of the passwords. The PWRM browser extension detects “submit” events from forms
+that contain password fields. It opens a small pop-up window to let the user store the
+password (see Figure <a 
+href="#x122-388004r5">12.5<!--tex4ht:ref: fig:pwrm:extension-popus --></a>). Here, they can decide whether it should be put into one of the
+reuse-categories or become a “unique” password, that is not shared with other accounts. Further
+features and design decisions are indicated in the captions of Figures <a 
+href="#x122-388001r2">12.2<!--tex4ht:ref: fig:pwrm:conceptfinal --></a>, <a 
+href="#x122-388002r3">12.3<!--tex4ht:ref: fig:pwrm:hintboxes --></a>, <a 
+href="#x122-388003r4">12.4<!--tex4ht:ref: fig:pwrm:entry-unique --></a>, and
+<a 
+href="#x122-388004r5">12.5<!--tex4ht:ref: fig:pwrm:extension-popus --></a>.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x122-388003r4"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 184--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 12.4:  </span><span  
+class="content">The  PWRM  holds  a  separate  page  of  unique  passwords.  For  the  user,  this
+reduces  uncertainty  about  the  security  state  of  different  accounts.  Nudges:  <span 
+class="ptmb8t-x-x-120">commitment</span>
+(user should not reuse these passwords.)</span></div><!--tex4ht:label?: x122-388003r4 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x122-388004r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 190--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 12.5: </span><span  
+class="content">The PWRM browser extension allows the user to save passwords to different
+categories. Nudges: Defaults, simplification</span></div><!--tex4ht:label?: x122-388004r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 196--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x122-38900012.3.2"></a><span 
+class="ptmb8t-x-x-120">Evaluate.</span></span>
+We iteratively evaluated the concept and the design in a user-centered approach. Table <span 
+class="ptmb8t-x-x-120">??</span> shows the
+four evaluation methods at different stages of the process. In a first wizard-of-oz study, participants
+found that the categorization feature of the paper prototype was still too complex, although they
+liked the idea of grouping accounts by passwords. In the second evaluation, the need for more
+explanation about the potential risks of password reuse became evident. The first usability test with
+a preliminary implementation of the browser extension showed that participants were able to fulfill
+all tasks. However, they desired more automation features to speed up the interactions.
+Finally, we created a beta version of the PWRM extension and recruited 12 participants
+to test it for ten days. After the ten days, it was clear that the participants only rarely
+opened the browser with the extension, so we could not conclusively evaluate the solution.
+The qualitative feedback indicated that participants were browsing the web on their
+mobiles and also used other browsers during that time. Hence, as a caveat, the effects
+of the nudges and the impact on the password life cycle would only become visible
+in a longitudinal, large-scale study, with more careful screening. Unfortunately, this
+was outside of the scope of this design exercise, and we need to leave this to future
+work.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 200--><p class="noindent" ><a 
+ id="x122-389001r2"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+<div class="tabular"> <table id="TBL-21" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-21-1g"><col 
+id="TBL-21-1" /><col 
+id="TBL-21-2" /><col 
+id="TBL-21-3" /><col 
+id="TBL-21-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-21-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-21-1-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Stage                           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-21-1-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Focus                               </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-21-1-3"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">N </span><span 
+class="ptmr8t-x-x-109">(m/f)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-21-1-4"  
+class="td11"> <!--l. 201--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Key Result</span>                                                                             </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-21-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-21-2-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Paper Prototype            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-21-2-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Concept                            </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-21-2-3"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">5 (4/1)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-21-2-4"  
+class="td11"> <!--l. 202--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Clarify categorization feature</span>                                                 </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-21-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-21-3-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Clickable Wireframes  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-21-3-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Information architecture  </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-21-3-3"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">7 (5/2)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-21-3-4"  
+class="td11"> <!--l. 203--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Explain reuse risks</span>                                                                 </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-21-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-21-4-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Usability Test               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-21-4-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Task success, problems    </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-21-4-3"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">6 (4/2)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-21-4-4"  
+class="td11"> <!--l. 204--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Provide more, automated support</span>                                          </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-21-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-21-5-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Field Study                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-21-5-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Usage patterns                  </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-21-5-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">12 (6/6)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-21-5-4"  
+class="td11"> <!--l. 205--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Smoother integration necessary</span>                                             </p></td></tr></table>
+</div>
+<br /> <div class="caption" 
+><span class="id">Table 12.2: </span><span  
+class="content"> Evaluation iterations of the concept. </span></div><!--tex4ht:label?: x122-389001r2 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<h3 class="sectionHead"><span class="titlemark">12.4    </span> <a 
+ id="x122-39000012.4"></a>Summary</h3>
+<!--l. 211--><p class="noindent" >This chapter contributes “P4P” - a framework for persuasive design for password support. Its
+elements are based on numerous research studies both from related and original work. Other
+persuasion frameworks for authentication, e.g. the Persuasive Authentication Framework <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>,
+focused on the design space, whereas P4P tries to structure the investigation of the problem (the
+<span 
+class="ptmri8t-x-x-120">why</span>), design-heuristics (the <span 
+class="ptmri8t-x-x-120">what</span>), and the implementation process (the <span 
+class="ptmri8t-x-x-120">how</span>). So, although it might
+be seen as an approach to provide a “holistic” view on password support design, I intentionally
+avoided this term. The elements exhaust much of the research and design space, but there
+might be other latent factors or different configurations that need more attention in future
+explorations. Nevertheless, depending on the amount of status-quo information, the
+structure of the framework allows researchers and designers to start at a later point and
+follow a structured process. I showed how to use the P4P framework to tackle research
+questions and explore new opportunities in password support: It led to the creation of a
+“Password Reuse Manager” that is now under an open-source license to facilitate distributed
+development<span class="footnote-mark"><a 
+href="diss125.html#fn3x51"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x122-390001f3"></a>.
+The design exercise was fairly comprehensive and encompassed a multitude of strategies. However,
+the framework is also applicable for smaller tasks, e.g. the design of password meters. In the
+future, P4P can help derive novel solutions outside the current design space of password
+                                                                                    
+
+                                                                                    
+support.
+</p><!--l. 214--><p class="noindent" ><span class="fbox">             </p>
+          <h3 class="likesectionHead"><a 
+ id="x122-39100012.4"></a>Take Aways</h3>
+              <ul class="itemize1">
+              <li class="itemize">The Persuasive Design for Password Support (P4P) framework
+              structures exploration and design of new solutions to support
+              users in any password-related task.
+              </li>
+              <li class="itemize">It  can  be  applied  to  big  design  projects  (like  a  full-blown
+              password manager in our case), but also to smaller aspects (like
+              the design of password meters, help pages, onboarding wizards
+              etc.)</li></ul>                                                                                                     </span>
+                                                                                    
+
+                                                                                    
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

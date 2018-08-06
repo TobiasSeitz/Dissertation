@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>13 Summary</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 13</span><br /><a 
+ id="x126-39200013"></a>Summary</h2>
+<!--l. 2--><p class="noindent" >This thesis analyzed a multitude of aspects that need to be considered when we try to support users
+in password authentication with persuasive design. Hereby, the following research questions were
+addressed:
+</p>
+      <ul class="itemize1">
+      <li class="itemize">What is the role of psychological factors and mental models for password selection
+      and coping strategies?
+      </li>
+      <li class="itemize">How can password authentication be simplified for users?
+      </li>
+      <li class="itemize">How  can  we  design  persuasive  strategies  to  support  users  in  any  password-related
+      tasks?</li></ul>
+<!--l. 10--><p class="noindent" >Since password authentication has been under investigation for several decades, we first delimited
+the landscape of related work in Part <a 
+href="disspa1.html#x7-45000I">I<!--tex4ht:ref: part:related_work --></a>. This helped us find pointers to all three research questions
+and identify open topics that had still been underexplored (see Chapter <a 
+href="dissch4.html#x72-1190004">4<!--tex4ht:ref: chap:rw:summary --></a>). In Parts <a 
+href="disspa2.html#x73-122000II">II<!--tex4ht:ref: part:problem_space --></a> and <a 
+href="disspa3.html#x102-272000III">III<!--tex4ht:ref: part:design_space --></a>, we
+reported on a number of empirical experiments and explorative research studies to investigate both
+human factors and environmental constraints of password authentication. <span 
+class="ptmri8t-x-x-120">RQ1 </span>was mainly
+investigated with online studies in the wild and with survey methods. We explored the
+mental models of password strength by innovating a research method to inexpensively
+collect data in the wild. Moreover, we conducted multiple surveys to explore associations
+between personality and attitudes and behaviors in authentication. We tried to answer
+<span 
+class="ptmri8t-x-x-120">RQ2 </span>with mixed methods, both on the qualitative and the quantitative side. Here, we
+explored the needs users have in persuasive feedback with a survey and participatory
+design approach, and derived a solution based on the Decoy effect and emojis inside
+text-based passwords. Finally, to answer <span 
+class="ptmri8t-x-x-120">RQ3</span>, we discussed a framework to guide the
+design of persuasive strategies in Chapter <a 
+href="dissch12.html#x122-37000012">12<!--tex4ht:ref: chap:perdespassup --></a>, which we then also applied to create a novel
+password-manager. The following sections discuss the central insights and show how they are
+connected.
+</p>
+<h3 class="sectionHead"><span class="titlemark">13.1    </span> <a 
+ id="x126-39300013.1"></a>Central Contributions and Insights</h3>
+                                                                                    
+
+                                                                                    
+<!--l. 13--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x126-39400013.1"></a>Psychological Factors and Mental Models in Authentication</h5>
+<!--l. 16--><p class="noindent" >In Chapter <a 
+href="dissch3.html#x53-760003">3<!--tex4ht:ref: chap:rw:user_perspective --></a>, we found that most related work <span 
+class="ptmri8t-x-x-120">describes </span>coping strategies. Only sometimes the
+contributing factors like educational background, psychographics, or mental models that foster
+certain coping strategies are addressed.
+</p><!--l. 20--><p class="noindent" >We filled this gap in several ways. First, we investigated the mental models of password strength,
+because these are believed to be highly influential on actual password choice. For these purposes,
+we innovated on research methods to understand latent password strength perceptions: <span 
+class="ptmri8t-x-x-120">PASDJO</span>,
+the password game, helped in showing that passphrases are often underestimated by users, although
+<a 
+href="dissli3.html#glo:NIST">NIST</a> has started to propagate them in favor of highly complex passwords (see Chapter <a 
+href="dissch5.html#x74-1230005">5<!--tex4ht:ref: chap:pasdjo --></a>). The
+long-standing belief that strong passwords must include a wide range of characters was
+clearly visible in the data collected during one year of public deployment. However,
+users were by and large capable of judging the quality of passwords. We take this as
+evidence that users are most likely aware of their actions when they select either strong and
+weak passwords for different purposes. This insight gives rise to a shift in the way we
+support users in password selection: In many cases it is unnecessary to provide feedback
+on <span 
+class="ptmri8t-x-x-120">strength</span>, because users can already estimate it well. Therefore, we can tackle other
+risky behaviors. In fact, password strength is often a secondary risk factor, if users reuse
+passwords too carelessly. To investigate the real-world constraints for password reuse, we
+audited the composition policies of the 83 most visited web-sites in Germany (see Chapter
+<a 
+href="dissch6.html#x83-1610006">6<!--tex4ht:ref: chap:policies_reuse --></a>). We were able to show that it is easy for users to reuse a single password on most
+sites: it only has to be nine or ten characters long and consist of lower- and uppercase
+letters and digits. Hence, this finding is another indication that password policies have
+shaped the mental model that at least three different character classes are absolutely
+required to form a strong password – and that reuse is less critical, because it is not
+prevented. Moreover, users do not need a password manager if their go-to passwords are
+accepted by most websites. However, as soon as they add symbols in the belief that
+doing so fosters password strength even more, the success rate to reuse the resulting
+password drops significantly. So, in that case, rejecting passwords based on certain symbols
+might leave users wondering why these do not boost password strength. The result is a
+cognitive dissonance in the users’ mental models. To resolve this, websites could provide
+some kind of explanation as to their policy choice, but most fail to do this. Besides, it is
+unlikely that they disallow certain symbols to hamper password reuse. As a take-away,
+service providers need to start accepting Unicode passwords without arbitrary length
+restrictions to avoid confusing users. This allows automatically generating unique passwords
+of all kinds, which can drive the adoption of password managers. At the same time,
+Unicode passwords have more ramifications on the use of emojis, which we discuss in a
+moment.
+</p><!--l. 27--><p class="noindent" >Real-world constraints like composition policies shape mental models and coping strategies. On the
+other hand, there is a spectrum of password coping strategies that cannot be explained by
+                                                                                    
+
+                                                                                    
+environmental factors alone. We hypothesized that a user’s personality might play a role in
+password selection and coping behavior. In three studies (see Chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>), we examined how
+personality might be associated with different password tasks. We found that personality was a
+weak, but non-negligible factor in predicting how different user groups deal with policies,
+perceive strength, or choose passwords. The data allowed us to create user segments in
+the form of personas that can be used in the development of authentication schemes
+and support strategies. As a side effect, we observed that people with a background
+in an IT-related field were more likely to adopt a password manager. Looking at the
+generally low adoption rates of such software, we explored how users perceive password
+managers in Chapter <a 
+href="dissch8.html#x98-2470008">8<!--tex4ht:ref: chap:mental_models_pwm --></a>. We contributed the observation that users appreciate this kind of tool
+once they were first exposed to the technology, e.g. at work. If they had never used a
+password manager before, they were unable to anticipate how it might help them. We
+distinguished important themes that shape mental models about password managers. However,
+we found that these models were currently not fully matched by commercial software.
+Consequently, there are novel opportunities to re-design password-managers to better support
+users.
+</p><!--l. 32--><p class="noindent" >In summary, we have to understand additional dimensions of the factors that contribute to mental
+models, because if we do not, we will fail to help users avoid risky password practices.
+Environmental constraints like password policies probably have the largest influence. Much
+traditional advice on how to form “good passwords” has led to a skewed mental model of password
+strength. Second, professional and educational factors are associated in how well users deal with
+password tasks. Finally, personality also contributes to the shaping of mental models, and warrants
+further research in this direction.
+</p><!--l. 34--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x126-39500013.1"></a>Simplification Strategies</h5>
+<!--l. 36--><p class="noindent" >Our exploration of mental models and other psychological factors in password authentication
+revealed that users meet complex tasks with their individual simplification strategies. Especially if a
+website implements a complex password policy, users often try to get away with as little effort as
+they can, which results in predictable secrets. To prevent this and offer alternative simplification
+strategies, researchers have tried numerous approaches. One of them is based on real time
+feedback during password selection that shows how well the password meets the policy
+and how strong it is. Many different variations of feedback have been proposed (e.g.,
+<span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>, <a 
+href="dissli2.html#XHabib2017Blacklists">146</a>, <a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>, <a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp">343</a>, <a 
+href="dissli2.html#XVance2013FearAppeals">347</a>]</span>), but the designs have mostly been based on assumptions about the
+users’ needs in simple password feedback. We took a different approach and first tried to validate
+our assumptions and identify aspects that fell short in the related literature. Through a
+mixed methods approach (see Chapter <a 
+href="dissch9.html#x103-2730009">9<!--tex4ht:ref: chap:feedback_modalities --></a>) we specified user needs and found four central
+dimensions of password selection support: <span 
+class="ptmri8t-x-x-120">showing </span>current problems, <span 
+class="ptmri8t-x-x-120">explaining </span>the
+implications, <span 
+class="ptmri8t-x-x-120">helping </span>with improvement, and <span 
+class="ptmri8t-x-x-120">empowering </span>to become creative. These dimensions
+                                                                                    
+
+                                                                                    
+can be used to facilitate password selection trough feedback and feedforward in future
+solutions.
+</p><!--l. 41--><p class="noindent" >Moreover, to address the users’ needs and to simplify password selection, we explored two
+persuasive strategies. The first was based on <span 
+class="ptmri8t-x-x-120">showing </span>current problems and <span 
+class="ptmri8t-x-x-120">helping </span>with
+improvement. We introduced a <span 
+class="ptmri8t-x-x-120">choice architecture </span>for password selection based on the Decoy
+effect (see Chapter <a 
+href="dissch10.html#x106-30600010">10<!--tex4ht:ref: chap:decoy --></a>). Through an online experiment, we observed that the Decoy choice
+architecture did not influence participants as expected. However, displaying a passphrase and
+making its benefits more visible and easily comparable did result in stronger and longer passwords.
+Thus, we believe that such a combination of feedback and feedforward is the key to simplifying
+selection strategies for stronger passwords. Although it is not necessary to pick a strong
+password for every single account, it is very recommendable to reduce guessability of
+master-passwords for password managers. The second strategy we explored aimed to simplify
+memorization of passwords and <span 
+class="ptmri8t-x-x-120">empower </span>users to become creative in their selection. To that end,
+we evaluated the usability of using emojis inside text-based passwords in two study
+sessions (see Chapter <a 
+href="dissch11.html#x110-33200011">11<!--tex4ht:ref: chap:emojipasswords --></a>). We created a prototype to enter emoji-passwords that allowed us
+to measure selection patterns and issues arising from different visual representations
+of the same set of emojis across platforms (<span 
+class="ptmri8t-x-x-120">fragmentation</span>). For our participants, the
+concept brought about the intrinsic desire to create more memorable passwords than
+what is usually possible, thus the simplification approach went in the right direction.
+However, once participants faced trouble recognizing the right emojis because their
+visual style had changed, this fragmentation lowered memorability and participants
+were reserved towards adopting emoji-passwords in the future. So, although the concept
+generated interest at first, usability troubles outweighed the anticipated benefits. In one of the
+personality studies (Chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>), we had found that certain user groups were more inclined to
+adopt emoji-passwords than others: they were more acceptable for participants who
+strongly showed the <span 
+class="ptmri8t-x-x-120">Neuroticism </span>trait. Hence, it is very likely that those users will try
+to create emoji-passwords in the near future, because some services like Twitter and
+Slack already support them. Therefore, the usability issues that we identified need to be
+addressed soon to avoid user frustration due to account lock-outs and inefficient input.
+Only then will emoji-passwords become a true <span 
+class="ptmri8t-x-x-120">simplification </span>strategy, because right
+now they miss this target. In conclusion, the task of password creation can be simplified
+for users through careful tuning of the password policy, feedback, feedforward, and
+empowerment.
+</p><!--l. 45--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x126-39600013.1"></a>Guiding Persuasive Designs</h5>
+<!--l. 46--><p class="noindent" >One interesting aspect of the persuasive solutions presented in related work is that they rarely
+explain the design process in forming them. Reading the literature gives the impression that
+solutions are solely derived from isolated ideation and/or related work. Important iteration stages of
+                                                                                    
+
+                                                                                    
+the human-centered design process are often underrepresented and it stays unclear what led to
+different design choices. To identify new opportunities and exhaust the design space, I argued
+to structure the process and activities specifically for the design of password support
+solutions.
+</p><!--l. 50--><p class="noindent" >To that end, I developed a framework that takes all the insights from related and original work into
+account. The Persuasive Design for Password Support (P4P) framework addresses specific tasks
+and questions of password authentication, and guides through different stages of the process. At the
+same time, it allows taking shortcuts and move directly to a later stage, given that prior work paints
+a clear picture of the status quo (see Chapter <a 
+href="dissch12.html#x122-37000012">12<!--tex4ht:ref: chap:perdespassup --></a>). To illustrate its usage and applicability, I
+demonstrated how it informed different stages of the design of a novel password manager. It
+embraces the fact that many people desire to reuse passwords and “stay in charge” of their most
+treasured accounts. The password manager thus adapts to the user’s coping strategies to
+make the transition smooth. As this is a large software project in an early stage of its
+implementation, there is a lot of room for improvement and fine-tuning. We contributed
+the minimum viable product (MVP) under an open-source license to facilitate further
+development.
+</p><!--l. 59--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x126-39700013.1"></a>Eight Recommendations for the Future</h5>
+<!--l. 61--><p class="noindent" >The above summary allows us to give recommendations on service design and research areas.
+Some bullets confirm prior work and listing them again should be seen as an emphasis.
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Consider  the  evolution  of  mental  models</span>.  Coping  strategies  adjust  to  the  task
+      load  generated  by  passwords,  which  fluctuates  throughout  the  years.  Users  might
+      see complexity as the primary strength component, but this might change as service
+      providers adjust to the recommendations from empirical usability research.
+      </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Put less emphasis on password </span><span 
+class="ptmbi8t-x-x-120">strength</span>. Some researchers have demonstrated that
+      beyond the threshold for online attacks, the benefits of increased password strength
+      are limited. The most important scenarios that really require a strong (and usable!)
+      password are master-passwords and accounts holding particularly sensitive data, e.g.
+      a Dropbox that is full with health records or credit card details.
+      </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Remove restrictions, give autonomy</span>. Service providers should eradicate unjustified
+      complexity  requirements,  because  they  have  strongly  contributed  to  unreasonable
+      mental models in the past. Instead, foster password diversity through autonomy, i.e.
+      by empowering users to be creative and make informed decisions. We found that users
+                                                                                    
+
+                                                                                    
+      want to be reasonably secure, but often lack the creativity to come up with adequate
+      passwords. The <span 
+class="ptmri8t-x-x-120">show</span>-<span 
+class="ptmri8t-x-x-120">explain</span>-<span 
+class="ptmri8t-x-x-120">help</span>-<span 
+class="ptmri8t-x-x-120">empower  </span>paradigm can overcome this creativity
+      barrier and act as an overall guideline for authentication even beyond passwords.
+      </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Prepare    for    more    requests    of    password    replacement    schemes</span>.    More
+      and   more   people   are   willing   to   use   biometrics   as   primary   authentication
+      method<span class="footnote-mark"><a 
+href="diss127.html#fn1x52"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x126-397005f1"></a>.
+      They will expect this technology from products. However, companies often market
+      biometrics  as  panacea  for  usable  and  secure  authentication,  and  fail  to  make  users
+      aware of the ramifications. Therefore, passwords are going to be met with resistance,
+      and  we  need  to  reassure  users  that  passwords  have  irrefutable  benefits  in  certain
+      situations.
+      </dd><dt class="enumerate-enumitem">
+   5. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Extend  the  method  space</span>.  <a 
+ id="x126-3970065"></a>We  can  observe  a  strong  tendency  towards  studies
+      facilitated through <a 
+href="dissli3.html#glo:mTurk">mTurk</a>. While the methodology is robust for eliciting quantitative
+      data, the results are only one side of the truth. MTurk studies answer <span 
+class="ptmri8t-x-x-120">what works best</span>,
+      but often fail to explain <span 
+class="ptmri8t-x-x-120">why </span>things work best. Therefore, resurrecting mixed-methods
+      approaches that address qualitative aspects is recommendable for future research in
+      <a 
+href="dissli3.html#glo:USEC">Usable Security and Privacy</a> (<a 
+href="dissli3.html#glo:USEC">USEC</a>).
+      </dd><dt class="enumerate-enumitem">
+   6. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Stay  realistic</span>.  Nudges  wear  off  over  time,  so  we  have  to  constantly  create  new
+      persuasive strategies. Then again, users quickly resent paternalistic guidance and also
+      prefer things to stay as they are. We have to acknowledge that there is only so much
+      we can do. Persuasive support strategies will not work for all users in the same way,
+      but if they reach even a small target group and make their lives a little easier, I believe
+      that they are impactful enough.
+      </dd><dt class="enumerate-enumitem">
+   7. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Follow  risky  ideas</span>.  If  we  look  at  the  current  landscape  of  research  on  password
+      support, the design space appears narrow: most published research tackles password
+      meters in different facets. I argue that taking inspiration from other research areas, e.g.
+      behavioral economics, can generate ideas outside the usual spectrum. They might be
+      risky in terms of predictable effect size, but they certainly can counteract habituation
+      effects.
+                                                                                    
+
+                                                                                    
+      </dd><dt class="enumerate-enumitem">
+   8. </dt><dd 
+class="enumerate-enumitem"><span 
+class="ptmb8t-x-x-120">Give  feedback</span>.  Researchers  cannot  expect  that  service  providers  read  academic
+      research  papers  (let  alone  dissertations).  Therefore,  we  as  a  community  of  user
+      advocates have to become active and point out where things go wrong. For instance,
+      it  is  important  to  report  issues  with  password  policies  to  service  providers.  I  have
+      engaged in discussions with globally operating companies and was met with an open
+      ear  for  improvement  areas.  In  the  end,  this  might  translate  research  into  graspable
+      impact.
+      </dd></dl>
+<!--l. 91--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x126-39800013.1"></a>Conclusion</h5>
+<!--l. 92--><p class="noindent" >This thesis has presented a new perspective on a well-known and perhaps unsolvable problem:
+coping with passwords is hard and annoying for most of us. Nonetheless, reducing the frustration
+component stays a highly desirable goal. We contributed new insights into the factors that shape
+coping strategies (mental models, personality) and how to design for the users’ implicit and explicit
+needs (a structured process to fine-tune the mixture of feedback, feedforward, and empowering
+technology).
+</p><!--l. 94--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">13.2    </span> <a 
+ id="x126-39900013.2"></a>Limitations</h3>
+<!--l. 95--><p class="noindent" >The findings should not be interpreted without context. Their main limitations arise from the way
+data was collected and consequently how the findings apply to other contexts. In the following, I
+will briefly discuss these aspects and shed light on potential risks of advancing science with
+persuasion.
+</p><!--l. 97--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">13.2.1    </span> <a 
+ id="x126-40000013.2.1"></a>Generalizability</h4>
+                                                                                    
+
+                                                                                    
+<!--l. 98--><p class="noindent" >Although we tried to minimize sampling bias, we cannot fully rule it out in any of the reported
+studies. In total, the fifteen empirical user studies elicited data from 883 people. The surveys were
+geographically restricted to Germany, the UK, and the USA, because a) the recruitment tools
+included the largest user panels in these areas and b) we were only capable to create questions in
+German and English. Similarly, we only recruited participants from the Munich area for interviews
+and lab studies. So although we were careful to control for other demographic factors,
+the samples were rather homogeneous. Also, 883 participants cannot be representative
+for the entire population of Internet users, so we have to be very careful not to draw
+specific conclusions about different demographic groups. Future studies will have to
+solidify the findings for different contexts and user groups. On the upside, geographic
+factors have not been a major influence on password-related problems and solutions
+<span class="cite">[<a 
+href="dissli2.html#XViolettas2014PasswordsAvoidGreece">351</a>, <a 
+href="dissli2.html#XWang2015ChinesePWs">359</a>]</span>.
+</p><!--l. 107--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">13.2.2    </span> <a 
+ id="x126-40100013.2.2"></a>Study Designs and Analysis Methods</h4>
+<!--l. 112--><p class="noindent" >Since most of the studies had an exploratory character, there was little room for confirmatory
+methods. Hence, we mostly relied on correlations and associations between different
+<span 
+class="ptmri8t-x-x-120">dependent </span>variables. This type of research has the disadvantage that larger sample sizes are
+required to minimize confidence intervals and to detect latent effects. We did not always
+achieve optimal levels of statistical power, which is a caveat that needs to be addressed in
+further research. Nevertheless, the findings help to inform future hypotheses and to run
+confirmatory studies based on those. In case an independent variable was required to
+study a phenomenon, we carefully weighed the benefits and shortcomings of various
+study designs. For the decoy and the emoji-passwords studies (Chapters <a 
+href="dissch10.html#x106-30600010">10<!--tex4ht:ref: chap:decoy --></a> and <a 
+href="dissch11.html#x110-33200011">11<!--tex4ht:ref: chap:emojipasswords --></a>), we
+resorted to between-groups settings that usually require a large sample size to achieve high
+statistical power. On the plus side, they better show contrasting effects. Moreover, we used
+within-groups designs in two out of the three personality studies (Chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>). This allowed for
+a better understanding of individual preferences and was suitable for smaller sample
+sizes like in our studies. Exploratory questions make it challenging to anticipate the
+outcome in either setting, but additional resources might have enabled us to choose an
+alternative study design. Since we were able to answer our research questions satisfactorily,
+the choice of our methods was plausible, but future studies might need to reconsider
+them.
+</p><!--l. 117--><p class="noindent" >Moreover, we refrained from collecting plain-text passwords for ethical reasons. While other
+researchers save passwords in clear text, they also need to provide a higher standard of protective
+mechanisms, like locking access to the data and analyzing it off-line. Since we did not have the
+resources for such procedures, we found it more reasonable to hash passwords if they needed to be
+stored. This limits the available depth of post-hoc analyses, which is a caveat. At the same time, the
+                                                                                    
+
+                                                                                    
+consistent usage of the zxcvbn estimator provided sufficient and reliable details about passwords
+for the analyses we required. We did, however, have to modify it in order to strip it from sensitive
+information.
+</p><!--l. 119--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">13.2.3    </span> <a 
+ id="x126-40200013.2.3"></a>Real-World Measurements</h4>
+<!--l. 120--><p class="noindent" >Apart from the log analysis of <span 
+class="ptmri8t-x-x-120">PASDJO</span>, we could not collect data <span 
+class="ptmri8t-x-x-120">in the wild</span>. The concepts we
+evaluated in Part <a 
+href="disspa3.html#x102-272000III">III<!--tex4ht:ref: part:design_space --></a> were not yet mature enough to warrant production-level deployment of the
+nudges. We tried to increase ecological validity by following established practices in password
+research (cf. Section <a 
+href="dissch3.html#x53-770003.1">3.1<!--tex4ht:ref: sec:rw:methodology --></a>). While these attempts let us assume that participants immersed
+themselves in the tasks, there is always a small gap between study and real-world contexts.
+Therefore, we have to leave deployments of our concepts, e.g. emoji-passwords or feedforward
+techniques, to future work. Moreover, coming back to recommendation <a 
+href="#x126-3970065">5<!--tex4ht:ref: recommendation:method_space --></a>, we might be able to
+assess the ecological validity of the existing data through ethnographic methods, e.g. diary studies
+or contextual inquiry.
+</p><!--l. 125--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">13.2.4    </span> <a 
+ id="x126-40300013.2.4"></a>Ethics and Risks</h4>
+<!--l. 126--><p class="noindent" >Studying the users’ psyche, like cognitive biases and personality, to aid the design of
+persuasive interventions bears certain ethical risks. Often, we investigate unconscious
+phenomena, for instance, how the decoy effect influences users’ decision-making.
+Therefore, we need to always consider how findings in this area might be exploited.
+There was a recent episode of questionable analysis of personality profiles: Cambridge
+Analytica, a British political consulting firm, accessed millions of Facebook users’ data
+without their consent to target political campaigns based on their personality and other
+factors<span class="footnote-mark"><a 
+href="diss128.html#fn2x52"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x126-403001f2"></a>.
+Although studying users’ personality to support them in password authentication appears less
+critical than politically motivated manipulation techniques, we still have to weigh the benefits
+                                                                                    
+
+                                                                                    
+against the risks. For instance, if future research corroborates our findings about the associations
+between personality and password selection, this might allow adversaries to target attacks more
+efficiently. Thus, the P4P framework includes this important aspect in the hope of seeing more
+discussions of ethical risks in the future.
+                                                                                    
+
+                                                                                    
+</p>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

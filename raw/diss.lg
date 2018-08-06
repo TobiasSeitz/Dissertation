@@ -1,50 +1,202 @@
 htfcss: ptmri8t font-style: italic;
 htfcss: ptmbi8t  font-weight: bold;   font-style: italic;
 htfcss: ptmb8t   font-weight: bold;
+htfcss: ptmri8t font-style: italic;
+htfcss: ecbx  font-weight: bold;
+htfcss: ecsx  font-weight: bold;
+htfcss: ecbi  font-weight: bold;   font-style: italic;
+htfcss: ecit  font-style: italic; font-family: monospace;
+htfcss: ecss  font-family: sans-serif;
+htfcss: ecff  font-family: fantasy;
+htfcss: ecti  font-style: italic;
+htfcss: ectt  font-family: monospace;
 htfcss: ptmb8t   font-weight: bold;
 htfcss: ptmri8t font-style: italic;
-htfcss: ecbx  font-weight: bold;
-htfcss: ecsx  font-weight: bold;
-htfcss: ecbi  font-weight: bold;   font-style: italic;
-htfcss: ecit  font-style: italic; font-family: monospace;
-htfcss: ecss  font-family: sans-serif;
-htfcss: ecff  font-family: fantasy;
-htfcss: ecti  font-style: italic;
-htfcss: ectt  font-family: monospace;
-htfcss: ptmri8t font-style: italic;
-htfcss: ecbx  font-weight: bold;
-htfcss: ecsx  font-weight: bold;
-htfcss: ecbi  font-weight: bold;   font-style: italic;
-htfcss: ecit  font-style: italic; font-family: monospace;
-htfcss: ecss  font-family: sans-serif;
-htfcss: ecff  font-family: fantasy;
-htfcss: ecti  font-style: italic;
-htfcss: ectt  font-family: monospace;
-htfcss: ecbx  font-weight: bold;
-htfcss: ecsx  font-weight: bold;
-htfcss: ecbi  font-weight: bold;   font-style: italic;
-htfcss: ecit  font-style: italic; font-family: monospace;
-htfcss: ecss  font-family: sans-serif;
-htfcss: ecff  font-family: fantasy;
-htfcss: ecti  font-style: italic;
-htfcss: ectt  font-family: monospace;
+htfcss: ptmb8t   font-weight: bold;
 htfcss: ptmbc8t  font-weight: bold;
-htfcss: zptmcm7v  font-weight: bold; font-style: italic;
+htfcss: ecbx  font-weight: bold;
+htfcss: ecsx  font-weight: bold;
+htfcss: ecbi  font-weight: bold;   font-style: italic;
+htfcss: ecit  font-style: italic; font-family: monospace;
+htfcss: ecss  font-family: sans-serif;
+htfcss: ecff  font-family: fantasy;
+htfcss: ecti  font-style: italic;
+htfcss: ectt  font-family: monospace;
+htfcss: ecbx  font-weight: bold;
+htfcss: ecsx  font-weight: bold;
+htfcss: ecbi  font-weight: bold;   font-style: italic;
+htfcss: ecit  font-style: italic; font-family: monospace;
+htfcss: ecss  font-family: sans-serif;
+htfcss: ecff  font-family: fantasy;
+htfcss: ecti  font-style: italic;
+htfcss: ectt  font-family: monospace;
 htfcss: zptmcm7y  font-weight: bold; font-style: italic;
 htfcss: zpzccmry  font-weight: bold; font-style: italic;
+htfcss: zptmcm7y  font-weight: bold; font-style: italic;
+htfcss: zptmcm7y  font-weight: bold; font-style: italic;
 htfcss: zptmcm7m  font-weight: bold; font-style: italic;
 htfcss: zptmcm7m  font-weight: bold; font-style: italic;
 htfcss: zptmcm7t  font-weight: bold; font-style: italic;
 htfcss: zptmcmr  font-style: italic;
 htfcss: zptmcm7t  font-weight: bold; font-style: italic;
+htfcss: ptmbc8t  font-weight: bold;
+htfcss: zptmcm7v  font-weight: bold; font-style: italic;
+htfcss: zptmcm7y  font-weight: bold; font-style: italic;
+htfcss: zptmcm7y  font-weight: bold; font-style: italic;
+htfcss: zptmcm7m  font-weight: bold; font-style: italic;
+htfcss: zptmcm7m  font-weight: bold; font-style: italic;
+htfcss: zptmcm7t  font-weight: bold; font-style: italic;
+htfcss: zptmcm7t  font-weight: bold; font-style: italic;
+htfcss: ecbx  font-weight: bold;
+htfcss: ecsx  font-weight: bold;
+htfcss: ecbi  font-weight: bold;   font-style: italic;
+htfcss: ecit  font-style: italic; font-family: monospace;
+htfcss: ecss  font-family: sans-serif;
+htfcss: ecff  font-family: fantasy;
+htfcss: ecti  font-style: italic;
+htfcss: ectt  font-family: monospace;
 File: diss.html
 File: diss.css
 File: diss.tmp
 File: diss.tmp
 Font_Class(4,"4"): <span  class="small-caps"></span>
 File: diss.tmp
-File: diss.tmp
-File: diss.tmp
+File: dissli1.html
+File: dissch1.html
+File: diss4.html
+File: diss5.html
+File: diss6.html
+File: disspa1.html
+File: dissch2.html
+File: diss9.html
+File: diss10.html
+File: diss11.html
+File: diss12.html
+File: diss13.html
+File: diss14.html
+File: diss15.html
+File: diss16.html
+File: diss17.html
+File: diss18.html
+File: diss19.html
+File: diss20.html
+File: diss21.html
+File: diss22.html
+File: diss23.html
+File: diss24.html
+File: diss25.html
+File: diss26.html
+File: diss27.html
+File: diss28.html
+File: diss29.html
+File: diss30.html
+File: diss31.html
+File: diss32.html
+File: diss33.html
+File: diss34.html
+File: diss35.html
+File: diss36.html
+File: diss37.html
+File: diss38.html
+File: diss39.html
+File: diss40.html
+File: diss41.html
+File: diss42.html
+File: diss43.html
+File: diss44.html
+File: diss45.html
+File: diss46.html
+File: diss47.html
+File: diss48.html
+File: diss49.html
+File: diss50.html
+File: diss51.html
+File: diss52.html
+File: dissch3.html
+File: diss54.html
+File: diss55.html
+File: diss56.html
+File: diss57.html
+File: diss58.html
+File: diss59.html
+File: diss60.html
+File: diss61.html
+File: diss62.html
+File: diss63.html
+File: diss64.html
+File: diss65.html
+File: diss66.html
+File: diss67.html
+File: diss68.html
+File: diss69.html
+File: diss70.html
+File: diss71.html
+File: dissch4.html
+File: disspa2.html
+File: dissch5.html
+File: diss75.html
+File: diss76.html
+File: diss77.html
+File: diss78.html
+File: diss79.html
+File: diss80.html
+File: diss81.html
+File: diss82.html
+File: dissch6.html
+File: diss84.html
+File: diss85.html
+File: diss86.html
+File: diss87.html
+File: dissch7.html
+File: diss89.html
+File: diss90.html
+File: diss91.html
+File: diss92.html
+File: diss93.html
+File: diss94.html
+File: diss95.html
+File: diss96.html
+File: diss97.html
+File: dissch8.html
+File: diss99.html
+File: diss100.html
+File: diss101.html
+File: disspa3.html
+File: dissch9.html
+File: diss104.html
+File: diss105.html
+File: dissch10.html
+File: diss107.html
+File: diss108.html
+File: diss109.html
+File: dissch11.html
+File: diss111.html
+File: diss112.html
+File: diss113.html
+File: diss114.html
+File: diss115.html
+File: diss116.html
+File: diss117.html
+File: diss118.html
+File: diss119.html
+File: diss120.html
+File: disspa4.html
+File: dissch12.html
+File: diss123.html
+File: diss124.html
+File: diss125.html
+File: dissch13.html
+File: diss127.html
+File: diss128.html
+File: dissch14.html
+File: diss130.html
+File: diss131.html
+File: dissli2.html
+File: dissch15.html
+File: dissli3.html
+File: diss.ncx
+File: content.opf
+File: content-part2.opf
 Css: p.noindent { text-indent: 0em }
 Css: td p.noindent { text-indent: 0em; margin-top:0em; }
 Css: p.nopar { text-indent: 0em; }
@@ -185,11 +337,14 @@ Css:  .likesectionToc ~ .likesubsectionToc, .likesectionToc ~ .subsectionToc, .s
 Css: .likesectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .likesectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .likesectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .likesectionToc ~ .subsectionToc ~ .subsubsectionToc, .sectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .sectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .sectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .sectionToc ~ .subsectionToc ~ .subsubsectionToc {margin-left:4em;}
 Css:  .likesubsectionToc, .subsectionToc {margin-left:0em;}
 Css:  .likesubsectionToc ~ .subsubsectionToc, .subsectionToc ~ .subsubsectionToc {margin-left:2em;}
+Css: .figure img.graphics {margin-left:10%;}
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: div.longtable{text-align:center;}
 Css: .equation td{text-align:center; }
 Css: .equation-star td{text-align:center; }
 Css: table.equation-star { width:100%; }
 Css: table.equation { width:100%; }
-Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:95%; margin-left:5%; white-space: nowrap;}
 Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
 Css: td.align-label { width:5%; text-align:center; }
 Css: td.align-odd { text-align:right; padding-right:0.3em;}
@@ -198,16 +353,14 @@ Css: table.multline, table.multline-star {width:100%;}
 Css: td.gather {text-align:center; }
 Css: table.gather {width:100%;}
 Css: div.gather-star {text-align:center;}
-Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
-Css: div.longtable{text-align:center;}
-Css: .supertabular {text-align:center}
-Css: .figure img.graphics {margin-left:10%;}
 Css: dt.enumerate-enumitem{float:left; clear:left; margin-left:1em; margin-right:1em;}
+Css: .mdframed{margin-top:1em;margin-bottom:1em;}
 Css: .caption span.id{font-weight: bold;}
 Css:  .wrapfig-r, .wrapfig-ri, .wrapfig-ir, .wrapfig-ro, .wrapfig-or {float:right; text-align:left; margin-left:auto; margin-top:0.5em;} 
 Css:  .wrapfig-l, .wrapfig-li, .wrapfig-il, .wrapfig-lo, .wrapfig-ol {float:left; text-align:left; margin-right:auto; margin-top:0.5em;} 
 Css: .wrapfig-r .caption td.content, .wrapfig-ri .caption td.content, .wrapfig-ir .caption td.content, .wrapfig-ro .caption td.content, .wrapfig-or .caption td.content, .wrapfig-l .caption td.content, .wrapfig-li .caption td.content, .wrapfig-il .caption td.content, .wrapfig-lo .caption td.content, .wrapfig-ol .caption td.content {white-space: normal; }
 Css: .wrapfig-r .caption, .wrapfig-ri .caption, .wrapfig-ir .caption, .wrapfig-ro .caption, .wrapfig-or .caption, .wrapfig-l .caption, .wrapfig-li .caption, .wrapfig-il .caption, .wrapfig-lo .caption, .wrapfig-ol .caption {width:30%; }
+Css: .supertabular {text-align:center}
 File: diss.4idx
 --- needs --- diss.idv[2] ==> diss0x.png ---
 --- needs --- diss.idv[4] ==> diss1x.png ---
@@ -226,66 +379,183 @@ Css:  #TBL-2-13-{ background-color:rgb(225,238,0)}
 Css:  #TBL-2-14-{ background-color:rgb(225,238,0)}
 Css:  #TBL-2-15-{ background-color:rgb(217,224,0)}
 Css:  #TBL-2-16-{ background-color:rgb(217,224,0)}
-Css: span#textcolor1{color:#F50057}
-Css: span#textcolor2{color:#FF0000}
-Css: span#colorbox3{background-color:#000000;}
-Css: span#textcolor4{color:#FFFFFF}
 --- needs --- diss.idv[6] ==> diss2x.png ---
-Css: span#textcolor5{color:#F50057}
 --- needs --- diss.idv[8] ==> diss3x.png ---
 --- needs --- diss.idv[9] ==> diss4x.png ---
 --- needs --- diss.idv[10] ==> diss5x.png ---
-Css: span#textcolor6{color:#F50057}
 --- needs --- diss.idv[12] ==> diss6x.png ---
-Css: span#textcolor7{color:#F50057}
-Css: tr#TBL-4-2-{background-color:rgb(244,244,220)}
-Css: tr#TBL-4-3-{background-color:rgb(239,247,255)}
-Css: tr#TBL-4-4-{background-color:rgb(244,244,220)}
-Css: tr#TBL-4-5-{background-color:rgb(239,247,255)}
-Css: tr#TBL-4-6-{background-color:rgb(244,244,220)}
-Css: tr#TBL-4-7-{background-color:rgb(239,247,255)}
-Css: tr#TBL-4-8-{background-color:rgb(244,244,220)}
-Css: tr#TBL-4-9-{background-color:rgb(239,247,255)}
-Css: tr#TBL-4-10-{background-color:rgb(244,244,220)}
-Css: span#textcolor8{color:#F50057}
-Css: span#textcolor9{color:#F50057}
+Css: #TBL-4 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-4{border-collapse:collapse;}
+Css: #TBL-4 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-4{border-collapse:collapse;}
+Css: #TBL-4 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-4{border-collapse:collapse;}
+Css: #TBL-4 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-4{border-collapse:collapse;}
+Css: #TBL-4 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-4{border-collapse:collapse;}
+Css: #TBL-4 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-4{border-collapse:collapse;}
+Css: tr#TBL-4-2-{background-color:#FFFFFF}
+Css: tr#TBL-4-3-{background-color:#EAEAEA}
+Css: tr#TBL-4-4-{background-color:#FFFFFF}
+Css: tr#TBL-4-5-{background-color:#EAEAEA}
+Css: tr#TBL-4-6-{background-color:#FFFFFF}
+Css: tr#TBL-4-7-{background-color:#EAEAEA}
+Css: tr#TBL-4-8-{background-color:#FFFFFF}
+Css: tr#TBL-4-9-{background-color:#EAEAEA}
+Css: tr#TBL-4-10-{background-color:#FFFFFF}
 Css: tr#TBL-5-1- td{border-bottom:0.08224em solid}
 Css: tr#TBL-5-1- td{border-bottom:0.08224em solid}
-Css: span#textcolor10{color:#F50057}
-Css: span#textcolor11{color:#F50057}
-Css: span#textcolor12{color:#F50057}
-Css: span#textcolor13{color:#F50057}
-Css: span#textcolor14{color:#F50057}
 --- needs --- diss.idv[14] ==> diss7x.png ---
 --- needs --- diss.idv[15] ==> diss8x.png ---
 --- needs --- diss.idv[16] ==> diss9x.png ---
 --- needs --- diss.idv[17] ==> diss10x.png ---
-Css: span#textcolor15{color:#F50057}
-Css: span#textcolor16{color:#F50057}
---- needs --- diss.idv[19] ==> diss11x.png ---
---- needs --- diss.idv[21] ==> diss12x.png ---
+l. 83 --- needs --- "rungs -q -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r300  -sOutputFile='figures/policies/length-min-violin-.png' figures/policies/length-min-violin.pdf" ---
+File: figures/policies/length-min-violin-.png
+l. 84 --- needs --- "rungs -q -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r300  -sOutputFile='figures/policies/length-max-violin-.png' figures/policies/length-max-violin.pdf" ---
+File: figures/policies/length-max-violin-.png
 Css: tr#TBL-8-12- td{border-bottom:0.13159em solid}
+Css: #TBL-9 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-9{border-collapse:collapse;}
+Css: #TBL-9 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-9{border-collapse:collapse;}
+Css: #TBL-9 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-9{border-collapse:collapse;}
+Css: tr#TBL-11-2- td{border-bottom:0.08224em solid}
+Css: tr#TBL-11-15- td{border-bottom:0.13159em solid}
+Css:  #TBL-12-2-{ background-color:rgb(96,156,0)}
+Css: span#textcolor1{color:rgb(255,255,0)}
+Css: span#textcolor2{color:rgb(255,255,0)}
+Css: span#textcolor3{color:rgb(255,255,0)}
+Css: span#textcolor4{color:rgb(255,255,0)}
+Css: span#textcolor5{color:rgb(255,255,0)}
+Css: span#textcolor6{color:rgb(255,255,0)}
+Css: span#textcolor7{color:rgb(255,255,0)}
+Css: span#textcolor8{color:rgb(255,255,0)}
+Css: span#textcolor9{color:rgb(255,255,0)}
+Css: span#textcolor10{color:rgb(255,255,0)}
+Css: span#textcolor11{color:rgb(255,255,0)}
+Css: span#textcolor12{color:rgb(255,255,0)}
+Css: span#textcolor13{color:rgb(255,255,0)}
+Css: span#textcolor14{color:rgb(255,255,0)}
+Css: span#textcolor15{color:rgb(255,255,0)}
+Css: span#textcolor16{color:rgb(255,255,0)}
+Css: span#textcolor17{color:rgb(255,255,0)}
+Css: span#textcolor18{color:rgb(255,255,0)}
+Css: span#textcolor19{color:rgb(255,255,0)}
+Css: span#textcolor20{color:rgb(255,255,0)}
+Css: span#textcolor21{color:rgb(255,255,0)}
+Css: span#textcolor22{color:rgb(255,255,0)}
+Css: span#textcolor23{color:rgb(255,255,0)}
+Css: tr#TBL-12-7- td{border-bottom:0.08224em solid}
+Css: span#textcolor24{color:rgb(255,255,0)}
+Css: span#textcolor25{color:rgb(255,255,0)}
+Css: span#textcolor26{color:rgb(255,255,0)}
+Css: span#textcolor27{color:rgb(255,255,0)}
+Css: span#textcolor28{color:rgb(255,255,0)}
+Css: span#textcolor29{color:rgb(255,255,0)}
+Css: span#textcolor30{color:rgb(255,255,0)}
+Css: span#textcolor31{color:rgb(255,255,0)}
+Css: span#textcolor32{color:rgb(255,255,0)}
+Css: span#textcolor33{color:rgb(255,255,0)}
+Css: tr#TBL-12-12- td{border-bottom:0.08224em solid}
+Css: span#textcolor34{color:rgb(255,255,0)}
+Css: span#textcolor35{color:rgb(255,255,0)}
+Css: span#textcolor36{color:rgb(255,255,0)}
+Css: span#textcolor37{color:rgb(255,255,0)}
+Css: span#textcolor38{color:rgb(255,255,0)}
+Css: span#textcolor39{color:rgb(255,255,0)}
+Css: span#textcolor40{color:rgb(255,255,0)}
+Css: span#textcolor41{color:rgb(255,255,0)}
+Css: span#textcolor42{color:rgb(255,255,0)}
+Css: span#textcolor43{color:rgb(255,255,0)}
+Css: span#textcolor44{color:rgb(255,255,0)}
+Css: span#textcolor45{color:rgb(255,255,0)}
+Css: span#textcolor46{color:rgb(255,255,0)}
+Css: span#textcolor47{color:rgb(255,255,0)}
+Css: span#textcolor48{color:rgb(255,255,0)}
+Css: span#textcolor49{color:rgb(255,255,0)}
+Css: span#textcolor50{color:rgb(255,255,0)}
+Css: span#textcolor51{color:rgb(255,255,0)}
+Css: span#textcolor52{color:rgb(255,255,0)}
+Css: tr#TBL-12-21- td{border-bottom:0.08224em solid}
+Css: tr#TBL-12-21- td{border-bottom:0.08224em solid}
+Css: #colorbox53{border: solid 1px #BDBDBD;}
+Css: #colorbox53{background-color: #FFFFFF;}
+Css: #colorbox54{border: solid 1px #BDBDBD;}
+Css: #colorbox54{background-color: #FFFFFF;}
+Css: #colorbox55{border: solid 1px #BDBDBD;}
+Css: #colorbox55{background-color: #FFFFFF;}
+Css: #colorbox56{border: solid 1px #BDBDBD;}
+Css: #colorbox56{background-color: #FFFFFF;}
+Css: #TBL-13 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-13{border-collapse:collapse;}
+Css: #TBL-13 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-13{border-collapse:collapse;}
+Css: #TBL-17 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-17{border-collapse:collapse;}
+Css: #TBL-17 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-17{border-collapse:collapse;}
+Css: #TBL-17 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-17{border-collapse:collapse;}
+Css: tr#TBL-17-1- td{border-top:0.13159em solid} 
+Css: tr#TBL-17-1- td{border-bottom:0.08224em solid}
+Css: tr#TBL-17-9- td{border-bottom:0.13159em solid}
+Css: tr#TBL-18-1- td{border-top:0.13159em solid} 
+--- needs --- diss.idv[19] ==> diss11x.png ---
+--- needs --- diss.idv[20] ==> diss12x.png ---
+--- needs --- diss.idv[21] ==> diss13x.png ---
+--- needs --- diss.idv[22] ==> diss14x.png ---
+--- needs --- diss.idv[23] ==> diss15x.png ---
+--- needs --- diss.idv[24] ==> diss16x.png ---
+--- needs --- diss.idv[25] ==> diss17x.png ---
+Css: tr#TBL-18-1- td{border-bottom:0.08224em solid}
+Css: tr#TBL-18-5- td{border-bottom:0.08224em solid}
+Css: tr#TBL-18-6- td{border-bottom:0.13159em solid}
+Css: #TBL-19 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-19{border-collapse:collapse;}
+Css: #TBL-19 colgroup{border-left: 1px solid black;border-right:1px solid black;}
+Css: #TBL-19{border-collapse:collapse;}
+Css: tr#TBL-20-1- td{border-bottom:0.08224em solid}
+Css: tr#TBL-20-1- td{border-bottom:0.08224em solid}
 --- characters ---
+Font("ecrm","1200","12","100")
+Font("pzdr","","10","120")
 Font("ptmr8t","","10","120")
 Font("zptmcm7t","","10","120")
 Font("zptmcm7t","","10","90")
 Font("zptmcm7m","","10","120")
 Font("zptmcm7m","","10","90")
 Font("zptmcm7y","","10","120")
+Font("zptmcm7y","","10","90")
 Font("zptmcm7v","","10","120")
 Font("ptmrc8t","","10","280")
 Font("ptmbc8t","","10","248")
+Font("ptmr8t","","10","248")
 Font("ptmr8t","","10","172")
 Font("ptmr8t","","10","144")
 Font("ptmr8t","","10","109")
+Font("zptmcm7t","","10","109")
+Font("zptmcm7t","","10","80")
+Font("zptmcm7m","","10","109")
+Font("zptmcm7m","","10","80")
+Font("zptmcm7y","","10","109")
+Font("zptmcm7y","","10","80")
+Font("zptmcm7y","","10","60")
 Font("ectt","1095","10","100")
 Font("ectt","1200","12","100")
+Font("ptmbc8t","","10","207")
+Font("ptmb8t","","10","120")
 Font("ptmri8t","","10","120")
 Font("ptmr8t","","10","100")
+Font("ptmb8t","","10","100")
 Font("ectt","1000","10","100")
 Font("ptmri8t","","10","100")
-Font("ptmb8t","","10","120")
 Font("ptmr8c","","10","120")
 Font("ptmb8t","","10","109")
 Font("ptmbi8t","","10","120")
 Font("ptmri8t","","10","109")
+Font("pzdr","","10","109")
+Font("pzdr","","10","100")
+Font("ptmr8t","","10","80")

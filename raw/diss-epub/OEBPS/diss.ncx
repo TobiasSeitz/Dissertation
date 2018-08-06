@@ -1,0 +1,1232 @@
+<?xml version="1.0"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+ "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta name="dtb:uid" content="http://example.com/diss" />
+    <meta name="dtb:depth" content="3" />
+    <meta name="dtb:totalPageCount" content="0" />
+    <meta name="dtb:maxPageNumber" content="0" />
+  </head>
+  <docTitle>
+    <text>Supporting Users in Password Authentication with
+    Persuasive Design
+    <br class="newline" />
+    <br class="newline" /></text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint-1" playOrder="1">
+      <navLabel>
+        <text>1 Introduction</text>
+      </navLabel>
+      <content src="dissch1.html#x3-70001" />
+      <navPoint id="navPoint-2" playOrder="2">
+        <navLabel>
+          <text>1.1 The State of the World</text>
+        </navLabel>
+        <content src="dissch1.html#x3-80001.1" />
+      </navPoint>
+      <navPoint id="navPoint-3" playOrder="3">
+        <navLabel>
+          <text>1.2 Problem Statement and Research
+          Objectives</text>
+        </navLabel>
+        <content src="dissch1.html#x3-130001.2" />
+        <navPoint id="navPoint-4" playOrder="4">
+          <navLabel>
+            <text>1.2.1 Balancing the Costs</text>
+          </navLabel>
+          <content src="dissch1.html#x3-140001.2.1" />
+        </navPoint>
+        <navPoint id="navPoint-5" playOrder="5">
+          <navLabel>
+            <text>1.2.2 The Challenge: Improving an Innately
+            Annoying Interaction</text>
+          </navLabel>
+          <content src="dissch1.html#x3-170001.2.2" />
+        </navPoint>
+        <navPoint id="navPoint-6" playOrder="6">
+          <navLabel>
+            <text>1.2.3 Research Questions</text>
+          </navLabel>
+          <content src="dissch1.html#x3-180001.2.3" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-7" playOrder="7">
+        <navLabel>
+          <text>1.3 Main Contributions</text>
+        </navLabel>
+        <content src="dissch1.html#x3-190001.3" />
+      </navPoint>
+      <navPoint id="navPoint-8" playOrder="8">
+        <navLabel>
+          <text>1.4 Thesis Structure</text>
+        </navLabel>
+        <content src="dissch1.html#x3-230001.4" />
+      </navPoint>
+      <navPoint id="navPoint-9" playOrder="9">
+        <navLabel>
+          <text>1.5 Style Choices</text>
+        </navLabel>
+        <content src="dissch1.html#x3-410001.5" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-10" playOrder="10">
+      <navLabel>
+        <text>I FOUNDATIONS OF USABLE AUTHENTICATION</text>
+      </navLabel>
+      <content src="disspa1.html#x7-45000I" />
+      <navPoint id="navPoint-11" playOrder="11">
+        <navLabel>
+          <text>2 Foundations</text>
+        </navLabel>
+        <content src="dissch2.html#x8-460002" />
+        <navPoint id="navPoint-12" playOrder="12">
+          <navLabel>
+            <text>2.1 A Brief History of Passwords</text>
+          </navLabel>
+          <content src="dissch2.html#x8-470002.1" />
+        </navPoint>
+        <navPoint id="navPoint-13" playOrder="13">
+          <navLabel>
+            <text>2.2 Attacks on Passwords</text>
+          </navLabel>
+          <content src="dissch2.html#x8-480002.2" />
+        </navPoint>
+        <navPoint id="navPoint-14" playOrder="14">
+          <navLabel>
+            <text>2.3 What is Password Strength? Metrics and
+            Statistics</text>
+          </navLabel>
+          <content src="dissch2.html#x8-550002.3" />
+          <navPoint id="navPoint-15" playOrder="15">
+            <navLabel>
+              <text>2.3.1 Entropy</text>
+            </navLabel>
+            <content src="dissch2.html#x8-560002.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-16" playOrder="16">
+            <navLabel>
+              <text>2.3.2 Guess Numbers: Markov Models, PCFGs, and
+              Neural Networks</text>
+            </navLabel>
+            <content src="dissch2.html#x8-570002.3.2" />
+          </navPoint>
+          <navPoint id="navPoint-17" playOrder="17">
+            <navLabel>
+              <text>2.3.3 The zxcvbn Approach: Lightweight, Robust,
+              Simple</text>
+            </navLabel>
+            <content src="dissch2.html#x8-580002.3.3" />
+          </navPoint>
+          <navPoint id="navPoint-18" playOrder="18">
+            <navLabel>
+              <text>2.3.4 Other strength proxies</text>
+            </navLabel>
+            <content src="dissch2.html#x8-590002.3.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-19" playOrder="19">
+          <navLabel>
+            <text>2.4 What is a “Bad” Password?</text>
+          </navLabel>
+          <content src="dissch2.html#x8-600002.4" />
+        </navPoint>
+        <navPoint id="navPoint-20" playOrder="20">
+          <navLabel>
+            <text>2.5 Authentication beyond Passwords</text>
+          </navLabel>
+          <content src="dissch2.html#x8-610002.5" />
+          <navPoint id="navPoint-21" playOrder="21">
+            <navLabel>
+              <text>2.5.1 Graphical Passwords &amp; Visual
+              Authentication Methods</text>
+            </navLabel>
+            <content src="dissch2.html#x8-620002.5.1" />
+          </navPoint>
+          <navPoint id="navPoint-22" playOrder="22">
+            <navLabel>
+              <text>2.5.2 Biometrics and Multimodal
+              Authentication</text>
+            </navLabel>
+            <content src="dissch2.html#x8-670002.5.2" />
+          </navPoint>
+          <navPoint id="navPoint-23" playOrder="23">
+            <navLabel>
+              <text>2.5.3 Multi-Factor, Token-based and Federated
+              Authentication</text>
+            </navLabel>
+            <content src="dissch2.html#x8-710002.5.3" />
+          </navPoint>
+          <navPoint id="navPoint-24" playOrder="24">
+            <navLabel>
+              <text>2.5.4 Passwords are Here to Stay</text>
+            </navLabel>
+            <content src="dissch2.html#x8-750002.5.4" />
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-25" playOrder="25">
+        <navLabel>
+          <text>3 Passwords – A User Perspective</text>
+        </navLabel>
+        <content src="dissch3.html#x53-760003" />
+        <navPoint id="navPoint-26" playOrder="26">
+          <navLabel>
+            <text>3.1 Methodology: Running Password Studies</text>
+          </navLabel>
+          <content src="dissch3.html#x53-770003.1" />
+          <navPoint id="navPoint-27" playOrder="27">
+            <navLabel>
+              <text>3.1.1 General Considerations for User Studies
+              as Data Source</text>
+            </navLabel>
+            <content src="dissch3.html#x53-780003.1.1" />
+          </navPoint>
+          <navPoint id="navPoint-28" playOrder="28">
+            <navLabel>
+              <text>3.1.2 Analyzing Password Leaks and
+              (Semi-)Public Data</text>
+            </navLabel>
+            <content src="dissch3.html#x53-870003.1.2" />
+          </navPoint>
+          <navPoint id="navPoint-29" playOrder="29">
+            <navLabel>
+              <text>3.1.3 User Study Methods in Password
+              Research</text>
+            </navLabel>
+            <content src="dissch3.html#x53-880003.1.3" />
+          </navPoint>
+          <navPoint id="navPoint-30" playOrder="30">
+            <navLabel>
+              <text>3.1.4 The Bottom Line: Emerging Good Practices
+              and Tools</text>
+            </navLabel>
+            <content src="dissch3.html#x53-910003.1.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-31" playOrder="31">
+          <navLabel>
+            <text>3.2 Password Coping Strategies and Risky
+            Behaviors</text>
+          </navLabel>
+          <content src="dissch3.html#x53-920003.2" />
+          <navPoint id="navPoint-32" playOrder="32">
+            <navLabel>
+              <text>3.2.1 Weak Passwords</text>
+            </navLabel>
+            <content src="dissch3.html#x53-930003.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-33" playOrder="33">
+            <navLabel>
+              <text>3.2.2 Password Reuse</text>
+            </navLabel>
+            <content src="dissch3.html#x53-940003.2.2" />
+          </navPoint>
+          <navPoint id="navPoint-34" playOrder="34">
+            <navLabel>
+              <text>3.2.3 External Storage</text>
+            </navLabel>
+            <content src="dissch3.html#x53-950003.2.3" />
+          </navPoint>
+          <navPoint id="navPoint-35" playOrder="35">
+            <navLabel>
+              <text>3.2.4 Fallback Methods</text>
+            </navLabel>
+            <content src="dissch3.html#x53-960003.2.4" />
+          </navPoint>
+          <navPoint id="navPoint-36" playOrder="36">
+            <navLabel>
+              <text>3.2.5 Account Sharing</text>
+            </navLabel>
+            <content src="dissch3.html#x53-970003.2.5" />
+          </navPoint>
+          <navPoint id="navPoint-37" playOrder="37">
+            <navLabel>
+              <text>3.2.6 Summary</text>
+            </navLabel>
+            <content src="dissch3.html#x53-980003.2.6" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-38" playOrder="38">
+          <navLabel>
+            <text>3.3 Guiding and Aiding Users</text>
+          </navLabel>
+          <content src="dissch3.html#x53-990003.3" />
+          <navPoint id="navPoint-39" playOrder="39">
+            <navLabel>
+              <text>3.3.1 Password Composition Policies</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1000003.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-40" playOrder="40">
+            <navLabel>
+              <text>3.3.2 User Education and Guidelines</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1010003.3.2" />
+          </navPoint>
+          <navPoint id="navPoint-41" playOrder="41">
+            <navLabel>
+              <text>3.3.3 Password Selection Algorithms &amp;
+              Memorization Techniques</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1020003.3.3" />
+          </navPoint>
+          <navPoint id="navPoint-42" playOrder="42">
+            <navLabel>
+              <text>3.3.4 Password Managers and Generators</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1050003.3.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-43" playOrder="43">
+          <navLabel>
+            <text>3.4 Persuasive Interventions</text>
+          </navLabel>
+          <content src="dissch3.html#x53-1060003.4" />
+          <navPoint id="navPoint-44" playOrder="44">
+            <navLabel>
+              <text>3.4.1 Background</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1070003.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-45" playOrder="45">
+            <navLabel>
+              <text>3.4.2 Persuasive Design Patterns in Usable
+              Security and Privacy</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1100003.4.2" />
+          </navPoint>
+          <navPoint id="navPoint-46" playOrder="46">
+            <navLabel>
+              <text>3.4.3 Password Meters: Persuasion at
+              Play</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1140003.4.3" />
+          </navPoint>
+          <navPoint id="navPoint-47" playOrder="47">
+            <navLabel>
+              <text>3.4.4 Summary</text>
+            </navLabel>
+            <content src="dissch3.html#x53-1180003.4.4" />
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-48" playOrder="48">
+        <navLabel>
+          <text>4 Related Work Summary</text>
+        </navLabel>
+        <content src="dissch4.html#x72-1190004" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-49" playOrder="49">
+      <navLabel>
+        <text>II EXPLORING THE CONTEXT FACTORS</text>
+      </navLabel>
+      <content src="disspa2.html#x73-122000II" />
+      <navPoint id="navPoint-50" playOrder="50">
+        <navLabel>
+          <text>5 Mental Models of Password Strength</text>
+        </navLabel>
+        <content src="dissch5.html#x74-1230005" />
+        <navPoint id="navPoint-51" playOrder="51">
+          <navLabel>
+            <text>5.1 Background and Context</text>
+          </navLabel>
+          <content src="dissch5.html#x74-1250005.1" />
+        </navPoint>
+        <navPoint id="navPoint-52" playOrder="52">
+          <navLabel>
+            <text>5.2 Approach: PASDJO - The Password Game</text>
+          </navLabel>
+          <content src="dissch5.html#x74-1260005.2" />
+          <navPoint id="navPoint-53" playOrder="53">
+            <navLabel>
+              <text>5.2.1 Game Mechanics and Design Elements</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1270005.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-54" playOrder="54">
+            <navLabel>
+              <text>5.2.2 Password Generation and Study
+              Conditions</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1300005.2.2" />
+          </navPoint>
+          <navPoint id="navPoint-55" playOrder="55">
+            <navLabel>
+              <text>5.2.3 Benefits and Shortcomings of the
+              Game-based Approach</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1350005.2.3" />
+          </navPoint>
+          <navPoint id="navPoint-56" playOrder="56">
+            <navLabel>
+              <text>5.2.4 Implementation</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1380005.2.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-57" playOrder="57">
+          <navLabel>
+            <text>5.3 Log Analysis</text>
+          </navLabel>
+          <content src="dissch5.html#x74-1390005.3" />
+          <navPoint id="navPoint-58" playOrder="58">
+            <navLabel>
+              <text>5.3.1 First Sample</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1400005.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-59" playOrder="59">
+            <navLabel>
+              <text>5.3.2 Extended Sample and Results</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1440005.3.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-60" playOrder="60">
+          <navLabel>
+            <text>5.4 Discussion</text>
+          </navLabel>
+          <content src="dissch5.html#x74-1520005.4" />
+          <navPoint id="navPoint-61" playOrder="61">
+            <navLabel>
+              <text>5.4.1 Players’ Overall Performance</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1530005.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-62" playOrder="62">
+            <navLabel>
+              <text>5.4.2 Strength Perception vs. Selection</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1540005.4.2" />
+          </navPoint>
+          <navPoint id="navPoint-63" playOrder="63">
+            <navLabel>
+              <text>5.4.3 Intuition or Deliberation?</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1550005.4.3" />
+          </navPoint>
+          <navPoint id="navPoint-64" playOrder="64">
+            <navLabel>
+              <text>5.4.4 Changing users’ mental models with
+              PASDJO</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1560005.4.4" />
+          </navPoint>
+          <navPoint id="navPoint-65" playOrder="65">
+            <navLabel>
+              <text>5.4.5 Limitations</text>
+            </navLabel>
+            <content src="dissch5.html#x74-1570005.4.5" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-66" playOrder="66">
+          <navLabel>
+            <text>5.5 Summary</text>
+          </navLabel>
+          <content src="dissch5.html#x74-1580005.5" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-67" playOrder="67">
+        <navLabel>
+          <text>6 Password Policies and Reuse</text>
+        </navLabel>
+        <content src="dissch6.html#x83-1610006" />
+        <navPoint id="navPoint-68" playOrder="68">
+          <navLabel>
+            <text>6.1 Background and Context</text>
+          </navLabel>
+          <content src="dissch6.html#x83-1630006.1" />
+        </navPoint>
+        <navPoint id="navPoint-69" playOrder="69">
+          <navLabel>
+            <text>6.2 Method: Reverse-Engineering Password
+            Policies</text>
+          </navLabel>
+          <content src="dissch6.html#x83-1640006.2" />
+        </navPoint>
+        <navPoint id="navPoint-70" playOrder="70">
+          <navLabel>
+            <text>6.3 Results</text>
+          </navLabel>
+          <content src="dissch6.html#x83-1670006.3" />
+          <navPoint id="navPoint-71" playOrder="71">
+            <navLabel>
+              <text>6.3.1 Complexity</text>
+            </navLabel>
+            <content src="dissch6.html#x83-1680006.3.1" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-72" playOrder="72">
+          <navLabel>
+            <text>6.4 Discussion and Implications</text>
+          </navLabel>
+          <content src="dissch6.html#x83-1710006.4" />
+          <navPoint id="navPoint-73" playOrder="73">
+            <navLabel>
+              <text>6.4.1 Policies are Mostly Homogenous</text>
+            </navLabel>
+            <content src="dissch6.html#x83-1720006.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-74" playOrder="74">
+            <navLabel>
+              <text>6.4.2 Policies do not Prevent
+              Password-reuse</text>
+            </navLabel>
+            <content src="dissch6.html#x83-1730006.4.2" />
+          </navPoint>
+          <navPoint id="navPoint-75" playOrder="75">
+            <navLabel>
+              <text>6.4.3 Smarter Password Generation</text>
+            </navLabel>
+            <content src="dissch6.html#x83-1740006.4.3" />
+          </navPoint>
+          <navPoint id="navPoint-76" playOrder="76">
+            <navLabel>
+              <text>6.4.4 Limitations</text>
+            </navLabel>
+            <content src="dissch6.html#x83-1750006.4.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-77" playOrder="77">
+          <navLabel>
+            <text>6.5 Conclusion and Future Work</text>
+          </navLabel>
+          <content src="dissch6.html#x83-1760006.5" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-78" playOrder="78">
+        <navLabel>
+          <text>7 Password Personality</text>
+        </navLabel>
+        <content src="dissch7.html#x88-1780007" />
+        <navPoint id="navPoint-79" playOrder="79">
+          <navLabel>
+            <text>7.1 Background and Related Work</text>
+          </navLabel>
+          <content src="dissch7.html#x88-1800007.1" />
+          <navPoint id="navPoint-80" playOrder="80">
+            <navLabel>
+              <text>7.1.1 Sociodemographic and Cognitive
+              Factors</text>
+            </navLabel>
+            <content src="dissch7.html#x88-1810007.1.1" />
+          </navPoint>
+          <navPoint id="navPoint-81" playOrder="81">
+            <navLabel>
+              <text>7.1.2 Personality Factors in Cyber
+              Security</text>
+            </navLabel>
+            <content src="dissch7.html#x88-1820007.1.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-82" playOrder="82">
+          <navLabel>
+            <text>7.2 Study 1: Policies</text>
+          </navLabel>
+          <content src="dissch7.html#x88-1830007.2" />
+          <navPoint id="navPoint-83" playOrder="83">
+            <navLabel>
+              <text>7.2.1 Method</text>
+            </navLabel>
+            <content src="dissch7.html#x88-1840007.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-84" playOrder="84">
+            <navLabel>
+              <text>7.2.2 Results</text>
+            </navLabel>
+            <content src="dissch7.html#x88-1890007.2.2" />
+          </navPoint>
+          <navPoint id="navPoint-85" playOrder="85">
+            <navLabel>
+              <text>7.2.3 Finding Summary</text>
+            </navLabel>
+            <content src="dissch7.html#x88-1970007.2.3" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-86" playOrder="86">
+          <navLabel>
+            <text>7.3 Study 2: Strength Perceptions</text>
+          </navLabel>
+          <content src="dissch7.html#x88-1980007.3" />
+          <navPoint id="navPoint-87" playOrder="87">
+            <navLabel>
+              <text>7.3.1 Structure</text>
+            </navLabel>
+            <content src="dissch7.html#x88-1990007.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-88" playOrder="88">
+            <navLabel>
+              <text>7.3.2 Quantitative Analysis</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2060007.3.2" />
+          </navPoint>
+          <navPoint id="navPoint-89" playOrder="89">
+            <navLabel>
+              <text>7.3.3 Qualitative Analysis</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2070007.3.3" />
+          </navPoint>
+          <navPoint id="navPoint-90" playOrder="90">
+            <navLabel>
+              <text>7.3.4 Recruitment</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2080007.3.4" />
+          </navPoint>
+          <navPoint id="navPoint-91" playOrder="91">
+            <navLabel>
+              <text>7.3.5 Ethical Considerations</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2090007.3.5" />
+          </navPoint>
+          <navPoint id="navPoint-92" playOrder="92">
+            <navLabel>
+              <text>7.3.6 Limitations</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2100007.3.6" />
+          </navPoint>
+          <navPoint id="navPoint-93" playOrder="93">
+            <navLabel>
+              <text>7.3.7 Results</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2110007.3.7" />
+          </navPoint>
+          <navPoint id="navPoint-94" playOrder="94">
+            <navLabel>
+              <text>7.3.8 Finding Summary</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2220007.3.8" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-95" playOrder="95">
+          <navLabel>
+            <text>7.4 Study 3: Password Selection and Coping</text>
+          </navLabel>
+          <content src="dissch7.html#x88-2230007.4" />
+          <navPoint id="navPoint-96" playOrder="96">
+            <navLabel>
+              <text>7.4.1 Procedure and Tools</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2240007.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-97" playOrder="97">
+            <navLabel>
+              <text>7.4.2 Recruitment and Sample</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2250007.4.2" />
+          </navPoint>
+          <navPoint id="navPoint-98" playOrder="98">
+            <navLabel>
+              <text>7.4.3 Limitations</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2260007.4.3" />
+          </navPoint>
+          <navPoint id="navPoint-99" playOrder="99">
+            <navLabel>
+              <text>7.4.4 Results</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2270007.4.4" />
+          </navPoint>
+          <navPoint id="navPoint-100" playOrder="100">
+            <navLabel>
+              <text>7.4.5 Summary and Interpretation</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2320007.4.5" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-101" playOrder="101">
+          <navLabel>
+            <text>7.5 Discussion and Implications</text>
+          </navLabel>
+          <content src="dissch7.html#x88-2330007.5" />
+          <navPoint id="navPoint-102" playOrder="102">
+            <navLabel>
+              <text>7.5.1 Overarching Themes and User
+              Segments</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2340007.5.1" />
+          </navPoint>
+          <navPoint id="navPoint-103" playOrder="103">
+            <navLabel>
+              <text>7.5.2 Designing Feedback and Suggestions</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2410007.5.2" />
+          </navPoint>
+          <navPoint id="navPoint-104" playOrder="104">
+            <navLabel>
+              <text>7.5.3 Assessing Personality Traits in Password
+              Studies</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2420007.5.3" />
+          </navPoint>
+          <navPoint id="navPoint-105" playOrder="105">
+            <navLabel>
+              <text>7.5.4 Statistical Models</text>
+            </navLabel>
+            <content src="dissch7.html#x88-2430007.5.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-106" playOrder="106">
+          <navLabel>
+            <text>7.6 Conclusion and Future Work</text>
+          </navLabel>
+          <content src="dissch7.html#x88-2440007.6" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-107" playOrder="107">
+        <navLabel>
+          <text>8 Mental Models of Password Managers</text>
+        </navLabel>
+        <content src="dissch8.html#x98-2470008" />
+        <navPoint id="navPoint-108" playOrder="108">
+          <navLabel>
+            <text>8.1 Background and Context</text>
+          </navLabel>
+          <content src="dissch8.html#x98-2490008.1" />
+        </navPoint>
+        <navPoint id="navPoint-109" playOrder="109">
+          <navLabel>
+            <text>8.2 User Interviews</text>
+          </navLabel>
+          <content src="dissch8.html#x98-2510008.2" />
+          <navPoint id="navPoint-110" playOrder="110">
+            <navLabel>
+              <text>8.2.1 Method and Protocol</text>
+            </navLabel>
+            <content src="dissch8.html#x98-2520008.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-111" playOrder="111">
+            <navLabel>
+              <text>8.2.2 Data Analysis and Results</text>
+            </navLabel>
+            <content src="dissch8.html#x98-2550008.2.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-112" playOrder="112">
+          <navLabel>
+            <text>8.3 Mental Model</text>
+          </navLabel>
+          <content src="dissch8.html#x98-2610008.3" />
+        </navPoint>
+        <navPoint id="navPoint-113" playOrder="113">
+          <navLabel>
+            <text>8.4 Opportunities and Challenges</text>
+          </navLabel>
+          <content src="dissch8.html#x98-2650008.4" />
+          <navPoint id="navPoint-114" playOrder="114">
+            <navLabel>
+              <text>8.4.1 Leveraging and improving novices’ mental
+              models</text>
+            </navLabel>
+            <content src="dissch8.html#x98-2660008.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-115" playOrder="115">
+            <navLabel>
+              <text>8.4.2 Increasing Sense of Agency</text>
+            </navLabel>
+            <content src="dissch8.html#x98-2670008.4.2" />
+          </navPoint>
+          <navPoint id="navPoint-116" playOrder="116">
+            <navLabel>
+              <text>8.4.3 Leveraging Context</text>
+            </navLabel>
+            <content src="dissch8.html#x98-2680008.4.3" />
+          </navPoint>
+          <navPoint id="navPoint-117" playOrder="117">
+            <navLabel>
+              <text>8.4.4 Customization and Personalization</text>
+            </navLabel>
+            <content src="dissch8.html#x98-2690008.4.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-118" playOrder="118">
+          <navLabel>
+            <text>8.5 Conclusion</text>
+          </navLabel>
+          <content src="dissch8.html#x98-2700008.5" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-119" playOrder="119">
+      <navLabel>
+        <text>III PERSUASIVE DESIGN STRATEGIES</text>
+      </navLabel>
+      <content src="disspa3.html#x102-272000III" />
+      <navPoint id="navPoint-120" playOrder="120">
+        <navLabel>
+          <text>9 Exploring Needs in Persuasive Feedback</text>
+        </navLabel>
+        <content src="dissch9.html#x103-2730009" />
+        <navPoint id="navPoint-121" playOrder="121">
+          <navLabel>
+            <text>9.1 Background and Context</text>
+          </navLabel>
+          <content src="dissch9.html#x103-2740009.1" />
+        </navPoint>
+        <navPoint id="navPoint-122" playOrder="122">
+          <navLabel>
+            <text>9.2 Explicit and Observable Needs</text>
+          </navLabel>
+          <content src="dissch9.html#x103-2750009.2" />
+          <navPoint id="navPoint-123" playOrder="123">
+            <navLabel>
+              <text>9.2.1 Method</text>
+            </navLabel>
+            <content src="dissch9.html#x103-2760009.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-124" playOrder="124">
+            <navLabel>
+              <text>9.2.2 Overall Results and Central Themes</text>
+            </navLabel>
+            <content src="dissch9.html#x103-2810009.2.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-125" playOrder="125">
+          <navLabel>
+            <text>9.3 Tacit and Latent Needs</text>
+          </navLabel>
+          <content src="dissch9.html#x103-2880009.3" />
+          <navPoint id="navPoint-126" playOrder="126">
+            <navLabel>
+              <text>9.3.1 Method</text>
+            </navLabel>
+            <content src="dissch9.html#x103-2890009.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-127" playOrder="127">
+            <navLabel>
+              <text>9.3.2 Concepts and Prototype</text>
+            </navLabel>
+            <content src="dissch9.html#x103-2930009.3.2" />
+          </navPoint>
+          <navPoint id="navPoint-128" playOrder="128">
+            <navLabel>
+              <text>9.3.3 Process Reflection</text>
+            </navLabel>
+            <content src="dissch9.html#x103-2980009.3.3" />
+          </navPoint>
+          <navPoint id="navPoint-129" playOrder="129">
+            <navLabel>
+              <text>9.3.4 Lessons about Persuasive Password
+              Interventions</text>
+            </navLabel>
+            <content src="dissch9.html#x103-2990009.3.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-130" playOrder="130">
+          <navLabel>
+            <text>9.4 Discussion</text>
+          </navLabel>
+          <content src="dissch9.html#x103-3000009.4" />
+          <navPoint id="navPoint-131" playOrder="131">
+            <navLabel>
+              <text>9.4.1 Requirements</text>
+            </navLabel>
+            <content src="dissch9.html#x103-3010009.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-132" playOrder="132">
+            <navLabel>
+              <text>9.4.2 Relation to Current Frameworks</text>
+            </navLabel>
+            <content src="dissch9.html#x103-3030009.4.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-133" playOrder="133">
+          <navLabel>
+            <text>9.5 Conclusion</text>
+          </navLabel>
+          <content src="dissch9.html#x103-3040009.5" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-134" playOrder="134">
+        <navLabel>
+          <text>10 Password Selection and the Decoy Effect</text>
+        </navLabel>
+        <content src="dissch10.html#x106-30600010" />
+        <navPoint id="navPoint-135" playOrder="135">
+          <navLabel>
+            <text>10.1 Background and Context</text>
+          </navLabel>
+          <content src="dissch10.html#x106-30800010.1" />
+          <navPoint id="navPoint-136" playOrder="136">
+            <navLabel>
+              <text>10.1.1 Suggestions</text>
+            </navLabel>
+            <content src="dissch10.html#x106-30900010.1.1" />
+          </navPoint>
+          <navPoint id="navPoint-137" playOrder="137">
+            <navLabel>
+              <text>10.1.2 The Decoy Effect</text>
+            </navLabel>
+            <content src="dissch10.html#x106-31000010.1.2" />
+          </navPoint>
+          <navPoint id="navPoint-138" playOrder="138">
+            <navLabel>
+              <text>10.1.3 Choice Architecture in Security and
+              Privacy</text>
+            </navLabel>
+            <content src="dissch10.html#x106-31200010.1.3" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-139" playOrder="139">
+          <navLabel>
+            <text>10.2 Designing Password Choice
+            Architecture</text>
+          </navLabel>
+          <content src="dissch10.html#x106-31300010.2" />
+        </navPoint>
+        <navPoint id="navPoint-140" playOrder="140">
+          <navLabel>
+            <text>10.3 Quantitative Evaluation</text>
+          </navLabel>
+          <content src="dissch10.html#x106-31400010.3" />
+          <navPoint id="navPoint-141" playOrder="141">
+            <navLabel>
+              <text>10.3.1 Method</text>
+            </navLabel>
+            <content src="dissch10.html#x106-31500010.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-142" playOrder="142">
+            <navLabel>
+              <text>10.3.2 Results</text>
+            </navLabel>
+            <content src="dissch10.html#x106-31900010.3.2" />
+          </navPoint>
+          <navPoint id="navPoint-143" playOrder="143">
+            <navLabel>
+              <text>10.3.3 Limitations</text>
+            </navLabel>
+            <content src="dissch10.html#x106-32500010.3.3" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-144" playOrder="144">
+          <navLabel>
+            <text>10.4 Discussion</text>
+          </navLabel>
+          <content src="dissch10.html#x106-32600010.4" />
+          <navPoint id="navPoint-145" playOrder="145">
+            <navLabel>
+              <text>10.4.1 The Ineffectiveness of the Decoy
+              Effect</text>
+            </navLabel>
+            <content src="dissch10.html#x106-32700010.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-146" playOrder="146">
+            <navLabel>
+              <text>10.4.2 Framing the Goal Effectively</text>
+            </navLabel>
+            <content src="dissch10.html#x106-32800010.4.2" />
+          </navPoint>
+          <navPoint id="navPoint-147" playOrder="147">
+            <navLabel>
+              <text>10.4.3 Application Areas and Prospective
+              Designs</text>
+            </navLabel>
+            <content src="dissch10.html#x106-32900010.4.3" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-148" playOrder="148">
+          <navLabel>
+            <text>10.5 Conclusion</text>
+          </navLabel>
+          <content src="dissch10.html#x106-33000010.5" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-149" playOrder="149">
+        <navLabel>
+          <text>11 Extending the Password Space with Emojis</text>
+        </navLabel>
+        <content src="dissch11.html#x110-33200011" />
+        <navPoint id="navPoint-150" playOrder="150">
+          <navLabel>
+            <text>11.1 Background and Context</text>
+          </navLabel>
+          <content src="dissch11.html#x110-33400011.1" />
+          <navPoint id="navPoint-151" playOrder="151">
+            <navLabel>
+              <text>11.1.1 Emojis</text>
+            </navLabel>
+            <content src="dissch11.html#x110-33500011.1.1" />
+          </navPoint>
+          <navPoint id="navPoint-152" playOrder="152">
+            <navLabel>
+              <text>11.1.2 Emojis in Authentication</text>
+            </navLabel>
+            <content src="dissch11.html#x110-33600011.1.2" />
+          </navPoint>
+          <navPoint id="navPoint-153" playOrder="153">
+            <navLabel>
+              <text>11.1.3 Research Opportunities</text>
+            </navLabel>
+            <content src="dissch11.html#x110-33700011.1.3" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-154" playOrder="154">
+          <navLabel>
+            <text>11.2 User Study</text>
+          </navLabel>
+          <content src="dissch11.html#x110-33800011.2" />
+          <navPoint id="navPoint-155" playOrder="155">
+            <navLabel>
+              <text>11.2.1 Prototype</text>
+            </navLabel>
+            <content src="dissch11.html#x110-33900011.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-156" playOrder="156">
+            <navLabel>
+              <text>11.2.2 Password Selection in the Lab</text>
+            </navLabel>
+            <content src="dissch11.html#x110-34000011.2.2" />
+          </navPoint>
+          <navPoint id="navPoint-157" playOrder="157">
+            <navLabel>
+              <text>11.2.3 Unmoderated Remote Memorability
+              Study</text>
+            </navLabel>
+            <content src="dissch11.html#x110-34300011.2.3" />
+          </navPoint>
+          <navPoint id="navPoint-158" playOrder="158">
+            <navLabel>
+              <text>11.2.4 Recruiting and Demography</text>
+            </navLabel>
+            <content src="dissch11.html#x110-34700011.2.4" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-159" playOrder="159">
+          <navLabel>
+            <text>11.3 Results</text>
+          </navLabel>
+          <content src="dissch11.html#x110-34800011.3" />
+          <navPoint id="navPoint-160" playOrder="160">
+            <navLabel>
+              <text>11.3.1 Sentiment</text>
+            </navLabel>
+            <content src="dissch11.html#x110-34900011.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-161" playOrder="161">
+            <navLabel>
+              <text>11.3.2 Emoji Selection</text>
+            </navLabel>
+            <content src="dissch11.html#x110-35000011.3.2" />
+          </navPoint>
+          <navPoint id="navPoint-162" playOrder="162">
+            <navLabel>
+              <text>11.3.3 Input Methods</text>
+            </navLabel>
+            <content src="dissch11.html#x110-35300011.3.3" />
+          </navPoint>
+          <navPoint id="navPoint-163" playOrder="163">
+            <navLabel>
+              <text>11.3.4 Memorability and Recognition</text>
+            </navLabel>
+            <content src="dissch11.html#x110-35400011.3.4" />
+          </navPoint>
+          <navPoint id="navPoint-164" playOrder="164">
+            <navLabel>
+              <text>11.3.5 Memorization Techniques</text>
+            </navLabel>
+            <content src="dissch11.html#x110-35700011.3.5" />
+          </navPoint>
+          <navPoint id="navPoint-165" playOrder="165">
+            <navLabel>
+              <text>11.3.6 Interpretation Task</text>
+            </navLabel>
+            <content src="dissch11.html#x110-35800011.3.6" />
+          </navPoint>
+          <navPoint id="navPoint-166" playOrder="166">
+            <navLabel>
+              <text>11.3.7 Limitations</text>
+            </navLabel>
+            <content src="dissch11.html#x110-35900011.3.7" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-167" playOrder="167">
+          <navLabel>
+            <text>11.4 Discussion</text>
+          </navLabel>
+          <content src="dissch11.html#x110-36000011.4" />
+          <navPoint id="navPoint-168" playOrder="168">
+            <navLabel>
+              <text>11.4.1 Selection Strategies and Their
+              Implications</text>
+            </navLabel>
+            <content src="dissch11.html#x110-36100011.4.1" />
+          </navPoint>
+          <navPoint id="navPoint-169" playOrder="169">
+            <navLabel>
+              <text>11.4.2 Factors in Good UX of Emoji
+              Passwords</text>
+            </navLabel>
+            <content src="dissch11.html#x110-36200011.4.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-170" playOrder="170">
+          <navLabel>
+            <text>11.5 Conclusion</text>
+          </navLabel>
+          <content src="dissch11.html#x110-36600011.5" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-171" playOrder="171">
+      <navLabel>
+        <text>IV SYNTHESIS</text>
+      </navLabel>
+      <content src="disspa4.html#x121-369000IV" />
+      <navPoint id="navPoint-172" playOrder="172">
+        <navLabel>
+          <text>12 Persuasive Design for Password Support
+          (P4P)</text>
+        </navLabel>
+        <content src="dissch12.html#x122-37000012" />
+        <navPoint id="navPoint-173" playOrder="173">
+          <navLabel>
+            <text>12.1 Research Lens</text>
+          </navLabel>
+          <content src="dissch12.html#x122-37100012.1" />
+        </navPoint>
+        <navPoint id="navPoint-174" playOrder="174">
+          <navLabel>
+            <text>12.2 Design Lens</text>
+          </navLabel>
+          <content src="dissch12.html#x122-37300012.2" />
+        </navPoint>
+        <navPoint id="navPoint-175" playOrder="175">
+          <navLabel>
+            <text>12.3 A Design Exercise with the P4P
+            Framework</text>
+          </navLabel>
+          <content src="dissch12.html#x122-37700012.3" />
+          <navPoint id="navPoint-176" playOrder="176">
+            <navLabel>
+              <text>12.3.1 Phase 1: Research Lens</text>
+            </navLabel>
+            <content src="dissch12.html#x122-37800012.3.1" />
+          </navPoint>
+          <navPoint id="navPoint-177" playOrder="177">
+            <navLabel>
+              <text>12.3.2 Phase 2: Design Lens</text>
+            </navLabel>
+            <content src="dissch12.html#x122-38200012.3.2" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-178" playOrder="178">
+          <navLabel>
+            <text>12.4 Summary</text>
+          </navLabel>
+          <content src="dissch12.html#x122-39000012.4" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-179" playOrder="179">
+        <navLabel>
+          <text>13 Summary</text>
+        </navLabel>
+        <content src="dissch13.html#x126-39200013" />
+        <navPoint id="navPoint-180" playOrder="180">
+          <navLabel>
+            <text>13.1 Central Contributions and Insights</text>
+          </navLabel>
+          <content src="dissch13.html#x126-39300013.1" />
+        </navPoint>
+        <navPoint id="navPoint-181" playOrder="181">
+          <navLabel>
+            <text>13.2 Limitations</text>
+          </navLabel>
+          <content src="dissch13.html#x126-39900013.2" />
+          <navPoint id="navPoint-182" playOrder="182">
+            <navLabel>
+              <text>13.2.1 Generalizability</text>
+            </navLabel>
+            <content src="dissch13.html#x126-40000013.2.1" />
+          </navPoint>
+          <navPoint id="navPoint-183" playOrder="183">
+            <navLabel>
+              <text>13.2.2 Study Designs and Analysis
+              Methods</text>
+            </navLabel>
+            <content src="dissch13.html#x126-40100013.2.2" />
+          </navPoint>
+          <navPoint id="navPoint-184" playOrder="184">
+            <navLabel>
+              <text>13.2.3 Real-World Measurements</text>
+            </navLabel>
+            <content src="dissch13.html#x126-40200013.2.3" />
+          </navPoint>
+          <navPoint id="navPoint-185" playOrder="185">
+            <navLabel>
+              <text>13.2.4 Ethics and Risks</text>
+            </navLabel>
+            <content src="dissch13.html#x126-40300013.2.4" />
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-186" playOrder="186">
+        <navLabel>
+          <text>14 The End - Ideas and Final Remarks</text>
+        </navLabel>
+        <content src="dissch14.html#x129-40400014" />
+        <navPoint id="navPoint-187" playOrder="187">
+          <navLabel>
+            <text>14.1 Ideas for Future Work</text>
+          </navLabel>
+          <content src="dissch14.html#x129-40500014.1" />
+          <navPoint id="navPoint-188" playOrder="188">
+            <navLabel>
+              <text>14.1.1 Follow-Up Studies</text>
+            </navLabel>
+            <content src="dissch14.html#x129-40600014.1.1" />
+          </navPoint>
+          <navPoint id="navPoint-189" playOrder="189">
+            <navLabel>
+              <text>14.1.2 Personalizing Password Policies</text>
+            </navLabel>
+            <content src="dissch14.html#x129-40700014.1.2" />
+          </navPoint>
+          <navPoint id="navPoint-190" playOrder="190">
+            <navLabel>
+              <text>14.1.3 Contextualizing Password Feedback</text>
+            </navLabel>
+            <content src="dissch14.html#x129-40800014.1.3" />
+          </navPoint>
+          <navPoint id="navPoint-191" playOrder="191">
+            <navLabel>
+              <text>14.1.4 Solving Password Breach Aftermath</text>
+            </navLabel>
+            <content src="dissch14.html#x129-40900014.1.4" />
+          </navPoint>
+          <navPoint id="navPoint-192" playOrder="192">
+            <navLabel>
+              <text>14.1.5 Re-locating Password Feedback</text>
+            </navLabel>
+            <content src="dissch14.html#x129-41000014.1.5" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navPoint-193" playOrder="193">
+          <navLabel>
+            <text>14.2 Final Thoughts</text>
+          </navLabel>
+          <content src="dissch14.html#x129-41100014.2" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint-194" playOrder="194">
+        <navLabel>
+          <text>Bibliography</text>
+        </navLabel>
+        <content src="dissli2.html#Q1-132-538" />
+      </navPoint>
+      <navPoint id="navPoint-195" playOrder="195">
+        <navLabel>
+          <text>Appendix</text>
+        </navLabel>
+        <content src="dissch15.html#x133-41300014.2" />
+      </navPoint>
+      <navPoint id="navPoint-196" playOrder="196">
+        <navLabel>
+          <text>Glossary</text>
+        </navLabel>
+        <content src="dissch15.html#Q1-133-547" />
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

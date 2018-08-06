@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>11 Extending the Password Space with Emojis</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 11</span><br /><a 
+ id="x110-33200011"></a>Extending the Password Space with Emojis</h2>
+<!--l. 7--><p class="noindent" >Our previous efforts to support users focused on suggestions, feedback, and feed-forward to help
+users create stronger passwords. We now continue to explore a different dimension of
+persuasive design that was supposed to make it easier for users to create both strong and
+highly memorable passwords. To that end, we looked at <span 
+class="ptmb8t-x-x-120">emojis </span>as possible solution, since
+we have found positive attitudes towards using them inside passwords (see Chapter
+<a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>). Emojis are <span 
+class="ptmri8t-x-x-120">pictographs </span>used to express emotions or communicate words with
+pictures. The Unicode consortium has made them part of the de-facto digital encoding
+standard<span class="footnote-mark"><a 
+href="diss111.html#fn1x44"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x110-332001f1"></a>,
+which led to widespread adoption very quickly. In 2015, the “face with
+tears of joy” emoji (Xygp) became the Oxford dictionary’s <span 
+class="ptmri8t-x-x-120">word of the</span>
+<span 
+class="ptmri8t-x-x-120">year</span><span class="footnote-mark"><a 
+href="diss112.html#fn2x44"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x110-332002f2"></a>,
+which shows the cultural impact of these colorful symbols. A recent report claims that roughly
+three quarters of Internet users communicate with emojis on a regular basis <span class="cite">[<a 
+href="dissli2.html#XEmogiResearch2016">100</a>]</span>. While
+image-based passwords were proposed decades ago (see Section <a 
+href="dissch2.html#x8-620002.5.1">2.5.1<!--tex4ht:ref: sec:rw:graphical_pws --></a>), the recent success of
+emojis has given graphical authentication new momentum.
+</p><!--l. 9--><p class="noindent" >Emojis are an opportunity to increase security, because they can add more complexity to
+passwords. Adding an emoji to a weak password like <span 
+class="ectt-1200">iloveyou </span>could already make it less
+predictable, e.g. <span 
+class="ectt-1200">iloveyouXygp</span>. We have also seen that users’ mental models are built
+around complexity, and not necessarily around length. Thus, an emoji-password like
+<span 
+class="ectt-1200">Corr3ctXygpXygpXygp </span>might be perceived as more secure than the original passphrase. Past
+studies have also shown that graphical authentication can benefit from the <span 
+class="ptmri8t-x-x-120">picture superiority effect</span>.
+Hence, using emojis inside passwords might have usability advantages, and we also see them as an
+<span 
+class="ptmb8t-x-x-120">enabling technology </span>that empowers users to pick more creative and memorable secrets, i.e., a
+persuasive design strategy. At the same time, existing authentication back-ends do not require
+significant changes to make emoji-passwords work. Since emojis are encoded as regular characters,
+                                                                                    
+
+                                                                                    
+the only potential change is to use a different version of UTF. Theoretically, 90% of
+web-pages are compatible with emojis in password fields already now (see Footnote <a 
+href="#x110-332001f1">1<!--tex4ht:ref: foot:emoji-standard --></a>).
+Consequently, some service providers have started to allow emojis as part of user-chosen
+passwords also on the back-end. Twitter, Slack and StackOverflow are among these
+pioneers.
+</p><!--l. 11--><p class="noindent" >However, the adoption comes with certain risks. Emojis are primarily used on mobile devices
+<span class="cite">[<a 
+href="dissli2.html#XEmogiResearch2016">100</a>]</span>. Hence, adding emojis to passwords on a smartphone is easy, but there might be
+problems when the user tries to enter their emoji-password on a desktop: Typical input
+solutions possible with <span 
+class="ptmri8t-x-x-120">software </span>keyboards get left out on the desktop. Some applications
+have enabled indirect emoji input through the mouse in a graphical user interface, so
+it is not impossible to enter an emoji-password across different platforms. On the
+other hand, the specific images used to render emojis are platform-dependent: a bird
+emoji on a native iOS soft-keyboard looks different on Android (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). This
+<span 
+class="ptmri8t-x-x-120">fragmentation</span><span class="footnote-mark"><a 
+href="diss113.html#fn3x44"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x110-332003f3"></a>
+introduces new issues not typically found with other graphical authentication schemes,
+where there is more control over the images. Thus, we wanted to understand the usability
+factors and constraints of emoji-passwords to gauge the feasibility of this authentication
+mechanism.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-332004r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 17--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.1:  </span><span  
+class="content">  Although  the  “bird”  emoji  is  encoded  with  the  same  unicode  character
+(U+1F426), its visual representation differs strongly across platforms and vendors. This has
+specific ramifications on the use of emojis inside passwords, which we address in this project.
+</span></div><!--tex4ht:label?: x110-332004r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 25--><p class="noindent" >In this chapter we explore pragmatic and hedonic qualities of emoji-passwords. We aim to answer
+the following research questions: </p>
+      <ul class="itemize1">
+      <li class="itemize">Do emojis in passwords help users create more <span 
+class="ptmb8t-x-x-120">memorable </span>passwords?
+      </li>
+      <li class="itemize">How do platform-dependent renderings (<span 
+class="ptmb8t-x-x-120">fragmentation</span>) affect memorability?
+      </li>
+      <li class="itemize">What is the most feasible <span 
+class="ptmb8t-x-x-120">user interface </span>to enter emoji-passwords?
+      </li>
+      <li class="itemize">What are users’ password <span 
+class="ptmb8t-x-x-120">selection strategies </span>and behaviors?
+      </li>
+      <li class="itemize">What are users’ general <span 
+class="ptmb8t-x-x-120">attitudes </span>towards using emojis inside passwords?</li></ul>
+<!--l. 34--><p class="noindent" >This chapter reports on a mixed-method experiment carried out to investigate the usability of
+alphanumeric passwords that contain emojis. In the following, we put the design space for
+emoji-passwords into context, describe an empirical research study, and derive implications on the
+effective use of emoji-passwords.
+</p>
+<div class="fbox">  <h4 class="likesubsectionHead"><a 
+ id="x110-33300011"></a>Publication Statement</h4>
+  <!--l. 48--><p class="noindent" >Beside myself, Florian Mathis and Heinrich Hussmann made contributions to the
+  project. The results of the study were published at OzCHI 2017 <span class="cite">[<a 
+href="dissli2.html#XSeitz2017Emojipasswords">290</a>]</span>. The chapter
+  elaborates on the results of that paper and provides significant additional analyses:
+  </p>
+    <ul class="itemize1">
+    <li class="itemize">We  show  a  detailed  quantitative  breakdown  of  selection  strategies,  in  particular
+    regarding the position of the emojis and relations to the passwords.
+    </li>
+    <li class="itemize">We  take  a  deep-dive  into  successful  and  unsuccessful  authentication  events  in  the
+    second part of the study.
+    </li>
+    <li class="itemize">We provide new thoughts on the ramifications of using emojis inside alphanumeric
+    passwords.</li></ul>                                                                      </div>
+                                                                                    
+
+                                                                                    
+<!--l. 51--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">11.1    </span> <a 
+ id="x110-33400011.1"></a>Background and Context</h3>
+<!--l. 52--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.1.1    </span> <a 
+ id="x110-33500011.1.1"></a>Emojis</h4>
+<!--l. 54--><p class="noindent" >Literally translated from Japanese, emojis<span class="footnote-mark"><a 
+href="diss114.html#fn4x44"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x110-335001f4"></a>
+are “picture words” <span class="cite">[<a 
+href="dissli2.html#XTaggart2015NewWords">325</a>]</span>. They are primarily used in mobile messaging applications like
+WhatsApp, iMessage, and alike, to express emotions and add subtext in messages. Before emojis
+arrived, this has been possible with <span 
+class="ptmri8t-x-x-120">emoticons</span>, i.e. combinations of regular characters that convey
+emotions like <span 
+class="ectt-1200">:-)&#x003C;3 </span>and <span 
+class="ectt-1200">:-O</span>. However, emojis are visually richer and much more versatile. The
+current version of the Unicode standard lists around 2800 emojis (see Footnote <a 
+href="#x110-339005f7">7<!--tex4ht:ref: foot:full-list-of-emojis --></a>) categorized by
+topics, and roughly 150 are added each year. In 2015, emojis saw a stark increase in usage
+numbers. Both iOS and Android added special software keyboards that allowed users
+to easily enter emojis through direct touch input. Often, users replace entire words or
+blocks of text with emojis. Although emojis are useful to overcome language barriers,
+their meaning is not always clear <span class="cite">[<a 
+href="dissli2.html#XMiller2015BlissfullyHappyEmoji">234</a>, <a 
+href="dissli2.html#XTigwell2016EmojiMisunderstandings">335</a>]</span>. Researchers have started to investigate
+misinterpretation in many ways, and have proposed solutions like a “disambiguation API”
+<span class="cite">[<a 
+href="dissli2.html#XWijeratne2010">375</a>]</span>.
+</p><!--l. 58--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.1.2    </span> <a 
+ id="x110-33600011.1.2"></a>Emojis in Authentication</h4>
+<!--l. 60--><p class="noindent" >The growing adoption rates of emojis in various application areas has not gone
+unnoticed by the <a 
+href="dissli3.html#glo:USEC">USEC</a> community, who started trying to improve authentication
+schemes with emojis. One of the first solutions was presented by Intelligent
+                                                                                    
+
+                                                                                    
+Environments<span class="footnote-mark"><a 
+href="diss115.html#fn5x44"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x110-336001f5"></a>.
+Their <span 
+class="ptmri8t-x-x-120">emoji-passcode </span>system would allow customers to select four emojis from a 9x5 grid to log
+into mobile banking apps. However, the concept has not been widely adopted. Golla et al.,
+respectively Kraus et al., proposed a similar system that was targeted at screen-locks for mobiles
+<span class="cite">[<a 
+href="dissli2.html#XGolla2017EmojiAuth">136</a>, <a 
+href="dissli2.html#XKraus2017Emoji">203</a>]</span>. In essence, their EmojiAuth system replaces each digit on a PIN-pad with an emoji. In
+two user studies, they evaluated the concept and showed that both security and usability of unlock
+mechanisms can be improved this way. On the other hand, we were able to find only one
+publication about using emojis as part of an alphanumeric password <span class="cite">[<a 
+href="dissli2.html#XAlHusainy2015EmojiPasswords">9</a>]</span>. Al-Husainy
+and Mali focused on user-account passwords on desktop computers but did not present
+an empirical evaluation of the concept. We believe web pages and mobile applications
+are the primary use case for emoji-based authentication. This application area is still
+underexplored.
+</p><!--l. 62--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.1.3    </span> <a 
+ id="x110-33700011.1.3"></a>Research Opportunities</h4>
+<!--l. 63--><p class="noindent" >The combination of emojis and alphanumeric characters generates a wide range of research
+questions, and we can only answer a small subset of them. In particular, we explore password
+selection strategies that may hint at potentially risky behavior. It is likely that emoji-passwords
+share some traits of alphanumeric passwords. For instance, the topology of a password is an
+important metric to gauge its guessability. Therefore, we would expect to observe some topologies
+reported by Weir et al. <span class="cite">[<a 
+href="dissli2.html#XWeir2010MetricsPolicies">365</a>]</span>, Ur et al. <span class="cite">[<a 
+href="dissli2.html#XUr2015PWCreationLab">345</a>]</span>, and Kuo et al. <span class="cite">[<a 
+href="dissli2.html#XKuo2006HumanSelectionMnemonic">206</a>]</span>. The latter indicated
+that some users had already used emoticons inside passwords in 2005. Although we
+cannot realistically measure guessability of emoji-passwords at this time, we can explore
+emerging patterns. For instance, we can elicit where users put their emoji and how they
+choose it. Emoji-passwords are a hybrid between knowledge- and recognition-based
+authentication, so they demand effort from both the lexical and visual memory <span class="cite">[<a 
+href="dissli2.html#XRenaud2009VisualSnakeOil">265</a>]</span>. Therefore,
+this approach could turn out to be either a memorability advantage or disadvantage.
+Since the answer to this question is very open, we refrain from generating hypotheses
+altogether.
+                                                                                    
+
+                                                                                    
+</p><!--l. 73--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">11.2    </span> <a 
+ id="x110-33800011.2"></a>User Study</h3>
+<!--l. 75--><p class="noindent" >The goal of our project was to understand the human factors and usability constraints
+of emoji-passwords, which can be used to evaluate the idea of empowering users as
+persuasive strategy. To achieve this goal, we created a prototype that allowed entering
+emojis inside password-fields and evaluated it with a mixed-methods user study to cover a
+large spectrum of opportunities and caveats. The first part took place in a controlled lab
+environment, while the second was carried out remotely without moderation. To explore
+different dimensions of usability and to follow common practice, password selection and
+recall were spread out across different days. In the following we describe the prototype,
+the procedure of the two methods, the corresponding variables, and the sample of our
+study.
+</p><!--l. 78--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.2.1    </span> <a 
+ id="x110-33900011.2.1"></a>Prototype</h4>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-339003r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 81--><p class="noindent" ></p><!--l. 82--><p class="noindent" > <a 
+ id="x110-339001r1"></a>
+<span 
+class="ptmr8t-x-x-109">Two-step     point-and-click     interface     in</span>
+<span 
+class="ptmr8t-x-x-109">WhatsApp.</span>
+ </p><!--l. 87--><p class="noindent" > <a 
+ id="x110-339002r2"></a>
+  <span 
+class="ptmr8t-x-x-109">Telegram  shows  the  picker  after  the  user</span>
+ <span 
+class="ptmr8t-x-x-109">hovers the emoji button. Moreover, recently</span>
+ <span 
+class="ptmr8t-x-x-109">used emojis are shown beneath the text-field.</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.3:  </span><span  
+class="content">  Examples  for  point-and-click  interfaces  (“emoji  picker”).  <span 
+class="ptmri8t-x-x-120">Progressive</span>
+<span 
+class="ptmri8t-x-x-120">disclosure </span>is used to access the list of available emojis: The user first needs to interact with
+a control element (emoji button) or start typing a special character (mostly “:”), before an
+emoji can be selected by clicking or auto-completion of the shortcode. The emoji is then
+inserted into the text field. </span></div><!--tex4ht:label?: x110-339003r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 98--><p class="noindent" >The project focused on using emoji-passwords on web sites, therefore we built a web-based
+prototype with standard technologies (PHP, HTML5, JavaScript). We identified two solutions to
+enter emojis on a desktop computer: via a point-and-click interface, and “shortcodes”. Most
+web-versions of messenger applications, e.g. WhatsApp Web, Telegram Web, Hangouts, etc., use
+the point-and-click approach (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). A few communication tools also allow entering a
+predefined word that is then translated into an emoji. This <span 
+class="ptmri8t-x-x-120">shortcode </span>often needs to be put into
+braces, e.g. (smile) on Skype, or stand between two colons, e.g. :smile: on Slack (see Figure
+<span 
+class="ptmb8t-x-x-120">??</span>). We implemented a prototype based on point-and-click selection and Slack-style
+shortcodes. However, shortcodes were not auto-completed, which is generally discouraged
+for passwords <span class="cite">[<a 
+href="dissli2.html#XMelicher2016UsabilityMobileTextPasswords">232</a>]</span> and there was no “recent emoji” feature. After clicking an emoji,
+the prototype did not use the unicode character inside the password field for technical
+reasons<span class="footnote-mark"><a 
+href="diss116.html#fn6x44"><sup class="textsuperscript">6</sup></a></span><a 
+ id="x110-339004f6"></a>.
+Instead, the shortcode was automatically inserted and masked. To allow checking the entered
+password, it was displayed in plain text beneath the input fields (see Figure <a 
+href="#x110-342002r2">11.6b<!--tex4ht:ref: fig:emojipasswords:policy-memo-instruction --></a>).
+</p><!--l. 103--><p class="noindent" >While Unicode v11.0 contained 2789 emojis<span class="footnote-mark"><a 
+href="diss117.html#fn7x44"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x110-339005f7"></a>,
+we reduced the number of available emojis to 50 for several reasons. First, we found through
+iterative testing that there was a selection bias, if the full range of emojis was offered; testers mostly
+included emojis from the first page. Second, Golla et al. used a similar approach for their
+EmojiAuth system <span class="cite">[<a 
+href="dissli2.html#XGolla2017EmojiAuth">136</a>, <a 
+href="dissli2.html#XKraus2017Emoji">203</a>]</span>. Last, reducing the number very likely facilitates recognition and
+potentially increases the memorability of the emoji-password.
+</p><!--l. 107--><p class="noindent" >The 50 emojis were selected with particular features in mind. To evaluate issues arising from similarity,
+around a third of emojis should mutually resemble each other. Fragmentation issues during
+authentication can only be seen for emojis whose appearance strongly differs on other platforms.
+Moreover, the emojis should appeal to users, e.g. because they are familiar with them. To achieve
+this, different emoji-categories should be considered. We identified 50 suitable candidates from the
+                                                                                    
+
+                                                                                    
+most-used<span class="footnote-mark"><a 
+href="diss118.html#fn8x44"><sup class="textsuperscript">8</sup></a></span><a 
+ id="x110-339006f8"></a>
+emojis on Twitter from multiple categories: <span 
+class="ptmri8t-x-x-120">smileys &#x0026; people </span>(14), <span 
+class="ptmri8t-x-x-120">animals &#x0026; nature </span>(7), <span 
+class="ptmri8t-x-x-120">food</span>
+<span 
+class="ptmri8t-x-x-120">and drink </span>(6), <span 
+class="ptmri8t-x-x-120">activities </span>(5), <span 
+class="ptmri8t-x-x-120">objects </span>(6), and <span 
+class="ptmri8t-x-x-120">symbols (7)</span>. We opted to include more
+smileys, because this roughly 50% of Unicode emoji characters fall into this category. Our
+emoji-picker randomly arranged the emojis in a 10x5 grid to isolate selection-by-position
+effects.
+</p><!--l. 110--><p class="noindent" >The prototype allowed to switch between two versions of emojis. The default version was based on
+the emojis from iOS 9.3 (see Figure <a 
+href="#x110-342001r1">11.6a<!--tex4ht:ref: fig:emojipasswords:ui-open-picker --></a>). This default was chosen, because WhatsApp used the
+same emoji-style across all platforms at the time of the study. Thus, we could expect
+participants to be familiar with them. The second style was based on Android 7.0 (“blob
+emojis”<span class="footnote-mark"><a 
+href="diss119.html#fn9x44"><sup class="textsuperscript">9</sup></a></span><a 
+ id="x110-339007f9"></a>).
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-339010r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 114--><p class="noindent" ></p><!--l. 115--><p class="noindent" > <a 
+ id="x110-339008r1"></a>
+ <span 
+class="ptmr8t-x-x-109">The picker shows the short-code of the emoji for</span>
+<span 
+class="ptmr8t-x-x-109">future use.</span>
+</p><!--l. 119--><p class="noindent" > <a 
+ id="x110-339009r2"></a>
+ <span 
+class="ptmr8t-x-x-109">The user can guess the shortcode. Slack offers</span>
+<span 
+class="ptmr8t-x-x-109">matching emojis.</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.5: </span><span  
+class="content"> Slack allows the user to utilize both a point-and-click interface and shortcodes
+to enter emoijs. </span></div><!--tex4ht:label?: x110-339010r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">11.2.2    </span> <a 
+ id="x110-34000011.2.2"></a>Password Selection in the Lab</h4>
+<!--l. 129--><p class="noindent" >For the first part, participants were invited to a lab at the media informatics research group. The
+primary task was to create a password that participants could remember well. There was no
+independent variable for the password selection task, thus participants all received the same study
+instructions.
+</p><!--l. 131--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-34100011.2.2"></a>Metrics</h5>
+<!--l. 133--><p class="noindent" >We logged the chosen emojis and their positions inside the passwords. Moreover, we analyzed
+password characteristics with zxcvbn and stored this to the database along with the hashed
+password. As an indicator for usability of either the picker or the shortcodes, we measured the time
+taken to select the password. Here, we used the “focus” and “blur” events as start and end
+points.
+</p><!--l. 138--><p class="noindent" >On the qualitative side, we used ordinal five-point scales to collect attitudinal data about using
+emojis inside passwords, the picker, and shortcodes. Demographic data and self-reported password
+behavior helped us put measurements into context. Everything that participants said during the
+study was protocolled.
+</p><!--l. 142--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-34200011.2.2"></a>Procedure</h5>
+<!--l. 145--><p class="noindent" >After an in-depth briefing on the purpose of the study and data collection practices, an experimenter
+explained each step of the study. We provided a standard desktop PC to complete the tasks, which
+were mostly self-guided. First, participants created a user ID. Since they were going to need this ID
+later on to allow us matching the lab and field data, we provided a simple algorithm to create an
+ID. Participants were asked to take the first letter of both their parents’ first names and
+their own birth place, appended by the digit of their birth month (e.g. “IKP10”). This
+algorithm, albeit not perfectly random, was sufficient to protect <a 
+href="dissli3.html#glo:PII">personally identifiable
+information</a>.
+</p><!--l. 149--><p class="noindent" >This was followed by a questionnaire on demographic data, password coping strategies and
+attitudes towards emojis in passwords, e.g. “<span 
+class="ptmri8t-x-x-120">how likely would you consider using emojis in a</span>
+                                                                                    
+
+                                                                                    
+<span 
+class="ptmri8t-x-x-120">password?</span>” At this point of the study, participants had not yet created an emoji-password, so their
+attitudes were not biased by the tasks that followed. We also briefed them about the difference
+between “emojis” and “emoticons” to avoid misinterpretation.
+</p><!--l. 155--><p class="noindent" >Afterwards, participants completed the password selection task using the prototype. A significant
+part of the screen was dedicated to list all emojis and their short codes. To provide sufficient
+background information and introduce a realistic risk <span class="cite">[<a 
+href="dissli2.html#XKrol2016ExperimentDesign">205</a>]</span>, the task included a scenario. It asked
+participants to imagine that they had used WhatsApp for some time and now a new security
+precaution is introduced. As a safety measure, they were now required to prove their identity with a
+password upon activating WhatsApp on a new device. The password needed to consist
+of at least eight alphanumeric characters and at least one emoji. Participants then had
+to repeat the selected password, and tick a box to confirm that they had memorized it
+(see Figure <a 
+href="#x110-342002r2">11.6b<!--tex4ht:ref: fig:emojipasswords:policy-memo-instruction --></a>). This was followed-up through a reflective self-assessment of their
+behavior during the study (cf. <span class="cite">[<a 
+href="dissli2.html#XFahl2013EcologicalValidityPasswordStudy">103</a>]</span>), and a structured questionnaire on their selection
+strategies.
+</p><!--l. 162--><p class="noindent" >The study concluded with an interpretation task of two given emojis, namely the “information desk
+person” (Xygp) and “folded hands” (Xygp). Those were not available during password selection,
+and we intended to assess their suitability for future inclusion. In total, the whole session duration
+was below 15 minutes.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-342003r7"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 166--><p class="noindent" ></p><!--l. 167--><p class="noindent" > <a 
+ id="x110-342001r1"></a>
+ <span 
+class="ptmr8t-x-x-109">Point  and  click  interface.  It  is  opened  by</span>
+<span 
+class="ptmr8t-x-x-109">clicking  on  the  Xygp  button.  The  order  of</span>
+<span 
+class="ptmr8t-x-x-109">emojis  is  randomized.  Upon  selecting  an</span>
+<span 
+class="ptmr8t-x-x-109">emoji, it automatically closes.</span>
+  </p><!--l. 172--><p class="noindent" > <a 
+ id="x110-342002r2"></a>
+          <span 
+class="ptmr8t-x-x-109">Screenshot                of                the</span>
+  <span 
+class="ptmr8t-x-x-109">user study. The selected password needed to</span>
+  <span 
+class="ptmr8t-x-x-109">be re-created. Additionally, participants need</span>
+  <span 
+class="ptmr8t-x-x-109">to tick a check-box to confirm that they had</span>
+  <span 
+class="ptmr8t-x-x-109">memorized their password.</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.7: </span><span  
+class="content"> Prototype as used in the study.</span></div><!--tex4ht:label?: x110-342003r7 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">11.2.3    </span> <a 
+ id="x110-34300011.2.3"></a>Unmoderated Remote Memorability Study</h4>
+<!--l. 181--><p class="noindent" >Exactly one week after completing the first study part in the lab, participants were invited to return
+for the second round of tasks on-line. It primarily focused on memorability metrics and a
+reassessment of attitudes.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-34400011.2.3"></a>Independent Variable</h5>
+<!--l. 184--><p class="noindent" >To gauge the influence of emoji fragmentation, we used one independent variable <span 
+class="ptmri8t-x-x-120">“rendering” </span>with
+two levels. For the <span 
+class="ptmri8t-x-x-120">control </span>group, emojis in the picker were rendered as before. In the experimental
+group, we replaced the iOS emojis with the Android 7.0 version. No other variations were
+made.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-34500011.2.3"></a>Dependent Variables</h5>
+<!--l. 187--><p class="noindent" >We measured the number of attempts participants needed to log in. If they failed to log in on the
+first try, we counted this as an error. Moreover, we collected memorization and recall techniques.
+Finally, subjective usability ratings on the overall concept and qualitative feedback were gathered.
+This part of the study took about five minutes.
+</p><!--l. 191--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-34600011.2.3"></a>Procedure</h5>
+<!--l. 193--><p class="noindent" >Participants were randomly assigned to one of the two experimental groups. We emailed the
+corresponding link to the online study and requested completion within two days. The web page
+instructed them to recreate their user ID, providing the same algorithm as in the first part.
+Afterwards, participants were asked to log-in via their previously selected password. After three
+unsuccessful attempts, the log-in counted as failed and the study proceeded automatically.
+However, as a memory support tool, we displayed the list of short codes after the first failed
+attempts. The study concluded with an attitudinal questionnaire about the perceived usability of the
+concept.
+                                                                                    
+
+                                                                                    
+</p><!--l. 197--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.2.4    </span> <a 
+ id="x110-34700011.2.4"></a>Recruiting and Demography</h4>
+<!--l. 198--><p class="noindent" >We spread a registration link for a “study on emojis” via social networks and an official university
+newsletter. A 5<span 
+class="ptmr8c-x-x-120">€ </span>shopping voucher served as incentive. The study was announced to take around
+15 minutes. 40 people were screened in and all showed up to their study appointment. All of them
+were students at the LMU, and aged between 19 and 44 (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 23</span>). Users in this age rage are most
+likely to use emojis on a regular basis <span class="cite">[<a 
+href="dissli2.html#XEmogiResearch2016">100</a>]</span>. 39 participants returned for the second study part
+on-line. The control group was formed by 20 participants, and the experimental group by
+19.
+</p>
+<h3 class="sectionHead"><span class="titlemark">11.3    </span> <a 
+ id="x110-34800011.3"></a>Results</h3>
+<!--l. 202--><p class="noindent" >In the following, we explain participants’ sentiment regarding the usage of emoji-passwords before
+we report empirical observations and qualitative analyses.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.3.1    </span> <a 
+ id="x110-34900011.3.1"></a>Sentiment</h4>
+<!--l. 204--><p class="noindent" >Sentiments were assessed with agreement levels to five-point scale items (1 = strongly disagree, 5 =
+strongly agree). Before participants selected an emoji-password for the first time, they were
+already reserved towards the statement “I would consider adding an emoji to a password”
+(<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">7</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">4</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 2</span>). They did not regard emojis as a way to make passwords more
+memorable, either (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">8</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">3</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 3</span>). After completing the first part, the statement “I
+liked adding an emoji to my password” was rated slightly more positively with an average of 3.6
+(<span 
+class="zptmcm7m-x-x-120">SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">19</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 4</span>). Having fulfilled all tasks, participants saw general benefits to add emojis in
+passwords (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 3</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">2</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 4</span>). Eleven found the enforced emoji-policy annoying. Hence,
+attitudes towards using emojis for their personal passwords in the future were rather negative
+(<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">6</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">3</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 2</span>), although they were slightly more positive about potential
+memorability benefits than before (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 3</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">3</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 3</span>). In summary, participants
+were reserved towards adopting emoji-passwords, but their sentiment covered the full
+spectrum.
+</p><!--l. 212--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h4 class="subsectionHead"><span class="titlemark">11.3.2    </span> <a 
+ id="x110-35000011.3.2"></a>Emoji Selection</h4>
+<!--l. 216--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-35100011.3.2"></a>Statistics</h5>
+<!--l. 217--><p class="noindent" >Our 40 participants chose a total of 22 different emojis. Most commonly, participants chose the
+camel (:camel: Xygp, n=5), penguin (:penguin: Xygp, n=5), grinning face (:grin: Xygp, n=3), tea
+(:tea: Xygp, n=3), dog (:dog: Xygp, n=3), diamond (:diamond_shape_with_a_dot_inside: Xygp,
+n=3), and cherry blossom (:cherry_blossom: Xygp, n=3). The remaining 15 emojis were
+chosen less than three times each. Six participants added two emojis to their password
+though this was not required. On average, password fields had focus for 52.9 seconds
+(<span 
+class="zptmcm7m-x-x-120">SD </span><span 
+class="zptmcm7t-x-x-120">= 55</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">00</span>).
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-351001r8"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 221--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.8: </span><span  
+class="content"> Histogram of the chosen emojis and their categories. Patterns emerge already
+in our sample with 40 participants, which hints at potential security problems.</span></div><!--tex4ht:label?: x110-351001r8 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 226--><p class="noindent" >Before passwords were hashed, we determined the position of the emojis. The majority of
+participants who only selected one emoji put it at the end (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 19</span>), while seven started with it and
+eight put it somewhere in the middle. Adding the emoji there is the most cumbersome approach due
+to the double modality switch between mouse and keyboard if the picker is used. The six
+participants who picked two emojis either put both at the start (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 1</span>), as the first and last
+characters (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 2</span>), only in the middle as two consecutive characters (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 1</span>), or as middle and
+last character (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 2</span>). Figure <span 
+class="ptmb8t-x-x-120">??</span> shows a detailed breakdown of the chosen positions.
+</p><hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-351002r9"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 229--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.9: </span><span  
+class="content"> Histogram of absolute positions of emojis inside passwords. The prefix (1:, 2:)
+denotes the total number of emojis in the corresponding password. Most participants either
+started or finished their password with the emoji.</span></div><!--tex4ht:label?: x110-351002r9 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h5 class="subsubsectionHead"><a 
+ id="x110-35200011.3.2"></a>Self-Reported Selection Strategies</h5>
+<!--l. 235--><p class="noindent" >Apart from the emoji, our participants mostly claimed to have created a password like they
+normally would (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 3</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">4</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">45</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 4</span>). We elicited selection strategies in two ways: a list
+of probable strategies that we identified in pre-tests, and an open question where participants were
+asked to describe their method in detail. Half of the participants indicated that they used an emoji
+that fits the alphanumeric part of the password. Four said that they preferred an emoji that they
+frequently use, while another four chose an emoji at random. The remaining participants either
+associated the picture to a life event (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 3</span>) or hobby (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 1</span>). Eight participants elaborated on
+their tactics in high detail, and their strategies were more individual than the predefined
+categories.
+</p><!--l. 239--><p class="noindent" >Through collaborative thematic analysis, a method similar to affinity diagramming, we identified
+themes in all qualitative statements and the think-aloud protocol. After the first round of coding,
+there were 42 codes that were further reduced in an axial coding step. The resulting overall themes
+were: </p>
+  <ul class="itemize1">
+  <li class="itemize"><span 
+class="ptmb8t-x-x-120">Internal  consistency:  </span>The  emoji  semantically  matches  the  alphanumeric  part  of  the
+  password, e.g. putting a camel emoji Xygp after the Greek word for “heat” (P26).
+  </li>
+  <li class="itemize"><span 
+class="ptmb8t-x-x-120">Context  cues:  </span>The  password  contains  a  hint  to  the  participant’s  location  or  to  its
+  purpose. For instance, participants used the computer emoji Xygp because they created
+  the password on a PC (P34). Another participant picked the check mark Xygp because it
+  stands for <span 
+class="ptmri8t-x-x-120">completing </span>the study (P38).
+  </li>
+  <li class="itemize"><span 
+class="ptmb8t-x-x-120">Replacement:  </span>The  emoji  replaces  either  a  letter  or  an  entire  word.  For  instance,  P17
+  replaced the letter “p” in their password with a penguin Xygp because both <span 
+class="ptmri8t-x-x-120">words </span>begin
+  with the same letter.
+  </li>
+  <li class="itemize"><span 
+class="ptmb8t-x-x-120">Appeal: </span>The emoji visually or emotionally appealed to the participants (mentioned twice
+  for the flower emoji Xygp)
+  </li>
+  <li class="itemize"><span 
+class="ptmb8t-x-x-120">Liking: </span>Participants had an affection or personal connection to the emoji, e.g. penguins
+  Xygp.
+  </li>
+  <li class="itemize"><span 
+class="ptmb8t-x-x-120">Usability  and  Security:  </span>An  emoji  that  serves  to  increase  usability  or  security  of  the
+                                                                                    
+
+                                                                                    
+  password. Usability could be improved either with a particularly easy-to-type shortcode
+  (:grin:),  or  by  choosing  emojis  that  “stand  out  from  the  rest,  because  they  look  too
+  similar” (P32, chose the penguin). Security was achieved through perceived randomness
+  or unpredictability (mentioned twice for the diamond Xygp).</li></ul>
+<!--l. 249--><p class="noindent" >Within those six themes, we can see a common story line: The selection strategies can be read as an
+attempt to <span 
+class="ptmb8t-x-x-120">improve memorability </span>of the password. Most participants intuitively focused on
+creating a password that they could easily recall. None of them mentioned the option to write down
+the emoji-password or store it externally. The selected emojis thus matched individual
+memorization approaches.
+</p><!--l. 251--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.3.3    </span> <a 
+ id="x110-35300011.3.3"></a>Input Methods</h4>
+<!--l. 254--><p class="noindent" >The majority (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 32</span>) intuitively turned to the point-and-click interface to enter their emoji.
+Five participants used the short-codes and three tried both modalities. Both the picker
+and the short codes received positive usability ratings from the respective participants
+(<span 
+class="zptmcm7m-x-x-120">M</span><span 
+class="zptmcm7m-x-x-90">picker</span><span 
+class="zptmcm7t-x-x-120">) = 3</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">8</span><span 
+class="zptmcm7m-x-x-120">,SD</span><span 
+class="zptmcm7m-x-x-90">picker</span> <span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">,M</span><span 
+class="zptmcm7m-x-x-90">short</span> <span 
+class="zptmcm7t-x-x-120">= 4</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">2</span><span 
+class="zptmcm7m-x-x-120">,SD</span><span 
+class="zptmcm7m-x-x-90">short</span> <span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">3</span>), Thus, it was easy for participants to
+enter emojis on a desktop computer in both modalities. Interestingly, the three participants who
+tried both methods started with the picker and then continued to use the short codes, because they
+found it more convenient.
+</p><!--l. 258--><p class="noindent" >Through a qualitative analysis of the think aloud protocol we found that participants considered the
+advantages and disadvantages of both input methods. The picker was perceived as easy and fast to
+use, while being less prone to typing errors. Often, participants mentioned that they were already
+familiar with this entry method (e.g. from WhatsApp web), so they did not have to learn anything
+new. On the other hand, they described the progressive disclosure paradigm as potential
+problem, because the button that triggers the picker could be overlooked. Also, some
+mentioned that it is cumbersome to switch between mouse and keyboard. Those who
+used the shortcodes appreciated the speed of entry and low effort to add the emoji to the
+password. However, learning and memorizing the corresponding codes were seen as the main
+drawbacks. The sentiments did not significantly change in the second part of the study
+(<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 3</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">2</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 4</span>, overall happiness ratings). In summary, we can conclude that
+participants made a deliberate choice about the chosen input method and they were happy with
+it.
+</p><!--l. 260--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h4 class="subsectionHead"><span class="titlemark">11.3.4    </span> <a 
+ id="x110-35400011.3.4"></a>Memorability and Recognition</h4>
+<!--l. 264--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x110-35500011.3.4"></a>Success Rates</h5>
+<!--l. 265--><p class="noindent" >Login success rates in the second session did not significantly differ between the two study groups.
+In the control group, who saw the identical emoji set, five participants failed to log in after a week
+and 15 succeeded. The experimental group, who received the Android version of the emojis,
+counted six log-in failures, while 13 participants were able to authenticate despite the change of
+rendering. This difference was not statistically significant (<span 
+class="zptmcm7m-x-x-120">χ</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7t-x-x-120">(1) = 0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">21</span><span 
+class="zptmcm7m-x-x-120">,p &#x003E; </span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span>). From those who
+succeeded, 12 participants authenticated on the first try in the control group, whereas
+this number was slightly lower in the experimental group (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 8</span>). Again, the change
+was not statistically significant (<span 
+class="zptmcm7m-x-x-120">χ</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7t-x-x-120">(1) = 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">25</span><span 
+class="zptmcm7m-x-x-120">,p &#x003E; </span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">1</span>), which is probably owed to the
+sample size. The medians of failed attempts, which are potentially more descriptive in this
+situation, did differ: the control group’s median was 0, while it was 1 in the experimental
+group. Figure <span 
+class="ptmb8t-x-x-120">??</span> visualizes successful and unsuccessful login attempts in high detail.
+There, we can trace back the emoji that were included in incorrectly entered passwords.
+Success and failure rates in the “Animals &#x0026; Nature” category were balanced in both
+groups. However, participants were twice as likely to fail in the experimental group, if
+their password contained an emoji from the “Smileys &#x0026; People” category. Figure <span 
+class="ptmb8t-x-x-120">??</span>
+shows that emojis differing strongly from the iOS version were more associated with
+login failures. “Symbols” were the category with the highest failure rate across both
+groups.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-355001r10"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 270--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.10: </span><span  
+class="content"> Detailed overview of the emojis inside passwords. Columns represent emoji
+category.  The  top  half  shows  the  control  group’s  attempts  while  the  bottom  depicts  the
+experimental group who had to log in with a different emoji style. Successful logins appear
+on the positive side of the y-axis, and erroneous login attempts on the negative side. Smileys
+&#x0026; People are error prone in the experimental group. Symbols generally led to more errors. </span></div><!--tex4ht:label?: x110-355001r10 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-355002r11"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 279--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.11:  </span><span  
+class="content">  Effective  emoji-set  of  the  experimental  group.  Error-prone  emojis  are
+highlighted with a pink outline. We can see that these differ strongly from the iOS version
+from session 1. We take this as evidence for the usability problems caused by fragmentation.
+</span></div><!--tex4ht:label?: x110-355002r11 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h5 class="subsubsectionHead"><a 
+ id="x110-35600011.3.4"></a>Textual Feedback</h5>
+<!--l. 289--><p class="noindent" >To assess the influence of the rendering modification, we asked whether participants had noticed
+any differences in the appearance of the emoji. Although the emojis remained identical in the
+control group, 7 out of the 20 participants indicated that they had noticed a change. This is hard to
+interpret, but we assume that they meant the order of the emoji inside the 10x5 grid. In the
+experimental group, where emojis did in fact <span 
+class="ptmri8t-x-x-120">look </span>different, 16 out of 19 participants
+(84%) talked about this change in the response field. Eight of them did not perceive
+the alteration as troublesome, while another eight felt that identifying the right emoji
+was challenging. For three participants, the change of emoji-type was insurmountable:
+One participant was very sure to have selected the correct emoji, because she picked a
+“happy face” to express herself. However, she reported to have failed because she was
+unable to pick the correct emoji in the second study session. Another participant, who
+successfully authenticated with his emoji-password, indicated that he could only find the right
+emoji after a Google search. Finally, one participant mentioned that he was troubled by
+the different versions of the check mark, so he used a trial and error approach until he
+succeeded.
+</p><!--l. 291--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.3.5    </span> <a 
+ id="x110-35700011.3.5"></a>Memorization Techniques</h4>
+<!--l. 294--><p class="noindent" >The emoji-picker and the number of emojis was helpful to recognize and recall the password for 18
+participants. The short codes did not achieve this, because only one person reportedly used the code
+as a cue to the password. A priori agreement levels to the statement “Using emojis in a
+password makes it more memorable” were neutral with a tendency to disagreement
+(<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">8</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">4</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">= 2</span>). In the exit survey, we again probed this sentiment and noticed a
+small, statistically insignificant upward trend (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 3</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">3</span><span 
+class="zptmcm7m-x-x-120">,Md </span><span 
+class="zptmcm7t-x-x-120">=</span><span 
+class="ptmb8t-x-x-120">3</span>).
+</p><!--l. 296--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.3.6    </span> <a 
+ id="x110-35800011.3.6"></a>Interpretation Task</h4>
+<!--l. 298--><p class="noindent" >The final task in the lab-session was to provide two word associations for two emojis (Xygp,
+Xygp). Thematic analyses showed a wide range of themes for the “service person” emoji. A total of
+                                                                                    
+
+                                                                                    
+14 distinct themes were visible, each mentioned by at least two participants. Most often, this
+emoji was associated with “female” (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 6</span>) and “pointing” (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 5</span>). The emoji depicts a
+bell-hop’s “tipping gesture”, which was interpreted as “sassy” (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 2</span>) or “bossy” (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 4</span>),
+too. Regarding the “praying hands” emoji, participants reached higher consensus on
+its meaning. Seven themes emerged from the word associations. Most commonly, the
+participants mentioned “pray” (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 19</span>) and “beg” (<span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 9</span>). These anecdotal examples highlight
+the problems produced by unclear meanings of emojis. For passwords, on the other
+hand, a bigger range of interpretations opens up more opportunities to create a story with
+emojis.
+</p><!--l. 300--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.3.7    </span> <a 
+ id="x110-35900011.3.7"></a>Limitations</h4>
+<!--l. 302--><p class="noindent" >The results presented above need to be interpreted in the light of a few important limitations. First,
+the <span 
+class="ptmb8t-x-x-120">sample size </span>was not large enough to bring about statistically significant test results. Naturally,
+the null hypotheses (e.g. fragmentation does not affect recall) could be true, but with 40
+participants, we lack some statistical power to draw conclusive inferences, especially with a
+frequentist approach (which emoji was chosen <span 
+class="ptmri8t-x-x-120">how often</span>). Nevertheless, we saw emerging patterns
+that can be followed up with a quantitative user study. Our primary goal was the exploration of
+fragmentation and input issues, as well as attitudes. Our participants belonged to the user group
+who would be most likely to try out emoji-passwords. This makes us confident the trends at least
+point into the right direction. To explore additional dimensions of the problem space
+around emoji-passwords, considering a more diverse sample is going to be useful in the
+future.
+</p><!--l. 305--><p class="noindent" >Moreover, much of the elicited data is attitudinal, potentially affecting ecological validity of the
+study. However, we tried to mitigate issues by providing a realistic scenario and had them gauge
+their behavior. Here, most claimed they acted like they normally would, which has been shown to
+be a useful indicator as to the trustworthiness of the data <span class="cite">[<a 
+href="dissli2.html#XFahl2013EcologicalValidityPasswordStudy">103</a>]</span>. Nonetheless, emoji-passwords
+constituted an unfamiliar paradigm for all participants, despite their familiarity with both emojis
+and passwords separately. Therefore, novelty effects are possible in that participants might have
+spent more time to explore the possibilities than they normally would. However, subjective
+usability assessments on the feasibility of emoji-passwords were reserved nonetheless. This
+indicates that respondents critically balanced the pros and cons and did not only focus on the
+benefits.
+</p><!--l. 310--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h3 class="sectionHead"><span class="titlemark">11.4    </span> <a 
+ id="x110-36000011.4"></a>Discussion</h3>
+<!--l. 311--><p class="noindent" >In the following, the results are put into context. We derive data-driven assessments about the
+feasibility of emoji-passwords.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.4.1    </span> <a 
+ id="x110-36100011.4.1"></a>Selection Strategies and Their Implications</h4>
+<!--l. 318--><p class="noindent" >It was evident that participants were keen on creating a <span 
+class="ptmb8t-x-x-120">memorable password</span>. So although people
+were enabled to select a richer and more diverse password, we observed well-known reactions. The
+selection strategies were a direct translation of their usual patterns. Many of them noted that they
+were able to easily include emojis in their long-established strategies and coping behavior. As a
+consequence, we observed predictable patterns in selection strategies leading to simple attack
+vectors: participants favored items that helped them maintain their existing selection strategies,
+which can be exploited to adapt cracking techniques. We can read this as a bad sign, because emojis
+do not appear to break existing behavior, and only increase the theoretical space of creation
+strategies. At this point it is difficult to gauge practical security advantages entailed by
+enlarging the character set. Learning from past roll-outs of new authentication schemes,
+password <span 
+class="ptmri8t-x-x-120">strength </span>is unlikely to increase drastically by the use of emojis. On the other
+hand, user-selected passwords have always shown predictable patterns and adding emojis
+probably will not aggravate the situation further. Therefore, the only major advantage
+of allowing users to pick emoji-passwords can be an improvement in how password
+authentication is perceived. In other words, it might help the <a 
+href="dissli3.html#glo:UX"><span 
+class="ptmb8t-x-x-120">user experience (UX)</span></a>. Our
+data is helpful to identify the pitfalls that need to be considered to achieve good UX of
+emoji-passwords.
+</p><!--l. 326--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">11.4.2    </span> <a 
+ id="x110-36200011.4.2"></a>Factors in Good UX of Emoji Passwords</h4>
+<!--l. 327--><p class="noindent" >Improving the UX of a technology is a strategy to drive its persuasiveness <span class="cite">[<a 
+href="dissli2.html#XFogg2001WhatMakesSitesCredible">121</a>]</span>. Therefore, we can
+address a number of aspects to foster a positive user experience of emoji-passwords.
+</p>
+<!--l. 329--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x110-36300011.4.2"></a><span 
+class="ptmb8t-x-x-120">Freedom to choose</span></span>
+Good UX starts with respect and empathy. Users should not be forced to use emojis in their
+passwords. Our data discourages the use of a policy that mandates emojis, which a quarter of
+participants found annoying. Our first study on personality factors showed a large variety of
+thinking styles about policies (cf. Section <a 
+href="dissch7.html#x88-1830007.2">7.2<!--tex4ht:ref: sec:personality:study-1 --></a>). Therefore, we argue in favor of autonomy
+                                                                                    
+
+                                                                                    
+and leaving it up to users to decide whether they want to use an emoji as part of their
+password(s). So, users are <span 
+class="ptmri8t-x-x-120">empowered </span>to change their behavior and might be persuaded to do
+so.
+</p>
+<!--l. 332--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x110-36400011.4.2"></a><span 
+class="ptmb8t-x-x-120">Learning Curve</span></span>
+Once users understand that they have the freedom to use emoji-passwords, the learning curve for
+this task looks fairly gentle. Our sample consisted of users who were already familiar with entering
+emojis on the desktop and therefore immediately knew what to do. Less experienced user groups
+should be offered assistance in case they decide to experiment with emoji-passwords. We also
+found that the short codes were mainly used by participants who aimed for efficiency. Thus, there is
+nothing wrong with enabling short codes for input, but it should be tailored to an advanced user
+group.
+</p>
+<!--l. 337--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x110-36500011.4.2"></a><span 
+class="ptmb8t-x-x-120">Pragmatic Constraints for Passwords</span></span>
+Although our sample came from a population of young adults who are highly experienced with
+emojis, some participants clearly struggled to identify the correct emoji after we exchanged the
+renderings. Therefore, inconsistencies across platforms could become a show-stopper. At the
+moment, there are a few problems that contribute to creating inconsistent experiences. First,
+although emojis are standardized Unicode <span 
+class="ptmri8t-x-x-120">code-points</span>, vendors usually need to create custom
+emoji-<span 
+class="ptmri8t-x-x-120">pictures </span>for legal reasons. Sets under a public domain or nonrestrictive licenses do exist,
+but many vendors prefer shipping custom on-brand experiences with a shared design
+language across their products. On the other hand, it could be useful to form alliances
+like the <a 
+href="dissli3.html#glo:W3C">World Wide Web Consortium (W3C)</a> to standardize graphical assets of emojis
+specifically for password-fields. Software keyboards on mobiles would also need to match this
+hypothetical “password-emoji standard”. As of now, emojis offered by built-in software
+keyboards often look different to those of certain apps (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). To solve this
+inconsistency, a native keyboard could offer an interface that lets the app inject a consistent set of
+emojis.
+</p><!--l. 346--><p class="noindent" >After settling on a shared visual representation of emojis, distinctiveness is another critical factor.
+Some emoji-tuples that look very similar to each other can be troublesome. One of our participants
+mentioned this issue already in his selection strategy, because he was looking for an emoji that
+“stands out” and did not “look like the others”. To avoid login failures from confusion,
+there needs to be a whitelist of emojis that only contains the highly distinctive ones. We
+can first derive a candidate list based on geometric parameters like shape and color,
+and then proceed to evaluate them through quantitative user research with a diverse
+sample.
+                                                                                    
+
+                                                                                    
+</p><!--l. 349--><p class="noindent" >A final challenge pertaining to the constraints of emoji-passwords are hard usability metrics like
+efficiency. Higher degree of freedom and creativity support are ineffective if users need to browse
+through large lists of emojis only to find the correct item. Reducing the emoji-space to a subset
+emerges as a useful approach to speed up recognition and efficiency. At the same time, it is
+conceivable that vendors stick to a limited, static subset that is randomly selected from the whitelist
+of distinct emojis. Distinct subsets, i.e. a different random permutation per vendor, can also
+mitigate password reuse.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x110-365001r12"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 353--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 11.12: </span><span  
+class="content"> Screenshots of entering emojis on WhatsApp. While the software provides
+a set of emojis that is consistent across all platforms supported by WhatsApp (left), users
+can still turn to the native software keyboard of their OS (right). In this case, the renderings,
+number, and order are inconsistent. </span></div><!--tex4ht:label?: x110-365001r12 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h3 class="sectionHead"><span class="titlemark">11.5    </span> <a 
+ id="x110-36600011.5"></a>Conclusion</h3>
+<!--l. 375--><p class="noindent" >In this project, we empirically evaluated the usage of emojis in regular alphanumeric passwords to
+gauge their suitability as persuasive alternative to existing passwords. Our mixed-model
+user study with forty participants focused on attitudinal and usability aspects. From the
+selection behavior, memorability results and qualitative feedback we can conclude that
+emojis do not necessarily lead to memorable passwords (RQ1). Participants wanted to
+translate their usual password selection behavior to the new paradigm and at least tried to
+create memorable passwords (RQ4). When participants failed to log in, this could be
+partially traced back to fragmentation, i.e. differences in the visual representation of the
+same emoji characters (RQ2). Our sample population was experienced with emojis,
+but still struggled to match Android emojis to a previously selected iOS emoji. Their
+personal experience allowed them to easily understand how to enter emoji-passwords on
+desktops through a graphical point-and-click interface (RQ3). Nevertheless, our prototype
+made potential usability problems salient for participants and thus their attitudes towards
+adopting emoji-passwords in the future were reserved (RQ5). Thus, the persuasive power of
+emoji-passwords was limited, which we attribute to the user experience of the study
+setting.
+</p><!--l. 378--><p class="noindent" >Some vendors and service providers have already enabled emoji support for passwords. For instance,
+Twitter<span class="footnote-mark"><a 
+href="diss120.html#fn10x44"><sup class="textsuperscript">10</sup></a></span><a 
+ id="x110-366001f10"></a>
+allows users to take advantage of this rich character set. The issues we explored in our study thus
+affect a growing number of users already now. Roadmaps to address fragmentation and input issues
+do not exist at this point. However, more and more users are going to find out about the capabilities,
+perhaps because the feature is presented in blog- and news articles <span class="cite">[<a 
+href="dissli2.html#XDashinsky2015NoEmojisInPWs">69</a>]</span>. Therefore, the HCI
+community should act quick to create a better authentication experience to <span 
+class="ptmb8t-x-x-120">scale solutions before</span>
+<span 
+class="ptmb8t-x-x-120">problems are going to scale</span>. Realistically, the propositions and requirements discussed in Section
+<a 
+href="#x110-36500011.4.2">11.4.2<!--tex4ht:ref: sec:emojipasswords:unique-constraints --></a> would require intensive negotiation substantiated with much more user testing data. It is
+unclear whether vendors are willing to make this investment. We argue that a standardized
+<span 
+class="ptmri8t-x-x-120">emoji-password-picker </span>with a random sub-set of white-listed, distinctive emojis is a
+desirable goal. The “longer term solutions” that are part of the Unicode standard (see
+Footnote <a 
+href="#x110-332001f1">1<!--tex4ht:ref: foot:emoji-standard --></a>) embrace “embedded graphics”, which paves the way to mitigate fragmentation
+issues. Since leading tech companies have worked together on the standardization of
+                                                                                    
+
+                                                                                    
+emojis in the past, it would be fruitful to collaborate on authentication issues of emojis,
+too.
+</p>
+<!--l. 382--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x110-36700011.5"></a><span 
+class="ptmb8t-x-x-120">Future Work</span></span>
+Our prototype did not deliver the best possible user experience. This caveat was partially owed to
+isolating confounding factors. For instance, a finished solution would not shuffle the order of
+emojis as we did. Future studies on emoji-passwords need to intensely study different dimensions
+of user experience issues and potentials. To better understand the current state of emoji-passwords,
+a diary study might be worthwhile. It would be possible to answer interesting questions on how this
+novel kind of authentication influences well-established coping strategies. For instance, is it
+possible to <span 
+class="ptmb8t-x-x-120">write down emoji-passwords</span>, and <span 
+class="ptmb8t-x-x-120">share </span>them with somebody else? Can <span 
+class="ptmb8t-x-x-120">password</span>
+<span 
+class="ptmb8t-x-x-120">managers </span>already handle them? Do users take more care to protect emoji-passwords from
+<span 
+class="ptmb8t-x-x-120">shoulder surfers</span>? Such questions can further help judge the feasibility of this approach and
+identify important pain points.
+</p><!--l. 387--><p class="noindent" >At the same time, we saw how existing coping strategies might lead to weak emoji-passwords.
+Therefore, as a next step, the security benefits should be quantified. Perhaps, this is relatively easy
+to do with an <a 
+href="dissli3.html#glo:mTurk">mTurk</a> study. If our hunch about weak selection strategies is confirmed, persuasive
+strength feedback for emoji-passwords is an important future research direction. Real-time
+password meters, particularly those based on zxcvbn, are currently unable to realistically
+gauge the strength of emoji-passwords. Therefore, further work on modeling strength is
+necessary. Neural networks, as shown by Melicher et al., could respect the predictability
+of user-chosen emojis in guess-number estimates <span class="cite">[<a 
+href="dissli2.html#XMelicher2016NeuralNetworks">233</a>]</span>. All in all, some more work is
+going to be necessary to reach the high persuasive power of emoji-passwords that we
+had hoped for. Our work has laid the foundations for such studies on the quantitative
+side.
+                                                                                    
+
+                                                                                    
+</p><!--l. 391--><p class="noindent" ><span class="fbox">             </p>
+          <h3 class="likesectionHead"><a 
+ id="x110-36800011.5"></a>Take Aways</h3>
+              <ul class="itemize1">
+              <li class="itemize">Users’  intuitive  reaction  to  creating  an  emoji-password  was
+              resorting to established strategies with memorability in mind.
+              This  is  early  evidence  that  the  envisioned  security  benefits
+              might come off very small.
+              </li>
+              <li class="itemize">Emojis did not significantly improve password memorability.
+              </li>
+              <li class="itemize">Simulating  log-ins  on  a  different  platform  than  where  the
+              emoji-password  was  selected  resulted  in  notable  usability
+              issues, because users fail to recognize the previously selected
+              emojis.
+              </li>
+              <li class="itemize">A  point-and-click  interface  works  for  emoji-passwords,  but
+              emojis must be reduced to a small sample and must not look
+              very similar to each other.
+              </li>
+              <li class="itemize">Most  participants  were  not  eager  to  adapt  emoji-passwords.
+              The current user experience reduced the persuasive effects of
+              empowering users to become more creative.</li></ul>                                      </span>
+                                                                                    
+
+                                                                                    
+<!--l. 188--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

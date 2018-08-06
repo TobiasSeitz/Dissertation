@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>4 Related Work Summary</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 3--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 4</span><br /><a 
+ id="x72-1190004"></a>Related Work Summary</h2>
+<h3 class="likesectionHead"><a 
+ id="x72-1200004"></a>Main Take-Aways</h3>
+<!--l. 8--><p class="noindent" >The current landscape of password research deals with both technical (Chapter <a 
+href="dissch2.html#x8-460002">2<!--tex4ht:ref: chap:rw:passwords --></a>) and human
+factors (Chapter <a 
+href="dissch3.html#x53-760003">3<!--tex4ht:ref: chap:rw:user_perspective --></a>). From a system-design perspective, we can take away the following state of the
+world:
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">There  have  been  numerous  attempts  to  replace  passwords,  but  none  of  them  are  a
+      panacea, because they entail a number of disadvantages that thwart their adoption. Any
+      authentication scheme needs to withstand a plethora of attacks, but passwords seem
+      to offer the best trade-off regarding usability, deployability and security compared to
+      other schemes. Single-Sign On, multi-factor, as well as biometric authentication have
+      gained importance and are likely to be further adopted in the future. Especially implicit
+      biometric approaches can complement password-based authentication.
+      </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem">Entropy as a password strength proxy only works for system generated passwords.
+      Thus, the results of a number of studies would need to be reassessed or replicated
+      through new studies. As of now, the most reliable metric is performing actual guessing
+      attacks  on  passwords.  Configuring  attacks  is  not  trivial  but  crucial  for  the  results.
+      Currently, the <a 
+href="dissli3.html#glo:PGS"></a> (<a 
+href="dissli3.html#glo:PGS"></a>) is seen as the most robust tool. If cracking is impossible to determine
+      password strength (e.g. for proactive password checks), the best proxy is to estimate
+      a guess number for skillful, informed, and resourceful attackers. Neural networks and
+      zxcvbn are among the most useful strength proxies at this point, but it is worthwhile
+      to triangulate to obtain the full picture.
+      </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Password strength is difficult to agree upon and highly context dependent. This makes
+      it hard to give homogeneous, consistent advice to users.</dd></dl>
+<!--l. 14--><p class="noindent" >The technical aspects are contrasted and complemented by these human factors:
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">Users need to manage many password-protected accounts, which is one of the drivers
+      to  come  up  with  individual  coping  strategies.  Although  these  strategies  are  often
+      intuitively developed, they show commonalities among larger user groups. Passwords
+      go  through  a  life-cycle  no  matter  what  strategy  is  used.  A  large  part  of  the  users’
+      password practices can be classified as risky, but in many ways they remain rational.
+                                                                                    
+
+                                                                                    
+      </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem">Users tend to select predictable passwords, reuse them often, and write them down in
+      physical or digital notes. While there are many hypotheses to explain user behavior,
+      the problem is probably too nuanced to reach a final consensus regarding its origins.
+      It appears to be an assessment we need to make on a per-user level.
+      </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Many  solutions  have  been  proposed  to  guide  and  support  users.  Policies  enforce
+      requirements  on  users  to  mitigate  strength  issues.  However,  the  design  space  of
+      password policies is large and the best parameters are context dependent. Policies do
+      not  guarantee  “better”  passwords,  but  real  time  feedback  can  make  the  restrictions
+      more  bearable.  Password  managers  can  take  some  responsibility  from  users  which
+      had been shifted to them in previous years. Explicit user education was once seen as
+      primary tool to combat risky behavior, but users continued to dismiss it, which has led
+      to the understanding that education alone does not solve all problems.
+      </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem">Persuasive design has been a well-studied area in password authentication to aid user
+      education.  It  leverages  cognitive  biases  and  heuristics  to  achieve  more  secure  user
+      behavior. Password meters encompass many persuasive strategies at once and offer
+      an interesting design space to influence password selection. However, their real-world
+      implementations have brought inconsistencies to light, which reduced their persuasive
+      power.
+      </dd><dt class="enumerate-enumitem">
+   5. </dt><dd 
+class="enumerate-enumitem">Studying passwords has a multitude of facets and the method toolkit is large. Most
+      studies rely on online-surveys (especially through <a 
+href="dissli3.html#glo:mTurk">mTurk</a>), usability tests in the lab,
+      or qualitative interviews. Several principles for the design of valid studies in usable
+      security and privacy have emerged in the past two decades.</dd></dl>
+<!--l. 23--><p class="noindent" >
+</p>
+<h3 class="likesectionHead"><a 
+ id="x72-1210004"></a>Open Questions</h3>
+<!--l. 24--><p class="noindent" >Based on the review of the related literature we can identify a number of questions that have not
+been answered to their full extent.
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">Since  results  regarding  user  behavior  and  knowledge  about  password  strength  are
+      mixed, we still have not uncovered all context-factors and exploratory variables for
+      password selection. However, we need to have this kind of understanding if we aim
+                                                                                    
+
+                                                                                    
+      to  design  better  support  systems  to  either  reinforce  or  break  certain  habits.  Since
+      user  education  has  been  going  on  since  decades,  we  ask:  What  have  users  learned
+      about password security in the meantime? What are their mental models of password
+      strength and how do they change over time? Can we trace back certain behavior to
+      failed mitigations, or are psychological factors more decisive?
+      </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem">The  design  space  for  persuasive  interventions  has  not  been  fully  exhausted.  The
+      effectiveness of persuasion is still somewhat low. What are novel, radical approaches
+      to steer users towards stronger passwords? How do we find them? Which cognitive
+      biases might be most suitable for the design of persuasive password interventions?
+      Can we find new horizons to empower users to create stronger passwords that are still
+      memorable? What would a holistic solution look like?
+      </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Password reuse is rampant and still a great risk for users, primarily in the form of
+      identity theft following social engineering attacks. However, this aspect has not been
+      addressed by the design of password policies. If policies cannot always effectively
+      combat weak passwords, do they prevent password reuse? Can persuasive design aid
+      the secure reuse of passwords?</dd></dl>
+<!--l. 35--><p class="noindent" >I try to answer these questions with empirical data and reasoning in the remainder of this
+thesis.
+                                                                                    
+
+                                                                                    
+</p>
+<!--l. 174--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

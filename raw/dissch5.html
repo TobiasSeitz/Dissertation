@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>5 Mental Models of Password Strength</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 6--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 5</span><br /><a 
+ id="x74-1230005"></a>Mental Models of Password Strength</h2>
+<!--l. 12--><p class="noindent" >We start our discussion of empirical research with an investigation of psychological
+context factors to explain the prevalence of weak passwords. The number of extremely
+incautious passwords in breached databases is alarming <span class="cite">[<a 
+href="dissli2.html#XWeir2009PCFG">366</a>]</span>. It could be interpreted such
+that users might not realize that their passwords are insufficient to protect accounts. I
+challenge this notion in this chapter. If users are able to judge the strength of a given
+password, it is fair to assume they can select an appropriately strong one depending on the
+situation. There is first empirical evidence that users can assess passwords more accurately
+than one might think: Ur et al. showed that, with a few exceptions, users are able to
+gauge the strength of a given password <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. In this chapter, we follow up this result by
+extending the range of password topologies, i.e. the composition and types of passwords.
+Understanding the users’ mental models of password strength allows us to craft feedback
+more persuasively, because it can take into account what users already know about the
+strength of their own passwords. In particular, we address the following research questions:
+</p>
+      <ul class="itemize1">
+      <li class="itemize">How well can users identify weak and strong passwords?
+      </li>
+      <li class="itemize">What types of password topologies lead to inaccurate perceptions?</li></ul>
+<!--l. 21--><p class="noindent" >Beside the results, this chapter presents a novel method to answer our research questions. In the
+following, we discuss the background of the research and provide new insights into mental models
+of password strength.
+</p>
+                                                                                    
+
+                                                                                    
+<div class="fbox">  <h4 class="likesubsectionHead"><a 
+ id="x74-1240005"></a>Publication Statement</h4>
+  <!--l. 35--><p class="noindent" >Some insights of this project have been previously published at OzCHI 2017, with Heinrich
+  Hußmann as co-author <span class="cite">[<a 
+href="dissli2.html#XSeitz2017PASDJO">289</a>]</span>. The paper builds the foundation of this chapter. However, the
+  chapter extends the publication in three important aspects: </p>
+    <ul class="itemize1">
+    <li class="itemize">We show another design iteration for the password game that introduced a new study
+    condition and improvements of the password generation algorithm.
+    </li>
+    <li class="itemize">The dataset reported in the extended analysis is 85% larger than the one in the OzCHI
+    publication.
+    </li>
+    <li class="itemize">We perform new analyses, provide new insights, and dive deeper into the discussions
+    of the findings.</li></ul>                                                                  </div>
+<!--l. 39--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">5.1    </span> <a 
+ id="x74-1250005.1"></a>Background and Context</h3>
+<!--l. 41--><p class="noindent" >Users create passwords on a regular basis. As discussed in Chapter <a 
+href="dissch3.html#x53-760003">3<!--tex4ht:ref: chap:rw:user_perspective --></a>, previous research
+indicates that users most commonly resort to weak passwords that are easy to remember. In
+case the account value is higher, however, it is suspected that users invest more effort
+into creating a stronger password. Password meters are helpful in this context <span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>]</span>. Yet,
+even strong passwords are often ineffective against sophisticated guessing attacks, so it
+stands to reason that users have a subpar mental model of what makes a strong password.
+This has been a commonly accepted assumption <span class="cite">[<a 
+href="dissli2.html#XBonneau2015ImperfectAuthentication">35</a>]</span> but it oversimplifies the state of
+affairs.
+</p><!--l. 44--><p class="noindent" >Mental models change over time – both on a micro- and a macro-scale. At micro-scale, it is evident
+that people select their first passwords in their teenage years and without much care for security
+<span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2013SurvivalShortest">354</a>]</span>. Over time, users are exposed to password advice and educational nudges: popular news
+portals regularly publish new articles that report on data breaches or warn about risky online
+behavior. Furthermore, incidents in one’s own social network <span class="cite">[<a 
+href="dissli2.html#XStobert2014PasswordLifeCycle">316</a>]</span> raise awareness about
+the topic and can spark plans to behave differently in the future. Moreover, by creating
+many accounts, users encounter different password policies and feedback tools. Users
+need to make sense of these constraints and might reflect on their password choice.
+Consequently, an individual’s mental model of password strength is impacted if feedback
+and policy instructions are well-designed <span class="cite">[<a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>, <a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>. The literature already has some
+evidence that, overall, password behavior has positively changed in the past few decades
+<span class="cite">[<a 
+href="dissli2.html#XRiley2006WhatUsersKnowWhatTheyDo">269</a>, <a 
+href="dissli2.html#XSchneier2006RealWorldPasswords">282</a>]</span>.
+</p><!--l. 47--><p class="noindent" >Zooming out to the macro level, efforts to educate users may have already paid off. In the early
+                                                                                    
+
+                                                                                    
+days of research in Usable Security, often the user was seen as the “weakest link” in a secure
+system <span class="cite">[<a 
+href="dissli2.html#XAdams1997MakingPWsSecureAndUsable">4</a>, <a 
+href="dissli2.html#XSasse2005UsableSecurityPosition">277</a>]</span>. When Florêncio and Herley conducted their large-scale study in 2006/2007, they
+noticed that the entropy of the passwords was generally low, but high-value accounts were
+protected a bit better. In 2015, Ur et al. found that users’ mental models had become more accurate
+which allowed them to create stronger and memorable passwords <span class="cite">[<a 
+href="dissli2.html#XUr2015PWCreationLab">345</a>]</span>. A year later, they
+presented an in-depth analysis of the perceptions of password strength <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. They found that for
+the most part, participants in their online-study were capable of identifying the factors that add
+to password strength. Shay et al. already used “perceived strength” as a proxy metric
+<span class="cite">[<a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>]</span>, and it seems this is a better approach than one might think. For a few notable
+exceptions, though, certain password characteristics fooled participants. Ur et al. argue that
+errors in mental models about strength arise from false understandings of attackers.
+Consequently, it would be necessary to shift the focus in user education from password strength
+towards attack models, because users already have a fairly accurate understanding of
+strength.
+</p><!--l. 51--><p class="noindent" >Florêncio et al. put forward a formal model as to why users behave insecurely. Their central
+argument is that it is inevitable to choose weak passwords for some accounts and that users are well
+aware of their behavior. Yet, if users have a faulty understanding of password strength then the
+selection process is biased. If users also show the overconfidence bias, where people are
+subjectively more confident in their abilities and judgments than the objective accuracy of the
+judgments <span class="cite">[<a 
+href="dissli2.html#XSimonson1989ChoiceBasedOnReasons">307</a>]</span>, this could indeed lead to considerable risks. Password meters could counteract
+these biases, but only if they achieve to inform – and potentially disrupt – the user’s mental model
+of password strength.
+</p><!--l. 54--><p class="noindent" >In summary, having a clear mental model of what makes for a strong password is essential to make
+the decision whether to expend the effort and create one or not. While there are initial results, the
+perceptions of these factors are still understudied to this point.
+</p><!--l. 66--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">5.2    </span> <a 
+ id="x74-1260005.2"></a>Approach: PASDJO - The Password Game</h3>
+<!--l. 67--><p class="noindent" >To evaluate (in)accuracies in mental models about password strength, I chose to have users rate
+passwords similarly to the study task in Ur et al.’s study <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. In their presentation at CHI 2016, they
+challenged the audience to assess the strength of a couple of passwords on the slides. This sparked
+the idea of making a game out of this study topic. The game is called PASDJO (pronounced “Pass
+                                                                                    
+
+                                                                                    
+Joe”<span class="footnote-mark"><a 
+href="diss75.html#fn1x16"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x74-126001f1"></a>).
+To open the game to a large audience, I decided to implement it as a web-application that runs in
+any web browser on various platform.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-126002r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 71--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.1: </span><span  
+class="content"> Screenshot of PASDJO during gameplay. The user clicks the stars to rate the
+password. One star = weak, five stars = strong. </span></div><!--tex4ht:label?: x74-126002r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">5.2.1    </span> <a 
+ id="x74-1270005.2.1"></a>Game Mechanics and Design Elements</h4>
+<!--l. 76--><p class="noindent" >The game is relatively simple: Players judge how strong or weak a given password is. They receive
+points by accurately estimating the strength of a given password on a scale from 1 (weak) to 5
+(strong). The game follows similar design strategies for the password topologies as Ur et al.’s
+online study, but passwords are either randomly taken from large dictionaries or generated on the
+fly. To induce intuitive estimations, a time-limit is enforced while a “highscore” acts as incentive to
+estimate as accurately as possible. To reach higher scores, one has to judge as many passwords as
+possible in 60 seconds.
+</p><!--l. 78--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1280005.2.1"></a>Scoring and Metrics</h5>
+<!--l. 79--><p class="noindent" >A crucial point of the game is how the passwords are rated objectively. Here, we rely on the zxcvbn
+library<span class="footnote-mark"><a 
+href="diss76.html#fn2x16"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x74-128001f2"></a>
+(described in detail in Section <a 
+href="dissch2.html#x8-550002.3">2.3<!--tex4ht:ref: sec:rw:pw_strength_metrics --></a>) because it is highly reliable and straightforward to use on a web
+page. It also comes with a number of word lists that are helpful to implement different scenarios,
+respectively conditions. Beside the guess-number metric, zxcvbn also scores passwords on a scale
+from zero (weak) to four (strong). We translate this scale to one star (weak) to five stars (strong) in
+the game.
+</p><!--l. 81--><p class="noindent" >For a correct estimation, i.e. a match between the zxcvbn score and the player’s rating, a player is
+awarded 100 points. The difference between the user’s rating and the zxcvbn score is the <span 
+class="ptmbi8t-x-x-120">deviation</span>
+(<span 
+class="zptmcm7m-x-x-120">D</span>). A player’s rating can deviate by at most four stars, e.g. if they rate a five-star password with a
+score of one and vice versa. In that case, the player should not get any points, but in all other cases,
+the player is still awarded a few points. For each integral deviation in either direction there is a
+penalty of 25 minus-points (maximum of 100 points, at most 4 errors, which leads to <span 
+class="zptmcm7t-x-x-120">100</span><span 
+class="zptmcm7m-x-x-120">∕</span><span 
+class="zptmcm7t-x-x-120">4 = 25</span>).
+The points of all estimations are summed up and build the <span 
+class="ptmbi8t-x-x-120">achieved </span>score (<span 
+class="zptmcm7m-x-x-120">A</span>). As an overall
+accuracy measure, at the end of the game we calculate the ratio of achieved and possible
+points and display it as percentage (<span 
+class="zptmcm7m-x-x-120">P </span>). The game thus implements the following scoring
+function, where <span 
+class="zptmcm7m-x-x-120">U </span>is the user’s estimation on a scale from 1 to 5, <span 
+class="zptmcm7m-x-x-120">Z </span>is the zxcvbn score
+                                                                                    
+
+                                                                                    
+on the same scale, and <span 
+class="zptmcm7m-x-x-120">n </span>is the number of passwords a user has rated within the time
+limit.
+</p><!--l. 83--><p class="noindent" >The scoring function takes an array of user ratings and zxcvbn scores for <span 
+class="zptmcm7m-x-x-120">n </span>passwords and returns a
+vector consisting of the achieved points <span 
+class="zptmcm7m-x-x-120">A </span>and accuracy metric <span 
+class="zptmcm7m-x-x-120">P </span>.
+</p>
+<div class="math-display">
+<img 
+src="diss7x.png" alt="f ([(U |Z ) ,...,(U |Z ) ]) = (A|P)
+         1         n
+" class="math-display"  /></div>
+<!--l. 86--><p class="nopar" >
+</p><!--l. 88--><p class="noindent" >For each estimation the deviation from the zxcvbn score is calculated.
+</p>
+<div class="math-display">
+<img 
+src="diss8x.png" alt="D  = U  − Z
+ k    k    k
+" class="math-display"  /></div>
+<!--l. 91--><p class="nopar" >
+</p><!--l. 93--><p class="noindent" >The total achieved points are the sum of the achieved points per round. Each round takes
+the 25 point penalty into account. If <span 
+class="zptmcm7y-x-x-120">|</span><span 
+class="zptmcm7m-x-x-120">D</span><span 
+class="zptmcm7m-x-x-90">k</span><span 
+class="zptmcm7y-x-x-120">| </span><span 
+class="zptmcm7t-x-x-120">= 0</span>, the player gets the full 100 points per
+round.
+</p>
+<div class="math-display">
+<img 
+src="diss9x.png" alt="     n
+A = ∑ 100 − (|Dk|∗ 25)
+     k
+" class="math-display"  /></div>
+<!--l. 96--><p class="nopar" > Finally, the accuracy is the fraction of achieved and possible points.
+</p>
+<div class="math-display">
+<img 
+src="diss10x.png" alt="     --A----
+P =  n∗ 100
+" class="math-display"  /></div>
+<!--l. 100--><p class="nopar" >
+</p><!--l. 102--><p class="noindent" >The score and accuracy are displayed to the users once the game is finished, see Figure
+                                                                                    
+
+                                                                                    
+<span 
+class="ptmb8t-x-x-120">??</span>.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-128002r2"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 106--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.2: </span><span  
+class="content">Feedback screen. The player can review their performance after the time is up.
+Each assessment is contrasted with zxcvbn’s score.</span></div><!--tex4ht:label?: x74-128002r2 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h5 class="subsubsectionHead"><a 
+ id="x74-1290005.2.1"></a>Persuasive Design Elements</h5>
+<!--l. 111--><p class="noindent" >We used a number of persuasive techniques (see Section <a 
+href="dissch3.html#x53-1060003.4">3.4<!--tex4ht:ref: sec:rw:persuasive-interventions --></a>) in the design of the game. Most of
+them relate to the <a 
+href="dissli3.html#glo:PAF">Persuasive Authentication Framework</a> <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. First of all, we lower the barrier to
+play the game through <span 
+class="ptmri8t-x-x-120">simplification</span>: the task is immediately clear and does not require special
+skills. Since one round only takes sixty seconds, it is easier for users to <span 
+class="ptmri8t-x-x-120">commit </span>to finish the game.
+The feedback screen uses positive <span 
+class="ptmri8t-x-x-120">language </span>to create the notion of a <span 
+class="ptmri8t-x-x-120">social interaction</span>, which also
+serves <span 
+class="ptmri8t-x-x-120">self-monitoring</span>. Also, feedback and points serve as <span 
+class="ptmri8t-x-x-120">reinforcement </span>for correct
+ratings, i.e. a subtle form of <span 
+class="ptmri8t-x-x-120">conditioning</span>. Moreover, the user interface is <span 
+class="ptmri8t-x-x-120">tailored </span>to
+the user, as they can see their own previous scores. Players can also create an account
+through Google-federated <a 
+href="dissli3.html#glo:SSO">SSO</a>. If they log in, their profile picture and a personal greeting
+<span 
+class="ptmri8t-x-x-120">personalize </span>their experience. Through the player’s eyes, the game’s strength ratings are
+“right”, which can be attributed to the <span 
+class="ptmri8t-x-x-120">authority </span>principle. Finally, the game leverages the
+<span 
+class="ptmri8t-x-x-120">goal-gradient effect </span>by giving the player small amounts of points even for inaccurate estimations.
+At the end, the player receives a score that seems improvable through playing another
+round.
+</p><!--l. 113--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.2.2    </span> <a 
+ id="x74-1300005.2.2"></a>Password Generation and Study Conditions</h4>
+<!--l. 115--><p class="noindent" >PASDJO initially had four different password types that act as levels of the independent variable:
+Common passwords, mangled passwords, passphrases, and random passwords. During gameplay,
+the condition for the next password is selected at random. The following paragraphs depict the
+conditions in detail.
+</p>
+<!--l. 118--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1310005.2.2"></a><span 
+class="ptmb8t-x-x-120">Common passwords: </span></span>
+We take the word lists that come with the zxcvbn library. One of these lists contains 47023 leaked
+passwords ordered by frequency, from which we randomly pick one for this condition. The data
+stems from breaches of user databases at RockYou, Yahoo and Xato <span class="cite">[<a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>. All passwords are
+lower-case and can be considered weak, because they are usually amongst the first attempts in a
+guessing attack <span class="cite">[<a 
+href="dissli2.html#XUr2015MeasuringRealWorldAccuracies">346</a>]</span> unless the adversary launches a targeted attack where personal information
+plays a more important role. Zxcvbn rates the top 1000 passwords with a score of one (e.g.
+“12345”, “password”, “monkey”), and the remaining passwords are scored with two
+stars (e.g. “iloveyou2”, “skywalker”, “apollo13”). It is worth noting that many of these
+                                                                                    
+
+                                                                                    
+passwords would not be accepted anymore by websites as common policies demand
+at least 8 characters (see Chapter <a 
+href="dissch6.html#x83-1610006">6<!--tex4ht:ref: chap:policies_reuse --></a>), which RockYou and Xato did not enforce at the
+time.
+</p>
+<!--l. 121--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1320005.2.2"></a><span 
+class="ptmb8t-x-x-120">Mangled passwords: </span></span>
+For the mangled password condition, we take the same list of the top 47023 passwords, but we
+algorithmically substitute certain characters. The substitutions look like “leet” / “l33t” speak, which
+is a typical way to try to increase password strength <span class="cite">[<a 
+href="dissli2.html#XDas2014TangledWeb">67</a>, <a 
+href="dissli2.html#XMazurek2013Measuring">226</a>]</span>. For instance, an “a” is replaced by
+an “@”, or an “s” is substituted with the dollar sign “$”. Also, random characters are
+transformed to uppercase. To allow recognizing the original word, we only mangle up to
+30% of the characters of the password. Since we only use substitutions that zxcvbn
+recognizes, mangled passwords mostly receive a score of two. However, in rare occasions,
+they get higher or lower scores depending on the specific character constellation, e.g.,
+“p@ssw0rd” (1), “b0n3he@d” (2), “fireFI9hter” (3), “123qaz456w$x” (4), “123Q@z4s6w$x”
+(5).
+</p>
+<!--l. 124--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1330005.2.2"></a><span 
+class="ptmb8t-x-x-120">Random passwords: </span></span>
+We implemented a simple string generation algorithm to create random passwords. They are
+lowercase alphanumeric passwords containing letters from the German alphabet, i.e. [a-z0-9äöü].
+Zxcvbn consistently gives them a score of four, which makes them easy to rate. In a real-world
+attack they can only be brute-forced <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>, <a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>.
+</p>
+<!--l. 127--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1340005.2.2"></a><span 
+class="ptmb8t-x-x-120">Passphrases: </span></span>
+We combine two entries from the English Wikipedia index to create a passphrase (also shipped
+with zxcvbn). The words were required to be between 4 and 11 characters long. This restriction
+leads to a dictionary size of 27202 entries. Thus, there are <span 
+class="zptmcm7t-x-x-120">27202</span><span 
+class="zptmcm7t-x-x-90">2</span> <span 
+class="zptmcm7y-x-x-120">≈ </span><span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">9</span> possible combinations,
+which is unpredictable enough to withstand online guessing attacks. This is reflected by the rather
+high scores: zxcvbn gives passphrases mostly a score of three or four, e.g. “armedtamils” (3),
+“boostedeuros” (4). If the words appear in other dictionaries, e.g. the “TV subtitles”
+word list, they are more likely to result in a score of three. However, for a user it is not
+straight-forward to tell whether a passphrase scores three or four points, which makes
+this condition harder to get right. The game is expected to benefit from this element of
+<span 
+class="ptmri8t-x-x-120">unpredictability</span>, which is one of the eight cornerstones of gamification according to Chou
+                                                                                    
+
+                                                                                    
+<span class="cite">[<a 
+href="dissli2.html#XChou2015Gamification">55</a>]</span>.
+</p><!--l. 130--><p class="noindent" >For the remainder of the chapter we refer to these four condition as “Common”, “Mangled”,
+“Random”, and “Passphrase” (mind the capitalization later).
+</p><!--l. 133--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.2.3    </span> <a 
+ id="x74-1350005.2.3"></a>Benefits and Shortcomings of the Game-based Approach</h4>
+<!--l. 134--><p class="noindent" >Since the game was deployed publicly, the method can be denoted as an unsupervised in-the-wild
+study. Ur et al.’s study is closely linked to ours, but they used an online survey and recruited
+participants through <a 
+href="dissli3.html#glo:mTurk">mTurk</a>. In comparison to an online survey, our approach features certain
+benefits and shortcomings as discussed in the following.
+</p><!--l. 136--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1360005.2.3"></a>Benefits of the Game-based Approach</h5>
+<!--l. 137--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Easy collection of multiple data points per user </span>The game can be played over and over. A survey
+could also be taken multiple times, but this is usually impractical because there is a fixed set of
+options, and reassessing the same passwords is unnecessary. Besides, if people could repeatedly
+participate via MTurk this would mean that they would be paid for each completion, which drives
+costs.
+</p><!--l. 140--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Possibility to provide feedback </span>After the game, the players can review their ratings and find out
+how they performed. Implementing such a feedback loop is much more complicated and often
+impossible with current survey tools. Survey usually debrief participants about the general purpose
+of study, but it is difficult to tailor the debrief to the individual participant, i.e. tell them how they
+performed.
+</p><!--l. 143--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Randomization and password space </span>Ur et al.’s study was well-designed because it tested a wide
+range of password characteristics and there were multiple options per condition. However,
+the options were predefined by the researchers and limited in that sense. In our case,
+we can pick passwords from much larger word-lists at random and use algorithms to
+randomly adjust certain characteristics. This allows for higher internal validity of the data
+collection.
+</p><!--l. 146--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Intrinsic Motivation </span>Participants in an online survey often receive an incentive to participate. In an
+<a 
+href="dissli3.html#glo:mTurk">mTurk</a>-study each participant receives a small amount of money. Contrarily, there is no extrinsic
+                                                                                    
+
+                                                                                    
+incentive to play PASDJO and we can leverage the players’ intrinsic motivation.
+</p><!--l. 149--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Intuition </span>The game uses time pressure to induce intuitive responses. Thus, if playing
+fast enough, we expect to measure System 1’s responses instead of System 2 <span class="cite">[<a 
+href="dissli2.html#XKahnemann2011FastAndSlow">183</a>]</span>.
+This is vital because password selection is often a System 1 process, i.e. intuitive and
+automatic. In an online survey, the participants can take as much time as they’d like to reason
+about their response. However, this is a hypothetic benefit that needs further empirical
+evidence.
+</p><!--l. 151--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1370005.2.3"></a>Drawbacks of the Game-based Approach</h5>
+<!--l. 152--><p class="noindent" >The game approach towards collecting password strength perceptions naturally entails
+drawbacks, too. First and foremost, we do not collect demographic data. In a survey,
+it is common practice to include questions about basic demographic information. If
+we included such questions as part of our game, we might have scared off users and
+damaged persuasive strategies. Thus, the collected data stems from an unknown population,
+which is a limitation. In the future, we might address this issue by iterating on designs
+that ask people to provide some basic demographic information, e.g. after playing three
+times.
+</p><!--l. 154--><p class="noindent" >Furthermore, the lack of demographic data also makes it hard to track usage across multiple
+devices. The same player could first get in touch on a desktop and then later decide to keep playing
+on their mobile. Allowing users to log in and synchronize their game history can mitigate this
+problem to some degree.
+</p><!--l. 156--><p class="noindent" >Last, ethically running password studies (see Section <a 
+href="dissch3.html#x53-770003.1">3.1<!--tex4ht:ref: sec:rw:methodology --></a>) demands that participants be debriefed
+appropriately. In our case, we provide a separate “About” page that is accessible from anywhere in
+the app. The information on the about page points out that users should refrain from using the
+generated passwords as their own and that our strength estimation is only an estimate. Nevertheless,
+it requires that users seek this kind of information, which – realistically – only few people might
+do. Therefore, as a small encouragement to read it, we require users to confirm a consent-dialog
+that also points them to the about page. So far, we have no data on how many people
+looked at this page, but this is an easy fix for the future, e.g. by adding an analytics
+library.
+</p><!--l. 158--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.2.4    </span> <a 
+ id="x74-1380005.2.4"></a>Implementation</h4>
+                                                                                    
+
+                                                                                    
+<!--l. 159--><p class="noindent" >For the implementation, we used modern web technologies to create
+a state-of-the-art user experience. The front-end uses the polymer
+library<span class="footnote-mark"><a 
+href="diss77.html#fn3x16"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x74-138001f3"></a>.
+<span 
+class="ptmri8t-x-x-120">Custom elements</span>, which were recently added to the WebComponents
+standard<span class="footnote-mark"><a 
+href="diss78.html#fn4x16"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x74-138002f4"></a>,
+serve to separate concerns through encapsulation. On the back-end, we rely on the Firebase
+platform<span class="footnote-mark"><a 
+href="diss79.html#fn5x16"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x74-138003f5"></a>.
+It allows setting up an easy and secure authentication, respectively authorization, workflow.
+Moreover, the data is stored in a <span 
+class="ptmri8t-x-x-120">real-time-database </span>that uses fast web-socket connections to
+synchronize data between client and servers.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-138006r4"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 163--><p class="noindent" ></p><!--l. 164--><p class="noindent" > <a 
+ id="x74-138004r1"></a>
+<span 
+class="ptmr8t-x-x-109">Welcome</span>
+<span 
+class="ptmr8t-x-x-109">screen  for  anonymous  users.</span>
+<span 
+class="ptmr8t-x-x-109">The game is briefly explained</span>
+<span 
+class="ptmr8t-x-x-109">and the users can try the rating</span>
+<span 
+class="ptmr8t-x-x-109">interface (stars).</span>
+            </p><!--l. 169--><p class="noindent" > <a 
+ id="x74-138005r2"></a>
+          <span 
+class="ptmr8t-x-x-109">Users can browse through past</span>
+           <span 
+class="ptmr8t-x-x-109">games.  The  updated  version</span>
+           <span 
+class="ptmr8t-x-x-109">visualizes the scores in a line</span>
+           <span 
+class="ptmr8t-x-x-109">chart (not displayed).</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.4: </span><span  
+class="content">Key screens in the user interface.</span></div><!--tex4ht:label?: x74-138006r4 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 175--><p class="noindent" >We leveraged user experience heuristics to design the game for a large
+audience. Among others, we based our solution on the Progressive Web-App
+heuristics<span class="footnote-mark"><a 
+href="diss80.html#fn6x16"><sup class="textsuperscript">6</sup></a></span><a 
+ id="x74-138007f6"></a>,
+which we hoped would lower the barrier to engage with the game. Since we expected many people
+from Germany would play the game, the interface is fully localized. Depending on the
+browser language, it automatically picks the preferred language. Moreover, the interface is
+responsive to different screen sizes to provide a seamless experience. We chose a short URL
+<a 
+href="pasdjo.de" class="url" ><span 
+class="ectt-1200">pasdjo.de</span></a> to facilitate visiting the website from mobile devices where typing is cumbersome.
+Upon visiting the web page, a welcome screen briefly explains the rules (see Figure
+<a 
+href="#x74-138004r1">5.3a<!--tex4ht:ref: fig:pasdjo:welcome-screen --></a>). As part of our onboarding process, we give users the opportunity to try out the
+rating interface, so they can get comfortable even before they play for the first time.
+For mobile users, we had to ensure that the game loads quickly. This is challenging,
+because we have to transfer a number of word lists to generate the passwords randomly.
+Therefore, we used a lazy-loading design pattern to render the UI first and load data in the
+background. At the same time, we minimize and compress the source files to reduce data
+transfers. The first page load consumes 1.6 MB of data. To ensure subsequent visits are
+faster and do not stress the user’s mobile quota, a <span 
+class="ptmri8t-x-x-120">service-worker </span>caches resources in the
+background. It intercepts requests to the remote server in the future and instead serves local
+resources<span class="footnote-mark"><a 
+href="diss81.html#fn7x16"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x74-138008f7"></a>.
+This strategy reduces the transfer size for subsequent requests to a mere 10.3 KB, which are mostly
+consumed by authentication and incremental synchronization.
+</p>
+<h3 class="sectionHead"><span class="titlemark">5.3    </span> <a 
+ id="x74-1390005.3"></a>Log Analysis</h3>
+<!--l. 178--><p class="noindent" >We deployed the game and made it publicly accessible. We ran the first analyses after four months
+                                                                                    
+
+                                                                                    
+and a second analysis after one year of public deployment. The first sample served as
+the basis for the full-paper at OzCHI <span class="cite">[<a 
+href="dissli2.html#XSeitz2017PASDJO">289</a>]</span>, while the second has not been previously
+published.
+</p><!--l. 180--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.3.1    </span> <a 
+ id="x74-1400005.3.1"></a>First Sample</h4>
+<!--l. 181--><p class="noindent" >Data collection started in December 2016 and the first data dump was created in March 2017. The
+game was first presented to the public at an open lab day in our research group. We set up a booth
+and invited visitors to play the game on their own devices, although we also had two iPads that used
+a shared, known account. Posters at our institution kept advertising the game, and it was later
+shown at student orientation days. Thus, it is very likely that the sample stems from a group of
+mostly younger adults who are interested in technical innovation. After removing log data from the
+known demo accounts, 115 users remained in the data set who had played at least one game on a
+device unknown to us. Only two users chose to log in to keep their history synchronized across
+devices.
+</p><!--l. 183--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1410005.3.1"></a>Score Distribution</h5>
+<!--l. 185--><p class="noindent" >The 115 users played 242 full games in total. Thus, on average, a user played 2.1 full games
+(SD=2.3, Min=1, Max=16). The time pressure motivated users to rate as many passwords as
+possible. We found that an average of 24.44 passwords (SD=10.39) were rated per game, which
+amounts to 5915 passwords rated. Users spent <span 
+class="zptmcm7y-x-x-120">≈ </span>2.45 seconds per estimation on average. The
+zxcvbn strength estimates were fairly consistent within each condition (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). Random
+passwords consistently received a zxcvbn score of 4 out of 5 stars. Common passwords were either
+rated with 1 or 2. Passwords in the Mangled condition filled the full spectrum of ratings,
+but the majority had a score of 2. Interestingly, passphrases were the least predictable
+condition. From <span 
+class="zptmcm7m-x-x-120">n </span><span 
+class="zptmcm7t-x-x-120">= 1414 </span>passphrases, 25.03% received a score of 3, and 74.54% a
+score of 4. The remaining eight passphrases were deemed weaker with a score of 2,
+e.g. <span 
+class="ectt-1200">soilwithin </span>or <span 
+class="ectt-1200">augsburgtime</span>, but it is not clear why this was the case (perhaps
+because one of the words had a very low guess number). However, the vast majority
+of passphrase-scores are explicable with the number of characters. For the users, the
+length of the passphrase is then the only criterion to decide between a score of 3 and
+4.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-141001r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 190--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.5:  </span><span  
+class="content">  Distribution  of  zxcvbn  scores  for  N=5915  passwords  collected  in  the  first
+four  months  of  deployment  (1  =  weak,  5  =  strong).  Random  passwords  were  the  most
+stable condition with consistent score of 4. Mangled passwords show a range of 1 to 5, but
+passphrases were least predictable.</span></div><!--tex4ht:label?: x74-141001r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 194--><p class="noindent" >Moreover, the distribution in Figure <span 
+class="ptmb8t-x-x-120">??</span> shows that in most cases, the maximum deviation <span 
+class="zptmcm7m-x-x-120">D</span><span 
+class="zptmcm7m-x-x-90">max</span> was
+less than 4: <span 
+class="zptmcm7m-x-x-120">D</span><span 
+class="zptmcm7m-x-x-90">max</span> <span 
+class="zptmcm7t-x-x-120">= 3 </span>in 5420 cases, and <span 
+class="zptmcm7m-x-x-120">D</span><span 
+class="zptmcm7m-x-x-90">max</span> <span 
+class="zptmcm7t-x-x-120">= 2 </span>in 410 cases. In other words, the user’s estimate
+deviates by <span 
+class="ptmri8t-x-x-120">at most </span>3 score points in 98.56% of cases. At the same time, it is difficult to
+<span 
+class="ptmri8t-x-x-120">under</span>estimate passwords that had already received a low score. This narrows the interval of
+the expectancy value for common and mangled passwords, i.e. users are more likely to
+<span 
+class="ptmri8t-x-x-120">over</span>estimate these – if at all. These two findings motivate taking the absolute value of
+the deviation and create an overall accuracy score for each game played, just like we
+did.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1420005.3.1"></a>“First Game” Statistics</h5>
+<!--l. 199--><p class="noindent" >A player’s first game is vital for the assessment of their pre-existing strength perceptions in
+different conditions. After the first game, learning effects induced by our feedback are likely
+to change their subsequent judgments. Therefore, the first game is the most valuable
+indicator of mental models of password strength. In their first game, players achieved an
+average score of 2010 points (SD=653.16, Min=350, Max=3675), which translated to an
+average accuracy of 74.58 % of the achievable points. Moreover, players rated 27.21
+passwords in their first game (SD=8.34), which is more than in subsequent games, albeit
+not significantly (<span 
+class="zptmcm7m-x-x-120">t</span><span 
+class="zptmcm7t-x-x-90">32</span><span 
+class="zptmcm7t-x-x-120">(2) = 1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">13</span><span 
+class="zptmcm7m-x-x-120">,p &#x003E; </span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">,</span><span 
+class="zptmcm7t-x-x-120">95%</span><span 
+class="zptmcm7y-x-x-120">−</span><span 
+class="zptmcm7m-x-x-120">CI </span><span 
+class="zptmcm7t-x-x-120">= [</span><span 
+class="zptmcm7y-x-x-120">−</span><span 
+class="zptmcm7t-x-x-120">2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">04;7</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">12]</span>).The first games
+consisted of 6.9 Common (25.3%), 6.8 Mangled (25%), 7.2 Random passwrods (26.5%),
+and 6.3 Passphrases (23.2%). The conditions were thus evenly distributed (<span 
+class="ptmri8t-x-x-120">F</span><sub class="textsubscript"><span 
+class="ptmri8t-x-x-109">3</span></sub> <span 
+class="zptmcm7t-x-x-120">=</span> 2.36,
+<span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003E;</span> 0.05).
+</p><!--l. 203--><p class="noindent" >As a next step, we can evaluate the achieved accuracy for each player in each condition. Since
+randomization led to four users not rating at least two passwords in each condition, we remove their
+data and maintain a sample of N=111 users. Non-parametric tests are used to account for the coarse
+password ratings (1 through 5).
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-142001r6"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 207--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.6: </span><span  
+class="content"> Average user ratings in each of the four conditions, plotted alongside mean
+zxcvbn scores. Users’ estimations were least accurate for passphrases, which they had rated
+1.4 points lower than zxcvbn. (N=111) </span></div><!--tex4ht:label?: x74-142001r6 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 211--><p class="noindent" >In their first game, players showed fairly consistent inaccuracies (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). There was no
+notable correlation between the number of passwords rated during a game and the resulting
+accuracy (<span 
+class="zptmcm7m-x-x-120">ρ </span><span 
+class="zptmcm7t-x-x-120">= </span><span 
+class="zptmcm7y-x-x-120">−</span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">1</span>, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003E;</span> 0.1). In other words, fast players were about as accurate as slow players.
+Mangled passwords were the only condition that was overestimated (estimated median deviation
+<span 
+class="zptmcm7m-x-x-120">Md </span><span 
+class="zptmcm7t-x-x-120">= 0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span>). Interestingly, common passwords were underestimated slightly, although there was
+little room for underestimation (<span 
+class="zptmcm7m-x-x-120">Md </span><span 
+class="zptmcm7t-x-x-120">= </span><span 
+class="zptmcm7y-x-x-120">−</span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span>). Random passwords were also underestimated by
+about half a point (<span 
+class="zptmcm7m-x-x-120">Md </span><span 
+class="zptmcm7t-x-x-120">= </span><span 
+class="zptmcm7y-x-x-120">−</span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span>). The users in this data set rated passphrases exceptionally low
+(<span 
+class="zptmcm7m-x-x-120">Md </span><span 
+class="zptmcm7t-x-x-120">= </span><span 
+class="zptmcm7y-x-x-120">−</span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">6</span>). A Friedman rank-sum test showed significant differences for the deviations
+across the four conditions (<span 
+class="ptmri8t-x-x-120">F</span><sub class="textsubscript"><span 
+class="ptmri8t-x-x-109">3</span></sub> <span 
+class="zptmcm7t-x-x-120">=</span> 187.84, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.001). We followed up this finding with
+Bonferroni-corrected post-hoc tests, i.e. <span 
+class="zptmcm7m-x-x-120">α</span><span 
+class="zptmcm7m-x-x-90">Bonf</span> <span 
+class="zptmcm7t-x-x-120">= 0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">008</span>. Wilcoxon paired sample tests revealed
+significantly different deviations between all pairs of conditions, except for the common/random
+pair. In other words, common and random passwords were equally inaccurately assessed by the
+users.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1430005.3.1"></a>Score Development</h5>
+<!--l. 215--><p class="noindent" >From the 115 users who completed a full round of PASDJO, 33 kept on playing for at least one
+more game. We tried to model their progress through a linear regression with gameIndex as
+predictor and achieved percentage as dependent variable. To account for the fact that
+some users played more rounds per game, we weighted the percentage with the number
+of passwords rated in that game. The model shows that players were able to improve
+their accuracy by playing multiple times (F(1)=49.37, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.001, <span 
+class="zptmcm7m-x-x-120">β </span>= 0.54, <span 
+class="zptmcm7m-x-x-120">R</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7m-x-x-90">adj</span> =
+0.23). The increased accuracy is mostly due to more accurate estimation of passphrases:
+performing linear regressions with average deviation of each condition as dependent
+variable, with gameIndex as predictor, we observed that <span 
+class="ptmri8t-x-x-120">only passphrases </span>have a non-trivial
+model fit (<span 
+class="zptmcm7m-x-x-120">R</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7m-x-x-90">adj</span> = 0.19). For all other dependents, gameIndex had virtually no effect on
+the tendency. Players therefore primarily learned to estimate passphrases. Figure <span 
+class="ptmb8t-x-x-120">??</span>
+visualizes the progress of users who played at least twice. In there, it is also evident that the
+slope is not stringent, i.e. an individual user’s accuracy does not necessarily increase
+steadily. We attribute this to the element of randomness in the game, which makes it more
+difficult in some cases to rate the passwords, while it might be easier in a subsequent
+game.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-143001r7"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 219--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.7: </span><span  
+class="content"> Achieved percentage (accuracy) evolution depending on the number of games
+played. Each dot represents a full game of a user, the size of the dot indicates how many
+passwords were rated in that particular game. Although a linear model works, we used a
+locally weighted polynomial regression (LOESS) to fit a line through the data points. Users
+clearly become better the more they play.</span></div><!--tex4ht:label?: x74-143001r7 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">5.3.2    </span> <a 
+ id="x74-1440005.3.2"></a>Extended Sample and Results</h4>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-144001r8"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 228--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.8: </span><span  
+class="content"> The game was played on 90 distinct days (days with 0 games are not shown
+in the graph). There were four major drivers for the adoption (see annotations), that indicate
+that the sample mostly consists of students, their peers, and other academics.</span></div><!--tex4ht:label?: x74-144001r8 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 232--><p class="noindent" >On the 23rd of January 2018, I created a new data dump and re-ran the analyses to see whether
+there were any differences to the first publication. The data set at this point consisted of 10,965
+played rounds from 342 games played by 190 users on 90 distinct days (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). Thus, there
+was an increase in 41.32% in terms of games, and 85.38% of played rounds. Before we look
+at the logs, I briefly present the changes introduced in PASDJO version 2, which was
+deployed on November 7th 2017 (i.e. prior to the OzCHI conference, where the game was
+demoed).
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1450005.3.2"></a>Version 2</h5>
+<!--l. 235--><p class="noindent" >After publishing the first results, I had iterated the design and implementation of the game. There
+were a number of changes that might affect the players’ performance. Splitting the data between
+version 1 and version 2 allows us to compare the players’ performance before and after the
+adjustments to measure their effectiveness.
+</p>
+<!--l. 237--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1460005.3.2"></a><span 
+class="ptmb8t-x-x-120">New Condition: Predictable</span></span>
+The mangled passwords were algorithmically altered versions of common passwords. This often
+made it hard to figure out the original password. Perhaps, the mangled passwords sometimes
+seemed more like random passwords which is why they were the only overestimated condition in
+the first sample. The new condition “Predictable” mimicks the most predictable user alterations.
+The resulting passwords consist of a capitalized dictionary word with a predictable suffix, e.g.
+‘123’ or ‘!’. There were 12 predefined suffixes, and they were randomly appended to the dictionary
+word.
+</p>
+<!--l. 239--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1470005.3.2"></a><span 
+class="ptmb8t-x-x-120">Tuning Password Generation</span></span>
+After realizing that virtually no passwords had received a score of 5 in the first sample, I fine-tuned
+the generation of passphrases and random passwords. Passphrases were now either two or three
+words. Separators (e.g. a dash “-”) were inserted in between the words. Random passwords used to
+be ten characters long in version 1. In version two their length is also randomized between 7 and 15
+characters. This leads to a higher variety of zxcvbn scores. The resulting passwords sometimes
+resemble the mangled condition, which is a greater challenge for the players. Moreover, I
+increased the likelihood of common passwords from the top 100 by a factor of two.
+All measures resulted in a much more diverse spectrum of scores as shown in Figure
+<span 
+class="ptmb8t-x-x-120">??</span>.
+                                                                                    
+
+                                                                                    
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-147001r9"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 243--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.9: </span><span  
+class="content">Zxcvbn scores in version 2. The scores within the conditions had become much
+more diverse, which should make it more difficult for players to judge individual passwords.</span></div><!--tex4ht:label?: x74-147001r9 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 247--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1480005.3.2"></a><span 
+class="ptmb8t-x-x-120">Scoring and Feedback</span></span>
+The players’ achieved score (<span 
+class="zptmcm7m-x-x-120">A</span>) did not entirely reflect their performance. For instance, if
+a player rated as many passwords as possible without spending much thought on the
+strength, they still achieved a high score, albeit not a high accuracy. Therefore, the accuracy
+is now used as a “penalty” by multiplying the achieved score with the accuracy (e.g.
+<span 
+class="zptmcm7t-x-x-120">3000</span><span 
+class="zptmcm7m-x-x-120">A</span><span 
+class="zptmcm7m-x-x-120"> </span><span 
+class="zptmcm7y-x-x-120">∗</span><span 
+class="zptmcm7m-x-x-120"> </span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5</span><span 
+class="zptmcm7m-x-x-120">P </span><span 
+class="zptmcm7t-x-x-120">=</span> <span 
+class="zptmcm7m-x-x-120"> </span><span 
+class="zptmcm7t-x-x-120">1500 </span>final score), which represents the performance much more adequately.
+Furthermore, the players had to figure out why their ratings deviated from the zxcvbn scores on
+their own. Now, the feedback screen contains a small indication as to how the score
+was calculated (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). This enables players to improve their score in the next
+game.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-148001r10"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 251--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.10: </span><span  
+class="content">Updated feedback in version 2 informs the player about the password category
+and provides pointers to the origin of the objective rating. </span></div><!--tex4ht:label?: x74-148001r10 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 257--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x74-1490005.3.2"></a><span 
+class="ptmb8t-x-x-120">Leaderboard and History</span></span>
+Finally, we introduced a new game-design element, namely leaderboards. Players can pick an alias
+and submit their score after each game. The main purpose of the leaderboard is to encourage
+<span 
+class="ptmri8t-x-x-120">competition</span>, which is another persuasive design strategy.
+</p><!--l. 260--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1500005.3.2"></a>Score Development</h5>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-150003r12"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 262--><p class="noindent" ></p><!--l. 263--><p class="noindent" > <a 
+ id="x74-150001r1"></a>
+<span 
+class="ptmr8t-x-x-109">Performance of v1 players (Dec 2016 - Nov 2017)</span>
+</p><!--l. 267--><p class="noindent" > <a 
+ id="x74-150002r2"></a>
+<span 
+class="ptmr8t-x-x-109">Performance of v2 players (Nov 2017 - Jan 2018)</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.12: </span><span  
+class="content"> Performance development during the first 13 months of public deployment
+(<a 
+href="#x74-150001r1">5.11a<!--tex4ht:ref: fig:pasdjo:1y-progress --></a>). In November 2017 version 2 was released, which roughly shows a similar learning
+curve.</span></div><!--tex4ht:label?: x74-150003r12 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 272--><p class="noindent" >Among the players who played at least two games, the overall score development has not
+changed visibly (see Figure <a 
+href="#x74-150001r1">5.11a<!--tex4ht:ref: fig:pasdjo:1y-progress --></a>), with no notable differences in the regression model
+(<span 
+class="ptmri8t-x-x-120">F</span><sub class="textsubscript"><span 
+class="ptmri8t-x-x-109">1</span></sub> <span 
+class="zptmcm7t-x-x-120">=</span> 67.12, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.001 <span 
+class="zptmcm7m-x-x-120">β </span>= 0.53, <span 
+class="zptmcm7m-x-x-120">R</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7m-x-x-90">adj</span> = 0.23). However, if we look at the players who played
+version 2, we can observe a slight decrease in the model fit (<span 
+class="ptmri8t-x-x-120">F</span><sub class="textsubscript"><span 
+class="ptmri8t-x-x-109">1</span></sub> <span 
+class="zptmcm7t-x-x-120">=</span> 8.83, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.01
+<span 
+class="zptmcm7m-x-x-120">β </span>= 0.43, <span 
+class="zptmcm7m-x-x-120">R</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7m-x-x-90">adj</span> = 0.20): There were 12 players who played version 2 more than once
+(<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">9</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 2</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">29</span>). Their progress is shown in Figure <a 
+href="#x74-150002r2">5.11b<!--tex4ht:ref: fig:pasdjo:v2-progress --></a>. The decrease can be
+explained by the fact that only one player played more than three times in this reduced data
+set.
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1510005.3.2"></a>Strength Perception in the First Game</h5>
+<!--l. 278--><p class="noindent" >We also re-calculated the users’ average accuracy in each condition, again only using the players
+that had generated data in all conditions in their first game (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). As before, the
+deviations from the zxcvbn scores differed significantly across conditions in version 1
+(<span 
+class="ptmri8t-x-x-120">F</span><sub class="textsubscript"><span 
+class="ptmri8t-x-x-109">3</span></sub> <span 
+class="zptmcm7t-x-x-120">=</span> 316.4, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.001). The same goes for version 2 of the game (<span 
+class="ptmri8t-x-x-120">F</span><sub class="textsubscript"><span 
+class="ptmri8t-x-x-109">4</span></sub> <span 
+class="zptmcm7t-x-x-120">=</span> 108.7, <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.001).
+All post-hoc pairwise comparisons showed significant differences <span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.008 for version 1. For
+version 2, the situation is not as clear, because the sample is smaller (724 observations). The
+significantly different pairs were Mangled-{Common|Passphrase|Predictable|Random}, and
+Passphrase-{Common|Predictable|Random} (<span 
+class="ptmri8t-x-x-120">p</span> <span 
+class="zptmcm7m-x-x-120">&#x003C;</span> 0.005). The lack of significant pairwise
+comparisons is also visible in Figure <a 
+href="#x74-151002r2">5.13b<!--tex4ht:ref: fig:pasdjo:v2-performance --></a>: The users’ ratings did not deviate much from the
+zxcvbn score in both the Common and the Random condition, which explains this result. In
+other words, mangled and predictable passwords, as well as passphrases caused the
+players the most trouble, so their accuracy in these three conditions differed significantly.
+</p><hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x74-151003r14"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 280--><p class="noindent" ></p><!--l. 281--><p class="noindent" > <a 
+ id="x74-151001r1"></a>
+<span 
+class="ptmr8t-x-x-109">Deviations of user ratings of v1 players (N=181)</span>
+</p><!--l. 285--><p class="noindent" > <a 
+ id="x74-151002r2"></a>
+<span 
+class="ptmr8t-x-x-109">Deviations of user ratings of v2 players.(N=52)</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 5.14: </span><span  
+class="content"> Users’ average ratings, for PASDJO version 1 on the left and version 2 on the
+right. The version switch appears to boost accuracy for common and random passwords, but
+not for mangled passwords and passphrases.</span></div><!--tex4ht:label?: x74-151003r14 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h3 class="sectionHead"><span class="titlemark">5.4    </span> <a 
+ id="x74-1520005.4"></a>Discussion</h3>
+<!--l. 298--><p class="noindent" >In the following, the results are put into context, which also allows us to derive implications for
+future support during password authentication.
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.4.1    </span> <a 
+ id="x74-1530005.4.1"></a>Players’ Overall Performance</h4>
+<!--l. 300--><p class="noindent" >Overall, we can attest players a fairly good performance. This assessment resounds to Ur et al.’s
+results <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. Players performed best in the “Common” condition, i.e. they can identify commonly
+used passwords with high certainty. Algorithmically mangled – but common! – passwords caused a
+bit more trouble. The fact that this was the only condition where people judged strength as too
+high reveals the users’ mental model: <span 
+class="ptmri8t-x-x-120">if one substitutes individual letters with digits and</span>
+<span 
+class="ptmri8t-x-x-120">symbols, the password must become stronger</span>. The additional data for version 1 helped
+narrow down the confidence intervals and moving closer to the “actual truth”. After about
+one year, the average rating for mangled passwords had moved closer to the zxcvbn
+score (compare Figures <span 
+class="ptmb8t-x-x-120">??</span> and <a 
+href="#x74-151001r1">5.13a<!--tex4ht:ref: fig:pasdjo:1y-performance --></a>). Perhaps this means that the players that followed
+(<span 
+class="zptmcm7t-x-x-120">Δ(</span><span 
+class="zptmcm7m-x-x-120">n</span><span 
+class="zptmcm7t-x-x-120">) = 70</span>) had a better mental model of the implications of character substitutions. However,
+since none of the other average ratings changed significantly, the shift might be due to
+chance.
+</p><!--l. 302--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.4.2    </span> <a 
+ id="x74-1540005.4.2"></a>Strength Perception vs. Selection</h4>
+<!--l. 303--><p class="noindent" >Users rarely rate the strength of passwords. The only notable instance where this happens is when
+users see passwords that are shared with them. There is growing evidence that shared passwords are
+typically weak <span class="cite">[<a 
+href="dissli2.html#XHaque2014Hierarchy">154</a>, <a 
+href="dissli2.html#XShay2010EncounteringPasswordRequirements">298</a>, <a 
+href="dissli2.html#XSingh2007PasswordSharing">308</a>, <a 
+href="dissli2.html#XViolettas2014PasswordsAvoidGreece">351</a>, <a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>, <a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span>: Sharing passwords is easier if it is a regular
+dictionary word, with predictable suffixes, like <span 
+class="ectt-1200">Ferrari123</span>. It would be extremely cumbersome
+to dictate a password like <span 
+class="ectt-1200">8zJ,uwD’dXBTUVub </span>over the phone, especially if the other
+person needs it urgently. As a consequence, passwords shared among users might have
+affected players’ strength ratings. We did not observe this in our data: The conditions
+that contained regular words were deemed weak. Ur et al.’s findings point in the same
+direction.
+                                                                                    
+
+                                                                                    
+</p><!--l. 305--><p class="noindent" >We can safely assume that users in our sample know that common passwords are weak, and
+that they are misguided by character substitutions. We believe that this has immediate
+implications on their selection behavior: it can be hypothesized that users intentionally pick
+weak passwords – as data breaches reveal time and time again. If they think a stronger
+password is necessary, they mangle weak passwords and overestimate the security benefits.
+Therefore, there is a lesson we can learn here: users do not need feedback on obviously weak
+passwords. They <span 
+class="ptmri8t-x-x-120">do </span>need feedback if they select a predictably altered password. Ur
+et al. mention this already in their recent work on password meters <span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>. However,
+many password meters and feedback mechanisms do not yet discourage predictable
+mangling.
+</p><!--l. 307--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.4.3    </span> <a 
+ id="x74-1550005.4.3"></a>Intuition or Deliberation?</h4>
+<!--l. 308--><p class="noindent" >PASDJO players spent 2.45 seconds on average to rate the strength of each password. Which kind
+of thinking processes were responsible here? Is it probable that users acted intuitively (System 1) or
+did they ponder enough to activate System 2 processes (see Section <a 
+href="dissch3.html#x53-1070003.4.1">3.4.1<!--tex4ht:ref: sec:rw:persuasion-psycho-background --></a>)? We can find evidence
+for both. In their first game, fast players were about as accurate as slow players. For those
+players who played multiple games, we used the number of passwords they managed to
+rate as weight in regression models. We did this for validity reasons, but, in fact, the
+effect was negligible: We ran the tests without the weight and model fit did not change
+notably. All this is interesting because fast players were most likely to use <span 
+class="ptmri8t-x-x-120">heuristics</span>, or
+as Acquisiti et al. calls them: <span 
+class="ptmri8t-x-x-120">mental shortcuts </span>to come to an assessment. Otherwise
+they would have been less accurate or slower. This is one piece of evidence that the
+time pressure can induce System 1 thinking processes. The slower players on the other
+hand obviously had to think harder to estimate password strength; System 2 had to be
+activated. In PASDJO v2, zxcvbn scores for passphrases and random passwords were
+much more diverse (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). So, if a fast player wanted to be accurate in these
+cases, they needed to rely on two heuristics: <span 
+class="ptmri8t-x-x-120">are there dictionary words or does it look</span>
+<span 
+class="ptmri8t-x-x-120">random? </span>and <span 
+class="ptmri8t-x-x-120">how many characters are in the password? </span>Only then does one have a chance
+to assess strength correctly. For the <span 
+class="ptmri8t-x-x-120">length</span>-heuristic, it is even necessary to count the
+characters. We can safely assume that 2.45 seconds are not enough to make the distinction
+between a 17 character (average score = 3.9) and a 19 character passphrase (average score:
+5.0). For random passwords, it could be feasible to count characters, because scores are
+much more predictable (length(7,8)<span 
+class="zptmcm7m-x-x-120">  </span><span 
+class="zptmcm7y-x-x-120">→</span> <span 
+class="zptmcm7m-x-x-120"> </span>3, length(9,10)<span 
+class="zptmcm7m-x-x-120">  </span><span 
+class="zptmcm7y-x-x-120">→</span> <span 
+class="zptmcm7m-x-x-120"> </span>4, length(&#x003E;10)<span 
+class="zptmcm7m-x-x-120">  </span><span 
+class="zptmcm7y-x-x-120">→</span> <span 
+class="zptmcm7m-x-x-120"> </span>5).
+Nonetheless, we maintain the assumption that rough heuristics helped more than analyzing all
+features.
+</p><!--l. 314--><p class="noindent" >We can only wonder if the speed of password perception is also associated with selection time – are
+skilled PASDJO-players capable of <span 
+class="ptmri8t-x-x-120">choosing </span>a password quickly? If users take less time to sign
+                                                                                    
+
+                                                                                    
+up to a given service, they might be using mental shortcuts to accomplish the tasks.
+There is much evidence that contextual cues, the preferred password, or the composition
+policy are indeed used as mental shortcuts. Investigating perception speed with selection
+speed poses new research questions that have not been addressed in the literature as
+such.
+</p><!--l. 317--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.4.4    </span> <a 
+ id="x74-1560005.4.4"></a>Changing users’ mental models with PASDJO</h4>
+<!--l. 318--><p class="noindent" >The learning curves in Figures <span 
+class="ptmb8t-x-x-120">??</span> and <span 
+class="ptmb8t-x-x-120">??</span> clearly indicate that players learned assessing password
+strength after playing PASDJO. Most notably, players learned to estimate passphrases. Thus, if the
+<span 
+class="ptmri8t-x-x-120">authority </span>principle succeeded as a persuasive strategy, this might have influenced the users’ mental
+model around passphrases. More generally, this finding confirms that mental models of password
+strength are not static. Therefore, PASDJO could be actively utilized to educate users about
+password strength, especially passphrases. Persuasive interventions could challenge users to
+rate the strength of a passphrase in the opportune moment and then debrief users to
+correct their mental model. We created such an intervention with our studies on the
+Decoy effect (see Chapter <a 
+href="dissch10.html#x106-30600010">10<!--tex4ht:ref: chap:decoy --></a>), which indeed show the predicted influence on mental
+models.
+</p><!--l. 320--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">5.4.5    </span> <a 
+ id="x74-1570005.4.5"></a>Limitations</h4>
+<!--l. 321--><p class="noindent" >We discussed the most important limitations regarding the methodology in Section <a 
+href="#x74-1350005.2.3">5.2.3<!--tex4ht:ref: sec:pasdjo:beneftis_shortcomings_method --></a>.
+Therefore, we focus on the limitations in the data and test results in this section.
+</p><!--l. 324--><p class="noindent" >From Figure <span 
+class="ptmb8t-x-x-120">??</span>, it is evident that most games were played at special events at the university or
+at conferences. Therefore, we can safely assume that our sample consists mostly of
+students, their peers, and academics. Thus, we must be careful not to expect the same
+strength assessment from other user groups or larger populations. Nonetheless, many
+players in our one-year trial might not have a background in cybersecurity and thus, we
+are confident that the sample still represents a useful cross-section of a diverse enough
+population.
+</p><!--l. 327--><p class="noindent" >Moreover, version 2 introduced a number of improvements that would have been nice-to-have
+already in the earlier version. Still, in the first version, the different conditions were easier to tell
+apart. Thus, causal effects are easier to isolate.
+                                                                                    
+
+                                                                                    
+</p><!--l. 330--><p class="noindent" >Finally, the strength ratings in PASDJO are solely based on zxcbn scores. While it is a
+state-of-the-art metric (see Section <a 
+href="dissch2.html#x8-580002.3.3">2.3.3<!--tex4ht:ref: sec:rw:zxcbn --></a>), other metrics might model real-world attacks better in
+some situations. For instance, we could have chosen Melicher’s JavaScript implementation of
+neural network strength estimation <span class="cite">[<a 
+href="dissli2.html#XMelicher2016NeuralNetworks">233</a>]</span>. However, it is more challenging to integrate and also
+does not map password strength to a scale from 1 to 5, but to a guess number. The same goes for
+other estimators. Therefore, it is also not immediately possible to conduct secondary analyses
+because players’ coarse ratings are hard to map to fine-grained guess numbers. Nonetheless,
+zxcvbn’s assessments correlate strongly with the output from <a 
+href="dissli3.html#glo:PGS">PGS</a>. Therefore, we are confident that
+zxcvbn is the best tool for the constraints of our game. In the future, it might be worthwhile to
+explore useful solutions to include multiple strength metrics to obtain a more differentiated strength
+assessment.
+</p><!--l. 332--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">5.5    </span> <a 
+ id="x74-1580005.5"></a>Summary</h3>
+<!--l. 333--><p class="noindent" >In this project, we explored password strength perceptions in a novel approach. Earlier surveys had
+shown that users do not always have an accurate understanding of what contributes to the strength
+of a password. Rather than conducting a survey, we implemented a novel password game, which
+allows for better randomization of the measurements. Moreover, the game has unique
+potential to measure learning effects of the players. The source code of PASDJO is openly
+available<span class="footnote-mark"><a 
+href="diss82.html#fn8x16"><sup class="textsuperscript">8</sup></a></span><a 
+ id="x74-158001f8"></a>,
+so other researchers can adjust the parameters to their own needs. For instance, PASDJO was
+customized for a competition as part of a Google-internal event in October 2017.
+</p><!--l. 335--><p class="noindent" >We contribute insights from a longitudinal field study. Our sample comprises more than
+ten thousand strength estimations, which allows for precise analyses. PASDJO players
+accurately recognized the strength of commonly used passwords (RQ1). Furthermore,
+players largely underestimated the strength of multi-word passphrases, so this was the
+most error-prone password topology (RQ2). However, if they went on to play multiple
+games, they adjusted their mental model and rated such passphrases higher. This clearly
+demonstrates learning effects induced by playing PASDJO. Users were also misled by leet (l33t)
+substitutions in otherwise predictable passwords, so they slightly overestimated their strength.
+However, all in all, players performed better than anticipated which might be due to the
+constellation of the sample. On the other hand, educational efforts from the past decades might
+                                                                                    
+
+                                                                                    
+have somewhat paid off, which brings us back to our initial motivation and research
+objectives: The folk model of a “naive” user seems wrong. Current password meters and
+similar feedback systems thus might fail to persuade users because the information they
+provide is redundant or well-known. Therefore, we posit that feedback on password
+accomodate the fact that people often act deliberately and rationally. For instance, if service
+providers aim to persuade users to create a unique passphrase, the benefits need to be more
+<span 
+class="ptmri8t-x-x-120">salient </span>and made <span 
+class="ptmri8t-x-x-120">available</span>. Passphrases are a feasible alternative for master passwords
+in password managers, therefore we believe that persuasive techniques are viable for
+them.
+</p><!--l. 337--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x74-1590005.5"></a>Future Work</h5>
+<!--l. 338--><p class="noindent" >The game presented in this chapter can be used as-is to answer additional research questions. For
+example, it would be very interesting to measure how much playing PASDJO influences actual
+password selection. To measure this, participants could be invited to a user study in the lab with a
+cover story. Once arrived, they are asked to sit in the waiting area until the experimenter picks them
+up again. PASDJO is installed as a demo in the waiting area and there could be a monetary
+incentive to “beat the highscore”. Afterwards, they complete a usability test where the focus is
+steered away from the sign-up form. In such a study setting, it should be possible to measure
+password selection under PASDJO’s short term influence. To study the influence in the wild, the
+feature set of the game could be reduced and made part of an oboarding process to a
+password manager. If necessary, one could think of another cover story, e.g. <span 
+class="ptmri8t-x-x-120">please wait</span>
+<span 
+class="ptmri8t-x-x-120">while we set up your system, you can distract yourself with this tiny game while you</span>
+<span 
+class="ptmri8t-x-x-120">wait</span>.
+</p><!--l. 340--><p class="noindent" >The game can also evolve in the near future. For instance, players could be taken through a few trial
+passwords to make sure everyone has the same understanding of the task. To incentivize
+participation, additional game elements like challenges and quests are thinkable. Allowing players
+to set up profiles serves the <span 
+class="ptmri8t-x-x-120">personalization </span>principle and also could be used to collect basic
+                                                                                    
+
+                                                                                    
+demographic information.
+</p><!--l. 342--><p class="noindent" ><span class="fbox">             </p>
+          <h3 class="likesectionHead"><a 
+ id="x74-1600005.5"></a>Take Aways</h3>
+              <ul class="itemize1">
+              <li class="itemize">Users  can  identify  weak  passwords,  but  overestimate  the
+              strength of mangled passwords.
+              </li>
+              <li class="itemize">Passphrases are seen as weak, but it is possible to influence
+              users’ mental models with persuasive design.
+              </li>
+              <li class="itemize">A  game-based  approach  is  feasible  to  collect  data  about
+              psychological context factors inexpensively.</li></ul>                                      </span>
+                                                                                    
+
+                                                                                    
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

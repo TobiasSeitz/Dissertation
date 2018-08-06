@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>9 Exploring Needs in Persuasive Feedback</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 9</span><br /><a 
+ id="x103-2730009"></a>Exploring Needs in Persuasive Feedback</h2>
+<!--l. 22--><p class="noindent" >The overall goal of this thesis is to support users in how they interact with passwords. As a
+sub-goal, we wanted to help those users who want to handle password management on their own,
+i.e. without a password manager. We set out to achieve this goal by studying the design space of
+password feedback mechanisms like password meters, i.e., the various dimensions, choices and
+outcomes of a design challenge. There have been many proposals and numerous evaluations
+already for such feedback systems. However, the design space appears rather narrow if we only
+look at existing solutions, and many have not supported users well enough. Therefore, we posit that
+the design space needs to be opened up in more breadth. To get there, studying the requirements of
+password feedback is a necessary first step. Previous solutions have seldom reported a structured
+requirement elicitation based on user research. Thus, before designing and implementing support
+strategies outside of the usual spectrum, we first aimed to understand the needs and
+expectations that users may have about password feedback. We tried to learn from feature
+requests and co-designed proposals as a starting point for generating novel ideas about
+actionable password feedback. In particular, we posed the following broad research
+questions:
+</p>
+      <ul class="itemize1">
+      <li class="itemize">What do users <span 
+class="ptmri8t-x-x-120">expect </span>from password support tools during account creation (explicit)
+      and what do they really <span 
+class="ptmri8t-x-x-120">need </span>(implicit)?
+      </li>
+      <li class="itemize">How can we design password feedback in novel ways outside the usual spectrum of
+      visual password meters and verbal real-time feedback?
+      </li>
+      <li class="itemize">How can we leverage the interplay between feed-<span 
+class="ptmri8t-x-x-120">forward </span>and feedback?</li></ul>
+<!--l. 34--><p class="noindent" >This chapter reports on a requirements- and design-exploration for password feedback, where we
+wanted to involve users early in the process. The project was a collaboration between myself and
+Caroline Olsienkiewicz, respectively Katharina Schwarz, who wrote their bachelor theses on
+specific aspects of the exploration <span class="cite">[<a 
+href="dissli2.html#XOlsienkiewicz2016BAThesis">248</a>, <a 
+href="dissli2.html#XSchwarz2016BAThesis">284</a>]</span>.
+</p>
+<h3 class="sectionHead"><span class="titlemark">9.1    </span> <a 
+ id="x103-2740009.1"></a>Background and Context</h3>
+<!--l. 43--><p class="noindent" >The design space of persuasive interventions in authentication was put into a framework by Forget
+                                                                                    
+
+                                                                                    
+et al. <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. They established high-level strategies to steer users away from risky actions.
+However, while their <a 
+href="dissli3.html#glo:PAF">Persuasive Authentication Framework</a> described how hypothetical
+design solutions could be categorized, it did not tell us much about the specific user
+needs in feedback systems. The same goes for more generic persuasive models like
+Cialdini’s “six weapons” <span class="cite">[<a 
+href="dissli2.html#XCialdini2007Influence">57</a>]</span>, or Fogg’s Behavior Model <span class="cite">[<a 
+href="dissli2.html#XFogg2009BehavioralModel">119</a>]</span>. The latter provides hints
+to user requirements in system design, but those are not specific enough for password
+authentication.
+</p><!--l. 50--><p class="noindent" >On the other hand, there exists a wide range of designs for persuasive password support that have
+been empirically evaluated, too. For instance, Ur et al. studied feedback with numerous solutions
+<span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>, <a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp">343</a>, <a 
+href="dissli2.html#XUr2012HelpingUsersCreateBetterPasswords">344</a>]</span>. Egelman et al. also explored novel designs for password meters <span class="cite">[<a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>]</span>. Moreover,
+Shay et al. continued Forget’s exploration of real-time feedback and suggestions <span class="cite">[<a 
+href="dissli2.html#XForget2008ImprovingPasswordsThroughPersuasion">126</a>, <a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>]</span>.
+Beyond real time feedback and meters, Komanduri et al. <span class="cite">[<a 
+href="dissli2.html#XKomanduri2014Telepathwords">199</a>]</span> and Yee <span class="cite">[<a 
+href="dissli2.html#XYee2006Passpet">384</a>]</span> showed an approach
+to make predictability of passwords graspable. All these publications report on <span 
+class="ptmri8t-x-x-120">solutions </span>and
+corresponding usability evaluations, but they often do not talk about the <span 
+class="ptmri8t-x-x-120">needs </span>that users have
+regarding the support.
+</p><!--l. 52--><p class="noindent" >Thus, our project focused on eliciting these needs and provide a holistic view on password
+feedback and support systems. Ultimately, understanding the needs might help us broaden the
+design space further and find more effective and actionable password support. To get there, we
+chose a “put the user first” lens and conducted two studies that focused on different levels of user
+needs (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). In the first study (Section <a 
+href="#x103-2750009.2">9.2<!--tex4ht:ref: sec:codesign:part1 --></a>) we wanted to learn explicit and observable
+needs, i.e. the things that users <span 
+class="ptmri8t-x-x-120">say </span>they need or that can be understood by <span 
+class="ptmri8t-x-x-120">observing </span>how they
+interact with a solution. The second study (Section <a 
+href="#x103-2880009.3">9.3<!--tex4ht:ref: sec:codesign:part2 --></a>) was more involved with tacit and
+latent needs. These are hard to observe and require more engagement with users, to
+understand what they actually know and feel when they interact with a password support
+system.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x103-274001r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 69--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 9.1:  </span><span  
+class="content">  Characteristics  of  user  needs  and  how  they  show  (adapted  from  <span class="cite">[<a 
+href="dissli2.html#XSanders2002ParticipatoryDesign">16</a>]</span>).  We
+explored explicit and observable needs with an online survey, and used a participatory design
+approach to learn from what users <span 
+class="ptmri8t-x-x-120">make</span>.</span></div><!--tex4ht:label?: x103-274001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h3 class="sectionHead"><span class="titlemark">9.2    </span> <a 
+ id="x103-2750009.2"></a>Explicit and Observable Needs</h3>
+<!--l. 2--><p class="noindent" >After the literature review (see Part <a 
+href="disspa1.html#x7-45000I">I<!--tex4ht:ref: part:related_work --></a>), there were still open questions about user <span 
+class="ptmb8t-x-x-120">expectations</span>
+regarding password strength feedback. Most studies went ahead to test new solutions quantitatively
+and rarely focused on the intrinsic needs to derive requirements for feedback. In other words, users
+were often involved late in the design process, although an earlier involvement could have led to
+different design decisions. Our goal in the first step of the co-designing process was gathering early
+insights to learn about the requirements of persuasive interventions in the realm of password
+authentication. To narrow down the focus of the requirements, it was important to consider a
+realistic use-case where the burden of password authentication is relatively high. From related
+work, we know that password changes are more frequent in work environments, because
+expiration-policies are still common there <span class="cite">[<a 
+href="dissli2.html#XInglesant2010TrueCostOfUnusablePolicies">172</a>]</span>. Frequent password changes lead to
+weaker practices, which might be mitigated by effective password feedback. To find
+out how we might improve such feedback, we used a lightweight, rapid survey with a
+large portion of open questions. In the following, we briefly describe the method and
+findings.
+</p><!--l. 8--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">9.2.1    </span> <a 
+ id="x103-2760009.2.1"></a>Method</h4>
+<!--l. 9--><p class="noindent" >We opted for an online survey to inform our requirement elicitation for the above described reasons
+and straightforward data collection. Our questionnaire was centered around the following core
+research questions: </p>
+      <ul class="itemize1">
+      <li class="itemize">What do users <span 
+class="ptmb8t-x-x-120">expect </span>from password feedback?
+      </li>
+      <li class="itemize">What do they <span 
+class="ptmb8t-x-x-120">miss </span>in current solutions / interventions?
+      </li>
+      <li class="itemize">How would they <span 
+class="ptmb8t-x-x-120">improve </span>existing feedback?</li></ul>
+                                                                                    
+
+                                                                                    
+<!--l. 26--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2770009.2.1"></a>Prototype</h5>
+<!--l. 27--><p class="noindent" >To ensure that participants have a shared understanding of password feedback mechanisms, we
+created a small website featuring only a password field and textual feedback beneath. The
+underlying strength estimation and feedback phrases were based on the zxcvbn library. Warnings
+and suggestions that come with zxcvbn were translated to German and shown as the users typed
+inside the password field. The 26 warnings included statements like “Names and surnames by
+themselves are easy to guess” or “Avoid repeated words and characters”. We tried to simplify the
+page as much as possible to minimize priming effects, although this was hard to achieve. In
+particular, we did not show any form of visual feedback to explore whether this is a need that
+participants mentioned often. Instead, we showed a password score in the form “strength:
+2/5”. The page introduced the scenario (old password at work has expired) and asked
+participants to create a new password that would fulfill the composition policy of the
+participant’s current employer. The composition policy, however, was not enforced,
+but we probed it in the questionnaire. We did not log the passwords whatsoever, since
+this was not the focus of this study. This was disclosed to participants, and they could
+decide to drop out of the study if they were still uncomfortable with providing a new
+password.
+</p><!--l. 29--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2780009.2.1"></a>Questionnaire</h5>
+<!--l. 30--><p class="noindent" >The survey questionnaire included 37 questions, many of which are quick single- and
+multiple-selection items to collect context information (e.g. demographics, semantic differentials,
+social desirability scale). This information would help us assess the value and relative importance
+of qualitative statements that followed. The core of the questionnaire is formed by eleven items
+about password feedback, six of which were open questions, e.g. what would need to be
+changed to make the feedback more comprehensible and how password creation could
+be facilitated. Moreover, we inquired coping strategies at work and personal password
+behaviors to derive further requirements. During this part of the questionnaire, we added an
+<span 
+class="ptmri8t-x-x-120">instructional manipulation check</span>, i.e. an attention check, to filter out participants that were only
+trying to complete the survey as fast as possible to receive the incentive <span class="cite">[<a 
+href="dissli2.html#XOppenheimer2009InstructionalManipulationChecks">249</a>]</span>. This is a
+well-known issue with crowd-sourced survey data, and the attention checks can effectively
+reduce the risk of low-quality data. The items were randomized where necessary, but
+the overall structure was the same for all participants, i.e. there were no independent
+variables.
+                                                                                    
+
+                                                                                    
+</p><!--l. 32--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2790009.2.1"></a>Sample</h5>
+<!--l. 33--><p class="noindent" >We recruited participants via Prolific<span class="footnote-mark"><a 
+href="diss104.html#fn1x30"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x103-279001f1"></a>
+which provided similar crowd-sourcing features as Amazon’s Mechanical Turk but has a
+stronger focus on research surveys. Since <a 
+href="dissli3.html#glo:mTurk">mTurk</a> does not allow German users to sign up,
+Prolific is one of the best alternatives because of its large user panel. We screened for
+German language proficiency via Prolific’s internal screening tool. The survey also required
+participants to be employed and using alphanumeric passwords in their work environment on a
+regular basis. From the 87 users who started the survey, we had to eliminate 47 responses
+based on previously defined exclusion criteria: incomplete or mechanically translated;
+incomprehensible answers; failure to complete the instructional manipulation check <span class="cite">[<a 
+href="dissli2.html#XOppenheimer2009InstructionalManipulationChecks">249</a>]</span>; and
+fourth-quartile scores on the social desirability scale. The remaining 40 respondents had a
+diverse educational and professional background, but the largest part (n=15, 37.5%) held
+positions in IT or online media. Sixteen were female (40%) and 24 male (60%). They
+were aged between 20 and 53 (<span 
+class="zptmcm7m-x-x-120">M </span><span 
+class="zptmcm7t-x-x-120">= 32</span><span 
+class="zptmcm7m-x-x-120">,SD </span><span 
+class="zptmcm7t-x-x-120">= 7</span>). As an incentive, participants received
+1.50<span 
+class="ptmr8c-x-x-120">€ </span>for approximately 15 minutes worth their time, which meets Prolific’s work ethics
+guidelines.
+</p><!--l. 36--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2800009.2.1"></a>Analysis Approach</h5>
+<!--l. 37--><p class="noindent" >We performed structured, iterative thematic analysis of the qualitative data. This approach is
+inspired by Grounded Theory and useful for exploring sentiment and mental models early in the
+design process <span class="cite">[<a 
+href="dissli2.html#XStrauss1990">321</a>]</span>. It consisted of three distinct parts: open coding, axial coding and a final
+selective coding stage. In the first stage, the data is labeled with an unlimited number of fitting
+codes. Next, the codes are grouped and abstracted. A second coder independently put the codes into
+the groups. Differences were discussed until a common solution was found. Finally, the number of
+code-groups are reduced to the essential themes that best describe the thinking processes, or as in
+our case, the requirements.
+</p><!--l. 44--><p class="noindent" >
+                                                                                    
+
+                                                                                    
+</p>
+<h4 class="subsectionHead"><span class="titlemark">9.2.2    </span> <a 
+ id="x103-2810009.2.2"></a>Overall Results and Central Themes</h4>
+<!--l. 47--><p class="noindent" >Overall participants were positive about receiving support during password selection, often because
+“any kind of help is good help”. Some stated they were convinced that feedback is helpful to create
+stronger passwords. The primary benefits they mentioned were reduced frustration and
+simplification, because it gives reassurance. The latter is a direct lead to the Persuasive
+Authentication Framework <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. If participants were negative about password feedback (n=4),
+their primary qualm was that they were convinced to achieve strong passwords without external
+help. In the following, we present the central themes in participants’ statements. Multiple coding
+stages, discussions, and the selection tasks helped us identify overarching needs: <span 
+class="ptmb8t-x-x-120">Show</span>, <span 
+class="ptmb8t-x-x-120">Explain</span>,
+<span 
+class="ptmb8t-x-x-120">Help</span>, <span 
+class="ptmb8t-x-x-120">Empower</span>. To keep the narrative coherent, we omit all corollary results that did not guide
+further research steps. These are reported in higher detail in C. Olsienkiewicz’ thesis
+<span class="cite">[<a 
+href="dissli2.html#XOlsienkiewicz2016BAThesis">248</a>]</span>.
+</p><!--l. 49--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2820009.2.2"></a>Show</h5>
+<!--l. 51--><p class="noindent" >“Show” appears to be the most important category because at least one answer from each
+participant could be put into this code. Unsurprisingly, participants preferred <span 
+class="ptmb8t-x-x-120">visual feedback </span>over
+verbal feedback. Our prototype refrained from graphical elements entirely, but participants wanted
+a visual representation of strength. Most notably, a “horizontal bar” was mentioned, i.e. a simple
+password meter. Some participants felt that verbal strength categories are patronizing. “Colors” and
+“steps” were commonly mentioned. This theme echoes Ur et al.’s quantitative findings
+<span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>.
+</p><!--l. 53--><p class="noindent" >At the same time, the “Show” theme encompasses that participants would like the password reset
+form to <span 
+class="ptmri8t-x-x-120">show </span>what it expects from the user. If digits or symbols are expected, the feedback
+should <span 
+class="ptmri8t-x-x-120">show </span>their impact on the users’ security or show the risks that are taken by not
+including symbols and digits. P4 mentioned that if old passwords are disallowed, then
+these passwords should be shown when creating a new one to know what is going to be
+forbidden. Hence, “show” does not only include feed<span 
+class="ptmri8t-x-x-120">back</span>, but also feed<span 
+class="ptmri8t-x-x-120">forward </span>to align
+expectations. Therefore, compliance is a mutual contract, and the theme again highlights Sasse
+and Flechais’ argumentation that authentication schemes are <span 
+class="ptmri8t-x-x-120">socio-technical systems</span>
+<span class="cite">[<a 
+href="dissli2.html#XSasse2005UsableSecurityPosition">277</a>]</span>.
+</p><!--l. 65--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2830009.2.2"></a>Explain</h5>
+                                                                                    
+
+                                                                                    
+<!--l. 67--><p class="noindent" >When asked what advice they would have expected from the feedback, answers clearly indicated
+that participants had a fixed notion of what makes a strong password. Verbal feedback, in their
+view, should point out that digits, symbols, uppercase letters, randomness, and password length are
+beneficial for password strength. Most of this is in line with findings from previous chapters and
+related work. It is interesting, though, that this consensus also shows us that the feedback would not
+be necessary at all. Responses from participants who unexpectedly received a low strength rating
+and feedback highlighted an important aspect: If feedback stands in <span 
+class="ptmb8t-x-x-120">stark contrast </span>to how the user
+perceives their password’s strength, explanations are both welcome and necessary: “Why is the
+password rated only with two out of five stars?” (P7) – “How precisely is the strength
+and feedback determined?” (P34,P28). The desire to understand the rating is hence the
+key to correct mental models, but needs to be cued by lower-than-anticipated strength
+ratings. Potentially, past study results pointed towards the inefficacy of password meters,
+because they were not accompanied by explanations in case the rating contradicted user
+beliefs.
+</p><!--l. 69--><p class="noindent" >The theme sometimes overlaps with “show”, because once a feedback system <span 
+class="ptmri8t-x-x-120">shows </span>the risks,
+participants suggested <span 
+class="ptmri8t-x-x-120">explaining </span>them in detail, i.e. explain the consequences of weak
+passwords. At the same time, a good comprehensible explanation was mentioned to
+convey the notion that service providers “know what they are talking about” (P1). Thus,
+nuanced “explanation-design” is essential for those users eager to learn more. Realistically,
+though, experience tells us that not many people actively seek explanations, but our
+analysis hints at opportunities to explain the details when strength feedback breaks mental
+models.
+</p><!--l. 96--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2840009.2.2"></a>Help</h5>
+<!--l. 106--><p class="noindent" >The “Help” theme informs design decisions around <span 
+class="ptmb8t-x-x-120">suggestions</span>. Eleven participants noted that
+specific guidance towards a stronger or memorable password might help them. The well-known
+repertoire of tips, examples, “formulas” (P4), generators, mnemonics, etc. was the center of
+attention. Showing users <span 
+class="ptmri8t-x-x-120">examples </span>was mentioned by two participants to help them understand
+what makes a “perfect” password and is therefore an overlap with the “Show” theme. Another two
+participants had the idea to show “best practices” from other users of the service. At the same time,
+one participant was skeptical about the use of help, because the outcome might be too
+predictable: “<span 
+class="ptmri8t-x-x-120">The feedback is helpful, but [if everybody takes the advice,] won’t that mean</span>
+<span 
+class="ptmri8t-x-x-120">that all passwords become too similar?” </span>(P12). In some way, she was right, because
+example-passwords can persuade users to mimick the given example and become more vulnerable
+than before, so the design should respect this concern. One participant hinted at solving this
+problem by suggesting modifications based on the currently entered password, or give
+<span 
+class="ptmri8t-x-x-120">personalized </span>suggestions. This is basically Forget et al.’s earliest approach to persuade
+users towards stronger passwords, which was later studied intensively by Shay et al.
+                                                                                    
+
+                                                                                    
+<span class="cite">[<a 
+href="dissli2.html#XShay2015SpoonfulOfSugar">300</a>]</span> and Ur et al. <span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>. Thus, the participants’ expectations are reflected in this line of
+research.
+</p><!--l. 118--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2850009.2.2"></a>Empower</h5>
+<!--l. 119--><p class="noindent" >The three aforementioned themes flow into the final one: <span 
+class="ptmb8t-x-x-120">empowering </span>users to be creative, put
+suggestions into practice, and to be confident in their choice. Most notably, the concept of
+restricting characters and limiting password strength was a primary concern. Although we initially
+would not have considered composition policies as “feedback”, the participants made a fair point:
+rejecting a password due to a composition policy is a feedback mechanism. However, rejection can
+easily be perceived as destructive feedback, which manifested in the mentioned negative
+experiences. Instead, combining “Show”, “Explain”, and “Help” can become a full-fledged
+creativity support tool: Show what can be improved, explain why, and help by demonstrating
+alternative ways.
+</p><!--l. 132--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2860009.2.2"></a>Limitations</h5>
+<!--l. 133--><p class="noindent" >The insights should be implemented with the study’s limitations in mind. Overall, the themes we
+found are a small snapshot of user needs and need further consolidation for production-level
+solutions.
+</p><!--l. 135--><p class="noindent" >First, we were surprised that so many English-speaking users from the Prolific panel were able to
+make it through the platform’s screening process. Therefore, we had to discard many responses
+where we were unsure about the participant’s language skills. Ideally, we should have
+introduced a small passage of prose to which the participants answers 2-3 comprehension
+questions. However, we failed to anticipate this until the data was in and also did not plan the
+budget for the study accordingly. For the remaining participants, however, we ensured the
+qualitative responses were solid. Also, it would have been feasible to be able to ask follow up
+questions, which was a caveat of the online study method. The sample we would have been
+able to recruit for in-person interviews, however, would not have been diverse enough,
+so we were limited in the choice of methods. The number of open questions and the
+resulting answers were still sufficient to perform in-depth analyses and led to interesting
+findings.
+                                                                                    
+
+                                                                                    
+</p><!--l. 138--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2870009.2.2"></a>Intermediate Summary</h5>
+<!--l. 139--><p class="noindent" >With an online survey, we explored what users explicitly expect from password support. The most
+important take-away was that support is especially important and potentially most effective when
+feedback contradicts users’ mental models about their own password practices. We were able to
+derive a new perspective on password support. We will call it the <span 
+class="ptmri8t-x-x-120">show-explain-help-empower</span>
+paradigm in the remainder of this thesis.
+</p><!--l. 1--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">9.3    </span> <a 
+ id="x103-2880009.3"></a>Tacit and Latent Needs</h3>
+<!--l. 4--><p class="noindent" >As second step of the co-creation project, we aimed to learn from specific user-generated designs
+and solutions. Therefore, we took to the participatory design methodology. In its essence, it is a
+technique that constitutes a “shift in attitude from designing <span 
+class="ptmb8t-x-x-120">for </span>users to one of designing <span 
+class="ptmb8t-x-x-120">with</span>
+users” <span class="cite">[<a 
+href="dissli2.html#XSanders2002ParticipatoryDesign">16</a>]</span>. Therefore, having identified a research question, users from the targeted segment are
+involved from the beginning in design explorations and create their own solutions (“Make” in
+Figure <span 
+class="ptmb8t-x-x-120">??</span>). Moreover, a tight feedback loop makes sure that all designs are created under a <span 
+class="ptmri8t-x-x-120">shared</span>
+<span 
+class="ptmri8t-x-x-120">ownership</span>. In our case, we were eager to find out what a novel password support system
+could look like. In particular, unusual and exciting ideas beyond simple password meters
+were the center of attention. The overarching goal was to identify <span 
+class="ptmb8t-x-x-120">what users require</span>
+from password feedback systems, which would help us design them in more persuasive
+ways.
+</p><!--l. 21--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">9.3.1    </span> <a 
+ id="x103-2890009.3.1"></a>Method</h4>
+<!--l. 22--><p class="noindent" >We used the participatory design approach to learn new requirements for persuasive feedback. The
+methodology included a co-design session with various exercises, an exploration and refinement of
+the initial ideas, a feedback loop on the progress of the concepts, and the creation of a final
+interactive digital prototype.
+                                                                                    
+
+                                                                                    
+</p><!--l. 24--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2900009.3.1"></a>Procedure of the Co-Design Session</h5>
+<!--l. 27--><p class="noindent" >The 60-minute co-design session started with a briefing about the goals and informed consent to
+record the session on video. Afterwards, we sensitized participants for the topic with two
+<span 
+class="ptmri8t-x-x-120">ball-bearing exercises</span>. For this, participants were divided into two groups and those faced each
+other in a circle. Each person interviewed another on a specific question of password behavior for
+one minute. The outer circle moved to the next interviewer until they had talked to all people from
+the inner circle. In the first round, interviewers were given questions on personal password
+selection and coping strategies. The second round focused on recommendations to different user
+groups. The interviewers then summarized their insights and shared them with the group. The
+exercise was helpful to learn other people’s password strategies and broaden the participants’
+horizon. They said it was interesting to reflect about obstacles in acting more securely. In
+summary, participants showed typical selection strategies based on word-digit-symbol
+patterns and would recommend personal, memorable events as starting points for password
+selection.
+</p><!--l. 29--><p class="noindent" >What followed were straightforward brainstorming exercises in two groups. The question they tried
+to answer was “How would a registration form of an email provider need to be designed to help
+you create a secure password?” The facilitator encouraged participants to think out of
+the box and contribute unusual ideas. After five minutes, half of each group moved to
+the other group. In total, participants produced 17 distinct ideas and presented them on
+a whiteboard. Everyone received two votes for their favorite ideas. Participants then
+formed groups of two or three to create paper prototypes for the three ideas that had the
+most votes. The facilitator made sure to explain the process and the expected fidelity of
+the outcome. Once the prototypes were ready, the groups presented them to the entire
+crowd.
+</p>
+<!--l. 31--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x103-2910009.3.1"></a><span 
+class="ptmb8t-x-x-120">Participants</span></span>
+We recruited seven participants through postings in public groups on social networks. Six of them
+were female. Three were studying philology, while one each were studying pedagogy, media
+informatics and business studies. The only male participant was an employed product
+designer. The average age was 23, ranging from 19 to 29. As an incentive, we offered a 10<span 
+class="ptmr8c-x-x-120">€</span>
+shopping voucher that was handed out after the brainstorming session. We had tried to
+recruit a more diverse sample, but we did not receive additional responses meeting these
+requirements.
+</p><!--l. 34--><p class="noindent" >
+                                                                                    
+
+                                                                                    
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x103-2920009.3.1"></a>10 plus 10 Method and Iterative Improvement</h5>
+<!--l. 35--><p class="noindent" >Based on the participants’ paper prototypes, we designed ten variations of each idea, i.e. 30 concept
+candidates. This procedure was inspired by the <span 
+class="ptmri8t-x-x-120">10 plus 10 method </span>to explore the design
+space<span class="footnote-mark"><a 
+href="diss105.html#fn2x30"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x103-292001f2"></a>.
+Afterwards, we discussed the feasibility of each solution and identified six candidates that were
+presented to the study participants. Their feedback informed the decision on the final prototype.
+After it was implemented with standard web-technologies, participants provided a final round of
+qualitative feedback and a reflection on the process. Participation thus occurred in each step of the
+design process.
+</p><!--l. 38--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">9.3.2    </span> <a 
+ id="x103-2930009.3.2"></a>Concepts and Prototype</h4>
+<!--l. 39--><p class="noindent" >The paper prototypes of the brainstorming session showed three central components: <span 
+class="ptmb8t-x-x-120">rewards</span>,
+<span 
+class="ptmb8t-x-x-120">analogies and compliance</span>, and <span 
+class="ptmb8t-x-x-120">playfulness</span>. After the 10 plus 10 method, we had six candidates
+that made it to the final feedback round, two of each category. Please note that we tried to stay as
+close to the participants’ original ideas as possible and maintained concepts that were
+unrealistic.
+</p>
+<!--l. 40--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x103-2940009.3.2"></a><span 
+class="ptmb8t-x-x-120">Rewards</span></span>
+The “beautify” concept removed all color from the website and faded it back in as the entered
+password increases in strength. The “friends” concept would provide a password meter that uses
+pictures of the user’s friends instead of color to reward stronger passwords and add a personal
+touch.
+</p>
+<!--l. 41--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x103-2950009.3.2"></a><span 
+class="ptmb8t-x-x-120">Analogies and Compliance</span></span>
+Concepts in this category tried to nudge users by making strength more graspable and salient. The
+“songs” concept shows the number of songs that one can listen to until an attacker would have
+                                                                                    
+
+                                                                                    
+cracked the password. The “fruits” concept (see Figure <a 
+href="#x103-296001r1">9.2a<!--tex4ht:ref: fig:co-design:fruitsalad --></a>) draws from a healthy-eating analogy
+and represents each character type with a fruit. While the user types, fruits are “plucked” from a
+character patch and moved to the password field. If a password only contains lowercase letters, the
+lack of complexity is immediately visible because only one type of fruit would have been
+plucked.
+</p>
+<!--l. 43--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x103-2960009.3.2"></a><span 
+class="ptmb8t-x-x-120">Playfulness</span></span>
+The “slotmachine” idea lets the user first enter a password. Then they pull the lever of a virtual
+slotmachine. When it stops, it displays four random characters that would make the password
+stronger. The user can then claim the win by adding the random characters to their password.
+Finally, the “bubbles” concept lets the user burst bubbles floating on the screen (see Figure <a 
+href="#x103-296002r2">9.2b<!--tex4ht:ref: fig:co-design:bubbles-concept --></a>).
+Inside each bubble, there is either a letter, digit, or symbol. The user can click on them directly to
+transfer the corresponding character to the password field, or burst bubbles by typing on the
+keyboard. The longer the password, the fewer bubbles remain. Also, less common character
+classes are shown in bigger bubbles to persuade users to burst those and hereby increase
+complexity.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x103-296003r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 47--><p class="noindent" ></p><!--l. 48--><p class="noindent" > <a 
+ id="x103-296001r1"></a>
+ <span 
+class="ptmr8t-x-x-109">Fruitsalad: Each character class is represented by</span>
+<span 
+class="ptmr8t-x-x-109">a fruit and the user sees a lack of diversity, e.g. if</span>
+<span 
+class="ptmr8t-x-x-109">their password only contains lowercase letters.</span>
+</p><!--l. 52--><p class="noindent" > <a 
+ id="x103-296002r2"></a>
+<span 
+class="ptmr8t-x-x-109">Bubbles: Floating bubbles on the screen that the</span>
+<span 
+class="ptmr8t-x-x-109">user pops as they type the password. Symbols are</span>
+<span 
+class="ptmr8t-x-x-109">placed in bigger bubbles to be more salient.</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 9.3: </span><span  
+class="content">Two out of the six concepts that made it to the final feedback iteration.</span></div><!--tex4ht:label?: x103-296003r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h5 class="subsubsectionHead"><a 
+ id="x103-2970009.3.2"></a>“Bubbles” Prototype</h5>
+<!--l. 64--><p class="noindent" >Participants provided feedback on the six concepts and generally considered the “bubbles” concept
+the best solution to motivate themselves to add more symbols or digits and also make the password
+longer to watch more bubbles burst. Therefore, we implemented it as an HTML5-based prototype.
+To add a more game-like feel, we put a score on each character class, and show the currently
+achieved total score in the GUI. The bubbles move slowly enough to trace them and their
+bursts.
+</p><!--l. 66--><p class="noindent" >Five of the participants provided a final round of feedback. On the positive side, they felt it
+intriguing to burst the bubbles. They understood the purpose of the bubbles and the different sizes
+and colors right away or after typing the first character. Two participants noted that it fosters
+creativity. All said that a system like this would catch their eye and might impact their selection
+behavior. They also mentioned a number of improvements. For instance, two participants fount the
+page chaotic and wanted it simplified. The scoring was not transparent either, and three said the
+bursting animation should be more obtrusive.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x103-297003r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 70--><p class="noindent" ></p><!--l. 71--><p class="noindent" > <a 
+ id="x103-297001r1"></a>
+</p><!--l. 75--><p class="noindent" > <a 
+ id="x103-297002r2"></a>
+<br /> </p><div class="caption" 
+><span class="id">Figure 9.5: </span><span  
+class="content"> We made the “bubbles” concept into an interactive prototype and gathered a
+final round of feedback on the outcome and the process.</span></div><!--tex4ht:label?: x103-297003r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">9.3.3    </span> <a 
+ id="x103-2980009.3.3"></a>Process Reflection</h4>
+<!--l. 82--><p class="noindent" >Participants were also asked to provide feedback about their experiences along the way. Generally,
+they were positive and felt involved generating a new design. They reported that the final prototype
+reflected the entire process well and that elements from the idea generation stages were visible. In
+particular, they liked to think about finding solutions to a problem that they had not thought about
+in depth. Three of them said that they would have still liked more involvement so that they can
+shape the outcome even more. One participant, on the other hand, said that s/he disliked that most
+ideas were far-fetched and too unrealistic. S/he would have liked a more product-centric
+development process.
+</p><!--l. 84--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">9.3.4    </span> <a 
+ id="x103-2990009.3.4"></a>Lessons about Persuasive Password Interventions</h4>
+<!--l. 85--><p class="noindent" >Discussions among participants and their continuous feedback throughout the design process
+helped us understand various user needs. We heard that the group had not given the topic much
+thought before joining the brainstorming session. Many of their ideas went beyond typical
+password meters, which we highly encouraged. In particular, the concepts show a tendency to
+<span 
+class="ptmb8t-x-x-120">visual elements </span>(beautify, pictures, bubbles, fruits) to catch the user’s attention. This corresponds
+to the <span 
+class="ptmri8t-x-x-120">show </span>theme of the requirement-elicitation. The <span 
+class="ptmri8t-x-x-120">help </span>theme was visible especially in the
+compliance-centered concepts: The “fruit-salad” supports people in recognizing a potential lack of
+character diversity. While the “songs” analogy is a kind of <span 
+class="ptmri8t-x-x-120">explanation </span>of password strength
+because it gives background information, the ideas did not contain many attempts to explain
+additional aspects. Perhaps, participants equated strength with complexity – a mental model that we
+found in Chapter <a 
+href="dissch5.html#x74-1230005">5<!--tex4ht:ref: chap:pasdjo --></a> – and their ideas confirmed this thinking model. Finally, the “bubbles”
+concept aimed to boost creativity and thus showed elements of the <span 
+class="ptmri8t-x-x-120">help </span>and <span 
+class="ptmri8t-x-x-120">empower</span>
+themes.
+</p><!--l. 86--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">9.4    </span> <a 
+ id="x103-3000009.4"></a>Discussion</h3>
+<!--l. 87--><p class="noindent" >The insights from two rapid methods allow us to derive requirements for persuasive password
+support, which we put into the context of existing frameworks.
+                                                                                    
+
+                                                                                    
+</p><!--l. 89--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">9.4.1    </span> <a 
+ id="x103-3010009.4.1"></a>Requirements</h4>
+<!--l. 90--><p class="noindent" >Although the first study was focused on explicit and observable needs, the qualitative analysis even
+brought about more profound needs. Similarly, the second study also helped us understand
+explicit user needs. Therefore, it was hard to classify the needs, because they were very
+nuanced. Nonetheless, we show the central characteristics of the requirements in Table
+<span 
+class="ptmb8t-x-x-120">??</span>.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 1--><p class="noindent" ><a 
+ id="x103-301001r1"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+<div class="tabular"> <table id="TBL-14" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-14-1g"><col 
+id="TBL-14-1" /><col 
+id="TBL-14-2" /><col 
+id="TBL-14-3" /><col 
+id="TBL-14-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-14-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-1-1"  
+class="td11">   <span 
+class="ptmr8t-x-x-109">#  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-1-2"  
+class="td11"> <!--l. 3--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Requirement</span>                                                                                     </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-1-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Type                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-1-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Study      </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-2-"><td colspan="3" style="white-space:nowrap; text-align:right;" id="TBL-14-2-1"  
+class="td11"></td> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">The persuasive tactic needs to ...</span></div>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-3-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(1)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-3-2"  
+class="td11"> <!--l. 5--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Visually indicate current password issues</span>                                        </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-3-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Explicit                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-3-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1 &#x0026; S2  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-4-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(2)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-4-2"  
+class="td11"> <!--l. 6--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Offer specific help to diversify passwords</span>                                        </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-4-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Explicit                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-4-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1 &#x0026; S2  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-5-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(3)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-5-2"  
+class="td11"> <!--l. 7--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Be personal</span>                                                                                       </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-5-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Explicit                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-5-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-6-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(4)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-6-2"  
+class="td11"> <!--l. 8--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Provide background information, especially if feedback discounts</span>
+  <span 
+class="ptmr8t-x-x-109">mental model</span>                                                                                    </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-6-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Explicit/Observable  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-6-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-7-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-7-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(5)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-7-2"  
+class="td11"> <!--l. 10--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Stay trustworthy</span>                                                                                </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-7-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Observable                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-7-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1 &#x0026; S2  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-8-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-8-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(6)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-8-2"  
+class="td11"> <!--l. 11--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Empower users to act differently</span>                                                      </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-8-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Tacit                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-8-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1 &#x0026; S2  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-9-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-9-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(7)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-9-2"  
+class="td11"> <!--l. 12--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Be straight-forward, easy, and streamlined</span>                                      </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-9-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Tacit                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-9-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S1            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-10-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-10-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(8)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-10-2"  
+class="td11"> <!--l. 13--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Catch attention, be engaging, foster curiosity</span>                                  </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-10-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Latent                        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-10-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S2            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-11-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-11-1"  
+class="td11">  <span 
+class="ptmr8t-x-x-109">(9)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-11-2"  
+class="td11"> <!--l. 14--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Open eyes and broaden horizons, e.g. through making unknown</span>
+  <span 
+class="ptmr8t-x-x-109">coping strategies salient</span>                                                                    </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-11-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Latent                        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-11-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S2            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-12-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-12-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">(10)  </span></td><td  style="white-space:wrap; text-align:left;" id="TBL-14-12-2"  
+class="td11"> <!--l. 15--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Avoid habituation effects through surprise and delight</span>                    </p></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-12-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Latent                        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-14-12-4"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">S2            </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-14-13-"><td  style="white-space:nowrap; text-align:right;" id="TBL-14-13-1"  
+class="td11">     </td></tr></table></div>
+<br /> <div class="caption" 
+><span class="id">Table 9.1: </span><span  
+class="content"> High-level requirements to satisfy different levels of user needs in persuasive
+password feedback. </span></div><!--tex4ht:label?: x103-301001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<!--l. 101--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x103-3020009.4.1"></a><span 
+class="ptmb8t-x-x-120">Opportunities</span></span>
+Password meters and real-time feedback are the de facto paragon of persuasion in the wild. Most
+commonly, they fulfill requirements (1), (2), (4), and (5). For instance, Google’s password meter
+visually encodes password strength with color and bar-size, suggests not using a pet’s name, offers
+extensive background information with a clear call-to-action, and does not jeopardize
+trustworthiness with extravagant design. On the other hand, it does not necessarily empower users
+to break habits, is not personalized (what if the user does not have a pet?), and does not
+account for other “obvious” strategies. Academia has produced alternative designs that
+fulfill requirements (7), (8), and (9), although unusual concepts (like in <span class="cite">[<a 
+href="dissli2.html#XUr2012HowDoesYourPasswordMeasureUp">343</a>]</span>) were
+rarely adopted in practice. Empowerment, personalization, and breaking habituation
+effects have been underexplored, and thus might be worthwhile opportunities for future
+studies.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x103-302001r6"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 105--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 9.6: </span><span  
+class="content"> Google’s Password Selection Support UI (March 2018)</span></div><!--tex4ht:label?: x103-302001r6 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">9.4.2    </span> <a 
+ id="x103-3030009.4.2"></a>Relation to Current Frameworks</h4>
+<!--l. 110--><p class="noindent" >Most of the themes and requirements show strong links to various persuasion frameworks. In the
+first study, the qualitative analysis resulted in four essential themes: show, explain, help, empower.
+Interestingly, there are parallels to <span 
+class="ptmb8t-x-x-120">teaching</span>. Teachers <span 
+class="ptmri8t-x-x-120">show </span>something new, and then <span 
+class="ptmri8t-x-x-120">explain </span>it
+in more detail. They <span 
+class="ptmri8t-x-x-120">help </span>students understand it. Often students can then exercise and
+explore ways to apply their knowledge, i.e. the process <span 
+class="ptmri8t-x-x-120">empowers </span>students to achieve
+something they could not do before. Forget et al., who contributed one of the early works on
+persuasion in cybersecurity, promoted their <a 
+href="dissli3.html#glo:PAF">Persuasive Authentication Framework</a> as a tool
+to <span 
+class="ptmb8t-x-x-120">educate </span>users. All the elements of our qualitative analysis are thus visible in their
+framework. The requirements in Table <span 
+class="ptmb8t-x-x-120">??</span> represent the themes on a more fine-grained
+level. Only requirements (8) and (10) are hard to put into the PAF, hence they extend the
+framework. Requirement (8) states that a password support tool should be noticeable
+and foster curiosity. Generating curiosity can be done in numerous ways, but in this
+context it relates to Cialdini’s <span 
+class="ptmri8t-x-x-120">scarcity </span>principle. The number of “good” passwords is
+much smaller than the number of “bad” ones, hence they are a scarce resource. The
+requirement states that users should realize this and become motivated to access the limited
+resource.
+</p><!--l. 114--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">9.5    </span> <a 
+ id="x103-3040009.5"></a>Conclusion</h3>
+<!--l. 117--><p class="noindent" >Our goal was to understand the requirements of persuasive password support, especially user needs
+and expectations. We triangulated methods to rapidly derive feasible requirements that guide future
+designs of interventions. The survey yielded explicit and idealistic needs, like having one’s own
+mental model confirmed by the feedback system. On the other hand, the participatory approach of
+the second study helped us identify latent needs that would not be detectable in a survey. The
+results, however, fit together well and solidify the overarching themes “show”, “explain”,
+“help”, and “empower”. Here, we found that participants’ expectations of password
+feedback were nuanced and can thus only be met by combining both verbal and visual
+support. Feedback was not the only component, because participants showed a need for
+more guidance in the form of feed<span 
+class="ptmri8t-x-x-120">forward</span>. The requirements might have been partially
+predictable even without conducting user research, but tacit and latent needs are uncommonly
+discussed in related research. Especially the thinking processes and participants’ design
+approaches in the participatory sessions revealed much of what they envisioned in a successful
+intervention. Applying the requirements to gauge existing solutions, we identified opportunities
+                                                                                    
+
+                                                                                    
+for future work in personalization, empowerment, and preventing habituation effects
+from repeated exposure to the same intervention. These are addressed in the following
+chapters.
+</p><!--l. 132--><p class="noindent" ><span class="fbox">             </p>
+          <h3 class="likesectionHead"><a 
+ id="x103-3050009.5"></a>Take Aways</h3>
+              <ul class="itemize1">
+              <li class="itemize">Triangulation  of  study  methods  helped  us  identify  different
+              levels of user needs. Especially the tacit and latent needs are
+              harder to elicit, but participatory design methods were feasible
+              to enhance survey data.
+              </li>
+              <li class="itemize">We  observed  that  participants  wanted  to  have  their  mental
+              models  confirmed  with  password  feedback.  They  become
+              skeptical if the feedback shows unexpected strength results.
+              </li>
+              <li class="itemize">Password  support  systems  should  meet  four  essential  user
+              needs:   <span 
+class="ptmb8t-x-x-120">Show   </span>the   current   behavior   and   its   consequences
+              visually, <span 
+class="ptmb8t-x-x-120">explain </span>things that contradict usual mental models,
+              <span 
+class="ptmb8t-x-x-120">help  </span>resolve  such  dissonances  and  <span 
+class="ptmb8t-x-x-120">empower  </span>users  to  act
+              differently.</li></ul>                                                                                           </span>
+                                                                                    
+
+                                                                                    
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

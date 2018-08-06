@@ -170,21 +170,22 @@
   % plainpages=false to avoid warnings about duplicate page labels
   %%% ONLINE VERSION:
    
-%  \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref}
-%	\pdfcompresslevel=9
-%	\pdfimageresolution=220
+  \usepackage[colorlinks=true,linkcolor=black,urlcolor=darkindigo,citecolor=bluegray]{hyperref}
+	\pdfcompresslevel=9
+	\pdfimageresolution=220
   %%% PRINT VERSION:
-  \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
-  \pdfcompresslevel=9
-  \pdfimageresolution=300
+%  \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+%  \pdfcompresslevel=9
+%  \pdfimageresolution=300
   \renewcommand{\\}{}
   \pdfinfo{
     /Author(\myname)
     /Title(\mytitle)
-    /Subject(Dissertation of \myname)git
+    /Subject(Dissertation of \myname)
     }
     \hypersetup {
-    pdfpagemode = {UseOutlines}, % prevents the automatic announcement of bookmarks
+%    pdfpagemode = {UseOutlines}, % prevents the automatic announcement of bookmarks
+    pdfpagemode = {UseNone},
     pdftitle = {\mytitle},
     pdfsubject = {Dissertation of \myname},
     pdfauthor = {\myname},

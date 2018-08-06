@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>14 The End - Ideas and Final Remarks</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 14</span><br /><a 
+ id="x129-40400014"></a>The End - Ideas and Final Remarks</h2>
+<!--l. 3--><p class="noindent" >In the last chapter of this thesis, I would like to present some ideas for future research in persuasive
+password support. Although I would have loved to start working on these already now, they go
+beyond the scope of this thesis and should be left to future work. As final remarks, I want to share
+my views on current developments of password authentication, where I see it in the near future, and
+how its future can be shaped more positively.
+</p>
+<h3 class="sectionHead"><span class="titlemark">14.1    </span> <a 
+ id="x129-40500014.1"></a>Ideas for Future Work</h3>
+<!--l. 6--><p class="noindent" >The recommendations in Section <a 
+href="dissch13.html#x126-39700013.1">13.1<!--tex4ht:ref: sec:summary:recommendations --></a> touched on future work on a high level. However, one
+recommendation was to follow up on ideas off the beaten path. Addressing this criterion,
+the following sections provide more specific ideas to work on password support in the
+future.
+</p><!--l. 11--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">14.1.1    </span> <a 
+ id="x129-40600014.1.1"></a>Follow-Up Studies</h4>
+<!--l. 13--><p class="noindent" >First and foremost, it will be worthwhile to address the limitations of the studies we conducted, or
+follow up on the leads from initial results. For instance, the PASDJO deployment in the wild
+suffered from lack of demographic data to understand individual differences in password
+perception. The second study on personality lacked more randomness of the available passwords
+and it would thus be a straightforward solution to integrate a short, optional psychometric
+questionnaire into PASDJO. Alternatively, we could have crowd-workers fill out a more elaborate
+psychometric survey before they play PASDJO and then fit regression models on the data. In any
+case, by combining the two approaches we will overcome current limitations of the two studies at
+once.
+</p><!--l. 16--><p class="noindent" >Furthermore, it will be vital to evaluate the Password Reuse Manager (PWRM, see Chapter <a 
+href="dissch12.html#x122-37000012">12<!--tex4ht:ref: chap:perdespassup --></a>)
+with a longitudinal study. At this point, we used a rapid iterative design method that was focused on
+qualitative feedback on features. The next step will be to invite a larger audience to test it for at
+least one month. To boost usage numbers during the field trial, the browser extension can be made
+compatible with additional browsers with very little effort. It is already built on the WebExtensions
+API, which is increasingly solid on all major browsers. We had also identified specific research
+questions that can be answered with A/B testing. One of the issues was that users kept their
+previous password managers activated and the additional extension simply generated more effort.
+                                                                                    
+
+                                                                                    
+The follow-up study should therefore screen for participants who do not use a password
+manager yet (group A), and another group who will be required to move over to the PWRM
+as single management solution throughout the entire study (group B). To extend the
+method space (see recommendation <a 
+href="dissch13.html#x126-3970065">5<!--tex4ht:ref: recommendation:method_space --></a> in Section <a 
+href="dissch13.html#x126-39700013.1">13.1<!--tex4ht:ref: sec:summary:recommendations --></a>) and better understand how the
+support works for the users, the study should conclude with the <span 
+class="ptmri8t-x-x-120">break up-/love-letter</span>
+<span 
+class="ptmri8t-x-x-120">method</span><span class="footnote-mark"><a 
+href="diss130.html#fn1x53"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x129-406001f1"></a>.
+Here, participants decide whether to write a love or a break-up letter to the PWRM, which will
+allow us to understand the emotional component of password support.
+</p><!--l. 19--><p class="noindent" >Finally, some of our other studies involved a password <span 
+class="ptmri8t-x-x-120">creation </span>task (see Chapters <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>,<a 
+href="dissch10.html#x106-30600010">10<!--tex4ht:ref: chap:decoy --></a>, and <a 
+href="dissch11.html#x110-33200011">11<!--tex4ht:ref: chap:emojipasswords --></a>).
+Although we followed guidelines to establish realistic scenarios, it would have been desirable to
+study password selection in-situ. Thus, in the future, we should leverage existing web-applications
+to test concepts when they are mature enough. Establishing collaborations with industry partners is
+critical to carry out this research approach.
+</p><!--l. 21--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">14.1.2    </span> <a 
+ id="x129-40700014.1.2"></a>Personalizing Password Policies</h4>
+<!--l. 22--><p class="noindent" >Personalization is a current big trend in user experience design and persuasive
+technology<span class="footnote-mark"><a 
+href="diss131.html#fn2x53"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x129-407001f2"></a>,
+especially since the breakthrough in machine-learning capabilities. It was already an element in the
+Persuasive Authentication Framework <span class="cite">[<a 
+href="dissli2.html#XForget2007PersuasionEducationSecurity">124</a>]</span>. We have found that personality has a notable
+influence on how users perceive password policies (see Chapter <a 
+href="dissch7.html#x88-1780007">7<!--tex4ht:ref: chap:pws_and_personality --></a>). Therefore, it is conceivable to
+leverage state-of-the-art computing power to tailor password requirements to individual users
+instead of relying on a one-fits-all approach. Hypothetically, if the system could detect what policy
+will <span 
+class="ptmri8t-x-x-120">help </span>the user in finding the best trade-off between password strength and usability, its
+                                                                                    
+
+                                                                                    
+user experience of would not be degraded by password authentication (as it is now). I
+provided initial pointers about the benefits in a position paper adjunct to <span 
+class="ptmri8t-x-x-120">PERSUASIVE’17</span>
+<span class="cite">[<a 
+href="dissli2.html#XSeitz2017PersonalizingPasswordPolicies">287</a>]</span>.
+</p><!--l. 24--><p class="noindent" >Tackling this challenge is possible with several focus areas, where the P4P framework can guide
+design decisions. For instance, we could advance algorithms to detect re-used passwords more
+reliably at registration. Khern-am-nuai et al. have showed an initial proof-of-concept that
+keystroke dynamics provide useful features <span class="cite">[<a 
+href="dissli2.html#XKhern-am-nuai2017Journal">193</a>]</span>, but they performed all analyses post-hoc.
+Machine-learning can potentially enable reuse detection already at enrollment and allow us to tailor
+feedback more appropriately. For instance, we can design a solution that makes alternatives to
+password reuse more salient, in case reuse practices become too risky (the process is
+depicted in Figure <a 
+href="#x129-407002r1">14.1<!--tex4ht:ref: fig:summary:flow-chart --></a>). Similar approaches are conceivable with different personality
+profiles. However, here it is much more likely to tailor personalize support strategies during
+password <span 
+class="ptmri8t-x-x-120">reset</span>, because the service potentially possesses more data about the user at that
+point.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x129-407002r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 29--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 14.1:  </span><span  
+class="content">Personalized  intervention  for  password  reuse.  The  keystrokes  inside  a
+password field are analyzed by a machine learning model. If the password is unique, do not
+intervene. If the password is reused, but there are no signs for overlaps between categories,
+we  can  accept  the  password,  too.  However,  if  the  password  is  reused  across  different
+categories, we use the show-explain-help paradigm to empower users to make an informed
+decision. In any case, the password is accepted to avoid being too restrictive. </span></div><!--tex4ht:label?: x129-407002r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">14.1.3    </span> <a 
+ id="x129-40800014.1.3"></a>Contextualizing Password Feedback</h4>
+<!--l. 44--><p class="noindent" >Beyond personalization, which can be described as context-sensitive adaptation to the user, we
+should also consider tailoring password feedback to the system’s context. For instance, we can
+create themed password meters to avoid habituation effects <span class="cite">[<a 
+href="dissli2.html#XUr2012HelpingUsersCreateBetterPasswords">344</a>]</span>. Kroeze and Olivier proposed
+using an evolving Pokemon as metaphor for the “evolution state” of the password <span class="cite">[<a 
+href="dissli2.html#XKroeze2012GamifyingAuthentication">204</a>]</span>. This kind
+of meter should probably be deployed on a game-related service, or directly for the registration
+page of Pokemon Go. As part of a design study, I created a themed password meter that matches
+the deployment context: Figure <span 
+class="ptmb8t-x-x-120">??</span> shows a password meter that was originally created for a
+music-festival app. It is based on the <span 
+class="ptmri8t-x-x-120">share-explain-help </span>paradigm and is only one of many design
+options for this context. For instance, we could also choose a personalized social nudge and
+say “<span 
+class="ptmri8t-x-x-120">only Justin Bieber fans use passwords like that</span>” – this could trigger in-/out-group
+biases and motivate some users to act differently. Ideally, such feedback systems are
+evaluated in situ, but to make it easier, we can use a cover story first, e.g. by creating a
+mock-website and recruit participants for usability tests thereof. Moreover, to assess the
+advantages of contextualized feedback, there should be a control group with neutral
+feedback.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x129-408003r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 48--><p class="noindent" ></p><!--l. 49--><p class="noindent" > <a 
+ id="x129-408001r1"></a>
+<span 
+class="ptmr8t-x-x-109">Contextualized feedback and feedforward for a weak password.</span>
+</p><!--l. 53--><p class="noindent" > <a 
+ id="x129-408002r2"></a>
+<span 
+class="ptmr8t-x-x-109">When the password is sufficiently strong, provide reinforcing feedback.</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 14.3: </span><span  
+class="content">A password meter for users of music festival app that uses context-related
+imagery  to  convey  password  strength.  It  is  designed  to  drive  curiosity.  Feedback  and
+feedforward follow the <span 
+class="ptmri8t-x-x-120">show-explain-help </span>paradigm.</span></div><!--tex4ht:label?: x129-408003r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<h4 class="subsectionHead"><span class="titlemark">14.1.4    </span> <a 
+ id="x129-40900014.1.4"></a>Solving Password Breach Aftermath</h4>
+<!--l. 66--><p class="noindent" >Database breaches containing passwords occur frequently with different levels of severity
+depending on security standards at the affected service. Users face an immediate risk, but might be
+unaware of the situation, so they do not take swift measures to protect their account. To mitigate
+this, service providers invalidate affected user accounts after they have detected a breach. This
+action is necessary to reestablish a secure overall system state where attackers cannot
+impersonate users on the platform. Usually, service providers inform users upon this
+countermeasure and prompt them to reset their passwords via email campaigns <span class="cite">[<a 
+href="dissli2.html#XHuh2017TooBusy">169</a>]</span>. While these
+countermeasures are unavoidable, they fall short of addressing the domino effect of reused
+passwords <span class="cite">[<a 
+href="dissli2.html#XIves2004DominoEffectReuse">173</a>]</span>. Many users do not understand the ramifications of a password breach and
+might only reset the password on the affected site. All other sites that share the same
+credentials remain at risk. I propose that service providers constantly monitor password leaks
+both on their own and on third party websites. In other words, while they might use a
+blacklist during account creation, there is usually no check-up mechanism that takes
+the updated risk-level into account. During this routine check-up, accounts that share
+credentials with affected third parties can be invalidated. The implementation should be
+straightforward with the aid of breach data freely available from different sources, e.g.
+<a 
+href="https://haveibeenpwned.com/Passwords" class="url" ><span 
+class="ectt-1200">https://haveibeenpwned.com/Passwords</span></a>. However, there are a few issues that we need to
+solve in the future. First, freely available password lists rarely contain user-names to avoid targeted
+attacks. Second, if accounts are invalidated because a check-up has found a breached set of
+credentials, users might misunderstand the reasons for the account lock-down. Phishing attacks
+often exploit “your account was locked down for security reasons” as a hook to obtain users’
+real credentials. Sending out emails with reset prompts is thus especially dangerous
+because they may raise suspicion, and it is hard for novice users to verify if the prompt is
+legitimate.
+</p><!--l. 79--><p class="noindent" >Finally, it would be interesting to study how user behavior changes after a breach. So far, there have
+been attempts to collect initial data <span class="cite">[<a 
+href="dissli2.html#XHuh2017TooBusy">169</a>]</span>, but there is far more that we have not measured, yet. For
+instance, it will be interesting to find out if personality traits are associated with user behavior
+after a breach. While it would be fair to assume that <span 
+class="ptmri8t-x-x-120">conscientious </span>users change their
+passwords more quickly and consistently, we did not necessarily observe such expected
+behavior in our own studies. Thus, there might be many opportunities for surprising
+insights.
+</p><!--l. 81--><p class="noindent" >
+</p>
+                                                                                    
+
+                                                                                    
+<h4 class="subsectionHead"><span class="titlemark">14.1.5    </span> <a 
+ id="x129-41000014.1.5"></a>Re-locating Password Feedback</h4>
+<!--l. 84--><p class="noindent" >A final problem to address in future work is the fact that many users simply do not <span 
+class="ptmri8t-x-x-120">notice </span>password
+feedback and therefore cannot re-assess their choice. Many users look down on their hands when
+typing passwords on regular hardware keyboards, because they have not mastered touch typing.
+During password entry, on-screen feedback is then out of sight. This could explain why password
+meters have smaller impact on password selection in the wild: while study participants might
+take care to follow all on-screen instructions in an online experiment, users are often
+less focused on the screen in real-world tasks. Therefore, we should study the impact
+of password feedback if it is relocated closer to the hands. The Touch Bar of current
+generations of the Apple MacBook Pro models is a visual output close to the hardware keys. It
+could be leveraged as display for both visual and textual password strength feedback.
+To the best of my knowledge, this has not been investigated, but might be a feasible
+solution.
+</p><!--l. 108--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">14.2    </span> <a 
+ id="x129-41100014.2"></a>Final Thoughts</h3>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x129-411001r4"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 118--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 14.4: </span><span  
+class="content"> Some media are constantly shaming users for their “bad passwords”, arguably
+as clickbait. However, the reports also act as reinforcement because of the implicit normative
+message these headlines convey <span class="cite">[<a 
+href="dissli2.html#XCialdini2003CraftingNormativeMessages">56</a>]</span>: Many other people behave the same way, so it is fairly
+normal.</span></div><!--tex4ht:label?: x129-411001r4 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 121--><p class="noindent" >I believe that users are not the weakest link in the authentication chain. There are always
+security mitigations on the system side that can take responsibility away from users.
+For instance, if all services had infinite resources to invest into penetration tests and
+alike, the need for exceptionally strong passwords vanishes. And although some user
+behavior is arguably risky, people should not be blamed for faulty systems that permit risks.
+Commentaries on the web and other media do the rest when they name and shame users
+for weak password behavior (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). Perhaps, their intentions are good, but
+the subtext is different: Plenty of users are doing the same, so why would any one user
+act differently than the rest? This is maladroit framing of normative messages at best
+<span class="cite">[<a 
+href="dissli2.html#XCialdini2003CraftingNormativeMessages">56</a>]</span>.
+</p><!--l. 124--><p class="noindent" >Passwords annoy users for a good reason. Most of us will not grief, if passwords become obsolete
+tomorrow. Probably, in the future, we will be able to make machines intelligent enough to
+independently decide whether a user should be granted access or not, all without explicit
+authentication. PCs and mobiles will automatically lock when the user is not in the vicinity. Natural
+interactions will enable us to tell virtual assistants to temporarily grant access to devices,
+e.g. by saying <span 
+class="ptmri8t-x-x-120">“Alexa, my daughter can use my iPad while we are driving to Italy, but</span>
+<span 
+class="ptmri8t-x-x-120">make sure that she can only browse safe websites”</span>, all without the hassle of sharing
+PINs or enrolling biometric features. Naturally, a few drawbacks will remain, because
+perfect security cannot be guaranteed, and this will raise trust issues. People want to
+stay in charge and although passwords appear to be an inferior technology, they can
+achieve a higher level of perceived control. Thus, there will not only be a need but also
+a <span 
+class="ptmri8t-x-x-120">demand </span>for knowledge-based authentication in the future. Drawing on an analogy,
+passwords are perhaps the vinyl records in a world of ubiquitous music streaming: They
+are a bit clunky, impractical, and can be damaged through careless handling. On the
+other hand, experts still recommend them despite being an obsolete technology. People
+treasure them for years, often become collectors and try to find the rare, unique gems of
+long-lost quality. Once attacks on password alternatives like multimodal biometrics become
+commonplace, there might be a time when passwords see a revival in popularity like
+vinyl.
+                                                                                    
+
+                                                                                    
+</p><!--l. 198--><p class="noindent" >
+                                                                                    
+
+                                                                                    
+                                                                                    
+
+                                                                                    
+</p><!--l. 202--><p class="noindent" >
+                                                                                    
+
+                                                                                    
+                                                                                    
+
+                                                                                    
+</p>
+<!--l. 5--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

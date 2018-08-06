@@ -1,0 +1,2378 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>2 Foundations</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,charset=utf-8,epub,html --> 
+<meta name="src" content="diss.tex" /> 
+<link rel="stylesheet" type="text/css" href="diss.css" /> 
+</head><body 
+>
+<!--l. 2--><div class="crosslinks"><p class="noindent"></p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter 2</span><br /><a 
+ id="x8-460002"></a>Foundations</h2>
+<!--l. 6--><p class="noindent" >Passwords are but one puzzle piece in the realm of cyber security. They are part of the access
+control paradigm, which is commonly divided into three steps: identification, authentication, and
+authorization <span class="cite">[<a 
+href="dissli2.html#XRiley2006IdentityAuthenticationDistinct">268</a>]</span>. Identifying a user is usually done with a prompt for a user name, so the
+system first tries to answer the question “who are you?”. Authentication is about proving
+that a user – or more broadly an entity – is who they claim to be, i.e. authentication is
+about <span 
+class="ptmri8t-x-x-120">verification of an entity</span>. In other words, the system asks “How can you prove that
+you are who you claim to be?”. This verification process can be based on three central
+elements, namely something that you know (any kind of secret), something that you
+are (any kind of property), or something that you have (any kind of secret token). One
+could argue that the second category could be extended by “something that you do”, e.g.
+provide your individual signature. However, authentication does not necessarily <span 
+class="ptmri8t-x-x-120">require</span>
+identification as a first step. It is well possible to authenticate entities even if they are
+anonymous. One everyday example are passwords for WiFi networks: Most of the time, the
+access point does not require a user name; the password, or pre-shared key, in the <a 
+href="dissli3.html#glo:WPA">WPA</a>
+protocol is enough to join the network. Last, authorization is the decision over which
+resources an authenticated entity is allowed to use, or an answer to “can the user access
+this?”.
+</p><!--l. 10--><p class="noindent" >For this thesis, <span 
+class="ptmb8t-x-x-120">authentication </span>remains the center of attention. In this chapter, we take a
+look at various forms of authentication and establish an argument as to why “something
+that you know” is still the most prevalent and significant authentication paradigm to
+date.
+</p>
+<h3 class="sectionHead"><span class="titlemark">2.1    </span> <a 
+ id="x8-470002.1"></a>A Brief History of Passwords</h3>
+<!--l. 14--><p class="noindent" >The idea of protecting resources with “something that you know” is hundreds of years old. Think
+about the magic words “open, Sesame!” that Ali Baba spoke to enter a den used as treasury by forty
+thieves<span class="footnote-mark"><a 
+href="diss9.html#fn1x3"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x8-47001f1"></a>.
+The story already illustrates password misuse, because Ali Baba was not the rightful owner of the
+                                                                                    
+
+                                                                                    
+den and he impersonated the thieves. Nonetheless, this authentication paradigm was brought
+to the digital world in the early 1960s by the Massachusetts Institute of Technology
+(MIT)<span class="footnote-mark"><a 
+href="diss10.html#fn2x3"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x8-47002f2"></a>.
+Researchers had built a mainframe computer that was programmable by multiple users. At the time,
+one of the most valuable resources beside the physical device was the <span 
+class="ptmri8t-x-x-120">time </span>granted to use the
+machine. Thus, the Compatible Time Sharing System (CTSS) was conceived to give
+every user a certain quota of hours to operate the computer. The quota was enforced with
+the aid of dedicated user accounts that were password protected. The interaction very
+much resembled what we still use today: after typing the user name, the password is
+requested and hidden from the screen during entry to prevent others from observing the
+credentials.
+</p><!--l. 18--><p class="noindent" >Shortly afterwards, the flaws of the system started to become evident when Alan Scherr became the first
+“hacker”<span class="footnote-mark"><a 
+href="diss11.html#fn3x3"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x8-47003f3"></a>.
+He desired more usage time, so he needed to impersonate other users of the computer and use their
+quota. The list of passwords on the system was not well protected, which allowed him to access the
+credentials and carry out what was probably the first password exploit in computer history. Scherr
+benefited from the fact that passwords were kept in plain text and could be accessed
+with a special punch card. Interestingly the attack was not detected immediately. Morris
+and Thompson mention strange behavior in their 1979 paper and blame the issue on
+a “software design error” <span class="cite">[<a 
+href="dissli2.html#XMorris1979PasswordSecurity">237</a>]</span>, while in fact it was Scherr who was responsible for
+it<span class="footnote-mark"><a 
+href="diss12.html#fn4x3"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x8-47004f4"></a>.
+With the rise of the UNIX operating system in the 1970s, encrypted passwords became standard.
+One of the cornerstones was the Data Encryption Standard (DES) which was developed by IBM
+                                                                                    
+
+                                                                                    
+and propagated by the US National Bureau of Standards (today called the National Institute of
+Standards and Technology, <a 
+href="dissli3.html#glo:NIST">NIST</a>) <span class="cite">[<a 
+href="dissli2.html#XBishop1995ProactivePasswordChecking">25</a>]</span>. This algorithm was widely used until the late 1990s when
+computing power was sufficient to efficiently carry out attacks, which rendered DES
+infeasible. At the time, the Advanced Encryption Standard had already been proposed
+and was able to replace DES in a straightforward manner, so the issue was resolved
+quickly.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 2--><p class="noindent" ><a 
+ id="x8-47005r1"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+ <div class="caption" 
+><span class="id">Table 2.1:  </span><span  
+class="content">Benefits  and  Drawbacks  for  different  stakeholders  in  a  password-based
+authentication. SPs = service providers.</span></div><!--tex4ht:label?: x8-47005r1 -->
+ <!--tex4ht:inline--><div class="tabular">                                                                                                                                               <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1" /><col 
+id="TBL-2-2" /><col 
+id="TBL-2-3" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td colspan="3" style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11"><!--cmidrule-->
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Stakes  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Benefits                                         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Drawbacks</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td colspan="3" style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11"><!--cmidrule-->
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">SPs      </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Low costs                                       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Large number of attack vectors</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Easy to implement                         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Anomaly detection costly</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Replaceable when compromised   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Attacks are simple to carry out</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Revocable by administrator           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Attack automation simple</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Enforceable policies                      </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Attacks can have severe consequences</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Users   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Fast entry on desktops                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Memory overload from too many passwords</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Most users already familiarized    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Suboptimal coping strategies</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Easy to learn                                  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Stronger passwords difficult to memorize</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-12-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Sharable with others                      </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Entry on mobile devices difficult</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-13-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">High degree of control / freedom  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Mastery difficult</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-14-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-14-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-14-2"  
+class="td11">                            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-14-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Disliked by many users / perceived as burden</span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-15-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-15-1"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Misc    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-15-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Independent of identification         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-15-3"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmr8t-x-x-109">Weak passwords are a risk for users and SPs </span></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-16-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-16-1"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-16-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Adjustable security level               </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-16-3"  
+class="td11">                                     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-17-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-17-1"  
+class="td11">       </td></tr></table>                                                                     </div>
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<!--l. 27--><p class="noindent" >Around 50 years after CTSS, one of its creators, Fernando Corbató, said in an interview with the Wall
+Street Journal that password-based authentication has “become kind of a nightmare with the World Wide
+Web”<span class="footnote-mark"><a 
+href="diss13.html#fn5x3"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x8-47006f5"></a>.
+The surge of the Web has led to many services requiring authentication. Alphanumeric passwords
+were the go-to solution because the system is easy to implement and has almost no set-up costs
+other than a database. This has led to passwords becoming the de-facto standard for authenticating
+users on the Web.
+</p><!--l. 30--><p class="noindent" >However, passwords do have shortcomings for all the stakeholders involved in the authentication
+process, e.g. users who struggle with remembering a multitude of passwords, or <a 
+href="dissli3.html#glo:SP">service providers</a>
+who need to deal with leaked passwords (see Table <span 
+class="ptmb8t-x-x-120">??</span>). Consequently, there have been many
+attempts to replace passwords as a whole to either minimize security risks, make things easier for
+the users, or – ideally – both at the same time. Until now, though, no alternative authentication
+mechanism has been able to fully replace alphanumeric passwords on the web, which we
+investigate in detail in Section <a 
+href="#x8-610002.5">2.5<!--tex4ht:ref: sec:rw:authentication_without_pws --></a>. Put short, the benefits provided by passwords outweigh the
+drawbacks most of the time.
+</p>
+<h3 class="sectionHead"><span class="titlemark">2.2    </span> <a 
+ id="x8-480002.2"></a>Attacks on Passwords</h3>
+<!--l. 37--><p class="noindent" >As mentioned above, computer passwords were attacked shortly after their inception.
+Attacks have since become more sophisticated and manifold (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). In the
+first attack on passwords, Scherr benefited from very weak protection and was able to
+simply print the passwords and hack into the system. Nowadays, an attacker, or “the
+bad guy” as Morris and Thompson used to call them <span class="cite">[<a 
+href="dissli2.html#XMorris1979PasswordSecurity">237</a>]</span>, has a number of ways to
+obtain a user’s password(s). The following sections depict how the attacks work, what the
+countermeasures look like, and if changing one’s password behavior serves as effective
+countermeasure.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x8-48001r1"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 43--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.1: </span><span  
+class="content"> Overview of attacks and high-level mitigations. Image courtesy of the National
+Cyber
+Security   Centre,   UK   <a 
+href="https://www.ncsc.gov.uk/guidance/password-collection" class="url" ><span 
+class="ectt-1200">https://www.ncsc.gov.uk/guidance/password-collection</span></a>
+<span 
+class="ptmri8t-x-x-120">(last accessed 21.12.2017) </span></span></div><!--tex4ht:label?: x8-48001r1 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 57--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-490002.2"></a><span 
+class="ptmb8t-x-x-120">Online Guessing</span></span>
+An adversary tries to impersonate the user by trying different combinations of user names and
+passwords, which are sent to the authenticating service directly. If successful, the attacker can log
+in without the user noticing and steal personal information, act on their behalf, and try to use the
+credentials on other services as well. This attack, which is commonly known as an “online attack”,
+is in many cases thwarted by throttling the number of unsuccessful login attempts per account. The
+service provider can lock down a user account entirely after a given number of failed
+login attempts. Afterwards, the user either has to manually reset their password, or they
+need to wait a certain time until the account is unlocked and new login attempts can
+be made. In the latter scenario, a strategy to hamper attacks is to implement a <span 
+class="ptmri8t-x-x-120">backoff</span>
+algorithm<span class="footnote-mark"><a 
+href="diss14.html#fn6x3"><sup class="textsuperscript">6</sup></a></span><a 
+ id="x8-49001f6"></a>
+like, e.g., in the Ethernet protocol <span class="cite">[<a 
+href="dissli2.html#XTanenbaum2011ComputerNetworks">328</a>, p. 285]</span>. The idea behind this scheme is to (exponentially)
+increase the time a user (or attacker) has to wait until they can log in again after the account was
+locked down. Brostoff and Sasse suggest allowing ten attempts until the account is locked <span class="cite">[<a 
+href="dissli2.html#XBrostoff2003TenStrikes">40</a>]</span>.
+This should give users enough trials to go through their list of passwords which is usually shorter
+than ten <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007LargeScaleStudyPasswordHabits">111</a>]</span>. Though this kind of countermeasure may seem like the best option, for system
+providers it comes at a higher price than for users: A malicious party could easily lock out a large
+number of users with a denial-of-service attack. For example, if a lockout policy is in place that
+invalidates passwords after ten failed login attempts, an attacker would only need to take a list of
+email addresses (readily available on the Internet) and run ten or more guesses per user. This
+would lock all of them out at once and the financial damage for the service provider to
+respond to user requests and/or reactivate accounts manually is probably large. There are
+defense strategies for this kind of threat, too, but their success cannot be guaranteed
+<span class="cite">[<a 
+href="dissli2.html#XFlorencio2010WhereDoPoliciesComeFrom">112</a>]</span>.
+</p><!--l. 64--><p class="noindent" >Perhaps, online guessing to access user accounts might only be feasible for determined attackers
+who target specific victims, but this type of attack is not entirely uncommon <span class="cite">[<a 
+href="dissli2.html#XFlorencio2013WhereDoAllTheAttacksGo">113</a>, <a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>, <a 
+href="dissli2.html#XHerley2015Counterfactuals">164</a>, <a 
+href="dissli2.html#XWang2016TargetedGuessingUnderestimated">358</a>]</span>.
+It is sometimes argued that such an attacker might automate up to one million guesses until the
+attack becomes profitless because it would simply take too long <span class="cite">[<a 
+href="dissli2.html#XBonneau2015ImperfectAuthentication">35</a>, <a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>]</span>. However, if login
+attempts are not throttled whatsoever, attackers have reasonable chances for payoff. This situation
+can lead to massive attacks, like the largest attack on WordPress to date in December
+                                                                                    
+
+                                                                                    
+2017<span class="footnote-mark"><a 
+href="diss15.html#fn7x3"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x8-49002f7"></a>.
+Florêncio et al. argue that users are well advised to pick passwords that can at least
+withstand this type of attack, because they stand a reasonable chance to fight them off. On
+the other hand, it becomes too difficult to protect themselves against offline guessing
+<span class="cite">[<a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>, <a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>, <a 
+href="dissli2.html#XFlorencio2016CommACM">117</a>]</span>.
+</p>
+<!--l. 74--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-500002.2"></a><span 
+class="ptmb8t-x-x-120">Stealing / Offline Guessing</span></span>
+Since online attacks are often impractical due to time consumption, offline attacks have proliferated in
+recent years<span class="footnote-mark"><a 
+href="diss16.html#fn8x3"><sup class="textsuperscript">8</sup></a></span><a 
+ id="x8-50001f8"></a>.
+In this scenario an attacker breaks into the server of a service provider, usually by
+exploiting security holes. If this goes unnoticed, the intruder can often access
+the entire database containing the user account data. He or she downloads the
+data to their own machine, which allows them to use cracking tools like John the
+Ripper<span class="footnote-mark"><a 
+href="diss17.html#fn9x3"><sup class="textsuperscript">9</sup></a></span><a 
+ id="x8-50002f9"></a>,
+hashcat<span class="footnote-mark"><a 
+href="diss18.html#fn10x3"><sup class="textsuperscript">10</sup></a></span><a 
+ id="x8-50003f10"></a>,
+                                                                                    
+
+                                                                                    
+or PassFault <span class="cite">[<a 
+href="dissli2.html#XPaiva2017Passfault">250</a>]</span>. These sophisticated tools use dictionaries, mangling rules and brute force to
+calculate password hashes which are then compared to the entry in the database. If the hashes
+match, the password was cracked and its plain text version is written to a file. Ideally, the passwords
+in the database are cryptographically hardened through salting and a slow hash function like bcrypt
+<span class="cite">[<a 
+href="dissli2.html#XProvos1999bcrypt">259</a>]</span>, which drastically reduces an attacker’s chances to crack the password. At the other side of
+the attack surface, the passwords could be stored in plain text, which would not require any
+cracking automation at all. Unfortunately, some of the most famous data leaks revealed that data
+was stored in plain text. The RockYou breach in 2009 contained 32 Million user accounts for its
+gaming website with plain-text passwords <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>, <a 
+href="dissli2.html#XWeir2010MetricsPolicies">365</a>]</span>. At the time, RockYou developed
+games for MySpace and Facebook and the database also contained credentials for these
+sites<span class="footnote-mark"><a 
+href="diss19.html#fn11x3"><sup class="textsuperscript">11</sup></a></span><a 
+ id="x8-50004f11"></a>,
+which made the leak even more severe. Strong passwords would not have helped at all to avoid
+losing personal data. Perhaps RockYou’s loose policy (five characters or more, no further
+restrictions) helped in safeguarding other accounts where more complex policies were in place,
+because users were not able to reuse their RockYou password there. In other instances of stolen
+password databases, the passwords were indeed hashed, e.g. the infamous LinkedIn
+breaches<span class="footnote-mark"><a 
+href="diss20.html#fn12x3"><sup class="textsuperscript">12</sup></a></span><a 
+ id="x8-50005f12"></a>
+– again with millions of rows of user data <span class="cite">[<a 
+href="dissli2.html#XHuh2017TooBusy">169</a>]</span>. Users are challenged to find a password that
+withstands this kind of attack. The large issue is that attackers are basically only limited by the time
+and money they want to spend on calculating password hashes <span class="cite">[<a 
+href="dissli2.html#XBlock2017EconomicsOfflineCracking">27</a>]</span>. On modern machines
+with a single GPU, thousands of hashes can be calculated per second even for slow
+algorithms<span class="footnote-mark"><a 
+href="diss21.html#fn13x3"><sup class="textsuperscript">13</sup></a></span><a 
+ id="x8-50006f13"></a>.
+                                                                                    
+
+                                                                                    
+Using a cloud instance with multiple CPUs can speed up this process even
+further<span class="footnote-mark"><a 
+href="diss22.html#fn14x3"><sup class="textsuperscript">14</sup></a></span><a 
+ id="x8-50007f14"></a>.
+Perhaps, this is why Florêncio et al. argue that it is futile to encourage users to pick a password that
+would withstand such an attack <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>, <a 
+href="dissli2.html#XFlorencio2016CommACM">117</a>]</span>.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x8-50008r2"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 90--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.2: </span><span  
+class="content"> Actual phishing websites targeting Facebook and Paypal (online and accessible
+on 21.12.2017). The URLs contain “fb” (short for Facebook) and keywords like “secure”
+“paypal” which contribute to falsely trusting the authenticity of the sites.</span></div><!--tex4ht:label?: x8-50008r2 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 99--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-510002.2"></a><span 
+class="ptmb8t-x-x-120">Phishing / Social Engineering</span></span>
+Social engineering has become one of the biggest threats for a user’s passwords with a growing
+number of incidents and fierce financial damage <span class="cite">[<a 
+href="dissli2.html#XBKA2016Bundeslagebild">45</a>]</span>. Former criminal hacker Kevin D. Mitnick,
+who calls himself a social engineer, defines the term like this:
+</p>
+<center class="quotation"><table class="quotation" 
+border="0" cellpadding="0" cellspacing="15"><tr><td>
+         <div class="quotation">
+      <!--l. 103--><p class="indent" >      “Social  Engineering  uses  influence  and  persuasion  to  deceive  people
+      by  convincing  them  that  the  social  engineer  is  someone  he  is  not,  or  by
+      manipulation. As a result, the social engineer is able to take advantage of people
+      to obtain information with or without the use of technology.” <span class="cite">[<a 
+href="dissli2.html#XMitnick2003ArtOfDeception">236</a>, Frontmatter]</span></p></div>
+</td></tr></table></center>
+Put simply, an attacker fools a victim into revealing certain kinds of information, including
+passwords. The most common social engineering attack on passwords is phishing, which typically
+involves two components: a fraudulent website that mimics another service and an email that lures
+the user onto this website <span class="cite">[<a 
+href="dissli2.html#XDhamija2006WhyPhishingWorks">85</a>, <a 
+href="dissli2.html#XSheng2010WhoFallsForAPhish">301</a>]</span>. The email usually utilizes persuasive techniques like scaring
+(“we noticed someone logged into your bank account and you need to reset your password”) or
+time pressure (“you need to act <span 
+class="ptmri8t-x-x-120">now </span>to avoid further damage”). If the website looks just like the
+original (like the web pages in Figure <span 
+class="ptmb8t-x-x-120">??</span>), users might fall for it and enter their password to log in.
+In that case, it does not matter whether it is a strong, complex password or simply 12345 –
+the attacker knows the username/password combination from that point on <span class="cite">[<a 
+href="dissli2.html#XTari2006ShoulderSurfingComparison">329</a>]</span>. If
+this tuple is used on other services, the attacker immediately gains access to those as
+well.
+<!--l. 112--><p class="noindent" >It is very challenging for users to validate the authenticity of a given webpage <span class="cite">[<a 
+href="dissli2.html#XDhamija2006WhyPhishingWorks">85</a>, <a 
+href="dissli2.html#XFogg2001WhatMakesSitesCredible">121</a>]</span>. Usually,
+the URL is the best indicator. Dhamjia et al. among others argue that it is unrealistic to keep an eye
+on the URL at all times. Since the URL and padlock-icons are often ineffective, much research has
+been dedicated to help users in this validation and prevent phishing attacks. For example, Lin et al.
+found that domain highlighting in the URL bar only has a small effect on the effectiveness of
+phishing attacks, even after their participants were explicitly instructed to take note of the URL
+<span class="cite">[<a 
+href="dissli2.html#XLin2011DomainHighlighting">212</a>]</span>. Wu et al. showed that browser toolbars do not really help users, either <span class="cite">[<a 
+href="dissli2.html#XWu2006SecurityToolbars">378</a>]</span>. Dhamija et al.
+proposed a <span 
+class="ptmri8t-x-x-120">trusted path </span>between the user and the legitimate service <span class="cite">[<a 
+href="dissli2.html#XDhamija2005DynamicSecuritySkins">84</a>]</span>. In this system,
+users are supposed to verify the authenticity of a given website by comparing visual
+patterns in a trusted window and on the website. Together with Max-Emanuel Maurer and
+Alexander De Luca, I created a browser extension to visualize the usage of different
+types of SSL certificates <span class="cite">[<a 
+href="dissli2.html#XMaurer2011ShiningChrome">225</a>]</span>. The extension makes the SSL state more obtrusive by
+coloring the entire frame of the browser window, e.g., in green if all communication is
+                                                                                    
+
+                                                                                    
+securely encrypted. The user then does not have to look for a small padlock icon or the
+“http<span 
+class="ptmb8t-x-x-120">s</span>://” URL prefix. We deployed it publicly and launched a feedback survey, which
+indicated that changing the browser skins is obtrusive enough to raise awareness and
+makes users more confident while browsing the Web. Until the recent change of platform
+APIs<span class="footnote-mark"><a 
+href="diss23.html#fn15x3"><sup class="textsuperscript">15</sup></a></span><a 
+ id="x8-51001f15"></a>
+and resulting incompatibility problems, the extension named “SSLPersonas” had seen
+47000 downloads, which is an indicator of both the necessity and the success of our
+solution.
+</p><!--l. 115--><p class="noindent" >However, ideally the browser would detect phishing websites and users from visiting them in the
+first place. Current versions of the major browsers try to do this and urge the user to leave the
+site, as is shown in Figure <span 
+class="ptmb8t-x-x-120">??</span>. This gives attackers only a short time-frame until the
+webpage has been classified as phishing, which takes 15 hours on average according to a
+recent Webroot report <span class="cite">[<a 
+href="dissli2.html#XGirtakovskis2017WebrootThreatReport">134</a>]</span>. Older sources report a bit longer lifespans between 20
+hours<span class="footnote-mark"><a 
+href="diss24.html#fn16x3"><sup class="textsuperscript">16</sup></a></span><a 
+ id="x8-51002f16"></a> and
+54 hours<span class="footnote-mark"><a 
+href="diss25.html#fn17x3"><sup class="textsuperscript">17</sup></a></span><a 
+ id="x8-51003f17"></a>.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x8-51004r3"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 121--><p class="noindent" >
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.3: </span><span  
+class="content">Chrome v63’s warning on a phishing website. The user is urged to leave the site
+but still has the chance to visit it by clicking on “Details”.</span></div><!--tex4ht:label?: x8-51004r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 130--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-520002.2"></a><span 
+class="ptmb8t-x-x-120">Malware and Eavesdropping</span></span>
+Secretly stealing plain-text passwords is also possible by infiltrating the user’s system with
+<span 
+class="ptmri8t-x-x-120">malware</span>, which is a term for <span 
+class="ptmri8t-x-x-120">mal</span>icious soft<span 
+class="ptmri8t-x-x-120">ware </span><span class="cite">[<a 
+href="dissli2.html#XBayer2009CurrentMalware">19</a>]</span>. One of most common attacks is to install a
+keylogger that sends all keyboard input to the attacker. For the most part, this either happens as a
+“drive-by-download” when the user visits an infected website or by opening a malicious email
+attachment <span class="cite">[<a 
+href="dissli2.html#XBKA2016Bundeslagebild">45</a>]</span>. In the former scenario, the sole line of defense lies with the service provider who
+needs to make sure their website is not infected. Wash identified that users are generally aware
+of this kind of threat, but their mental model of malware is sub-par <span class="cite">[<a 
+href="dissli2.html#XWash2010FolkModels">362</a>]</span>. Hence, the
+countermeasures taken by the users are often insufficient. As with the phishing scenario, a strong
+password is incapable of preventing a malware attack. Ideally, users use an anti-virus
+solution, keep their software updated at all times and refrain from opening suspicious email
+attachments.
+</p><!--l. 137--><p class="noindent" >Moreover, user credentials can be intercepted in transit, e.g. after the user submits them through a
+web form. These so called man-in-the-middle attacks are tough to carry out, but strong
+passwords do not prevent them either. One of the typical solutions to minimize the risk is
+encrypting the traffic with a secure protocol like SSL/TLS <span class="cite">[<a 
+href="dissli2.html#XTanenbaum2011ComputerNetworks">328</a>, p. 853ff.]</span>, which is based
+on a public/private key infrastructure. This makes it harder for an adversary to act as
+the man in the middle, because they would require the private key of either party. So,
+attackers must tamper with the certificates which usually causes browsers to show a
+warning <span class="cite">[<a 
+href="dissli2.html#XMaurer2011ShiningChrome">225</a>]</span>. Users, however, do not necessarily understand such warnings, because their
+understanding of the technical details is low <span class="cite">[<a 
+href="dissli2.html#XHerley2009SoLongThanksExternalities">162</a>, <a 
+href="dissli2.html#XWhitten1999WhyJohnnyCantEncrypt">371</a>]</span>. Consequently, the HCI community has
+invested much effort to convey the essential messages in a clear and actionable way
+<span class="cite">[<a 
+href="dissli2.html#XFelt2015ImprovingSSLWarnings">105</a>, <a 
+href="dissli2.html#XFelt2014ChromeSSL">107</a>, <a 
+href="dissli2.html#XMaurer2011ShiningChrome">225</a>, <a 
+href="dissli2.html#XSotirakopoulos2011ReplicationSSLWarnings">309</a>, <a 
+href="dissli2.html#XSunshine2009CryingWolf">324</a>]</span>.
+</p>
+<!--l. 150--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-530002.2"></a><span 
+class="ptmb8t-x-x-120">Observation</span></span>
+To obtain the password of a specific user, one can also simply watch them enter it and figure out
+what the password was. This attack is typically referred to as “shoulder surfing” because the person
+who is watching figuratively “surfs” on the user’s “shoulder” to look at their screen <span class="cite">[<a 
+href="dissli2.html#XTari2006ShoulderSurfingComparison">329</a>]</span>. Shoulder
+surfing is relatively easy and does not require technical sophistication. But, although friends and
+family can carry out such an attack, it is safe to say that it is more problematic in public spaces
+where unknown bystanders are present. Typical interactions that take place in such environments
+can be found with PIN entry, e.g. on an ATM, or entering any kind of password on a mobile device,
+e.g. on a bus in close vicinity to other people. De Luca et al. dedicated some research to both
+scenarios. For instance, they investigated contextual factors during ATM usage and the
+design space for alternative ATM authentication mechanisms <span class="cite">[<a 
+href="dissli2.html#XDeLuca2010UnderstandingATMSecurity">78</a>]</span>. They developed the
+ColorPIN scheme, where numerical input needs to match a previously enrolled color
+sequence <span class="cite">[<a 
+href="dissli2.html#XDeLuca2010ColorPIN">77</a>]</span>. Entering the ColorPIN is done indirectly. The user needs to first identify the
+                                                                                    
+
+                                                                                    
+correct digit (e.g. “1”), and then type a corresponding letter in the right color (e.g. a black
+“Q”). A shoulder-surfer is hereby challenged by overwhelming their short-term memory
+<span class="cite">[<a 
+href="dissli2.html#XDunphy2010CloserLookGraphical">88</a>]</span>.
+</p><!--l. 159--><p class="noindent" >Moreover, long alphanumeric passwords are a seldom-researched topic with regard to shoulder
+surfing. Shaub et al. looked into the effect of different designs of virtual keyboards on shoulder
+surfing susceptibility <span class="cite">[<a 
+href="dissli2.html#XSchaub2012PasswordShoulderSurfing">279</a>]</span>. Somewhat unsurprisingly, they found that keyboards with more
+cumbersome access to special characters are less prone to shoulder surfing because it is harder for
+an attacker to keep track of the keyboard switches. Moreover, we can see in the ColorPIN
+example that PINs and graphical passwords are more likely to be under attack. Users
+usually enter graphical passwords more slowly <span class="cite">[<a 
+href="dissli2.html#XTari2006ShoulderSurfingComparison">329</a>, <a 
+href="dissli2.html#XWiedenbeck2006ConvexHull">373</a>, <a 
+href="dissli2.html#XRenaud2009VisualSnakeOil">265</a>]</span>, which on the one hand
+gives an attacker more time to observe, but on the other hand burdens the short-term
+memory a bit more. Also, some visual authentication mechanisms require more screen
+real estate than a username/password form and entry is often not masked <span class="cite">[<a 
+href="dissli2.html#XBiddle2009GraphicalFirstTwelveYears">23</a>]</span>. Still,
+there is not a lot of evidence that observation is a severe threat in the real world, other
+than for ATM PINs and any kind of credentials of people of public interest. Herley and
+Pieters point out that the attack is not scalable via algorithms <span class="cite">[<a 
+href="dissli2.html#XHerley2015Counterfactuals">164</a>]</span>. Hence, Maguire
+and Renaud come to the conclusion that “shoulder-surfing may well be a non-issue in
+authentication design” <span class="cite">[<a 
+href="dissli2.html#XMaguire2012YouOnlyLiveTwice">218</a>]</span>. Using desktops or laptops to authenticate on regular websites,
+observation is rarely a major concern. Passwords are usually masked in the browser by
+replacing each character with an asterisk or a bullet symbol. However, masking has
+recently been questioned because it prevents proactive error checking on the user side
+<span class="cite">[<a 
+href="dissli2.html#XSasse2016DebunkingMyths">278</a>]</span>.
+</p>
+<!--l. 168--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-540002.2"></a><span 
+class="ptmb8t-x-x-120">Other attacks</span></span>
+Apart from the attacks described above, there are other approaches that should not go unmentioned
+(see Table <span 
+class="ptmb8t-x-x-120">??</span>). First, people in one’s own social circle, e.g. friends and family, have considerable
+amounts of personal information and often physical access to devices and passwords
+written onto post-it notes. Although the intent is often not purely malicious, it can be
+easy for these people to have an informed guess of a user’s credentials. Flechais et al.
+use the term “spouse attack” to describe this kind of threat <span class="cite">[<a 
+href="dissli2.html#XFlechais2013SaudiArabiaTrust">109</a>]</span>, Dunphy et al. call it
+a “friend attack”, while Sasse and Flechais framed it as “insider attack” <span class="cite">[<a 
+href="dissli2.html#XSasse2005UsableSecurityPosition">277</a>]</span>. Ur et
+al. found that users underestimate its likelihood <span class="cite">[<a 
+href="dissli2.html#XUr2016PerceptionsPassword">342</a>]</span>. A strong, complex password
+that is only memorable to the legitimate user might help in that scenario. Weirich and
+Sasse, however, argue that choosing an overly complex secret could make the user appear
+“paranoid” <span class="cite">[<a 
+href="dissli2.html#XWeirich2001PrettyGoodPersuasion">368</a>]</span> and Flechais et al. see password sharing as an important sign of trust
+<span class="cite">[<a 
+href="dissli2.html#XFlechais2013SaudiArabiaTrust">109</a>, <a 
+href="dissli2.html#XFlechais2005DivideConquerTrust">110</a>]</span>.
+</p><!--l. 172--><p class="noindent" >Finally, some credentials are shared unintentionally on the web. Software developers who share
+open source code on the web are prone to this issue <span class="cite">[<a 
+href="dissli2.html#XConklin2004PWAuthenticationSystemPerspective">59</a>]</span>. Recently, the node package
+manager (npm) platform realized that many of its users published their passwords with the
+                                                                                    
+
+                                                                                    
+packages<span class="footnote-mark"><a 
+href="diss26.html#fn18x3"><sup class="textsuperscript">18</sup></a></span><a 
+ id="x8-54001f18"></a>.
+An adversary could simply crawl public repositories on GitHub and collect the passwords in plain
+text. The npmjs.org operators had to invalidate the credentials to secure the accounts. One solution
+that reduces the severity of credential loss is using multi-factor authentication (cf. Section
+<a 
+href="#x8-710002.5.3">2.5.3<!--tex4ht:ref: sec:rw:shared_auth_tokens --></a>).
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 2--><p class="noindent" ><a 
+ id="x8-54002r2"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+ <div class="caption" 
+><span class="id">Table 2.2:  </span><span  
+class="content">Threats  on  passwords  and  potential  countermeasures  for  users  and  service
+providers (SP). Other stakeholders are left out of this analysis.</span></div><!--tex4ht:label?: x8-54002r2 -->
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1" /><col 
+id="TBL-3-2" /><col 
+id="TBL-3-3" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Threat</span></div>       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-2"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Countermeasures                           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-3"  
+class="td11"> <span 
+class="ptmb8t-x-x-109">Responsible  </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Online Attack</span></div> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Throttling                                         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Anomaly detection                           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Set-up Multi-factor authentication   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Moderately complex password        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Enable Multi-factor authentication  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Offline attack</span></div></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Slow hash algorithm </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-8-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-8-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Secure database design                    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-8-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-9-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-9-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-9-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Security audits, fix vulnerabilities   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-9-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-10-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-10-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-10-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Complex, strong password               </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-10-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-11-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Phishing</span></div>      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-11-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Education and Warnings                  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-11-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-12-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-12-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-12-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Unique passwords                            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-12-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-13-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-13-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-13-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Check security indicators                 </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-13-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-14-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-14-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-14-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Utilize spam filter                             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-14-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-15-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-15-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-15-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Vigilance regarding emails              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-15-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-16-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-16-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Malware</span></div>      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-16-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Anti-Virus software                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-16-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-17-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-17-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-17-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Caution on the web                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-17-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-18-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-18-1"  
+class="td11"> <div class="multicolumn"  style="white-space:nowrap; text-align:left;"><span 
+class="ptmb8t-x-x-109">Observation</span></div>   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-18-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Password masking                            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-18-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">SP                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-19-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-19-1"  
+class="td11">              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-19-2"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">Awareness of surroundings              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-19-3"  
+class="td11"> <span 
+class="ptmr8t-x-x-109">User               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-20-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-20-1"  
+class="td11">              </td></tr></table></div>
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<!--l. 186--><p class="noindent" >Security-wise, the main objective of this thesis is combating online and offline attacks, i.e.,
+algorithmic attacks, where password coping strategies really make a difference. A panacea for all
+kinds of threats, each of which has warranted multiple PhD theses, is probably impossible to
+find.
+</p>
+<h3 class="sectionHead"><span class="titlemark">2.3    </span> <a 
+ id="x8-550002.3"></a>What is Password Strength? Metrics and Statistics</h3>
+<!--l. 195--><p class="noindent" >Bishop and Klein stated in 1995: “[a] good password is one that is easily remembered, yet
+difficult to guess.” <span class="cite">[<a 
+href="dissli2.html#XBishop1995ProactivePasswordChecking">25</a>, p. 231]</span>. The second part of this statement describes password
+<span 
+class="ptmri8t-x-x-120">strength </span>on a high level. But there are problems if we try to objectively measure the
+“guessing difficulty” of a password: is it difficult for an attacker with nearly unlimited
+resources, or only for an attacker that merely has one shot per day thanks to lock-out
+mechanisms? The question is highly context dependent and there is unfortunately no single true
+answer.
+</p><!--l. 197--><p class="noindent" >Moreover, while “<span 
+class="ectt-1200">{X@T;cuXw[bJnUH</span>” is a randomly generated password that seems
+difficult to guess, it is not necessarily a <span 
+class="ptmri8t-x-x-120">strong </span>password (see Section <a 
+href="#x8-600002.4">2.4<!--tex4ht:ref: sec:rw:whats_a_bad_pw --></a>): if it was found
+in a password database after a data breach, it is likely to be included among the first
+guesses in subsequent dictionary attacks. The number of leaked passwords has steadily
+increased in the past few years and thus has rendered many such strong passwords
+unsuitable<span class="footnote-mark"><a 
+href="diss27.html#fn19x3"><sup class="textsuperscript">19</sup></a></span><a 
+ id="x8-55001f19"></a>.
+In the same vein, Yang et al. state: “[if] a strategy is widely used, then attackers may develop
+strategy-specific methods which can efficiently guess the passwords” <span class="cite">[<a 
+href="dissli2.html#XYang2016MnemonicSentenceBased">381</a>]</span>. Economists call this
+the “Tragedy of the Commons” <span class="cite">[<a 
+href="dissli2.html#XHardin1968TragedyCommons">156</a>]</span>. For example, shifts in password practices imply that if
+passphrases (cf. Section <a 
+href="dissch3.html#x53-1040003.3.3">3.3.3<!--tex4ht:ref: sec:rw:passphrases --></a>) do become commonplace, attackers will optimize their attack
+strategy, rendering the well-intended efforts to strengthen passwords less effective. Consequently,
+the challenge of considering such effects and realistically measuring password strength has sparked
+some discussion, which has led to a small set of suitable models which are discussed
+below.
+                                                                                    
+
+                                                                                    
+</p><!--l. 201--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.3.1    </span> <a 
+ id="x8-560002.3.1"></a>Entropy</h4>
+<!--l. 203--><p class="noindent" >In 1951, Claude Shannon put forward an information-theoretical approach that describes the
+encoding of English letters and words <span class="cite">[<a 
+href="dissli2.html#XShannon1951Entropy">292</a>]</span>. In it, he defines the term “entropy” as “<span 
+class="ptmri8t-x-x-120">a statistical</span>
+<span 
+class="ptmri8t-x-x-120">parameter, which measures [...] how much information is produced on the average for each letter of</span>
+<span 
+class="ptmri8t-x-x-120">text in the language. If the language is translated into binary digits (0 or 1) in the most efficient</span>
+<span 
+class="ptmri8t-x-x-120">way, the entropy H is the average number of binary digits required per letter of the original</span>
+<span 
+class="ptmri8t-x-x-120">language</span>”. In other words, entropy represents the amount of information of a given word in
+bits.
+</p><!--l. 206--><p class="noindent" >William (Bill) Burr and his colleagues at <a 
+href="dissli3.html#glo:NIST">NIST</a> took to this understanding and translated it into a
+measure for password strength, which was officially published for the first time in 2004 <span class="cite">[<a 
+href="dissli2.html#XBurr2004NISTEntropy">47</a>,
+Appendix A]</span>. They define “guessing-entropy” as “an estimate of the average amount of work
+required to guess the password of a selected user”. Apart from guessing a single user’s password,
+the macro perspective defines the “min-entropy” as “a measure of the difficulty of guessing the
+easiest single password to guess in the population”. Although many citing publications (e.g.
+<span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>, <a 
+href="dissli2.html#XEgelman2013DoesMyPasswordGoUpToEleven">99</a>]</span>) do not sufficiently point it out, Burr et al. explicitly acknowledge the limitation of using
+entropy as metric for user-selected passwords. They base their estimate on frequency
+distributions, meaning more frequently used passwords are guessed first and are thus lower in
+entropy.
+</p><!--l. 209--><p class="noindent" >For random passwords, the <a 
+href="dissli3.html#glo:NIST">NIST</a> guideline gives the following entropy calculation formula.
+</p><!--l. 211--><p class="noindent" >
+</p>
+<div class="math-display">
+<img 
+src="diss2x.png" alt="          l
+H = log2(b )
+" class="math-display"  /></div>
+<!--l. 213--><p class="noindent" ><span 
+class="ptmri8t-x-x-120">b </span>is the size of the alphabet, e.g. the 94 <a 
+href="dissli3.html#glo:ISO">International Organization for Standardization
+(ISO)</a>-printable characters, and <span 
+class="ptmri8t-x-x-120">l </span>is the length of the password. For an 8-character password this
+would give an entropy of <span 
+class="zptmcm7m-x-x-120">log</span><span 
+class="zptmcm7t-x-x-90">2</span><span 
+class="zptmcm7t-x-x-120">(94</span><span 
+class="zptmcm7t-x-x-90">8</span><span 
+class="zptmcm7t-x-x-120">)</span><span 
+class="zptmcm7m-x-x-120">  </span><span 
+class="zptmcm7y-x-x-120">≈</span> <span 
+class="zptmcm7m-x-x-120"> </span><span 
+class="zptmcm7t-x-x-120">52</span><span 
+class="zptmcm7m-x-x-120"> bits</span>.
+</p><!--l. 216--><p class="noindent" >Most users do not use random passwords (for a detailed discussion see Section <a 
+href="dissch3.html#x53-920003.2">3.2<!--tex4ht:ref: sec:rw:user-behavior --></a>), therefore this
+kind of entropy calculation is rarely realistic. In other words, the effective or practical password
+space is much smaller than the theoretical password space. The original <a 
+href="dissli3.html#glo:NIST">NIST</a> guideline tries to
+                                                                                    
+
+                                                                                    
+take this into account and gives another calculation approach based on user behavior (see page 49f.
+in <span class="cite">[<a 
+href="dissli2.html#XBurr2004NISTEntropy">47</a>]</span>). It lists a few entropy heuristics, e.g. the first character gives 4 bits of entropy, the next 7
+characters add 2 bits of entropy each, while the 9th through 20th character only add 1.5 bits.
+Burr et al. do not provide a formal rationale as to why this was chosen. But again, the
+publication specifically points out that this is still an inaccurate approach because this
+would require “examining in detail the passwords that users actually select under the
+rules of the password system”. Moreover, they admitted that “NIST would like to obtain
+more data on the passwords users actually choose, but, where they have the data, system
+administrators are understandably reluctant to reveal password data to others”. In the meantime,
+however, there have been many data leaks which fill this hole (see Table <span 
+class="ptmb8t-x-x-120">??</span> in the following
+chapter).
+</p><!--l. 218--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.3.2    </span> <a 
+ id="x8-570002.3.2"></a>Guess Numbers: Markov Models, PCFGs, and Neural Networks</h4>
+<!--l. 221--><p class="noindent" >Using such leaked data, Weir et al. developed a cracking method based on probabilistic context free
+grammar (PCFG) in 2009 <span class="cite">[<a 
+href="dissli2.html#XWeir2009PCFG">366</a>]</span>. The idea behind PCFG is that passwords often follow a rather
+predictable scheme (e.g. a word followed by a sequence of digits and an exclamation mark,
+see Section <a 
+href="dissch3.html#x53-920003.2">3.2<!--tex4ht:ref: sec:rw:user-behavior --></a>). One can model such patterns with so-called mangling rules. Weir et
+al.’s approach was to find a set of mangling rules that crack the most passwords in a
+given data set. A mangling rule takes a certain password input and creates one or more
+alternative versions of it, for instance the rule could be to replace all occurrences of
+the letter “s” with the “$” symbol (password would become pa$$word). The ultimate
+goal is to minimize the number of guesses to crack passwords. Mangling rules also are
+essential for password cracking software like John the Ripper or Hashcat, but those tools
+primarily use them to generate word-lists, and not for guessing-order optimization. Veras
+et al. <span class="cite">[<a 
+href="dissli2.html#XVeras2014SemanticPatterns">348</a>]</span>, as well as Komanduri extended Weir et al.’s PCFG approach afterwards
+<span class="cite">[<a 
+href="dissli2.html#XKomanduri2016Dissertation">198</a>]</span>.
+</p><!--l. 224--><p class="noindent" >A year later, Weir et al. evaluated the usage of the <a 
+href="dissli3.html#glo:NIST">NIST</a> entropy formulae against real-world
+passwords and policies <span class="cite">[<a 
+href="dissli2.html#XWeir2010MetricsPolicies">365</a>]</span> to address the issues pointed out by Burr et al. For the evaluation, they
+performed guessing attacks with PCFG on leaked password sets (most notably RockYou). For
+comparison, they calculated the NIST entropy for each password and correlated it with cracking
+success rates. Their analyses show that the calculated entropies were not satisfyingly
+predictive of cracking success, and they concluded that <span 
+class="ptmri8t-x-x-120">“there is no way to convert the notion</span>
+<span 
+class="ptmri8t-x-x-120">of Shannon entropy into the guessing entropy of password creation policies”</span>. Weir et
+al. thus proposed “guessing probability” as a more accurate password strength metric
+and the result of an analysis is a kind of lookup-table split into different probability
+groups.
+</p><!--l. 228--><p class="noindent" >Since the computing power required to perform the PCFG attack was relatively high, Kelley et al.
+                                                                                    
+
+                                                                                    
+tried to improve the algorithm by testing multiple training sets and variations of guess algorithms
+<span class="cite">[<a 
+href="dissli2.html#XKelley2012GuessAgain">190</a>]</span>. They used the <a 
+href="dissli3.html#glo:mTurk">mTurk</a> platform to collect new passwords created under different policies
+(more on policies in Section <a 
+href="dissch3.html#x53-1000003.3.1">3.3.1<!--tex4ht:ref: sec:rw:policies --></a>) and tried to crack them. Tuning the right parameters for
+cracking by exploiting a priori knowledge (e.g. password policy) led to much more cost-efficient
+analyses, but the training still takes approximately 24 hours. However, once the Markov-chain
+model is generated, one can simply pass in any kind of password and retrieve its <span 
+class="ptmri8t-x-x-120">guess number</span>. The
+higher the guess number, the stronger it is. After a certain threshold, the password is
+considered unguessable – which is also one of the limitations of the approach because given
+the time and resources virtually anything can be cracked. Kelley et al.’s approach soon
+became a gold standard to measure password strength, especially at <a 
+href="dissli3.html#glo:CMU">Carnegie Mellon
+University (Pittsburgh, Pennsylvania, USA) (CMU)</a>. Komanduri et al. were probably the
+last ones in 2011 that still used entropy as strength metric <span class="cite">[<a 
+href="dissli2.html#XKomanduri2011OfPasswordsAndPeople">200</a>]</span>. Kelley et al.’s guess
+numbers caught on and are still used today, perhaps because they directly represent
+the <span 
+class="ptmri8t-x-x-120">“number of attempts that an attacker would need in order to guess it” </span><span class="cite">[<a 
+href="dissli2.html#XDellamico2015MonteCarlo">82</a>]</span> or as
+Carnavalet put it <span 
+class="ptmri8t-x-x-120">“the amount of effort an adversary must employ to break the password”</span>
+<span class="cite">[<a 
+href="dissli2.html#XCarnavalet2014AnalyzingPWStrengthMeters">48</a>]</span>.
+</p><!--l. 231--><p class="noindent" >Almost simultaneously to Kelley et al., Bonneau developed his idea of efficient and effective
+guessing, which has also generated a lot of impact since then <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>]</span>. He collected leaked passwords
+and tried to attack them in different ways to find patterns in user behavior that could be leveraged in
+real-world attacks. Fundamentally, the attacks differ in the choice of dictionaries. He found
+that the success rates strongly depend on the dictionary that is used for it. He aimed to
+translate his findings to a new entropy paradigm and concluded that 10 bits of entropy
+are probably enough to defend against online attacks, respectively 20 bits for offline
+attacks.
+</p><!--l. 234--><p class="noindent" >Ur et al. took guessing to the next level by evaluating the most sophisticated approaches to date
+against each other <span class="cite">[<a 
+href="dissli2.html#XUr2015MeasuringRealWorldAccuracies">346</a>]</span>. They compared the performance of John the Ripper, Hashcat/oclHashcat,
+Markov chains/PCFG and professional password recovery companies. Moreover, they tested
+several configurations of the tools and checked their guess success rates for passwords created
+under different password policies. They concluded that a multi-tiered approach is capable of giving
+the most conservative metric for password strength. One of the major contributions of their
+work is the Password Guessability Service (PGS) that they have begun offering to the
+community<span class="footnote-mark"><a 
+href="diss28.html#fn20x3"><sup class="textsuperscript">20</sup></a></span><a 
+ id="x8-57001f20"></a>.
+After successful registration, researchers can upload a file containing plain-text passwords, e.g.
+after collecting them through a user study (cf. Section <a 
+href="dissch3.html#x53-770003.1">3.1<!--tex4ht:ref: sec:rw:methodology --></a>). The user has to provide a few additional
+parameters, like the policy that was utilized, which enhances the guessing efficiency and reliability.
+Then a set of cracking approaches are run in parallel and the analysis is sent back to the uploader.
+                                                                                    
+
+                                                                                    
+Although this has become an established, state-of-the art tool which has already been used
+in numerous publications (e.g., <span class="cite">[<a 
+href="dissli2.html#XGross2016CognitiveDepletion">142</a>, <a 
+href="dissli2.html#XHabib2017Blacklists">146</a>, <a 
+href="dissli2.html#XMcevoy2016ContextualizingMnemonicPhrase">230</a>, <a 
+href="dissli2.html#XSegreti2017AdaptivePolicies">285</a>, <a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>, <a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>), it does not come
+without caveats. First, passwords need to be uploaded in plain text. This entails a more
+careful handling and storage if they originate from a user study, because participants
+might in fact have provided their real-world passwords (see <a 
+href="dissch3.html#x53-770003.1">3.1<!--tex4ht:ref: sec:rw:methodology --></a>). Plain-text passwords
+also imply that users disclosed them somehow and the mere act of disclosing might
+already reduce the strength of passwords, which is not factored into the guess numbers.
+However, the team at CMU counteracts this problem by deleting uploads after at most two
+weeks. Besides, the analyses are time-consuming, and obtaining results can in fact take
+several weeks, because the system is shared with other users. Moreover, if a study aims to
+compare multiple password policies, each condition needs to be separately uploaded and
+subsequently analyzed. Finally, in personal conversations with the research team, they
+pointed out that certain unicode characters are not supported. This makes it infeasible for
+passwords that were collected in countries whose languages heavily use umlauts (ä,ö,ü).
+Nevertheless, it appears to be one of the best strength proxies the community possesses at the
+moment.
+</p><!--l. 239--><p class="noindent" >A rather novel approach that has not been integrated into the PGS are cracking algorithms based on
+neural networks. Melicher et al. demonstrated an opportunity to configure such algorithms to
+perform better than former state-of-the-art techniques like PCFG and Markov models
+<span class="cite">[<a 
+href="dissli2.html#XMelicher2016NeuralNetworks">233</a>]</span>. They implemented neural networks based on Monte-Carlo simulations, i.e. “smart
+sampling” (cf. <span class="cite">[<a 
+href="dissli2.html#XDellamico2015MonteCarlo">82</a>]</span>). A thorough evaluation against PCFG, Markov-models, and word-list
+crackers showed that neural networks can outperform all of them if properly trained.
+Moreover, Melicher et al. were also able to implement their approach in JavaScript.
+This highlights one major advantage of using neural networks: once the model has been
+trained, it can be packaged and shipped to browsers, which only requires a few hundred
+kilobytes. They showed that this type of client-side strength estimation fares really well.
+One caveat is that the solution does not work “out of the box”. Developers have to train
+their models and this means that faulty configurations might lead to erroneous strength
+estimations.
+</p><!--l. 241--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.3.3    </span> <a 
+ id="x8-580002.3.3"></a>The zxcvbn Approach: Lightweight, Robust, Simple</h4>
+<!--l. 242--><p class="noindent" >Daniel Wheeler presented an approach towards password strength estimation by providing a
+conservative expected guess-number <span class="cite">[<a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>. Let us take a closer look at it, because it served as a
+strength metric for much of the work in this thesis.
+</p><!--l. 245--><p class="noindent" >Similar to PCFG and mangling rules, the idea is based on pattern matching against dictionaries and
+leaked password corpora. The result is a calculation of the minimum rank over a series of frequency
+ranked lists, i.e. a guess number. In other words, the approach is <span 
+class="ptmri8t-x-x-120">heuristic </span>instead of <span 
+class="ptmri8t-x-x-120">probabilistic</span>,
+                                                                                    
+
+                                                                                    
+because the rank is based on <span 
+class="ptmri8t-x-x-120">searching </span>through the patterns. The pattern-ranks themselves are not
+necessarily based on likelihoods, but on a search sequence that may lead to different prioritization
+of heuristics depending on the found patterns. The implementation of the algorithm is called
+zxcvbn<span class="footnote-mark"><a 
+href="diss29.html#fn21x3"><sup class="textsuperscript">21</sup></a></span><a 
+ id="x8-58001f21"></a>.
+Wheeler showed that in an online attack scenario <span class="cite">[<a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>]</span> the algorithm estimates the number of
+guesses accurately within an order of magnitude of 2 – consistently better than <a 
+href="dissli3.html#glo:NIST">NIST</a> guidelines to
+date and other lightweight strength estimators. Beyond the online-attack threshold, the
+results are mixed, but adding more tokens to the dictionary further improves robustness.
+Moreover, zxcvbn provides a numerical password score from 0 to 4. The README
+describes the thresholds, which are motivated through different attack scenarios (see Section
+<a 
+href="#x8-480002.2">2.2<!--tex4ht:ref: sec:rw:attack_vectors --></a>):
+      </p><dl class="description"><dt class="description">
+<span 
+class="ptmb8t-x-x-120">0</span> </dt><dd 
+class="description">too guessable: risky password – guess number &#x003C; <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">3</span>
+      </dd><dt class="description">
+<span 
+class="ptmb8t-x-x-120">1</span> </dt><dd 
+class="description">very guessable: protection from throttled online attacks – guess number &#x003C; <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">6</span>
+      </dd><dt class="description">
+<span 
+class="ptmb8t-x-x-120">2</span> </dt><dd 
+class="description">somewhat guessable: protection from <span 
+class="ptmb8t-x-x-120">un</span>throttled online attacks – guess number &#x003C; <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">8</span>
+      </dd><dt class="description">
+<span 
+class="ptmb8t-x-x-120">3</span> </dt><dd 
+class="description">safely unguessable: moderate protection from offline slow-hash scenario – guess number
+      &#x003C; <span 
+class="zptmcm7t-x-x-120">10</span><span 
+class="zptmcm7t-x-x-90">10</span>
+      </dd><dt class="description">
+<span 
+class="ptmb8t-x-x-120">4</span> </dt><dd 
+class="description">very  unguessable:  strong  protection  from  offline  slow-hash  scenario  –  guess  number
+      <span 
+class="zptmcm7m-x-x-120">&#x003E;</span><span 
+class="zptmcm7t-x-x-120">= 10</span><span 
+class="zptmcm7t-x-x-90">10</span></dd></dl>
+<!--l. 255--><p class="noindent" >These steps are plausible and can be derived from academic literature, e.g. <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>, <a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>, <a 
+href="dissli2.html#XUr2015MeasuringRealWorldAccuracies">346</a>, <a 
+href="dissli2.html#XWang2016fuzzyPWM">360</a>]</span>.
+One of the advantages of zxcvbn is that its implementation is fairly small (1.5 Megabytes in total).
+It comes with 100,000 tokens which allows zxcvbn to conservatively estimate the guess
+numbers. Moreover, it can be extended with site-specific word-lists. Zxcvbn performs its
+calculations within milliseconds, which makes it suitable to run strength analyses on
+the client. This is a major advantage, e.g., to provide users with real-time feedback on
+password strength. Moreover, it can also be easily used on the server to enforce more
+                                                                                    
+
+                                                                                    
+advanced password policies, e.g. with NodeJS. Since zxcvbn is open-source, one can
+modify and adapt it to meet context-dependent requirements. This makes it extremely
+useful for user studies: One can strip sensitive information from the analysis and save
+zxcvbn’s output straight to a database, which is ethically reasonable and speeds up further
+analyses.
+</p><!--l. 260--><p class="noindent" >Despite the benefits, one needs to be aware of zxcvbn’s drawbacks. Carnavalet compared
+several real-world password strength estimators, one of which was zxcvbn v2.x <span class="cite">[<a 
+href="dissli2.html#XDeCarnedeCarnavalet2015PasswordMeters">73</a>]</span>.
+Although they concluded that zxcvbn was the best of the tested estimators, they see
+the major limitation in the static dictionary size. Zxcvbn ships with index terms from
+the English Wikipedia, English words from TV and movie subtitles, a list of roughly
+47000 frequency-ranked passwords, female and male first names, and surnames from
+English-speaking countries. Hence, all words that cannot be matched from these wordlists
+including mangling rules, are seen as random strings. Zxcvbn goes on to assume these can only be
+cracked by brute force, but real-world attackers possessing a priori knowledge of the target
+population might find ways to guess these passwords more efficiently. However, Melicher
+et al.’s neural network suffers from similar limitations. For instance, Carnavalet and
+Mannan’s <span class="cite">[<a 
+href="dissli2.html#XCarnavalet2014AnalyzingPWStrengthMeters">48</a>]</span> example “dolce&#x0026;gabana” (an Italian luxury brand) receives a guess number
+358000010000 <span 
+class="zptmcm7y-x-x-120">≈ </span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">e</span><span 
+class="zptmcm7t-x-x-120">11</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">5 </span>from zxcvbn, and 2587762225797 <span 
+class="zptmcm7y-x-x-120">≈ </span><span 
+class="zptmcm7t-x-x-120">1</span><span 
+class="zptmcm7m-x-x-120">e</span><span 
+class="zptmcm7t-x-x-120">12</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">4 </span>from Melicher et al.’s
+tool – so both estimates are perhaps too optimistic. Finally, Carnavalet also critized
+that zxcvbn did not detect reversed words, but this heuristic was later added in version
+3.5.0<span class="footnote-mark"><a 
+href="diss30.html#fn22x3"><sup class="textsuperscript">22</sup></a></span><a 
+ id="x8-58002f22"></a>. So
+although neural networks are a viable alternative, zxcvbn is one of the best estimators currently
+available.
+</p><!--l. 263--><p class="noindent" >Zxcvbn’s usefulness is underlined by its impact during the first years of its existence. In the
+industry, zxcvbn has become the standard password-checker on WordPress since version 3.7 <span class="cite">[<a 
+href="dissli2.html#XDeCarnedeCarnavalet2015PasswordMeters">73</a>]</span>,
+and for Dropbox (zxcvbn’s author works there). In academic literature it has received
+praise from Ur et al. <span class="cite">[<a 
+href="dissli2.html#XUr2017DataDrivenPWMeter">341</a>]</span>, Komanduri et al. <span class="cite">[<a 
+href="dissli2.html#XKomanduri2014Telepathwords">199</a>]</span>, and Wang et al. <span class="cite">[<a 
+href="dissli2.html#XWang2016fuzzyPWM">360</a>]</span>. It was also
+actively utilized as strength proxy in by Groß et al. to measure associations between
+cognitive depletion and password strength <span class="cite">[<a 
+href="dissli2.html#XGross2016CognitiveDepletion">142</a>]</span>, by Yang et al. to study mnemonic phrase
+based passwords <span class="cite">[<a 
+href="dissli2.html#XYang2016MnemonicSentenceBased">381</a>]</span>, by Lyastani et al. to study the impact of password managers on
+password strength <span class="cite">[<a 
+href="dissli2.html#XLyastani2017ImpactPWMPasswordStrength">217</a>]</span> and also recently by Al-Jaffan to build a new strength visualization
+<span class="cite">[<a 
+href="dissli2.html#XAljaffan2017PasswordSecurityVisualizer">11</a>]</span>.
+</p><!--l. 265--><p class="noindent" >All this made us confident to utilize zxcvbn in our own studies which are reported in later
+sections.
+                                                                                    
+
+                                                                                    
+</p><!--l. 267--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.3.4    </span> <a 
+ id="x8-590002.3.4"></a>Other strength proxies</h4>
+<!--l. 268--><p class="noindent" >Apart from entropy and guess numbers, not many strength metrics have succeeded enough to
+become prevalent. For the sake of completeness, we briefly point out more related work on the
+topic. Most notably, Bonneau combined two <span 
+class="ptmri8t-x-x-120">partial guessing </span>metrics to go beyond entropy and
+guess work <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>]</span>: From the <span 
+class="zptmcm7m-x-x-120">β</span>-success rate <span class="cite">[<a 
+href="dissli2.html#XBoztas1999Entropies">38</a>]</span> and the <span 
+class="zptmcm7m-x-x-120">α</span>-work-factor <span class="cite">[<a 
+href="dissli2.html#XPliam2000IncomparabilityEntropyGuesswork">255</a>]</span>, he derived the
+<span 
+class="zptmcm7m-x-x-120">α</span>-guesswork metric. The former roughly describes the success rate of an attacker that is limited to
+<span 
+class="zptmcm7m-x-x-120">β </span>guesses, while the <span 
+class="zptmcm7m-x-x-120">α</span>-work factor denotes the mimimum required guesses to crack a desired
+proportion of <span 
+class="zptmcm7m-x-x-120">α </span>passwords. Yang et al. chose to solely rely on <span 
+class="zptmcm7m-x-x-120">β</span>-success rates <span class="cite">[<a 
+href="dissli2.html#XYang2016MnemonicSentenceBased">381</a>]</span>, although
+Bonneau discourages this in his PhD thesis <span class="cite">[<a 
+href="dissli2.html#XBonneau2012Thesis">31</a>]</span>.
+</p><!--l. 270--><p class="noindent" >Beside those metrics, Dell’Amico et al. investigated using a multi-level cracking approach to find a
+cut-off threshold (as strength metric) when an attack becomes infeasible <span class="cite">[<a 
+href="dissli2.html#XDellAmico2010PasswordStrength">81</a>]</span>. In another paper,
+they use probabilities of succeeding with different cracking methods <span class="cite">[<a 
+href="dissli2.html#XDellamico2015MonteCarlo">82</a>]</span>. Finally, Li et al.
+incorporated personal information into PCFG and suggest a new metric named “Coverage” <span class="cite">[<a 
+href="dissli2.html#XLi2017PersonalInformation">209</a>]</span>.
+Essentially, this proxy tells us how likely it is to crack a password if we obtain personal information
+of the user.
+</p><!--l. 272--><p class="noindent" >In a sense, these additional strength metrics could be subsumed under “guesswork proxies”, too.
+Until now, they have not seen significant attention in the community nor by the industry. Perhaps
+their success is a bit hampered because they do not provide a straight-forward interpretable
+calculation, respectively result, which makes other solutions like PGS, neural networks, and zxcvbn
+more attractive to researchers in HCI.
+</p><!--l. 275--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">2.4    </span> <a 
+ id="x8-600002.4"></a>What is a “Bad” Password?</h3>
+<!--l. 276--><p class="noindent" >Having looked at strength metrics, it is fair to ask what exactly a “bad” password is. Unfortunately,
+the question is more or less impossible to answer, especially without context. The word “bad” is
+judgmental on its own and depends on whom is asked. A security expert might call a password
+“bad” if it only contains lowercase letters because she knows how to crack such passwords, but a
+regular mainstream user might call it “bad” because he cannot type it quickly enough or keeps
+forgetting it. So, “bad” depends on one’s own standards, knowledge, beliefs, preferences, and usage
+context <span class="cite">[<a 
+href="dissli2.html#XGaw2005ReuseRecycle">132</a>, <a 
+href="dissli2.html#XHaque2014Hierarchy">154</a>]</span>. There is a fine difference between the adjective pairs “good”-”bad” and
+“strong”-“weak”. A weak password might still be <span 
+class="ptmri8t-x-x-120">good</span>, when it fits the purpose, i.e. when it is
+good <span 
+class="ptmri8t-x-x-120">enough</span>. For example, four-digit PINs are widely used to authenticate at ATMs.
+Theoretically, there are only 10000 possible combinations, which could be brute-forced
+within milliseconds. Still, the second factor (banking card) and lock-down mechanisms
+after a certain number of attempts effectively prevent such attacks, so PINs are <span 
+class="ptmri8t-x-x-120">good</span>
+                                                                                    
+
+                                                                                    
+<span 
+class="ptmri8t-x-x-120">enough </span>for the purpose. As another example, a user might choose a dictionary word like
+“<span 
+class="ectt-1200">spacetime</span>” to sign up for an online forum. If they do not reuse this password for a
+more important service like accessing emails, the seemingly weak password might still
+be <span 
+class="ptmri8t-x-x-120">good enough </span>for this purpose. Zhang-Kennedy et al. <span class="cite">[<a 
+href="dissli2.html#XZhangKennedy2016RevisitingPasswordRules">389</a>]</span> as well as Florêncio et
+al. <span class="cite">[<a 
+href="dissli2.html#XFlorencio2007DoStrongWebPasswords">114</a>, <a 
+href="dissli2.html#XFlorencio2014AdministratorsGuide">115</a>, <a 
+href="dissli2.html#XFlorencio2014PasswordPortfoliosFiniteUser">116</a>, <a 
+href="dissli2.html#XFlorencio2016CommACM">117</a>]</span> seem to agree, and Herley and van Oorshot frame it nicely
+<span class="cite">[<a 
+href="dissli2.html#XHerley2012PersistenceOfPasswords">165</a>]</span>:
+</p><!--l. 278--><p class="noindent" >
+      </p><div class="quote">
+      <!--l. 279--><p class="noindent" >“Fifth, when are offline attacks a threat? While dependent on implementation,
+      access  to  salted  hashed  passwords  requires  attacker  effort;  long  gone  are  the
+      days when password hash files were by default world readable. A disgruntled
+      ex-sysadmin who steals hashed passwords is the often-conjectured foe in this
+      attack; yet, if untrusted individuals have had unfettered unaudited access to the
+      authentication server, a site’s problems go well beyond password strength. Sixth,
+      are  there  ways  to  protect  against  off-line  attacks  besides  password  strength?
+      Mandating  password  changes  once  hashes  leak  might  be  better  than  strong
+      policies  at  all  times.  Only  if  a  leak  goes  unnoticed  (and  a  password  change
+      isn’t forced) does strength potentially help. Of course, reliably detecting leaks
+      or break-ins itself remains difficult. Finally, how much strength is required to
+      protect against offline attacks? The bar is clearly much higher than for online
+      attacks (assuming lockout or rate-limiting policies in place), but at what strength
+      are attacks effectively addressed?”</p></div>
+<!--l. 282--><p class="noindent" >So, in that vein, if we invert Bishop and Klein’s definition, we would get “a bad password is one
+that is hard to remember, yet easy to guess” <span class="cite">[<a 
+href="dissli2.html#XBishop1995ProactivePasswordChecking">25</a>]</span>. Human capabilities must not be neglected, which
+is why we discuss it in detail in Chapter <a 
+href="dissch3.html#x53-760003">3<!--tex4ht:ref: chap:rw:user_perspective --></a>. But neither humans nor contexts are all equal, so the
+answer as to what a “bad” password is, remains a solid “it depends”. Still, users sometimes seek
+guidance (cf. Section <a 
+href="dissch3.html#x53-1010003.3.2">3.3.2<!--tex4ht:ref: sec:rw:advice_guidance --></a>) and continue to ask this question. Let us thus have a look at more
+practical answers rather than “it depends.” Burnett provides a list of high-level heuristics that a user
+can decide to employ to figure out if their preferred password choice is “bad” <span class="cite">[<a 
+href="dissli2.html#XBurnett2005PerfectPasswords">46</a>]</span> (list is excerpted,
+but directly quoted):
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">If you typed your password in Google, would you get no results?
+      </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem">Are you the only person who knows the password?
+      </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">If you have your password recorded somewhere, is it in a secure location?
+                                                                                    
+
+                                                                                    
+      </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem">Do you remember your password without having to look it up?
+      </dd><dt class="enumerate-enumitem">
+   5. </dt><dd 
+class="enumerate-enumitem">Can you type your password quickly without making mistakes?</dd></dl>
+<!--l. 290--><p class="noindent" >Bullets 1. - 3. are solely focused on security, while the remaining two are user-centered. He
+provides more heuristics, however, they are questionnable because they are demanding on the
+user’s cognitive abilities. From related work, we can also derive more questions that generally aim
+at identifying inadequate passwords:
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   6. </dt><dd 
+class="enumerate-enumitem">Is your password used by somebody else? <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ScienceOfGuessing">32</a>]</span>
+      </dd><dt class="enumerate-enumitem">
+   7. </dt><dd 
+class="enumerate-enumitem">Is your password short, that is, less than eight characters? <span class="cite">[<a 
+href="dissli2.html#XWeir2010MetricsPolicies">365</a>]</span>
+      </dd><dt class="enumerate-enumitem">
+   8. </dt><dd 
+class="enumerate-enumitem">Has your password leaked (check via <a 
+href="https://haveibeenpwned.com/" class="url" ><span 
+class="ectt-1200">https://haveibeenpwned.com/</span></a>)? <span class="cite">[<a 
+href="dissli2.html#XWheeler2016zxcvbn">369</a>]</span>
+      </dd><dt class="enumerate-enumitem">
+   9. </dt><dd 
+class="enumerate-enumitem">Does your password only consist of personal information that can be found on your
+      public social network profiles? <span class="cite">[<a 
+href="dissli2.html#XLi2017PersonalInformation">209</a>]</span></dd></dl>
+<!--l. 299--><p class="noindent" >On a more opinionated level, I personally argue that a “bad” password is one that you <span 
+class="ptmri8t-x-x-120">care about</span>,
+but do not sufficiently try to strengthen, although you are aware of the options to do
+so.
+</p><!--l. 301--><p class="noindent" >
+</p>
+<h3 class="sectionHead"><span class="titlemark">2.5    </span> <a 
+ id="x8-610002.5"></a>Authentication beyond Passwords</h3>
+<!--l. 302--><p class="noindent" >The benefits and drawbacks of using passwords have been studied extensively. Some drawbacks
+already become apparent when we recall Ali Baba’s story: Ali Baba overhears the thieves saying
+the magic words and can immediately authenticate with them (a big security issue). He
+also told the “password” to his brother, but he fails to recall it (the biggest usability
+issue).
+</p><!--l. 304--><p class="noindent" >Table <span 
+class="ptmb8t-x-x-120">??</span> shows a high-level summary of the benefits and drawbacks that come along with
+password-based authentication. We can observe that the drawbacks constitute important
+constraints and it is natural to try to remove such limitations by considering alternatives. To
+give the reader a sense of the alternatives, this section briefly covers the most notable
+                                                                                    
+
+                                                                                    
+approaches to authenticate users without alphanumerical passwords or with additional security
+measures.
+</p><!--l. 306--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.5.1    </span> <a 
+ id="x8-620002.5.1"></a>Graphical Passwords &#x0026; Visual Authentication Methods</h4>
+<!--l. 307--><p class="noindent" >In 1995, Blonder filed a patent with the name “Graphical Password” <span class="cite">[<a 
+href="dissli2.html#XBlonder1996PatentGraphicalPW">29</a>]</span>, which marked the
+beginning of a range of new authentication schemes: Graphical (or visual) authentication. The
+patent presented a mechanism that prompts the user to prove their identity through correctly
+clicking a number of locations in an image. His goal was to find an alternative to text-based
+passwords that is easier to remember, without losing security benefits <span class="cite">[<a 
+href="dissli2.html#XBiddle2009GraphicalFirstTwelveYears">23</a>, <a 
+href="dissli2.html#XRenaud2009VisualSnakeOil">265</a>]</span>. Studies in
+cognitive psychology have revealed that pictures are easier to remember than words, which is often
+referred to as the <span 
+class="ptmri8t-x-x-120">picture superiority effect </span><span class="cite">[<a 
+href="dissli2.html#XPaivio1968PicturesEasierThanWords">251</a>]</span>. Grady et al. state that it works the best if there is
+an episode that serves as mnemonic device <span class="cite">[<a 
+href="dissli2.html#XGrady1998NeuralCorrelates">139</a>]</span>. A number of studies in HCI demonstrate the
+benefits of graphical authentication. For instance, Chiasson et al. report on a lab study which
+showed that graphical passwords are easier to remember and less error-prone in the
+short term <span class="cite">[<a 
+href="dissli2.html#XChiasson2009InterferencesGraphical">52</a>]</span>. In the long term, however, there was no significant difference to textual
+passwords. Elizabeth Stobert, who dedicated a large part of her PhD work to graphical
+passwords <span class="cite">[<a 
+href="dissli2.html#XStobert2015Dissertation">318</a>]</span>, also found memorability benefits <span class="cite">[<a 
+href="dissli2.html#XStobert2013GraphicalPasswords">314</a>]</span>. Besides memorability benefits,
+there are other advantages like personalization and tailoring schemes to specific user
+groups. Imran found that graphical passwords are easily understood by children <span class="cite">[<a 
+href="dissli2.html#XImran2015PWsAdultsChildren">171</a>]</span>,
+while Carter presented a new effective system specifically designed for older adults
+<span class="cite">[<a 
+href="dissli2.html#XCarter2015GraphicalPasswordsOlderUsers">49</a>]</span>.
+</p><!--l. 309--><p class="noindent" >In the 20 years that followed the patent grant, three different approaches prevailed: searchmetric,
+locimetric, and drawmetric systems. In the following, we discuss them and provide a few notable
+examples.
+</p>
+<!--l. 311--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-630002.5.1"></a><span 
+class="ptmb8t-x-x-120">Searchmetric Systems</span></span>
+The idea behind all searchmetric (also recognition-based) systems is to recognize objects or
+images in a “challenge set” <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2016Thesis">353</a>]</span>, i.e., to <span 
+class="ptmri8t-x-x-120">search </span>for the correct image. The commercial
+Passfaces<span class="footnote-mark"><a 
+href="diss31.html#fn23x3"><sup class="textsuperscript">23</sup></a></span><a 
+ id="x8-63001f23"></a>
+                                                                                    
+
+                                                                                    
+system is a paragon in this domain (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). The user is challenged with identifying the picture of
+a person in a grid of nine pictures of people. To increase security, this challenge is executed three times
+in a row<span class="footnote-mark"><a 
+href="diss32.html#fn24x3"><sup class="textsuperscript">24</sup></a></span><a 
+ id="x8-63002f24"></a>.
+The three images the user needs to identify were chosen beforehand in the <span 
+class="ptmri8t-x-x-120">enrollment </span>stage.
+Brostoff and Sasse, found in a field study that users were able to log in with Passfaces even after a
+long period of inactivity <span class="cite">[<a 
+href="dissli2.html#XBrostoff2000PassfacesEvaluation">41</a>]</span>. However, they also report that participants spoke unfavorably of
+Passfaces, because of the increased authentication time. By random guessing, an attacker would
+have a chance of <img 
+src="diss3x.png" alt="1
+9"  class="frac" align="middle" /> <span 
+class="zptmcm7y-x-x-120">∗</span><img 
+src="diss4x.png" alt="1
+9"  class="frac" align="middle" /> <span 
+class="zptmcm7y-x-x-120">∗</span><img 
+src="diss5x.png" alt="1
+9"  class="frac" align="middle" /><span 
+class="zptmcm7m-x-x-120">  </span><span 
+class="zptmcm7t-x-x-120">=</span> <span 
+class="zptmcm7m-x-x-120"> </span><span 
+class="zptmcm7t-x-x-120">0</span><span 
+class="zptmcm7m-x-x-120">.</span><span 
+class="zptmcm7t-x-x-120">001</span>, i.e., one in one thousand to find the user’s chosen faces.
+Davis et al., however, found that user selection of Passfaces is predictable, thus reducing the
+effective password space <span class="cite">[<a 
+href="dissli2.html#XDavis2004UserChoiceGraphical">70</a>]</span>. Dunphy et al. created a mechanism that is based on photos
+<span class="cite">[<a 
+href="dissli2.html#XDunphy2010CloserLookGraphical">88</a>]</span>. In a two-week field trial they found that participants successfully authenticated
+in 77% of attempts, and human attackers needed between 4.5 and 7.5 observations to
+shoulder-surf the passwords. These numbers would need to be higher to justify more widespread
+adoption.
+</p><!--l. 314--><p class="noindent" >Dhamija and Perrig created a similar mechanism called “Déjà Vu” <span class="cite">[<a 
+href="dissli2.html#XDhamija2000DejaVu">83</a>]</span>, where the user selects a
+number of random-art images instead of faces (see Figure <a 
+href="#x8-63004r1">2.4a<!--tex4ht:ref: fig:rw:searchmetric:dejavu --></a>). Although participants in a lab
+study generally liked Déjà Vu, the system was never adopted on larger scope. Another alternative
+solution to using faces is the visual identification protocol (VIP), which is based on pictures of
+objects (see Figure <a 
+href="#x8-63007r4">2.4d<!--tex4ht:ref: fig:rw:searchmetric:vip --></a>) <span class="cite">[<a 
+href="dissli2.html#XDeAngeli2002VIP">71</a>, <a 
+href="dissli2.html#XDeAngeli2005PictureThousandWords">72</a>]</span>. De Angeli et al. iteratively improved the prototype, and found
+that recognizing six simple and concrete objects worked best, but was still much slower than
+entering a PIN. Bicakci et al. also explored authenticating through clicking a sequence of icons as
+master password for a password manager (iPMAN) <span class="cite">[<a 
+href="dissli2.html#XBicakci2011PWMIconBased">22</a>]</span>. They found that some icons were more
+attractive than others and thus impaired security. An icon-based mechanism that strongly
+focuses on mitigating shoulder-surfing is Wiedenbeck et al.’s Convex-Hull-Click (CHC)
+system <span class="cite">[<a 
+href="dissli2.html#XWiedenbeck2006ConvexHull">373</a>]</span>. The challenge set consists of icons which are randomly distributed in the
+grid. The idea behind CHC is that the user does not click on their enrolled icons, but
+anywhere inside the convex-hull which is formed by the icons. In other words, the user
+clicks a random icon within the virtual polygon that is formed by the icons if they were
+connected by straight lines. Wiedenbeck et al. showed that CHC has security benefits,
+but the large grid of icons negatively impacted authentication times. Moreover, Golla
+et al., respectively Kraus et al. recently evaluated emojis instead of PINs for mobile
+phones (see Figure <a 
+href="#x8-63005r2">2.4b<!--tex4ht:ref: fig:rw:searchmetric:emojiauth --></a>) <span class="cite">[<a 
+href="dissli2.html#XGolla2017EmojiAuth">136</a>, <a 
+href="dissli2.html#XKraus2017Emoji">203</a>]</span>. Contrary to traditional pins, the emojis are randomly
+ordered in the grid, which makes their system a typical “searchmetric” approach. The
+idea actually originates from “Emoji passcode”, a commercial solution from Intelligent
+                                                                                    
+
+                                                                                    
+Environments<span class="footnote-mark"><a 
+href="diss33.html#fn25x3"><sup class="textsuperscript">25</sup></a></span><a 
+ id="x8-63003f25"></a>.
+Golla/Kraus et al. were the first to empirically evaluate the scheme and found some selection bias
+but also user experience benefits.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x8-63009r5"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 319--><p class="noindent" ></p><!--l. 320--><p class="noindent" > <a 
+ id="x8-63004r1"></a>
+<span 
+class="ptmr8t-x-x-109">D</span><span 
+class="ptmr8t-x-x-109">éj</span><span 
+class="ptmr8t-x-x-109">à Vu </span><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XDhamija2000DejaVu"><span 
+class="ptmr8t-x-x-109">83</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>
+</p><!--l. 324--><p class="noindent" > <a 
+ id="x8-63005r2"></a>
+<span 
+class="ptmr8t-x-x-109">EmojiAuth     /     Pictopass</span>
+<span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XGolla2017EmojiAuth"><span 
+class="ptmr8t-x-x-109">136</span></a><span 
+class="ptmr8t-x-x-109">,</span><span 
+class="ptmr8t-x-x-109"> </span><a 
+href="dissli2.html#XKraus2017Emoji"><span 
+class="ptmr8t-x-x-109">203</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>
+</p><!--l. 328--><p class="noindent" > <a 
+ id="x8-63006r3"></a>
+<span 
+class="ptmr8t-x-x-109">PassFaces by RealUser</span>
+</p><!--l. 332--><p class="noindent" > <a 
+ id="x8-63007r4"></a>
+<span 
+class="ptmr8t-x-x-109">VIP 3 </span><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XDeAngeli2005PictureThousandWords"><span 
+class="ptmr8t-x-x-109">72</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>
+</p><!--l. 336--><p class="noindent" > <a 
+ id="x8-63008r5"></a>
+<span 
+class="ptmr8t-x-x-109">Use Your Illusion </span><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XHayashi2008UseYourIllusion"><span 
+class="ptmr8t-x-x-109">158</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.5:  </span><span  
+class="content">  A  selection  of  searchmetric  graphical  authentication  schemes.  The  user
+authenticates by <span 
+class="ptmri8t-x-x-120">searching </span>their enrolled sequence of images.</span></div><!--tex4ht:label?: x8-63009r5 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 346--><p class="noindent" >Hayashi et al. went beyond mere image recognition and additionally burred images during
+authentication in “Use Your Illusion” (see Figure <a 
+href="#x8-63008r5">2.4e<!--tex4ht:ref: fig:rw:searchmetric:useyourillusion --></a>) <span class="cite">[<a 
+href="dissli2.html#XHayashi2008UseYourIllusion">158</a>]</span>. Their hypothesis was that only
+the legitimate user would be able to make sense of the distorted images and recognize
+the original picture, while an attacker can only randomly guess. Across all conditions
+of their user study, most participants were able to log in successfully even after four
+weeks. Only those who were given a system-assigned portfolio of images were slightly
+more troubled. Although the system was never adopted in real-world authentication, it
+sparked further ideas to leverage people’s abilities to recognize distorted images <span class="cite">[<a 
+href="dissli2.html#XCastelluccia2017ImplicitVisual">50</a>,
+http://arima.okoze.net/illusion/]</span>.
+</p>
+<!--l. 350--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-640002.5.1"></a><span 
+class="ptmb8t-x-x-120">Locimetric Systems</span></span>
+If the user needs to authenticate by clicking specific points in a challenge image (rather than a
+challenge <span 
+class="ptmri8t-x-x-120">set</span>), the mechanism can be classified as <span 
+class="ptmri8t-x-x-120">locimetric system</span>, from Latin <span 
+class="ptmri8t-x-x-120">locus </span>= place,
+position. Blonder’s patent application <span class="cite">[<a 
+href="dissli2.html#XBlonder1996PatentGraphicalPW">29</a>]</span> is a classical example. Wiedenbeck et al. evaluated
+PassPoints, which in essence is one possible implementation of Blonder’s idea <span class="cite">[<a 
+href="dissli2.html#XWiedenbeck2005PassPoints">372</a>]</span>. Security-wise
+there were benefits over alphanumeric passwords, but usability results were mixed. Chiasson et al.
+combined the PassPoints and Passfaces approaches with the Cued Click Point (CCP) scheme <span class="cite">[<a 
+href="dissli2.html#XChiasson2007CCP">54</a>]</span>,
+and the Persuasive Cued Click Point scheme <span class="cite">[<a 
+href="dissli2.html#XChiasson2008PCCP">51</a>]</span> (CCP). To authenticate, the user has to click a
+specific point inside an image (cf. PassPoints) for a sequence of images (cf. Passfaces). The
+PCCP version tries to nudge the user to pick less predictable locations (one result of the
+CCP-study), which is supposed to further increase the “strength” of the graphical password.
+Success rates for log-ins were high, but there was no possibility to correct an error, so
+participants in the lab study had to start over. Perhaps, this is a caveat in terms of real-world
+adoption. Since alphanumerical passwords do have their advantages, Forget et al. later
+suggested allowing the user to pick the authentication scheme that best fits their current
+context <span class="cite">[<a 
+href="dissli2.html#XForget2015CYOA">125</a>]</span>. Object Passtiles (OPT, another implementation variant of VIP) and PCCP
+were the two available graphical authentication schemes. Interestingly, after the study
+participants had tried out a graphical scheme, they later switched back to text-based
+passwords.
+</p>
+<!--l. 353--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-650002.5.1"></a><span 
+class="ptmb8t-x-x-120">Drawmetric Systems</span></span>
+A third category of graphical authentication are drawmetric systems (also known as recall-based
+systems). Here, the user has to either draw a shape configured during enrollment, or perform a
+gesture as a kind of virtual drawing. At this point, this is by far the most successful graphical
+authentication paradigm, because one such implementation – “pattern unlock” – was added to the
+Android operating system already in its early days (see Figure <a 
+href="#x8-65002r2">2.6b<!--tex4ht:ref: fig:rw:drawmetric:patternunlock --></a>) <span class="cite">[<a 
+href="dissli2.html#XAviv2010SmudgeAttacks">15</a>]</span>. The idea of drawmetrics
+most likely has its origins in the Draw-a-Secret (DAS) scheme by Jermyn et al. <span class="cite">[<a 
+href="dissli2.html#XJermyn1999DrawASecret">180</a>]</span>.
+                                                                                    
+
+                                                                                    
+The user is asked to create a secret drawing in a grid of 16 cells (see Figure <a 
+href="#x8-65001r1">2.6a<!--tex4ht:ref: fig:rw:drawmetric:drawasecret --></a>). The
+system maps the drawing to simple <span 
+class="ptmri8t-x-x-120">(x,y) </span>coordinate-pair sequences, but the password
+space, as disseminated by Jermyn et al. is large enough to provide sufficient protection of
+handheld devices. Dunphy et al. later aimed to improve the memorability of the drawn
+shapes and extended Draw-A-Secret with translucent background images <span class="cite">[<a 
+href="dissli2.html#XDunphy2007BDAS">89</a>]</span>. In a small
+lab study they observed no striking memorability nor security benefits. Sherman et al.
+removed the grid and let the user authenticate with free-form multi-touch gestures, which
+required a more sophisticated matching process <span class="cite">[<a 
+href="dissli2.html#XSherman2014UserGeneratedGesturesAuth">302</a>]</span>. This may be part of the reason
+the system had equal error rates (EERs) between 3.34 % and 15.97%. The latter case
+means that a legitimate user would enter their gesture correctly and not be granted access
+in <img 
+src="diss6x.png" alt="˜
+1  "  class="tilde"  />6% of attempts, while an adversary would gain access just as likely. This makes
+the approach rather unsuitable for usage outside the lab. Another hybrid approach that
+combines drawmetric with searchmetric authentication is Schlöglhofer and Sametinger’s
+GesturePuzzle <span class="cite">[<a 
+href="dissli2.html#XSchloglhofer2012SecureAndUsableMobileAuth">280</a>]</span>. As the name indicates, the authentication is based on a puzzle: upon
+a challenge set of images, from which the user has to recognize the ones from their
+portfolio, the user enters a gesture that corresponds to combination of images. Solving this
+puzzle appears too demanding on the user’s skills and patience to be adopted on larger
+scale.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x8-65003r7"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 359--><p class="noindent" ></p><!--l. 360--><p class="noindent" > <a 
+ id="x8-65001r1"></a>
+<span 
+class="ptmr8t-x-x-109">Draw A Secret </span><span class="cite"><span 
+class="ptmr8t-x-x-109">[</span><a 
+href="dissli2.html#XJermyn1999DrawASecret"><span 
+class="ptmr8t-x-x-109">180</span></a><span 
+class="ptmr8t-x-x-109">]</span></span>
+      </p><!--l. 365--><p class="noindent" > <a 
+ id="x8-65002r2"></a>
+       <span 
+class="ptmr8t-x-x-109">Android  pattern  unlock  (image:  Mike</span>
+     <span 
+class="ptmr8t-x-x-109">Dent)</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.7: </span><span  
+class="content"> Iconic drawmetric systems. The user’s password is a shape that they need to
+draw to authenticate.</span></div><!--tex4ht:label?: x8-65003r7 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 371--><p class="noindent" >However, once pattern unlock on Android had become a standard authentication technique for
+millions of users, a number of formal evaluations were carried out by the academic community.
+Harbach et al. pointed out that participants in their longitudinal study spent around 2.8 minutes on
+average per day to unlock their phone <span class="cite">[<a 
+href="dissli2.html#XHarbach2016HardLockLife">155</a>]</span>. Interestingly, patterns were entered significantly
+faster than traditional PINs on average. Regarding their proneness to attacks, it was
+recognized early that grid-based patterns on a touchscreen are also prone to “smudge
+attacks” where attackers can restore the user’s pattern by looking at the oily residue left on
+touchscreens after entering the pattern <span class="cite">[<a 
+href="dissli2.html#XAviv2010SmudgeAttacks">15</a>]</span>. De Luca et al. conceived an approach to
+authenticate on the back of smartphones and iterated the concept <span class="cite">[<a 
+href="dissli2.html#XDeLuca2013BackOfDevice">79</a>, <a 
+href="dissli2.html#XDeLuca2014NowYouSeeMe">76</a>]</span>. Authenticating
+on the back has the big advantage to be resilient against shoulder-surfing attacks. Von
+Zezschwitz et al. also investigated which specific pattern types were most resilient to
+shoulder-surfing even if the attacker can observe them directly <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2015EasyToDraw">356</a>]</span>. Since the pattern unlock on
+Android cannot include a given dot multiple times, Colley et al. extended it that way
+<span class="cite">[<a 
+href="dissli2.html#XColley2016ExtendingPatterns">58</a>]</span>. This approach effectively thwarts smudge attacks with a minimal change to the
+existing system. Moreover, Uellenbeck et al. <span class="cite">[<a 
+href="dissli2.html#XUellenbeck2013QuantifyingSecurityPatterns">340</a>]</span>, as well as Von Zezschwitz et al. <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2016QuantifyingEffective">357</a>]</span>
+quantified the effective pattern space. They both concluded that user-chosen patterns are very
+predictable, so the hypothesized security benefits of patterns over PINs are questionable. At the
+same time, Von Zezschwitz et al. tried to nudge users to pick a less predictable starting
+position with different types of background images <span class="cite">[<a 
+href="dissli2.html#XVonZezschwitz2016QuantifyingEffective">357</a>]</span>. Their approach resembled
+Background-Draw-a-Secret (BDAS) <span class="cite">[<a 
+href="dissli2.html#XDunphy2007BDAS">89</a>]</span> and Persuasive Cued Click Points (PCCP) <span class="cite">[<a 
+href="dissli2.html#XChiasson2008PCCP">51</a>]</span>. When
+evaluating the concept through an online study, the effects on user selected patterns, however,
+remained small.
+</p>
+<!--l. 379--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-660002.5.1"></a><span 
+class="ptmb8t-x-x-120">Summary and Future Directions</span></span>
+Apart from the pattern unlock for on Android, graphical authentication systems have not been
+adopted widely. Text-passwords are still the preferred option for many service providers and are
+still available as authentication method on mobile devices. Maybe we need an improved
+understanding as to why the supposed advantages of greater memorability and security have not
+been able to outweigh the disadvantages (authentication times, shoulder surfing). As of
+now, little is known about the mental models of graphical password security. A step in
+this direction was Katsini et al.’s recent work <span class="cite">[<a 
+href="dissli2.html#XKatsini2017StrategiesGraphicalPasswords">187</a>]</span>. They explored mental models and
+strategies that users employ to create graphical passwords. Thorpe et al. also found out
+that there are presentation effects that influence how people pick graphical passwords
+<span class="cite">[<a 
+href="dissli2.html#XThorpe2014PresentationEffects">334</a>]</span>.
+</p><!--l. 384--><p class="noindent" >For the future, we could narrow down the most feasible direction for visual authentication <span class="cite">[<a 
+href="dissli2.html#XBiddle2009GraphicalFirstTwelveYears">23</a>]</span>. To
+get there, Stobert and Biddle compared searchmetric, locimetric and drawmetric systems in terms
+of password memorability <span class="cite">[<a 
+href="dissli2.html#XStobert2013GraphicalPasswords">314</a>]</span>. All participants in their study were assigned a system-generated
+password to reduce biases. Unsurprisingly, recognition based systems performed better than recall
+based systems (“recognition rather than recall is one of the most important usability heuristics
+<span class="cite">[<a 
+href="dissli2.html#XNielsen1994EnhancingHeuristics">242</a>]</span>). Nonetheless, this seems to be the most feasible approach that might see new ideas in the
+                                                                                    
+
+                                                                                    
+near future. However, De Angeli and Renaud et al. doubt that visual authentication methods
+will prevail in the long run <span class="cite">[<a 
+href="dissli2.html#XDeAngeli2005PictureThousandWords">72</a>, <a 
+href="dissli2.html#XRenaud2009VisualSnakeOil">265</a>]</span>. They argue that the promise of more memorable
+passwords has not been fulfilled by the approaches so far and that we should keep looking
+elsewhere. Potentially, we will rely on less knowledge-based authentication in the future, but
+more on biometric and multimodal approaches. Those are discussed in the following
+section.
+</p><!--l. 388--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.5.2    </span> <a 
+ id="x8-670002.5.2"></a>Biometrics and Multimodal Authentication</h4>
+<!--l. 391--><p class="noindent" >Recent market analyses indicate that over 70% of smartphones will ship with a fingerprint- or other biometric
+sensors in 2018<span class="footnote-mark"><a 
+href="diss34.html#fn26x3"><sup class="textsuperscript">26</sup></a></span><a 
+ id="x8-67001f26"></a>.
+Those sensors are most commonly used for user identification and authentication. In this section we
+take a brief look at the different features that can be used in biometric authentication, the
+advantages of combining them, and where they can fail.
+</p><!--l. 393--><p class="noindent" >For biometric authentication, there exist two common categories: <span 
+class="ptmri8t-x-x-120">Explicit </span>and <span 
+class="ptmri8t-x-x-120">implicit</span>
+authentication. In an explicit authentication scheme, the user is prompted to provide the proof of
+identity, e.g. the fingerprint. The idea behind implicit authentication, as Jakobsson et al. describe
+it, is essentially to “authenticate mobile users based on actions they would carry out
+anyway” <span class="cite">[<a 
+href="dissli2.html#XJakobsson2009ImplicitAuthentication">178</a>]</span>. For example, walking, typing, or simply using the device in a specific
+environment.
+</p><!--l. 396--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x8-680002.5.2"></a>Explicit Biometrics</h5>
+                                                                                    
+
+                                                                                    
+<!--l. 397--><p class="noindent" ><span 
+class="ptmb8t-x-x-120">Fingerprints </span>are becoming<span class="footnote-mark"><a 
+href="diss35.html#fn27x3"><sup class="textsuperscript">27</sup></a></span><a 
+ id="x8-68001f27"></a>
+the most common feature used in biometric authentication nowadays, due to the widespread
+device-support (mobile phones, tablets, laptops) and obvious usability benefits as perceived by the
+users <span class="cite">[<a 
+href="dissli2.html#XWash2010FolkModels">362</a>]</span>. On modern phones, after a short enrollment, fingerprint recognition takes a fraction of
+a second and has low error rates under normal circumstances <span class="cite">[<a 
+href="dissli2.html#XHenniger2016SecurityEvaluationFingerprint">161</a>]</span>. Thus, fingerprint authentication
+is fairly usable and reasonably secure. However, a wet surface, grease, or dirt can limit the
+functionality <span class="cite">[<a 
+href="dissli2.html#XBhagavatula2015BiometricPerceptions">21</a>]</span>. Moreover, there are different kinds of attacks if the victim is not in
+the vicinity (like fingerprint spoofing with a 2D/3D print). Such attacks are becoming
+easier to carry out, though they still require decent effort <span class="cite">[<a 
+href="dissli2.html#XMarasco2014SurveyAntispoofing">221</a>]</span>. But if, for example,
+the victim is asleep, it is enough to hold the finger onto the sensor to gain access to
+the device (which can indeed cause relationship fights that can force airplanes to land
+early<span class="footnote-mark"><a 
+href="diss36.html#fn28x3"><sup class="textsuperscript">28</sup></a></span><a 
+ id="x8-68002f28"></a>).
+</p><!--l. 404--><p class="noindent" >Recently, more systems are counting on <span 
+class="ptmb8t-x-x-120">iris and facial recognition </span>to authenticate
+users. Windows Hello is a framework for biometric authentication that includes
+not only fingerprint support, but also authenticates users through their iris or
+face<span class="footnote-mark"><a 
+href="diss37.html#fn29x3"><sup class="textsuperscript">29</sup></a></span><a 
+ id="x8-68003f29"></a>.
+Mobile phones usually have a front-camera facing the user, so Android has included the
+“Face-Unlock” feature since version 4 (2011), which was rebranded to “Trusted Face” in version 5
+                                                                                    
+
+                                                                                    
+(2014)<span class="footnote-mark"><a 
+href="diss38.html#fn30x3"><sup class="textsuperscript">30</sup></a></span><a 
+ id="x8-68004f30"></a>.
+Moreover, on the iPhone X (2017), Apple has removed the home button
+and with it the fingerprint reader and the TouchID system in favor of
+FaceID<span class="footnote-mark"><a 
+href="diss39.html#fn31x3"><sup class="textsuperscript">31</sup></a></span><a 
+ id="x8-68005f31"></a>.
+With FaceID, the user simply picks up the phone and looks at it to unlock it. The chance of another
+person unlocking the phone the same way is 1 to 1 Million, according to Apple. However, it is
+possible to fool face-unlock systems with different spoofing attacks like using a face
+mask<span class="footnote-mark"><a 
+href="diss40.html#fn32x3"><sup class="textsuperscript">32</sup></a></span><a 
+ id="x8-68006f32"></a>, or
+in some cases a simple image of the legimitate user. All the aforementioned systems use a
+PIN/passcode as fallback method that dominates the biometric schemes. De Luca et al. evaluated
+the reasons for (not) using biometric authentication on mobile devices in an online survey <span class="cite">[<a 
+href="dissli2.html#XDeLuca2015Selfies">75</a>]</span>.
+They found that users prioritize usability over security when deciding which unlock mechanism to
+use. The respondents who had deactivated Face Unlock mostly did so for usability (read:
+interaction times) and reliability reasons. Interestingly, most respondents were aware of the security
+trade-off that face recognition entails.
+</p><!--l. 411--><p class="noindent" >Finally, a last example for explicit biometric authentication is <span 
+class="ptmb8t-x-x-120">voice recognition </span><span class="cite">[<a 
+href="dissli2.html#XAleksic2006AVBiometrics">10</a>]</span>. Android
+and Google Home are among the few consumer-oriented systems that allow users to
+authenticate through their voice. Hang et al. evaluated a password reset system that uses
+voice recognition to verify the reset request <span class="cite">[<a 
+href="dissli2.html#XHang2013TravelRoutes">152</a>]</span>. They point out the importance of
+considering embarrassment in the design of natural voice interaction, e.g. in an office
+environment. Moreover, “[b]oth face and voice recognition logins are extremely
+situational dependent; [...] speaking into a microphone doesn’t always work in noisy
+                                                                                    
+
+                                                                                    
+environments”<span class="footnote-mark"><a 
+href="diss41.html#fn33x3"><sup class="textsuperscript">33</sup></a></span><a 
+ id="x8-68007f33"></a>,
+so it is important to create systems that adapt to specific contexts <span class="cite">[<a 
+href="dissli2.html#XDamousis2008Humabio">66</a>]</span>.
+</p><!--l. 414--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x8-690002.5.2"></a>Implicit Biometrics</h5>
+<!--l. 415--><p class="noindent" >Implicit authentication is done without prompting or challenging the user by continuously verifying
+his or her identity <span class="cite">[<a 
+href="dissli2.html#XPeisert2013PriciplesAuthentication">254</a>]</span>. One goal is to achieve a more natural interaction, similar to human-human
+interaction. Greenstadt and Beal postulate a system that recognizes people like humans do: “in most
+everyday interactions, we recognize people by who they are and how they behave, rather
+than by the secrets that they know” <span class="cite">[<a 
+href="dissli2.html#XGreenstadt2008CognitiveSecurity">141</a>]</span>. Of course, this excludes situations where two
+strangers need to authenticate one another, e.g. at a passport control at the border. A
+specific key benefit of successful implicit authentication would be that users do not have to
+spend time authenticating explicitly, which can save them a couple of minutes per day
+<span class="cite">[<a 
+href="dissli2.html#XHarbach2016HardLockLife">155</a>]</span>.
+</p><!--l. 418--><p class="noindent" >The way a person walks is one of the features that can be used to recognize them, which humans
+also rely upon <span class="cite">[<a 
+href="dissli2.html#XCutting1977GaitPerception">65</a>]</span>. One of the early approaches to exploit gait patterns for authentication can be
+traced back to Ailisto et al. who equipped laptop computers with accelerometers <span class="cite">[<a 
+href="dissli2.html#XAilisto2005GaitPatternAccelerometers">7</a>]</span>. They
+successfully identified users this way with an EER of 6.5%. Tamviruzzaman et al. implemented this
+approach for mobile phones that at the time (2009) had started to integrate acceleration sensors and
+gyroscopes <span class="cite">[<a 
+href="dissli2.html#XTamviruzzaman2009ePet">327</a>]</span>. For their “ePet” system, they also combined gait patterns with GPS-location
+traces, but did not report on a user study. Muaaz and Mayrhofer tackled the issue of device
+orientation and achieved an EER of 7.05% in the same study session, but only 18.96% across
+multiple sessions. As of now, gait recognition has not been widely adopted, but Android allows the
+user to activate “on body detection”, which keeps the device unlocked while it is in
+motion<span class="footnote-mark"><a 
+href="diss42.html#fn34x3"><sup class="textsuperscript">34</sup></a></span><a 
+ id="x8-69001f34"></a>.
+The documentation says that “some devices” can learn the gait pattern and lock the device if they
+detect a different walking style. As shown in Table <span 
+class="ptmb8t-x-x-120">??</span>, gait detection faces a number of problems
+                                                                                    
+
+                                                                                    
+which are difficult to overcome.
+</p><!--l. 422--><p class="noindent" >Another theme in implicit authentication is <span 
+class="ptmri8t-x-x-120">behavioral </span>biometrics. For instance, the way people use
+their mobile phones and in which contexts can be used to build a user model <span class="cite">[<a 
+href="dissli2.html#XJakobsson2009ImplicitAuthentication">178</a>]</span>. Keystroke
+dynamics, i.e., characteristic typing patterns, can serve as feature. The first algorithms were
+conceived for desktop environments <span class="cite">[<a 
+href="dissli2.html#XCrawford2010KeystrokeDynamics">63</a>]</span>, but Bouchoux and Clarke proposed an early solution in
+2008 that achieves authentication via keystrokes on smartphones <span class="cite">[<a 
+href="dissli2.html#XBuchoux2008KeystrokeAnalysis">44</a>]</span>. They state that explicitly
+enrolling users might be too bothersome for them, so it should be possible to enroll a user
+implicitly. This in turn produces a risk of including data from impostors, too. De Luca
+showed that users enter grid-based patterns in a unique way, which can be leveraged for
+implicit authentication <span class="cite">[<a 
+href="dissli2.html#XDeLuca2012TouchMeOnce">74</a>]</span>. Their second user study focused on this type of unlock
+mechanism and, with an average accuracy above 90%, they could decide whether a correctly
+entered pattern was actually entered by the legitimate user. Interestingly, at the time of
+writing this thesis, De Luca et al.’s paper is the most-cited CHI publication in the past five
+years<span class="footnote-mark"><a 
+href="diss43.html#fn35x3"><sup class="textsuperscript">35</sup></a></span><a 
+ id="x8-69002f35"></a>,
+which highlights the impact and potential of this approach. What is more, this is one of the few
+approaches that makes explicit authentication more secure through a second, biometric layer. While
+the user models of the aforementioned approaches are created and maintained on the
+devices, Nauman and Ali proposed a system architecture that shifts keystroke analysis
+to a Trusted Third Party, which authenticates the user <span class="cite">[<a 
+href="dissli2.html#XNauman2010TOKEN">240</a>]</span>. However, their approach
+requires more sophisticated hardware (trusted platform modules), which renders it more
+costly.
+</p><!--l. 425--><p class="noindent" >
+</p>
+<h5 class="subsubsectionHead"><a 
+ id="x8-700002.5.2"></a>Summary and Outlook</h5>
+<!--l. 426--><p class="noindent" >Since all biometric features, if considered independently, can be spoofed in some way (see Table
+<span 
+class="ptmb8t-x-x-120">??</span>), approaches to combine multiple features have started to proliferate. Although the idea of
+<span 
+class="ptmri8t-x-x-120">multimodal </span>signals for authentication is not particularly new (some implementations were done in
+the mid 1990s <span class="cite">[<a 
+href="dissli2.html#XBrunelli1995PersonIdentificationMultipleCues">43</a>]</span>), perhaps the computing power both on the clients and back-ends is now large
+enough to handle the input streams. Bigun et al. developed a framework that continues to learn
+from multiple signals <span class="cite">[<a 
+href="dissli2.html#XBigun2005CombiningBiometricEvidence">24</a>]</span>, which requires such computing power. Rybinicek et al. presented
+a roadmap with obstacles and opportunities <span class="cite">[<a 
+href="dissli2.html#XRybnicek2014RoadmapContinuousAuth">274</a>]</span> that can serve the design of future
+multimodal biometric authentication schemes. Google, among other companies, tries to
+                                                                                    
+
+                                                                                    
+incorporate the notion of such multimodal implicit authentication in their Smart Lock
+solution<span class="footnote-mark"><a 
+href="diss44.html#fn36x3"><sup class="textsuperscript">36</sup></a></span><a 
+ id="x8-70001f36"></a>.
+</p><!--l. 428--><p class="noindent" >In summary, we can take away that biometric authentication provides many usability benefits like
+reduced time spent on authentication and also security enhancements. Though implicit
+authentication is unlikely to replace explicit authentication completely, it can still make explicit
+schemes more secure as demonstrated by De Luca et al. <span class="cite">[<a 
+href="dissli2.html#XDeLuca2012TouchMeOnce">74</a>]</span>. In Section <a 
+href="#x8-750002.5.4">2.5.4<!--tex4ht:ref: sec:rw:pws_are_here_to_stay --></a>, however, we discuss
+why biometrics are still dominated by knowledge based authentication especially in situations
+where the system cannot make a final decision due to low certainty.
+</p>
+<div class="table">
+                                                                                    
+
+                                                                                    
+<!--l. 1--><p class="noindent" ><a 
+ id="x8-70002r3"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                    
+
+                                                                                    
+ <!--tex4ht:inline--><div class="tabular"> <table id="TBL-4" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-4-1g"><col 
+id="TBL-4-1" /></colgroup><colgroup id="TBL-4-2g"><col 
+id="TBL-4-2" /></colgroup><colgroup id="TBL-4-3g"><col 
+id="TBL-4-3" /></colgroup><colgroup id="TBL-4-4g"><col 
+id="TBL-4-4" /></colgroup><colgroup id="TBL-4-5g"><col 
+id="TBL-4-5" /></colgroup><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-1-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-1-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Feature</span>                    </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-1-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Capturing</span>
+  <span 
+class="ptmb8t-x-x-109">Method</span>                    </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-1-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Implicit / Explicit</span>   </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-1-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Spoofing Threats</span>    </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-1-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmb8t-x-x-109">Problems</span>                 </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-2-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-2-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Face &#x0026; Iris</span>                </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-2-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Camera</span>                     </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-2-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Both</span>                          </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-2-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Photographs of the</span>
+  <span 
+class="ptmr8t-x-x-109">legitimate user</span>          </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-2-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Lighting    situation</span>
+  <span 
+class="ptmr8t-x-x-109">and make-up</span>             </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-3-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-3-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Fingerprint</span>                </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-3-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Fingerprint reader</span>    </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-3-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Explicit.     Implicit</span>
+  <span 
+class="ptmr8t-x-x-109">imminent.</span>                 </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-3-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Play-Doh</span>
+  <span 
+class="ptmr8t-x-x-109">casts, Scotch Tape,</span>
+  <span 
+class="ptmr8t-x-x-109">2D/3D prints</span>            </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-3-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Dirt,  Water,  Finger</span>
+  <span 
+class="ptmr8t-x-x-109">injuries</span>                     </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-4-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-4-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Speech</span>                       </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-4-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Microphone</span>              </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-4-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Both</span>                          </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-4-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Recordings  of  the</span>
+  <span 
+class="ptmr8t-x-x-109">user’s voice</span>              </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-4-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Sickness,     natural</span>
+  <span 
+class="ptmr8t-x-x-109">voice         changes,</span>
+  <span 
+class="ptmr8t-x-x-109">background noise</span>     </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-5-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-5-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Gait</span>                           </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-5-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Camera               or</span>
+  <span 
+class="ptmr8t-x-x-109">Accelerometer</span>          </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-5-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Both</span>                          </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-5-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Imitation</span>                   </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-5-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Injuries,     carrying</span>
+  <span 
+class="ptmr8t-x-x-109">load,        footwear,</span>
+  <span 
+class="ptmr8t-x-x-109">ground       surface,</span>
+  <span 
+class="ptmr8t-x-x-109">being seated</span>             </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-6-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-6-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Keystroke</span>                  </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-6-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Hard/soft keyboard</span>  </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-6-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Primarily implicit</span>     </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-6-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Imitation</span>                   </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-6-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Enrollment,</span>
+  <span 
+class="ptmr8t-x-x-109">reliability</span>                  </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-7-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-7-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Location</span>                    </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-7-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">GPS                     or</span>
+  <span 
+class="ptmr8t-x-x-109">infrastructure</span>
+  <span 
+class="ptmr8t-x-x-109">calculated position</span>   </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-7-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Primarily implicit</span>     </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-7-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Forged             GPS</span>
+  <span 
+class="ptmr8t-x-x-109">locations</span>                   </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-7-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">limited         places,</span>
+  <span 
+class="ptmr8t-x-x-109">precision</span>                   </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-8-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-8-1"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Network/File/App</span>
+  <span 
+class="ptmr8t-x-x-109">Usage</span>                        </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-8-2"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Software protocol</span>     </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-8-3"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Implicit</span>                     </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-8-4"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Imitation</span>                   </p></td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-8-5"  
+class="td11"> <!--l. 26--><p class="noindent" ><span 
+class="ptmr8t-x-x-109">Precision</span>                  </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-9-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-4-9-1"  
+class="td11">                  </td></tr></table>                                                                             </div>
+<br /> <div class="caption" 
+><span class="id">Table 2.3: </span><span  
+class="content">Comparison of different biometric authentication methods. Adapted from <span class="cite">[<a 
+href="dissli2.html#XStockinger2011ImplicitAuthentication">319</a>]</span></span></div><!--tex4ht:label?: x8-70002r3 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfloat" />
+</div>
+<h4 class="subsectionHead"><span class="titlemark">2.5.3    </span> <a 
+ id="x8-710002.5.3"></a>Multi-Factor, Token-based and Federated Authentication</h4>
+<!--l. 437--><p class="noindent" >As a final aspect of authentication beyond passwords, let us take a look at systems that do
+not necessarily aim to replace passwords, but to make them more user-friendly and/or
+secure.
+</p>
+<!--l. 439--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-720002.5.3"></a><span 
+class="ptmb8t-x-x-120">Two-Factor Authentication</span></span>
+In multi-factor authentication, the user needs to present multiple credentials
+to the system in whichever form. For instance, the Google 2-step verification
+mechanism combines the user-chosen password with a <span 
+class="ptmri8t-x-x-120">one-time password</span>
+(OTP)<span class="footnote-mark"><a 
+href="diss45.html#fn37x3"><sup class="textsuperscript">37</sup></a></span><a 
+ id="x8-72001f37"></a>.
+If users log into their Google account on a computer in an Internet café, they will receive an OTP
+on a secondary device, usually inside a text message sent to their personal phone. If no more than
+two separate channels (“<span 
+class="ptmri8t-x-x-120">out of band authentication</span>”, OOBA) are involved, the scheme is usually
+referred to as Two-factor authentication or 2FA for short. Multi-factor authentication aims to
+prevent impersonation in case an attacker has obtained a victim’s primary credential, but not their
+secondary factor. There were hints to combining multiple such levels to make authentication more
+robust already in the late 1970s. Morris and Thompson mentioned that “some UNIX systems have
+instituted what is called an ‘external security code’ that must be typed when dialing into the system,
+but before logging in. If this code is changed periodically, then someone with an old
+password will likely be prevented from using it [the system, author’s note]” <span class="cite">[<a 
+href="dissli2.html#XMorris1979PasswordSecurity">237</a>]</span>. Moreover,
+Haskett shared an idea about a second level of authentication in 1984 <span class="cite">[<a 
+href="dissli2.html#XHaskett1984PassAlgorithms">157</a>]</span>. With the
+<span 
+class="ptmri8t-x-x-120">Pass-Algorithms </span>mechanism, the user first authenticates with their regular credentials and then
+proves their identity by responding to a random prompt by completing a pre-shared
+procedure. The algorithm is altered by the system administrator and then shared with the
+legitimate users, who are supposed to memorize the algorithm rather than a static password.
+For instance, the current algorithm could be to use the subsequent letter in the alphabet
+based on the challenge: If the challenge is BEL, the user enters CFM as second layer of
+authentication. The proposed benefit is that the algorithm is easier to remember and can
+                                                                                    
+
+                                                                                    
+still be personalized. Multi-factor authentication has since been widely adopted and
+more web services are following. Many banks have the users confirm transactions by a
+transaction number (TAN) sent to their phones, although they are already logged in
+with their banking password <span class="cite">[<a 
+href="dissli2.html#XMaurer2011DataTypeWarnings">224</a>]</span>. The primary benefit of multi-factor authentication
+lies in the increased confidence of the legitimacy of account actions. In any case, there
+is a small usability caveat, because adding more factors leads to longer interactions,
+which is not recommendable for secondary tasks like authentication <span class="cite">[<a 
+href="dissli2.html#XAdams1999UsersEnemy">3</a>]</span>. However, the
+increased security might in turn improve user experience because it also reassures users that
+they are interacting with the legitimate party. Attacks on multi-factor authentication are
+possible<span class="footnote-mark"><a 
+href="diss46.html#fn38x3"><sup class="textsuperscript">38</sup></a></span><a 
+ id="x8-72002f38"></a>,
+but do not scale well <span class="cite">[<a 
+href="dissli2.html#XHerley2014CybercrimeAtScale">163</a>]</span>.
+</p><!--l. 448--><p class="noindent" >Moreover,  one-time  passwords  and  “Magic  Login
+Links”<span class="footnote-mark"><a 
+href="diss47.html#fn39x3"><sup class="textsuperscript">39</sup></a></span><a 
+ id="x8-72003f39"></a>
+can also replace user-chosen passwords. The user only provides their user name, and the system
+sends them a magic link or a random one-time password to their verified email account or phone.
+So, in that sense, accessing one’s personal email account is the primary authentication factor. After
+clicking the link or logging in with the OTP, the link or OTP expires. If implemented at scale, this
+could allow users to only memorize the credentials for their email account and log in to all other
+systems by receiving magic links. However, the approach is only secure under the assumption that
+the email account is well protected. It might be fair to assume that users might underestimate
+the risk of relying on magic links. For low-value accounts, it seems like a viable and
+promising solution, although trust issues on the user side need to be further addressed
+<span class="cite">[<a 
+href="dissli2.html#XRuoti2015AuthenticationMelee">272</a>]</span>.
+</p>
+<!--l. 450--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-730002.5.3"></a><span 
+class="ptmb8t-x-x-120">Hardware Tokens and Proxies</span></span>
+Hardware tokens are often a special flavor of multi-factor authentication, but it
+                                                                                    
+
+                                                                                    
+is worthwhile to treat them separately, because in some cases they can act as
+standalone replacement of passwords, too. In general, this solution uses a hardware
+device to store user secrets <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ReplacePasswords">34</a>]</span>. In multi-factor environments, the RSA SecurID
+token<span class="footnote-mark"><a 
+href="diss48.html#fn40x3"><sup class="textsuperscript">40</sup></a></span><a 
+ id="x8-73001f40"></a> displays
+a random numerical which is valid for at most 60 seconds, and the user has to enter it as second factor. The
+YubiKey tokens<span class="footnote-mark"><a 
+href="diss49.html#fn41x3"><sup class="textsuperscript">41</sup></a></span><a 
+ id="x8-73002f41"></a>
+are inserted into the USB port of the computer or held against an NFC-equipped smartphone to
+prove the user’s identity (see Figure <span 
+class="ptmb8t-x-x-120">??</span>). While the two devices improve account protection, the
+downside is that they are easily lost or stolen, and have to be with the user when they need to
+authenticate.
+</p><!--l. 454--><p class="noindent" >To save users from entering PINs, patterns, or passwords to unlock their phones, Jakobsson
+developed a bracelet that serves as a secure token <span class="cite">[<a 
+href="dissli2.html#XJakobsson2014HowToWearYourPW">176</a>]</span>, which is not as easily lost or stolen. This
+idea is also embraced in commercial products. Smart watches and other wearables can serve as
+authentication tokens: Google offers the “Trusted Device” feature since Android version 5. If a
+trusted device, e.g. a smart watch or wireless headphones, is connected to the phone via Bluetooth,
+the phone turns off the primary authentication method, e.g. pattern unlock while the device is
+connected. If the phone has been inactive for four hours or had been manually locked, the user
+needs to re-authenticate by providing the primary credential. This can drastically reduce the
+number of authentication events, given phones are unlocked between 27 and 86 times per day
+according to recent estimates<span class="cite">[<a 
+href="dissli2.html#XDeloitte2017ConsumerSurveyUS">374</a>, <a 
+href="dissli2.html#XStachl2017PersonalitySmartphones">311</a>]</span>.
+</p>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                    
+
+                                                                                    
+<a 
+ id="x8-73005r9"></a>
+                                                                                    
+
+                                                                                    
+<!--l. 458--><p class="noindent" ></p><!--l. 459--><p class="noindent" > <a 
+ id="x8-73003r1"></a>
+<span 
+class="ptmr8t-x-x-109">The      RSA      SecurID      token      displays      a</span>
+<span 
+class="ptmr8t-x-x-109">one-time-password every 30 to 60 seconds</span>
+</p><!--l. 463--><p class="noindent" > <a 
+ id="x8-73004r2"></a>
+<span 
+class="ptmr8t-x-x-109">YubiKey uses NFC to authenticate users.</span>
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.9:  </span><span  
+class="content">  Commercially  available  hardware  tokens.  The  RSA  SecurID  is  more
+business-oriented,  while  the  YubiKeys  can  be  used  with  consumer  products  like  Gmail,
+Facebook, and Dropbox, too.</span></div><!--tex4ht:label?: x8-73005r9 -->
+                                                                                    
+
+                                                                                    
+</div><hr class="endfigure" />
+<!--l. 469--><p class="noindent" >Other approaches leverage devices that the users carry with them anyhow as
+authentication token or proxy. Aebisher et al. present the Pico Framework where the
+user has to scan a QR code with a special app to pass-by manual authentication <span class="cite">[<a 
+href="dissli2.html#XAebischer2017PicoInTheWild">6</a>]</span>.
+Some banks require the user to scan special image codes as second factor during
+authentication<span class="footnote-mark"><a 
+href="diss50.html#fn42x3"><sup class="textsuperscript">42</sup></a></span><a 
+ id="x8-73006f42"></a>.
+A few popular websites have already started to adopt the system. Roalter et al. presented a system
+that allowed users to access shared rooms in a university by authenticating with their smartphone
+<span class="cite">[<a 
+href="dissli2.html#XRoalter2013SmartphoneProxy">270</a>]</span>. There is some evidence that users generally appreciate this kind of interaction <span class="cite">[<a 
+href="dissli2.html#XRuoti2015AuthenticationMelee">272</a>]</span>.
+However, using the phone as proxy or second factor has the disadvantage that batteries might be
+empty or the phone might be out of reach.
+</p>
+<!--l. 471--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-740002.5.3"></a><span 
+class="ptmb8t-x-x-120">Federated Single Sign-On</span></span>
+The idea behind single sign-on (SSO) is to allow the user to log into one service and other services
+can use this login state without requiring any more explicit authentication actions. Thus, the user
+must only remember one set of credentials <span class="cite">[<a 
+href="dissli2.html#XEgelman2013ProfilePassword">91</a>]</span>. With federated single sign-on, websites can
+authenticate users by temporarily redirecting them to a trusted third party <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ReplacePasswords">34</a>]</span>. The third party
+verifies the user’s identity. Afterwards it signs the authentication request and returns a text-based
+token that the client needs to present in future interactions. A historically successful example is
+Kerberos <span class="cite">[<a 
+href="dissli2.html#XKohl1993Kerberos">197</a>]</span>. However, SSO approaches did not receive widespread acceptance for about
+twenty years <span class="cite">[<a 
+href="dissli2.html#XSun2010BillionKeys">322</a>]</span>. Currently, the OpenID protocol is a state of the art approach, where
+user identities are verified in a decentralized approach <span class="cite">[<a 
+href="dissli2.html#XRecordon2006OpenID">263</a>]</span>. Any web server can act as
+identity provider, but it is most feasible if trustworthy parties enable OpenID. Currently,
+Microsoft, Google and Oracle are among the biggest OpenID identity providers. <span 
+class="ptmb8t-x-x-120">OAuth </span>is a
+related protocol, but is not designed as identity proof but to allow “relying parties” to
+use resources on other websites <span class="cite">[<a 
+href="dissli2.html#XBonneau2012ReplacePasswords">34</a>]</span>. For example, a web app can use OAuth to access
+profile information on Facebook or publish Twitter messages on the user’s behalf. The
+web app can create another dedicated user-account for its own purposes with the data it
+receives from the OAuth interfaces, and automatically authenticate the user without
+further notice. Perhaps this is the reason OAuth is often mistakenly seen as single sign-on
+mechanism.
+</p><!--l. 474--><p class="noindent" >Different analyses of the security and user experience of SSO mechanisms have yielded mixed
+results. Ruoti et al. found that their participants ranked OpenID-like approaches as the preferred
+way to authenticate <span class="cite">[<a 
+href="dissli2.html#XRuoti2015AuthenticationMelee">272</a>]</span>. Sun et al., however, found that their survey respondents had often
+erroneous mental models about how single sign-on works <span class="cite">[<a 
+href="dissli2.html#XSun2011UsersRefuseSSO">323</a>]</span>. For instance, many people thought
+                                                                                    
+
+                                                                                    
+that their passwords are shared with relying parties and also around 40% were concerned about
+privacy in this study. Contrarily, Egelman pointed out that users who used Facebook Connect are
+fairly cognizant of the data that is shared with relying parties <span class="cite">[<a 
+href="dissli2.html#XEgelman2013ProfilePassword">91</a>]</span>. Still, 15% of respondents
+expressed privacy concerns and refrained from using such mechanisms. Bonneau et al. also criticize
+big companies as identity providers by noting that “Facebook Connect (a version of OAuth),
+incentivizes relying parties with user data, mandating a central role for Facebook as the
+sole identity provider, which does little for privacy” <span class="cite">[<a 
+href="dissli2.html#XBonneau2015ImperfectAuthentication">35</a>]</span>. For users, leaving an identity
+provider like Facebook also entails tedious account recovery on relying services like
+Spotify<span class="footnote-mark"><a 
+href="diss51.html#fn43x3"><sup class="textsuperscript">43</sup></a></span><a 
+ id="x8-74001f43"></a>.
+In summary, SSO theoretically has the potential to drastically reduce the number passwords but it
+brings out a new range of problems.
+</p><!--l. 476--><p class="noindent" >
+</p>
+<h4 class="subsectionHead"><span class="titlemark">2.5.4    </span> <a 
+ id="x8-750002.5.4"></a>Passwords are Here to Stay</h4>
+<!--l. 494--><p class="noindent" >Bonneau et al. argue that passwords are an imperfect technology that is difficult to replace, and so they answer
+the question as to if we still need passwords with a differentiated “yes”: <span 
+class="ptmri8t-x-x-120">“Passwords appear to be a Pareto</span>
+<span 
+class="ptmri8t-x-x-120">equilibrium”</span><span class="footnote-mark"><a 
+href="diss52.html#fn44x3"><sup class="textsuperscript">44</sup></a></span><a 
+ id="x8-75001f44"></a>
+<span class="cite">[<a 
+href="dissli2.html#XBonneau2015ImperfectAuthentication">35</a>]</span>. The industry has found ways to work around the drawbacks that passwords certainly entail.
+Thus, if passwords are not going away, multi-factor and multi-modal systems may turn out to be the
+most promising solution. The challenge is to establish a minimally privacy-invasive solution that
+embraces user-centered design to a higher degree than previous multi-factor/-modal approaches.
+Academic research can, according to Bonneau et al., carry out those foundational experiments
+                                                                                    
+
+                                                                                    
+whose costs would potentially have a detrimental effect on business successes. This might help in
+pushing viable solutions forward when there is enough evidence for their business merit.
+As Herley and van Oorshot point out: “[...] it is time to admit that passwords will be
+with us for some time, and moreover, that in many instances they are the best-fit among
+currently known solutions” <span class="cite">[<a 
+href="dissli2.html#XHerley2012PersistenceOfPasswords">165</a>]</span>. They propagate a more systematic approach to make
+users’ lives easier instead of trying to find the single panacea that replaces passwords
+entirely.
+                                                                                    
+
+                                                                                    
+</p>
+<!--l. 1--><div class="crosslinks"><p class="noindent"></p></div>
+ 
+</body></html> 

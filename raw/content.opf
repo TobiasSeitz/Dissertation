@@ -1,0 +1,312 @@
+<?xml version="1.0"?> 
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="dcidid" version="2.0"> 
+<metadata 
+xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:opf="http://www.idpf.org/2007/opf"> 
+<dc:title>Supporting Users in Password Authentication with Persuasive Design<br 
+class="newline" /><br 
+class="newline" /></dc:title> 
+<dc:language>en-US</dc:language> 
+<dc:identifier id="dcidid"  opf:scheme="URI">http://example.com/diss</dc:identifier> 
+<dc:creator>Tobias Seitz<br 
+class="newline" />tobias.seitz@ifi.lmu.de</dc:creator> 
+<dc:date>2018-07-27T14:36:00Z</dc:date></metadata>   
+<manifest> 
+<item id="ncx" href="diss.ncx" media-type="application/x-dtbncx+xml" /> 
+<item id="stylesheet" href="diss.css" media-type="text/css"/> 
+<item id="file1"  href="diss.html" media-type="application/xhtml+xml" /> 
+<item id="file2"  href="dissli1.html" media-type="application/xhtml+xml" /> 
+<item id="file3"  href="dissch1.html" media-type="application/xhtml+xml" /> 
+<item id="file4"  href="disspa1.html" media-type="application/xhtml+xml" /> 
+<item id="file5"  href="dissch2.html" media-type="application/xhtml+xml" /> 
+<item id="file6"  href="dissch3.html" media-type="application/xhtml+xml" /> 
+<item id="file7"  href="dissch4.html" media-type="application/xhtml+xml" /> 
+<item id="file8"  href="disspa2.html" media-type="application/xhtml+xml" /> 
+<item id="file9"  href="dissch5.html" media-type="application/xhtml+xml" /> 
+<item id="file10"  href="dissch6.html" media-type="application/xhtml+xml" /> 
+<item id="file11"  href="dissch7.html" media-type="application/xhtml+xml" /> 
+<item id="file12"  href="dissch8.html" media-type="application/xhtml+xml" /> 
+<item id="file13"  href="disspa3.html" media-type="application/xhtml+xml" /> 
+<item id="file14"  href="dissch9.html" media-type="application/xhtml+xml" /> 
+<item id="file15"  href="dissch10.html" media-type="application/xhtml+xml" /> 
+<item id="file16"  href="dissch11.html" media-type="application/xhtml+xml" /> 
+<item id="file17"  href="disspa4.html" media-type="application/xhtml+xml" /> 
+<item id="file18"  href="dissch12.html" media-type="application/xhtml+xml" /> 
+<item id="file19"  href="dissch13.html" media-type="application/xhtml+xml" /> 
+<item id="file20"  href="dissch14.html" media-type="application/xhtml+xml" /> 
+<item id="file21"  href="dissli2.html" media-type="application/xhtml+xml" /> 
+<item id="file22"  href="dissch15.html" media-type="application/xhtml+xml" /> 
+<item id="file23"  href="dissli3.html" media-type="application/xhtml+xml" /> 
+ 
+<item id='diss4_html' href='diss4.html' media-type='application/xhtml+xml' />
+<item id='diss5_html' href='diss5.html' media-type='application/xhtml+xml' />
+<item id='diss6_html' href='diss6.html' media-type='application/xhtml+xml' />
+<item id='diss9_html' href='diss9.html' media-type='application/xhtml+xml' />
+<item id='diss10_html' href='diss10.html' media-type='application/xhtml+xml' />
+<item id='diss11_html' href='diss11.html' media-type='application/xhtml+xml' />
+<item id='diss12_html' href='diss12.html' media-type='application/xhtml+xml' />
+<item id='diss13_html' href='diss13.html' media-type='application/xhtml+xml' />
+<item id='diss14_html' href='diss14.html' media-type='application/xhtml+xml' />
+<item id='diss15_html' href='diss15.html' media-type='application/xhtml+xml' />
+<item id='diss16_html' href='diss16.html' media-type='application/xhtml+xml' />
+<item id='diss17_html' href='diss17.html' media-type='application/xhtml+xml' />
+<item id='diss18_html' href='diss18.html' media-type='application/xhtml+xml' />
+<item id='diss19_html' href='diss19.html' media-type='application/xhtml+xml' />
+<item id='diss20_html' href='diss20.html' media-type='application/xhtml+xml' />
+<item id='diss21_html' href='diss21.html' media-type='application/xhtml+xml' />
+<item id='diss22_html' href='diss22.html' media-type='application/xhtml+xml' />
+<item id='diss23_html' href='diss23.html' media-type='application/xhtml+xml' />
+<item id='diss24_html' href='diss24.html' media-type='application/xhtml+xml' />
+<item id='diss25_html' href='diss25.html' media-type='application/xhtml+xml' />
+<item id='diss26_html' href='diss26.html' media-type='application/xhtml+xml' />
+<item id='diss27_html' href='diss27.html' media-type='application/xhtml+xml' />
+<item id='diss28_html' href='diss28.html' media-type='application/xhtml+xml' />
+<item id='diss29_html' href='diss29.html' media-type='application/xhtml+xml' />
+<item id='diss30_html' href='diss30.html' media-type='application/xhtml+xml' />
+<item id='diss31_html' href='diss31.html' media-type='application/xhtml+xml' />
+<item id='diss32_html' href='diss32.html' media-type='application/xhtml+xml' />
+<item id='diss33_html' href='diss33.html' media-type='application/xhtml+xml' />
+<item id='diss34_html' href='diss34.html' media-type='application/xhtml+xml' />
+<item id='diss35_html' href='diss35.html' media-type='application/xhtml+xml' />
+<item id='diss36_html' href='diss36.html' media-type='application/xhtml+xml' />
+<item id='diss37_html' href='diss37.html' media-type='application/xhtml+xml' />
+<item id='diss38_html' href='diss38.html' media-type='application/xhtml+xml' />
+<item id='diss39_html' href='diss39.html' media-type='application/xhtml+xml' />
+<item id='diss40_html' href='diss40.html' media-type='application/xhtml+xml' />
+<item id='diss41_html' href='diss41.html' media-type='application/xhtml+xml' />
+<item id='diss42_html' href='diss42.html' media-type='application/xhtml+xml' />
+<item id='diss43_html' href='diss43.html' media-type='application/xhtml+xml' />
+<item id='diss44_html' href='diss44.html' media-type='application/xhtml+xml' />
+<item id='diss45_html' href='diss45.html' media-type='application/xhtml+xml' />
+<item id='diss46_html' href='diss46.html' media-type='application/xhtml+xml' />
+<item id='diss47_html' href='diss47.html' media-type='application/xhtml+xml' />
+<item id='diss48_html' href='diss48.html' media-type='application/xhtml+xml' />
+<item id='diss49_html' href='diss49.html' media-type='application/xhtml+xml' />
+<item id='diss50_html' href='diss50.html' media-type='application/xhtml+xml' />
+<item id='diss51_html' href='diss51.html' media-type='application/xhtml+xml' />
+<item id='diss52_html' href='diss52.html' media-type='application/xhtml+xml' />
+<item id='diss54_html' href='diss54.html' media-type='application/xhtml+xml' />
+<item id='diss55_html' href='diss55.html' media-type='application/xhtml+xml' />
+<item id='diss56_html' href='diss56.html' media-type='application/xhtml+xml' />
+<item id='diss57_html' href='diss57.html' media-type='application/xhtml+xml' />
+<item id='diss58_html' href='diss58.html' media-type='application/xhtml+xml' />
+<item id='diss59_html' href='diss59.html' media-type='application/xhtml+xml' />
+<item id='diss60_html' href='diss60.html' media-type='application/xhtml+xml' />
+<item id='diss61_html' href='diss61.html' media-type='application/xhtml+xml' />
+<item id='diss62_html' href='diss62.html' media-type='application/xhtml+xml' />
+<item id='diss63_html' href='diss63.html' media-type='application/xhtml+xml' />
+<item id='diss64_html' href='diss64.html' media-type='application/xhtml+xml' />
+<item id='diss65_html' href='diss65.html' media-type='application/xhtml+xml' />
+<item id='diss66_html' href='diss66.html' media-type='application/xhtml+xml' />
+<item id='diss67_html' href='diss67.html' media-type='application/xhtml+xml' />
+<item id='diss68_html' href='diss68.html' media-type='application/xhtml+xml' />
+<item id='diss69_html' href='diss69.html' media-type='application/xhtml+xml' />
+<item id='diss70_html' href='diss70.html' media-type='application/xhtml+xml' />
+<item id='diss71_html' href='diss71.html' media-type='application/xhtml+xml' />
+<item id='diss75_html' href='diss75.html' media-type='application/xhtml+xml' />
+<item id='diss76_html' href='diss76.html' media-type='application/xhtml+xml' />
+<item id='diss77_html' href='diss77.html' media-type='application/xhtml+xml' />
+<item id='diss78_html' href='diss78.html' media-type='application/xhtml+xml' />
+<item id='diss79_html' href='diss79.html' media-type='application/xhtml+xml' />
+<item id='diss80_html' href='diss80.html' media-type='application/xhtml+xml' />
+<item id='diss81_html' href='diss81.html' media-type='application/xhtml+xml' />
+<item id='diss82_html' href='diss82.html' media-type='application/xhtml+xml' />
+<item id='diss84_html' href='diss84.html' media-type='application/xhtml+xml' />
+<item id='diss85_html' href='diss85.html' media-type='application/xhtml+xml' />
+<item id='diss86_html' href='diss86.html' media-type='application/xhtml+xml' />
+<item id='diss87_html' href='diss87.html' media-type='application/xhtml+xml' />
+<item id='diss89_html' href='diss89.html' media-type='application/xhtml+xml' />
+<item id='diss90_html' href='diss90.html' media-type='application/xhtml+xml' />
+<item id='diss91_html' href='diss91.html' media-type='application/xhtml+xml' />
+<item id='diss92_html' href='diss92.html' media-type='application/xhtml+xml' />
+<item id='diss93_html' href='diss93.html' media-type='application/xhtml+xml' />
+<item id='diss94_html' href='diss94.html' media-type='application/xhtml+xml' />
+<item id='diss95_html' href='diss95.html' media-type='application/xhtml+xml' />
+<item id='diss96_html' href='diss96.html' media-type='application/xhtml+xml' />
+<item id='diss97_html' href='diss97.html' media-type='application/xhtml+xml' />
+<item id='diss99_html' href='diss99.html' media-type='application/xhtml+xml' />
+<item id='diss100_html' href='diss100.html' media-type='application/xhtml+xml' />
+<item id='diss101_html' href='diss101.html' media-type='application/xhtml+xml' />
+<item id='diss104_html' href='diss104.html' media-type='application/xhtml+xml' />
+<item id='diss105_html' href='diss105.html' media-type='application/xhtml+xml' />
+<item id='diss107_html' href='diss107.html' media-type='application/xhtml+xml' />
+<item id='diss108_html' href='diss108.html' media-type='application/xhtml+xml' />
+<item id='diss109_html' href='diss109.html' media-type='application/xhtml+xml' />
+<item id='diss111_html' href='diss111.html' media-type='application/xhtml+xml' />
+<item id='diss112_html' href='diss112.html' media-type='application/xhtml+xml' />
+<item id='diss113_html' href='diss113.html' media-type='application/xhtml+xml' />
+<item id='diss114_html' href='diss114.html' media-type='application/xhtml+xml' />
+<item id='diss115_html' href='diss115.html' media-type='application/xhtml+xml' />
+<item id='diss116_html' href='diss116.html' media-type='application/xhtml+xml' />
+<item id='diss117_html' href='diss117.html' media-type='application/xhtml+xml' />
+<item id='diss118_html' href='diss118.html' media-type='application/xhtml+xml' />
+<item id='diss119_html' href='diss119.html' media-type='application/xhtml+xml' />
+<item id='diss120_html' href='diss120.html' media-type='application/xhtml+xml' />
+<item id='diss123_html' href='diss123.html' media-type='application/xhtml+xml' />
+<item id='diss124_html' href='diss124.html' media-type='application/xhtml+xml' />
+<item id='diss125_html' href='diss125.html' media-type='application/xhtml+xml' />
+<item id='diss127_html' href='diss127.html' media-type='application/xhtml+xml' />
+<item id='diss128_html' href='diss128.html' media-type='application/xhtml+xml' />
+<item id='diss130_html' href='diss130.html' media-type='application/xhtml+xml' />
+<item id='diss131_html' href='diss131.html' media-type='application/xhtml+xml' />
+<item id='figures-policieslength-min-violin-_png' href='figures/policies/length-min-violin-.png' media-type='image/png' />
+<item id='figures-policieslength-max-violin-_png' href='figures/policies/length-max-violin-.png' media-type='image/png' />
+<item id='diss0x_png' href='diss0x.png' media-type='image/png' />
+<item id='diss1x_png' href='diss1x.png' media-type='image/png' />
+<item id='diss2x_png' href='diss2x.png' media-type='image/png' />
+<item id='diss3x_png' href='diss3x.png' media-type='image/png' />
+<item id='diss4x_png' href='diss4x.png' media-type='image/png' />
+<item id='diss5x_png' href='diss5x.png' media-type='image/png' />
+<item id='diss6x_png' href='diss6x.png' media-type='image/png' />
+<item id='diss7x_png' href='diss7x.png' media-type='image/png' />
+<item id='diss8x_png' href='diss8x.png' media-type='image/png' />
+<item id='diss9x_png' href='diss9x.png' media-type='image/png' />
+<item id='diss10x_png' href='diss10x.png' media-type='image/png' />
+<item id='diss11x_png' href='diss11x.png' media-type='image/png' />
+<item id='diss12x_png' href='diss12x.png' media-type='image/png' />
+<item id='diss13x_png' href='diss13x.png' media-type='image/png' />
+<item id='diss14x_png' href='diss14x.png' media-type='image/png' />
+<item id='diss15x_png' href='diss15x.png' media-type='image/png' />
+<item id='diss16x_png' href='diss16x.png' media-type='image/png' />
+<item id='diss17x_png' href='diss17x.png' media-type='image/png' />
+</manifest> 
+   
+<spine toc="ncx"> 
+<itemref idref="file1" /> 
+<itemref idref="file2" /> 
+<itemref idref="file3" /> 
+<itemref idref="file4" /> 
+<itemref idref="file5" /> 
+<itemref idref="file6" /> 
+<itemref idref="file7" /> 
+<itemref idref="file8" /> 
+<itemref idref="file9" /> 
+<itemref idref="file10" /> 
+<itemref idref="file11" /> 
+<itemref idref="file12" /> 
+<itemref idref="file13" /> 
+<itemref idref="file14" /> 
+<itemref idref="file15" /> 
+<itemref idref="file16" /> 
+<itemref idref="file17" /> 
+<itemref idref="file18" /> 
+<itemref idref="file19" /> 
+<itemref idref="file20" /> 
+<itemref idref="file21" /> 
+<itemref idref="file22" /> 
+<itemref idref="file23" /> 
+  
+<itemref idref="diss4_html" linear="no" />
+<itemref idref="diss5_html" linear="no" />
+<itemref idref="diss6_html" linear="no" />
+<itemref idref="diss9_html" linear="no" />
+<itemref idref="diss10_html" linear="no" />
+<itemref idref="diss11_html" linear="no" />
+<itemref idref="diss12_html" linear="no" />
+<itemref idref="diss13_html" linear="no" />
+<itemref idref="diss14_html" linear="no" />
+<itemref idref="diss15_html" linear="no" />
+<itemref idref="diss16_html" linear="no" />
+<itemref idref="diss17_html" linear="no" />
+<itemref idref="diss18_html" linear="no" />
+<itemref idref="diss19_html" linear="no" />
+<itemref idref="diss20_html" linear="no" />
+<itemref idref="diss21_html" linear="no" />
+<itemref idref="diss22_html" linear="no" />
+<itemref idref="diss23_html" linear="no" />
+<itemref idref="diss24_html" linear="no" />
+<itemref idref="diss25_html" linear="no" />
+<itemref idref="diss26_html" linear="no" />
+<itemref idref="diss27_html" linear="no" />
+<itemref idref="diss28_html" linear="no" />
+<itemref idref="diss29_html" linear="no" />
+<itemref idref="diss30_html" linear="no" />
+<itemref idref="diss31_html" linear="no" />
+<itemref idref="diss32_html" linear="no" />
+<itemref idref="diss33_html" linear="no" />
+<itemref idref="diss34_html" linear="no" />
+<itemref idref="diss35_html" linear="no" />
+<itemref idref="diss36_html" linear="no" />
+<itemref idref="diss37_html" linear="no" />
+<itemref idref="diss38_html" linear="no" />
+<itemref idref="diss39_html" linear="no" />
+<itemref idref="diss40_html" linear="no" />
+<itemref idref="diss41_html" linear="no" />
+<itemref idref="diss42_html" linear="no" />
+<itemref idref="diss43_html" linear="no" />
+<itemref idref="diss44_html" linear="no" />
+<itemref idref="diss45_html" linear="no" />
+<itemref idref="diss46_html" linear="no" />
+<itemref idref="diss47_html" linear="no" />
+<itemref idref="diss48_html" linear="no" />
+<itemref idref="diss49_html" linear="no" />
+<itemref idref="diss50_html" linear="no" />
+<itemref idref="diss51_html" linear="no" />
+<itemref idref="diss52_html" linear="no" />
+<itemref idref="diss54_html" linear="no" />
+<itemref idref="diss55_html" linear="no" />
+<itemref idref="diss56_html" linear="no" />
+<itemref idref="diss57_html" linear="no" />
+<itemref idref="diss58_html" linear="no" />
+<itemref idref="diss59_html" linear="no" />
+<itemref idref="diss60_html" linear="no" />
+<itemref idref="diss61_html" linear="no" />
+<itemref idref="diss62_html" linear="no" />
+<itemref idref="diss63_html" linear="no" />
+<itemref idref="diss64_html" linear="no" />
+<itemref idref="diss65_html" linear="no" />
+<itemref idref="diss66_html" linear="no" />
+<itemref idref="diss67_html" linear="no" />
+<itemref idref="diss68_html" linear="no" />
+<itemref idref="diss69_html" linear="no" />
+<itemref idref="diss70_html" linear="no" />
+<itemref idref="diss71_html" linear="no" />
+<itemref idref="diss75_html" linear="no" />
+<itemref idref="diss76_html" linear="no" />
+<itemref idref="diss77_html" linear="no" />
+<itemref idref="diss78_html" linear="no" />
+<itemref idref="diss79_html" linear="no" />
+<itemref idref="diss80_html" linear="no" />
+<itemref idref="diss81_html" linear="no" />
+<itemref idref="diss82_html" linear="no" />
+<itemref idref="diss84_html" linear="no" />
+<itemref idref="diss85_html" linear="no" />
+<itemref idref="diss86_html" linear="no" />
+<itemref idref="diss87_html" linear="no" />
+<itemref idref="diss89_html" linear="no" />
+<itemref idref="diss90_html" linear="no" />
+<itemref idref="diss91_html" linear="no" />
+<itemref idref="diss92_html" linear="no" />
+<itemref idref="diss93_html" linear="no" />
+<itemref idref="diss94_html" linear="no" />
+<itemref idref="diss95_html" linear="no" />
+<itemref idref="diss96_html" linear="no" />
+<itemref idref="diss97_html" linear="no" />
+<itemref idref="diss99_html" linear="no" />
+<itemref idref="diss100_html" linear="no" />
+<itemref idref="diss101_html" linear="no" />
+<itemref idref="diss104_html" linear="no" />
+<itemref idref="diss105_html" linear="no" />
+<itemref idref="diss107_html" linear="no" />
+<itemref idref="diss108_html" linear="no" />
+<itemref idref="diss109_html" linear="no" />
+<itemref idref="diss111_html" linear="no" />
+<itemref idref="diss112_html" linear="no" />
+<itemref idref="diss113_html" linear="no" />
+<itemref idref="diss114_html" linear="no" />
+<itemref idref="diss115_html" linear="no" />
+<itemref idref="diss116_html" linear="no" />
+<itemref idref="diss117_html" linear="no" />
+<itemref idref="diss118_html" linear="no" />
+<itemref idref="diss119_html" linear="no" />
+<itemref idref="diss120_html" linear="no" />
+<itemref idref="diss123_html" linear="no" />
+<itemref idref="diss124_html" linear="no" />
+<itemref idref="diss125_html" linear="no" />
+<itemref idref="diss127_html" linear="no" />
+<itemref idref="diss128_html" linear="no" />
+<itemref idref="diss130_html" linear="no" />
+<itemref idref="diss131_html" linear="no" /> 
+</spine> 
+<guide> 
+</guide></package> 
